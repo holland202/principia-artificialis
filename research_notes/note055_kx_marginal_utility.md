@@ -64,7 +64,7 @@ merely losing.
 
 **1. The baseline was the wrong one.** The draft compared η-MSE against
 predicting the *global mean* of η. That is an R² > 0 test. [[note054_kx_allocation]]
-already passed its analogue (ρ = +0.117) and still lost the allocation. Here
+already passed its analogue (ρ = +0.148, tie-corrected) and still lost the allocation. Here
 the mean-baseline is kept as P1 and labelled WEAK precisely so the two can be
 read side by side — and they diverge, which is the note.
 

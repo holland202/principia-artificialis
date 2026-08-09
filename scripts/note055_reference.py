@@ -17,7 +17,7 @@ WHAT CHANGED FROM kx_probe (v1)
 TWO DEFECTS IN THE PROPOSED VERSION, FIXED HERE
     1. BASELINE. The draft compared val MSE against predicting the GLOBAL MEAN
        of eta and read `val_mse/uniform_mse < 1.0` as "geometry beats uniform".
-       That is an R^2 > 0 test. v1 ALREADY passed that (rho = 0.117) and still
+       That is an R^2 > 0 test. v1 ALREADY passed that (rho = 0.148, tie-corrected) and still
        lost the allocation. Beating the mean and beating uniform allocation are
        different claims. Here the mean-baseline is reported as P1 and labelled
        WEAK; the real test is P2, a matched-budget allocation.
