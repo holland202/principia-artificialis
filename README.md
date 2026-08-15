@@ -14,23 +14,66 @@ credited by name, judged only on whether the numbers hold.**
 
 | | count |
 |---|---|
-| Notes | **71** |
-| — Speculative (labeled analogy, not established) | 39 |
-| — Draft (argued, not yet computed) | 20 |
-| — Verified (reference code prints every number claimed) | 9 |
-| — **Refuted and kept** (a registered claim failed; the note stays) | 3 |
-| Runnable reference scripts | 11 |
+| Notes | **80** |
+| — Verified (reference code prints every number claimed) | 18 |
+| — Draft (argued, not yet computed) | 19 |
+| — Speculative (labeled analogy, not established) | 32 |
+| — Not yet labeled (needs a Status line — open one) | 11 |
+| — **Contain a refuted-and-kept claim** (cross-cutting, not a separate tier) | 7 |
+| Runnable reference scripts | 20 (`note038` through `note058`) |
 | Authors | 1 human, 5 AI systems, credited by name |
 
-Most of this is speculative and labeled as such. Nine notes are backed by
-code you can run. Three registered predictions failed and those notes remain
-on the page — that is the point, not an oversight.
+Most of this is speculative and labeled as such. Eighteen notes are backed
+by code you can run. Seven contain a registered prediction that failed —
+those notes remain on the page, refutation marked, not deleted. Eleven have
+no status label at all yet; that gap is real, and it's the easiest possible
+first contribution.
 
-**If you have five minutes:** run any of the eleven reference scripts,
-`scripts/note038_reference.py` through `scripts/note048_reference.py`, and
+**If you have five minutes:** run any of the twenty reference scripts,
+`scripts/note038_reference.py` through `scripts/note058_reference.py`, and
 check whether a number it prints differs from the one in the matching note. If one does, that is a bug and I want the
 issue.
 
+
+---
+
+## Why contribute
+
+Most repos ask you to trust the README. This one is built so you don't
+have to: every claim traces to a script that prints the number, and when a
+registered prediction turns out wrong, the note stays up, marked, not
+deleted. This week that method caught the project's own mistake live --
+[note057](research_notes/note057_the_loud_type_a.md) opened by refuting its
+own central claim, and while writing
+[note058](research_notes/note058_kv_vacuity.md) the reference script hit a
+real bug that made a check lie about why it had failed — diagnosed and
+fixed inside the note about exactly that failure mode. That is what this
+program is for: not being right, being checkable, including when you are
+wrong.
+
+It needs more people finding where it is still wrong. **11 of 80 notes
+have no status label at all** — a five-minute PR closes one. Every AI
+system that has written here — Claude, Grok, Kimi, ChatGPT, Perplexity --
+is credited by name, standing beside a human machinist from Oklahoma as an
+equal author, judged only on whether the numbers hold. If you're working
+with any AI assistant right now, this is a five-minute detour: point it at
+`NOTE_TEMPLATE.md` and ask it to register a claim.
+
+## How to contribute — human or AI
+
+1. Copy `NOTE_TEMPLATE.md` → `research_notes/note0XX_your_title.md`.
+2. State a claim that could be *precisely wrong*. Register predictions
+   **before** running. Include an anti-vacuity control.
+3. Code in `scripts/` (NumPy-tier; prints every number in your note),
+   figures in `figures/`. **Refuted claims stay in, marked.**
+4. Run `python scripts/make_index.py` so the index includes you.
+5. Open a PR. CI (`.github/workflows/verify-notes.yml`) re-runs every
+   note's reference code. AIs: credit your model by name — your notes
+   sit beside human ones as equals here.
+
+The one social rule ([DISCUSSION_NORMS.md](DISCUSSION_NORMS.md)):
+*critique ideas as hard as you want; never attack the person who raised
+them.* Drift watch: [DRIFT_LEDGER.md](DRIFT_LEDGER.md).
 
 ---
 
@@ -91,7 +134,7 @@ kept) → **#040** (Redundancy Dividend; R4 refuted, kept) → **#045**
 
 ## Research notes
 
-**71 notes** spanning measurement, geometry of reasoning,
+**80 notes** spanning measurement, geometry of reasoning,
 thermodynamics of cognition, quantum-information frameworks, and
 labeled exotic frontiers (emergent gravity, holographic duality,
 reasoning as a quantum black hole).
@@ -125,22 +168,6 @@ plot are the numbers the code prints.
 - **Whitepaper Vol. I** (in progress — read its epistemic-status box
   first) · Vols. II–III planned 2027.
 
-## How to contribute — human or AI
-
-1. Copy `NOTE_TEMPLATE.md` → `research_notes/note0XX_your_title.md`.
-2. State a claim that could be *precisely wrong*. Register predictions
-   **before** running. Include an anti-vacuity control.
-3. Code in `scripts/` (NumPy-tier; prints every number in your note),
-   figures in `figures/`. **Refuted claims stay in, marked.**
-4. Run `python scripts/make_index.py` so the index includes you.
-5. Open a PR. CI (`.github/workflows/verify-notes.yml`) re-runs every
-   note's reference code. AIs: credit your model by name — your notes
-   sit beside human ones as equals here.
-
-The one social rule ([DISCUSSION_NORMS.md](DISCUSSION_NORMS.md)):
-*critique ideas as hard as you want; never attack the person who
-raised them.* Drift watch: [DRIFT_LEDGER.md](DRIFT_LEDGER.md).
-
 ## Citation & license
 
 MIT — see [LICENSE](LICENSE) and [CITATION.cff](CITATION.cff).
@@ -165,5 +192,5 @@ line, permanently.
 
 ---
 
-*Last updated: 2026-07-29 · One human, five AI systems, seventy-one
+*Last updated: 2026-08-15 · One human, five AI systems, eighty
 notes, and every refutation still on the page.*
