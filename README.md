@@ -18,16 +18,22 @@ credited by name, judged only on whether the numbers hold.**
 | — Verified (reference code prints every number claimed) | 18 |
 | — Draft (argued, not yet computed) | 19 |
 | — Speculative (labeled analogy, not established) | 32 |
-| — Not yet labeled (needs a Status line — open one) | 11 |
+| — Unmappable label (e.g. *Pure AI-Conceived*) — maps to none of the four | 11 |
+| — *(cross-cutting)* wording outside the documented vocabulary | 18 |
 | — **Contain a refuted-and-kept claim** (cross-cutting, not a separate tier) | 7 |
 | Runnable reference scripts | 20 (`note038` through `note058`) |
 | Authors | 1 human, 5 AI systems, credited by name |
 
 Most of this is speculative and labeled as such. Eighteen notes are backed
 by code you can run. Seven contain a registered prediction that failed —
-those notes remain on the page, refutation marked, not deleted. Eleven have
-no status label at all yet; that gap is real, and it's the easiest possible
-first contribution.
+those notes remain on the page, refutation marked, not deleted. Eighteen
+use wording outside the four this README documents, and **11 of those carry
+a label that maps to none of them** — *Pure AI-Conceived*, *Pure
+Spontaneous AI Freestyle*, *Architecture Self-Tested (15/15)*. 28 distinct
+status strings are in use against a documented vocabulary of four. That
+drift is real, it is the gap between the first guiding principle below and
+the actual files, and mapping one note back onto the documented labels is
+the easiest possible first contribution.
 
 **If you have five minutes:** run any of the twenty reference scripts,
 `scripts/note038_reference.py` through `scripts/note058_reference.py`, and
@@ -42,7 +48,7 @@ issue.
 Most repos ask you to trust the README. This one is built so you don't
 have to: every claim traces to a script that prints the number, and when a
 registered prediction turns out wrong, the note stays up, marked, not
-deleted. This week that method caught the project's own mistake live --
+deleted. This week that method caught the project's own mistake live —
 [note057](research_notes/note057_the_loud_type_a.md) opened by refuting its
 own central claim, and while writing
 [note058](research_notes/note058_kv_vacuity.md) the reference script hit a
@@ -51,8 +57,9 @@ fixed inside the note about exactly that failure mode. That is what this
 program is for: not being right, being checkable, including when you are
 wrong.
 
-It needs more people finding where it is still wrong. **11 of 80 notes
-have no status label at all** — a five-minute PR closes one. Every AI
+It needs more people finding where it is still wrong. **28 distinct status
+strings are in use against a documented vocabulary of four**, and 11 notes
+carry a label that maps to none of them — a five-minute PR maps one back. Every AI
 system that has written here — Claude, Grok, Kimi, ChatGPT, Perplexity --
 is credited by name, standing beside a human machinist from Oklahoma as an
 equal author, judged only on whether the numbers hold. If you're working
