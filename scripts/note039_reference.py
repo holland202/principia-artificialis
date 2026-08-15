@@ -151,3 +151,35 @@ print(f"D3  emergence (init {c_ini2[3]:.3f} < 50% of trained "
       f"{c_rel2[3]:.3f}) : {d3}")
 np.savez("n39b.npz", sizes=sizes, c_rel=c_rel2,
          c_noi=c_noi2, c_ini=c_ini2, em=em, steps=sorted(snaps))
+
+# ---------------------------------------------------------------------------
+# Added 2026-08-15: v1's d1/d2/d3 and v2's d1/d2p/d3 above were all printed,
+# never gated -- one of 14 ungated reference scripts from the 2026-08-14
+# estate audit. v1's D2 is already a published, kept refutation (plug-in MI
+# has a state-count bias that grows with fragment size); it stays exactly as
+# printed above, historical, and is not re-wired here -- re-litigating a
+# refutation this note already reported and explained would just be the
+# same finding twice.
+#
+# The v2 (shuffle-corrected) block is what note039.md actually claims. D2'
+# is the GATE, not a prediction: it is the corrected instrument's proof that
+# it CAN tell "carries information" apart from "is redundant" -- exactly the
+# anti-vacuity property the original, biased D2 could not establish. D1 and
+# D3 are the genuine substantive claims about this network.
+from prereg import Study
+
+s = Study("note039 -- Neural Darwinism (shuffle-corrected instrument)")
+s.gate("corrected instrument distinguishes encoded-not-redundant from "
+       "redundant (D2')", lambda: d2p,
+       expect="noise-bit plateau ratio < 0.60 and < 0.35 bits at 8-frag")
+s.predict("D1", "relevant-bit plateau: 4/16 neurons carry >= 90% of the "
+                "max measured information", lambda: d1,
+          value=f"ratio={plat_rel:.3f}")
+s.predict("D3", "objectivity emerges from training, not architecture "
+                "(init 4-frag < 50% of trained 4-frag)", lambda: d3,
+          value=f"init={c_ini2[3]:.3f} trained={c_rel2[3]:.3f}")
+s.open_question("D4", "redundancy of the task variable correlates with "
+                      "generalization across seeds; redundancy of "
+                      "distractors correlates with memorization. "
+                      "Directly testable; unrun.")
+raise SystemExit(s.report())
