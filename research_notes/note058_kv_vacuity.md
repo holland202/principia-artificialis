@@ -70,7 +70,6 @@ its way to a verdict it then discards.
 - **P1 — CONFIRMED.** The Kupferman-Vardi example reproduces exactly: a
   specification holds for a reason unrelated to its intent when its
   antecedent never fires.
-
 - **P2 — CONFIRMED, run live against the estate.**
 
 ```
@@ -87,22 +86,37 @@ its way to a verdict it then discards.
   finding rate: 11/180 = 6.1%
 ```
 
-  Kupferman & Vardi report roughly 20% of LTL specifications register
-  vacuously in industrial verification. This estate's Python code registers
-  at 6.1% by `vacuity_lint.py`'s definition. The two numbers are not directly
-  comparable — different artifact type, different detector, different
-  population — and the note does not claim they are. What is comparable is
-  the *shape*: neither number is zero, and in both cases the finding was
-  invisible to the tool that was supposed to catch it (a model checker
-  returning SAT; a CI badge showing green) until someone asked the second
-  question.
+Kupferman & Vardi report roughly 20% of LTL specifications register
+vacuously in industrial verification. This estate's Python code registers
+at 6.1% by `vacuity_lint.py`'s definition. The two numbers are not directly
+comparable — different artifact type, different detector, different
+population — and the note does not claim they are. What is comparable is
+the *shape*: neither number is zero, and in both cases the finding was
+invisible to the tool that was supposed to catch it (a model checker
+returning SAT; a CI badge showing green) until someone asked the second
+question.
 
-- **P3 — PASS.** The scanner returns zero findings, not an error, on a clean
-  file — confirmed by direct standalone run after a transient clone failure
-  (rate-limited by cloning 13 repositories in one process; reproduced
-  separately with exit 0, `findings : 0`). The anti-vacuity requirement:
+- **P3 — PASS, after fixing a real bug the first attempts exposed.** The
+  reference script's P2 block called `os.chdir(d)` inside a
+  `TemporaryDirectory()` and never restored it. When that block exits, `d`
+  is deleted from disk, but the process's own working directory is still
+  pointed at it -- `os.getcwd()` from that state raises `FileNotFoundError`.
+  P3's clone runs afterward with no `cwd=` set, so it silently inherited the
+  now-deleted directory and `git clone` failed with exit 128 ("could not
+  create work tree dir: No such file or directory"). `clone()` only checks
+  the return code, so this printed as "could not clone -- network
+  unavailable," which was false: reproduced twice, 15 seconds apart,
+  immediately after a P2 run that had just cloned the identical repository
+  successfully in the same process. Confirmed with a minimal repro (chdir
+  into a `TemporaryDirectory`, let it close, run any subprocess with no
+  `cwd=`) before touching the fix. Corrected by removing `os.chdir`
+  entirely and passing `cwd=` explicitly to every subprocess call in P2.
+  After the fix: scanner returns zero findings, not an error, on a
+  genuinely clean file -- `findings : 0`, exit 0, process CWD confirmed
+  unchanged before and after the whole run. The anti-vacuity requirement:
   an instrument that only ever reports findings is itself the defect this
-  note is about.
+  note is about -- and, it turned out, so is a diagnostic message that
+  names the wrong cause.
 
 ---
 
