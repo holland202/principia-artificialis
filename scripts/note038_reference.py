@@ -58,3 +58,29 @@ print(f"P2 benefit decays monotonically with n:           {p2}  "
       f"({ben[0]:.4f} -> {ben[-1]:.5f})")
 print(f"P3 DISSOCIATION — violation still {vio[-1]:.0f}% at n=1280 while "
       f"benefit fell {ben[0]/max(ben[-1],1e-9):.0f}x: {p3}")
+
+# ---------------------------------------------------------------------------
+# Added 2026-08-15: this script computed p1/p2/p3 and printed them, but
+# nothing ever consumed the values -- exit code was always 0 regardless of
+# what they said. One of the 14 reference scripts found ungated in the
+# 2026-08-14 estate audit (Principia note057's own kind of finding, one
+# level up: not a check with no fail path, a check with no path from its
+# result to anything at all).
+#
+# P1 is treated as the GATE, not a prediction: it is a mathematical
+# guarantee (projection onto a convex set containing the truth is
+# nonexpansive), so if it is ever False the projection code itself is
+# broken and no claim about P2/P3 is possible. P2 and P3 are the genuine
+# empirical predictions this note registers.
+from prereg import Study
+
+s = Study("note038 -- Free-Physics Principle")
+s.gate("projection never increases error (nonexpansive property)",
+       lambda: p1, expect="True at every n, 200 paired trials each")
+s.predict("P2", "benefit decays monotonically with n", lambda: p2,
+          value=f"{ben[0]:.4f} -> {ben[-1]:.5f}")
+s.predict("P3", "dissociation: violation rate stays high while the "
+                "benefit becomes negligible", lambda: p3,
+          value=f"viol={vio[-1]:.0f}% at n=1280, benefit fell "
+                f"{ben[0]/max(ben[-1],1e-9):.0f}x")
+raise SystemExit(s.report())
