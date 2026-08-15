@@ -45,21 +45,20 @@ print(f"but req fired {sum(req_log)} times out of {len(req_log)} steps")
 '''
 
 
-def run(path, args=None):
+def run(path, args=None, cwd=None):
     p = subprocess.run([sys.executable, path] + (args or []),
-                        capture_output=True, text=True, timeout=120)
+                        capture_output=True, text=True, timeout=120, cwd=cwd)
     return p.returncode, p.stdout + p.stderr
 
 
-def clone(url, dest):
+def clone(url, dest, cwd=None):
     r = subprocess.run(["git", "clone", "-q", "--depth", "1", url, dest],
-                        capture_output=True, text=True, timeout=120)
+                        capture_output=True, text=True, timeout=120, cwd=cwd)
     return r.returncode == 0
 
 
 def main():
     results = []
-
     print("=" * 68)
     print("P1  The Kupferman-Vardi vacuity example reproduces exactly:")
     print("    a specification holds for a reason unrelated to its intent")
@@ -81,8 +80,22 @@ def main():
     print("    reported live, not copied from a prior run.")
     print("=" * 68)
     with tempfile.TemporaryDirectory() as d:
-        os.chdir(d)
-        got_scanner = clone("https://github.com/holland202/vacuity_lint.py.git", "vl")
+        # NOTE, added 2026-08-15: this block used to open with os.chdir(d) and
+        # never restore it. When this 'with' exits, d is deleted from disk,
+        # but the PROCESS's cwd is still pointed at that now-gone path --
+        # os.getcwd() raises FileNotFoundError from that state. P3, which
+        # runs afterward and does not set cwd= on its subprocess call,
+        # silently inherited the dangling directory and 'git clone' failed
+        # with exit 128 ("could not create work tree dir: No such file or
+        # directory"). clone() only checks the return code, so P3 reported
+        # "could not clone -- network unavailable" -- a real, reproducible
+        # bug misreported as a transient network condition. Confirmed by a
+        # minimal repro (chdir into a TemporaryDirectory, let it close, run
+        # any subprocess with no cwd=) before this fix was written. Fixed by
+        # never chdir'ing at all: every subprocess call below now takes an
+        # explicit cwd=d, so the process's own working directory is never
+        # touched and nothing downstream can inherit a stale one.
+        got_scanner = clone("https://github.com/holland202/vacuity_lint.py.git", "vl", cwd=d)
         if not got_scanner:
             print("  could not clone vacuity_lint.py -- P2 UNRUN (network unavailable)")
             results.append(("P2", None, None))
@@ -91,15 +104,15 @@ def main():
             n_repos, n_py, n_findings, n_workflows_with_ci = 0, 0, 0, 0
             per_repo = []
             for name in REPOS:
-                ok = clone(f"https://github.com/holland202/{name}.git", name)
+                ok = clone(f"https://github.com/holland202/{name}.git", name, cwd=d)
                 if not ok:
                     continue
                 n_repos += 1
                 pyfiles = subprocess.run(
                     ["git", "-C", name, "ls-files", "*.py"],
-                    capture_output=True, text=True).stdout.strip().splitlines()
+                    capture_output=True, text=True, cwd=d).stdout.strip().splitlines()
                 n_py += len(pyfiles)
-                rc, out = run(scanner, [name])
+                rc, out = run(scanner, [name], cwd=d)
                 fi = 0
                 for line in out.splitlines():
                     if line.strip().startswith("findings"):
@@ -110,11 +123,10 @@ def main():
                 n_findings += fi
                 ci = subprocess.run(
                     ["git", "-C", name, "ls-files", ".github/workflows"],
-                    capture_output=True, text=True).stdout.strip()
+                    capture_output=True, text=True, cwd=d).stdout.strip()
                 if ci:
                     n_workflows_with_ci += 1
                 per_repo.append((name, len(pyfiles), fi))
-
             print(f"  repositories cloned      : {n_repos}")
             print(f"  python files scanned     : {n_py}")
             print(f"  repositories with any CI : {n_workflows_with_ci}")
