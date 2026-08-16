@@ -119,10 +119,45 @@ def p_crit_flip(p, thresh=0.9):
         else: break
     return last
 
+def _midrank(x):
+    """Average ranks for ties. Ported verbatim from note054_reference.py,
+    where this defect was first found on device 2026-08-09.
+
+    DEFECT IN THIS FILE, found 2026-08-15, kept: the original ranked by
+    double-argsort with no tie correction, and this data is heavily tied --
+    across 12 runs, KO takes only 6 distinct values (one group of 5), FL
+    takes 5 (one group of 5), A takes 8. np.argsort defaults to an UNSTABLE
+    sort, so the published statistic depended on which sort path the build
+    took: quicksort and heapsort gave R1 = +0.7133, mergesort and stable
+    gave +0.7203, against a registered threshold of >= +0.70. The claim
+    cleared its bar by 0.013 in one sort path -- a verdict resting on
+    NumPy's choice of algorithm.
+
+    Tie-corrected values, and what was published before this fix:
+        R1 rho(R, KO)   published +0.71   corrected +0.78
+        R3 rho(A, KO)   published +0.40   corrected +0.36
+        R4 rho(R, FL)   published +0.56   corrected +0.43
+    No verdict changes: R1 still passes, R3 still holds, R4 is still
+    REFUTED. Only the numbers were wrong, and R1's margin was a coin flip.
+    """
+    order = np.argsort(x, kind="stable")
+    ranks = np.empty(len(x), float)
+    s_, i = x[order], 0
+    while i < len(s_):
+        j = i
+        while j + 1 < len(s_) and s_[j + 1] == s_[i]:
+            j += 1
+        ranks[order[i:j + 1]] = (i + j) / 2.0 + 1.0
+        i = j + 1
+    return ranks
+
+
 def spearman(a, b):
-    ra = np.argsort(np.argsort(a)); rb = np.argsort(np.argsort(b))
-    ra = ra - ra.mean(); rb = rb - rb.mean()
-    return float((ra*rb).sum()/np.sqrt((ra**2).sum()*(rb**2).sum()))
+    ra = _midrank(np.asarray(a, float))
+    rb = _midrank(np.asarray(b, float))
+    ra -= ra.mean(); rb -= rb.mean()
+    d = np.sqrt((ra ** 2).sum() * (rb ** 2).sum())
+    return float((ra * rb).sum() / d) if d > 0 else 0.0
 
 rows = []
 print(f"{'regime':>8} {'seed':>4} {'acc':>6} {'R (bits)':>9} "
@@ -157,3 +192,39 @@ print(f"R4 transfers to SEU sign-flip faults: rho = {rho_F:+.2f} "
       f"(>= +0.7): {rho_F >= 0.7}")
 np.savez("n40.npz", R=R, KO=KO, FL=FL, A=A,
          reg=np.array([r[0] for r in rows]))
+
+# ---------------------------------------------------------------------------
+# VERDICT GATE, added 2026-08-15. This script computed r0/R1/R2/R3/R4 and
+# printed them; nothing consumed the values and the exit code was always 0.
+# One of 14 ungated reference scripts found in the 2026-08-14 estate audit.
+#
+# R0 is the GATE, not a prediction: it is the anti-vacuity control this note
+# registered -- if the fault instrument cannot discriminate, no claim about
+# R1-R4 is admissible in either direction.
+#
+# R4 is REFUTED and stays refuted. note040.md publishes it as a kept
+# refutation; prereg reports REFUTED without failing the build, which is the
+# correct behavior. A gate that failed on R4 would delete a published finding.
+from prereg import Study
+
+st = Study("note040 -- Redundancy Dividend")
+st.gate("fault instrument discriminates across regimes",
+        lambda: r0, expect=f"knockout spread >= 1.5x (measured "
+                           f"{KO.max()/max(KO.min(),1e-9):.1f}x)")
+st.predict("R1", "redundancy predicts neuron-knockout tolerance",
+           lambda: rho_R >= 0.7, value=f"rho = {rho_R:+.4f} (>= +0.70)")
+st.predict("R2", "dropout raises mean redundancy above plain (closes "
+                 "note039's open D5)", lambda: mR["dropout"] > mR["plain"],
+           value=f"sparse {mR['sparse']:.3f} | plain {mR['plain']:.3f} | "
+                 f"dropout {mR['dropout']:.3f}")
+st.predict("R3", "redundancy out-predicts clean accuracy as a hardness "
+                 "proxy", lambda: abs(rho_R) > abs(rho_A),
+           value=f"|{rho_R:+.4f}| > |{rho_A:+.4f}|")
+st.predict("R4", "the ranking transfers to SEU sign-flip faults",
+           lambda: rho_F >= 0.7, value=f"rho = {rho_F:+.4f} (>= +0.70)")
+st.open_question("R5", "the lying-observer gap closes if redundancy is "
+                       "measured over sign-stable fragments "
+                       "(weight-perturbation-aware redundancy): a corrected "
+                       "metric should recover rho >= +0.7 on sign-flip "
+                       "faults. Unrun.")
+raise SystemExit(st.report())

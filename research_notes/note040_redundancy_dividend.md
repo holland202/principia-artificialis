@@ -23,11 +23,28 @@ measure of Note #039) — is a **pre-deployment predictor of fault
 tolerance**, computable in seconds with no fault injection, and
 increasable at training time with zero inference-cost overhead.
 
+> **Correction, 2026-08-15 — every ρ in this note changed.** The original
+> `spearman()` here ranked by double-argsort with no tie correction, and this
+> data is heavily tied: across the 12 runs, knockout tolerance takes only 6
+> distinct values (one group of 5), sign-flip tolerance takes 5, accuracy
+> takes 8. `np.argsort` defaults to an *unstable* sort, so the published
+> statistic depended on which sort path the build took — quicksort and
+> heapsort gave R1 = +0.7133, mergesort and stable gave +0.7203, against a
+> registered threshold of ≥ +0.70. **R1 cleared its own bar by 0.013 in one
+> sort path.** Fixed with the midrank implementation from
+> [[note054_kx_allocation]], where the same defect was first caught on device.
+> Published → corrected: R1 +0.71 → **+0.78**, R3's accuracy term +0.40 →
+> **+0.36**, R4 +0.56 → **+0.43**. **No verdict changed** — R1 still passes,
+> R3 still holds, R4 is still refuted — but three numbers were wrong and one
+> margin was a coin flip. The same untied `spearman` is still present in
+> `note045_reference.py` and `note053_reference.py`; their tie exposure is
+> unmeasured.
+
 ## Registered results (12 models: sparse / plain / dropout × 4 seeds, all ≥ 0.95 clean accuracy)
 - **R0 anti-vacuity — PASS.** The fault instrument discriminates: 2.0×
   spread in survivable fault fraction across models.
 - **R1 — PASS.** Redundancy predicts neuron-knockout tolerance:
-  Spearman ρ = **+0.71**. Sparse-trained models (R ≈ 0.73 bits) die at
+  Spearman ρ = **+0.78**. Sparse-trained models (R ≈ 0.73 bits) die at
   45–75% neuron loss; high-redundancy models survive **85–90%**.
 - **R2 (#039's open D5, now run) — direction confirmed, honestly
   weak.** Dropout mean R = 0.968 vs plain 0.962: consistent with D5 but
@@ -36,10 +53,10 @@ increasable at training time with zero inference-cost overhead.
   (0.728). D5 remains **partially open**: it needs a harder task where
   plain training does not saturate.
 - **R3 — PASS.** Redundancy out-predicts clean accuracy as a hardness
-  metric: |+0.71| vs |+0.40|. *Accuracy tells you almost nothing about
+  metric: |+0.78| vs |+0.36|. *Accuracy tells you almost nothing about
   how a model dies.*
 - **R4 — REFUTED, kept.** Registered: the ranking transfers to weight
-  sign-flip faults at ρ ≥ +0.7. Measured: **+0.56**. The mechanism in
+  sign-flip faults at ρ ≥ +0.7. Measured: **+0.43**. The mechanism in
   the failure: knockout deletes a fragment — a **lost observer**, which
   is exactly the loss redundancy insures. A sign-flip makes a fragment
   *assert corrupted information* — a **lying observer** — and
