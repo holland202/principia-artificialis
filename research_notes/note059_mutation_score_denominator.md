@@ -139,3 +139,57 @@ result is a small-file artifact.
 **P5 — OPEN, NOT RUN.** Does reporting n alongside the score change any verdict
 already recorded in this estate? 11 vacuity findings across 180 Python files
 were scored by presence, not by reachability.
+
+## Amendment 1 (2026-08-21) — P4 answered, and a new confound found
+
+**P4 — REFUTED (kept).** Registered: does the 0.0% → nonzero shift reproduce
+on a large target? Tested against `calibrate_governance.py` in
+`sovereign-suite`, same commit pair that fixed the note's own corpus file
+(`a1c990d` pre-fix → `33ad55e` post-fix). Measured on device:
+
+| target | commit | baseline exit | mutants | killed | survived | score |
+|---|---|---|---|---|---|---|
+| `calibrate_governance.py` | `a1c990d` | 0 | 87 | 2 | 85 | 2.3% |
+| `calibrate_governance.py` | `33ad55e` | 1 | 91 | 2 | 89 | 2.2% |
+
+The exit-wiring fix was real and comparable to the vqc fix — baseline itself
+correctly shifted 0 → 1 (Loud Type A → reaches an "UNHEALTHY, exit 1"
+verdict; matches the commit's own claim of "shipped defaults rc=1, 3
+issues") — but the mutation score did not move. Refuted as registered: the
+vqc jump does not generalize to this target. Whether that is a property of
+file size, or of what fraction of a large file's comparisons sit on the
+verdict path versus in unrelated machinery (thermal monitoring, mock
+engines, argument parsing), is not established by n=2.
+
+**MASKED-CRASH CONFOUND, found while checking why.** One SURVIVED result
+(`args.out or f"..."`, post-fix line 1095) was hand-verified to be a real
+crash, not a non-dependency: mutating `or` to `and` makes `out` evaluate to
+`None` when `--out` is unset (the default, and what both runs above used);
+`open(None, "w")` then raises an uncaught `TypeError`; Python's default
+crash exit status is 1, which happens to equal this target's own legitimate
+"UNHEALTHY" exit code — also 1. Exit-code-only comparison cannot distinguish
+"correctly computed failure" from "blew up before computing anything." The
+mutation was completely load-bearing — the crashed run never even reaches
+`save_report` or the verdict block — and it scored as if it were not.
+
+`mutation_probe.py` fixed same day: `run_source` now also reports whether
+stderr shows an uncaught traceback, and `probe` verdicts a mutant KILLED if
+either the exit code changes OR the crash-state changes, even at matched
+exit code. New selftest Fixture C encodes the exact confound (baseline
+exits 1 deliberately via a clean `sys.exit(1)`, mutant exits 1 via an
+uncaught `AttributeError`) and is sabotage-proven: the unpatched tool
+reports Fixture C SURVIVED (wrong), the patched tool reports it KILLED.
+Targeted re-check of the one discovered real-world site confirms the fix
+against the actual target, not just the synthetic fixture: same mutation,
+same file, now correctly verdicts `KILLED (masked -- crash introduced)`
+instead of `SURVIVED`.
+
+**What this does NOT establish:** whether the other 88 SURVIVED results in
+the post-fix run are genuine non-dependencies or more instances of the same
+masking artifact. Re-running the full sweep with the fixed tool costs
+roughly the same ~2.5 hours the original run did; not done here.
+
+**P6 — OPEN, NOT RUN.** Re-score `calibrate_governance.py` at both commits
+with the fixed `mutation_probe.py`. Does the corrected score move enough to
+change P4's verdict, or does it stay near-zero — confirming the flat score
+is real and not an artifact of the instrument that measured it?
