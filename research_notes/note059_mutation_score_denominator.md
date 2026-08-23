@@ -193,3 +193,45 @@ roughly the same ~2.5 hours the original run did; not done here.
 with the fixed `mutation_probe.py`. Does the corrected score move enough to
 change P4's verdict, or does it stay near-zero — confirming the flat score
 is real and not an artifact of the instrument that measured it?
+
+## Amendment 2 (2026-08-21) — P6 answered, P4's refutation survives
+
+**P6 — RESOLVED.** Re-scored both commits with the crash-detecting
+`mutation_probe.py` (`a468d2c`). Measured on device, both runs in parallel:
+
+| target | commit | killed | survived | errored | score |
+|---|---|---|---|---|---|
+| `calibrate_governance.py` | `a1c990d` | 2 | 85 | 0 | 2.3% |
+| `calibrate_governance.py` | `33ad55e` | 3 | 87 | 1 | 3.3% |
+
+**P4's refutation stands, and is now known to be real rather than
+instrumental.** The corrected scores are 2.3% → 3.3%; the vqc-style jump
+(0.0% → 28.6%) still does not reproduce. The flat result was not an artifact
+of the broken oracle that first measured it. This is the outcome P6 was
+registered to distinguish, and it came out on the side that makes P4 worse
+news, not better.
+
+**Scope of the masked-crash confound, now quantified.** Exactly one survivor
+was reclassified: post-fix `survived` fell 89 → 87 and `killed` rose 2 → 3
+(the third moved to `errored`, see below). That one is the `args.out or f"..."`
+site already hand-verified in Amendment 1. The pre-fix run is byte-identical
+to its P4 result — 2 killed, 85 survived, 2.3%, unchanged. So across 176
+mutants over two file versions, the confound masked **one**. It is a real
+defect in the instrument and worth having fixed; it was not concealing a
+population of missed kills. Recording this because the opposite would have
+been the more flattering finding and is not what the numbers say.
+
+**One mutant unresolved.** Post-fix line 513, `was_rejected=True → False`,
+exceeded the 180 s timeout and is reported `ERROR`, not a verdict. The 3.3%
+is therefore computed over 90 resolved mutants, not 91. The same site
+returned SURVIVED at the same timeout during the P4 run, so the difference
+may be load (both probes ran in parallel on a thermally-throttling phone) —
+but line 513 sits in the Fisher-threshold rejection path, and flipping
+`was_rejected` to `False` records every rejected crystallization as accepted,
+which plausibly lengthens the calibration loop on its own merits. Load versus
+genuine slow-down is not distinguished here and is not claimed either way.
+
+**P7 — OPEN, NOT RUN.** Re-run post-fix line 513 alone at a longer timeout,
+sequentially rather than in parallel. Does it resolve to KILLED, SURVIVED, or
+genuinely not terminate? A mutation that makes a governance loop run
+unboundedly is a different finding from one it ignores.
