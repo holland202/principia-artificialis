@@ -75,6 +75,91 @@ SWAP = {ast.GtE: ast.Gt, ast.Gt: ast.GtE, ast.LtE: ast.Lt, ast.Lt: ast.LtE,
         ast.Eq: ast.NotEq, ast.NotEq: ast.Eq}
 
 
+# --------------------------------------------- Amendment 3 fixtures
+# FULL_COV: every eligible site is on a line that executes.
+FULL_COV = '''\
+import sys
+x = 5
+flag = True
+if x >= 5 and flag:
+    sys.exit(0)
+sys.exit(1)
+'''
+
+# PARTIAL_COV: identical head, plus a branch guarded by a test that is
+# false at run time. The three eligible sites inside it can never fire.
+PARTIAL_COV = '''\
+import sys
+x = 5
+flag = True
+if x >= 5 and flag:
+    sys.exit(0)
+if x < 0:
+    dead = True
+    if dead or flag:
+        sys.exit(2)
+sys.exit(1)
+'''
+
+# DELIBERATELY a second operator definition, separate from SWAP above.
+# SWAP is this script's own minimal comparison-boundary operator. The
+# reachability finding in Amendment 3 is about the denominator of scores
+# produced by the EXTERNAL mutation_probe.py, whose site set is different:
+# boundary comparisons, boolean constants, and boolean operators, counted
+# per node rather than per operator. A control measuring SWAP's sites would
+# be internally tidy and externally irrelevant -- the corpus numbers
+# (91 / 25 / 66) came from mutation_probe's site set, so the fixtures must
+# use the same one. Kept adjacent and named so the divergence is visible
+# rather than accidental.
+MP_BOUNDARY = {ast.Lt: ast.LtE, ast.LtE: ast.Lt,
+               ast.Gt: ast.GtE, ast.GtE: ast.Gt}
+MP_BOOLOP = {ast.And: ast.Or, ast.Or: ast.And}
+
+
+def eligible_site_lines(src):
+    """Line number of every site mutation_probe.eligible_nodes would yield,
+    in ast.walk order."""
+    out = []
+    for node in ast.walk(ast.parse(src)):
+        if isinstance(node, ast.Compare) and len(node.ops) == 1 \
+                and type(node.ops[0]) in MP_BOUNDARY:
+            out.append(node.lineno)
+        elif isinstance(node, ast.Constant) and isinstance(node.value, bool):
+            out.append(node.lineno)
+        elif isinstance(node, ast.BoolOp) and type(node.op) in MP_BOOLOP:
+            out.append(node.lineno)
+    return out
+
+
+def _cover_hit(line):
+    """True if a trace .cover line carries a hit count. trace marks
+    never-executed lines with '>>>>>>'."""
+    if line.startswith(">>>>>>"):
+        return False
+    head, sep, _ = line.partition(":")
+    return bool(sep) and head.strip().isdigit()
+
+
+def reachability(src, name, workdir):
+    """Run src under trace, return (eligible, reachable, unreachable).
+    Returns None if trace produced no .cover file."""
+    path = os.path.join(workdir, name + ".py")
+    with open(path, "w") as f:
+        f.write(src)
+    covdir = os.path.join(workdir, "cov_" + name)
+    subprocess.run([sys.executable, "-m", "trace", "--count",
+                    "--coverdir", covdir, path],
+                   capture_output=True, text=True, cwd=workdir)
+    cover = os.path.join(covdir, name + ".cover")
+    if not os.path.exists(cover):
+        return None
+    with open(cover) as f:
+        hit = set(i for i, ln in enumerate(f, 1) if _cover_hit(ln))
+    sites = eligible_site_lines(src)
+    live = [ln for ln in sites if ln in hit]
+    return len(sites), len(live), len(sites) - len(live)
+
+
 def count_eligible(src):
     n = 0
     for node in ast.walk(ast.parse(src)):
@@ -158,6 +243,41 @@ def main():
             print("  prediction is reported in either direction. Exit 1.")
             return 1
         print("  GATE PASS")
+
+        # ------------------------------------------- GATE 2 (Amendment 3)
+        # Anti-vacuity for the reachability filter. A filter that reports
+        # unreachable sites on every input measures nothing. It must return
+        # NULL on a fully-covered fixture and NON-NULL on one with known
+        # dead sites. Independent of GATE 1; both must pass.
+        print("\n[GATE 2] reachability filter must return both directions")
+        full = reachability(FULL_COV, "full_cov", wd)
+        part = reachability(PARTIAL_COV, "partial_cov", wd)
+        if full is None or part is None:
+            print("\n  GATE 2 FAILED. trace produced no .cover file. No")
+            print("  prediction is reported in either direction. Exit 1.")
+            return 1
+        print(f"  full_cov.py    eligible={full[0]} reachable={full[1]} "
+              f"unreachable={full[2]}")
+        print(f"  partial_cov.py eligible={part[0]} reachable={part[1]} "
+              f"unreachable={part[2]}")
+        null_ok = full[2] == 0
+        signal_ok = part[2] > 0
+        print(f"  returns null on full coverage       : {null_ok} "
+              f"(expected True)")
+        print(f"  returns non-null on partial coverage : {signal_ok} "
+              f"(expected True)")
+        if not (null_ok and signal_ok):
+            print("\n  GATE 2 FAILED. The filter did not return both")
+            print("  directions. No prediction is reported in either")
+            print("  direction. Exit 1.")
+            return 1
+        if (full[0], full[1], full[2]) != (3, 3, 0) or \
+                (part[0], part[1], part[2]) != (6, 3, 3):
+            print("\n  GATE 2 FAILED. Fixture values drifted from the")
+            print("  numbers recorded in Amendment 3 (expected 3/3/0 and")
+            print("  6/3/3). No prediction reported. Exit 1.")
+            return 1
+        print("  GATE 2 PASS")
 
         # --------------------------------------------------- predictions
         print("\n[predictions]")

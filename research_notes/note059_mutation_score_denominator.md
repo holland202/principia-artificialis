@@ -235,3 +235,125 @@ genuine slow-down is not distinguished here and is not claimed either way.
 sequentially rather than in parallel. Does it resolve to KILLED, SURVIVED, or
 genuinely not terminate? A mutation that makes a governance loop run
 unboundedly is a different finding from one it ignores.
+
+## Amendment 3 (2026-08-27) — P7 answered, and this note's own denominator narrowed
+
+**P7 — RESOLVED, in two parts, because the answer depends on how the target
+is invoked.**
+
+Registered: re-run post-fix line 513 alone at a longer timeout, sequentially
+rather than in parallel. KILLED, SURVIVED, or genuinely non-terminating?
+
+Line 513 is `record_crystallization(lv, 0.0, was_rejected=True)`, inside
+`if lv < self.tc.fisher_threshold:`. It is eligible site index **86** (line
+513, col 76, `True -> False`) and the only eligible site on that line.
+
+*Under the invocation `mutation_probe.py` actually uses — no arguments — the
+answer is vacuous.* Three sequential trials at a 900 s timeout: baseline
+rc 1, mutant rc 1, no crash either side, 0.20 s / 0.21 s / 0.45 s. All
+SURVIVED. But the run's own report gives `fisher_fail_count: 0`,
+`total_crystallizations: 0`, `total_rejections: 0`. The branch is never
+taken. The mutation lands on dead code, and dead code always survives.
+
+The 180 s ERROR recorded in Amendment 2 was **load, not slow-down**.
+Sequential runs complete in under half a second. Amendment 2 declined to
+claim either way; the answer is load.
+
+*Under `--sweep` the line executes, and the answer is real.* Baseline rc 0,
+no crash, 467.8 s. Mutant rc 0, no crash, 445.9 s. **SURVIVED on live code.**
+
+That is the finding. Flipping `was_rejected=True → False` records every
+Fisher-rejected crystallization as accepted — inverting the tool's own
+rejection bookkeeping — and the sweep runs to completion with an unchanged
+exit code. The verdict is insensitive to the accounting it reports on.
+
+Recorded without interpretation: the mutant ran ~5% faster than baseline
+(445.9 s vs 467.8 s), directionally consistent with skipping rejection
+bookkeeping, but n = 1 on a thermally-throttling device. Not a claim.
+
+**THE DENOMINATOR IN THIS NOTE'S TITLE WAS NOT THE LAST ONE.**
+
+This note argues that a score reported without its denominator is not
+falsifiable, and takes the denominator to be the count of eligible mutation
+sites. Chasing P7 showed that count is itself insufficient by the note's own
+reasoning: a mutation on a line the target never executes cannot change the
+exit code, so it is recorded SURVIVED by construction, whatever the quality
+of the target's checks.
+
+Measured on `calibrate_governance.py` at `33ad55e`, intersecting
+eligible-site line numbers with lines a traced run actually executed:
+
+| invocation | eligible | reachable | unreachable |
+|---|---|---|---|
+| (no arguments) | 91 | 25 | 66 |
+| `--sweep` | 91 | 30 | 61 |
+
+`mutation_probe.py` invokes its target with no arguments. So every corpus
+number in this note was measured under the 25-site invocation: 66 of 91
+mutants could not fire regardless of what the target does.
+
+Amendment 2's 3.3% is 3 killed / 90 resolved. Over reachable sites it is
+3 / 25 = **12.0%**.
+
+Neither figure is wrong as arithmetic, and the tool computed 3.3% correctly.
+What was wrong is the reading. "The mutation score is flat" was taken as
+evidence about the strength of the target's checks; most of it was evidence
+about which lines a no-argument run touches. P4's refutation is unaffected —
+both commits were scored the same way, and the comparison stands — but the
+*explanation* offered in Amendment 1 for why the score stayed flat ("what
+fraction of a large file's comparisons sit on the verdict path versus in
+unrelated machinery") is now measured rather than speculated: 66 of 91.
+
+The corpus row that changes most is one already flagged as weak.
+`engine_diagnostic_patch.py` @ `33ad55e` produced one eligible mutation and
+0.0%, and the note says at n = 1 that is not evidence of anything. Whether
+that single site is *reachable* was never asked. If it is not, the row is
+not weak evidence — it is none.
+
+**What the tool already said, and what it did not.** `mutation_probe.py`
+prints, after any surviving mutant, that the mutation may have landed
+"somewhere unreachable from the verdict path," and that a low score is a
+place to look rather than a proven defect. That caveat is real, correct, and
+was in the output the whole time. What the tool does not do is **measure**
+it — no coverage pass, no reachable denominator, and `score` computed over
+all sites. The gap here is between a prose warning and a number, and this
+note read past the warning across two amendments. A caveat present in the
+output and absent from the interpretation is a caveat that did not work.
+
+**Anti-vacuity control for the reachability filter.** A filter that reports
+unreachable sites on every input measures nothing. Added as a second gate in
+`scripts/note059_reference.py`, independent of the existing LOUD/GATED gate;
+both must pass or no prediction is reported in either direction:
+
+```
+full_cov.py    eligible=3 reachable=3 unreachable=0
+partial_cov.py eligible=6 reachable=3 unreachable=3
+returns null on full coverage       : True (expected True)
+returns non-null on partial coverage : True (expected True)
+```
+
+Sabotage-proven in both directions: forcing the filter to treat every site
+as reachable fails the signal direction and exits 1; forcing it to treat
+every site as unreachable fails the null direction and exits 1.
+
+**P5 — SHARPENED, still open.** P5 asked whether reporting n alongside the
+score changes any verdict already recorded in this estate. It should now be
+read with the stronger denominator: not "was n reported," but **what
+fraction of each target's eligible sites is reachable under the no-argument
+invocation `mutation_probe.py` uses.** If the 25/91 pattern holds across the
+estate, every published mutation score here carries the same correction. If
+it does not, `calibrate_governance.py` is unusual and this is a finding
+about one file rather than about the tool. NOT RUN.
+
+**P8 — OPEN, NOT RUN.** Is `engine_diagnostic_patch.py`'s single eligible
+site reachable under a no-argument run? One command answers it, and it
+decides whether that corpus row is weak evidence or no evidence.
+
+Reproduce the reachability numbers:
+
+```
+cd sovereign-suite/tools
+python3 -m trace --count --coverdir=$HOME/cov calibrate_governance.py
+# then intersect eligible-site line numbers with the .cover hit lines
+python3 scripts/note059_reference.py   # both gates + fixture values
+```
