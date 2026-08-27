@@ -298,10 +298,22 @@ def main():
         print("     So an exit code keyed to 'any survivor' fires on correct")
         print("     code too, and cannot gate CI without a score threshold.")
 
-        print("\n[P4 -- OPEN, NOT RUN]")
-        print("  Does the LOUD->GATED score shift reproduce on a large target?")
-        print("  calibrate_governance.py, 1071 lines pre-fix / 1125 post-fix.")
-        print("  Not run here: every mutant re-runs a full calibration.")
+        print("\n[P4 -- REFUTED (kept), Amendment 1]")
+        print("  The LOUD->GATED shift does NOT reproduce on")
+        print("  calibrate_governance.py. Scores 2.3% -> 3.3% across the same")
+        print("  commit pair. Re-scored with the crash-detecting probe in")
+        print("  Amendment 2 (P6 RESOLVED): the flat result is real, not an")
+        print("  artifact of the instrument that measured it.")
+        print("\n[P5 -- OPEN, NOT RUN]")
+        print("  What fraction of each estate target\x27s eligible sites is")
+        print("  reachable under the no-argument invocation mutation_probe")
+        print("  uses? On calibrate_governance.py it is 25 of 91. If that")
+        print("  holds estate-wide, every published score needs the same")
+        print("  correction. See Amendment 3.")
+        print("\n[P8 -- OPEN, NOT RUN]")
+        print("  Is engine_diagnostic_patch.py\x27s single eligible site")
+        print("  reachable at all? One command decides whether that corpus")
+        print("  row is weak evidence or none.")
 
         # Per the estate's gate/prediction rule: the GATE failing exits 1
         # (the instrument is untrustworthy, report nothing). A prediction
