@@ -73,6 +73,13 @@ denominator (7), score moves 0.0% → 28.6% across a fix whose ground truth is
 known.** The operator is held fixed; only the exit wiring changed. That is
 affirmative evidence that the loud variant is detectable.
 
+> **⚠ QUALIFIED by Amendment 4 (P11).** This sentence claims more than P1
+> registers. P1 is directional — the score moves above 0.0% at fixed
+> denominator — and that stands. The *magnitude* does not: at n = 7 the 95%
+> Clopper-Pearson intervals are [0.00%, 40.96%] and [3.67%, 70.96%], which
+> overlap across most of their range. The fix is real and was made
+> deliberately; the score is not what establishes it. Kept, not deleted.
+
 The third row is not evidence of anything. 317 lines produced **one** eligible
 mutation. At n = 1, 0.0% and 100.0% are one coin-flip apart.
 
@@ -357,3 +364,112 @@ python3 -m trace --count --coverdir=$HOME/cov calibrate_governance.py
 # then intersect eligible-site line numbers with the .cover hit lines
 python3 scripts/note059_reference.py   # both gates + fixture values
 ```
+
+
+## Amendment 4 — the intervals, and what they bound
+
+**The n = 1 argument this note already makes was qualitative. It is now a
+number.** Above, the third corpus row is dismissed because "at n = 1, 0.0% and
+100.0% are one coin-flip apart." The exact Clopper-Pearson interval for 0/1 is
+[0.00%, 97.50%] — 97.50% of the unit interval. The reasoning was right; the
+bound makes it checkable.
+
+Applying the same instrument to the first two rows costs something. The
+sentence above the registered predictions — "that is affirmative evidence that
+the loud variant is detectable" — claims more than P1 does. P1 registers a
+*directional* result and the corpus satisfies it. The *magnitude* 0.0% → 28.6%
+is not resolvable at n = 7: the intervals are [0.00%, 40.96%] and
+[3.67%, 70.96%] and overlap heavily. P1 stands as registered. The prose
+overstates it, and is marked in place rather than rewritten.
+
+### Why Amendment 4 and not Amendment 3
+
+P5 already forward-references Amendment 3 as the reachability correction —
+what fraction of eligible sites the no-argument invocation actually reaches,
+measured at 25 of 91 on `calibrate_governance.py`. That run has not happened.
+Resolving an existing forward reference to different work would be exactly the
+drift this note exists to prevent, so intervals take the next free slot and
+Amendment 3 stays reserved.
+
+### Measured intervals
+
+n is the count of **eligible** mutation sites, the denominator as published.
+
+| target | k/n | score | 95% CI | width |
+|---|---|---|---|---|
+| `engine_diagnostic_patch.py` | 0/1 | 0.00% | [0.00%, 97.50%] | 97.50% |
+| `verify_quantum_claims` pre-fix `a1c990d` | 0/7 | 0.00% | [0.00%, 40.96%] | 40.96% |
+| `verify_quantum_claims` post-fix `33ad55e` | 2/7 | 28.57% | [3.67%, 70.96%] | 67.29% |
+| `calibrate_governance` pre-fix `a1c990d` | 2/87 | 2.30% | [0.28%, 8.06%] | 7.78% |
+| `calibrate_governance` post-fix `33ad55e` | 3/90 | 3.33% | [0.69%, 9.43%] | 8.74% |
+
+### Registered predictions
+
+P1–P8 are claimed above; these continue the series.
+
+- **P9 — CONFIRMED.** The n = 1 interval spans more than 90% of [0,1].
+  Measured width 97.50%. This is P2's claim restated as a measurement.
+- **P10 — CONFIRMED.** The `calibrate_governance` pre/post intervals overlap:
+  [0.28%, 8.06%] vs [0.69%, 9.43%]. P4's refutation survives at 95%; the
+  2.3% → 3.3% shift is not detectable.
+- **P11 — CONFIRMED.** The `verify_quantum_claims` pre/post intervals overlap:
+  [0.00%, 40.96%] vs [3.67%, 70.96%]. This is the prediction that qualifies
+  the prose sentence above P1. It does **not** refute P1, which registers a
+  directional claim the corpus satisfies.
+- **P12 — OPEN, NOT RUN.** Recompute with a cluster bootstrap that resamples
+  whole functions rather than individual mutants. Registered before running:
+  no verdict above changes, because correlation widens intervals and every
+  current verdict is an overlap.
+
+### Anti-vacuity control
+
+Four gates, all of which can fail, proven by `--sabotage-a4` — which collapses
+every interval to a point, fails all four, exits 1, and prints no verdicts:
+
+- **G1** — for k = 0 the upper bound is exactly 1 − (α/2)^(1/n), and for k = n
+  the lower bound is exactly (α/2)^(1/n). Real expected values, not a
+  self-comparison.
+- **G2** — the returned bounds must satisfy their defining tail equations.
+- **G3** — the interval must be wide at n = 1 **and** tight at n = 1000. An
+  instrument that only ever returns wide intervals proves nothing.
+- **G4** — the overlap test must return False on a separated pair
+  (2/87 vs 60/90). Without this, "the intervals overlap" is a log line.
+
+G4 is the one that matters. Every verdict in this amendment is an overlap, so
+a test incapable of reporting non-overlap would make all of them vacuous.
+
+### Sensitivity to P5 (assumption, not measurement)
+
+A killed mutant is necessarily reachable — it changed the verdict, so it
+executed. P5's correction therefore shrinks n and leaves k fixed. Applying the
+25/91 ratio to survivors only:
+
+| target | k/n | score | 95% CI |
+|---|---|---|---|
+| `calibrate_governance` pre-fix | 2/25 | 8.00% | [0.98%, 26.03%] |
+| `calibrate_governance` post-fix | 3/27 | 11.11% | [2.35%, 29.16%] |
+
+Still overlapping, by a wider margin. The direction is fixed by arithmetic:
+smaller n gives wider intervals, so every overlap verdict here can only
+strengthen when P5 runs. A non-overlap would have been the fragile one.
+
+### Stated limitation
+
+Clopper-Pearson assumes independent Bernoulli trials. Mutants inside one
+function share a code path, so kills are positively correlated and these
+intervals are anti-conservative — too narrow. Every overlap reported is a
+lower bound on the true overlap. Same direction as the P5 correction: both
+widen.
+
+### Reproduction
+
+`python3 scripts/note059_reference.py` — 4/4 Amendment 4 gates, exit 0.
+`python3 scripts/note059_reference.py --sabotage-a4` — 4/4 fail, exit 1.
+
+Standard library only (`math.comb`), no NumPy. Verified bit-identical on
+x86_64/glibc/py3.12 and aarch64/Termux/py3.14; every figure above matched
+across both architectures. The stdlib-only choice was deliberate: a sibling
+experiment in this program lost a statistic to an unstable sort, and exact
+integer arithmetic removes that class.
+
+Related: [[note044_circularity_test]], [[note036_verified_models_drift_ledgers]]

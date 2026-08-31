@@ -216,6 +216,170 @@ def score(name, src, workdir):
             "survived": survived, "score": pct}
 
 
+
+from math import comb as _a4_comb
+
+# ---------------------------------------------------------------------------
+# AMENDMENT 4 -- Clopper-Pearson intervals on mutation scores.
+#
+# NOT Amendment 3: P5 above already forward-references Amendment 3 as the
+# REACHABILITY correction (25 of 91 eligible sites on calibrate_governance).
+# Resolving that reference to different work would be the quiet drift this
+# note exists to prevent, so intervals take the next free slot.
+#
+# Predictions P9-P12. P1-P8 are claimed above.
+# Stdlib only (math.comb). Device-verified bit-identical on x86_64/py3.12
+# and aarch64/Termux/py3.14.
+# ---------------------------------------------------------------------------
+
+A4_ALPHA = 0.05
+A4_SABOTAGE = "--sabotage-a4" in sys.argv
+
+
+def _a4_tail_ge(k, n, p):
+    return sum(_a4_comb(n, i) * p**i * (1.0 - p)**(n - i)
+               for i in range(k, n + 1))
+
+
+def _a4_tail_le(k, n, p):
+    return sum(_a4_comb(n, i) * p**i * (1.0 - p)**(n - i)
+               for i in range(0, k + 1))
+
+
+def _a4_bisect(fn, target, lo, hi, iters=200):
+    rising = fn(hi) > fn(lo)
+    for _ in range(iters):
+        mid = (lo + hi) / 2.0
+        if (fn(mid) < target) == rising:
+            lo = mid
+        else:
+            hi = mid
+    return (lo + hi) / 2.0
+
+
+def a4_cp(k, n, alpha=A4_ALPHA):
+    """Exact two-sided Clopper-Pearson interval."""
+    if n <= 0 or not 0 <= k <= n:
+        raise ValueError("bad k/n")
+    lo = 0.0 if k == 0 else _a4_bisect(lambda p: _a4_tail_ge(k, n, p),
+                                       alpha / 2.0, 0.0, 1.0)
+    hi = 1.0 if k == n else _a4_bisect(lambda p: _a4_tail_le(k, n, p),
+                                       alpha / 2.0, 0.0, 1.0)
+    if A4_SABOTAGE:
+        lo = hi = k / n
+    return lo, hi
+
+
+def _a4_overlaps(a, b):
+    return a[0] <= b[1] and b[0] <= a[1]
+
+
+A4_CASES = [
+    ("engine_diagnostic_patch.py",              0,   1),
+    ("verify_quantum_claims pre-fix  a1c990d",  0,   7),
+    ("verify_quantum_claims post-fix 33ad55e",  2,   7),
+    ("calibrate_governance  pre-fix  a1c990d",  2,  87),
+    ("calibrate_governance  post-fix 33ad55e",  3,  90),
+]
+
+A4_REACH_NUM, A4_REACH_DEN = 25, 91
+
+
+def amendment4():
+    """Returns True if all four gates pass. Prints P9-P12 either way."""
+    print("\n" + "=" * 70)
+    print("[AMENDMENT 4 -- Clopper-Pearson intervals, P9-P12]")
+    print("Amendment 3 is RESERVED for the reachability run P5 promises.")
+    if A4_SABOTAGE:
+        print("*** --sabotage-a4 ACTIVE: intervals collapsed to points ***")
+
+    gates = []
+    ok = True
+    for n in (1, 7, 10, 87):
+        if (abs(a4_cp(0, n)[1] - (1.0 - (A4_ALPHA / 2.0) ** (1.0 / n))) > 1e-9
+                or abs(a4_cp(n, n)[0] - (A4_ALPHA / 2.0) ** (1.0 / n)) > 1e-9):
+            ok = False
+    gates.append(("G1 closed-form agreement (k=0 and k=n)", ok))
+
+    lo, hi = a4_cp(3, 20)
+    gates.append(("G2 bounds satisfy the defining tail equations",
+                  abs(_a4_tail_ge(3, 20, lo) - A4_ALPHA / 2.0) < 1e-9
+                  and abs(_a4_tail_le(3, 20, hi) - A4_ALPHA / 2.0) < 1e-9))
+
+    w, t = a4_cp(0, 1), a4_cp(500, 1000)
+    gates.append(("G3 anti-vacuity: wide at n=1 AND tight at n=1000",
+                  (w[1] - w[0]) > 0.90 and (t[1] - t[0]) < 0.10))
+
+    gates.append(("G4 anti-vacuity: overlap returns False when separated",
+                  (not _a4_overlaps(a4_cp(2, 87), a4_cp(60, 90)))
+                  and _a4_overlaps(a4_cp(2, 87), a4_cp(3, 90))))
+
+    for name, g in gates:
+        print("  [%s] %s" % ("PASS" if g else "FAIL", name))
+    if not all(g for _, g in gates):
+        print("  GATE FAILURE -- no Amendment 4 verdicts reported.")
+        return False
+
+    print("\n  INTERVALS (n = eligible sites, as published)")
+    iv = {}
+    for name, k, n in A4_CASES:
+        lo, hi = a4_cp(k, n)
+        iv[name] = (lo, hi)
+        print("    %-38s %2d/%-3d = %6.2f%%  95%% CI [%6.2f%%, %6.2f%%]"
+              % (name, k, n, 100.0 * k / n, 100 * lo, 100 * hi))
+
+    lo, hi = iv["engine_diagnostic_patch.py"]
+    p9 = (hi - lo) > 0.90
+    print("\n  P9  n=1 interval spans >90%% of [0,1]: width %.2f%% -> %s"
+          % (100 * (hi - lo), "CONFIRMED" if p9 else "REFUTED"))
+    print("      P2's claim restated as an interval, not an assertion.")
+
+    a = iv["calibrate_governance  pre-fix  a1c990d"]
+    b = iv["calibrate_governance  post-fix 33ad55e"]
+    p10 = _a4_overlaps(a, b)
+    print("  P10 calibrate_governance pre/post OVERLAP: "
+          "[%.2f%%, %.2f%%] vs [%.2f%%, %.2f%%] -> %s"
+          % (100 * a[0], 100 * a[1], 100 * b[0], 100 * b[1],
+             "CONFIRMED" if p10 else "REFUTED"))
+    print("      P4's refutation survives at 95%: no detectable shift.")
+
+    a = iv["verify_quantum_claims pre-fix  a1c990d"]
+    b = iv["verify_quantum_claims post-fix 33ad55e"]
+    p11 = _a4_overlaps(a, b)
+    print("  P11 verify_quantum_claims pre/post OVERLAP: "
+          "[%.2f%%, %.2f%%] vs [%.2f%%, %.2f%%] -> %s"
+          % (100 * a[0], 100 * a[1], 100 * b[0], 100 * b[1],
+             "CONFIRMED" if p11 else "REFUTED"))
+    print("      RETRACTION: the 0.0% -> 28.6% jump is not resolvable at")
+    print("      n=7. note057's 'affirmative evidence that the loud variant")
+    print("      is detectable' does not stand as a mutation-score claim.")
+    print("      Ground truth untouched -- defect and fix were both made")
+    print("      deliberately -- only the instrument's resolution is at issue.")
+
+    print("\n  SENSITIVITY TO P5 (assumption, NOT a measurement)")
+    print("    A killed mutant is necessarily reachable, so P5's correction")
+    print("    shrinks n and leaves k fixed. Applying %d/%d to survivors:"
+          % (A4_REACH_NUM, A4_REACH_DEN))
+    ratio = A4_REACH_NUM / A4_REACH_DEN
+    for name, k, n in A4_CASES[3:]:
+        nr = max(k, k + round((n - k) * ratio))
+        lo, hi = a4_cp(k, nr)
+        print("      %-36s %2d/%-3d = %6.2f%%  95%% CI [%6.2f%%, %6.2f%%]"
+              % (name, k, nr, 100.0 * k / nr, 100 * lo, 100 * hi))
+    print("    Smaller n gives WIDER intervals, so every overlap verdict")
+    print("    above can only strengthen when P5 runs.")
+
+    print("\n  LIMITATION: Clopper-Pearson assumes independent trials.")
+    print("    Mutants in one function share a code path, so kills are")
+    print("    correlated and these intervals are too NARROW. Every overlap")
+    print("    reported is a lower bound on the true overlap.")
+
+    print("\n  [P12 -- OPEN, NOT RUN] Recompute with a cluster bootstrap")
+    print("    resampling whole FUNCTIONS. Registered: no verdict changes,")
+    print("    because correlation widens intervals and all verdicts overlap.")
+    return True
+
+
 def main():
     tmp = os.environ.get("TMPDIR") or os.path.join(os.path.expanduser("~"), "tmp")
     os.makedirs(tmp, exist_ok=True)
@@ -319,9 +483,18 @@ def main():
         # (the instrument is untrustworthy, report nothing). A prediction
         # being REFUTED exits 0 -- refutations are kept findings, not build
         # failures. Getting this backwards deletes published findings.
-        print(f"\nP2 CONFIRMED, P3 REFUTED (kept). Gate passed, so the")
-        print(f"instrument is trusted and both verdicts stand. Exit 0.")
-        return 0
+        a4_ok = amendment4()
+
+        # Per the estate's gate/prediction rule: the GATE failing exits 1
+        # (the instrument is untrustworthy, report nothing). A prediction
+        # being REFUTED exits 0 -- refutations are kept findings, not build
+        # failures. Getting this backwards deletes published findings.
+        print("\nP2 %s, P3 %s. Amendment 4 gate: %s."
+              % ("CONFIRMED" if p2 else "REFUTED",
+                 "CONFIRMED" if p3 else "REFUTED (kept)",
+                 "PASS" if a4_ok else "FAIL"))
+        print("Verdicts stand where the gate passed.")
+        return 0 if a4_ok else 1
 
 
 if __name__ == "__main__":
