@@ -140,3 +140,145 @@ Numbers in this section were pasted from tool output, not paraphrased.
 ---
 
 *Vincit Omnia Veritas.*
+
+---
+
+## Amendment 1 — 2026-09-06. P6 registered concretely, before any repository is fetched.
+
+P6 was registered in this note as an unrun door: *within human-authored
+repositories, those without CI show a higher finding rate than those with CI.*
+It is the stratum that separates authorship from review, and until it runs, P5
+stays confounded and must not be cited as evidence about AI-authored code.
+
+Registering it properly requires fixing three things first, because each is a
+place where a result could be tuned after the fact.
+
+### Two defects in the original control arm, recorded
+
+**The control repositories were never named.** Neither this note nor
+`scripts/note052_reference.py` lists the ten repositories behind 0/347. The
+arm is not reconstructible by a reader or by its own authors.
+
+**The instrument no longer exists.** `vacuity_scan.py` was a clean-room
+reimplementation built in a sandbox and was never committed anywhere. The
+0/347 figure cannot be reproduced with any published tool.
+
+Consequence: **0/347 is retained as history and is not used as a baseline
+here.** Both arms are re-measured. The old number stays in the note.
+
+### Instrument, pinned
+
+`vacuity_lint.py` from github.com/holland202/vacuity_lint.py at commit
+`a468d2c`, the public tool, pinned by SHA. Its selftest must report its own
+denominator before any scan is accepted; a run that does not print the
+expected check count is discarded rather than interpreted.
+
+### Selection rule, fixed before fetching
+
+A candidate pool of human-authored Python repositories is written into this
+amendment **before any clone**. The pool is chosen for being human-authored,
+Python-majority, and outside this estate. That choice is by hand, which is a
+weakness and is stated as one.
+
+**Stratum membership is not chosen. It is measured after cloning:** a
+repository lands in stratum A if `.github/workflows/` contains at least one
+`.yml` or `.yaml` file, and in stratum B otherwise. A candidate that turns out
+to sit in the other stratum moves; it is not dropped. No repository is removed
+from the pool after its finding count is known. If the pool splits worse than
+3 repositories in either stratum, the comparison is reported as
+underpowered and no rate claim is made.
+
+Exclusions fixed now: forks, repositories authored by holland202, `examples/`
+directories, and `conftest.py` — the last two being the precision defects
+hand-identified on 2026-07-27.
+
+### P6 — restated so it can be precisely wrong
+
+**Predicted:** the true-positive rate per verification-shaped entry point is
+strictly higher in stratum B (no CI) than in stratum A (CI), by at least 5
+percentage points.
+
+Every finding in both strata is hand-checked and classified true or false
+positive before any rate is computed, as on 2026-07-27, when all three control
+findings turned out to be false positives.
+
+Refuted if the rates are equal, if A exceeds B, or if the gap is under 5
+points. A refutation would say that review process does not explain the
+estate's gap, which strengthens P5's authorship reading. Confirmation says the
+opposite: that the 2026-07-27 comparison measured CI, not authorship, and P5
+should be read down accordingly.
+
+**Both outcomes damage a claim someone might want to make. That is the point
+of running it.**
+
+### P8 — the denominator, which is what actually mattered last time
+
+The headline of this note is that verification-shaped files per repository ran
+34.7 in the control against 1.2 in the estate.
+
+**Predicted:** stratum B's density falls between the two, strictly below
+stratum A's and strictly above the estate's 1.2.
+
+Refuted if stratum B matches either end. If B is as dense as A, low density is
+not a property of unreviewed code and the 28x gap is about something else
+entirely.
+
+### P9 — unrun. The door.
+
+Every repository in both strata is human-authored. The estate is
+AI-assisted. No stratum in this design isolates authorship with review held
+constant, and none is proposed here, because the obvious construction —
+AI-assisted repositories with CI — requires a population this project does not
+have access to and cannot sample without bias.
+
+### The candidate pool, written before any clone
+
+Twenty repositories. Chosen for being human-authored, Python-majority, and
+outside this estate. Listed here in the amendment so that the pool is fixed in
+git history before a single `git clone` runs.
+
+Stratum is NOT assigned below. Each repository is cloned, `.github/workflows/`
+is inspected, and membership follows that measurement. The two columns of the
+pool are the two sampling frames I drew from, not the two strata — a
+"expected-CI" repository that turns out to have no workflows moves to stratum
+B and is kept.
+
+**Frame 1 — mature, multi-maintainer projects (CI expected)**
+
+1. benoitc/gunicorn
+2. pallets/jinja
+3. psf/requests
+4. celery/celery
+5. pallets/click
+6. kennethreitz/records
+7. mitsuhiko/rye
+8. pyca/cryptography
+9. tqdm/tqdm
+10. python-attrs/attrs
+
+**Frame 2 — smaller, single-maintainer utilities (CI not expected)**
+
+11. kennethreitz/maya
+12. kennethreitz/pipenv-old
+13. jsvine/pdfplumber
+14. mkorpela/pabot
+15. dbader/schedule
+16. jd/tenacity
+17. lepture/mistune
+18. bslatkin/effectivepython
+19. amoffat/sh
+20. gruns/furl
+
+**Weakness, stated rather than hidden.** This list is hand-chosen by Claude
+(Anthropic) from recall of well-known Python projects. `api.github.com`
+returns 403 from the sandbox that will run the scan, so no star-ranked or
+otherwise mechanical sampler was available. Frame 2 in particular is a guess
+about which projects lack CI, and that guess is the weakest joint in the
+design. It is mitigated, not repaired, by measuring stratum membership after
+the clone and by refusing to drop any repository once its finding count is
+known.
+
+**Fixed now, before fetching:** a repository that 404s, is a fork, or contains
+no Python file is recorded as unavailable with the reason and is NOT replaced.
+Replacing a dead entry with a live one after seeing the others' results is a
+selection channel and is therefore closed in advance. The pool can only shrink.
