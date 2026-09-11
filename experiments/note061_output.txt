@@ -1,0 +1,65 @@
+======================================================================
+E16 (note061) -- does a table of contents carry retrieval signal?
+======================================================================
+seed                    : 20260911
+narrowing width k       : 5
+chunk size              : 800
+corpus commit (pinned)  : e9b4e68
+corpus manifest sha256  : 6665a4ace2962321...
+notes                   : 83
+notes absent from index : 3
+notes with no eligible sentence (excluded): 1
+queries                 : 82
+
+Recall@1, raw counts with Clopper-Pearson 95% intervals
+  RANDOM       1/82     1.22%   [  0.03%,   6.61%]
+  FLAT        37/82    45.12%   [ 34.10%,  56.51%]
+  TOC         36/82    43.90%   [ 32.96%,  55.30%]
+  TOC_SHUF     3/82     3.66%   [  0.76%,  10.32%]
+
+  chance = 1/83 = 1.20%
+
+----------------------------------------------------------------------
+P0  ANTI-VACUITY GATE
+  P0a RANDOM interval contains chance          : PASS
+  P0b FLAT interval lies above RANDOM estimate : PASS
+
+P5  TOC > TOC_BLANK   [Amendment 1 -- expected near-trivial]
+  TOC_BLANK    1/82     1.22%   [  0.03%,   6.61%]
+  43.90% vs 1.22%  ->  CONFIRMED   [see Amendment 2: uninformative by construction]
+
+P6/P7  narrowing width sweep   [Amendment 2]
+   k=1     45/82   54.88%  <- best
+   k=2     35/82   42.68%
+   k=5     36/82   43.90%
+   k=10    35/82   42.68%
+   k=20    35/82   42.68%
+   k=40    36/82   43.90%
+   k=83    37/82   45.12%
+  P6 curve not monotonically increasing : CONFIRMED
+  P7 best k does not beat FLAT          : REFUTED (kept)   (best 45/82 at k=1 vs FLAT 37/82)
+
+P1  TOC > FLAT
+  43.90% vs 45.12%  ->  REFUTED (kept)
+
+P2  TOC > TOC_SHUF   [LOAD-BEARING]
+  43.90% vs 3.66%  intervals disjoint  ->  CONFIRMED
+
+P3  TOC_SHUF does not exceed FLAT
+  3.66% vs 45.12%  ->  CONFIRMED
+
+======================================================================
+READING: P1 REFUTED at the registered k=5, and P7 REFUTED too.
+The ToC arm loses to flat retrieval at k=5 but BEATS it at
+k=1. The refutation of P1 was an artifact of a narrowing width
+this author fixed in advance and fixed badly.
+
+NOT ESTABLISHED: k=1 is the best of 7 widths tried, and its
+interval overlaps FLAT's. Best-of-7 selection inflates any
+apparent gain. This is a lead, not a result.
+
+P2 and P5 are both near-trivial by construction (Amendment 2)
+and are kept, marked, and not read as support.
+
+P4 left unrun: paraphrased rather than extracted queries.
+======================================================================
