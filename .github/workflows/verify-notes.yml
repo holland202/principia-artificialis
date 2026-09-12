@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - run: pip install numpy scipy matplotlib
@@ -13,5 +15,9 @@ jobs:
           set -e
           for f in scripts/note*_reference.py; do
             echo "=== $f ==="
-            timeout 900 python "$f"
+            case "$f" in
+              scripts/note060_reference.py) timeout 900 python "$f" --selftest ;;
+              scripts/note061_reference.py) timeout 900 python "$f" . ;;
+              *) timeout 900 python "$f" ;;
+            esac
           done
