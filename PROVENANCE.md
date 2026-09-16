@@ -23,22 +23,22 @@ The repository maintains its own status vocabulary for notes (Verified, Draft, S
 |---------------|--------------------------------------------------------------|
 | IMPLEMENTED   | Notes and reference scripts exist                            |
 | EXPERIMENTAL  | Numerical claims backed by runnable code in some notes       |
-| VERIFIED      | “Verified” notes claim reference code prints every number; this is an internal designation, not independent external verification |
+| VERIFIED      | Internal designation that reference code prints claimed numbers; not independent external verification |
 | REPRODUCED    | No independent external reproduction campaign is recorded    |
 | REFUTED       | Notes that contain registered predictions that failed are retained and marked |
 | UNRESOLVED    | Many notes remain Draft or Speculative                       |
 | NOT TESTED    | Large portions of the speculative material                   |
 
-Internal “Verified” status must not be read as independent scientific validation.
+Internal Verified status must not be read as independent scientific validation.
 
 ## Experimental / Note Lineage
 
 - Notes are the primary unit.
-- A subset (approximately note038–note058 and others) ship with reference scripts intended to print the numbers claimed.
+- A subset ship with reference scripts intended to print the numbers claimed.
 - At least seven notes contain refuted-and-kept claims.
-- Status-label drift exists (more distinct status strings in use than the documented core vocabulary); this is acknowledged in the README.
+- Status-label drift exists and is acknowledged in the README.
 
-A centralized machine-readable experiment/note registry beyond the existing NOTES_INDEX.md and scripts is not yet present.
+A centralized machine-readable registry beyond existing index and scripts is not yet present.
 
 ## Independent Reproduction
 
@@ -46,25 +46,17 @@ None recorded as external independent reproduction.
 
 ## Refutation / Failure Record
 
-Refutations are first-class. Notes that register a prediction and later observe failure keep the original claim visible and mark the refutation. This policy is part of the repository’s explicit design.
+Refutations are first-class. Notes that register a prediction and later observe failure keep the original claim visible and mark the refutation.
 
 ## Corrections
 
-Corrections to reference scripts or note text are expected to leave the history of the error visible where the error was load-bearing.
+Corrections are expected to leave the history of load-bearing errors visible.
 
 ## Scope of Evidence
 
 This repository contains research notes, some accompanied by executable reference code.
 
-It does **not** establish:
-
-- that any particular mathematical claim about artificial intelligence is true beyond the numerical checks present in the reference scripts
-- recursive self-improvement
-- general intelligence or autonomy
-- independent peer-reviewed validation
-- that AI-assisted notes carry the same epistemic weight as human-only work without further scrutiny
-
-Successful execution of a reference script confirms that the script prints the claimed numbers under the conditions of the run; it does not by itself establish broader scientific conclusions.
+It does not establish recursive self-improvement, general intelligence, autonomy, or independent peer-reviewed validation of the mathematical claims beyond the numerical checks in the reference scripts.
 
 ## Relationship to Other Repositories
 
