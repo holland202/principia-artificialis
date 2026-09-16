@@ -1,10 +1,19 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
-title: "Principia Artificialis: Mathematics of Artificial Thought"
+message: "If you use Principia Artificialis in your work, please cite it as below."
+title: "Principia Artificialis: An open research program on the mathematical foundations of artificial intelligence"
 authors:
-  - family-names: Holland
-    given-names: Chad
-repository-code: "https://github.com/holland202/Principia-Artificialis"
-url: "https://github.com/holland202/Principia-Artificialis"
-date-released: "2026-07-15"
+  - family-names: "Holland"
+    given-names: "Chad"
+    alias: "holland202"
 version: "0.1.0"
+date-released: "2026-07-15"
+url: "https://github.com/holland202/principia-artificialis"
+repository-code: "https://github.com/holland202/principia-artificialis"
+license: MIT
+keywords:
+  - information geometry
+  - artificial intelligence foundations
+  - research notes
+  - verification
+  - open research
+  - refutation-preserving
