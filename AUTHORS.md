@@ -2,34 +2,40 @@
 
 ## Origin
 
-**Chad Holland** (`holland202`)
+Chad Holland (GitHub: holland202)
 
-Supported by repository history: creation of the research program, note template and contribution process, indexing tooling, and overall direction.
+Repository history and the public record establish Chad Holland as the originator of the Principia Artificialis research program and the primary human author of the repository structure, guiding principles, and many of the notes.
 
 ## Contribution Categories
 
-| Category | Attribution | Basis |
-|----------|-------------|-------|
-| ORIGIN | Chad Holland | Repository and research-program creation |
-| CONCEPT | Chad Holland (primary); material conceptual input from named AI systems on individual notes | Framing of the program as a checkable, refutation-preserving scientific record |
-| IMPLEMENTATION | Chad Holland (tooling, templates, CI); AI systems (note content and reference scripts as credited in individual notes) | Scripts, index generation, verification workflow |
-| EXPERIMENT | Per-note | Individual notes declare their own experimental or computational status |
-| ANALYSIS | Per-note / mixed | Human and AI contributions as labeled in notes |
-| RESULT | Observed computational outcomes only | Not claims of general truth |
-| REPRODUCTION | None recorded at repository level | No independent third-party reproduction entries |
-| REFUTATION | Documented per-note | At least seven notes contain registered predictions that failed and were retained |
-| MAINTENANCE | Chad Holland | Index, templates, contribution norms, drift tracking |
+Based on repository history and available evidence:
+
+| Category          | Attribution                                                                 |
+|-------------------|-----------------------------------------------------------------------------|
+| ORIGIN            | Chad Holland                                                                |
+| CONCEPT           | Chad Holland (framework, status vocabulary, refutation-preserving policy)   |
+| IMPLEMENTATION    | Chad Holland (repository infrastructure, scripts, CI)                       |
+| EXPERIMENT / NOTE | Mixed: human-authored notes and notes produced with material AI assistance  |
+| ANALYSIS          | Mixed                                                                       |
+| RESULT            | Observed numerical results from reference scripts; status labels as recorded |
+| REPRODUCTION      | None recorded as independent external reproduction                          |
+| REFUTATION        | Multiple refuted-and-kept claims are retained in the notes                  |
+| MAINTENANCE       | Chad Holland                                                                |
 
 ## Other Human Contributors
 
-None identified from repository history beyond the originator.
+No other human contributors are established by the repository history at the time of this document.
 
-## Automated / AI Assistance
+## Automated Assistance
 
-This repository explicitly credits AI systems by name (Claude, Grok, Kimi, ChatGPT, Perplexity, and others as they appear) for material contributions to individual notes and reference code.
+The repository explicitly credits material contributions from AI systems (Claude, Grok, Kimi, ChatGPT, Perplexity and others) in the generation of research notes. These contributions are documented in the notes themselves and in the README.
 
-AI systems are **not** listed as human authors. Their contributions are acknowledged in the relevant notes and in program-level documentation. Judgment criterion stated in the project: whether the numbers hold.
+Per the governing provenance rules of this work:
 
-## Scope of Attribution
+- AI systems are **not** listed as human authors.
+- Their assistance is recorded separately so that the distinction between human origin and automated assistance remains clear.
+- Claims are judged by whether the accompanying reference code prints the numbers asserted, not by the identity of the generating system.
 
-Attribution is limited to what the repository history, note labels, and available artifacts support. No additional human contributors are inferred. AI contributions are documented separately from human authorship.
+## Scope Note
+
+Authorship and assistance statements are limited to what the repository history and documentation support. They do not constitute claims of scientific priority or independent verification of any mathematical result.

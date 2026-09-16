@@ -4,73 +4,68 @@
 
 - **Repository**: holland202/principia-artificialis
 - **Canonical URL**: https://github.com/holland202/principia-artificialis
-- **Purpose**: Open research program exploring mathematical foundations of artificial intelligence (information geometry, topology, dynamical systems, thermodynamics, and related methods). Living scientific record of notes, protocols, simulations, and computed figures.
-- **License**: MIT
+- **Purpose**: An open research program exploring mathematical foundations relevant to artificial intelligence (information geometry, topology, dynamical systems, thermodynamics, etc.), organized as numbered notes with explicit epistemic status labels and, where possible, executable reference code.
+- **License**: MIT (see LICENSE)
 
 ## Origin
 
-Initiated by Chad Holland. The repository is structured as a human-directed research program that systematically incorporates and credits AI-generated material under explicit contribution norms.
+Chad Holland initiated the program. Repository history supports this attribution.
 
 ## Contributions
 
-See `AUTHORS.md`. Human origin and maintenance are attributed to Chad Holland. Material note-level and script-level contributions from named AI systems are acknowledged in situ and are not re-attributed as human authorship.
+See AUTHORS.md. Human origin and infrastructure map to Chad Holland. Substantial note content has been produced with material AI assistance, which is credited by system name in the repository documentation.
 
 ## Research Status Distinction
 
-The project maintains (and currently drifts from) a documented vocabulary of statuses. At the time of this provenance document the README records substantial label drift (many distinct status strings in use).
+The repository maintains its own status vocabulary for notes (Verified, Draft, Speculative, and additional labels in actual use). Mapping to the common provenance vocabulary:
 
-Repository-level statuses used here:
+| Common Status | Meaning relative to this repository                          |
+|---------------|--------------------------------------------------------------|
+| IMPLEMENTED   | Notes and reference scripts exist                            |
+| EXPERIMENTAL  | Numerical claims backed by runnable code in some notes       |
+| VERIFIED      | “Verified” notes claim reference code prints every number; this is an internal designation, not independent external verification |
+| REPRODUCED    | No independent external reproduction campaign is recorded    |
+| REFUTED       | Notes that contain registered predictions that failed are retained and marked |
+| UNRESOLVED    | Many notes remain Draft or Speculative                       |
+| NOT TESTED    | Large portions of the speculative material                   |
 
-| Status | Meaning |
-|--------|---------|
-| IMPLEMENTED | Notes, scripts, and tooling exist |
-| EXPERIMENTAL / DRAFT | Argued or partially computed |
-| VERIFIED | Reference code prints every claimed number (local verification) |
-| REPRODUCED | No independent third-party reproductions recorded at repo level |
-| REFUTED | Registered prediction failed; note retained with mark |
-| SPECULATIVE | Explicitly labeled analogy or unestablished claim |
-| UNRESOLVED / UNMAPPABLE | Status labels that do not map cleanly to the documented vocabulary |
-| NOT TESTED | Claims without corresponding computational check |
+Internal “Verified” status must not be read as independent scientific validation.
 
-**Verified (local reference-script check) does not mean independently scientifically validated.**
+## Experimental / Note Lineage
 
-## Experimental Lineage
+- Notes are the primary unit.
+- A subset (approximately note038–note058 and others) ship with reference scripts intended to print the numbers claimed.
+- At least seven notes contain refuted-and-kept claims.
+- Status-label drift exists (more distinct status strings in use than the documented core vocabulary); this is acknowledged in the README.
 
-Experiments and claims are primarily organized as numbered research notes.
-Significant properties of the current record (per project README):
-
-- Multiple notes contain registered predictions that failed; those notes remain published with the refutation marked.
-- A subset of notes are backed by runnable reference scripts that print the claimed numbers.
-- Status label drift is acknowledged as a real gap between documented vocabulary and actual files.
-
-Individual experiment-level fields (parent revision, seeds, artifact hashes, etc.) are recorded inside the relevant notes and scripts rather than centralized here. Future work may add a machine-readable index.
+A centralized machine-readable experiment/note registry beyond the existing NOTES_INDEX.md and scripts is not yet present.
 
 ## Independent Reproduction
 
-No independent third-party reproduction records are present at the repository level.
+None recorded as external independent reproduction.
 
 ## Refutation / Failure Record
 
-Refutations are first-class:
-
-- Notes that contain failed registered predictions are retained and marked.
-- At least seven such cases are recorded in the project summary.
-- Methodological self-corrections (including bugs discovered while writing notes about failure modes) are documented inside the affected notes.
+Refutations are first-class. Notes that register a prediction and later observe failure keep the original claim visible and mark the refutation. This policy is part of the repository’s explicit design.
 
 ## Corrections
 
-Corrections appear inside notes or in the drift ledger. The project explicitly prefers keeping the failure visible over silent replacement.
+Corrections to reference scripts or note text are expected to leave the history of the error visible where the error was load-bearing.
 
 ## Scope of Evidence
 
-This repository is a living research record of mathematical and computational exploration.
+This repository contains research notes, some accompanied by executable reference code.
 
 It does **not** establish:
 
-- that any particular mathematical framework has been proven to describe intelligence
+- that any particular mathematical claim about artificial intelligence is true beyond the numerical checks present in the reference scripts
 - recursive self-improvement
 - general intelligence or autonomy
-- that locally verified numerical claims have been independently reproduced by third parties
-- that speculative or draft notes carry the same weight as verified ones
+- independent peer-reviewed validation
+- that AI-assisted notes carry the same epistemic weight as human-only work without further scrutiny
 
-The organizing hypothesis (that intelligence may be measurable in the manner of physical quantities) is explicitly framed as a bet under test, not an established result.
+Successful execution of a reference script confirms that the script prints the claimed numbers under the conditions of the run; it does not by itself establish broader scientific conclusions.
+
+## Relationship to Other Repositories
+
+This repository functions as a hypothesis and theory laboratory. Instrument repositories and any higher-level research-operating layer remain separate.

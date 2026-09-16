@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use Principia Artificialis in your work, please cite it as below."
+message: "If you use this work, please cite it as below."
 title: "Principia Artificialis: An open research program on the mathematical foundations of artificial intelligence"
 authors:
   - family-names: "Holland"
@@ -17,3 +17,4 @@ keywords:
   - verification
   - open research
   - refutation-preserving
+type: software
