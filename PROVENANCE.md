@@ -5,7 +5,7 @@
 - **Repository**: holland202/principia-artificialis
 - **Canonical URL**: https://github.com/holland202/principia-artificialis
 - **Purpose**: Open research program exploring mathematical foundations of artificial intelligence (information geometry, topology, dynamical systems, thermodynamics, and related methods). Living scientific record of notes, protocols, simulations, and computed figures.
-- **License**: MIT (assumed from project norms; confirm LICENSE file)
+- **License**: MIT
 
 ## Origin
 
@@ -17,7 +17,7 @@ See `AUTHORS.md`. Human origin and maintenance are attributed to Chad Holland. M
 
 ## Research Status Distinction
 
-The project maintains (and currently drifts from) a documented vocabulary of statuses. At the time of this provenance document the README records substantial label drift (many distinct status strings in use).  
+The project maintains (and currently drifts from) a documented vocabulary of statuses. At the time of this provenance document the README records substantial label drift (many distinct status strings in use).
 
 Repository-level statuses used here:
 
@@ -36,7 +36,7 @@ Repository-level statuses used here:
 
 ## Experimental Lineage
 
-Experiments and claims are primarily organized as numbered research notes.  
+Experiments and claims are primarily organized as numbered research notes.
 Significant properties of the current record (per project README):
 
 - Multiple notes contain registered predictions that failed; those notes remain published with the refutation marked.

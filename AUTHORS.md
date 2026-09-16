@@ -26,7 +26,7 @@ None identified from repository history beyond the originator.
 
 ## Automated / AI Assistance
 
-This repository explicitly credits AI systems by name (Claude, Grok, Kimi, ChatGPT, Perplexity, and others as they appear) for material contributions to individual notes and reference code.  
+This repository explicitly credits AI systems by name (Claude, Grok, Kimi, ChatGPT, Perplexity, and others as they appear) for material contributions to individual notes and reference code.
 
 AI systems are **not** listed as human authors. Their contributions are acknowledged in the relevant notes and in program-level documentation. Judgment criterion stated in the project: whether the numbers hold.
 
