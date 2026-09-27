@@ -418,7 +418,7 @@ def main():
     print(f"P1 (WEAK)         {'PASS' if pred_mse < mean_mse else 'FAIL'}  "
           f"eta MSE {pred_mse:.4e} vs global-mean {mean_mse:.4e}")
     print(f"     ^ this is the test the draft proposed. v1 already passed its")
-    print(f"       analogue (rho=+0.117) and still lost the allocation.")
+    print(f"       analogue (rho=+0.1480 after note054's tie fix; +0.117 before) and still lost the allocation.")
     print(f"P2 THE TEST       {'PASS' if g_pr > 0.10 else 'FAIL'}  "
           f"pred vs uniform {g_pr:+.4f} (bar >+0.10)")
     print(f"P3 null decoupled {'PASS' if abs(g_dc) < 0.02 else 'FAIL'}  "

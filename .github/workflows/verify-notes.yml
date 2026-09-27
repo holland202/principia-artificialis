@@ -21,3 +21,5 @@ jobs:
               *) timeout 900 python "$f" ;;
             esac
           done
+      - name: number audit (note062) - report only, never fails the build
+        run: python scripts/check_numbers.py || true

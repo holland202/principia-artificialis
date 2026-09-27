@@ -68,6 +68,9 @@ def check(num, note_text, output):
             pass
     rows = []
     in_fence = False
+    # Found by hand review of the first run (2026-09-27): notes write the minus sign as U+2212 ("−3.082"),
+    # scripts print "-3.082". Without this, every negative number in prose read as a positive one.
+    note_text = note_text.replace("\u2212", "-")
     for i, line in enumerate(note_text.splitlines(), 1):
         if line.strip().startswith("```"):
             in_fence = not in_fence
