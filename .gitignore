@@ -16,3 +16,6 @@ universe.html
 n46_slices.npy
 n47_step.npy
 *.npy
+
+# written by scripts/note051_reference.py on every run (CI and make notes); not referenced by any note
+figures/note051_*.png
