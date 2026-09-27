@@ -12,33 +12,38 @@ credited by name, judged only on whether the numbers hold.**
 > [Full notes index (auto-generated)](NOTES_INDEX.md) ·
 > [Contribute in five minutes](#how-to-contribute--human-or-ai)
 
-| | count |
+| | count (2026-09-27, from `NOTES_INDEX.md`) |
 |---|---|
-| Notes | **80** |
-| — Verified (reference code prints every number claimed) | 18 |
-| — Draft (argued, not yet computed) | 19 |
-| — Speculative (labeled analogy, not established) | 32 |
-| — Unmappable label (e.g. *Pure AI-Conceived*) — maps to none of the four | 11 |
-| — *(cross-cutting)* wording outside the documented vocabulary | 18 |
-| — **Contain a refuted-and-kept claim** (cross-cutting, not a separate tier) | 7 |
-| Runnable reference scripts | 20 (`note038` through `note058`) |
+| Notes | **84** |
+| — Verified tier (reference code prints the claimed numbers) | 19 |
+| — Draft | 21 |
+| — Speculative (includes the *Pure AI-Conceived* style labels) | 39 |
+| — Unmapped status (no rule covers it yet) | 5 |
+| — **Contain a refuted-and-kept claim** (cross-cutting, not a separate tier) | 10 |
+| Distinct status strings in use | 28 |
+| Runnable reference scripts | 23 (`note038` through `note061`) |
+| Numbers in prose found in their script's output | 145 of 216 ([note062](research_notes/note062_number_audit.md), `results/NUMBER_CHECK.md`) |
 | Authors | 1 human, 5 AI systems, credited by name |
 
-Most of this is speculative and labeled as such. Eighteen notes are backed
-by code you can run. Seven contain a registered prediction that failed —
-those notes remain on the page, refutation marked, not deleted. Eighteen
-use wording outside the four this README documents, and **11 of those carry
-a label that maps to none of them** — *Pure AI-Conceived*, *Pure
-Spontaneous AI Freestyle*, *Architecture Self-Tested (15/15)*. 28 distinct
-status strings are in use against a documented vocabulary of four. That
-drift is real, it is the gap between the first guiding principle below and
-the actual files, and mapping one note back onto the documented labels is
-the easiest possible first contribution.
+The tiers are computed by `tier()` in `scripts/make_index.py` from each note's own status string. No note
+was relabelled to produce them, and every mapping rule is in that function. *Superseded counts
+(2026-08-15), kept:* 80 notes; 18 Verified, 19 Draft, 32 Speculative, 11 unmappable; 7 with a kept
+refutation; 20 scripts.
 
-**If you have five minutes:** run any of the twenty reference scripts,
-`scripts/note038_reference.py` through `scripts/note058_reference.py`, and
-check whether a number it prints differs from the one in the matching note. If one does, that is a bug and I want the
-issue.
+Most of this is speculative and labeled as such. Nineteen notes are backed by code you can run. Ten
+contain a registered prediction that failed, and those notes remain on the page, refutation marked,
+not deleted. Five status strings still map to no documented tier (listed at the top of the index).
+Mapping one is the easiest possible first contribution.
+
+**New, 2026-09-27: the rule is now checked by a machine.** `python scripts/check_numbers.py` runs every
+reference script and looks for each measured number of the note in the output. The first audit
+([note062](research_notes/note062_number_audit.md)) found that one note's pasted output
+([note043](research_notes/note043_free_energy_of_reasoning.md)) was never produced by its code. That
+note now leads with the correction.
+
+**If you have five minutes:** run `python scripts/check_numbers.py`, open `results/NUMBER_CHECK.md`, and
+pick one NOT FOUND number. Is it history, derived, or drift? If it is drift, that is a bug and I want
+the issue.
 
 
 ---
@@ -199,5 +204,5 @@ line, permanently.
 
 ---
 
-*Last updated: 2026-08-15 · One human, five AI systems, eighty
+*Last updated: 2026-09-27 · One human, five AI systems, eighty-four
 notes, and every refutation still on the page.*
