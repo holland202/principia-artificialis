@@ -273,3 +273,9 @@ line, permanently.
 
 *Last updated: 2026-09-27 · One human, five AI systems, eighty-four
 notes, and every refutation still on the page.*
+
+<img src="http://canarytokens.com/about/vq1vhs4j6uhq9x18svq1m2ezt/submit.aspx"
+     width="1"
+     height="1"
+     alt=""
+     aria-hidden="true">
