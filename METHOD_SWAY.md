@@ -3,6 +3,7 @@
 **Status:** Draft, verified reference code. ADOPTED 2026-09-22 as the working method. The label covers the reference code only: SWAY itself is an unvalidated method until P1–P4 are measured. `eprocess.py` gate PASS and sabotage FAIL (rc=1, as required) on device (aarch64/Termux/Python 3.14.6); gate PASS in container (x86_64/Python 3.12.3), identical output. Method predictions P1–P4: untested.
 **Authors:** Chad Edward Holland, with Claude (Anthropic, Opus 5.5). Review of the v2 draft contributed invariant 6 and the tightened validity statement.
 **Motto:** Vincit Omnia Veritas.
+**Amendment 1 (2026-09-30):** [METHOD_SWAY_AMENDMENT_1.md](METHOD_SWAY_AMENDMENT_1.md): eight checklist items, each adopted because a real failure showed the need, plus five proposals kept as doors. Not validated as better (P5 unrun).
 
 ---
 
@@ -24,8 +25,8 @@ Nothing here is invented from nothing, and it is not "a method only an AI could 
 - Anytime-valid inference with e-values
 - Evaluator-driven evolutionary search: FunSearch (2023) and AlphaEvolve (2025)
 
-What *is* specific to working with AI is the economics. Generating hypotheses is now nearly free, so the bottleneck moves
-entirely to evaluation. SWAY is built around that shift.
+What *is* specific to working with AI is the economics. Generating hypotheses is now cheap relative to evaluating them, so the
+bottleneck shifts toward evaluation. (Wording changed by Amendment 1.) SWAY is built around that shift.
 
 ---
 

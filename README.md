@@ -4,6 +4,73 @@
 
 # Principia Artificialis
 
+<!-- 30s-demo -->
+> **Status labels.** Every note carries its own label: `Speculative`, `Draft`, `Draft, verified reference
+> code`, `Verified` or `REFUTED (kept)`. **RESEARCH HYPOTHESIS** is the default for anything about AI.
+> **NOT A PRODUCT.** The working method is [SWAY](METHOD_SWAY.md) plus
+> [Amendment 1](METHOD_SWAY_AMENDMENT_1.md) (2026-09-30). It is adopted, not validated.
+
+**Headline (measured, `python scripts/check_numbers.py`, 2026-09-30):** of 216 measured numbers written in
+the notes' prose, **145 appear in their reference script's output**. The other 71 are listed line by line in
+[results/NUMBER_CHECK.md](results/NUMBER_CHECK.md). A number there is a lead, not a verdict: it may be a
+parameter, a number from another note, or a typed value that drifted from the code.
+
+### 30-second demo: one note's reference script
+
+```bash
+git clone https://github.com/holland202/principia-artificialis && cd principia-artificialis
+pip install numpy && python scripts/note047_reference.py      # under 1 s
+```
+
+Output (x86_64, 2026-09-30), pasted as printed:
+
+```
+Q1 construction: commutators 0.0e+00 | projector rank 2 | <0L|1L> 0.0e+00 | stabilizer residual 0.0e+00 -> True
+Q2 correction: distinct syndromes 16/16 (perfect code) | worst recovery fidelity 1.000000000000 -> True
+
+fragment size : max & min Holevo chi (bits) over all fragments
+      1       : 0.000000  ..  0.000000
+      2       : 0.000000  ..  0.000000
+      3       : 1.000000  ..  1.000000
+      4       : 1.000000  ..  1.000000
+      5       : 1.000000  ..  1.000000
+
+Q0 anti-vacuity (bare qubit leaks at size 1): chi = 1.000000 -> True
+Q1 exact construction: True
+Q2 perfect correction, 16/16 syndromes: True
+Q3 inverted plateau (0,0 then full): True
+```
+
+What this shows, on the three validity axes (Amendment 1, item 6): **mathematical**, the perfect
+5-qubit code's properties, which are textbook. **Implementation**, that this script reproduces them
+exactly and has a null (Q0) that comes out the other way. **Empirical**, nothing about AI: the note's
+label is `Draft, verified reference code`, and any reading of it as a statement about AI is speculative.
+
+### Negative results, up front
+
+- **Notes marked `REFUTED (kept)`** are listed with ⚠ in [NOTES_INDEX.md](NOTES_INDEX.md). They are
+  never deleted.
+- **71 of 216 prose numbers are not found in script output** (above). Until each is resolved, the rule
+  "numbers come from code" is met for about two-thirds of the numbers, not all.
+- **Structural defects stay on display:** 20 note numbers are claimed by more than one note, and the
+  cross-link graph is a star (see [CLAUDE.md](CLAUDE.md)).
+
+```mermaid
+flowchart LR
+  I[Idea: canopy, EXPLORATORY] --> K{Elevator: registered prediction,<br/>anti-vacuity control, fresh data,<br/>feasibility count, simplest rival}
+  K -->|passes| N[Note: Draft, verified reference code]
+  K -->|fails| R[REFUTED, kept]
+  N --> C[check_numbers.py:<br/>prose numbers vs script output]
+```
+
+### Why this is not just a blog of ideas or a paper repo
+
+Each note's numbers are meant to be printed by a script anyone can run. A checker counts how often
+they are (145 of 216 today). Failed predictions stay in the record. Where a note is only an analogy,
+it says `Speculative`.
+<!-- /30s-demo -->
+
+
 **An open research program on the mathematical foundations of artificial
 intelligence — written by one human and five AI systems, side by side,
 credited by name, judged only on whether the numbers hold.**
