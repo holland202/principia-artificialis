@@ -211,6 +211,29 @@ kept) → **#040** (Redundancy Dividend; R4 refuted, kept) → **#045**
 (Free-Physics Principle), **#044** (Circularity Test), and **#046**
 (Time Is Entanglement).
 
+
+## Evidence-Bound Learning Loop (EBLL)
+
+**Status:** Draft, verified reference code. The loop itself is **not validated**.
+
+A small deterministic component (`ebll/`) that draws the architectural boundary:
+
+- **Sovereign Veritas** records decisions and outcomes (immutable).
+- **Principia Artificialis** evaluates candidate changes against those records and fresh/held-out data.
+
+Historical decision/outcome records cannot be rewritten by the evaluation layer. Every candidate carries an explicit hypothesis registered *before* evaluation. Outcomes use the SWAY Amendment 1 vocabulary (`SUPPORTED` / `REFUTED` / `INSUFFICIENT_EVIDENCE` / …). A failed hypothesis is retained. A promotion record is an admission proposal only — not a deploy instruction.
+
+What has been demonstrated: a synthetic reference experiment (note #063) that evaluates a baseline, an improving candidate, and a deliberately failing candidate, preserves history, and keeps the refutation.
+
+What has **not** been demonstrated: training, automatic deployment, or improvement of a real agent on real data.
+
+```
+python scripts/note063_reference.py
+python -m pytest ebll/test_ebll.py -q
+```
+
+See [research_notes/note063_evidence_bound_learning_loop.md](research_notes/note063_evidence_bound_learning_loop.md).
+
 ## Research notes
 
 **80 notes** spanning measurement, geometry of reasoning,
@@ -271,5 +294,5 @@ line, permanently.
 
 ---
 
-*Last updated: 2026-09-27 · One human, five AI systems, eighty-four
+*Last updated: 2026-10-01 · One human, five AI systems, eighty-four
 notes, and every refutation still on the page.*
