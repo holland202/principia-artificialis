@@ -1,12 +1,37 @@
 # Note #065 — Can the outcome-source dependency be removed, or only moved?
 
-**Status:** Draft — REGISTERED, UNRUN (committed before `scripts/note065_reference.py` exists)
+**Status:** Draft, verified reference code — 7 of 8 registered predictions held; **Q2 REFUTED (kept)**. Registration committed at `2c4cb6d`, before the code existed.
 **Theme:** Learning Theory / Evaluation / Evidence
 **Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's request ("attack the remaining dependency on
 the outcome source")
 **Builds on:** [[note064_governed_outcome_feedback]] (its NC2: a corrupted outcome source shared by learner
 and evaluator made every arm harmful, 1.00; its unrun door D1), [[note063_evidence_bound_learning_loop]]
 (EBLL records), evidence-ledger EL-007 (counting independent roots, not documents)
+
+## What broke (read first)
+
+**Q2 — REFUTED (kept), on one clause.** I registered that learning only from cases where two sources agree
+(R1f) would be harmful in ≥ 0.90 of seeds under one corrupted source. Observed: harmful **0.33**, mean gain
+**0.0032** (against **0.1290** for the same arm with clean sources), median deployed τ **0.20**. Every other
+clause of Q2 held.
+
+What the failure taught: agreement filtering does not fill the corrupted region with false successes; it
+*empties* it. In s ∈ [0.15, 0.45) true failures are dropped (the sources disagree) and true successes there
+are rare, so the learner sees almost no evidence in that region, and the registered tie rule (ties go to
+the τ nearest 0.70) stops it partway in, at 0.20 instead of 0.15. Whether τ = 0.20 counts as harmful is a
+knife edge in this world: **U(0.20)=0.2922** equals **U(0.70)=0.2922** to four decimals (diagnostic line
+added to the output after the first run; no computation changed, every other printed line was
+byte-identical). The robust result is the gain collapse: requiring agreement destroyed the improvement
+instead of protecting it.
+
+**Registered to fail, and they did:**
+- A false lineage declaration defeats root counting: COMMON_HIDDEN, R2r harmful **1.00**.
+- A corrupted gold source defeats the audit: GOLD_CORRUPT, R3c harmful **1.00**. The dependency moved to
+  the gold source; it was not removed.
+
+**Not registered, worth stating:** two sources that share a root agree with each other, so the two-source
+alarm (R1a) is silent and the arm is harmful (**0.99**) under common-mode corruption, even when the shared
+root is declared. Only the root-aware arm reads the declaration.
 
 ## The claim
 
@@ -100,12 +125,138 @@ and the outcome observations each arm consumes per batch (its cost).
   is harmful ≥ 0.90 under ONE_CORRUPT: the audit, not something else, is what protects. NONE: gain 0 and
   harm 0 in every condition.
 
+## Results (from `python3 scripts/note065_reference.py`, pasted)
+
+x86-64 container; Python 3.11.16, 3.12.3 and 3.13.15 print byte-identical output (digest
+`bfa4d689c2e3429b45eb71d3b95c3e205e26e2bab0baa1aad19a33b16cbfd3c3`); the script exits 0 only if a run
+reproduces this. **NOT VALIDATED on the S25.**
+
+```
+note065_reference.py -- outcome-source dependency (synthetic; note064 world; one learned parameter)
+world as note064: U(0.70)=0.2922 U(0.45)=0.4347 available gain 0.1426; source noise eta=0.05; gold audits 100+50; alarm band>=30 cases, disagreement>=0.25; 100 seeds; bootstrap 500
+utility by tau: U(0.15)=0.2458  U(0.20)=0.2922  U(0.25)=0.3358  U(0.30)=0.3747  U(0.45)=0.4347  (harmful = below U(0.70)=0.2922)
+
+[CLEAN]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          0.97     0.00     0.1327          0.45  882.0
+  R1f         0.94     0.00     0.1290          0.45  1764.0
+  R1a         0.94     0.00     0.1290          0.45  1764.0
+  R2m         0.97     0.00     0.1330          0.45  2646.1
+  R2r         0.97     0.00     0.1330          0.45  2646.1
+  R3v         0.84     0.00     0.1133          0.45  1032.0
+  R3c         0.84     0.00     0.1133          0.45  1032.0
+  R3c_off     0.95     0.00     0.1302          0.45  882.0
+
+[ONE_CORRUPT]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          1.00     0.99    -0.0459          0.15  882.0
+  R1f         0.99     0.33     0.0032          0.20  1764.0
+  R1a         0.00     0.00     0.0000          0.70  1764.0
+  R2m         0.95     0.00     0.1277          0.45  2646.1
+  R2r         0.95     0.00     0.1277          0.45  2646.1
+  R3v         0.47     0.00     0.0625          0.70  1032.0
+  R3c         0.45     0.00     0.0597          0.70  1032.0
+  R3c_off     1.00     0.99    -0.0459          0.15  882.0
+
+[COMMON_DECLARED]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          1.00     0.99    -0.0459          0.15  882.0
+  R1f         1.00     1.00    -0.0464          0.15  1764.0
+  R1a         0.99     0.99    -0.0459          0.15  1764.0
+  R2m         1.00     1.00    -0.0464          0.15  2646.1
+  R2r         0.00     0.00     0.0000          0.70  2646.1
+  R3v         0.47     0.00     0.0625          0.70  1032.0
+  R3c         0.45     0.00     0.0597          0.70  1032.0
+  R3c_off     1.00     0.99    -0.0459          0.15  882.0
+
+[COMMON_HIDDEN]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          1.00     0.99    -0.0459          0.15  882.0
+  R1f         1.00     1.00    -0.0464          0.15  1764.0
+  R1a         0.99     0.99    -0.0459          0.15  1764.0
+  R2m         1.00     1.00    -0.0464          0.15  2646.1
+  R2r         1.00     1.00    -0.0464          0.15  2646.1
+  R3v         0.47     0.00     0.0625          0.70  1032.0
+  R3c         0.45     0.00     0.0597          0.70  1032.0
+  R3c_off     1.00     0.99    -0.0459          0.15  882.0
+
+[AUDIT_AWARE]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          1.00     0.99    -0.0459          0.15  882.0
+  R1f         0.99     0.33     0.0032          0.20  1764.0
+  R1a         0.00     0.00     0.0000          0.70  1764.0
+  R2m         0.95     0.00     0.1277          0.45  2646.1
+  R2r         0.95     0.00     0.1277          0.45  2646.1
+  R3v         0.98     0.90    -0.0405          0.15  1032.0
+  R3c         0.45     0.00     0.0597          0.70  1032.0
+  R3c_off     1.00     0.99    -0.0459          0.15  882.0
+
+[GOLD_CORRUPT]
+  arm       deploy  harmful  mean gain  tau (median)  observations/batch
+  NONE        0.00     0.00     0.0000          0.70  0.0
+  R0          1.00     0.99    -0.0459          0.15  882.0
+  R1f         0.99     0.33     0.0032          0.20  1764.0
+  R1a         0.00     0.00     0.0000          0.70  1764.0
+  R2m         0.95     0.00     0.1277          0.45  2646.1
+  R2r         0.95     0.00     0.1277          0.45  2646.1
+  R3v         1.00     1.00    -0.0469          0.15  1032.0
+  R3c         1.00     1.00    -0.0469          0.15  1032.0
+  R3c_off     1.00     0.99    -0.0459          0.15  882.0
+
+AS REGISTERED      Q1 CLEAN: every learning arm gain > 0 and harm <= 0.05; NONE gain 0
+NOT AS REGISTERED  Q2 ONE_CORRUPT: R0, R1f harm >= 0.90; R1a deploy <= 0.05; R2m, R2r harm <= 0.05 and gain >= 0.8 x own CLEAN; R3v, R3c harm <= 0.05 and gain > 0
+AS REGISTERED      Q3 COMMON_DECLARED: R2m harm >= 0.90; R2r deploy <= 0.05; R3c identical to ONE_CORRUPT
+AS REGISTERED      Q4 COMMON_HIDDEN (registered FAIL of root counting): R2r harm >= 0.90; R3c identical to ONE_CORRUPT
+AS REGISTERED      Q5 AUDIT_AWARE: R3v harm >= 0.90; R3c identical to ONE_CORRUPT
+AS REGISTERED      Q6 GOLD_CORRUPT (registered FAIL of auditing): R3c harm >= 0.90; R2m identical to ONE_CORRUPT
+AS REGISTERED      Q7 CLEAN: gain R3c <= gain R0 (price of the audit)
+AS REGISTERED      Q8 ONE_CORRUPT: R3c_off harm >= 0.90; NONE gain 0 and harm 0 everywhere
+VERDICT  7 of 8 as registered
+```
+
+### What each mechanism protects against, what it still depends on, and what it costs
+
+| Arm | Protects against | Still fails when | Observations per batch | Gain, one corrupted source |
+|---|---|---|---|---|
+| R0 one source | nothing | that source is corrupted (harmful 0.99) | 882.0 | -0.0459 |
+| R1f two sources, agreement | nothing | always: gain collapses (0.0032) | 1764.0 | 0.0032 |
+| R1a two sources, alarm | one corrupted source: detected, never fixed (deploy 0.00) | the two share a root, even declared (harmful 0.99) | 1764.0 | 0.0000 |
+| R2m three sources, majority | one corrupted source (harmful 0.00) | two share a root (harmful 1.00) | 2646.1 | 0.1277 |
+| R2r three sources, root-aware | also a declared common root (deploy 0.00) | the lineage is declared falsely (harmful 1.00) | 2646.1 | 0.1277 |
+| R3v gold audit, selection visible | corruption that ignores the audit (harmful 0.00) | the source can see which cases are audited (harmful 0.90) | 1032.0 | 0.0625 |
+| R3c gold audit, commit-then-audit | every cheap-source attack tried: one corrupted, common root declared or hidden, audit-aware (identical results, seed by seed) | the gold source is corrupted (harmful 1.00) | 1032.0 | 0.0597 |
+
+**The answer to the question in the title: moved, not removed.** Two end states survive their own attacks
+in this world, and each rests on a different, explicit assumption:
+
+1. **Three or more independent roots, with truthful lineage** (R2r): nearly the clean gain (0.1277 vs
+   0.1330) at 2646.1 outcome observations per batch. It rests on lineage being true; a lie defeats it.
+2. **A small committed random audit against a trusted measurement** (R3c): unaffected by anything the cheap
+   source does, at 1032.0 observations per batch, but it keeps less of the gain (0.0597 under corruption;
+   0.1133 vs 0.1327 even with clean sources, because the audit's noise makes the gate cautious, deploy
+   0.84). It rests on two things: the gold measurement, and the reports being committed before the audit
+   draw. Making the gold source wrong, or the draw visible, defeats it.
+
+What cannot be bought at any price here is independence from *every* source. The engineering choice is
+which assumption is cheaper to make true and to check in a given deployment: lineage (who measured what,
+from which upstream) or gold integrity plus commitment. For this estate the second maps onto parts that
+already exist: an append-only, witnessed ledger is a commitment (EL-007 P8: without an external witness a
+rollback is invisible, so commitment needs the witness).
+
 ## Reference code
 
-`scripts/note065_reference.py` (written after this registration is committed); stdlib only; outcome reports
-stored as EBLL `OutcomeRecord`s with each source's declared root in `provenance`.
+`scripts/note065_reference.py` — stdlib only; every report is an EBLL `OutcomeRecord` with its source in
+`source` and its declared root in `provenance`; arms read the store, not the generator.
 
 ## Falsifiable next predictions
+
+Recommended next, one only: **D1** — it tests the one assumption R3c adds that this estate can actually
+enforce (a witnessed commitment), rather than the one it cannot (gold integrity).
 
 - **D1 (unrun).** R3c's protection is exactly as strong as the commitment. If the source can revise
   unaudited reports after the draw (no external witness of the committed reports, cf. EL-007 P8), R3c
@@ -115,6 +266,6 @@ stored as EBLL `OutcomeRecord`s with each source's declared root in `provenance`
   committed packages against an independent measurement, as in V12/V13's position cross-check.
 
 ---
-*Checklist before PR: [x] status label honest  [x] claims registered & numbered  [ ] refuted claims kept
-(after the run)  [ ] numbers match code output (after the run)  [x] at least one open prediction  [x] credit
-given, including to AIs  [x] outgoing wikilink*
+*Checklist before PR: [x] status label honest  [x] claims registered & numbered  [x] refuted claims kept
+(Q2)  [x] numbers match code output (pasted; pinned by digest)  [x] at least one open prediction (D1–D3)
+[x] credit given, including to AIs  [x] outgoing wikilink*
