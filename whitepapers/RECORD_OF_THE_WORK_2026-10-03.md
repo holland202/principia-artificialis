@@ -3,8 +3,8 @@
 Chad Edward Holland · 2026-10-03
 
 Status: **DRAFT — historical reconstruction — not yet publication-ready.** A history of the program, not a research
-result. Not promoted or announced; the people credited below have not yet been asked to review how they are
-described. Drafted by Claude (Claude Opus 5.5) at the
+result. Not promoted or announced. Each person credited below was shown their exact line on 2026-10-03 and
+replied "Ok sounds good" (replies relayed by the author). Drafted by Claude (Claude Opus 5.5) at the
 author's request from the repositories and session records; not yet reviewed line by line by the author (see
 Provenance). Where a number here disagrees with a repository, the repository wins.
 
@@ -295,7 +295,7 @@ AI models took part in nearly everything here. I direct the work and I am respon
 
 - **Models.** Claude (Anthropic) wrote most of the code, probes and write-ups since July. ChatGPT (OpenAI) designed the first eval-harness architecture. Gemini (Google) co-wrote the February to May material. Grok, Kimi and Perplexity wrote or critiqued Principia notes and several analyses. Every repository names the models it used.
 - **Human review that happened.** I set direction, chose what to test, ran the on-device checks that this paper reports as run on the S25 (results not run there are marked "not validated on the S25"), and reviewed results and CI. I have not reviewed most of the code line by line, and the documents say so wherever it applies.
-- **People credited.** Davorin Popović reported the execution-boundary defect. James Greenwood ran a Gemini-assisted audit of sovereign-veritas. Amos Tipton proposed the recovery A/B test. Graeme Randle gave the first external critique and drove the QUASAR geometry follow-ups. Dost Mushtaq asked the sharpest question about vacuity. None of these is an independent replication. None of them has yet reviewed how they are described here.
+- **People credited.** Davorin Popović reported the execution-boundary defect. James Greenwood ran a Gemini-assisted audit of sovereign-veritas. Amos Tipton proposed the recovery A/B test. Graeme Randle gave the first external critique and drove the QUASAR geometry follow-ups. Dost Mushtaq asked the sharpest question about vacuity. None of these is an independent replication. Each was shown their exact line on 2026-10-03 and replied "Ok sounds good" (relayed by the author). That approves how they are credited, nothing more: not the work, the architecture or the results.
 - **AI as instrument, AI as defendant.** The models were also wrong. Kimi fabricated statistics and retracted them. Claude claimed a test suite was vacuous when it was not, set prediction bars wrong, introduced the VERA windup bug, and built the reliance-study verdict leak. The method exists partly to catch these.
 
 This paper was drafted by Claude (Claude Opus 5.5) from the repositories and my session records, at my request, on 2026-10-03. I have not reviewed it line by line. Its numbers are copied from the repositories' own output and records; where a number appears here and not in a repository, the repository wins.
@@ -314,3 +314,4 @@ This paper was drafted by Claude (Claude Opus 5.5) from the repositories and my 
 ## Changes
 
 - 2026-10-03, after merge: status changed to "DRAFT — historical reconstruction — not yet publication-ready"; the S25 review line scoped to the checks actually run there; a note added that the credited people have not reviewed their descriptions. No number, finding or attribution changed. Edit by Claude (Claude Opus 5.5) at Chad Holland's request.
+- 2026-10-03: each person credited (Davorin Popović, James Greenwood, Amos Tipton, Graeme Randle, Dost Mushtaq) was sent their exact line and asked to confirm, reword or be removed; each replied "Ok sounds good", as relayed by Chad Holland. No wording changed. James Greenwood was also asked which name he prefers; his reply did not name one, so the existing "James Greenwood" stands. Edit by Claude (Claude Opus 5.5) at Chad Holland's request.
