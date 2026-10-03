@@ -9,6 +9,18 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
+      - name: method lint (METHOD.md M17; Amendment 3)
+        run: python scripts/method_lint.py
+      - name: method lint self-test (every planted defect class must be detected)
+        run: python scripts/method_lint.py --selftest
+      - name: method lint sabotage (a planted duplicate must exit 1, not 0 or 2)
+        run: |
+          set +e
+          python scripts/method_lint.py --sabotage
+          rc=$?
+          test "$rc" -eq 1
+      - name: rule inventory covers the pre-amendment sources (needs full history; exit 2 = could not run)
+        run: python scripts/method_lint.py --coverage
       - run: pip install numpy scipy matplotlib
       - name: run every note's reference code
         run: |

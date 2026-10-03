@@ -1,0 +1,447 @@
+Claude, this is a coordinated methodology-refactoring plan from Chad Holland and ChatGPT.
+
+The goal is not to make the methodology less rigorous. The goal is to make it more economical, more efficient, easier to understand, easier to maintain, and harder for its own documentation to contradict itself.
+
+Do not modify adopted methodology files yet. First produce the proposed architecture and migration plan.
+
+---
+
+PART A — CHAD'S OBSERVATIONS AND DIRECTION
+
+These are Chad's conclusions/directions based on your recent audit.
+
+1. The methodology has a small working core
+
+Your audit found that the 10-rule core catches all 12 currently recorded methodology incidents, while several surrounding mechanisms have little or no observed use.
+
+Treat this as retrospective evidence about the recorded incidents, NOT proof that the core is universally sufficient.
+
+The five-registration prediction should remain the empirical test of whether simplification has gone too far:
+
+«Over the next five registrations, no defect turns up that only the removed or merged text would have caught.»
+
+One such defect refutes that prediction.
+
+2. Consolidate rather than casually delete
+
+The primary objective is to eliminate duplication and contradictory copies.
+
+Where a rule exists in six places, establish one canonical version and make the other documents reference it.
+
+Do not silently erase historical wording. Preserve history and make the migration traceable.
+
+3. Resolve the three identified contradictions
+
+At minimum:
+
+- HELD/FAILED vs HELD/REFUTED;
+- the conflicting eight-word status vocabulary;
+- the e-value promotion requirement being applied to deterministic work where it has no meaningful interpretation.
+
+These should become explicit, authoritative decisions.
+
+4. Separate universal methodology from experiment-specific machinery
+
+Do not allow the methodology-comparison experiment's elaborate controls to become mandatory procedure for ordinary research.
+
+The architecture should distinguish:
+
+CORE INVARIANTS
+What must remain true.
+
+RESEARCH WORKFLOW
+How ordinary research is conducted.
+
+EXPERIMENT-SPECIFIC PROTOCOLS
+Additional controls selected because a particular research question requires them.
+
+5. Preserve unused machinery honestly
+
+Do not delete the exploration/canopy/fork machinery merely because it has not been used.
+
+Record it as:
+
+AVAILABLE — NOT USED SINCE ADOPTION
+
+with the observed utilization counts.
+
+If future work uses it, update the evidence then.
+
+6. Keep distinct vocabularies distinct where they represent different dimensions
+
+Do not force prediction outcome, evidence status, validity axis, replication level, and lineage into one overloaded status.
+
+Instead create one authoritative mapping table explaining:
+
+Dimension| Question
+Prediction outcome| Did the registered prediction hold?
+Evidence/claim status| What does the evidence currently support?
+Validity axis| What kind of validity has actually been demonstrated?
+Replication level| How independently has it been reproduced?
+Lineage/provenance| Where did the claim/contribution originate?
+
+7. Stop expanding the methodology-comparison experiment
+
+Freeze Rev4.
+
+Do not keep adding controls while independent task construction/scoring is unavailable.
+
+Its status remains:
+
+UNRUN — independent task construction/scoring not available.
+
+---
+
+PART B — CHATGPT'S INDEPENDENT SUGGESTIONS
+
+These are ChatGPT's ideas, separate from Chad's observations. Evaluate them critically rather than treating them as instructions.
+
+C1. Use a "single source of truth" architecture
+
+I suggest making one compact canonical methodology document the authoritative source for the core invariants.
+
+Everything else should be one of:
+
+- workflow;
+- experiment protocol;
+- vocabulary/reference;
+- implementation guidance;
+- provenance record.
+
+Avoid restating normative rules in multiple documents.
+
+A document can explain a rule, but only one document should define it.
+
+C2. Separate "must" from "should" from "may"
+
+I suggest explicitly tagging methodology statements by force:
+
+MUST — violation changes epistemic validity or provenance.
+
+SHOULD — strong default, deviation must be documented.
+
+MAY — optional technique.
+
+This could dramatically reduce accidental ceremony.
+
+For example:
+
+«MUST register predictions before observing results.»
+
+versus:
+
+«SHOULD use a separate harness file.»
+
+versus:
+
+«MAY use exploration/canopy procedures when exploratory search is appropriate.»
+
+This distinction may be more useful than adding additional procedural categories.
+
+C3. Introduce a proportionality principle
+
+I suggest adding one high-level rule:
+
+«Use the least procedural machinery sufficient to answer the research question and protect against the relevant failure modes.»
+
+The methodology should scale with the claim.
+
+A deterministic unit-level verification should not require the same machinery as a human-subject study, statistical inference study, safety-critical deployment experiment, or methodology comparison.
+
+This could prevent the framework from becoming increasingly ceremonial over time.
+
+Treat this as a proposal, not an established principle.
+
+C4. Create a "minimum viable experiment" path
+
+I suggest defining a lightweight default path for ordinary deterministic repository research:
+
+Question → Register → Implement → Attack → Run → Record → Review
+
+with the core invariants automatically applying.
+
+Then define escalation triggers that require additional machinery.
+
+For example:
+
+- statistical inference → statistical protocol;
+- human/organizational claims → independence and sampling controls;
+- exploratory search → exploration/canopy controls;
+- external-data claims → provenance/freshness controls;
+- methodology comparison → dedicated comparison protocol;
+- high-consequence claims → additional review/replication.
+
+This would make the methodology progressively rigorous when the research question demands it, rather than maximally procedural by default.
+
+C5. Use "triggered controls" instead of permanent ceremony
+
+Related suggestion:
+
+Rather than saying:
+
+«Every experiment must perform X, Y, Z.»
+
+say:
+
+«If condition X exists, activate control Y.»
+
+Examples:
+
+If statistical uncertainty is being inferred → activate statistical controls.
+
+If independence matters to the claim → activate independence controls.
+
+If freshness matters → activate freshness controls.
+
+If exploration is being used → activate exploration controls.
+
+If multiple implementations are being treated as replications → activate replication-independence controls.
+
+This makes the methodology compositional.
+
+C6. Add a small decision tree
+
+I suggest a one-page decision tree at the beginning of the methodology:
+
+1. What are you claiming?
+2. Is the claim deterministic, statistical, observational, causal, or exploratory?
+3. What evidence could discriminate it?
+4. What failure modes matter?
+5. Which controls are therefore triggered?
+6. Register.
+7. Run.
+8. Attack.
+9. Record.
+10. Review/provenance.
+11. Stop or iterate.
+
+The decision tree should point to controls rather than reproduce them.
+
+C7. Separate "research method" from "research record"
+
+I suggest explicitly distinguishing:
+
+METHOD
+How research should be conducted.
+
+RECORD
+What actually happened.
+
+That means things like:
+
+- failures;
+- deviations;
+- external critiques;
+- lineage;
+- reviewer contributions;
+- actual tool/model use;
+- hashes;
+- commit history
+
+belong primarily in the record rather than repeatedly inside the method.
+
+This could eliminate substantial duplication.
+
+C8. Add a "do not duplicate normative text" rule
+
+Potential invariant:
+
+«A normative methodological requirement has one canonical definition. Other documents may reference or explain it but must not independently redefine it.»
+
+This directly attacks the drift problem identified in F4.
+
+C9. Add a maintenance test
+
+I suggest treating methodology consistency itself as something testable.
+
+A future lightweight "methodology_lint" could detect:
+
+- duplicated normative phrases;
+- contradictory vocabulary;
+- deprecated status names;
+- references to removed workflow names;
+- orphaned procedures;
+- multiple authoritative definitions of the same rule.
+
+This should remain optional until there's evidence the maintenance problem warrants implementation.
+
+C10. Don't optimize for document length alone
+
+A shorter methodology isn't automatically better.
+
+The optimization target should be something closer to:
+
+«epistemic protection / cognitive and maintenance cost»
+
+A 300-word rule that prevents a major category error is cheaper than a 50-word rule that leaves the failure mode ambiguous.
+
+---
+
+PART C — PROPOSED TARGET ARCHITECTURE
+
+Evaluate whether this architecture is superior to the current one.
+
+1. "METHOD.md" — canonical core
+
+Approximately one to two pages.
+
+Contains only:
+
+- epistemic invariants;
+- MUST/SHOULD/MAY force;
+- minimum research loop;
+- proportionality principle, if adopted;
+- escalation principle.
+
+No duplicated implementation instructions.
+
+2. "WORKFLOW.md" — operational workflow
+
+Contains:
+
+- question framing;
+- registration;
+- implementation;
+- attack;
+- execution;
+- results;
+- review;
+- provenance;
+- closure.
+
+References "METHOD.md" rather than restating its rules.
+
+3. "CONTROLS.md" — triggered controls
+
+Contains modular controls for:
+
+- statistical claims;
+- causal claims;
+- exploratory research;
+- external evidence;
+- replication;
+- independence;
+- freshness/replay;
+- high-consequence research;
+- methodology comparisons.
+
+A researcher activates only the controls relevant to the question.
+
+4. "VOCABULARY.md"
+
+One authoritative mapping table for:
+
+- prediction outcomes;
+- claim/evidence status;
+- validity axes;
+- replication levels;
+- lineage;
+- experimental states.
+
+5. "RECORD/" or existing provenance structures
+
+Historical evidence stays where it belongs:
+
+- results;
+- failures;
+- deviations;
+- lineage;
+- external critique;
+- attribution;
+- hashes;
+- commits.
+
+Don't move historical material merely for architectural elegance.
+
+6. Skills/instructions
+
+Skills become implementation guidance that references the canonical methodology.
+
+They should not redefine the methodology.
+
+---
+
+PART D — MIGRATION RULES
+
+If you agree that this architecture is justified:
+
+1. Inventory every normative rule in the current documents.
+2. Assign each rule exactly one canonical home.
+3. Mark duplicate occurrences as references to be replaced.
+4. Identify contradictions before changing wording.
+5. Preserve historical documents and frozen experiments.
+6. Do not modify Stage 1 frozen methodology-comparison text.
+7. Do not modify historical experiment records merely to conform to the new structure.
+8. Preserve the current Amendment history.
+9. Make migration commits small and independently reviewable.
+10. Run the existing test suite after each meaningful migration stage.
+11. Add no new methodological machinery merely because the refactoring exposes an inconvenience.
+
+Most importantly:
+
+Do not delete a rule merely because it is unused.
+
+First determine whether it is:
+
+- unnecessary,
+- experiment-specific,
+- available but unused,
+- superseded,
+- or still needed for a future class of research.
+
+---
+
+PART E — SUCCESS CRITERIA
+
+The refactoring should not be judged by word count alone.
+
+Proposed success criteria:
+
+- zero known contradictions;
+- each normative rule has one canonical definition;
+- no duplicated normative process between skills;
+- ordinary deterministic experiments can follow a short default path;
+- specialized controls activate only when relevant;
+- historical records remain intact;
+- provenance remains explicit;
+- failures remain preserved;
+- independence is not falsely claimed;
+- evidence statuses remain distinguishable;
+- existing experiments remain interpretable;
+- a new researcher can determine what procedure applies without reading thousands of words;
+- the methodology can grow without requiring the same rule to be edited in multiple documents.
+
+The five-registration simplification prediction remains separately registered and unrun.
+
+---
+
+PART F — YOUR TASK NOW
+
+Do not implement this architecture yet.
+
+First produce a refactoring design review.
+
+For each proposed component, tell us:
+
+- what current material moves there;
+- what duplication disappears;
+- what protection is preserved;
+- what protection might be weakened;
+- what new ambiguity could appear;
+- whether the component is universal or triggered;
+- whether you recommend adopting it.
+
+Challenge ChatGPT's suggestions as aggressively as you challenge Chad's.
+
+In particular, do not assume:
+
+- modularity is automatically better;
+- fewer words means better methodology;
+- triggered controls won't create researcher discretion problems;
+- a proportionality principle won't be abused to justify skipping necessary controls.
+
+The goal is not to make the methodology impressive.
+
+The goal is to make it economical, coherent, auditable, falsifiable, and usable without sacrificing the protections that actually matter.
+
+No repository modifications yet. Produce the design review first.

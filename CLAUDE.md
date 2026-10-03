@@ -27,25 +27,57 @@ status labels and several are marked REFUTED and kept on purpose.
 
 ## The method (binding — this governs every edit)
 
-From `NOTE_TEMPLATE.md`, which is the canonical spec:
+The canonical method is [METHOD.md](METHOD.md), with [WORKFLOW.md](WORKFLOW.md) and
+[CONTROLS.md](CONTROLS.md): SWAY, consolidated by Amendment 3 on 2026-10-03. Read METHOD.md before any
+edit that registers, runs or claims something.
 
-1. **State claims so they can be precisely wrong.** If nothing could refute it,
-   it is not yet a note.
-2. **Register predictions before running.** Numbered P1, P2, …
-3. **Include an anti-vacuity control.** Show the instrument *can* return null.
-   A guard that only ever prints a value is a log line, not a guard — it needs
-   an expected value beside it.
-4. **Refutations are first-class.** If a registered claim failed, KEEP IT, mark
-   it refuted, and write what the failure taught you. Never quietly delete a
-   failed prediction.
-5. **Numbers in prose must match code output verbatim.** Paste them; don't
-   paraphrase them.
-6. **Leave at least one prediction unrun.** Every note ends with a door.
-7. **Failures lead the document.** Put what broke at the top, not in a footnote.
+The table below is a verbatim excerpt of METHOD.md's index, and `python scripts/method_lint.py` checks
+it. The definitions, their sources and the vocabulary map (status labels included) are in METHOD.md.
+Where this file and METHOD.md disagree, METHOD.md governs. The seven rules this section used to list
+are M1, M2, M3, M8, M6, M15 and M8 there.
 
-Status labels in use: `Speculative`, `Draft`, `Draft, verified reference code`,
-`Architecture Verified`, `Architecture Self-Tested`, `Verified`,
-`REFUTED (kept)`.
+<!-- excerpt: METHOD.md#index -->
+| ID | Force | Rule |
+|---|---|---|
+| M1 | MUST | Claims can be precisely wrong |
+| M2 | MUST | Register before observing |
+| M3 | MUST | Anti-vacuity: the instrument can say the other thing |
+| M4 | MUST | Real code, named stand-ins |
+| M5 | MUST | Exact, deterministic verdicts |
+| M6 | MUST | Numbers come from code |
+| M7 | MUST | Honest labels |
+| M8 | MUST | Failures lead and are kept |
+| M9 | MUST | Observation before interpretation |
+| M10 | MUST | Nothing certifies itself |
+| M11 | MUST | Confirmation is fresh |
+| M12 | MUST | The record is append-only |
+| M13 | MUST | AI provenance, with the review that happened |
+| M14 | MUST | The simplest rival is an arm |
+| M15 | MUST | Every line of inquiry ends with a door |
+| M16 | MUST | Triggered controls are on unless answered |
+| M17 | MUST | One definition per rule |
+| M18 | MUST | Change control |
+| W1 | MUST | Frame the question |
+| W2 | MUST | Register |
+| W3 | SHOULD | Design the smallest discriminating instrument |
+| W4 | MUST | Build and run |
+| W5 | SHOULD | Attack |
+| W6 | MUST | Write the results |
+| W7 | SHOULD | CI, commit and merge |
+| W8 | MUST | Close a build (DONE) |
+| W9 | MUST | Record edits |
+| C-FEAS | MUST | Feasibility counts |
+| C-NOISE | MUST | Measure same-input noise first |
+| C-STAT | MUST | Error control that matches the stopping rule |
+| C-EVID | MUST | Evidence ladder |
+| C-INDEP | MUST | Independence and replication |
+| C-EXT | MUST | Outside material |
+| C-DEVICE | MUST | Device claims |
+| C-BUILD | MUST | Fail-closed verdict code |
+| C-EXPLORE | MUST | Exploration is disclosed |
+| C-DISCOVER | MAY | The discovery loop |
+| C-METHCOMP | MUST | Methodology comparison protocol |
+<!-- /excerpt -->
 
 ---
 
@@ -126,17 +158,17 @@ These are recorded, not hidden. Do not paper over them.
 
 - **Ask before restructuring.** Renumbering, merging directories, or bulk
   renaming changes the note series identity. Propose, don't perform.
-- **Never edit a note to make a claim look better.** If a registered prediction
+- **Never edit a note to make a claim look better (M8).** If a registered prediction
   failed, the failure stays and gets explained.
-- **Never delete a refuted note.** `⚠` in the index marks kept failures. That
+- **Never delete a refuted note (M8).** `⚠` in the index marks kept failures. That
   mark is an asset.
 - **Do not hand-edit `NOTES_INDEX.md`.** It is auto-generated. Edit notes, then
   re-run `python scripts/make_index.py`.
 - **Preserve `[[wikilinks]]` and existing markdown links** on any edit.
-- **Credit contributors, including AIs, by model name.**
-- **Do not present a reading of a file as a verified fact.** Run it, paste the
+- **Credit contributors, including AIs, by model name (M13).**
+- **Do not present a reading of a file as a verified fact (M6).** Run it, paste the
   output, then claim it.
-- **Do not add a claim to a note without the code that prints its numbers.**
+- **Do not add a claim to a note without the code that prints its numbers (M6).**
   If there is no code yet, label the note `Speculative` and describe the
   experiment someone else could build. That is a valid contribution.
 - **One command at a time** when handing commands to the operator; this repo is
@@ -155,7 +187,7 @@ python scripts/make_index.py    # regenerate NOTES_INDEX.md after editing notes
 python sovereign_core/test_sovereign.py   # governance suite (expect 33/33)
 ```
 
-Environment note: this repo is developed on a Samsung Galaxy S25 Ultra under
+Environment note (see CONTROLS.md C-DEVICE): this repo is developed on a Samsung Galaxy S25 Ultra under
 Termux (aarch64, Python 3.14). `set +H` before pasting anything containing `!`
 or markdown image syntax. `/tmp` is not writable — use `$HOME`.
 
@@ -166,12 +198,13 @@ or markdown image syntax. `/tmp` is not writable — use `$HOME`.
 Copy `NOTE_TEMPLATE.md`. Then, before opening a PR:
 
 - [ ] filename matches `NNN_*.md` or `noteNNN_*.md` exactly
-- [ ] status label is honest
-- [ ] claims registered and numbered (P1, P2, …)
-- [ ] anti-vacuity control present — the instrument can return null
-- [ ] any refuted claim kept and marked
-- [ ] every number in the prose matches `scripts/noteNNN_reference.py` output
-- [ ] at least one open prediction left unrun
+- [ ] status label is honest (M7)
+- [ ] claims registered and numbered (P1, P2, …) (M2)
+- [ ] trigger table answered, every row (M16)
+- [ ] anti-vacuity control present — the instrument can return null (M3)
+- [ ] any refuted claim kept and marked (M8)
+- [ ] every number in the prose matches `scripts/noteNNN_reference.py` output (M6)
+- [ ] at least one open prediction left unrun (M15)
 - [ ] at least one outgoing `[[wikilink]]` to a related note (no orphans)
-- [ ] credit given, including to AI contributors
+- [ ] credit given, including to AI contributors (M13)
 - [ ] `python scripts/make_index.py` re-run and the note appears

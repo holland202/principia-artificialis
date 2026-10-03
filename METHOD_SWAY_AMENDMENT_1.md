@@ -1,5 +1,10 @@
 # SWAY Amendment 1: what the first real use broke, and what was adopted because of it
 
+> **2026-10-03, Amendment 3.** The normative content of this file now lives, defined once, in
+> [METHOD.md](METHOD.md), [WORKFLOW.md](WORKFLOW.md) and [CONTROLS.md](CONTROLS.md). This text is kept
+> unchanged below as the record of how each rule was reached. Where it differs from METHOD.md, METHOD.md
+> governs. Every item in it is mapped in [methodology/RULE_INVENTORY.md](methodology/RULE_INVENTORY.md).
+
 **Status:** Adopted 2026-09-30. The amendment is **not validated** as better than SWAY as written. Its
 prediction P5, below, is unrun. `METHOD_SWAY.md` before this amendment: commit `a8e846b`, md5
 `9ecb353b393c32ea874ff3ac9f1efd60`.

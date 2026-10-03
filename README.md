@@ -7,8 +7,10 @@
 <!-- 30s-demo -->
 > **Status labels.** Every note carries its own label: `Speculative`, `Draft`, `Draft, verified reference
 > code`, `Verified` or `REFUTED (kept)`. **RESEARCH HYPOTHESIS** is the default for anything about AI.
-> **NOT A PRODUCT.** The working method is [SWAY](METHOD_SWAY.md) plus
-> [Amendment 1](METHOD_SWAY_AMENDMENT_1.md) (2026-09-30). It is adopted, not validated.
+> **NOT A PRODUCT.** The working method is [METHOD.md](METHOD.md): SWAY, consolidated by
+> [Amendment 3](METHOD_SWAY_AMENDMENT_3.md) (2026-10-03), with [WORKFLOW.md](WORKFLOW.md) and
+> [CONTROLS.md](CONTROLS.md). It is adopted, not validated. The full label list is METHOD.md's
+> vocabulary map.
 
 **Headline (measured, `python scripts/check_numbers.py`, 2026-09-30):** of 216 measured numbers written in
 the notes' prose, **145 appear in their reference script's output**. The other 71 are listed line by line in
@@ -221,7 +223,7 @@ A small deterministic component (`ebll/`) that draws the architectural boundary:
 - **Sovereign Veritas** records decisions and outcomes (immutable).
 - **Principia Artificialis** evaluates candidate changes against those records and fresh/held-out data.
 
-Historical decision/outcome records cannot be rewritten by the evaluation layer. Every candidate carries an explicit hypothesis registered *before* evaluation. Outcomes use the SWAY Amendment 1 vocabulary (`SUPPORTED` / `REFUTED` / `INSUFFICIENT_EVIDENCE` / …). A failed hypothesis is retained. A promotion record is an admission proposal only — not a deploy instruction.
+Historical decision/outcome records cannot be rewritten by the evaluation layer. Every candidate carries an explicit hypothesis registered *before* evaluation. Outcomes use the claim-status vocabulary in [METHOD.md](METHOD.md) §4 (`SUPPORTED` / `REFUTED` / `INSUFFICIENT_EVIDENCE` / …). A failed hypothesis is retained. A promotion record is an admission proposal only — not a deploy instruction.
 
 What has been demonstrated: a synthetic reference experiment (note #063) that evaluates a baseline, an improving candidate, and a deliberately failing candidate, preserves history, and keeps the refutation.
 
