@@ -121,3 +121,232 @@ method-lint steps passed, as did "run every note's reference code".
 ## Next unrun test
 
 Score Amendment 1's P5 on its closed window: C008, EL-007, XB-1, XB-2, note064 (registration, door).
+
+---
+
+# Correction appended 2026-10-03: the P5 registration window
+
+**Status:** an appended interpretive correction, a record edit under D8 and M12. Nothing above this line
+is changed. It does not edit Amendment 1 or Amendment 3. It fixes how Amendment 1's P5 is scored. It does
+**not** score P5; that follows in a separate commit.
+
+**Provenance:** AI participation → human validation → human editing/curation → human responsibility.
+- **AI participation:** Claude (Anthropic, Sonnet 5.5) audited the commits and wrote this section. The
+  strict definition was proposed by ChatGPT (OpenAI) and chosen by Chad Holland; the first reading of the
+  ambiguity was Claude's.
+- **Human review:** direction only. Chad Holland: "Use strict."
+- **Responsibility:** Chad Holland. **Self-tested.** No independent human has reviewed this section.
+
+## Three things that must not be confused
+
+1. **What Amendment 1 registered.** At `322c6ae` (2026-09-30 09:32 CDT), P5 says: "Over the next 5
+   registrations across the estate." It does not define a registration and it names no list. It does not
+   specify the five items below or any five.
+2. **What Amendment 3 recorded.** Its "Next unrun test" and its results file name "C008, EL-007, XB-1,
+   XB-2, note064". That list was written afterwards. It states no selection rule and omits note063
+   without a reason. It cannot be derived from Amendment 1: no definition of "registration" yields it
+   (the reading "any document that states predictions" gives C008, note063, EL-007, XB-1, XB-2; the
+   strict reading gives EL-007, XB-1, XB-2, note064, note065). The error is Amendment 3's. This
+   correction replaces its list for the purpose of scoring P5 and leaves its text in place.
+3. **The operational definition applied here.** It was adopted on 2026-10-03, **after** the ambiguity was
+   found. It is an interpretive clarification, not language that was in Amendment 1 when it was adopted.
+
+## Operational definition (for P5 only)
+
+A qualifying registration is a repository record that:
+1. is immutable and identifiable (a commit hash and a path);
+2. states one or more evaluable predictions or decision criteria;
+3. is committed before the implementation or outcome-observation activity of the experiment it
+   registers (its probe, script or run); and
+4. is attributable to the registration event itself, not reconstructed from later documentation.
+
+This follows M2 (register before observing). Pre-existing code that the experiment tests does not
+disqualify a registration; the experiment's own instrument and runs do.
+
+## The window: the first five qualifying registrations after `322c6ae`
+
+All timestamps are CDT, 2026-10-02. For every commit below, the author and committer timestamps are
+identical. Each registration commit adds only its registration file.
+
+| # | Registration | Commit | Path | Time | Experiment's own code, first commit |
+|---:|---|---|---|---|---|
+| 1 | EL-007 PREREG (P1–P10) | evidence-ledger `d2da7b8` | `experiments/EL007_PREREG.md` | 10:41:16 | `ad43163` 10:47:18 (`el007_separation.py`) |
+| 2 | XB-1 PREREG (X0–X6) | sovereign-veritas `7a8351e` | `docs/EXECUTION_BOUNDARY_PREREG.md` | 11:36:04 | `42ef70a` 11:37:08 (`execution_boundary_probe.py`) |
+| 3 | XB-2 PREREG (P1–P5) | sovereign-veritas `4a4d02a` | `docs/XB2_PREREG.md` | 12:54:58 | `afaa373` 12:56:31 (`xb2_boundary_probe.py`) |
+| 4 | note064 REGISTERED (P1–P10) | principia-artificialis `99e666d` | `research_notes/note064_governed_outcome_feedback.md` | 13:28:13 | `2c814fe` 13:33:15 (`note064_reference.py`) |
+| 5 | note065 REGISTERED (Q1–Q8) | principia-artificialis `2c4cb6d` | `research_notes/note065_outcome_source_dependency.md` | 13:56:03 | `18b4927` 14:05:01 (`note065_reference.py`) |
+
+The next candidate after the window is sovereign-veritas `7f47df7` (V14 REGISTRATION, 14:27:09). It is
+outside the window and is not scored here.
+
+## Candidates that do not qualify (kept in the record, not deleted)
+
+Both predate the window. Neither counts toward P5, and neither is evidence for or against it.
+
+| Item | Commits | Why it does not qualify | Caveat |
+|---|---|---|---|
+| veritas-companion C008, 2026-10-01 | PREREG first added in `d5d413f` 14:36:46; edited in `f7a5c5e` 14:58:23 | The file calls itself "Design / pre-registration draft (not yet frozen for a measured run)". It contains no numbered prediction and no threshold (`grep -c` of `P[0-9]+` is 0 in both versions). Criterion 2 fails | **Sequencing is mixed, and an earlier reading in this thread overstated it.** `companion/tier1.py` (`0bffb3e`, 14:36:16) preceded the first PREREG by 30 seconds, but the experiment runner (`d54342b`, 14:39:23) followed it. The later edit `f7a5c5e` came after `LlamaServerTier1` (`53fee1c`, 14:56:19). So criterion 3 is not cleanly failed; criterion 2 is |
+| note063 EBLL, 2026-10-01 | `ebll/` code `715d849`–`70e352c` 15:55–15:58; `scripts/note063_reference.py` `49ef537` 15:58:32; the note with "Registered predictions (written before the run)" `a463934` 15:59:06 | Criterion 3 fails: the experiment's code and reference script were committed before the note that registers the predictions. The note's phrase "written before the run" cannot be checked against any earlier commit | None |
+
+Also not counted: sovereign-veritas `bdb3862`/`4d19639` (Phase 1 specification, 10-01 05:00), a design
+document with no evaluable predictions. That is a judgment of the auditor.
+
+## Scoring rule for P5, fixed here before any failure was counted
+
+Unit: one (registration, class) cell, 5 registrations × 5 classes = 25 cells. Each cell is
+**FAILURE**, **NO FAILURE**, **NOT APPLICABLE** (with the reason written), or **UNDECIDED**. Evidence is
+limited to the registration at its registration commit and the results document or script output for the
+same item, including deviations recorded there.
+
+| Class (Amendment 1 item) | FAILURE if |
+|---|---|
+| Infeasible data (1) | the results record the design as not runnable as registered because the data lacks a property it needs, or the registration depends on counts that its own results show were not met |
+| Unreachable guard (2) | a registered vacuity or anti-vacuity guard cannot fire under the system's actual policy, or the results record a guard as VACUOUS or untestable |
+| Float threshold (3) | a registered bound is compared in floating point at or near the bound, or the results record such a comparison as an IMPLEMENTATION_ERROR |
+| Bound inside noise (4) | a registered numeric bound is smaller than the same-input spread, or the results record a bound as unresolvable at this n. **NOT APPLICABLE** only where the registration shows that every arm is deterministic |
+| Missing rival (5) | the registration names no simplest mundane rival (or null) arm run under the same budget. Absence is a failure; it is not "not applicable" |
+
+Outcome: **HELD** if the total FAILURE count is 0 or 1. **REFUTED (kept)** if it is 2 or more. If
+UNDECIDED cells could take a total of 1 or fewer to 2 or more, the outcome is **INSUFFICIENT_EVIDENCE**.
+The prediction and the thresholds are Amendment 1's and are not changed.
+
+**Disclosures before scoring.**
+- The auditor had seen the commit subjects of the five runs, which include "P3 refuted", "P5 REFUTED",
+  "Q2 REFUTED" and "real-code defect P4 found". Those are outcomes of the experiments' own predictions.
+  No cell had been classified as a P5 failure before this rule was written.
+- Self-scoring: the scorer is the same AI family that wrote Amendment 1 and this rule. A re-score under
+  this rule by an independent human is the way to confirm it. The rule above is what such a person would
+  need.
+- Baseline: Amendment 1 says "5 in the week before". That count is not re-derived here.
+- Not run on the S25. Repository inspection only (C-DEVICE: NOT VALIDATED on device).
+
+## Next unrun test
+
+Score the 25 cells above and append the result. After that, a second scorer, preferably a human who has
+not seen this scoring, applies the same rule to the same five commits.
+
+---
+
+# P5 scored 2026-10-03 (rule and window fixed in the correction above, commit `ebc9d1d`)
+
+**Outcome: P5 REFUTED (kept).** The prediction was "at most 1" failure in the five classes over the
+window. The count is **2 FAILURE cells**, plus 1 UNDECIDED cell. The refutation clause of Amendment 1 is
+met: "If there are 2 or more, the checklist is not working and the amendment is refuted for that purpose."
+The prediction, the thresholds and the method are unchanged by this result.
+
+**Provenance:** AI participation → human validation → human editing/curation → human responsibility.
+Claude (Anthropic, Sonnet 5.5) read the commits and scored the cells. Human review: direction only. This is
+**self-scored**: Claude is the same AI family that wrote Amendment 1, the rule and all five
+registrations (EL-007, XB-1, XB-2, note064 and note065 are each credited to "Claude, Opus 5.5"). Nothing
+here is independent validation.
+
+## What failed (first)
+
+1. **EL-007 P1: a float threshold compared at its bound, after rounding.** The registered prediction is
+   "S1 selection invariance = 1.000 (every claim, every seed)", failing on "any claim where S1's selected
+   set changes". The verdict code (`experiments/el007_separation.py`, line 195 and line 364) rounds the
+   rate to 3 decimals first, then tests `== 1.0`. The denominator is 7,200. A rate of 7199/7200 rounds to
+   1.0, so the check cannot see fewer than 4 mismatches. **No wrong verdict resulted:** the saved counts
+   are `[7200, 7200]`, exactly equal. The defect is latent. It is the class Amendment 1 item 3 names
+   ("thresholds are compared exactly").
+2. **note064 P5: a registered "identical, seed by seed" bound that sat inside the arm's own noise.** The
+   registration says "deterministic seeds" and predicts that B2 and B3 are identical with and without
+   leakage. B3's bootstrap seed includes the condition label
+   (`random.Random(50_000 + 97 * seed + CONDITIONS.index(cond))`), so identical inputs gave different
+   outputs on one seed (seed 87: 0.35 vs 0.70). Same-input noise was not measured before the bound was
+   registered (Amendment 1 item 4). The note's own results section records this as an instrument flaw.
+   note065 then fixed the seeding, by design.
+3. **UNDECIDED: XB-1 X4** (two threads, 50 ms sleep, registered exact counts). No repeat run is recorded
+   and the registration does not state that the arm is deterministic. It could not be decided from the
+   records. It is not counted as a failure.
+
+## The 25 cells
+
+F = FAILURE, ok = NO FAILURE, N/A = not applicable (reason in the text), ? = UNDECIDED.
+
+| Registration | Infeasible data | Unreachable guard | Float threshold | Bound inside noise | Missing rival |
+|---|---|---|---|---|---|
+| EL-007 `d2da7b8` | ok (synthetic) | ok: P1a fired (S0 0.568 < 0.90); sabotage flips P1 | **F** (above) | N/A: registration says "deterministic"; byte-identical output on three Python versions | ok: ALWAYS_UNRESOLVED and ALWAYS_SUPPORTED controls, naive S0. The results say the simplest rival for P6/P9 "is the mechanism" |
+| XB-1 `7a8351e` | ok (constructed cases) | ok: X0 and X0r fired | ok: integer counts | **?** (X4, above) | ok: the report-not-reproduced outcome is registered; the minimal mechanism is registered as the simplest |
+| XB-2 `4a4d02a` | ok | ok: C0 and P2 | ok: integer cells | ok: "25 repeat runs, 0 differing" | ok: A1 real baseline, A2 simplest, A4n null |
+| note064 `99e666d` | ok | ok: P10, B0 | ok (see note below) | **F** (above) | ok: B2 named "the simplest serious rival" |
+| note065 `2c4cb6d` | ok | ok: Q1, Q8, NONE | ok by the rule as written (see note below) | ok: seeded by seed and arm only; identical-run checks Q3–Q6 held | ok: NONE, R0, R1f |
+
+Notes on two "ok" cells, kept because a different reader could score them otherwise:
+- **note064, float:** the registration's "available gain +0.1425" was computed from rounded values (the
+  code uses 0.1426); the note records it as an arithmetic note. P2's bound is 0.01426 against an observed
+  difference of about 0.002, so it is not near the bound.
+- **note065, float:** the results record that whether τ = 0.20 counts as harmful is "a knife edge", because
+  U(0.20) = U(0.70) to four decimals. Computed here: U(0.20) − U(0.70) = 5.551e-17, against the script's
+  tolerance of 1e-12. So the harm classification of that case is decided by the tolerance, not by the
+  utilities. The rule scores *prediction bounds* (Q2's bound is 0.90 against an observed 0.33, not near),
+  so this is not scored as a failure. The tolerance is in the code and not in the registration.
+
+## Sensitivity of the outcome to those judgment calls
+
+| Reading | FAILURE | UNDECIDED | Outcome under the fixed rule |
+|---|---|---|---|
+| As scored (the rule as written) | 2 | 1 | **REFUTED (kept)** |
+| note065's knife edge also counted as a float failure | 3 | 1 | REFUTED |
+| XB-1 X4 resolved as a failure | 3 | 0 | REFUTED |
+| note064's cell read as an instrument bug, not a noise failure | 1 | 1 | INSUFFICIENT_EVIDENCE |
+
+The outcome rests on the note064 cell. Three of the four readings refute; none of them hold P5.
+
+## Commands and raw output (run 2026-10-03, container, Python 3.13; NOT VALIDATED on the S25)
+
+Window, from the git history of the five clones (see the correction above for hashes and paths):
+
+```
+git -C <repo> log -1 --format='%h A:%aI C:%cI %s' <commit>
+# author and committer times identical for all 14 commits inspected; each registration commit adds only
+# its registration file (name-status: A experiments/EL007_PREREG.md; A docs/EXECUTION_BOUNDARY_PREREG.md;
+# A docs/XB2_PREREG.md; A research_notes/note064_...md; A research_notes/note065_...md)
+```
+
+EL-007 P1 blind spot (`results/el007_results.json` at `ad43163`, `selection.invariance_counts.S1`):
+
+```
+S1 counts as run                   : 7200 7200
+rate() as run                      : 1.0   P1 check (== 1.0): True
+one mismatch: exact 7199/7200          : 0.999861
+one mismatch: rate() output        : 1.0
+one mismatch: P1 check (== 1.0)    : True <- P1 would still print AS REGISTERED
+fewest mismatches that P1 can see  : 4
+```
+
+note064 bootstrap seed (`scripts/note064_reference.py` at `2c814fe`, line 147):
+
+```
+    rng = random.Random(50_000 + 97 * seed + CONDITIONS.index(cond))
+```
+
+note065 knife edge (utility integrated numerically; script tolerance 1e-12):
+
+```
+U(0.20)=0.292130945 U(0.70)=0.292130945 diff=5.551e-17 (script tolerance 1e-12)
+```
+
+I did not re-run the five experiments' own scripts. The cells use their recorded transcripts and saved
+results as they were committed.
+
+## What this shows, and does not show
+
+- **Shows:** in these five registrations, the two failures were of classes that Amendment 1 items 3 and 4
+  target, and the checklist did not prevent them. The refutation is "for that purpose": the checklist as
+  practiced did not hold the count to at most 1.
+- **Does not show:** that the checklist is useless. There is no comparison group. The baseline "5 in the week
+  before" is Amendment 1's own count and is not re-derived here. It does not show whether the registrants
+  applied the checklist. Neither EL-007 nor note064's float and noise defects are noted in their own
+  registrations as items checked.
+- **Does not show:** that the scoring is right. A human who has not seen this scoring should re-score the
+  same five commits under the same rule.
+- **Not done, on purpose:** no change to METHOD.md, WORKFLOW.md or CONTROLS.md, and no Amendment 4. The
+  method is frozen until P6 and P7 are scored.
+
+## Next unrun test
+
+1. An independent re-score of the 25 cells under the same rule.
+2. A separate, registered fix to the EL-007 verdict code: compare the saved integer counts instead of a
+   rounded rate (evidence-ledger repository; not changed here).
+3. P6 and P7 of Amendment 3, still open.
