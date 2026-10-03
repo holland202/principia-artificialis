@@ -224,3 +224,129 @@ The prediction and the thresholds are Amendment 1's and are not changed.
 
 Score the 25 cells above and append the result. After that, a second scorer, preferably a human who has
 not seen this scoring, applies the same rule to the same five commits.
+
+---
+
+# P5 scored 2026-10-03 (rule and window fixed in the correction above, commit `ebc9d1d`)
+
+**Outcome: P5 REFUTED (kept).** The prediction was "at most 1" failure in the five classes over the
+window. The count is **2 FAILURE cells**, plus 1 UNDECIDED cell. The refutation clause of Amendment 1 is
+met: "If there are 2 or more, the checklist is not working and the amendment is refuted for that purpose."
+The prediction, the thresholds and the method are unchanged by this result.
+
+**Provenance:** AI participation → human validation → human editing/curation → human responsibility.
+Claude (Anthropic, Sonnet 5.5) read the commits and scored the cells. Human review: direction only. This is
+**self-scored**: Claude is the same AI family that wrote Amendment 1, the rule and all five
+registrations (EL-007, XB-1, XB-2, note064 and note065 are each credited to "Claude, Opus 5.5"). Nothing
+here is independent validation.
+
+## What failed (first)
+
+1. **EL-007 P1: a float threshold compared at its bound, after rounding.** The registered prediction is
+   "S1 selection invariance = 1.000 (every claim, every seed)", failing on "any claim where S1's selected
+   set changes". The verdict code (`experiments/el007_separation.py`, line 195 and line 364) rounds the
+   rate to 3 decimals first, then tests `== 1.0`. The denominator is 7,200. A rate of 7199/7200 rounds to
+   1.0, so the check cannot see fewer than 4 mismatches. **No wrong verdict resulted:** the saved counts
+   are `[7200, 7200]`, exactly equal. The defect is latent. It is the class Amendment 1 item 3 names
+   ("thresholds are compared exactly").
+2. **note064 P5: a registered "identical, seed by seed" bound that sat inside the arm's own noise.** The
+   registration says "deterministic seeds" and predicts that B2 and B3 are identical with and without
+   leakage. B3's bootstrap seed includes the condition label
+   (`random.Random(50_000 + 97 * seed + CONDITIONS.index(cond))`), so identical inputs gave different
+   outputs on one seed (seed 87: 0.35 vs 0.70). Same-input noise was not measured before the bound was
+   registered (Amendment 1 item 4). The note's own results section records this as an instrument flaw.
+   note065 then fixed the seeding, by design.
+3. **UNDECIDED: XB-1 X4** (two threads, 50 ms sleep, registered exact counts). No repeat run is recorded
+   and the registration does not state that the arm is deterministic. It could not be decided from the
+   records. It is not counted as a failure.
+
+## The 25 cells
+
+F = FAILURE, ok = NO FAILURE, N/A = not applicable (reason in the text), ? = UNDECIDED.
+
+| Registration | Infeasible data | Unreachable guard | Float threshold | Bound inside noise | Missing rival |
+|---|---|---|---|---|---|
+| EL-007 `d2da7b8` | ok (synthetic) | ok: P1a fired (S0 0.568 < 0.90); sabotage flips P1 | **F** (above) | N/A: registration says "deterministic"; byte-identical output on three Python versions | ok: ALWAYS_UNRESOLVED and ALWAYS_SUPPORTED controls, naive S0. The results say the simplest rival for P6/P9 "is the mechanism" |
+| XB-1 `7a8351e` | ok (constructed cases) | ok: X0 and X0r fired | ok: integer counts | **?** (X4, above) | ok: the report-not-reproduced outcome is registered; the minimal mechanism is registered as the simplest |
+| XB-2 `4a4d02a` | ok | ok: C0 and P2 | ok: integer cells | ok: "25 repeat runs, 0 differing" | ok: A1 real baseline, A2 simplest, A4n null |
+| note064 `99e666d` | ok | ok: P10, B0 | ok (see note below) | **F** (above) | ok: B2 named "the simplest serious rival" |
+| note065 `2c4cb6d` | ok | ok: Q1, Q8, NONE | ok by the rule as written (see note below) | ok: seeded by seed and arm only; identical-run checks Q3–Q6 held | ok: NONE, R0, R1f |
+
+Notes on two "ok" cells, kept because a different reader could score them otherwise:
+- **note064, float:** the registration's "available gain +0.1425" was computed from rounded values (the
+  code uses 0.1426); the note records it as an arithmetic note. P2's bound is 0.01426 against an observed
+  difference of about 0.002, so it is not near the bound.
+- **note065, float:** the results record that whether τ = 0.20 counts as harmful is "a knife edge", because
+  U(0.20) = U(0.70) to four decimals. Computed here: U(0.20) − U(0.70) = 5.551e-17, against the script's
+  tolerance of 1e-12. So the harm classification of that case is decided by the tolerance, not by the
+  utilities. The rule scores *prediction bounds* (Q2's bound is 0.90 against an observed 0.33, not near),
+  so this is not scored as a failure. The tolerance is in the code and not in the registration.
+
+## Sensitivity of the outcome to those judgment calls
+
+| Reading | FAILURE | UNDECIDED | Outcome under the fixed rule |
+|---|---|---|---|
+| As scored (the rule as written) | 2 | 1 | **REFUTED (kept)** |
+| note065's knife edge also counted as a float failure | 3 | 1 | REFUTED |
+| XB-1 X4 resolved as a failure | 3 | 0 | REFUTED |
+| note064's cell read as an instrument bug, not a noise failure | 1 | 1 | INSUFFICIENT_EVIDENCE |
+
+The outcome rests on the note064 cell. Three of the four readings refute; none of them hold P5.
+
+## Commands and raw output (run 2026-10-03, container, Python 3.13; NOT VALIDATED on the S25)
+
+Window, from the git history of the five clones (see the correction above for hashes and paths):
+
+```
+git -C <repo> log -1 --format='%h A:%aI C:%cI %s' <commit>
+# author and committer times identical for all 14 commits inspected; each registration commit adds only
+# its registration file (name-status: A experiments/EL007_PREREG.md; A docs/EXECUTION_BOUNDARY_PREREG.md;
+# A docs/XB2_PREREG.md; A research_notes/note064_...md; A research_notes/note065_...md)
+```
+
+EL-007 P1 blind spot (`results/el007_results.json` at `ad43163`, `selection.invariance_counts.S1`):
+
+```
+S1 counts as run                   : 7200 7200
+rate() as run                      : 1.0   P1 check (== 1.0): True
+one mismatch: exact 7199/7200          : 0.999861
+one mismatch: rate() output        : 1.0
+one mismatch: P1 check (== 1.0)    : True <- P1 would still print AS REGISTERED
+fewest mismatches that P1 can see  : 4
+```
+
+note064 bootstrap seed (`scripts/note064_reference.py` at `2c814fe`, line 147):
+
+```
+    rng = random.Random(50_000 + 97 * seed + CONDITIONS.index(cond))
+```
+
+note065 knife edge (utility integrated numerically; script tolerance 1e-12):
+
+```
+U(0.20)=0.292130945 U(0.70)=0.292130945 diff=5.551e-17 (script tolerance 1e-12)
+```
+
+I did not re-run the five experiments' own scripts. The cells use their recorded transcripts and saved
+results as they were committed.
+
+## What this shows, and does not show
+
+- **Shows:** in these five registrations, the two failures were of classes that Amendment 1 items 3 and 4
+  target, and the checklist did not prevent them. The refutation is "for that purpose": the checklist as
+  practiced did not hold the count to at most 1.
+- **Does not show:** that the checklist is useless. There is no comparison group. The baseline "5 in the week
+  before" is Amendment 1's own count and is not re-derived here. It does not show whether the registrants
+  applied the checklist. Neither EL-007 nor note064's float and noise defects are noted in their own
+  registrations as items checked.
+- **Does not show:** that the scoring is right. A human who has not seen this scoring should re-score the
+  same five commits under the same rule.
+- **Not done, on purpose:** no change to METHOD.md, WORKFLOW.md or CONTROLS.md, and no Amendment 4. The
+  method is frozen until P6 and P7 are scored.
+
+## Next unrun test
+
+1. An independent re-score of the 25 cells under the same rule.
+2. A separate, registered fix to the EL-007 verdict code: compare the saved integer counts instead of a
+   rounded rate (evidence-ledger repository; not changed here).
+3. P6 and P7 of Amendment 3, still open.
