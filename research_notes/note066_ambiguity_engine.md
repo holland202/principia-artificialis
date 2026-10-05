@@ -1,7 +1,8 @@
 # Note #066 — The Ambiguity Engine: an instrument's strength is what it cannot tell apart
 
-**Status:** Speculative (the general claim). One registered result elsewhere (sovereign-veritas AMB-1, held);
-one exploratory check, unregistered; AMB-2 registered below and **unrun at this commit**.
+**Status:** Speculative (the general claim); **claim 2 REFUTED on AMB-2 (kept)**. AMB-2: 3 of 4 registered
+predictions held, B3 refuted (registered at `62334da`, before its code). One registered result elsewhere
+(sovereign-veritas AMB-1, held); one exploratory check, unregistered.
 **Theme:** Verification / Experimental Design / AI-assisted Search
 **Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's direction (2026-10-05). Proposals from
 other AI systems that Chad collected are credited by model name below; their text is not reproduced.
@@ -12,6 +13,14 @@ ones), sovereign-veritas PV-1 and AMB-1 (external links below)
 
 ## What broke (read first)
 
+- **AMB-2 B3 — REFUTED (kept). Claim 2 fails on design quality.** Choosing the surrogate's next sample where
+  it most misjudged the design did *not* give better designs than random samples at equal budget: mean final
+  low-band T_full 0.4740 (ENGINE) against 0.4774 (RANDOM), ENGINE lower in 5 of 10 seeds (registered: ≥ 7).
+  What the engine did do is make the surrogate honest: mean final gap 0.0281 (ENGINE) against 0.2568
+  (RANDOM) and 0.3765 (NONE). That gap comparison was not registered as a prediction (B4 compared ENGINE with
+  round 0 only), so it is an observation, not a result. The lesson as it stands: **removing ambiguity is
+  not the same as improving the thing measured.** The engine bought an accurate instrument, not a better
+  chain.
 - **Google AI's proposal is wrong as stated (argument, not experiment).** It proposed a passive solid lattice
   in which geometry alone lets heat flow A→B but not B→A. Ordinary (linear) heat conduction is reciprocal;
   geometry alone cannot do that. Thermal diodes need temperature-dependent conductivity or other
@@ -120,11 +129,51 @@ Score per arm and seed: T_full and gap = T_full − T_S of the design optimised 
 If B3 fails, claim 2 is refuted for this task and the failure stays here. If B2 fails, the task has no
 ambiguity to remove and AMB-2 says nothing about claim 2.
 
+## AMB-2 results (run after `62334da`; raw output `results/note066/run.txt`)
+
+Two implementation choices the registration left open, decided before the run and disclosed here: each
+optimisation starts a fresh `default_rng(seed)`, so rounds differ only through S; and "6 rounds" was run as
+six (add one frequency, re-optimise) steps after the round-0 optimisation, so every bought frequency is used
+by the final design.
+
+```
+== AMB-2 (registered run)
+  seed 0: round0 T_full 0.4913 T_S 0.1245 | final T_full ENGINE 0.5409  RANDOM 0.4685  NONE 0.4913 | ENGINE gap 0.0609
+  seed 1: round0 T_full 0.5161 T_S 0.1592 | final T_full ENGINE 0.4922  RANDOM 0.4353  NONE 0.5161 | ENGINE gap -0.0383
+  seed 2: round0 T_full 0.5000 T_S 0.1475 | final T_full ENGINE 0.4103  RANDOM 0.5071  NONE 0.5000 | ENGINE gap 0.0234
+  seed 3: round0 T_full 0.5107 T_S 0.1683 | final T_full ENGINE 0.4034  RANDOM 0.4614  NONE 0.5107 | ENGINE gap 0.0438
+  seed 4: round0 T_full 0.5223 T_S 0.1313 | final T_full ENGINE 0.4924  RANDOM 0.4767  NONE 0.5223 | ENGINE gap 0.0520
+  seed 5: round0 T_full 0.5151 T_S 0.1492 | final T_full ENGINE 0.4709  RANDOM 0.4442  NONE 0.5151 | ENGINE gap 0.0030
+  seed 6: round0 T_full 0.5477 T_S 0.1786 | final T_full ENGINE 0.4482  RANDOM 0.5302  NONE 0.5477 | ENGINE gap -0.0519
+  seed 7: round0 T_full 0.5352 T_S 0.1127 | final T_full ENGINE 0.4479  RANDOM 0.4579  NONE 0.5352 | ENGINE gap 0.0145
+  seed 8: round0 T_full 0.5236 T_S 0.1490 | final T_full ENGINE 0.5544  RANDOM 0.5032  NONE 0.5236 | ENGINE gap 0.1117
+  seed 9: round0 T_full 0.5728 T_S 0.1494 | final T_full ENGINE 0.4790  RANDOM 0.4893  NONE 0.5728 | ENGINE gap 0.0621
+  mean round0 T_full 0.5235  T_S 0.1470  gap 0.3765
+  mean final T_full  ENGINE 0.4740  RANDOM 0.4774  NONE 0.5235;  ENGINE lower than RANDOM in 5 of 10 seeds
+  mean final gap     ENGINE 0.0281  RANDOM 0.2568  NONE 0.3765;  B1 uniform T_full 1.000
+  B1  HELD
+  B2  HELD
+  B3  REFUTED
+  B4  HELD
+VERDICT 3 of 4 as registered (B5 is --sabotage; B6 is the door)
+DIGEST 2db69064d8a970c9ceff2167826626d683674fbb238d68721ab19cac0d382592
+```
+
+| | prediction | outcome |
+|---|---|---|
+| B1 | uniform chain T_full = 1.000 | HELD |
+| B2 | round-0 mean T_S ≤ 0.5 × T_full | HELD (0.1470 vs 0.5235): optimising against 4 samples fooled the surrogate |
+| B3 | ENGINE beats RANDOM on T_full, ≥ 7 of 10 seeds | **REFUTED** (0.4740 vs 0.4774; 5 of 10) |
+| B4 | ENGINE final gap ≤ ⅓ round-0 gap | HELD (0.0281 vs 0.3765 / 3 = 0.1255) |
+| B5 | `--sabotage` exits 1 | HELD (`results/note066/sabotage.txt`: B2 REFUTED, exit 1) |
+
+Self-tested by Claude (Opus 5.5); container only; NOT VALIDATED on the S25.
+
 ## Reference code
 
-`scripts/note066_reference.py` (NumPy). At the registration commit it implements only `--explore` (the
-chain check above, which existed before registration). The AMB-2 arms are added in a later commit; until
-then the default run prints only the explore table.
+`scripts/note066_reference.py` (NumPy). At the registration commit (`62334da`) it implemented only
+`--explore`; the AMB-2 arms were added afterwards (`8d4d3f7`) and the outcome pinned (`f0b2abe`). The default
+run prints every number in this note and exits 0 only on the recorded outcome.
 
 ## Triggered controls (M16)
 
@@ -143,6 +192,9 @@ then the default run prints only the explore table.
 
 ## Falsifiable next predictions (M15)
 
-- AMB-2 B3 (above), unrun at this commit.
+- **A registered ENGINE-vs-RANDOM gap comparison** on AMB-2: the observation above (0.0281 vs 0.2568) predicts
+  ENGINE's gap is lower in at least 8 of 10 fresh seeds (seeds 10-19).
+- **Engine plus exploitation:** spend half the budget on disagreement samples and half on the optimiser's
+  own choice; does T_full then beat RANDOM? (Claim 2 restated so it could survive; unregistered.)
 - AMB-1 with a RANDOM arm: 800 random recombined vectors leave the worst impostor above 28 of 10,000.
 - The Go port of the Gate agrees with the kernel on AMB-1's 20,000 recombined inputs.
