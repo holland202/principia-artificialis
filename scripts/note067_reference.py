@@ -17,7 +17,7 @@ import numpy as np
 
 N, K, ALPHA, EPOCHS = 600, 20, 0.05, 2000
 SENS, RATES = (1.0, 0.9, 0.5, 0.1, 0.0), (0.005, 0.04)
-RECORDED = None
+RECORDED = (("P1", "P3", "P4", "P5", "P6"), "44e15cac2d627520307e0901e38f75c5b5669f598ff822a0daf523ae09a0725d")
 
 
 def binom_cdf(x, n, q):
