@@ -134,7 +134,7 @@ is changed. It does not edit Amendment 1 or Amendment 3. It fixes how Amendment 
 - **AI participation:** Claude (Anthropic, Sonnet 5.5) audited the commits and wrote this section. The
   strict definition was proposed by ChatGPT (OpenAI) and chosen by Chad Holland; the first reading of the
   ambiguity was Claude's.
-- **Human review:** direction only. Chad Holland: "Use strict."
+- **Human review:** direction only (Chad Holland).
 - **Responsibility:** Chad Holland. **Self-tested.** No independent human has reviewed this section.
 
 ## Three things that must not be confused
