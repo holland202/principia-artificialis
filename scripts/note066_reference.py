@@ -50,7 +50,7 @@ def explore():
 N, GENS, MUT, SIGMA, ROUNDS, SEEDS = 100, 500, 5, 0.3, 6, range(10)
 GRID = np.linspace(0.05, 0.5, 200)
 S0 = [0.1, 0.2, 0.3, 0.4]
-RECORDED = None  # pinned in a separate commit after the registered run
+RECORDED = (("B1", "B2", "B4"), "2db69064d8a970c9ceff2167826626d683674fbb238d68721ab19cac0d382592")
 
 
 def optimise(S, seed):
