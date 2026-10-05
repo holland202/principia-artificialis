@@ -1,0 +1,23 @@
+note067 | SABOTAGE: composed bound = S3P bound alone | python 3.13.16 | n=600 k=20 alpha=0.05 epochs=2000 seed=0
+  s=1.0  p=0.005  S3P miss 0.0545 [99% 0.0433, 0.0675]  composed miss 0.0545 [99% 0.0433, 0.0675]  no-claim 0/2000  S3P bound 0.004980..0.028106  composed median 0.012872
+  s=1.0  p=0.04   S3P miss 0.0330 [99% 0.0244, 0.0435]  composed miss 0.0330 [99% 0.0244, 0.0435]  no-claim 0/2000  S3P bound 0.026029..0.093289  composed median 0.055795
+  s=0.9  p=0.005  S3P miss 0.0705 [99% 0.0578, 0.0849]  composed miss 0.0705 [99% 0.0578, 0.0849]  no-claim 0/2000  S3P bound 0.004980..0.028106  composed median 0.012872
+  s=0.9  p=0.04   S3P miss 0.0895 [99% 0.0752, 0.1054]  composed miss 0.0895 [99% 0.0752, 0.1054]  no-claim 0/2000  S3P bound 0.023929..0.080330  composed median 0.051946
+  s=0.5  p=0.005  S3P miss 0.2205 [99% 0.1993, 0.2429]  composed miss 0.2205 [99% 0.1993, 0.2429]  no-claim 0/2000  S3P bound 0.004980..0.019641  composed median 0.007882
+  s=0.5  p=0.04   S3P miss 0.8525 [99% 0.8331, 0.8705]  composed miss 0.8525 [99% 0.8331, 0.8705]  no-claim 0/2000  S3P bound 0.007882..0.063425  composed median 0.032203
+  s=0.1  p=0.005  S3P miss 0.7420 [99% 0.7185, 0.7645]  composed miss 0.7420 [99% 0.7185, 0.7645]  no-claim 0/2000  S3P bound 0.004980..0.012872  composed median 0.004980
+  s=0.1  p=0.04   S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 1.0000 [99% 0.9977, 1.0000]  no-claim 0/2000  S3P bound 0.004980..0.030164  composed median 0.010455
+  s=0.0  p=0.005  S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 1.0000 [99% 0.9977, 1.0000]  no-claim 0/2000  S3P bound 0.004980..0.004980  composed median 0.004980
+  s=0.0  p=0.04   S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 1.0000 [99% 0.9977, 1.0000]  no-claim 0/2000  S3P bound 0.004980..0.004980  composed median 0.004980
+  distinguishable canaries (real s=0.1, canaries caught always), p=0.04: composed miss 1.0000 [99% 0.9977, 1.0000]  composed median 0.010455
+  P5 p=0, s=1: S3P bound 0.004980, composed 0.007371, ratio 1.4799
+  (unregistered diagnostic) s=1, p=0.005: S3P misses iff judged <= 0; exact miss probability 0.049414
+  (unregistered diagnostic) s=1, p=0.04: S3P misses iff judged <= 15; exact miss probability 0.031792
+  P1  HELD
+  P2  REFUTED
+  P3  HELD
+  P4  REFUTED
+  P5  HELD
+  P6  HELD
+VERDICT 4 of 6 as registered (P7 is --sabotage)
+DIGEST 652e955a8d8ab4efed2bd54da3efe1ccf70463b80a39c387d066a818369c17f3
