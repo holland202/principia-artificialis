@@ -1,7 +1,8 @@
 # Note #067 — A signed safety bound says nothing about the true rate unless the evaluator is shown to detect
 
-**Status:** Speculative — registration only. Nothing below has been run. Registered 2026-10-05 before
-`scripts/note067_reference.py` exists.
+**Status:** Draft, verified reference code — 5 of 6 registered predictions held; **P2 REFUTED (kept)**, on a
+threshold I set too tight. Registration committed at `21d5a98`, before the code existed; code and raw output
+`6c76ca9`; `RECORDED` pinned `b641793`. Container only; NOT VALIDATED on the S25.
 **Theme:** Statistics / Evaluation / Evidence
 **Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's direction (2026-10-05); direction only,
 no line review before this commit.
@@ -9,6 +10,22 @@ no line review before this commit.
 the anti-vacuity rule (METHOD.md M3: the instrument can say the other thing); outside material: OVERT 1.1,
 Glacis Technologies (CC BY 4.0), §19 and Annex B.7–B.8.
 **Method:** [METHOD.md](../METHOD.md) at commit `3f837b3`.
+
+## What broke (read first)
+
+**P2 — REFUTED (kept).** I registered that with a perfect evaluator (s = 1) the S3P-alone miss rate would be
+≤ 0.05, with a 99% upper bound ≤ 0.065. At p = 0.005 the observed miss rate was **0.0545** (99% interval
+0.0433–0.0675). So both clauses failed. (At p = 0.04 it held: 0.0330.)
+
+S3P is not at fault. The exact miss probability at p = 0.005 is **0.049414**, inside α. A diagnostic line
+computing it was added after the first run; no registered computation changed and the digest is identical. With
+n = 600, S3P misses there exactly when the judged count is 0, and its bound at 0 (0.004980) sits just below
+p = 0.005. That makes the true miss rate a knife edge at α. With 2,000 epochs, the standard error of the estimate is about
+0.005 (√(0.0494 × 0.9506 / 2000) = 0.00485), so a point-estimate rule of "≤ 0.05" can fail on Monte Carlo
+noise alone. The registration error: I tested an
+exact-coverage method with a rule that leaves no room for its own sampling error, at a parameter where coverage
+is tight. The lesson for the OVERT comment is that S3P's arithmetic is exact as claimed. The issue is only
+what it is a bound *on*.
 
 ## The claim
 
@@ -76,6 +93,66 @@ relevant. That reading is Claude's alone and has not been checked by anyone else
 
 P1 and P3 are the instrument showing it can report a miss, and P6 shows the repair itself can fail. P7 shows
 the harness can tell the repair from its absence.
+
+## Results (run 2026-10-05, `results/note067/run.txt`)
+
+```
+note067 | registered run | python 3.13.16 | n=600 k=20 alpha=0.05 epochs=2000 seed=0
+  s=1.0  p=0.005  S3P miss 0.0545 [99% 0.0433, 0.0675]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 0/2000  S3P bound 0.004980..0.028106  composed median 0.017488
+  s=1.0  p=0.04   S3P miss 0.0330 [99% 0.0244, 0.0435]  composed miss 0.0035 [99% 0.0012, 0.0080]  no-claim 0/2000  S3P bound 0.026029..0.093289  composed median 0.070871
+  s=0.9  p=0.005  S3P miss 0.0705 [99% 0.0578, 0.0849]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 0/2000  S3P bound 0.004980..0.028106  composed median 0.019357
+  s=0.9  p=0.04   S3P miss 0.0895 [99% 0.0752, 0.1054]  composed miss 0.0015 [99% 0.0002, 0.0050]  no-claim 0/2000  S3P bound 0.023929..0.080330  composed median 0.078446
+  s=0.5  p=0.005  S3P miss 0.2205 [99% 0.1993, 0.2429]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 0/2000  S3P bound 0.004980..0.019641  composed median 0.038026
+  s=0.5  p=0.04   S3P miss 0.8525 [99% 0.8331, 0.8705]  composed miss 0.0010 [99% 0.0001, 0.0042]  no-claim 0/2000  S3P bound 0.007882..0.063425  composed median 0.127502
+  s=0.1  p=0.005  S3P miss 0.7420 [99% 0.7185, 0.7645]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 243/2000  S3P bound 0.004980..0.012872  composed median 0.496356
+  s=0.1  p=0.04   S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 0.0010 [99% 0.0001, 0.0042]  no-claim 263/2000  S3P bound 0.004980..0.030164  composed median 0.970872
+  s=0.0  p=0.005  S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 2000/2000  S3P bound 0.004980..0.004980  composed median none
+  s=0.0  p=0.04   S3P miss 1.0000 [99% 0.9977, 1.0000]  composed miss 0.0000 [99% 0.0000, 0.0023]  no-claim 2000/2000  S3P bound 0.004980..0.004980  composed median none
+  distinguishable canaries (real s=0.1, canaries caught always), p=0.04: composed miss 1.0000 [99% 0.9977, 1.0000]  composed median 0.014417
+  P5 p=0, s=1: S3P bound 0.004980, composed 0.007371, ratio 1.4799
+  (unregistered diagnostic) s=1, p=0.005: S3P misses iff judged <= 0; exact miss probability 0.049414
+  (unregistered diagnostic) s=1, p=0.04: S3P misses iff judged <= 15; exact miss probability 0.031792
+  P1  HELD
+  P2  REFUTED
+  P3  HELD
+  P4  HELD
+  P5  HELD
+  P6  HELD
+VERDICT 5 of 6 as registered (P7 is --sabotage)
+DIGEST 44e15cac2d627520307e0901e38f75c5b5669f598ff822a0daf523ae09a0725d
+```
+
+Sabotage (`results/note067/sabotage.txt`, composed bound replaced by S3P alone): P4 REFUTED, `VERDICT 4 of 6`,
+exit 1.
+
+| Prediction | Result |
+|---|---|
+| P1 always-pass evaluator: S3P bound 0.004980 every epoch, miss rate 1.000 | HELD |
+| P2 perfect evaluator: S3P miss ≤ 0.05 (99% upper ≤ 0.065) | **REFUTED (kept)**: 0.0545 at p = 0.005; exact value 0.049414 (see above) |
+| P3 s = 0.5, p = 0.04: S3P miss, 99% lower bound ≥ 0.50 | HELD: 0.8525 (99% lower 0.8331) |
+| P4 composed bound covers in all 10 arms | HELD: worst miss 0.0035 (99% upper 0.0080) |
+| P5 cost ratio 1.4799 ± 0.0005 | HELD: 1.4799 |
+| P6 distinguishable canaries break the repair | HELD: miss 1.0000 |
+| P7 sabotage exits 1 | HELD |
+
+### What this shows
+
+- **Mathematical, not new:** the S3P bound is exact for the judged rate (the diagnostic: 0.049414, 0.031792 ≤
+  0.05), and says nothing about the true rate once the evaluator can miss. At s = 0.5 and p = 0.04 it failed to
+  cover the true rate in 0.8525 of epochs. At s = 0.1, p = 0.04 it failed in 1.0000, while reporting bounds as tight
+  as 0.004980.
+- **The repair covers, and it is conservative:** composed misses were at most 0.0035 across all arms. The price
+  is width: the median composed bound at s = 1, p = 0.04 was 0.070871, against a true 0.04. With an evaluator
+  that catches little, the repair mostly declines to claim anything: at s = 0.1, 243 and 263 of 2,000 epochs
+  made no claim, and the rest had medians of 0.496356 and 0.970872, which is close to no claim. That is the honest
+  answer for a nearly blind evaluator.
+- **The repair rests entirely on canaries being indistinguishable** (P6: miss rate 1.0000 when the evaluator
+  recognises them). In a real deployment this is the hard part, and this note does not solve it.
+
+### What it does not show
+
+Anything about real OVERT implementations, Protocol Profile 1.0, or real evaluators. The model has no false
+positives and assumes exchangeable canaries. One author, self-tested.
 
 ## Triggered controls (M16)
 
