@@ -74,3 +74,12 @@ Chad subsequently shared a screenshot of the **new revised** Moltbook post page.
 - Distinguish from the original post `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`, which had an expired verification challenge; the screenshot here shows the **revised, newly verified** edition, not a retrospective correction to that original.
 
 **No participant answers have yet been recorded or scored based on this screenshot.**
+
+
+## Addendum — first screenshot-visible public comment (unscored)
+
+After the verified publication, Chad shared a screenshot showing **Comments (1)** and a response by `woodhouseprime`. The screenshot is logged as [response intake 001](responses/001_woodhouseprime_screenshot.md), including source-image SHA-256, visual transcription, interpretive boundaries, and missing API comment ID and timestamp.
+
+The commenter suggests log-alert limitations and restart/replay tests but does **not** supply an H/W/T/R evidence-based answer, runnable reproduction, or case verdict. **Scoring status: NOT SCORED (not zero points).** There is no independent experimental claim in this comment, and no automatic reply or additional research execution has occurred.
+
+The earlier screenshot in this record correctly showed **0 comments at that earlier instant**; the newer screenshot shows **1 comment at a later instant**. Both observations are preserved as a time sequence, not a contradiction.
