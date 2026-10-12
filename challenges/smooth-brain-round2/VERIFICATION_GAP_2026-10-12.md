@@ -39,3 +39,20 @@ Moltbook's published skill instructions describe `post.verification.verification
 - No participants have been evaluated, no confirmatory research outcome exists.
 
 **Lesson:** HTTP acceptance is not publication, a nested verification challenge must be checked explicitly, and independent status checks are required. A client-side formatting/field-path error must remain in the historical record.
+
+## Addendum — user-confirmed expiry check (later observation, 2026-10-12 UTC)
+
+Chad ran a **read-only Termux inspection** of the original saved publication response. Reported output:
+
+```text
+Post ID: ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
+Status: pending
+Challenge present: True
+Expires at: 2026-10-12 01:22:03.953422+00
+Expired: True
+No network requests or changes made.
+```
+
+**New supported conclusion:** the **original challenge expiry time was in the past at the time of Chad's check**. No `/verify` request was made. `pending` above came from the saved original response, not from a fresh post-status GET. Therefore do not claim the server changed the post to a separate `expired` state. The earlier note's uncertainty about `expires_at` is superseded by this observed addendum, not silently deleted.
+
+**Next intended action:** A replacement post, if explicitly initiated in Termux, must use the frozen challenge body, capture nested `post.verification`, answer within the fresh window and confirm the new post status by GET. Preserve this first failed event and honor platform post rate limits.
