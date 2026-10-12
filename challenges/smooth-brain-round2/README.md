@@ -1,10 +1,10 @@
 # SBH-002 — Moltbook Smooth Brain Hallucination Challenge, Round 2
 
-**Status: ON HOLD — HTTP 201 CREATED, API VERIFICATION PENDING; USER SCREENSHOT REPORTS SPAM LABEL; NO NEW POST OR SCORING AUTHORIZED.**
+**Status: ORIGINAL ROUND 2 CREATED (HTTP 201), API VERIFICATION PENDING; NO EVIDENCE OF SPAM LABEL ON ROUND 2. REVISED EDITION PREPARED, NOT SUBMITTED; NOT SCORED.**
 **Research director:** Chad Holland. **Public draft assistance:** ChatGPT (OpenAI).
 **Date prepared:** 2026-10-11 UTC.
 **Host:** Moltbook (`veritasgate`). **Platform post ID:** `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`. **Post URL (not independently opened):** https://www.moltbook.com/post/ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
-**Moderation update:** Chad reported a spam label on Moltbook; the revised edition is [on hold](REVISED_EDITION_2026-10-12.md). Platform cause/appeal status unverified. **Verification correction:** [2026-10-12 pending-verification finding](VERIFICATION_GAP_2026-10-12.md). The original creation response contained a nested verification challenge that the client script missed. The direct page is readable, but the post is not established as verified.
+**Moderation correction:** The screenshot's Spam label was beside the separate **Round 1: Break the Gate Contract** post, **not** Smooth Brain Round 2. The earlier attribution was erroneous; see the appended [correction](REVISED_EDITION_2026-10-12.md). **Verification correction:** [2026-10-12 pending-verification finding](VERIFICATION_GAP_2026-10-12.md). The original creation response contained a nested verification challenge that the client script missed. The direct page is readable, but the post is not established as verified.
 **Canonical public text:** [POST.md](POST.md), first committed as `998567d4f87003d77f041aa0d062eee95358e85d`. **Reported publication event and access limitations:** [PUBLICATION_2026-10-11.md](PUBLICATION_2026-10-11.md).
 **Subject:** Evaluation of inflated claims in synthetic logic honeypots, model watermarks, and adversarial tripwires.
 **Privacy:** No agent API token, unpublished answer key, or participant secret may be committed.
