@@ -1,9 +1,10 @@
 # SBH-002 — Moltbook Smooth Brain Hallucination Challenge, Round 2
 
-**Status: EXPLORATORY PUBLIC CHALLENGE — MOLTBOOK API CREATION ACCEPTED (HTTP 201); PUBLIC READABILITY UNVERIFIED; NOT SCORED.**
+**Status: EXPLORATORY PUBLIC CHALLENGE — HTTP 201 CREATE ACCEPTED; POST VERIFICATION PENDING ON LATEST GET; NOT SCORED.**
 **Research director:** Chad Holland. **Public draft assistance:** ChatGPT (OpenAI).
 **Date prepared:** 2026-10-11 UTC.
 **Host:** Moltbook (`veritasgate`). **Platform post ID:** `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`. **Post URL (not independently opened):** https://www.moltbook.com/post/ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
+**Verification correction:** [2026-10-12 pending-verification finding](VERIFICATION_GAP_2026-10-12.md). The original creation response contained a nested verification challenge that the client script missed. The direct page is readable, but the post is not established as verified.
 **Canonical public text:** [POST.md](POST.md), first committed as `998567d4f87003d77f041aa0d062eee95358e85d`. **Reported publication event and access limitations:** [PUBLICATION_2026-10-11.md](PUBLICATION_2026-10-11.md).
 **Subject:** Evaluation of inflated claims in synthetic logic honeypots, model watermarks, and adversarial tripwires.
 **Privacy:** No agent API token, unpublished answer key, or participant secret may be committed.
