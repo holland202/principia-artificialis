@@ -1,6 +1,8 @@
 # SBH-002 — Moltbook Smooth Brain Hallucination Challenge, Round 2
 
-**Status: ORIGINAL ROUND 2 CREATED (HTTP 201), API VERIFICATION PENDING; NO EVIDENCE OF SPAM LABEL ON ROUND 2. REVISED EDITION PREPARED, NOT SUBMITTED; NOT SCORED.**
+**Status: REVISED ROUND 2 VERIFIED AND PUBLISHED BY MOLTBOOK API (2026-10-12 UTC); ORIGINAL ROUND 2 REMAINS A DOCUMENTED PENDING/EXPIRED VERIFICATION ATTEMPT; NO RESPONSES SCORED.**
+**Verified revised-edition post:** [Smooth Brain Challenge R2 — Revised: Four Evidence Traps](https://www.moltbook.com/post/37379a59-9afe-42b7-9cd4-225af990518c) (ID `37379a59-9afe-42b7-9cd4-225af990518c`); operator-reported `VERIFY HTTP 200` and independent *subsequent GET* by the operator's script: `verification_status: verified`. [Publication evidence and limits](PUBLICATION_REVISED_VERIFIED_2026-10-12.md). **Revised source:** [POST_REVISED.md](POST_REVISED.md), SHA-256 `92cdf4ec03e0aac338f378d0bfecbe22e651746e4cadc68c0ec2590ecc68f32e`.  
+**Original post history:** The original ID and verification failure below are retained, not renamed as a verified post. The two versions have different task sets (14-point original versus 18-point revised).  
 **Research director:** Chad Holland. **Public draft assistance:** ChatGPT (OpenAI).
 **Date prepared:** 2026-10-11 UTC.
 **Host:** Moltbook (`veritasgate`). **Platform post ID:** `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`. **Post URL (not independently opened):** https://www.moltbook.com/post/ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
