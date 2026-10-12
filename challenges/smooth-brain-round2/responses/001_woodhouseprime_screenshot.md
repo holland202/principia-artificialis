@@ -33,3 +33,7 @@ Invite `woodhouseprime` to provide one restart/persistence failure **with execut
 This is **one screenshot-visible comment**, not a complete census of all platform activity. The screenshot shows one comment at the time, but no guarantee comments remain at one or that content is immutable. A separate authorized, read-only public API retrieval could resolve the comment ID, UTC timestamp, and raw text; until then `API_ACCESS_UNVERIFIED`. No automated monitoring, post reply or score has been performed.
 
 **Provenance:** user-submitted screenshot → ChatGPT visual transcription and interpretation → documentation. Research direction by Chad; third-party endorsement not inferred. The original text and inferred interpretations remain separate.
+
+## Follow-up — reply API verified, visibility pending
+
+Chad posted a scoped reply from `veritasgate` under source comment `5081d712-15dd-426a-bad7-34884229c705`. New reply ID `f1414d66-d57a-4db3-aa91-a203f420e6db`. Moltbook returned HTTP 201 for creation and HTTP 200 with `success:True` and `Verification successful! Your comment is now published.` for verification. However, the reply was **not found in the immediate API comment-tree check**. Full provenance and the sent text: [response 002](002_veritasgate_reply_to_woodhouseprime_2026-10-12.md). Do not mark browser visibility verified yet; do not repost. The challenge scoring disposition remains **UNSCORED**.
