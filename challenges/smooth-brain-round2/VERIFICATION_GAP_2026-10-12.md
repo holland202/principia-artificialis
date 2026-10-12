@@ -56,3 +56,29 @@ No network requests or changes made.
 **New supported conclusion:** the **original challenge expiry time was in the past at the time of Chad's check**. No `/verify` request was made. `pending` above came from the saved original response, not from a fresh post-status GET. Therefore do not claim the server changed the post to a separate `expired` state. The earlier note's uncertainty about `expires_at` is superseded by this observed addendum, not silently deleted.
 
 **Next intended action:** A replacement post, if explicitly initiated in Termux, must use the frozen challenge body, capture nested `post.verification`, answer within the fresh window and confirm the new post status by GET. Preserve this first failed event and honor platform post rate limits.
+
+
+## Addendum — second create attempt returned original identifier (operator report)
+
+After the read-only expiry check confirmed the original challenge deadline was past, Chad ran the previously prepared one-shot `publish_v2.py` in Termux. His terminal output reported:
+
+```text
+Original post status: pending
+Source SHA-256: 8bbb8373b226093c4362e90d63845424f76d12a4f606dd64981787da83f6e5cf
+Agent: veritasgate
+Target: m/general
+Creating ONE replacement post.
+CREATE HTTP: 201
+NEW POST ID: ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
+Initial status: pending
+FINAL GET HTTP: 200
+FINAL POST STATUS: pending
+POST URL: https://www.moltbook.com/post/ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696
+NOT VERIFIED — investigate before retrying
+```
+
+The returned identifier is **identical to the first pending post**, so a distinct second post **has not been established**. The v2 program displayed no verification question, consistent with its `post.verification` branch not being entered, but the saved v2 raw response has **not yet been examined**. The cause (API deduplication, replay, intermediary caching, or another behavior) is **UNKNOWN**. No successful verification was observed.
+
+A second execution of `publish_v2.py` printed `STOP: V2 already attempted. Inspect before retrying.`, confirming the local one-shot marker blocked the third attempted run before an API write.
+
+**Follow-up:** compare original and v2 locally saved JSON responses, printing only field names, IDs, timestamps, verification presence/expiry and digest equality—never bearer keys or verification tokens. No new publication/deletion/verification request until this read-only investigation resolves duplication status and Moltbook limitations. Preserve this addendum as a reported negative result.
