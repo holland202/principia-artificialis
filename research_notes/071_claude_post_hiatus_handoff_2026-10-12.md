@@ -83,3 +83,18 @@ Oleksandr Shuliak (business-process/systems analyst, Responsible AI) requested a
 **Document status:** HISTORICAL COORDINATION HANDOFF / READ-ONLY / NOT EXPERIMENTAL / NOT INDEPENDENTLY VALIDATED. The repository path `research_notes/071_...` is **historical and potentially misleading as a numbered research-note category**: this document did not register predictions, ship an anti-vacuity instrument, or implement the research-note template. W9 covers its documentary purpose; W1–W8 experimental requirements are not retrospectively claimed. The original path remains unchanged to preserve citations; moving or renumbering it is a separate owner decision, not authorized by this clarification.
 
 **Unresolved checks:** Live Azure campaign final state and shutdown; the owner-only DPC-001 Run 2 evidence; any errors in the linked records. No tests were executed, external contacts made, or experimental conclusions changed through this correction.
+
+
+## Addendum — 2026-10-12: provenance and record classification (W9 documentation correction)
+
+**Classification:** HISTORICAL AI-ASSISTED COORDINATION/HANDOFF RECORD, **NOT** a preregistered experiment, validated research finding, or separately checked reproduction. The filename `071_...` is an archival location only and does not confer research-note experimental status. The original text above is preserved unchanged.
+
+**AI participation (M13):** ChatGPT (OpenAI, GPT-6) assembled this narrative and committed it through the GitHub connector using conversation context, operator-supplied logs and selected GitHub records. Some underlying research cited in this handoff was separately assisted by other AI services, including Claude and Undermind; those agents did not independently certify this handoff.
+
+**Human validation:** **DIRECTION ONLY**, not line-by-line review or outcome validation. Chad Holland requested a comprehensive post-hiatus handoff and authorized this documentation work; no evidence is recorded that he reviewed the completed 071 file line by line before publication. Claude later read only 071 and flagged provenance and method-format issues; this is a limited secondary read, not a verification of linked records.
+
+**Human editing/curation:** Chad directed topic selection and research priorities; ChatGPT selected and wrote this compilation. No human line-by-line edits of the compiled note are established. **Human responsibility:** Chad Holland as research director and repository owner; this is responsibility for project decisions, **not** a claim that he authenticated each factual assertion.
+
+**Method treatment:** [WORKFLOW.md](../../WORKFLOW.md) distinguishes research measurement/build claims (W1–W8) from **record edits (W9 only)**. This handoff introduces no newly run test, measured advantage, or registered predictions. Therefore predictions, anti-vacuity controls and reference code are not asserted for the handoff as if it were an experiment. Historical claims within it remain subject to verification against primary artifacts. The numbered placement is a classification concern; relocating/renumbering is reserved for an owner-approved follow-up, preserving original Git history and links.
+
+**Open verification door:** A subsequent reviewer should check the original Azure campaign completion, shutdown and evidence manifests; note source/commit and PR status claims; and determine whether the handoff belongs in a distinct `handoffs/` index. Do not promote any reported result solely because 071 summarizes it.
