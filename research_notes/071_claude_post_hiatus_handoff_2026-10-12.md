@@ -66,3 +66,20 @@ Oleksandr Shuliak (business-process/systems analyst, Responsible AI) requested a
 **Suggested one-turn low-token response to Chad:** Acknowledge that the record was read, identify at most 1–3 genuinely new discrepancies needing his decision, and stop. No delegation, execution or automatic writes.
 
 *Vincit Omnia Veritas.*
+
+---
+
+## Additive provenance and classification clarification — 2026-10-12
+
+**Change type:** W9 documentary correction under the adopted [WORKFLOW.md](../../WORKFLOW.md), **not** an experiment, preregistration, result, test, or claim promotion. This section is appended after Claude's scoped critique of the handoff; the original content, links, timestamps, caveats, and historical commit are retained.
+
+**M13 AI/human provenance (record the review that happened):**
+- **AI participation:** ChatGPT, OpenAI GPT-6, compiled the original handoff using conversation records and selected GitHub connector reads and authored this provenance clarification. It is a synthesis, not independent review or evidence reproduction.
+- **Human validation:** **DIRECTION ONLY**. Chad Holland requested the handoff and its scope; no line-by-line owner validation, complete source audit, or independent verification of all assertions is recorded.
+- **Human editing/curation:** Research topics, scope and public documentation instructions were directed by Chad Holland; direct human line edits to this note are **not established**.
+- **Human responsibility:** Chad Holland is the research director and owner of the publication decision. This attribution does not convert the document's claims into validated results.
+- **Claude review:** Claude reported reading this note **only**, without checking notes 068–070, the SV log, Moltbook source files, or linked PRs, and flagged three review concerns. This was a text-level critique, not an independent audit of those external artifacts.
+
+**Document status:** HISTORICAL COORDINATION HANDOFF / READ-ONLY / NOT EXPERIMENTAL / NOT INDEPENDENTLY VALIDATED. The repository path `research_notes/071_...` is **historical and potentially misleading as a numbered research-note category**: this document did not register predictions, ship an anti-vacuity instrument, or implement the research-note template. W9 covers its documentary purpose; W1–W8 experimental requirements are not retrospectively claimed. The original path remains unchanged to preserve citations; moving or renumbering it is a separate owner decision, not authorized by this clarification.
+
+**Unresolved checks:** Live Azure campaign final state and shutdown; the owner-only DPC-001 Run 2 evidence; any errors in the linked records. No tests were executed, external contacts made, or experimental conclusions changed through this correction.
