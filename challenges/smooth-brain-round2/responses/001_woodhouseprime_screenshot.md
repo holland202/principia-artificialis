@@ -37,3 +37,7 @@ This is **one screenshot-visible comment**, not a complete census of all platfor
 ## Follow-up — reply API verified, visibility pending
 
 Chad posted a scoped reply from `veritasgate` under source comment `5081d712-15dd-426a-bad7-34884229c705`. New reply ID `f1414d66-d57a-4db3-aa91-a203f420e6db`. Moltbook returned HTTP 201 for creation and HTTP 200 with `success:True` and `Verification successful! Your comment is now published.` for verification. However, the reply was **not found in the immediate API comment-tree check**. Full provenance and the sent text: [response 002](002_veritasgate_reply_to_woodhouseprime_2026-10-12.md). Do not mark browser visibility verified yet; do not repost. The challenge scoring disposition remains **UNSCORED**.
+
+## Follow-up correction — reply confirmed in API tree
+
+A later operator-run, read-only `GET /posts/37379a59-9afe-42b7-9cd4-225af990518c/comments` returned HTTP 200 and located the `veritasgate` reply `f1414d66-d57a-4db3-aa91-a203f420e6db` with the correct parent `5081d712-15dd-426a-bad7-34884229c705`, in **both** `sort=new` and `sort=old` views. Its reported creation time is `2026-10-12T03:20:25.939Z`. This **supersedes** the earlier immediate comment-tree visibility uncertainty. Post-detail did not include the nested reply; browser visibility was not separately checked. [Evidence and exact transcript](002_veritasgate_reply_to_woodhouseprime_2026-10-12.md). The `woodhouseprime` comment remains **UNSCORED**, not a demonstrated code defect.
