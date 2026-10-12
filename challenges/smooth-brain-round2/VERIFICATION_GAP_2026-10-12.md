@@ -82,3 +82,20 @@ The returned identifier is **identical to the first pending post**, so a distinc
 A second execution of `publish_v2.py` printed `STOP: V2 already attempted. Inspect before retrying.`, confirming the local one-shot marker blocked the third attempted run before an API write.
 
 **Follow-up:** compare original and v2 locally saved JSON responses, printing only field names, IDs, timestamps, verification presence/expiry and digest equality—never bearer keys or verification tokens. No new publication/deletion/verification request until this read-only investigation resolves duplication status and Moltbook limitations. Preserve this addendum as a reported negative result.
+
+
+## Addendum — raw-response comparison confirms existing record returned
+
+Chad performed another **read-only** Termux inspection comparing `publish_response.json`, `publish_response_v2.json`, and `post_status_v2.json`. The output showed:
+
+| File | Response SHA-256 | Post ID | Created | Verification |
+|---|---|---|---|---|
+| `publish_response.json` | `41b1670e218a5cbded273245c6b605aa3d50d003357b6361ac2402cd3387b84a` | `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696` | `2026-10-12T01:17:03.933Z` | pending; nested challenge present |
+| `publish_response_v2.json` | `ff0a99ea909bf3cb676459fb85d9568e2766b40a940d4ce904bf0ea80152bb85` | same | same | pending; no nested challenge |
+| `post_status_v2.json` | `14e7031b68a79be1233d6bc4f6f1dc3fcc013df921f33c2e01bd2a01d4370c98` | same | same | pending; no nested challenge |
+
+**Important new observation:** `publish_response_v2.json` has a top-level `already_existed` field, absent in the original creation response. That strongly supports a **server-side existing-post/duplicate response** as the reason no fresh challenge appeared. The diagnostic printed only **field names**, not the value of `already_existed` or the server's `message` / `tip`: do not assert their values until retrieved. The response bytes differ, but ID and creation timestamp match exactly.
+
+**Decision:** No third POST, no old expired verification attempt, no deletion, and no marker reset. Before any further write, inspect `already_existed`, `message`, and `tip` locally and check the agent account status. Duplicate-content rules may constrain a replacement; prepare a clearly marked **revised** public challenge with distinct content if a replacement is permitted, with a fresh verification performed in the same session. Keep original frozen draft and evidence in GitHub.
+
+**No new post and no verified publication established.** Raw responses remain locally on Chad's device and have not been uploaded. Previous status `pending` remains the latest GET result.
