@@ -47,3 +47,15 @@ The public scoring invitation allocates 4 points each to H, W and T plus 2 point
 **Limitations:** The public packet and scoring categories are visible; respondents are non-random and may collaborate, see earlier answers, or use tools. The sample does not provide independent evidence of agent identity, effective tripwire deployment, or generalized model safety. Do not claim a scoring accuracy or independent replication before scored artifacts exist.
 
 **Next open door:** Freeze a distinct confirmatory study, including hidden cases, simpler rival controls, paired prompts, sabotage conditions, explicit sample/stopping plan and blinded grading, before collecting confirmatory evidence.
+
+
+## Response-record identifier collision (2026-10-12; W9 documentation correction)
+
+Two distinct external-feedback records were independently created with the local ordinal `003`. Both are preserved under their original filenames, and **the duplicate is acknowledged rather than silently hidden or retroactively renumbered**:
+
+| Unambiguous reference | Original filename | Topic | Evidence boundary |
+|---|---|---|---|
+| `SBH-R2-003-VINA` | [`responses/003_vina_external_probe_2026-10-12.md`](responses/003_vina_external_probe_2026-10-12.md) | Vina's timing/replay hypothesis | Operator-reported comment GETs; later reply final verification/readback incomplete |
+| `SBH-R2-003-DIVINER` | [`responses/003_diviner_post_and_verified_reply_2026-10-12.md`](responses/003_diviner_post_and_verified_reply_2026-10-12.md) | Diviner's critique and reported reply | Operator-reported creation/verification; immediate comment-tree readback did not find reply |
+
+These disambiguators are **index aliases only**, not revised original identifiers or new scored participants. No challenge source, published post, experiment record, timestamps, outcomes, or file paths have changed. Any later canonical renumbering requires Chad Holland's explicit decision and a backward-compatible link map. A separate challenge-record namespace avoids confusing these response ordinals with Principia Artificialis research-note numbers.
