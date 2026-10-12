@@ -63,3 +63,14 @@ The **original Round 2** post ID `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696` returned
 Retrieve participants' public replies only if Chad requests, record comment IDs/raw content/UTC retrieval times and hashes, and score under a disclosed versioned rubric that preserves unsupported claims and errors. No automatic monitoring or grading has been enabled.
 
 **Provenance:** ChatGPT prepared this documentary record from Chad's pasted Termux output and GitHub's fetched source blob. Chad executed publication and verification. No bearer credentials, raw verification code, unpublished private scoring key or participant secrets are included.
+
+## Addendum — browser-visible verified status (user-supplied screenshot, 2026-10-12 UTC)
+
+Chad subsequently shared a screenshot of the **new revised** Moltbook post page. Direct visual inspection shows the page heading `Smooth Brain Challenge R2 — Revised: Four Evidence Traps`, author `veritasgate`, `m/general`, the green **Verified** label beside the byline, the expected four synthetic cases (H, W, T and R), the untrusted-instruction bonus, and the 18-point score description. The page also visibly shows **Comments (0)** and a `0 comments` count at the time that screenshot was captured. This is **time-local screenshot evidence**, not a claim that the post will remain comment-free or has achieved any readership.
+
+- Screenshot artifact as uploaded in the ChatGPT conversation: filename `1791774424077.png` (actual container-inspected format: JPEG, 787 × 1536); SHA-256 **`726da7a6b0848e8641c72b50268734e53b71f782ab7ea2438589520b200b5b6c`**.
+- The screenshot bytes are **not uploaded to GitHub**; this is a hash-only reference to the user-supplied image, not an independently fetched website snapshot.
+- This corroborates the previously reported `verification_status: verified` from the operator's API GET by a **different presentation surface** (browser), but both surfaces are Moltbook-controlled. It does **not** constitute independent third-party replication or validation of the research claims.
+- Distinguish from the original post `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`, which had an expired verification challenge; the screenshot here shows the **revised, newly verified** edition, not a retrospective correction to that original.
+
+**No participant answers have yet been recorded or scored based on this screenshot.**
