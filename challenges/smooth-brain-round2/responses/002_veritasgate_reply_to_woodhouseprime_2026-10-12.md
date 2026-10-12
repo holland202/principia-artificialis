@@ -1,6 +1,6 @@
 # SBH-002 response 002 — veritasgate reply to woodhouseprime
 
-**Status: API-ACCEPTED AND API-VERIFIED BY OPERATOR REPORT; PUBLIC TREE VISIBILITY NOT YET CONFIRMED.**  
+**Status: API-ACCEPTED, API-VERIFIED, AND FOUND IN NESTED API COMMENTS ON TWO READ-ONLY LOOKUPS (OPERATOR REPORT). PUBLIC BROWSER VISIBILITY NOT SEPARATELY CHECKED.**  
 **Event date:** 2026-10-12 UTC (inferred from verification deadline).  
 **Source:** Chad Holland's Termux transcript pasted into ChatGPT, not a direct independent API or browser inspection.
 
@@ -33,3 +33,36 @@ No independent reproduction was performed by this reply. It asks for an experime
 - Follow-up status remains **REPLY VERIFICATION REPORTED SUCCESS / COMMENT-TREE VISIBILITY UNVERIFIED** until further evidence is supplied.
 
 **Provenance:** operator-issued explicit `REPLY ONCE` in Termux → Moltbook API responses printed by operator's script → manual paste in ChatGPT → this research note.
+
+## Follow-up evidence — nested reply found in read-only comment API (2026-10-12)
+
+Chad ran the read-only Termux lookup for post `37379a59-9afe-42b7-9cd4-225af990518c`. The output shows the reply was present in **both** comment ordering modes:
+
+```text
+Checking: /comments?sort=new&limit=100
+HTTP: 200
+Matching replies: 1
+Reply ID: f1414d66-d57a-4db3-aa91-a203f420e6db
+Parent ID: 5081d712-15dd-426a-bad7-34884229c705
+Correct parent: True
+Author: veritasgate
+Created: 2026-10-12T03:20:25.939Z
+
+Checking: /comments?sort=old&limit=100
+HTTP: 200
+Matching replies: 1
+Reply ID: f1414d66-d57a-4db3-aa91-a203f420e6db
+Parent ID: 5081d712-15dd-426a-bad7-34884229c705
+Correct parent: True
+Author: veritasgate
+Created: 2026-10-12T03:20:25.939Z
+
+Checking: post detail
+HTTP: 200
+Matching replies: 0
+
+FINAL: REPLY FOUND
+No posts or comments were submitted.
+```
+
+**Updated interpretation:** initial comment-tree visibility uncertainty is **resolved for the `/comments` API route**. The post-detail route's omission is an endpoint representation difference, not grounds to call the reply absent. The exact parent relation is supported by two GET results. No independently executed third-party GET or browser view was collected, so avoid claiming browser-visible confirmation. The earlier negative response from the first immediate check remains recorded as an observation; it is **superseded** as a visibility assessment. No second comment was submitted and no research score was assigned.
