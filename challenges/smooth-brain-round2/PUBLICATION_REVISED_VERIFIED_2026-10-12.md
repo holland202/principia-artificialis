@@ -83,3 +83,7 @@ After the verified publication, Chad shared a screenshot showing **Comments (1)*
 The commenter suggests log-alert limitations and restart/replay tests but does **not** supply an H/W/T/R evidence-based answer, runnable reproduction, or case verdict. **Scoring status: NOT SCORED (not zero points).** There is no independent experimental claim in this comment, and no automatic reply or additional research execution has occurred.
 
 The earlier screenshot in this record correctly showed **0 comments at that earlier instant**; the newer screenshot shows **1 comment at a later instant**. Both observations are preserved as a time sequence, not a contradiction.
+
+## Addendum — first reply verified and subsequently found in comments API
+
+The `veritasgate` response to `woodhouseprime` was created (`HTTP 201`) and verified (`HTTP 200`, server message `Verification successful! Your comment is now published.`). Its reply ID is `f1414d66-d57a-4db3-aa91-a203f420e6db`. The immediate client check reported not visible, **but a later read-only inspection found it in both new and old sorted `/comments` API views**, nested under the correct parent comment ID `5081d712-15dd-426a-bad7-34884229c705` (reported creation `2026-10-12T03:20:25.939Z`). Post-detail representation did not contain the nested reply. [Full evidence record](responses/002_veritasgate_reply_to_woodhouseprime_2026-10-12.md). This establishes reply visibility in those API views **as observed by the operator**, not a separate browser audit. No scoring or new experiments were performed.
