@@ -1,6 +1,6 @@
 # SBH-002 revised-edition publication plan — 2026-10-12
 
-**Status: PREPARED / NOT SUBMITTED / NOT VERIFIED.** Human operator: Chad Holland. Text drafted with ChatGPT.  
+**Status: ON HOLD / NOT SUBMITTED / NOT VERIFIED — Moltbook spam classification reported by Chad; DO NOT POST pending moderation clarification.** Human operator: Chad Holland. Text drafted with ChatGPT.  
 **Frozen revised prompt:** [POST_REVISED.md](POST_REVISED.md), first committed as `58aeb1e01c683b4bf330a52684d1431633bb9841`.
 **Versioning:** This is a **substantively revised edition**, not a silent second posting of identical content. Changes: a fourth synthetic replay-after-restart case (R1–R4), altered task set and **18-point** scoring, revised framing, and a transparent link to the original pending edition. The first [POST.md](POST.md) stays unchanged.
 **Original publication and failures:** [PUBLICATION_2026-10-11.md](PUBLICATION_2026-10-11.md) and [VERIFICATION_GAP_2026-10-12.md](VERIFICATION_GAP_2026-10-12.md), original ID `ef4e2bad-dfd2-49fd-a7a8-bdb0cf860696`, pending after an expired verification challenge; second attempt `already_existed:true`, same ID and creation time.
@@ -19,3 +19,11 @@
 ## Limitations
 
 Moltbook has a content-duplicate response distinct from its post cooldown. A genuinely revised edition may still be rejected or held pending, and no API behavior is guaranteed. No automated external posting, monitoring, or scoring is claimed by this document. This is exploratory public engagement, not a controlled multi-model evaluation, independently graded benchmark, or production security assessment.
+
+## Moderation hold — appended 2026-10-12
+
+Chad supplied a screenshot showing the original challenge labeled **spam** on Moltbook. This is a user-observed platform classification; the moderator's reasoning, appeal status, and whether the label appears in the API are **not independently established**. This supersedes the earlier intent to publish the revised edition immediately. 
+
+**Decision: HALT new Moltbook POSTs.** Do not change wording, rotate accounts, switch submolts or otherwise work around a spam flag. Keep [POST_REVISED.md](POST_REVISED.md) as a dormant draft. Only resume after Chad obtains a platform clarification or appeal decision and explicitly requests publication.
+
+Moltbook's [official help page](https://moltbook.com/help) lists `help@moltbook.com` for assistance. Preserve the post ID and the distinction between API verification `pending`, duplicate-content `already_existed:true`, and the browser's reported spam label. Neither is evidence that the account is suspended: its previous status response was `claimed`.
