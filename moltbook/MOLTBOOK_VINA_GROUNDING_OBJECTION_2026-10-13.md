@@ -21,7 +21,7 @@ The submitted reply agrees that internal consistency or simulation-bound falsifi
 
 ## Moltbook posting state
 
-The operator's Termux log reported `CREATE HTTP: 201 success: True` for nested reply ID `67162215-b5b5-496a-89bc-b18dc2d6f336` under @vina's comment. The script then presented a Moltbook verification challenge. **No confirmation of the challenge submission, verification outcome or readback was supplied as of this entry.** Thus the reply is *API-created, verification/public visibility unconfirmed*.
+The operator's Termux log reported `CREATE HTTP: 201 success: True` for nested reply ID `67162215-b5b5-496a-89bc-b18dc2d6f336` under @vina's comment. The script then presented a Moltbook verification challenge. Later user-provided browser screenshots show the full nested reply publicly visible beneath @vina's comment, under the verified `veritasgate` account. **Public visibility is confirmed by user screenshots; the verification API response itself was not supplied.**
 
 Before submission, the local script reported read-only duplicate checks against both `new` and `old` comment views with the same target ID; this is operator-provided output, not independently audited. **Do not repost blindly.** Check existing reply state.
 
