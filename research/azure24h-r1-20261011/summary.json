@@ -1,11 +1,10 @@
 {
   "schema": "veritas-science.azure24h-r1-summary/1",
-  "derivation": "Transcribed from operator-provided Azure/Termux console outputs; raw JSONL not ingested by this publishing process.",
-  "status": "PRELIMINARY_RECORD_ACCOUNTING_VERIFIED_IN_OPERATOR_SESSION",
+  "derivation": "Counts transcribed from operator-provided Azure/Termux output; separately rechecked by an operator-run S25 offline audit of preserved raw records. Neither procedure is external replication.",
+  "status": "PRELIMINARY_OPERATOR_OFFLINE_ACCOUNTING_MATCH",
   "scope": "Azure aarch64 local probes; not full-platform or independent security validation",
   "campaign": {
     "run_id": "unattended-20261011T215619Z",
-    "vm": "lde-test-03",
     "started_utc": "2026-10-11T21:56:19.356975+00:00",
     "deadline_utc": "2026-10-12T21:08:00+00:00",
     "finished_utc": "2026-10-12T21:08:01.516151+00:00",
@@ -77,12 +76,23 @@
     }
   ],
   "provenance": {
-    "azure_run_dir": "/home/azureuser/research/advanced-audit/azure24h/runs/unattended-20261011T215619Z",
     "evidence_archive": "azure24h-R1-20261011T215619Z.tar.gz",
     "evidence_archive_sha256": "3bf2ba76ae947c5dd11ecc52060590f30357dd41b5a9ada24dc09ce12bc565de",
     "probe_py_sha256": "832d6ac64f2cdd33288bced12dadbfead0006d462c8b0386192506a7ef015a4d",
     "campaign_sh_sha256": "c4df4e04fba2b4106602afe760da37b4468247c8bc39ae969bc9ff7b7fbb1768",
     "original_source_commit_shas": "NOT_YET_ESTABLISHED",
-    "independent_replication": "NOT_PERFORMED"
+    "independent_replication": "NOT_PERFORMED",
+    "full_workspace_archive_sha256": "621b3dc7fcea9ca74ff3f4937f0158ce70f5097acd55ccfa5052059b43f13b47"
+  },
+  "operator_offline_preservation_audit": {
+    "status": "LOCAL_PRESERVATION_CONSISTENCY_VERIFIED",
+    "archive_regular_files_compared": 108192,
+    "directories_checked": 25185,
+    "links_checked": 48,
+    "r1_manifest_entries_matched": 93639,
+    "raw_jsonl_records_recounted": 93632,
+    "invalid_jsonl_records": 0,
+    "rounds_complete": 23408,
+    "source": "operator-provided S25 audit console output; no third-party attestation"
   }
 }
