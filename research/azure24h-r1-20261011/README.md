@@ -1,8 +1,8 @@
 # Azure ARM64 R1 endurance campaign — 2026-10-11 to 2026-10-12
 
-**Evidence class:** operator-provided terminal output, cross-checked against a reported JSONL scan and SHA-256 manifest verification.  
-**Publication state:** preliminary, instrument qualification incomplete.  
-**Scope:** four local experimental probes on Azure VM `lde-test-03` (Ubuntu 24.04.4, aarch64). This is **not** a production security certification or an independent reproduction.
+**Evidence class:** operator-recorded Azure campaign results plus a subsequent operator-run offline archive and JSONL consistency audit on an ARM64 device.  
+**Publication state:** preliminary; source attribution, instrument qualification, and independent reproduction incomplete.  
+**Scope:** four local experimental probes on Azure-hosted Ubuntu 24.04.4 (aarch64). This is **not** a production security certification, a full-platform test, or an independent reproduction.
 
 ## Observed execution result
 
@@ -27,7 +27,7 @@
 | SHA-256 manifest lines | 93,639 |
 | `sha256sum --check --quiet artifact_hashes.sha256` | exit 0 (Azure) |
 
-Every one of the 23,408 distinct round identifiers had four recorded project executions. The independently interrupted short run (`unattended-20261011T215443Z`, state `STOP_REQUESTED`, 9 project runs) is **not** counted in the above campaign.
+Every one of the 23,408 distinct round identifiers had four recorded project executions. An earlier interrupted short run (`unattended-20261011T215443Z`, state `STOP_REQUESTED`, 9 project runs) is **not** counted in the above campaign.
 
 ## Per-project accounting
 
@@ -43,7 +43,7 @@ Every one of the 23,408 distinct round identifiers had four recorded project exe
 
 ## Interpretation / claim boundary
 
-**Supported by available records:** The harness recorded uninterrupted passing executions through the configured deadline; JSONL record counting and project/round accounting reconcile; SHA-256 verification on Azure found no content mismatches in the manifest entries; a compressed evidence archive was transferred to the S25 and matched the recorded archive SHA-256.
+**Supported by available records:** The harness recorded passing executions through the configured deadline; operator-run JSONL accounting and a later offline recount reconcile; the Azure R1 manifest check found no mismatches in its 93,639 listed hashes; and the transferred archive matched its published SHA-256. A separate S25 audit matched the extracted private workspace against its 257 MB preservation archive. These are consistency results, not third-party authentication.
 
 **Not established:** (1) independent authenticity of the original observations; (2) exact source revisions used at execution time; (3) independence of sampled seeds; (4) effectiveness against known-bad mutations; (5) physical-world or full platform integration; (6) external scientific reproduction. The `slc-v12-` results explicitly report mock-only execution. Missing `mock_only` fields in other records must **not** be interpreted as physical integration.
 
@@ -51,6 +51,6 @@ An all-pass endurance run supports stability **under tested inputs and the exist
 
 ## Reanalysis
 
-Run `python3 audit_results.py /path/to/extracted/runs/unattended-20261011T215619Z` to compute a fresh project rollup from the JSONL and compare the checkpoint counts. The checked-in `summary.json` is a transcript-derived transcription, not output directly obtained by this repository from Azure.
+Run `python3 audit_results.py <extracted-R1-run-directory>` to reaggregate `results.jsonl` and compare it with the checkpoint and checked-in `summary.json`. The published summary originated from operator-provided console output; a separate operator-run S25 offline audit subsequently confirmed the same accounting totals. The included auditor itself is not evidence of external reproduction or of detection sensitivity.
 
-The original 21 MB archive is **not** included in this draft. It remains on the operator's S25; source trees and virtual environment state require separate preservation and attribution. See [PROVENANCE.md](PROVENANCE.md) for archive digests, incomplete source attribution, and publication safeguards.
+Neither the original 21 MB R1 archive nor the 257 MB private full-workspace preservation archive is uploaded to GitHub. See [PROVENANCE.md](PROVENANCE.md) for the retained cryptographic fingerprints, local preservation check, incomplete source attribution, and publication boundary.
