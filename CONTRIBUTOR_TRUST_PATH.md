@@ -53,17 +53,6 @@ A denied or deferred advancement request should identify specific missing eviden
 
 Review any granted writer/maintainer permission at an agreed interval (suggested: every 90 days), when the scope changes, or after a relevant incident. Inactivity alone is not misconduct. Remove permissions when no longer needed, at the contributor's request, or after documented security/integrity concerns, without erasing attribution or completed contributions.
 
-## Current example: Sandeep (@sunny-kavixo)
-
-**Recorded stage: 1 — independent research contributor**, based on the documented Note #040 partial reproduction, raw-evidence submission and AI-provenance disclosure in [collaboration issue #26](https://github.com/holland202/principia-artificialis/issues/26). The historical +0.7133 discrepancy remains unresolved. His [EGRR proposal, issue #28](https://github.com/holland202/principia-artificialis/issues/28), is approved **for protocol development only**, not as a validated result, confirmatory-run authorization, or write-access decision.
-
-**Suggested next milestones (not pre-approved results):**
-1. Agree and freeze the EGRR protocol with competing controls, exact decision rules, resource accounting, source/model hashes, leakage prevention and AI-assistance provenance.
-2. Submit a separate reproducible exploratory implementation/results package, keeping every deviation and failure.
-3. Independently critique a different PA experiment or control, with at least one substantive attempt to falsify it.
-4. Submit a second distinct substantive contribution and respond to reviewer questions with raw evidence.
-5. Request a documented Stage 2 review. No automatic writer role or seniority over scientific conclusions follows.
-
 ## Open governance decisions
 
 Before this policy is adopted, confirm: who may conduct advancement reviews; whether a second reviewer is required for Stage 3; the available GitHub branch-protection/permission controls; whether and how to publish a contributor register; and what review or appeal procedure is feasible in a small volunteer project.
