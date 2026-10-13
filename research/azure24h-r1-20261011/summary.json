@@ -1,0 +1,88 @@
+{
+  "schema": "veritas-science.azure24h-r1-summary/1",
+  "derivation": "Transcribed from operator-provided Azure/Termux console outputs; raw JSONL not ingested by this publishing process.",
+  "status": "PRELIMINARY_RECORD_ACCOUNTING_VERIFIED_IN_OPERATOR_SESSION",
+  "scope": "Azure aarch64 local probes; not full-platform or independent security validation",
+  "campaign": {
+    "run_id": "unattended-20261011T215619Z",
+    "vm": "lde-test-03",
+    "started_utc": "2026-10-11T21:56:19.356975+00:00",
+    "deadline_utc": "2026-10-12T21:08:00+00:00",
+    "finished_utc": "2026-10-12T21:08:01.516151+00:00",
+    "checkpoint_state": "DEADLINE_REACHED",
+    "rounds_complete": 23408,
+    "project_executions": 93632,
+    "passed": 93632,
+    "nonzero_exit_codes": 0,
+    "timeouts": 0,
+    "findings_reported": 0,
+    "invalid_jsonl_records": 0,
+    "seed_slots": 1123584,
+    "internal_checks_reported": 36963662,
+    "manifest_entry_count": 93639,
+    "manifest_sha256_check_exit": 0
+  },
+  "projects": [
+    {
+      "project": "evidence-ledger",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 21090608,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    },
+    {
+      "project": "skn-v1-",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 5337024,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    },
+    {
+      "project": "slc-v12-",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 9131550,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 23408,
+      "mock_only_false": 0,
+      "mock_only_absent": 0
+    },
+    {
+      "project": "veritas-companion",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 1404480,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    }
+  ],
+  "provenance": {
+    "azure_run_dir": "/home/azureuser/research/advanced-audit/azure24h/runs/unattended-20261011T215619Z",
+    "evidence_archive": "azure24h-R1-20261011T215619Z.tar.gz",
+    "evidence_archive_sha256": "3bf2ba76ae947c5dd11ecc52060590f30357dd41b5a9ada24dc09ce12bc565de",
+    "probe_py_sha256": "832d6ac64f2cdd33288bced12dadbfead0006d462c8b0386192506a7ef015a4d",
+    "campaign_sh_sha256": "c4df4e04fba2b4106602afe760da37b4468247c8bc39ae969bc9ff7b7fbb1768",
+    "original_source_commit_shas": "NOT_YET_ESTABLISHED",
+    "independent_replication": "NOT_PERFORMED"
+  }
+}
