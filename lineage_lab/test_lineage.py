@@ -108,6 +108,8 @@ class LineageTests(unittest.TestCase):
             append(self.path, "hypothesis", {**hypothesis(), "contributor_kind": "ai", "model": ""})
         a = append(self.path, "hypothesis", {**hypothesis(), "contributor_kind": "ai", "model": "TestModel", "review_level": "none"})
         self.assertEqual(a["data"]["model"], "TestModel")
+        node = graph(read_events(self.path))["nodes"][0]
+        self.assertEqual((node["model"], node["review_level"]), ("TestModel", "none"))
 
     def test_unknown_outcome_rejected(self):
         a = self.new_hypothesis()
