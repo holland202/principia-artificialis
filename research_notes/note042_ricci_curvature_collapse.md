@@ -177,6 +177,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
 ## Falsifiable next predictions
 
 **P5:** On the Pile validation set (random text), mean Ricci curvature will be near zero (|mean| < 0.1), confirming that negative curvature is specific to reasoning failures, not generic text generation.  
