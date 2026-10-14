@@ -9,6 +9,8 @@ from pathlib import Path
 from .core import JournalError, _canonical, append, graph, init, read_events
 
 ROOT = Path(__file__).resolve().parent
+# Pinned AFTER the first observed registered output (CI run 38612373839), not in prereg.
+RECORDED_DIGEST = "209e78c4bb5385a44fb6bf8b3493df37b6786b14a8b63b313712812790af6d66"
 
 
 def _who():
@@ -112,6 +114,9 @@ def run():
     print("VERDICT", held, "of", len(results), "as registered")
     digest = hashlib.sha256(_canonical(results).encode("utf-8")).hexdigest()
     print("DIGEST", digest)
+    if digest != RECORDED_DIGEST:
+        print("GATE: FAIL — acceptance digest differs from separately recorded CI result")
+        return 1
     return 0 if all(v == "HELD" for k, v in results.items() if k != "P7") and static_check else 1
 
 
