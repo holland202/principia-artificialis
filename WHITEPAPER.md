@@ -7,6 +7,18 @@
 
 ---
 
+## Dated evidence-status correction — 2026-10-13 (W9; historical synthesis preserved)
+
+**This is a draft research program, NOT a validated physical or predictive theory of AI reasoning.** Claims elsewhere in this 2026-04-24 synthesis that correct reasoning *is* a geodesic or minimizes a universal scalar free-energy functional, that errors *necessarily* create curvature/entropy transitions, or that four observables provide independent reliable early-warning signatures are **hypotheses or prospective predictions only**, not established findings. The verbs “governed,” “is,” “yield,” “rigorous,” and “confirmed” in original speculative passages below do not override this dated status correction.
+
+- [Note #011](research_notes/011_thermodynamic_arrow_reasoning.md) labels an information-geometric **path length** as “entropy production.” Its nonnegative increase follows from its definition and is not evidence of physical thermodynamic entropy generation, error detection or a Carnot bound.
+- [Note #035](research_notes/note035_entropic_elasticity.md) uses a toy score; under its actual uniform prior, \(F=\log(20)-0.5S\). The highlighted intermediate “Goldilocks” region is hand-selected and **not** derived from measured model performance.
+- [Note #043](research_notes/note043_free_energy_of_reasoning.md) documents that the pasted numbers did not match the reference code. Its synthetic AUC is vacuous because the cases are repeated identical trajectories. Accordingly the cited numerical AUC thresholds in this whitepaper are **unrun targets, not demonstrated performance**; no independent predictive detector is validated.
+- Mathematical functions such as entropy and KL divergence are well-defined; identifying their movement with physical heat, the second law of thermodynamics or neural-network *correctness* requires independent derivation and empirical tests. A loss-function “energy landscape” is an optimization metaphor unless physical energy is explicitly measured.
+- The underlying research note statuses remain as labeled, and original claims, predictions and negative findings are kept rather than rewritten. This addition is a **documentary scope correction**, not a new experiment, new methodology control, or evidence of refutation of every thermodynamic conjecture.
+
+---
+
 ## Abstract
 
 We propose that reasoning in transformer language models is governed by a **thermodynamic‑geometric principle**: correct reasoning trajectories minimize a scalar free‑energy functional \(\mathcal{F}\) defined on the Fisher–Rao statistical manifold of token‑wise probability distributions. Hallucinations correspond to saddle points or maxima of \(\mathcal{F}\), and the onset of error is preceded by a **first‑order phase transition** in the Ricci curvature of the reasoning path. Four complementary observables—Ricci curvature, entropy production, topological persistence of attention graphs, and random‑matrix spectral statistics—each provide independent signatures of reasoning quality. Combined into \(\mathcal{F}\), they yield a unified early‑warning detector and a variational principle that could guide inference‑time corrections.
