@@ -45,6 +45,16 @@ class InventoryTests(unittest.TestCase):
             self.assertEqual(row["status"], "nonfinite")
             self.assertIsNone(row["temp_c"])
 
+    def test_observed_sentinel(self):
+        with tempfile.TemporaryDirectory() as d:
+            z = Path(d) / "thermal_zone61"
+            z.mkdir()
+            (z / "type").write_text("sdr0_pa")
+            (z / "temp").write_text("-273000")
+            row = m.inspect(Path(d))["zones"][0]
+            self.assertEqual(row["status"], "suspected_invalid_sentinel")
+            self.assertIsNone(row["temp_c"])
+
     def test_out_of_range(self):
         with tempfile.TemporaryDirectory() as d:
             z = Path(d) / "thermal_zone3"

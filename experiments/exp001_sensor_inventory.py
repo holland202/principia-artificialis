@@ -24,6 +24,8 @@ def inspect(root=DEFAULT_ROOT):
             candidate = raw / 1000.0
             if not math.isfinite(raw):
                 item["status"] = "nonfinite"
+            elif raw == -273000:
+                item["status"] = "suspected_invalid_sentinel"
             elif -40 <= candidate <= 150:
                 item["temp_c"] = candidate
                 item["status"] = "candidate_millicelsius"
