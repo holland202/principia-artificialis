@@ -229,7 +229,8 @@ def graph(events):
     for e in events:
         d = e["data"]
         common = {"id": e["id"], "kind": e["kind"], "contributor": d["contributor"],
-                  "contributor_kind": d["contributor_kind"], "created_utc": e["created_utc"]}
+                  "contributor_kind": d["contributor_kind"], "model": d.get("model", ""),
+                  "review_level": d.get("review_level", "none"), "created_utc": e["created_utc"]}
         if e["kind"] == "hypothesis":
             nodes.append({**common, "title": d["title"], "claim": d["claim"],
                           "scientific_status": "UNASSESSED", "reason": d.get("reason", "")})
