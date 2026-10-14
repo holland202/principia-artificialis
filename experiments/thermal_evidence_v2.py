@@ -45,8 +45,8 @@ def evaluate(observation, policy, now_s):
         return {"decision": "DEFER", "reason": "NO_OBSERVATION"}
     if not isinstance(observation, dict):
         return {"decision": "REFUSE", "reason": "MALFORMED_OBSERVATION"}
-    if observation.get("authenticity") != "not_established" or not isinstance(observation.get("source"), str) or not observation["source"]:
-        return {"decision": "DEFER", "reason": "PROVENANCE_UNVERIFIED"}
+    if not isinstance(observation.get("source"), str) or not observation["source"] or not isinstance(observation.get("authenticity"), str):
+        return {"decision": "DEFER", "reason": "PROVENANCE_UNDECLARED"}
     value = observation.get("temp_c")
     at = observation.get("observed_at_s")
     if type(value) not in (float, int) or type(at) not in (float, int):
