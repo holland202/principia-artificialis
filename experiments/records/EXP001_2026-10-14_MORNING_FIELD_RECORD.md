@@ -47,3 +47,29 @@ Next: preserve original CSVs; instrument UTC + monotonic + boottime simultaneous
 
 ## Claim boundaries
 **Verified from supplied transcript:** scripts completed; R1/R2 local hash checks True; row counts; descriptive statistics; R3 timing anomaly; clock test. **Not independently verified:** sensor identity/calibration, causes of CPU spikes, source of clock discrepancy, physical repeatability, workload correlation. No physical CSVs or device metadata were published with this note.
+
+
+## Addendum — Shizuku-assisted diagnostic, 2026-10-14
+
+**Status: device-reported measurement and derived check; independent reproduction not performed.** This addendum supersedes the earlier statement above that Shizuku had not been used; that statement accurately described the earlier phase. Shizuku was subsequently started and used for a separate diagnostic. Do not retroactively assign these readings to R1, R2, or R3.
+
+### Access and acquisition
+- Termux resolved both `rish` and `adb`. A direct `rish -c 'id'` returned `uid=2000(shell)`, context `u:r:shell:s0`.
+- A direct shell read of `/proc/stat` returned aggregate and per-core counters. `dumpsys battery` showed no AC/USB/wireless/dock power, `status: 3` (discharging), level 77%, and `temperature: 337` (33.7°C under Android battery convention); `dumpsys power` included `mWakefulness=Awake`.
+- Initial Python subprocess counter test raised `IndexError: list index out of range`. This is a **retained negative result**, not proof of a permission denial.
+- Subsequent read-only multi-probe collection succeeded with process exit code 0 for identity, CPU counters (two samples), battery, power, thermalservice, and cpuinfo. Captured stdout lengths: identity 0 bytes, CPU first 144, CPU second 144, battery 4307, power 30000 (truncated by collector), thermalservice 1495, cpuinfo 8192. The identity subprocess's empty stdout is unexplained despite exit 0; direct identity check had succeeded.
+- Private device evidence: `exp001_shizuku_probe_20261014.json`, SHA-256 reported by device `bbbc0988e11375df963ddd6be8d5573312d3a3fd40dd2daa7a1f6e7c390da56b`. **The raw JSON is not in this repository**, and this digest is not an independent checksum of uploaded bytes.
+
+### Offline derivation from preserved CPU counter snapshots
+A follow-up Python script read the two aggregate `cpu` lines from the saved JSON, rather than invoking Shizuku again. Aggregate total delta = 4294 ticks; idle+iowait delta = 4107 ticks; calculated busy fraction = `(4294 - 4107) / 4294 * 100 = 4.35%` (rounded). Sampling delay was nominally five seconds; exact timestamps of the two shell reads were not separately logged. This validates the *calculation pathway* for one interval, not CPU-to-thermal causality, individual-core usage, or idle workload conditions.
+
+### Android service excerpts and interpretation limits
+- Battery service snapshot: AC/USB/wireless/dock `false`; `status: 3`, `level: 77`, `voltage: 4054`, `temperature: 342` (34.2°C by Android convention). The service also contained historical battery-change events with differing levels, voltages and temperatures. **Do not treat historical event values as simultaneous with the snapshot.**
+- Thermal service: `Thermal Status: 0`, cached `AP=48.4`, `PA=46.3`, `BAT=26.6`, `SUBBAT=0.0` (service-reported °C). No identity mapping or calibration to the sysfs zones used in R1–R3 has been established. In particular, `BAT=26.6` differs from the battery-service 34.2°C; neither value should be silently substituted for the other. `SUBBAT=0.0` is not assumed to be a physically validated temperature.
+- `dumpsys cpuinfo` showed historical load averages 10.69/10.71/10.86 and process-level percentages for a window described as 229167 to 177017 ms before the dump, including `com.openai.chatgpt` 31%, `system_server` 17%, and `surfaceflinger` 13%. These are **not simultaneous** with the 4.35% aggregate counter interval, and the percentage denominators may differ. They do not establish a causal explanation for R2 or R3 spikes.
+- `dumpsys power` stdout was truncated to 30,000 characters; no conclusion about its completeness is warranted. Exit 0 indicates process completion, not semantic validity of every field.
+
+### Current evidence boundary and follow-up
+**Supported:** Shizuku's shell identity worked in a direct test; CPU counters could be collected twice and yielded a valid positive-delta aggregate utilization calculation; Android battery and thermal services were accessible; one snapshot reported discharging. **Unresolved:** earlier Python `IndexError`, identity subprocess empty stdout, physical sensor calibration, cross-interface sensor identity, R3 clock discrepancy, workload attribution, time synchronization, and independent reproduction.
+
+Future R4 collection should preregister controls and log timestamps per channel (UTC, MONOTONIC, BOOTTIME), shell exit codes, parsing validity, and missing-data reasons. Do not publish the raw service dump without privacy review. No new live Shizuku run is needed for this addendum.
