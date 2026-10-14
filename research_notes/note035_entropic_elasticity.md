@@ -7,6 +7,26 @@
 
 ---
 
+## Dated mathematical and evidence-status correction — 2026-10-13 (W9)
+
+**Original draft and toy figure remain preserved below; no observed attention-to-accuracy relationship is established.** The formula in this note is a proposed **energy-like score**, not measured physical free energy.
+
+For the actual reference script \`figures/generate_note035_entropic_elasticity.py\`, the prior is uniform over \`N = 20\` positions, \(\lambda = 1\), and \(\beta^{-1} = 0.5\). Consequently,
+
+\[
+D_{\mathrm{KL}}(a\Vert a_0)=\log N-S(a),
+\quad
+F(a)=\lambda\log N+(\beta^{-1}-\lambda)S(a)=\log 20-0.5S(a).
+\]
+
+Thus, in **this implemented example**, decreasing entropy (increasing attention concentration) **increases** \`F\`. The script draws a visually selected band between 30% and 60% of the plotted \`F\` range, but it contains **no task, performance measurements, independent labels, or optimization test**. Therefore the shaded “Goldilocks band” is *illustrative only*, not an empirically discovered optimum. The earlier prose saying the positive entropy term itself penalizes small entropy is not implied by the displayed formula: \(+\beta^{-1}S\) grows with *larger* entropy if other quantities are held fixed.
+
+The note's hypotheses about brittle focus, diffuse attention and task-dependent optimum are **UNTESTED**. Neither high nor low attention entropy universally implies incorrect reasoning or overfitting. Attention entropy, activation uncertainty, predictive entropy, training-data fitting, and physical heat are different observables and must not be conflated. A future study would need preregistered accuracy/calibration metrics, held-out cases, control attention profiles, independent labels, and an anti-vacuity case that rejects a false optimum.
+
+The script generating a figure/CSV is a **toy visualization only**; its execution or output artifact has not been independently rerun for this correction.
+
+---
+
 ## Motivation
 
 Attention mechanisms control how models allocate “focus” across tokens, heads, or modalities. Too concentrated: brittle, missing context. Too diffuse: noisy, unfocused. This note proposes **entropic elasticity of attention**: attention distributions behave like entropic springs with an optimal tension zone.
