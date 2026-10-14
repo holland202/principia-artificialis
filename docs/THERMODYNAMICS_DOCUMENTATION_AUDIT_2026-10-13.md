@@ -33,3 +33,14 @@
 5. No new physical-law or methodology comparison work should be inferred from these editorial repairs.
 
 **Outcome:** Bounded documentation repair; broader repository audit remains incomplete. Retain every pre-existing negative result and preserve future failures under the existing SWAY method.
+
+## Additional focused thermodynamics review — 2026-10-13 (pass 2)
+
+The owner-authorized follow-up identified four additional published documents where unrun protocols or thermodynamic analogies could be read as verified findings. These are **dated W9 documentation clarifications**, not amendments to experiments or the PA methodology.
+
+- `Exp003/protocol.md`: the original historical “Verified Benchmark” title is not evidence of a real-transformer run; projected AUC and synthetic free-energy numbers are not validation, especially given Note #043's previously recorded vacuous test and output mismatch. Labelled NOT RUN in this record.
+- `experiments/exp003_veritas_thermal_correlation.md`: proposed thermal/hallucination mechanism and a temperature trigger have no empirical or physical-law derivation here. The chain-complex identity `boundary²=0` cannot be violated by adversarial text under its mathematical definition. Proposed runtime reduction is not confirmed implemented.
+- `research_notes/note029_veritas_demon.md`: a topology analogy cannot establish that Betti numbers imply reasoning truth. Landauer's erasure bound is not an established heat cost per purported reasoning defect.
+- `research_notes/note042_ricci_curvature_collapse.md`: the supposed first-order transition is not established; its energy-like formula simplifies algebraically to negative accumulated curvature. A previously unclosed Python code fence was repaired; real-model predictions remain unrun in this note.
+
+**Additional bounded checks:** Static inspection of the four edited documents found no remaining unbalanced Markdown code fences or unresolved merge-marker lines in those files; no screened out-of-scope identifiers in changed content; canonical `METHOD.md`, `WORKFLOW.md` and `CONTROLS.md` unchanged by blob SHA. **No full code execution, real-device measurements, CI, or real-transformer validation performed.** Broader repository crawling and independent reproductions remain outstanding for the scheduled overnight passes.
