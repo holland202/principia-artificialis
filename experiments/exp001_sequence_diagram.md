@@ -33,3 +33,7 @@ sequenceDiagram
         Logger->>Dashboard: append row
     end
     Dashboard->>Dashboard: render or summarize
+
+```
+
+> **Documentation correction (2026-10-14; W9):** This is a conceptual sequence, not a verified execution trace. The monitor appends CSV rows but does not invoke a dashboard renderer; its sensor fallback silently substitutes 34.2°C, and the displayed proxy is not a calibrated physical Gibbs free energy measurement. The code must be tested and corrected separately before this diagram can represent observed hardware behavior.

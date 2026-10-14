@@ -23,3 +23,7 @@ flowchart TD
     E001 --> V002[Pipeline Diagram]
     N020[#020 Optimal Transport] --> W020[Wasserstein vs Fisher-Rao Figure]
     N020 --> N021[#021 Hyperbolic Attention]
+
+```
+
+> **Documentation correction (2026-10-14; W9):** This diagram records proposed conceptual dependencies. Its arrows and dashboard node do not demonstrate that those scientific hypotheses were validated or that all depicted output-generation stages are executed by `experiments/exp001_entropy_monitor.py`.
