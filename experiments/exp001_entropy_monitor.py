@@ -17,7 +17,7 @@ SAMPLE_INTERVAL_S = float(os.getenv("SAMPLE_INTERVAL_S", "2.0"))
 OUT_CSV = os.getenv("OUT_CSV", "data/exp001_entropy_log.csv")
 
 def poll_soc_temperature():
-    """Attempt common thermal zone paths used on Linux/Android. Fallback to deterministic nominal."""
+    """Read a physical thermal sensor; fail closed if none is readable."""
     paths = [
         "/sys/class/thermal/thermal_zone0/temp",
         "/sys/class/thermal/thermal_zone1/temp",
@@ -31,8 +31,7 @@ def poll_soc_temperature():
             return temp / 1000.0 if temp > 1000 else float(temp)
         except Exception:
             continue
-    # deterministic fallback for simulation or unsupported environment
-    return 34.2
+    raise RuntimeError("No readable thermal sensor; measurement unavailable (no synthetic fallback)")
 
 def calculate_gibbs_proxy(temp_c, delta_h=120.0, delta_s=0.35, lambda_hope=0.05):
     """Simple Gibbs-like proxy: ΔG = ΔH - T(ΔS + λ)."""
@@ -55,7 +54,15 @@ def main():
             f.flush()
         try:
             while True:
-                temp_c = poll_soc_temperature()
+                try:
+                    temp_c = poll_soc_temperature()
+                except (OSError, RuntimeError, ValueError) as exc:
+                    ts = datetime.now(timezone.utc).isoformat()
+                    writer.writerow([ts, "", "", "unavailable", "sensor_unavailable"])
+                    f.flush()
+                    print(f"{ts} | SENSOR UNAVAILABLE: {exc}; no temperature inferred")
+                    time.sleep(SAMPLE_INTERVAL_S)
+                    continue
                 delta_g = calculate_gibbs_proxy(temp_c)
                 event = ""
                 state = "stable"
@@ -65,9 +72,10 @@ def main():
                     gc.collect()
                     time.sleep(5)
                 elif delta_g > 0:
-                    state = "warning"
-                    event = "delta_g_positive"
-                    time.sleep(2)
+                    # This illustrative proxy decreases as temperature rises for the
+                    # default coefficients; positivity is NOT a heat warning.
+                    state = "stable"
+                    event = "proxy_positive_not_thermal_alarm"
                 else:
                     state = "stable"
                 ts = datetime.now(timezone.utc).isoformat()
