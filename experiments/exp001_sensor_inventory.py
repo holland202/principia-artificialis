@@ -50,8 +50,7 @@ def main():
     result = inspect(Path(args.root))
     with open(args.out, "x", encoding="utf-8") as f:
         json.dump(result, f, indent=2, sort_keys=True, allow_nan=False)
-        f.write("
-")
+        f.write("\n")
     print(json.dumps({"written": args.out, "zones": len(result["zones"]),
                       "identity_verified": False, "calibration_verified": False}))
 
