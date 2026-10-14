@@ -8,7 +8,7 @@
 
 ## Exact provenance and scope
 
-- [Contributor qualification and Note #040 evidence record](../../../NOTE040_INITIAL_REVIEW.md) (already on PA main; retained in place), with the unresolved historical `+0.7133` discrepancy.
+- [Contributor qualification and Note #040 evidence record](../../NOTE040_INITIAL_REVIEW.md) (already on PA main; retained in place), with the unresolved historical `+0.7133` discrepancy.
 - [PA research Issue #28](https://github.com/holland202/principia-artificialis/issues/28): Sandeep's original EGRR proposal, authorized for **protocol development only**.
 - [PA PR #37](https://github.com/holland202/principia-artificialis/pull/37): original code, protocol versions, documented exploration, and mathematical feasibility review; **not merged by this archive**. Snapshot reference commit `e93035809897b10f6895168b51021f76e3fa79c3`.
 - [Sandeep's fork draft PR #1](https://github.com/sunny-kavixo/principia-artificialis/pull/1): the one-document EGRR-DESC-001 study proposal; snapshot commit `b467f1ee7f1c2c2ea36abae0ac148a385abff17f`. **Draft / design-only.**
