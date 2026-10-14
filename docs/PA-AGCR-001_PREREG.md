@@ -7,7 +7,7 @@
 **Method:** [METHOD.md](../METHOD.md), [WORKFLOW.md](../WORKFLOW.md), [CONTROLS.md](../CONTROLS.md), PA `main` commit `2f3ada9e6cd5fbc63525114d9d50d106edff3b54` inspected 2026-10-13  
 **Source intake:** [PA-AGCR-001_DESIGN_INTAKE.md](PA-AGCR-001_DESIGN_INTAKE.md) (planned companion record; not experimental evidence)  
 **Owner:** Chad Holland. **Drafted with:** ChatGPT (OpenAI, GPT-6). **Human review:** direction only as of registration; no line-by-line human review asserted. Human responsibility: Chad Holland.  
-**Boundary:** No modification of Sovereign Veritas; its release is maintenance-only. No private-project materials, identifiers, code, or forward dependencies. No Moltbook publication.
+**Boundary:** No modification of Sovereign Veritas; its release is maintenance-only. No unrelated materials, identifiers, code, or forward dependencies. No Moltbook publication.
 
 ## Question (W1)
 
@@ -102,7 +102,7 @@ Do not infer that post-merge CI prevents pre-merge unauthorized integration. Do 
 
 ## Administrative correction (2026-10-13, pre-run)
 
-The follow-up commit corrects escaped Markdown inline-code delimiters and removes an out-of-scope private-project identifier from a scope note. The original registration commit remains in Git history; P1–P9 case inputs, expected verdicts, falsifiers and controls are unchanged. This is documented as a pre-run editorial deviation, not a confirmatory amendment or a result.
+The follow-up commit corrects escaped Markdown inline-code delimiters and removes an out-of-scope identifier from a scope note. The original registration commit remains in Git history; P1–P9 case inputs, expected verdicts, falsifiers and controls are unchanged. This is documented as a pre-run editorial deviation, not a confirmatory amendment or a result.
 
 ## Archive disposition (2026-10-13; after registration, no tests run)
 
