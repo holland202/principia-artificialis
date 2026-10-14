@@ -45,7 +45,7 @@ def evaluate(observation, policy, now_s):
         return {"decision": "DEFER", "reason": "NO_OBSERVATION"}
     if not isinstance(observation, dict):
         return {"decision": "REFUSE", "reason": "MALFORMED_OBSERVATION"}
-    if not isinstance(observation.get("source"), str) or not observation["source"] or not isinstance(observation.get("authenticity"), str):
+    if not isinstance(observation.get("source"), str) or not observation["source"] or not isinstance(observation.get("authenticity"), str) or not observation["authenticity"]:
         return {"decision": "DEFER", "reason": "PROVENANCE_UNDECLARED"}
     value = observation.get("temp_c")
     at = observation.get("observed_at_s")
@@ -87,8 +87,10 @@ def verify_records(records):
     for i, row in enumerate(records):
         if not isinstance(row, dict) or row.get("schema") != SCHEMA:
             return False, i, "SCHEMA"
-        if row.get("sequence") != i or row.get("prev_hash") != prev:
+        if type(row.get("sequence")) is not int or row["sequence"] != i or row.get("prev_hash") != prev:
             return False, i, "CHAIN"
+        if set(row) != {"schema", "sequence", "prev_hash", "policy", "policy_sha256", "observation", "evaluated_at_s", "result", "record_sha256"}:
+            return False, i, "RECORD_FIELDS"
         body = {k: v for k, v in row.items() if k != "record_sha256"}
         try:
             if digest(body) != row.get("record_sha256"):
