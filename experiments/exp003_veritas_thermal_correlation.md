@@ -3,6 +3,12 @@
 **Status:** Protocol Ready
 **Related Notes:** #002 (Topological Defects), #004 (Thermodynamics), #010 (Memory Dynamics)
 
+## Dated feasibility and evidentiary correction — 2026-10-13 (W9)
+
+**Status: conceptual protocol / NOT RUN or validated in this file.** No experimental proof links hallucinations or homological features of an AI state to changes in SoC heat generation. A change in temperature would have multiple plausible causes (hardware load, clocking, sampling, ambient conditions, background activity) requiring controlled measurement. The 38.5°C trigger below is an **unvalidated proposal**, not a derivation from Gibbs free energy or a safe operating threshold. The named reduction command and its claimed fidelity/topology outcome are **conceptual**, not an implemented, tested recovery controller. Crucially, \(\partial^2=0\) is a defining chain-complex identity; text cannot be said to force \(\partial^2\ne0\) as an established mathematical phenomenon. One negative thermal-correlation experiment could refute the stated operational prediction but could not by itself rule out all energetic costs of erroneous computation. Do not execute physical-device modifications from this proposal without a separately reviewed implementation and safety controls.
+
+---
+
 ## Hypothesis
 When the natural gradient flow of memory (Note #010) encounters a topological defect ($\beta_1 > 0$, Note #002), the reasoning trajectory breaks, causing the model to exert excess computational work to find a non-geodesic detour. This geometric failure directly translates to a measurable physical heat spike on the Snapdragon 8 Elite Hexagon NPU. The 38.5°C thermal ceiling is therefore the physical boundary of the Gibbs Free Energy ($\Delta G < 0$) calculation. 
 

@@ -4,6 +4,12 @@
 **Date:** 2026-04-24
 **Builds on:** Notes #041, #042, #043
 
+## Dated evidence-status correction — 2026-10-13 (W9)
+
+**Status: proposed benchmark / NOT RUN (in this record); NOT VERIFIED.** “Verified” in the original title describes an intended study, not an observed successful benchmark. The synthetic figures in the expected-results table are **projections or historical illustrative numbers**, not independently validated baseline measurements. [Note #043](../research_notes/note043_free_energy_of_reasoning.md) explicitly reports that its pasted synthetic numbers did not match the reference code and that its reported AUC is vacuous. The expected synthetic AUC and free-energy values below must **not** be promoted as successful experimental observations. No real-transformer GSM8K run, held-out AUC, code-path-independent observer, or empirical thermal-law result is documented here. Retain the protocol and original numbers as historical predictions pending a properly registered, independently checked experiment.
+
+---
+
 ## Objective
 Measure the Free Energy of Reasoning \(\mathcal{F}\) on **real transformer outputs** (GPT‑2 small) with GSM8K arithmetic problems. Confirm the ordering: \(\mathcal{F}_{\text{correct}} < \mathcal{F}_{\text{hallucinated}}\) and AUC > 0.80.
 
