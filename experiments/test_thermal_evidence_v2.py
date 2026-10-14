@@ -64,6 +64,18 @@ class ThermalEvidenceTests(unittest.TestCase):
         record["record_sha256"] = m.digest({k:v for k,v in record.items() if k != "record_sha256"})
         self.assertEqual(m.verify_records([record])[2], "DECISION")
 
+    def test_rejects_resealed_extra_fields(self):
+        record = m.make_record(self.obs, self.p, 101)
+        record["unexpected"] = "injected"
+        record["record_sha256"] = m.digest({k:v for k,v in record.items() if k != "record_sha256"})
+        self.assertEqual(m.verify_records([record])[2], "RECORD_FIELDS")
+
+    def test_rejects_boolean_sequence(self):
+        record = m.make_record(self.obs, self.p, 101)
+        record["sequence"] = False
+        record["record_sha256"] = m.digest({k:v for k,v in record.items() if k != "record_sha256"})
+        self.assertEqual(m.verify_records([record])[2], "CHAIN")
+
     def test_chain_reorder_and_truncation_limit(self):
         a = m.make_record(self.obs, self.p, 101)
         b = m.make_record(self.obs, self.p, 102, a["record_sha256"], 1)
