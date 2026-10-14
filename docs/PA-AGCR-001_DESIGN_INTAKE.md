@@ -109,7 +109,7 @@ No wire format, serialization, expiry tolerance, identity-to-role mapping, nonce
 5. Reproducible adversarial fixtures covering malformed, missing, stale, replayed, same-source, and conflicting evidence.
 6. A verified local/offline fallback that fails closed when independent trust anchors are unavailable.
 
-**Architectural separation:** Research and protocols go in PA. An adapter, if later authorized, should live in PA's experimental area or a separately approved experimental repo; **do not add features to maintenance-only Sovereign Veritas**. Private commercial projects are out of scope. No automatic cross-repository transfers are authorized. No remote systems, user accounts, or production branches are integration targets in PA-AGCR-001.
+**Architectural separation:** Research and protocols go in PA. An adapter, if later authorized, should live in PA's experimental area or a separately approved experimental repo; **do not add features to maintenance-only Sovereign Veritas**. No unrelated projects are in scope. No automatic cross-repository transfers are authorized. No remote systems, user accounts, or production branches are integration targets in PA-AGCR-001.
 
 ## Build sequence — proposed, not authorized execution
 
