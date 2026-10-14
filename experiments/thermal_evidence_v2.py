@@ -9,11 +9,8 @@ import argparse
 import hashlib
 import json
 import math
-import os
 import sys
 from dataclasses import dataclass
-from datetime import datetime, timezone
-from pathlib import Path
 
 SCHEMA = "pa.thermal-evidence/2"
 GENESIS = "0" * 64
@@ -42,12 +39,14 @@ class Policy:
 
 def evaluate(observation, policy, now_s):
     """REFUSE: invalid or excessive temperature; DEFER: missing/stale evidence."""
-    if not math.isfinite(now_s):
+    if type(now_s) not in (int, float) or not math.isfinite(now_s):
         raise ValueError("invalid evaluation clock")
     if observation is None:
         return {"decision": "DEFER", "reason": "NO_OBSERVATION"}
     if not isinstance(observation, dict):
         return {"decision": "REFUSE", "reason": "MALFORMED_OBSERVATION"}
+    if observation.get("authenticity") != "not_established" or not isinstance(observation.get("source"), str) or not observation["source"]:
+        return {"decision": "DEFER", "reason": "PROVENANCE_UNVERIFIED"}
     value = observation.get("temp_c")
     at = observation.get("observed_at_s")
     if type(value) not in (float, int) or type(at) not in (float, int):
