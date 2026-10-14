@@ -36,6 +36,16 @@ class ThermalEvidenceTests(unittest.TestCase):
                 self.obs["temp_c"] = v
                 self.assertEqual(m.evaluate(self.obs, self.p, 101)["decision"], "REFUSE")
 
+    def test_missing_provenance_deferred(self):
+        self.obs.pop("source")
+        self.assertEqual(m.evaluate(self.obs, self.p, 101)["reason"], "PROVENANCE_UNDECLARED")
+
+    def test_bad_evaluation_clock(self):
+        for now in (float("nan"), True, "101"):
+            with self.subTest(now=now):
+                with self.assertRaises(ValueError):
+                    m.evaluate(self.obs, self.p, now)
+
     def test_missing_type_refused(self):
         for v in ("30", True, None):
             with self.subTest(v=v):
