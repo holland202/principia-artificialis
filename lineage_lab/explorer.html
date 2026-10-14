@@ -111,7 +111,7 @@ function showDetail(node){
  const d=$("detail");d.replaceChildren();
  const h=document.createElement("h3");h.textContent=(node.kind||"record").toUpperCase();d.appendChild(h);
  const title=document.createElement("strong");title.textContent=node.title||node.id;d.appendChild(title);
- ["claim","scientific_status","outcome","observation","scope","evidence_ref","lesson","next_question","description","reason","contributor","contributor_kind","created_utc"].forEach(k=>detailField(d,k.replaceAll("_"," "),node[k]));
+ ["claim","scientific_status","outcome","observation","scope","evidence_ref","lesson","next_question","description","reason","contributor","contributor_kind","model","review_level","created_utc"].forEach(k=>detailField(d,k.replaceAll("_"," "),node[k]));
  detailField(d,"record ID",node.id);
  render();
 }
