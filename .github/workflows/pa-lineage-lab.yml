@@ -1,0 +1,35 @@
+name: PA lineage lab self-tests
+on:
+  push:
+    paths:
+      - 'lineage_lab/**'
+      - 'docs/PA-LINEAGE-001_*'
+      - '.github/workflows/pa-lineage-lab.yml'
+  pull_request:
+    paths:
+      - 'lineage_lab/**'
+      - 'docs/PA-LINEAGE-001_*'
+      - '.github/workflows/pa-lineage-lab.yml'
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests with negative cases
+        run: python -m unittest lineage_lab.test_lineage -v
+      - name: Registered PA-LINEAGE-001 acceptance instrument
+        run: python -m lineage_lab.run_acceptance
+      - name: Adversarial CLI sabotage must exit 1
+        shell: bash
+        run: |
+          python -m lineage_lab demo --journal "$RUNNER_TEMP/pa-lineage.jsonl"
+          python -m lineage_lab verify --journal "$RUNNER_TEMP/pa-lineage.jsonl"
+          set +e
+          python -m lineage_lab verify --journal "$RUNNER_TEMP/pa-lineage.jsonl" --sabotage
+          rc=$?
+          set -e
+          test "$rc" -eq 1
