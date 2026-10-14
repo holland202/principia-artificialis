@@ -53,7 +53,7 @@ All corrected arms use the same quantizer and serializer.
 - Dense codes are flattened in C row-major order and bit-packed
   least-significant-bit first, using signed two's-complement bit patterns.
 - Dense payload length: `ceil(rows*cols*b/8)` bytes.
-- Header: Python struct format `<4sBBBII d I` (23 bytes),
+- Header: Python struct format `<4sBBBII d I` (27 bytes),
   little-endian and without alignment padding.
 - Header fields, in order: `b'EGR2'` (4 bytes), version=1 (1),
   bits (1), index width (1), rows uint32 (4), cols uint32 (4),
@@ -65,7 +65,7 @@ All corrected arms use the same quantizer and serializer.
   selector's returned order, then `K` little-endian float16 corrections.
 - Append a little-endian uint32 CRC32 of all preceding bytes.
   CRC32 detects accidental corruption; it is not authentication.
-- Total length: `23 + ceil(rows*cols*b/8) + K*(index_width+2) + 4`
+- Total length: `27 + ceil(rows*cols*b/8) + K*(index_width+2) + 4`
   bytes, subject to representable header fields.
 - Decoder validates header/version/width, total length, unique in-range
   indices, positive finite scale, finite corrections and checksum.
@@ -86,9 +86,10 @@ All store float16 corrections; residual rank differences between
 A local structural check (not a held-out quality test) reported
 1311 serialized bytes for each of magnitude, RMS, random and covariance
 at shape 64x32, b=3, K=128; decoding matched the float16-rounded
-reconstruction in that run. The check is not yet committed as a
-versioned reproducible test, so this is descriptive local evidence,
-not an independently verified result or a registered prediction.
+reconstruction in that run. The structural regression test is now committed at
+`experiments/egrr_issue28/test_matched_bytes.py`.
+Its local passing result remains investigator-reported, not an
+independent reproduction or a registered prediction.
 
 ## Proposed synthetic design
 

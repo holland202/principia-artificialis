@@ -76,9 +76,28 @@ def modeled_bits(q: Quantized, k: int, correction_bits: int = 16, scale_bits: in
 
 
 def heldout_mse(weights: np.ndarray, approx: np.ndarray, inputs: np.ndarray) -> float:
+    """Fail-closed float64 output MSE; not a confirmatory experiment."""
+    w = np.asarray(weights, dtype=np.float64)
+    a = np.asarray(approx, dtype=np.float64)
     x = np.asarray(inputs, dtype=np.float64)
-    if x.ndim != 2 or x.shape[1] != weights.shape[0] or not np.all(np.isfinite(x)):
-        raise ValueError('invalid held-out inputs')
-    target = x @ weights
-    output = x @ approx
-    return float(np.mean((target - output) ** 2))
+
+    if w.ndim != 2 or a.shape != w.shape or w.size == 0:
+        raise ValueError("invalid weight or reconstruction shape")
+    if not np.all(np.isfinite(w)) or not np.all(np.isfinite(a)):
+        raise ValueError("non-finite weights or reconstruction")
+    if x.ndim != 2 or x.shape[0] == 0 or x.shape[1] != w.shape[0]:
+        raise ValueError("invalid or empty evaluation inputs")
+    if not np.all(np.isfinite(x)):
+        raise ValueError("non-finite evaluation inputs")
+
+    with np.errstate(over="raise", invalid="raise", under="raise"):
+        try:
+            difference = w - a
+            error = x @ difference
+            mse = float(np.mean(np.square(error)))
+        except FloatingPointError as exc:
+            raise ValueError("non-finite or underflowed scoring arithmetic") from exc
+
+    if not np.isfinite(mse) or mse < 0:
+        raise ValueError("invalid output MSE")
+    return mse

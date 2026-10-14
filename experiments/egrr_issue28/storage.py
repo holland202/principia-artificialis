@@ -77,6 +77,12 @@ def _deserialize_unchecked(payload):
     )
     offset += packed_length
 
+    # The symmetric quantizer uses 2**(bits-1)-1 positive/negative
+    # levels. The most-negative signed bit pattern is reserved.
+    qmax = (1 << (bits - 1)) - 1
+    if np.any(values < -qmax) or np.any(values > qmax):
+        raise ValueError("invalid reserved quantization code")
+
     index_dtype = {2: "<u2", 4: "<u4", 8: "<u8"}[width]
     indices = np.frombuffer(
         payload, dtype=index_dtype, count=k, offset=offset
