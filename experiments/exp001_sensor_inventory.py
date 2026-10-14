@@ -24,7 +24,9 @@ def inspect(root=DEFAULT_ROOT):
             candidate = raw / 1000.0
             if not math.isfinite(raw):
                 item["status"] = "nonfinite"
-            elif raw == -273000:\n                item["status"] = "suspected_invalid_sentinel"\n            elif -40 <= candidate <= 150:
+            elif raw == -273000:
+                item["status"] = "suspected_invalid_sentinel"
+            elif -40 <= candidate <= 150:
                 item["temp_c"] = candidate
                 item["status"] = "candidate_millicelsius"
                 item["scale"] = "assumed_millicelsius_unverified"
@@ -48,7 +50,8 @@ def main():
     result = inspect(Path(args.root))
     with open(args.out, "x", encoding="utf-8") as f:
         json.dump(result, f, indent=2, sort_keys=True, allow_nan=False)
-        f.write("\n")
+        f.write("
+")
     print(json.dumps({"written": args.out, "zones": len(result["zones"]),
                       "identity_verified": False, "calibration_verified": False}))
 
