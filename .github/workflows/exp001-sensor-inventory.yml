@@ -1,0 +1,25 @@
+name: exp001-sensor-inventory
+on:
+  push:
+    paths:
+      - 'experiments/exp001_sensor_inventory.py'
+      - 'experiments/test_exp001_sensor_inventory.py'
+      - '.github/workflows/exp001-sensor-inventory.yml'
+  pull_request:
+    paths:
+      - 'experiments/exp001_sensor_inventory.py'
+      - 'experiments/test_exp001_sensor_inventory.py'
+      - '.github/workflows/exp001-sensor-inventory.yml'
+permissions:
+  contents: read
+jobs:
+  inventory-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run synthetic sensor inventory controls
+        run: python -m unittest discover -s experiments -p 'test_exp001_sensor_inventory.py' -v
