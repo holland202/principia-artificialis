@@ -304,7 +304,8 @@ def plant(text, raw, kind):
     elif kind == "DEPRECATED":
         t["WORKFLOW.md"] += "\nA prediction that did not hold is marked FAILED.\n"
     elif kind == "RECORD":
-        k = next(iter(sorted(x for x in r if not x.endswith("MANIFEST.md"))))
+        rows = table_rows(t[MANIFEST])
+        k = "methodology/record/" + rows[0][0].strip("`")
         r[k] = r[k] + b" "
     elif kind == "MISSING":
         t.pop("CONTROLS.md", None)
