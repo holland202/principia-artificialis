@@ -16,6 +16,9 @@ class ThermalEvidenceTests(unittest.TestCase):
         self.obs = {"temp_c": 30.0, "observed_at_s": 100.0,
                     "source": "synthetic_test", "authenticity": "not_established"}
 
+    def test_empty_log_refused(self):
+        self.assertEqual(m.verify_records([]), (False, 0, "EMPTY_LOG"))
+
     def test_positive_control(self):
         self.assertEqual(m.evaluate(self.obs, self.p, 101)["decision"], "ALLOW")
 
