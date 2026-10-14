@@ -83,6 +83,8 @@ def make_record(observation, policy, now_s, prev_hash=GENESIS, sequence=0):
 
 def verify_records(records):
     """Check full record chain and independently recompute decisions; no signatures or anchoring."""
+    if not records:
+        return False, 0, "EMPTY_LOG"
     prev = GENESIS
     for i, row in enumerate(records):
         if not isinstance(row, dict) or row.get("schema") != SCHEMA:
