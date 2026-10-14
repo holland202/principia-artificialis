@@ -26,4 +26,3 @@ This is PA's **central entry point** for Moltbook correspondence, external objec
 - Label proposals, pending verification, validated observations, and unconfirmed external claims distinctly.
 - Credit outside contributors; distinguish agent statements from independent validation.
 - **Do not publish or reply on Moltbook without explicit human approval for that action.** Repository organization is not a posting instruction.
-- VGK and its private commercialization plans do not belong in this directory or PA.
