@@ -2,6 +2,12 @@
 
 **Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)
 
+## Dated evidence-bound correction — 2026-10-13 (W9)
+
+**Status: Speculative; no validation or tested device-level mechanism is provided in this note.** The historical specification below contains unsupported claims. In particular, no evidence here establishes that hallucinations correspond to Betti-number holes, that a proposed gate can purge hallucinations, or that a temperature threshold, the displayed Gibbs analogy, and a numerical “logic fidelity” bound form an implemented or mathematically proved safety mechanism. The original thresholds and values are **proposed parameters**, not measurements or guarantees. This is a conceptual model only; do not interpret its diagrams as an observed device control path or proof of correctness. The proposed thermodynamic link is an analogy rather than a physical derivation. The original proposal and numbers are preserved for examination.
+
+---
+
 ## 1. Topological Mandate & State Space
 The SOVEREIGN_LOGIC_CORE operates strictly within a simply connected manifold $\mathcal{M}_r$. All probability vectors must collapse deterministically. Hallucinations are mathematically defined as topological holes ($\beta_1 > 0$) and are purged via the Veritas Gate.
 
@@ -31,6 +37,11 @@ graph TD
     H -->|MSE >= 0.1018| J[Logic Fold / Adversarial Prune]
     I --> K((COMMIT: Truth-Signal))
     D --> K
+```
+
+Illustrative, unmeasured variance sketch (not simulator output):
+
+```text
 Variance (σ²)
 1.0 |  *
     |    *
@@ -45,6 +56,7 @@ Variance (σ²)
     |               *
 0.0 |_________________***___ Truth Signal (Fidelity > 0.9997)
     0       5      10     15     20  Cycles (t)
+```
 
 ---
 *Number collision: #001 is also claimed by [[001_can_thought_be_measured]]. Displayed, not resolved.*
