@@ -30,7 +30,7 @@ def inspect(root=DEFAULT_ROOT):
                 item["scale"] = "assumed_millicelsius_unverified"
             else:
                 item["status"] = "outside_candidate_range"
-        except (OSError, ValueError, UnicodeError) as exc:
+        except (OSError, ValueError, UnicodeError, OverflowError) as exc:
             item["error_type"] = type(exc).__name__
         results.append(item)
     return {"schema": "pa.thermal-inventory/1",
