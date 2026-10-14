@@ -1,0 +1,29 @@
+name: thermal-witness-hmac-v22
+on:
+  push:
+    paths:
+      - 'experiments/thermal_evidence_v2.py'
+      - 'experiments/thermal_checkpoint_v21.py'
+      - 'experiments/thermal_witness_hmac_v22.py'
+      - 'experiments/test_thermal_witness_hmac_v22.py'
+      - '.github/workflows/thermal-witness-hmac-v22.yml'
+  pull_request:
+    paths:
+      - 'experiments/thermal_evidence_v2.py'
+      - 'experiments/thermal_checkpoint_v21.py'
+      - 'experiments/thermal_witness_hmac_v22.py'
+      - 'experiments/test_thermal_witness_hmac_v22.py'
+      - '.github/workflows/thermal-witness-hmac-v22.yml'
+permissions:
+  contents: read
+jobs:
+  adversarial-witness:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run HMAC witness adversarial tests
+        run: python -m unittest discover -s experiments -p 'test_thermal_witness_hmac_v22.py' -v
