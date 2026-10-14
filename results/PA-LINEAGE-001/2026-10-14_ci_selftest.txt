@@ -1,0 +1,29 @@
+PA-LINEAGE-001 / AI-authored CI self-test snapshot
+UTC observation: 2026-10-14T18:06:55Z
+Source: GitHub Actions run 38612373839, job 116018726406
+Source link: https://github.com/holland202/principia-artificialis/actions/runs/38612373839
+Source branch head tested: 49a42500a4ba4df5a44397a7f92200e531732328
+Environment: GitHub hosted ubuntu-latest, setup-python 3.11
+Command: python -m unittest lineage_lab.test_lineage -v
+Observation: Ran 14 tests in 0.024s
+Observation: OK
+Command: python -m lineage_lab.run_acceptance
+Raw stdout (timestamps/log wrapper removed, content pasted exactly):
+P7_STATIC_SOURCE_CHECK: PRESENT (not browser execution)
+P1 HELD
+P2 HELD
+P3 HELD
+P4 HELD
+P5 HELD
+P6 HELD
+P7 NOT RUN
+VERDICT 6 of 7 as registered
+DIGEST 209e78c4bb5385a44fb6bf8b3493df37b6786b14a8b63b313712812790af6d66
+Additional CLI workflow check:
+GATE: PASS events=4 head=28dfef694d43cb625ed4ccf19adf2e1d4568a54c170643f46acada4bdd542222
+GATE: FAIL — planted mutation detected
+The benign head is nondeterministic because event IDs and timestamps vary.
+Sabotage must exit 1; accepted by bash gate in the CI job.
+CI job conclusion: success.
+Scope: self-authored implementation checks, not independent replication or a scientific result.
+Browser UI and S25 device: NOT VALIDATED.
