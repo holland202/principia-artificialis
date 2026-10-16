@@ -85,10 +85,10 @@ are M1, M2, M3, M8, M6, M15 and M8 there.
 
 | Path | Contents | Notes |
 |---|---|---|
-| `research_notes/` | 78 `.md` files — the note series | **Canonical home for all notes** |
+| `research_notes/` | 94 `.md` files: 91 notes matching the index patterns, plus `QFI_THERMO_AGENDA.md`, `README.md`, `TEMPLATE.md` | **Canonical home for all notes** |
 | `notes/` | 2 stray `.md` files | Colliding duplicates — see Known defects |
-| `scripts/` | 29 files: `noteNNN_reference.py`, figure generators, `make_index.py` | One reference script per note |
-| `whitepapers/` | 8 longer writeups | |
+| `scripts/` | 52 files, 27 of them `noteNNN_reference.py`; also figure generators, `make_index.py`, checkers | Reference scripts do not yet cover every note |
+| `whitepapers/` | 9 files | |
 | `sovereign_core/` | Governance engine + `test_sovereign.py` | 33/33 deterministic on device |
 | `experiments/`, `simulations/` | Experiment code | |
 | `figures/` | 49 generated images | Regenerate via `scripts/generate_*.py` |
@@ -105,13 +105,16 @@ Governing documents at root: `NOTE_TEMPLATE.md`, `NOTES_INDEX.md`,
 
 Two conventions are in use and both are live:
 
-- `NNN_short_title.md` — 45 files (earlier series)
-- `noteNNN_short_title.md` — 24 files (later series)
+- `NNN_short_title.md` — 52 files in `research_notes/` (earlier series)
+- `noteNNN_short_title.md` — 39 files in `research_notes/` (later series)
 
-`scripts/make_index.py` matches both patterns and indexes **69 notes**. There
-are **78 `.md` files in `research_notes/`**, so roughly 9 files match neither
-pattern and are invisible to the index. Before adding a note, match one of the
-two patterns exactly or it will not appear in `NOTES_INDEX.md`.
+`scripts/make_index.py` matches both patterns in `research_notes/`, plus
+`notes/NNN_*.md`: **92 files**. The committed `NOTES_INDEX.md` lists **88**;
+068–071 were added after it was last generated. A generated index goes stale
+until someone re-runs it. Files matching neither pattern are invisible to the
+index: `research_notes/QFI_THERMO_AGENDA.md`, `README.md`, `TEMPLATE.md` and
+`notes/note048_grok_contribution_manifesto.md`. Before adding a note, match one
+of the two patterns exactly or it will not appear in `NOTES_INDEX.md`.
 
 Reference code convention: `scripts/noteNNN_reference.py`, dependency-light
 (NumPy-tier), printing every number that appears in the note.
@@ -123,7 +126,7 @@ Reference code convention: `scripts/noteNNN_reference.py`, dependency-light
 These are recorded, not hidden. Do not paper over them.
 
 1. **Number collisions are real and intentional to display.** `NOTES_INDEX.md`
-   reports 20 numbers claimed by multiple notes, marked ⚡. Collisions are
+   reports 22 numbers claimed by multiple notes, marked ⚡. Collisions are
    *shown*, not resolved by silent renumbering. Example: `#041` is claimed by
    both `041_retrocausal_self_consistency.md` and
    `note041_persistent_homology.md`.
@@ -137,20 +140,18 @@ These are recorded, not hidden. Do not paper over them.
    it into `research_notes/` is a real cleanup task — but it changes note
    numbering, so **ask before doing it**.
 
-3. **`START_HERE.md` is wrong.** It is an SECP deployment guide that tells the
-   reader "All files are in `/mnt/user-data/outputs/`" — an AI sandbox path that
-   exists on no reader's machine. It does not introduce the notes program at
-   all. The file named START_HERE is currently the worst entry point in the
-   repo. Rewriting it is high value.
+3. **Resolved, kept as a record: `START_HERE.md` was an SECP deployment guide.**
+   Commit `4f8bcee` (2026-07-26) replaced it with a notes-program entry point and
+   archived the old guide to `whitepapers/` with a provenance header. This entry
+   kept describing the old file until the 2026-10-16 correction below.
 
-4. **The graph is a star, not a network.** Across 78 notes there are **4
-   `[[wikilinks]]` total**; 76 notes have zero outgoing links. `NOTES_INDEX.md`
-   links out to everything, so the topology is one hub with 78 spokes and
-   almost no lateral edges. Opening this vault in Obsidian today produces a
-   scatter plus an orphan ring. Adding real cross-links is the single highest-
-   value structural improvement available, and the 20 ⚡ collisions are the
-   obvious first candidates — notes that collide on a number are usually
-   topically adjacent.
+4. **Cross-links are still sparse.** Across the 92 index-matched files there are
+   **101 `[[…]]` occurrences** outside code blocks. 58 files have at least one; 34
+   have none. 91 resolve to a file; 10 do not, and some of those are not meant as
+   links (for example `[[5,1,3]]` in note047). The full graph topology has not
+   been remeasured. Adding real cross-links is still high value, and the 22 ⚡
+   collisions are the obvious first candidates — notes that collide on a number
+   are usually topically adjacent.
 
 ---
 
@@ -208,3 +209,24 @@ Copy `NOTE_TEMPLATE.md`. Then, before opening a PR:
 - [ ] at least one outgoing `[[wikilink]]` to a related note (no orphans)
 - [ ] credit given, including to AI contributors (M13)
 - [ ] `python scripts/make_index.py` re-run and the note appears
+
+---
+
+## Record corrections (W9)
+
+**2026-10-16.** Counts above were recounted at commit
+`05078579b674f8a93cc56de4eba3d5fa6511d159` from the full Git tree (file counts,
+filename patterns, `NOTES_INDEX.md` links and `[[…]]` occurrences). No script or
+experiment was run, the index was not regenerated, and the `sovereign_core`
+33/33 claim was not rechecked. The superseded statements, preserved verbatim:
+
+- Directory map: "`research_notes/` | 78 `.md` files — the note series"; "`scripts/` | 29 files: `noteNNN_reference.py`, figure generators, `make_index.py` | One reference script per note"; "`whitepapers/` | 8 longer writeups".
+- Naming: "`NNN_short_title.md` — 45 files"; "`noteNNN_short_title.md` — 24 files"; "`scripts/make_index.py` matches both patterns and indexes **69 notes**. There are **78 `.md` files in `research_notes/`**, so roughly 9 files match neither pattern and are invisible to the index."
+- Defect 1: "reports 20 numbers claimed by multiple notes".
+- Defect 3: "**`START_HERE.md` is wrong.** It is an SECP deployment guide that tells the reader "All files are in `/mnt/user-data/outputs/`" … Rewriting it is high value." (Untrue since `4f8bcee`, 2026-07-26.)
+- Defect 4: "**The graph is a star, not a network.** Across 78 notes there are **4 `[[wikilinks]]` total**; 76 notes have zero outgoing links. … the 20 ⚡ collisions are the obvious first candidates".
+
+Correction provenance (W9 / M13): Claude (Anthropic, Opus 5.5) recounted and
+drafted → human validation: not performed → human editing/curation: direction
+by Chad Holland → human responsibility: Chad Holland. Human review level:
+direction only.
