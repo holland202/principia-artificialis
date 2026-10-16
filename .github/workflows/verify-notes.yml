@@ -35,5 +35,9 @@ jobs:
           done
       - name: EXP015-A exact-rational and adversarial controls
         run: python -m unittest discover -s experiments -p 'test_exp015a_composition.py' -v
+      - name: number audit self-test (note062 P1/P5) - must pass; the report below cannot fail the build
+        run: python scripts/check_numbers.py --plant
+      - name: number audit unit tests (note062 P8)
+        run: python -m unittest discover -s scripts -p 'test_check_numbers.py' -v
       - name: number audit (note062) - report only, never fails the build
         run: python scripts/check_numbers.py || true
