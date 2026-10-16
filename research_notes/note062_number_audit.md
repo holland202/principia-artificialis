@@ -247,3 +247,24 @@ mutants killed: 7/7
 - **P11 (open)** Extracting both endpoints of a range adds only FOUND numbers. Unrun.
 
 P4 is still open.
+
+**CI did not reproduce the container's total, and the cause is note055, not the checker.** On the PR head, GitHub CI
+printed `TOTAL 459/544 found` (run 38948441621), against `463/544` in the container. The only differing row is
+note055, with 12 not found in CI against 8 in the container. The two CI runs since this morning used the same
+package versions (`numpy-2.4.6 scipy-1.17.1`). Run 38944808763's note055 output matches the container's
+byte for byte. Run 38948441621's differs from the fourth or fifth decimal on, for example:
+
+```
+container / run 38944808763:     pred       mean loss 0.062687   vs uniform -0.2086
+run 38948441621:                 pred       mean loss 0.062694   vs uniform -0.2087
+```
+
+In the container the script prints identical output on five runs, with and without single-threaded BLAS.
+So note055's printed numbers depend on the machine that runs them. *Interpretation, not verified:* different
+GitHub runner CPUs take different floating-point paths in the BLAS kernels. The P9 pattern change exposes this,
+because it newly checks note055's sentence-final "-0.2086." That number is FOUND or NOT FOUND depending on the
+runner.
+
+- **P12 (open)** note055's output is identical across GitHub runners once the BLAS core type is pinned (for
+  example `OPENBLAS_CORETYPE=Haswell`). If it is not, the machine dependence is in note055's own arithmetic, and
+  its four-decimal claims need a stated tolerance (M5). Unrun.
