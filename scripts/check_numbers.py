@@ -27,7 +27,8 @@ import os, re, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARGS = {"060": ["--selftest"], "061": ["."]}  # the same arguments CI passes
-NUM = re.compile(r"(?<![\w.])[-+]?(?:\d+\.\d+(?:[eE][-+]?\d+)?|\d+(?:[eE][-+]?\d+))(?![\w.])")
+# 2026-10-16 (note062 P9): a number followed by a sentence-final period now counts; "3.11.2" still does not.
+NUM = re.compile(r"(?<![\w.])[-+]?(?:\d+\.\d+(?:[eE][-+]?\d+)?|\d+(?:[eE][-+]?\d+))(?![\w])(?!\.\d)")
 
 
 def sig_digits(tok):
