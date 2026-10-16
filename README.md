@@ -8,6 +8,28 @@
 
 # Principia Artificialis
 
+> **Inventory correction — 2026-10-16.** At repository revision
+> [`05078579b674f8a93cc56de4eba3d5fa6511d159`](https://github.com/holland202/principia-artificialis/tree/05078579b674f8a93cc56de4eba3d5fa6511d159),
+> 92 files match the existing index generator's discovery rules. The committed
+> index lists 88; matching files 068–071 are absent. These are file-discovery
+> counts, not counts of validated research findings; the matched set includes
+> a handoff document. The matched set contains 22 duplicated note numbers.
+> There are 27 reference-script files; this inventory did not execute them.
+> Historical statistics below are preserved and are not a current census.
+>
+> Inventory basis: the complete Git tree at that revision, using
+> `research_notes/note[0-9][0-9][0-9]_*.md`,
+> `research_notes/[0-9][0-9][0-9]_*.md`, and
+> `notes/[0-9][0-9][0-9]_*.md`, compared with the committed index links.
+> `notes/note048_grok_contribution_manifesto.md` falls outside these patterns;
+> inclusion policy and index regeneration remain separate review items.
+>
+> Correction provenance (W9 / M13): ChatGPT (OpenAI; model identifier not
+> available in this session) assisted with inventory and drafting → human
+> validation: not performed → human editing/curation: scope and wording direction
+> by Chad Holland → human responsibility: Chad Holland. Human review level:
+> direction only. This correction is not independent research validation.
+
 <!-- 30s-demo -->
 > **Status labels.** Every note carries its own label: `Speculative`, `Draft`, `Draft, verified reference
 > code`, `Verified` or `REFUTED (kept)`. **RESEARCH HYPOTHESIS** is the default for anything about AI.
@@ -16,7 +38,7 @@
 > [CONTROLS.md](CONTROLS.md). It is adopted, not validated. The full label list is METHOD.md's
 > vocabulary map.
 
-**Headline (measured, `python scripts/check_numbers.py`, 2026-09-30):** of 216 measured numbers written in
+**Historical headline (recorded audit, `python scripts/check_numbers.py`, 2026-09-30; not rerun for this correction):** of 216 measured numbers written in
 the notes' prose, **145 appear in their reference script's output**. The other 71 are listed line by line in
 [results/NUMBER_CHECK.md](results/NUMBER_CHECK.md). A number there is a lead, not a verdict: it may be a
 parameter, a number from another note, or a typed value that drifted from the code.
@@ -56,10 +78,12 @@ label is `Draft, verified reference code`, and any reading of it as a statement 
 
 - **Notes marked `REFUTED (kept)`** are listed with ⚠ in [NOTES_INDEX.md](NOTES_INDEX.md). They are
   never deleted.
-- **71 of 216 prose numbers are not found in script output** (above). Until each is resolved, the rule
+- **The recorded 2026-09-30 audit found 71 of 216 prose numbers absent from script output** (above). Until each is resolved, the rule
   "numbers come from code" is met for about two-thirds of the numbers, not all.
-- **Structural defects stay on display:** 20 note numbers are claimed by more than one note, and the
-  cross-link graph is a star (see [CLAUDE.md](CLAUDE.md)).
+- **Historical structural description, preserved:** 20 note numbers were reported as claimed by more
+  than one note, and the cross-link graph was described as a star (see [CLAUDE.md](CLAUDE.md)).
+  The inventory correction above supersedes that duplicate-number count; graph topology was not
+  remeasured for this correction.
 
 ```mermaid
 flowchart LR
@@ -72,7 +96,7 @@ flowchart LR
 ### Why this is not just a blog of ideas or a paper repo
 
 Each note's numbers are meant to be printed by a script anyone can run. A checker counts how often
-they are (145 of 216 today). Failed predictions stay in the record. Where a note is only an analogy,
+they are (the recorded 2026-09-30 audit reported 145 of 216). Failed predictions stay in the record. Where a note is only an analogy,
 it says `Speculative`.
 <!-- /30s-demo -->
 
@@ -84,6 +108,8 @@ credited by name, judged only on whether the numbers hold.**
 > *Vincit Omnia Veritas* · 
 > [Full notes index (auto-generated)](NOTES_INDEX.md) ·
 > [Contribute in five minutes](#how-to-contribute--human-or-ai)
+
+**Historical snapshot — preserved as reported, not a current inventory.**
 
 | | count (2026-09-27, from `NOTES_INDEX.md`) |
 |---|---|
@@ -103,7 +129,7 @@ was relabelled to produce them, and every mapping rule is in that function. *Sup
 (2026-08-15), kept:* 80 notes; 18 Verified, 19 Draft, 32 Speculative, 11 unmappable; 7 with a kept
 refutation; 20 scripts.
 
-Most of this is speculative and labeled as such. Nineteen notes are backed by code you can run. Ten
+**Historical summary of the snapshot above (preserved):** Most of this is speculative and labeled as such. Nineteen notes are backed by code you can run. Ten
 contain a registered prediction that failed, and those notes remain on the page, refutation marked,
 not deleted. Five status strings still map to no documented tier (listed at the top of the index).
 Mapping one is the easiest possible first contribution.
@@ -135,6 +161,7 @@ fixed inside the note about exactly that failure mode. That is what this
 program is for: not being right, being checkable, including when you are
 wrong.
 
+**Earlier contributor-invitation statistics (preserved, not current):**
 It needs more people finding where it is still wrong. **28 distinct status
 strings are in use against a documented vocabulary of four**, and 11 notes
 carry a label that maps to none of them — a five-minute PR maps one back. Every AI
@@ -242,16 +269,20 @@ See [research_notes/note063_evidence_bound_learning_loop.md](research_notes/note
 
 ## Research notes
 
-**80 notes** spanning measurement, geometry of reasoning,
+**Historical description (count preserved, not current): 80 notes** spanning measurement, geometry of reasoning,
 thermodynamics of cognition, quantum-information frameworks, and
 labeled exotic frontiers (emergent gravity, holographic duality,
 reasoning as a quantum black hole).
 
-**The complete table lives in [NOTES_INDEX.md](NOTES_INDEX.md)** —
-auto-generated from the notes' own headers by
-`scripts/make_index.py`, so it cannot go stale or silently lose
-entries. Refutations are auto-flagged ⚠. To refresh:
-`python scripts/make_index.py`.
+**The generated index lives in [NOTES_INDEX.md](NOTES_INDEX.md).**
+`scripts/make_index.py` reads note headers using specific filename patterns.
+The index must be refreshed when matching files change; files outside those
+patterns require separate review. Refutations are auto-flagged ⚠.
+The refresh command is `python scripts/make_index.py`; it was not run for this correction.
+
+*Superseded wording, preserved:* the index was described as the "complete table"
+that "cannot go stale or silently lose entries." The inventory correction above
+shows why that assurance was incorrect.
 
 ## Computed figures (evidence-grade)
 
@@ -300,5 +331,5 @@ line, permanently.
 
 ---
 
-*Last updated: 2026-10-01 · One human, five AI systems, eighty-four
+*Historical footer, preserved — Last updated: 2026-10-01 · One human, five AI systems, eighty-four
 notes, and every refutation still on the page.*
