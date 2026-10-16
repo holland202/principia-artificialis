@@ -12,6 +12,7 @@ M = [
  ("M4 not-run does not exit 2", "        sys.exit(2)", "        pass"),
  ("M5 filename fallback removed", "            name, how = note_by_filename(num), \" (paired by filename; the note does not name its script)\"", "            pass"),
  ("M6 results/ not created", "    os.makedirs(os.path.join(ROOT, \"results\"), exist_ok=True)\n", ""),
+ ("M7 sentence-final period rejected again (pre-P9 pattern)", "(?![\\w])(?!\\.\\d)", "(?![\\w.])"),
 ]
 code = open(os.path.join(SRC, "check_numbers.py")).read()
 k = 0
