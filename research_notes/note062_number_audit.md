@@ -124,6 +124,8 @@ P4 stays open.
 Run in a Linux container with Python 3.13 (NumPy 2.5.4, SciPy 1.18.1, Matplotlib 3.11.2), not on the S25.
 
 ```
+# lines from each command's stdout; "exit=" lines are the shell's echo of its exit code.
+# The full run prints one line per note; only note067's line and the total are shown here.
 $ python scripts/check_numbers.py --plant
 self-test: honest note 0 not found; planted wrong number flagged: ['1.6498'] -> PASS
 exit=0
@@ -133,10 +135,12 @@ note067: note067_evaluator_sensitivity_bound.md (paired by filename; the note do
 TOTAL 446/525 found; report: results/NUMBER_CHECK.md
 exit=0
 
+# three rows copied from results/NUMBER_CHECK.md, written by the same run
 | 038 | (no unique note names note038_reference, and the number is shared by several note files) | - | - | - | - |
 | 041 | (no unique note names note041_reference, and the number is shared by several note files) | - | - | - | - |
 | 050 | 050_seasonal_memory_governance.md (paired by filename; the note does not name its script) | 0 | 0 | 0 | 0 |
 
+# stdout of: python scripts/mutate_check_numbers.py scripts
 mutants of check_numbers.py run against scripts/test_check_numbers.py (in memory, one at a time):
 KILLED   M1 checker accepts every number (self-test can no longer flag)
 KILLED   M2 main ignores a failed self-test
