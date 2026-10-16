@@ -81,3 +81,40 @@ collisions, see the index's ⚡).
 
 - **P4 (open)** Adding `check_numbers.py` to CI as a *warning* (not a gate) reduces new class-(c) drift
   to zero over the next ten notes. Unrun.
+
+## Update 2026-10-16: the audit's own self-test was not binding (registered before the repair was run)
+
+Everything above is unchanged. This section is appended (M12).
+
+**What was observed first (exploratory, disclosed under C-EXPLORE).** Read-only runs on `f623fd2`, before this
+section was written:
+
+- CI runs `python scripts/check_numbers.py || true`. Breaking the self-test in memory makes the script exit 1, and
+  the CI step still exits 0. So P1, the anti-vacuity control above, has never been able to fail the build. "Report
+  only" was meant for NOT FOUND numbers, which may be honest history. It was not meant for a broken instrument.
+- The docstring promises exit 2 for "could not run". No path produces it. A reference-script timeout and a missing
+  `results/` directory both end in a traceback with exit 1, the same code as a failed self-test.
+- note067's text never names `scripts/note067_reference.py`, so the checker skips it. The report row reads "no
+  unique note names note067_reference", the same wording used for real number collisions.
+- For the four post-062 notes that have reference scripts (063, 064, 065, 067), every NOT FOUND number was read in
+  context. None is class (c) drift: note064's three are the registered value 0.1425, which the note itself explains
+  against the printed 0.1426, and note067's five are a value derived in prose and three closed-form values the note
+  discloses as computed before registration. **This is not a P4 result.** P4 counts ten notes. Eight notes have
+  landed since note062, and only four have reference scripts.
+
+**Repair.** A separate CI step runs `check_numbers.py --plant` and fails the build if the self-test fails. The
+report step stays report-only. A reference script that times out or cannot start is recorded as "not run", and
+the script exits 2. `results/` is created if missing. When no note names a script, a note is paired by filename
+only if exactly one note file starts with that number, and the report says so.
+
+**Predictions for the repair (registered before it is run):**
+
+- **P5** `--plant` prints exactly the P1 line pasted above, unchanged, and exits 0.
+- **P6** A full run at the repair commit pairs note067 by filename, and still leaves 038, 041 and 050 unpaired
+  (each number is claimed by more than one note file).
+- **P7** The full run's TOTAL is the earlier 374/448 plus note067's 77 measured numbers, 72 of them found:
+  **446/525**.
+- **P8** The new unit tests fail when, in memory: the self-test is broken (exit must be 1), a reference script
+  times out (row "not run", exit 2), or the filename fallback is removed (note067 unpaired).
+
+P4 stays open.
