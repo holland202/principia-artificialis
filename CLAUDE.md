@@ -109,9 +109,8 @@ Two conventions are in use and both are live:
 - `noteNNN_short_title.md` — 39 files in `research_notes/` (later series)
 
 `scripts/make_index.py` matches both patterns in `research_notes/`, plus
-`notes/NNN_*.md`: **92 files**. The committed `NOTES_INDEX.md` lists **88**;
-068–071 were added after it was last generated. A generated index goes stale
-until someone re-runs it. Files matching neither pattern are invisible to the
+`notes/NNN_*.md`: **92 files**. The committed `NOTES_INDEX.md` lists all **92**
+(regenerated 2026-10-16). A generated index goes stale until someone re-runs it. Files matching neither pattern are invisible to the
 index: `research_notes/QFI_THERMO_AGENDA.md`, `README.md`, `TEMPLATE.md` and
 `notes/note048_grok_contribution_manifesto.md`. Before adding a note, match one
 of the two patterns exactly or it will not appear in `NOTES_INDEX.md`.
@@ -225,6 +224,10 @@ experiment was run, the index was not regenerated, and the `sovereign_core`
 - Defect 1: "reports 20 numbers claimed by multiple notes".
 - Defect 3: "**`START_HERE.md` is wrong.** It is an SECP deployment guide that tells the reader "All files are in `/mnt/user-data/outputs/`" … Rewriting it is high value." (Untrue since `4f8bcee`, 2026-07-26.)
 - Defect 4: "**The graph is a star, not a network.** Across 78 notes there are **4 `[[wikilinks]]` total**; 76 notes have zero outgoing links. … the 20 ⚡ collisions are the obvious first candidates".
+
+**2026-10-16 (later).** `NOTES_INDEX.md` was regenerated with `scripts/make_index.py`
+(88 → 92 notes). Superseded, verbatim: "The committed `NOTES_INDEX.md` lists **88**;
+068–071 were added after it was last generated."
 
 Correction provenance (W9 / M13): Claude (Anthropic, Opus 5.5) recounted and
 drafted → human validation: not performed → human editing/curation: direction
