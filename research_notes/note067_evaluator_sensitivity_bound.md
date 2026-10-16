@@ -10,6 +10,7 @@ no line review before this commit.
 the anti-vacuity rule (METHOD.md M3: the instrument can say the other thing); outside material: OVERT 1.1,
 Glacis Technologies (CC BY 4.0), §19 and Annex B.7–B.8.
 **Method:** [METHOD.md](../METHOD.md) at commit `3f837b3`.
+**Reference code:** `scripts/note067_reference.py` (header line added 2026-10-16 so the number audit can pair this note by name)
 
 ## What broke (read first)
 
