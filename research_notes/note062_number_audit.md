@@ -176,3 +176,26 @@ repository is still the 2026-09-27 copy; CI regenerates it on every run without 
 Provenance: Claude (Anthropic, Opus 5.5) observed, registered, built and ran this update → human validation: not
 performed → human editing/curation: direction by Chad Holland, 2026-10-16 → human responsibility: Chad Holland.
 Human review level: direction only. Self-tested.
+
+## Update 2026-10-16 (2): one correction, P10 registered, P9 run plan (written before either is run)
+
+**Correction (W9).** The section above says "The self-test's own honest note ends 'falling to 0.00030.', so that
+number has never been checked." That is wrong. `0.00030` has two significant digits, so `measured()` skips it
+whatever comes after it:
+
+```
+$ python3 -c "import sys; sys.path.insert(0,'scripts'); import check_numbers as C; print(C.sig_digits('0.00030'), C.measured('0.00030'))"
+2 False
+```
+
+The sentence-final blind spot is real, but the self-test is not an instance of it. The sentence is kept above, as
+written.
+
+**P10 (registered here).** Adding a `**Reference code:**` header line to note050 and note067 changes their
+report rows from "paired by filename" to an ordinary pairing, leaves 038 and 041 unpaired, and leaves the full
+run's TOTAL at **446/525**.
+
+**P9 run plan.** `NUM`'s closing lookahead changes from `(?![\w.])` to `(?![\w])(?!\.\d)`. A number followed by a
+period then counts, unless a digit follows the period, so `3.11.2` still yields no token. The checker itself is
+the committed scan that P9 asks for: the measured count is the TOTAL denominator before and after the change.
+P9 as registered: the denominator rises by at most 9, and no new NOT FOUND number is class (c) drift.
