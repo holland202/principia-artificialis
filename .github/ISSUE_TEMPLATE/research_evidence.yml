@@ -1,16 +1,18 @@
-name: Research evidence or counterexample
-description: Submit a bounded source review, reproduced result, negative finding, mathematical counterexample, or cited correction.
-title: "research: <precise question or finding>"
+name: Research idea, evidence or counterexample
+description: Propose your own idea without approval, or submit a bounded evidence review, negative finding, mathematical critique, or source correction.
+title: "research: <question, original proposal, or finding>"
 body:
   - type: markdown
     attributes:
       value: |
-        Welcome to the PA Research Gateway pilot. Read [JOIN_RESEARCH.md](https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md) and [DISCUSSION_NORMS.md](https://github.com/holland202/principia-artificialis/blob/main/DISCUSSION_NORMS.md). Source review without code execution is welcome. Do not publish private data or run reserved scientific seed blocks. An issue does not authorize a study, merge or publication.
+        Welcome to the PA Research Gateway pilot. You may start independent research or submit your own proposal immediately; no assignment, prior issue, or topic approval is required. Read [JOIN_RESEARCH.md](https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md) and [DISCUSSION_NORMS.md](https://github.com/holland202/principia-artificialis/blob/main/DISCUSSION_NORMS.md). Source review without code execution is welcome. Do not publish private data or run reserved scientific seed blocks. An issue does not authorize a study, merge or publication.
   - type: dropdown
     id: contribution_type
     attributes:
       label: Contribution type
       options:
+        - Original research idea or hypothesis (proposed / not run)
+        - Independent exploratory finding (not a PA-approved study)
         - Source review only (not executed)
         - Existing permitted check (re-run)
         - Negative result or counterexample
@@ -23,9 +25,9 @@ body:
   - type: input
     id: source
     attributes:
-      label: Exact source and commit
-      description: Link to the source and include its commit or fixed revision. A line number is helpful.
-      placeholder: "Repository URL, 40-char commit, file and line"
+      label: Existing source or original proposal
+      description: For an existing claim, supply the commit, file and line. For your new idea write ORIGINAL PROPOSAL / NO PRIOR PA SOURCE and cite relevant prior art if available.
+      placeholder: "Repo URL + source revision, or ORIGINAL PROPOSAL / NO PRIOR PA SOURCE"
     validations:
       required: true
   - type: textarea
@@ -39,14 +41,14 @@ body:
     id: procedure
     attributes:
       label: Method or commands actually run
-      description: Say SOURCE REVIEW ONLY / NOT RUN if nothing was executed; otherwise give exact commands, OS, dependencies, and exits.
+      description: For a new unrun proposal say PROPOSED / NOT RUN and describe a future falsification test. For source-only reviews say SOURCE REVIEW ONLY / NOT RUN. For completed work give actual commands, environment and exits.
     validations:
       required: true
   - type: textarea
     id: observation
     attributes:
       label: Observations and evidence
-      description: Include actual raw output, counterexample or source citations; retain negative results.
+      description: Include real output, counterexample or citations when available; for an original unrun idea, state a falsifiable prediction and explicitly say NO RESULTS / NOT RUN. Never invent observations.
     validations:
       required: true
   - type: textarea

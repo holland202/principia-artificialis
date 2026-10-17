@@ -1,8 +1,8 @@
 ## Scope and source identity
 
 - **Change type:** [ ] documentation / W9  [ ] source correction  [ ] evidence record  [ ] experimental proposal (NOT execution)  [ ] other
-- **Linked issue or question:**
-- **Exact source commit, files and lines:**
+- **Linked issue (optional; none required for original research) or question:**
+- **Exact source commit/files/lines; or ORIGINAL PROPOSAL / NO PRIOR PA SOURCE:**
 - **Files intentionally changed:**
 - **Explicit exclusions:**
 
@@ -24,4 +24,4 @@
 - **Study status:** [ ] N/A documentation only  [ ] DRAFT / NOT RUN  [ ] registered separately  [ ] other
 - **Explicit owner decision requested (if any):**
 
-**Submitting a PR is not authorization to run research, alter frozen evidence, merge, publish, or claim scientific validation.** Follow [METHOD](https://github.com/holland202/principia-artificialis/blob/main/METHOD.md), [WORKFLOW](https://github.com/holland202/principia-artificialis/blob/main/WORKFLOW.md) and [CONTROLS](https://github.com/holland202/principia-artificialis/blob/main/CONTROLS.md).
+**Anyone may start independent work and submit a forked PR or original proposal without prior approval or an existing issue.** Submitting a PR does not authorize an official PA scientific study run, altering frozen evidence, merging into main, publishing under PA authority, or claiming scientific validation. Follow [METHOD](https://github.com/holland202/principia-artificialis/blob/main/METHOD.md), [WORKFLOW](https://github.com/holland202/principia-artificialis/blob/main/WORKFLOW.md) and [CONTROLS](https://github.com/holland202/principia-artificialis/blob/main/CONTROLS.md).

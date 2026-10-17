@@ -6,11 +6,11 @@
 
 ## Volunteer workflow
 
-1. **Discover.** Find an open [starter problem](RESEARCH_OPPORTUNITIES.md) or a precise claim in a research note.
-2. **Submit.** Open a [research evidence issue](https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml) with a commit/line, actual observation, negative evidence and source-vs-execution status.
+1. **Choose freely.** Investigate your own original question, choose an optional [starter problem](RESEARCH_OPPORTUNITIES.md), or critique a precise claim in a research note. No assignment or permission to begin independent work is required.
+2. **Submit without a prerequisite issue.** Open a [research evidence or original proposal issue](https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml) or a forked PR. For existing claims, pin commit/line and actual observations; for a new idea, label ORIGINAL PROPOSAL / NO PRIOR PA SOURCE and planned checks NOT RUN.
 3. **Triage (any willing volunteer).** Check for duplication, scope, safe instructions, provenance and missing data. Ask narrow questions; do not treat a comment as scientific approval.
 4. **Review (another volunteer where feasible).** Trace the argument, attempt a separately permitted existing check, or propose a counterexample. Record who reviewed, exact commands/outputs if run, limitations and disagreements. A same-code re-run differs from an independent implementation.
-5. **Owner decision.** Changes to canonical methods, formal research registration, study execution, merges, releases and publication require Chad Holland or an explicitly authorized maintainer. Peer feedback does not convey these permissions.
+5. **Owner gate only for official actions.** No owner permission is needed to start independent research, propose a topic, submit an issue, or open a forked PR. Changes to canonical methods, formal PA research registration, official study execution, merges, releases and PA publication require Chad Holland or an explicitly authorized maintainer. Peer feedback does not confer those permissions.
 
 ## Suggested triage markers (text only; not installed GitHub labels)
 
