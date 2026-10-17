@@ -1,6 +1,6 @@
 # Starter research opportunities — public pilot
 
-**Pilot open for volunteer source review.** These are bounded, unassigned leads, **not** assertions that any defect still exists and not authorizations for scientific execution. Check current sources and [open starter issues](https://github.com/holland202/principia-artificialis/issues?q=is%3Aissue+is%3Aopen+PA-ENTRY) before beginning.
+**All starter tasks are optional examples, not an approved-subject list.** Researchers may propose an original topic, develop independent exploratory work in a fork, and open an issue or PR immediately without seeking permission or an assignment. These bounded, unassigned leads are **not** assertions that any defect still exists or authorizations for official PA scientific execution. Check current sources and [open starter issues](https://github.com/holland202/principia-artificialis/issues?q=is%3Aissue+is%3Aopen+PA-ENTRY) if choosing one of these examples.
 
 A good starter task has a precise source, one question, a concrete evidence deliverable and a stopping point. Estimated effort is a planning aid, not observed performance.
 
