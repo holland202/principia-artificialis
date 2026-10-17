@@ -2,6 +2,8 @@
 > **🤝 Independent researchers and collaborators welcome.** Help reproduce calculations, find counterexamples, evaluate experimental controls, and improve evidence provenance. **[Join the research collaboration invitation → Issue #26](https://github.com/holland202/principia-artificialis/issues/26)**. Principia Artificialis is an **exploratory research program, not a validated product or theory**; critical findings and refutations are welcome.
 <!-- collaboration-invitation:end -->
 
+**New to Principia Artificialis?** [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Choose a small open question](RESEARCH_OPPORTUNITIES.md) · [See how peer review works](REVIEW_PLAYBOOK.md).
+
 ![Principia Artificialis](figures/principia_hero.png)
 
 ![repo fetch](figures/principia_fetch.svg)

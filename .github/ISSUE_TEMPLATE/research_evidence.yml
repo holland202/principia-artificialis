@@ -1,0 +1,74 @@
+name: Research evidence or counterexample
+description: Submit a bounded source review, reproduced result, negative finding, mathematical counterexample, or cited correction.
+title: "research: <precise question or finding>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to the PA Research Gateway pilot. Read [JOIN_RESEARCH.md](https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md) and [DISCUSSION_NORMS.md](https://github.com/holland202/principia-artificialis/blob/main/DISCUSSION_NORMS.md). Source review without code execution is welcome. Do not publish private data or run reserved scientific seed blocks. An issue does not authorize a study, merge or publication.
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Contribution type
+      options:
+        - Source review only (not executed)
+        - Existing permitted check (re-run)
+        - Negative result or counterexample
+        - Mathematical critique
+        - External citation or attribution correction
+        - Proposed method or test (not executed)
+        - Documentation or provenance correction
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Exact source and commit
+      description: Link to the source and include its commit or fixed revision. A line number is helpful.
+      placeholder: "Repository URL, 40-char commit, file and line"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: One precise question or finding
+      description: State a narrowly bounded claim that could be wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Method or commands actually run
+      description: Say SOURCE REVIEW ONLY / NOT RUN if nothing was executed; otherwise give exact commands, OS, dependencies, and exits.
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observations and evidence
+      description: Include actual raw output, counterexample or source citations; retain negative results.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limits, alternatives and next unrun check
+      description: Separate inspection, re-run and independently implemented replication.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Human and AI provenance
+      description: Identify authors, AI tools/model where applicable, and human review level.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Safeguards
+      options:
+        - label: I have not included secrets, personal data, private correspondence, or private research material in this public issue.
+          required: true
+        - label: I have disclosed which checks were actually run and understand that this issue does not authorize a new scientific study.
+          required: true
