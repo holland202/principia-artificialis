@@ -1,8 +1,8 @@
 # Challenge-Based Recruitment Protocol
 
-**Status: DRAFT — proposed by AI, pending owner review. Not in effect until the owner merges it.**
+**Status: ACTIVE — optional open challenge recruitment pilot (C0–C4).** Curated evaluation records (C5) require separate written contributor consent and maintainer review. Sealed/blind challenges (C6) are **NOT YET OPEN**: no commitments or independently constructed answer keys exist. This recruitment document is operational guidance, not a scientific-method amendment, automatic admission or grant of access.
 **Scope:** how a stranger becomes a trusted research contributor across holland202's public repositories, by passing a
-challenge instead of asking for access. Principia Artificialis is the default home. The protocol sits beside
+an optional reproducibility challenge—not through credentials or a request for access. Anyone can also submit ordinary research without joining the challenge track. Principia Artificialis is the default home. The protocol sits beside
 [JOIN_RESEARCH.md](JOIN_RESEARCH.md), which stays open to anyone. It is the evidence route into Stage 1 of the
 [Contributor Trust Path](CONTRIBUTOR_TRUST_PATH.md). It does not change [METHOD.md](METHOD.md),
 [WORKFLOW.md](WORKFLOW.md) or [CONTROLS.md](CONTROLS.md).
@@ -12,7 +12,7 @@ challenge instead of asking for access. Principia Artificialis is the default ho
 The open gateway lets anyone start. It does not tell us who can be trusted with review, blind testing or scoped write
 access. A conversation or CV cannot answer that, but one piece of checkable work can.
 
-The model is the first independent evaluation this program received. A reviewer
+An illustrative precedent is the separately published independent evaluation of Vacuity Lint v2.0.0 ([IE1 record](https://github.com/holland202/vacuity_lint.py/blob/main/independent/IE1/README.md)). A reviewer
 ([sunny-kavixo](contributions/sunny-kavixo/)) followed these steps:
 
 1. picked a public tool on his own (vacuity_lint);
@@ -20,29 +20,30 @@ The model is the first independent evaluation this program received. A reviewer
 3. sent an evidence package with source files, commands and outputs;
 4. reported what did *not* work as plainly as what did.
 
-We re-ran every case against the published repository and the results matched exactly. His package's sources were
-byte-identical to the published code. He then gave written consent to publication and chose his own credit wording. The
-next step offered to him was to write **blind tests** for a fix he did not build. This protocol turns that sequence into
-a repeatable path.
+The IE1 record reports 16 constructed cases matching the declared expectations, source-byte identity checks, and
+subsequent Claude and ChatGPT reruns with their respective limitations. It explicitly does **not** establish the tool's
+general validity. The record reports contributor consent to the separate evaluation publication and contributor-chosen
+credit wording. A proposed next step is blind testing of a fix built by someone else; **no blind-round result is
+established here**. This protocol uses that documented sequence as an inspiration, not as a certification.
 
 ## 2. The filter in one sentence
 
-**We admit people whose claims survive reproduction and who report their own failures. We decline people whose claims
-do not reproduce, who hide negatives, or who want endorsement more than scrutiny.**
+**We recognize checkable contributions that honestly report results and limits; we do not require positive findings.
+A challenge disposition describes one contribution, not the person's worth, research rights, or automatic permission.**
 
 ## 3. Stages
 
 | Stage | What the candidate does | What we do | Exit |
 |---|---|---|---|
-| C0 Choose | Picks one challenge from the [menu](challenges/entry/README.md), or proposes their own against any listed public repo | Nothing. No sign-up, no permission. | They open an entry issue |
-| C1 Declare | Opens an [entry-challenge issue](.github/ISSUE_TEMPLATE/entry_challenge.yml). States the claim they will test, the commit they pinned and what result would prove them wrong, **before** running anything | Checks that the declaration is falsifiable and in scope. Replies "in scope" or names what is missing. | Declaration accepted |
+| C0 Choose | Optionally picks a challenge from the [menu](challenges/entry/README.md), or proposes their own question against any listed public repo | Nothing. No sign-up or advance permission required; ordinary contributions do not need a challenge. | They decide whether to use the challenge track |
+| C1 Declare | For **new** challenge-track checks, opens an [entry-challenge issue](.github/ISSUE_TEMPLATE/entry_challenge.yml) with a pinned source, claim and falsifier **before executing those checks**. Earlier exploratory work may still be submitted with clear retrospective disclosure, but is not retroactively preregistered. | Volunteer may check scope and ask questions; **no advance reply is required to begin work**. | Public declaration recorded, or retrospective work honestly labeled |
 | C2 Submit | Delivers an evidence package (§4) | — | Package received |
-| C3 Reproduce | — | A maintainer re-runs the package against the **published** repository at the pinned commit and compares byte-for-byte where possible. The result is posted as MATCH, PARTIAL (names what differs) or NO MATCH. | Reproduction posted |
+| C3 Reproduce | May assist by supplying missing artifacts | For the pilot, **Chad Holland is the designated owner reviewer**; a separately authorized human reviewer may assist. AI-assisted execution must name the actual operator, environment, raw logs, and limits. Compare source identities and outputs against the **published pinned commit**. Post MATCH, PARTIAL or NO MATCH **only after a real run**. | Reproduction posted, or status WAITING FOR REVIEW (not a candidate failure) |
 | C4 Respond | Answers concrete questions. May revise **once**, and the revision is appended, never overwritten. | Re-checks only what changed | Disposition (§5) |
-| C5 Consent & record | Gives written consent to publication and supplies their own credit wording and profile link, or declines publication | Publishes an Independent Evaluation record (§7) in `contributions/<handle>/` using their exact wording | Record merged |
-| C6 Blind round | Writes test cases and expected outcomes for a fix someone else built, sealed before the fix is shown to them (§6) | Runs the sealed cases. The builder never sees or edits them. | Trust Path Stage 1 → 2 evidence |
+| C5 Consent & record | May optionally provide **separate written permission for a curated evaluation record** and choose credit wording; may decline without losing credit for an existing public contribution | An authorized maintainer checks consent and scope before any **additional** curated publication (§7). Public GitHub issues/PRs were already public on submission and cannot be retroactively made private. | Curated record published with consent, or no additional record |
+| C6 Blind round | **NOT OPEN IN THIS PILOT**. Future optional round would require an independent challenge constructor, prior sealed commitment, safe scope and separate owner go-ahead. | Do not advertise a working blind test or guarantee advancement. | Deferred; no active sealed challenge |
 
-There is no deadline at any stage. Silence is not failure. An abandoned challenge simply stays open.
+There is no deadline or guaranteed review time. Silence or an unanswered issue is not a candidate failure. Open source contributions may be submitted without joining any stage; this optional challenge track does not replace [JOIN_RESEARCH.md](JOIN_RESEARCH.md). **The Contributor Trust Path remains a separate proposal**, and this protocol does not itself award a role, promotion, repository access or co-authorship.
 
 ## 4. Evidence package (minimum)
 
@@ -58,12 +59,12 @@ There is no deadline at any stage. Silence is not failure. An abandoned challeng
 
 ## 5. Dispositions
 
-The decision is published on the issue. It names the evidence and leaves room to disagree.
+When a designated reviewer has actually assessed the work, a narrow disposition may be posted on the **already public** issue. If no reproduction occurred, use **WAITING FOR REVIEW** or **INSUFFICIENT EVIDENCE**, not ACCEPTED or DECLINED. A disposition addresses the contribution, not the contributor's personal merit. The reviewer names the evidence and allows disagreement.
 
 - **ACCEPTED — reproduced.** Reproduction matches, and negatives and limits are disclosed. This counts as the
   "substantive auditable contribution" for Trust Path Stage 1. **A refuted hypothesis can be ACCEPTED.** We are judging
   the contribution, not whether the result was positive.
-- **ACCEPTED — partial.** The core reproduces and named parts do not. The differences are recorded, not argued away.
+- **ACCEPTED — partial.** The core reproduces and named parts do not. The differences are recorded, not argued away. This is not equivalent to a complete reproduction.
 - **NOT YET.** Something specific is missing (commands, pinned commit, raw output). The decision lists exactly what, and
   the candidate can resubmit.
 - **DECLINED.** One or more disqualifiers in §8 applied. The reason is stated narrowly and factually, with no public
@@ -72,8 +73,8 @@ The decision is published on the issue. It names the evidence and leaves room to
 ## 6. Sealed challenges (how weak or fabricated entries get caught)
 
 Some menu items carry a **sealed answer**. Before the challenge is posted, the owner writes the expected finding and
-commits only its SHA-256 to [challenges/entry/SEALED.md](challenges/entry/SEALED.md). The plaintext is revealed after
-the challenge closes, so anyone can check the answer was fixed in advance.
+commits only its SHA-256 to [challenges/entry/SEALED.md](challenges/entry/SEALED.md). The plaintext and salt would be revealed after
+the challenge closes, so anyone could check the answer was fixed in advance. **No sealed items are active or promised during the initial pilot.**
 
 Three kinds:
 
@@ -141,43 +142,41 @@ hypothesis honestly tested; English as a second language; slow response.
 
 ## 10. Privacy, credit and provenance
 
-- Nothing is published without the contributor's written consent. Credit uses their wording, verbatim.
+- **Public submissions are already public.** GitHub issue and PR titles, bodies, comments, attachments and usernames are visible as soon as submitted. No additional, curated Independent Evaluation article or attribution wording is published on the contributor's behalf without separate written consent. Existing public GitHub history may be retained under GitHub's rules.
 - Private correspondence is summarized at most, never quoted, unless they agree. The owner's own prompts to AI tools are
   never quoted in public records.
 - No family, health or personal information about anyone appears in any challenge, issue or record.
 - Every record carries the provenance chain: AI participation → human validation → human editing → human responsibility.
   It names the model and only the review level that actually happened.
-- Contributors can withdraw at any time. Accepted contributions keep their attribution. A contributor who asks to be
-  de-credited is anonymized, but their evidence is not deleted.
+- Contributors may stop participating at any time. If they ask to remove a link or change credit on a **separate curated record**, an authorized maintainer reviews the request subject to preserving evidence and applicable platform history. Do not promise removal or anonymization of GitHub material that cannot be controlled.
 
 ## 11. What contributors get, and what they don't
 
-They get: public, verifiable credit in their own words; a reproduction of their work by someone else; a path to
-reviewing, blind testing and (optionally) scoped write access under the Trust Path; and a reference the owner can
-truthfully give.
+They may receive: documented peer feedback if available; a public evidence trail; and optional curated credit with
+written consent. Reproduction occurs **only when a reviewer actually completes it**. A separate Trust Path proposal
+may later provide a route to additional responsibility, but neither acceptance nor the pilot grants that path automatically.
 
 They do not get: pay, co-authorship, ownership, guaranteed responses, or automatic access. This is a voluntary,
 unpaid research program ([CONTRIBUTOR_TRUST_PATH.md](CONTRIBUTOR_TRUST_PATH.md)).
 
 ## 12. Outreach (how candidates are found)
 
-Every substantive reviewer so far arrived through a direct personal channel, not through broadcast posts. So:
+The program welcomes both direct contacts and unsolicited public contributors. No outreach channel is presumed superior without recruitment data. So:
 
-- **Direct invitation first.** Send one message to one person, offering one challenge that fits their field and linking
-  the menu. Do not mass-message.
-- Posts link to the [challenge menu](challenges/entry/README.md), not the repository root.
+- **Personal invitations are optional.** Offer an appropriate challenge or open-contribution link when relevant; do not mass-message or promise an outcome. The Research Gateway also welcomes people without any invitation.
+- Public posts should offer the [open Research Gateway](JOIN_RESEARCH.md) **and**, if appropriate, the [optional challenge menu](challenges/entry/README.md).
 - Each invitation states the deal plainly: one checkable piece of work, reproduced by us, credited in their words, and
   no pay.
 
-## 13. Owner decisions needed before adoption
+## 13. Pilot decisions and unresolved gates (2026-10-18)
 
-1. Confirm the public-repository list in the menu (some visibility is unverified).
-2. Who runs C3 reproductions besides the owner, and whether an AI re-run is enough for C3 on low-risk items. Under this
-   draft it is, but it is labeled as a reproducibility check, never as independent evidence.
-3. Seal the first planted-defect and null-answer challenges (§6). None are sealed yet.
-4. Whether to link this protocol from README, JOIN_RESEARCH.md and the issue chooser.
+1. **Repository visibility checked:** seven repositories on the current menu were inspected through their repository records on 2026-10-18 and all reported `public` and `not archived`. This is a visibility check, **not** authorization for special testing outside their published scopes.
+2. **C3 pilot reviewer:** Chad Holland is the default reviewer. Others may supply voluntary peer critique, but no contributor automatically receives an official reproduction role. An AI-assisted re-run is a disclosed re-run, not independent case design or a substitute for raw outputs.
+3. **Sealed/blind challenges deferred:** the commitment ledger is empty. Do not advertise PA-C6 as available, fabricate hashes or mark any blind test completed. A distinct owner approval and valid third-party construction are required before activation.
+4. **Navigation:** the protocol is linked from the public gateway and optional menu; ordinary independent work does not require entry challenges.
+5. **Separate Trust Path:** `CONTRIBUTOR_TRUST_PATH.md` remains a draft proposal. Stage recognition and repository permissions require a separate decision; neither is activated here.
+6. **Pilot scope:** open challenges C0–C4 and optional separately consented C5 may be used. No promised review times, automatic publication, scientific execution or new GitHub write privileges.
 
-*Provenance: drafted by Claude Opus 5.5 (Anthropic) at the owner's direction on 2026-10-18. Human review: none yet.
-Responsibility for adoption rests with the owner.*
+*Provenance: original challenge protocol drafted by Claude (Anthropic, Opus 5.5) at owner direction on 2026-10-18. This finalization drafted with ChatGPT (OpenAI, GPT-6) using live repository inspection. Human technical validation of these edits: not independently performed; owner directed completion and remains responsible for adoption. This is W9 onboarding documentation, not a research result.*
 
 *Vincit Omnia Veritas.*

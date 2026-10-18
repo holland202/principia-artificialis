@@ -28,6 +28,10 @@ Use Issues for specific research problems.
 
 Use GitHub Discussions for broader conversations.
 
+## Optional entry challenges
+
+You can also take a [reproducibility challenge](challenges/entry/README.md) under the [Recruitment Protocol](RECRUITMENT_PROTOCOL.md) if you want structured reviewer feedback. This is optional and **not** a prerequisite for proposing research or contributing via forked PR. The companion contributor trust path remains a draft proposal; no role or GitHub access is automatically awarded.
+
 ## Research Gateway pilot — guided first contribution
 
 Start at [JOIN_RESEARCH.md](JOIN_RESEARCH.md) with **any** well-scoped research idea, or browse [optional research opportunities](RESEARCH_OPPORTUNITIES.md). Open an evidence-pinned issue or forked PR without prior approval. The issue form also accepts an original proposal without an existing PA source. Source review without running code is welcome. Negative findings should remain visible. Anyone may participate through Issues and forked PRs without direct repository write access.

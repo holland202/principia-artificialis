@@ -1,17 +1,16 @@
 name: Entry challenge (declare before you run)
-description: Take an entry challenge from challenges/entry/README.md. Declare your claim and falsifier first; submit evidence later in this same issue.
+description: Optional challenge track. Declare a new challenge test before running it, or disclose completed independent work retrospectively.
 title: "entry: <challenge ID> — <one-line claim>"
-labels: ["entry-challenge"]
 body:
   - type: markdown
     attributes:
       value: |
-        This is the challenge route in [RECRUITMENT_PROTOCOL.md](https://github.com/holland202/principia-artificialis/blob/main/RECRUITMENT_PROTOCOL.md). Fill in this form **before running anything**. Post your evidence package later as a comment on this issue. Negative and null results count fully. Do not post secrets or private data, and do no security testing beyond a repository's own published challenge rules.
+        This optional challenge route is described in [RECRUITMENT_PROTOCOL.md](https://github.com/holland202/principia-artificialis/blob/main/RECRUITMENT_PROTOCOL.md). You can instead start any independent research and submit a normal issue/PR with no challenge. For **new challenge work**, declare before running the planned checks; label earlier exploratory work RETROSPECTIVE / NOT PREREGISTERED. This issue is PUBLIC when submitted. A separate written consent is needed only for any additional curated evaluation article. Negative and null results count. Do not post secrets or private data, or test beyond published challenge rules.
   - type: input
     id: challenge
     attributes:
       label: Challenge ID
-      description: For example PA-C1, a repository row from the menu, or OPEN.
+      description: For example PA-C1, a repository row from the menu, or OPEN; PA-C6 is not yet available.
     validations:
       required: true
   - type: input
@@ -39,7 +38,7 @@ body:
     id: plan
     attributes:
       label: Planned commands or method
-      description: What you intend to run or inspect. Mark SOURCE REVIEW ONLY if you will not execute code.
+      description: What you intend to run or inspect; for earlier completed work disclose RETROSPECTIVE / NOT PREREGISTERED. Mark SOURCE REVIEW ONLY if no execution is planned.
     validations:
       required: true
   - type: textarea
@@ -58,5 +57,5 @@ body:
           required: true
         - label: I will not test infrastructure, accounts, CI secrets or live services, or go beyond a repository's published challenge rules.
           required: true
-        - label: I understand this is unpaid, gives no automatic access, and nothing is published under my name without my written consent.
+        - label: I understand this is unpaid, grants no automatic access, my GitHub issue is public immediately, and any additional curated evaluation record requires separate written consent.
           required: true

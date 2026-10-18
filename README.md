@@ -2,7 +2,7 @@
 > **🤝 Independent researchers and collaborators welcome.** Help reproduce calculations, find counterexamples, evaluate experimental controls, and improve evidence provenance. **[Join the research collaboration invitation → Issue #26](https://github.com/holland202/principia-artificialis/issues/26)**. Principia Artificialis is an **exploratory research program, not a validated product or theory**; critical findings and refutations are welcome.
 <!-- collaboration-invitation:end -->
 
-**Research is open — start your own idea today.** You do **not** need an assignment, a starter issue or advance permission to explore a question or [submit a PR from your fork](JOIN_RESEARCH.md). [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Optional starter questions](RESEARCH_OPPORTUNITIES.md) · [Volunteer review process](REVIEW_PLAYBOOK.md). Official PA experiments, canonical rule changes and merges still follow the research controls.
+**Research is open — start your own idea today.** You do **not** need an assignment, a starter issue or advance permission to explore a question or [submit a PR from your fork](JOIN_RESEARCH.md). [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Optional starter questions](RESEARCH_OPPORTUNITIES.md) · [Optional entry challenges](challenges/entry/README.md) · [Volunteer review process](REVIEW_PLAYBOOK.md). Official PA experiments, canonical rule changes and merges still follow the research controls.
 
 ![Principia Artificialis](figures/principia_hero.png)
 

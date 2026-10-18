@@ -12,6 +12,10 @@ You may carry out your **own clearly attributed, independent exploratory work** 
 
 **Submission does not require a preexisting issue.** Open a [research question/evidence issue](https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml) or submit a forked PR whenever you have a bounded proposal or contribution. For a genuinely new idea, state **ORIGINAL PROPOSAL / NO PRIOR PA SOURCE** and distinguish planned checks from observations actually made. A PR is an invitation to review, not automatic inclusion in `main`. Publishing or merging into PA still requires an authorized maintainer decision.
 
+## Optional research challenges and contributor recognition
+
+If you want a structured way to demonstrate reproducibility skills, explore the [optional entry challenge menu](challenges/entry/README.md) and [Recruitment Protocol](RECRUITMENT_PROTOCOL.md). **No challenge, credential, invitation, or approval is required** to investigate an idea, work in your fork, file an issue, or propose a PR. Recognition and repository permissions are separate, owner-reviewed decisions; sealed challenges are not active yet.
+
 ## Get started in five steps
 
 1. **Choose any research question.** Bring an original idea or browse the [optional starter opportunities](RESEARCH_OPPORTUNITIES.md). No issue assignment or topic approval is needed; check existing discussions to avoid duplicate effort.

@@ -1,16 +1,14 @@
 # Entry challenges — menu
 
-**Status: DRAFT (part of [RECRUITMENT_PROTOCOL.md](../../RECRUITMENT_PROTOCOL.md)); not in effect until the owner merges.**
+**Status: ACTIVE — optional, public open challenges C0–C4.** Sealed/blind challenges PA-C6 are **NOT OPEN**. Read the [recruitment protocol](../../RECRUITMENT_PROTOCOL.md) for the separately consented evaluation record and evidence requirements.
 
-Pick one challenge, then open an [entry-challenge issue](../../.github/ISSUE_TEMPLATE/entry_challenge.yml) and declare
-your claim and falsifier **before** you run anything. One accepted, reproduced challenge is the evidence for
-[Contributor Trust Path](../../CONTRIBUTOR_TRUST_PATH.md) Stage 1.
+**Challenges are optional.** Anyone can instead [begin their own research immediately](../../JOIN_RESEARCH.md), open an issue or submit a forked PR without a challenge or assignment.
 
-**The deal:** you do one checkable piece of work. We reproduce it, and if you consent, we credit you publicly in your own
-words. It is unpaid and there is no automatic access. Negative and null results count fully.
+For a **new** entry-challenge test, open an [entry-challenge issue](../../.github/ISSUE_TEMPLATE/entry_challenge.yml) with a claim and falsifier before running **that challenge check**. Earlier independent work is welcome if labeled retrospective rather than preregistered. A reviewed challenge may later support a separate role discussion, but the [Contributor Trust Path](../../CONTRIBUTOR_TRUST_PATH.md) is still a proposal and no roles or access are conferred by a challenge.
 
-Some items have a **sealed answer**: its hash was committed in [SEALED.md](SEALED.md) before posting. For some sealed
-items the correct answer is "no defect" or "cannot be determined". We do not say which.
+**The deal:** submit one checkable piece of work. A designated reviewer may reproduce it as time allows and must label the actual evidence and gaps. The issue itself is public on submission; any separate curated evaluation record requires written consent and your chosen credit wording. Participation is voluntary and unpaid, with no guaranteed review, role, or access. Negative and null results count fully.
+
+Future challenge rounds may carry **sealed answers** under the commitment procedure in [SEALED.md](SEALED.md), including null-answer cases. **No items have been sealed or made available yet**; the open challenge rows below are not secretly graded.
 
 None of these items asserts that a defect currently exists. Check the source at the commit you pin.
 
@@ -23,11 +21,11 @@ None of these items asserts that a defect currently exists. Check the source at 
 | PA-C3 | **Label honesty.** Pick one note whose status label claims more than Speculative. Show whether the evidence in the repo supports that label (rule M7). | 1–2 h | open |
 | PA-C4 | **Walk through a door.** Pick one note's open, unrun prediction. Register it in your issue, then run it in your own environment and report it whichever way it comes out (M2, M15). This is not an official PA study unless authorized through WORKFLOW W2. | 3–10 h | open |
 | PA-C5 | **Break the governance suite.** Run `python sovereign_core/test_sovereign.py`. Find a change to the governance engine that the suite does not catch (a surviving mutant), or show that each guard is load-bearing. | 2–6 h | open |
-| PA-C6 | **Sealed items.** Posted here once the owner seals them; see [SEALED.md](SEALED.md). | varies | sealed |
+| PA-C6 | **Sealed items — NOT OPEN.** Future optional challenge, after independent construction and a separate owner gate; see [SEALED.md](SEALED.md). | future | inactive |
 
 ## Other public repositories (welcome; the record lives in that repo, with a pointer here)
 
-The owner must confirm this list before adoption.
+**Public visibility verified on 2026-10-18:** each listed repository returned `public` and not archived. Each repository's own challenge rules and rights still govern; this list does not authorize running security tests outside those rules.
 
 | Repo | Challenge | Notes |
 |---|---|---|
