@@ -2,6 +2,14 @@
 
 **Status: Public pilot (October 2026).** This is a volunteer onboarding route, not an experiment, research finding, job offer, or grant of repository authority.
 
+## Participation conditions — read before contributing
+
+**Participation is free, voluntary, unpaid, and at your own pace.** Come for fun, curiosity, learning, or independent research. There are no membership fees, required working hours, assigned tasks, or obligation to continue.
+
+**The only recognition offered is accurate credit and possible publication of an accepted contribution in the repository, with your informed written consent.** Review and publication are not automatic or guaranteed; negative findings are welcome. **No salary, consulting pay, expense reimbursement, equity, profit-sharing, royalties, commercial ownership, or future financial reward is offered or promised.** You are not expected to purchase hardware or services for the project. Participation alone does not transfer intellectual property rights; the permissions for any submitted work and its license must be clear. Any separate paid or commercial arrangement would require an explicit agreement before the work begins.
+
+Read the [full recruitment protocol](RECRUITMENT_PROTOCOL.md#11-what-contributors-get-and-what-they-dont) before submitting. Independent exploratory work is allowed without topic approval, but official PA studies and publication still follow the research safeguards below.
+
 Principia Artificialis is an open, often speculative research notebook about mathematical and evidence-based questions in AI. You do **not** need a degree, an AI subscription, or agreement with our hypotheses. Refutations, documented failures, and clear source critiques are valuable.
 
 ## Open research: no assignment or prior permission required
