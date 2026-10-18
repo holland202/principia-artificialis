@@ -7,6 +7,14 @@ challenge instead of asking for access. Principia Artificialis is the default ho
 [Contributor Trust Path](CONTRIBUTOR_TRUST_PATH.md). It does not change [METHOD.md](METHOD.md),
 [WORKFLOW.md](WORKFLOW.md) or [CONTROLS.md](CONTROLS.md).
 
+## Participation terms — voluntary, unpaid, curiosity-driven
+
+**This is free, voluntary, unpaid research for people who enjoy exploring ideas, learning, testing claims, and contributing to shared knowledge.** There are no fees, dues, required working hours, mandatory assignments, or employment offers. People choose whether to participate, what to investigate independently, and when to stop.
+
+**The only recognition offered is accurate public credit and, when a contribution is accepted and the contributor gives written permission, publication of that contribution in the relevant repository.** Publication is subject to evidence review, contributor consent, licensing permissions, and maintainer acceptance; neither publication nor a positive finding is guaranteed. No salary, consulting fee, stipend, expense reimbursement, equity, profit-sharing, royalties, commercial partnership, or future payment is offered or promised.
+
+Participation does not surrender anyone's intellectual property or authorize use of unpublished designs beyond the rights explicitly granted. Contributors who require financial compensation or commercial terms should agree on those terms separately **before** undertaking that work; none are implied by this invitation.
+
 ## 1. Why a challenge
 
 The open gateway lets anyone start. It does not tell us who can be trusted with review, blind testing or scoped write
@@ -152,12 +160,26 @@ hypothesis honestly tested; English as a second language; slow response.
 
 ## 11. What contributors get, and what they don't
 
-They get: public, verifiable credit in their own words; a reproduction of their work by someone else; a path to
-reviewing, blind testing and (optionally) scoped write access under the Trust Path; and a reference the owner can
-truthfully give.
+**Participation is free, voluntary, unpaid, and at each person's own pace.** People are welcome to join for fun,
+curiosity, learning, or independent scientific inquiry. No membership fees, mandatory hours, assigned workload,
+or deadline are imposed.
 
-They do not get: pay, co-authorship, ownership, guaranteed responses, or automatic access. This is a voluntary,
-unpaid research program ([CONTRIBUTOR_TRUST_PATH.md](CONTRIBUTOR_TRUST_PATH.md)).
+**The only recognition or non-monetary return offered is accurate attribution and the possibility of having an
+accepted contribution published in the relevant repository, with the contributor's informed written consent.**
+Credit uses the contributor's chosen wording. Publication depends on evidence review, maintainer acceptance,
+licensing permissions, and consent; it is **not guaranteed** for every submission. A reproduced negative result
+can qualify just as a positive finding can.
+
+Opportunities to review, undertake blind tests, or apply for tightly scoped repository access are optional
+participation paths, **not compensation or entitlements**. No salary, hourly pay, consulting fees, stipends,
+expense reimbursement, equity, co-ownership, royalties, profit shares, employment, commercial partnership,
+or future financial reward are offered or promised. Co-authorship and write access are not automatic.
+Participants need not purchase hardware or services for the project and can stop contributing at any time.
+
+Contributors retain any rights they have in their original work unless separately and expressly licensed or
+agreed otherwise; unpaid participation does not transfer intellectual property by itself. If someone wants a
+paid or commercial arrangement, it must be negotiated separately **before** such work begins, not assumed
+from volunteer participation ([CONTRIBUTOR_TRUST_PATH.md](CONTRIBUTOR_TRUST_PATH.md)).
 
 ## 12. Outreach (how candidates are found)
 
@@ -166,8 +188,10 @@ Every substantive reviewer so far arrived through a direct personal channel, not
 - **Direct invitation first.** Send one message to one person, offering one challenge that fits their field and linking
   the menu. Do not mass-message.
 - Posts link to the [challenge menu](challenges/entry/README.md), not the repository root.
-- Each invitation states the deal plainly: one checkable piece of work, reproduced by us, credited in their words, and
-  no pay.
+- Each invitation states the deal plainly: **free, voluntary, unpaid, at your own pace, for learning and
+  curiosity**; no required hours or fees; no promised money, equity, ownership or future commercial reward.
+  The only offered recognition is proper credit and possible repository publication of accepted, consented work
+  (§11). A challenge is an optional trust path, not a prerequisite to independent exploratory research.
 
 ## 13. Owner decisions needed before adoption
 
@@ -179,5 +203,9 @@ Every substantive reviewer so far arrived through a direct personal channel, not
 
 *Provenance: drafted by Claude Opus 5.5 (Anthropic) at the owner's direction on 2026-10-18. Human review: none yet.
 Responsibility for adoption rests with the owner.*
+
+*Revision (2026-10-18): Owner-directed clarification of voluntary, unpaid participation, recognition,
+publication consent, and non-promise of compensation. Drafted with ChatGPT (OpenAI GPT-6); human review level:
+owner direction only. Owner retains responsibility.*
 
 *Vincit Omnia Veritas.*
