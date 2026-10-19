@@ -37,6 +37,15 @@ The following named contributions are supported by the linked public research re
 
 **Research status:** EGRR remains a proposal/protocol under review. Its scientific hypotheses are **not confirmed**, and the descriptive 100-case study is **not frozen or run**. Recognition here credits documented intellectual and technical contributions independently of any future experimental result. The original research attribution and existing rights remain with the appropriate contributors.
 
+### Daria Lepikhina — Independent conceptual reviewer (related public research)
+
+**Contribution:** Independent, source-only conceptual review of the publicly documented **Sovereign Veritas** XB-1/X5 execution-boundary case, emphasizing human oversight, evidence available after an unrecorded action, intervention authority, and the distinction between correcting a record and remedying consequences.
+
+- [Daria's published review — *Human oversight after an unrecorded action*](https://github.com/holland202/sovereign-veritas/blob/main/docs/external/daria-lepikhina_2026-10-18_xb1-x5-conceptual-review.md): an author-approved external review dated 18 October 2026, published 19 October 2026.
+- [Publication and attribution note](https://github.com/holland202/sovereign-veritas/blob/main/docs/external/daria-lepikhina_2026-10-18_xb1-x5-publication-note.md): documents her authorship, publication approval and the review's limited scope.
+
+**Research status and repository boundary:** This is credit for documented *related public-repository research*, not a claim that Daria authored files in Principia Artificialis or independently reproduced an experiment. Her review is **not** a whole-system audit, validation of Sovereign Veritas, or endorsement of any project's scientific conclusions. Her original review is linked here, **not** relicensed or republished in PA.
+
 ## Automated Assistance
 
 The repository explicitly credits material contributions from AI systems (Claude, Grok, Kimi, ChatGPT, Perplexity and others) in the generation of research notes. These contributions are documented in the notes themselves and in the README.
