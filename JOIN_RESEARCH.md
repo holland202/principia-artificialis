@@ -51,3 +51,9 @@ For formal verdict names and replication levels, follow [METHOD.md](METHOD.md). 
 [Existing collaboration invitation — Issue #26](https://github.com/holland202/principia-artificialis/issues/26) · [Repository contribution guide](CONTRIBUTING.md)
 
 *Vincit Omnia Veritas.*
+
+## Your work, your credit
+
+Before offering code or a standalone research manuscript for inclusion, review [Licensing](LICENSING.md) and [Contributor rights](CONTRIBUTOR_RIGHTS.md). The public code's MIT license remains unchanged. Independent reviewers should approve the scope of publication and attribution for their own work; a research submission does not imply copyright assignment, project endorsement, or formal membership.
+
+**The gateway is free, voluntary and unpaid.** There are no membership fees, required hours or deadlines. Separate paid professional services, if any, require an explicit arrangement. This does not alter the distinction between independent exploration and an authorized PA study.
