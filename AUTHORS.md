@@ -18,13 +18,24 @@ Based on repository history and available evidence:
 | EXPERIMENT / NOTE | Mixed: human-authored notes and notes produced with material AI assistance  |
 | ANALYSIS          | Mixed                                                                       |
 | RESULT            | Observed numerical results from reference scripts; status labels as recorded |
-| REPRODUCTION      | None recorded as independent external reproduction                          |
+| REPRODUCTION      | Bounded external reviews/partial numerical checks are recorded (see Sandeep's Note #040); no broad scientific replication established |
 | REFUTATION        | Multiple refuted-and-kept claims are retained in the notes                  |
 | MAINTENANCE       | Chad Holland                                                                |
 
 ## Other Human Contributors
 
-No other human contributors are established by the repository history at the time of this document.
+The following named contributions are supported by the linked public research records. This section acknowledges documented work; it does **not** establish coauthorship of unrelated notes, scientific validation, membership rights, paid status, or repository permissions.
+
+### Sandeep Sunny (GitHub: [@sunny-kavixo](https://github.com/sunny-kavixo))
+
+**Contribution:** Originating investigator of the proposed **Evidence-Gated Residual Representation (EGRR)** research question; contributor to experimental-protocol design, constructed instrumentation and reproducibility review.
+
+- [Issue #28 — original EGRR research proposal](https://github.com/holland202/principia-artificialis/issues/28): Sandeep's speculative, AI-assisted research proposal, admitted for **protocol development only**.
+- [PR #37 — EGRR protocol draft](https://github.com/holland202/principia-artificialis/pull/37): Sandeep's proposed sensitivity-selection method, control arms, measurement design and falsification conditions. **Open / unmerged; not a frozen registration.**
+- [PR #48 — attributed EGRR research archive](https://github.com/holland202/principia-artificialis/pull/48): owner-maintained archival record preserving Sandeep's submitted research material, source files and negative/unresolved findings; [archival manifest](contributions/sunny-kavixo/egrr/2026-10-14_snapshot/README.md).
+- [Note #040 — contributor qualification record](contributions/sunny-kavixo/NOTE040_INITIAL_REVIEW.md): bounded external review with documented numerical discrepancies and limitations, not independent validation of PA's broad scientific claims.
+
+**Research status:** EGRR remains a proposal/protocol under review. Its scientific hypotheses are **not confirmed**, and the descriptive 100-case study is **not frozen or run**. Recognition here credits documented intellectual and technical contributions independently of any future experimental result. The original research attribution and existing rights remain with the appropriate contributors.
 
 ## Automated Assistance
 
