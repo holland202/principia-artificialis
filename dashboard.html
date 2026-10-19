@@ -1,71 +1,136 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#101c29"><title>Public Research Dashboard | Principia Artificialis</title>
+<meta name="theme-color" content="#0d1724"><meta name="description" content="Principia Artificialis public research dashboard: explore open AI research questions, submit original ideas, challenge evidence and contribute at your own pace.">
+<meta property="og:title" content="Principia Artificialis · Public Research Dashboard">
+<meta property="og:description" content="A public gateway for questions, constructive criticism, falsifiable research and independent scrutiny.">
+<meta property="og:image" content="https://holland202.github.io/principia-artificialis/figures/principia_hero.png">
+<title>Public Research Dashboard | Principia Artificialis</title>
 <style>
-:root{color-scheme:dark;--bg:#0c1623;--panel:#162637;--line:#3a4c5d;--text:#eef1ed;--dim:#bac9cc;--mint:#cee8a3;--aqua:#a5e2e5}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:var(--aqua)}a:focus-visible,button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
-.wrap{max-width:1120px;margin:auto;padding:0 24px}header,footer{border-bottom:1px solid var(--line)}header .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;min-height:84px}header a{text-decoration:none}
-header strong{font-size:14px;text-transform:uppercase;letter-spacing:.07em;color:var(--text)}nav{display:flex;flex-wrap:wrap;gap:21px;font-size:14px}main{padding:67px 0}
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mint)}
-h1,h2,h3{font:normal 400 1.15 Georgia,Times,serif}h1{font-size:clamp(39px,5vw,64px);max-width:830px;margin:13px 0 20px}h2{font-size:32px;margin:12px 0}h3{font-size:23px;margin:12px 0}
-.muted,p,li{color:var(--dim)}.lede{font-size:18px;max-width:790px}.notice{margin:30px 0;background:#203630;border-left:3px solid var(--mint);padding:19px 23px;color:#eef5e8}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:25px}.panel p{font-size:15px}.badge{color:var(--mint);text-transform:uppercase;letter-spacing:.1em;font-weight:800;font-size:12px}
-section{margin-top:58px}.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.step{background:var(--panel);border-top:2px solid var(--mint);padding:19px}.step strong{display:block;font-size:14px}.step p{font-size:13px;margin-bottom:0}
-ul{padding-left:22px}li{margin-bottom:9px}.queue{list-style:none;padding:0;display:grid;gap:10px}.queue li{margin:0;padding:14px;background:#203447;border:1px solid var(--line)}.queue a{font-weight:750;text-decoration:none}.queue small{display:block;color:var(--dim);margin-top:3px}
-button{border:0;border-radius:5px;background:var(--mint);color:#12251d;padding:12px 16px;cursor:pointer;font:700 14px system-ui}
-footer{border-top:1px solid var(--line);border-bottom:0;padding:27px 0;font-size:13px;color:var(--dim)}
-@media(max-width:800px){.steps{grid-template-columns:1fr 1fr}}@media(max-width:620px){.grid,.steps{grid-template-columns:1fr}main{padding:43px 0}h1{font-size:42px}.wrap{padding:0 18px}}
+:root{color-scheme:dark;--bg:#0b1622;--card:#15283a;--card2:#1b3244;--line:#385265;--text:#eff5f3;--muted:#bfd0d3;--accent:#d5ebae;--link:#a8e3e7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
+body:before{content:"";position:absolute;inset:0 0 auto;height:620px;background:radial-gradient(ellipse at 85% 0%,#284a4b 0%,transparent 54%),radial-gradient(ellipse at 5% 0%,#1a293a 0%,transparent 53%);pointer-events:none}
+a{color:var(--link);overflow-wrap:anywhere}a:hover{color:#e1f5f5}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{width:100%;max-width:1120px;margin:auto;padding:0 22px;position:relative}
+header{border-bottom:1px solid var(--line);position:relative;background:#0d1927ea}
+.nav{min-height:83px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:12px;padding-bottom:12px}
+.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;font-weight:750;letter-spacing:.075em;text-transform:uppercase;font-size:13px}
+.symbol{height:40px;width:40px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--accent);color:var(--accent);font:26px Georgia,serif}
+.links{display:flex;align-items:center;flex-wrap:wrap;gap:16px}.links a{font-size:14px;text-decoration:none;color:var(--muted)}.links a:hover{color:var(--text)}
+main{padding-bottom:75px}
+.hero{padding:74px 0 63px;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center;gap:42px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--accent)}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;letter-spacing:-.022em;line-height:1.14}
+h1{font-size:clamp(39px,5.5vw,65px);margin:13px 0 23px}
+h1 span{color:var(--accent)}
+h2{font-size:clamp(31px,3.5vw,41px);margin:13px 0 21px}
+h3{font-size:24px;margin:14px 0}
+p{margin:0 0 16px}
+.lede{font-size:18px;color:#d1e0e1;max-width:690px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:27px 0 0}
+.btn{display:inline-flex;justify-content:center;align-items:center;min-height:45px;padding:11px 18px;background:var(--accent);color:#17281b;border:1px solid var(--accent);border-radius:5px;text-decoration:none;font-size:14px;font-weight:800}
+.btn:hover{color:#17281b;background:#e8f7cf}
+.btn.alt{background:transparent;color:var(--text);border-color:#607c89}.btn.alt:hover{background:#223849;color:var(--text)}
+.brand-visual{background:linear-gradient(125deg,#203746,#122335);border:1px solid var(--line);border-radius:8px;padding:17px;box-shadow:0 21px 55px #0003;min-width:0}
+.brand-visual img{display:block;width:100%;height:auto;max-height:290px;object-fit:contain;border-radius:4px}
+.brand-visual p{margin:13px 0 0;color:var(--muted);font-size:13px}
+.notice{background:#20362f;border-left:3px solid var(--accent);padding:19px 24px;color:#eff7e9;border-radius:0 4px 4px 0}
+section{margin-top:65px}
+.section-title{max-width:775px;margin-bottom:27px}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid>*{min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px}
+.card p,.card li{font-size:15px;color:var(--muted)}
+.card ul{padding-left:20px;margin-bottom:16px}.card li{margin:8px 0}
+.tag{display:inline-block;text-transform:uppercase;font-weight:800;letter-spacing:.11em;font-size:11px;color:var(--accent)}
+.card a{font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px}
+.steps>*{min-width:0}
+.step{border-top:2px solid var(--accent);background:var(--card);padding:20px}
+.step .number{font-size:12px;font-weight:800;color:var(--accent)}
+.step h3{font-size:21px;margin:11px 0}
+.step p{font-size:14px;color:var(--muted)}
+.issue-list{display:grid;gap:10px;list-style:none;padding:0;margin:0 0 20px}
+.issue-list li{margin:0;background:var(--card2);padding:15px 17px;border:1px solid var(--line);border-radius:5px}
+.issue-list a{text-decoration:none;font-weight:700}
+.issue-list small{display:block;font-size:13px;color:var(--muted);margin-top:3px}
+.inline-links{display:grid;gap:11px}
+.inline-links a{background:#203547;border:1px solid var(--line);padding:13px 16px;text-decoration:none;color:var(--text);border-radius:5px}
+.inline-links a:hover{border-color:var(--accent)}
+.footer{margin-top:75px;border-top:1px solid var(--line);padding-top:27px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media(max-width:920px){.hero{grid-template-columns:minmax(0,1fr)}.brand-visual{max-width:560px}.grid{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:620px){.wrap{padding:0 17px}.hero{padding:45px 0 34px;gap:25px}.actions .btn{width:100%}section{margin-top:45px}.steps{grid-template-columns:minmax(0,1fr)}h1{font-size:41px}.card{padding:19px}.nav{align-items:flex-start;flex-direction:column}.links{gap:12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head><body>
-<header><div class="wrap"><a href="./"><strong>← Principia Artificialis</strong></a><nav aria-label="Dashboard"><a href="./">Welcome</a><a href="https://github.com/holland202/principia-artificialis/issues">GitHub issues ↗</a><a href="file-graph.html">File graph ↗</a></nav></div></header>
-<main class="wrap"><div class="eyebrow">Public research gateway · pilot</div><h1>A clearer path from question to evidence.</h1>
-<p class="lede">This public dashboard helps navigate submissions and research review. It is not a contributor ranking, automated approval system or a place for private correspondence.</p>
-<div class="notice"><strong>Current scope:</strong> Proactive recruitment is paused while existing collaborations receive priority. Independent public research proposals remain welcome. Official PA studies, publication and merges still require separate authorization.</div>
-<div class="grid">
-<div class="panel"><div class="badge">Contribute</div><h2>Submit research</h2><p>Submit a novel question, source critique, counterexample or negative result without waiting for an assignment.</p><p><a href="https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml">Use the research issue form ↗</a></p><p><a href="https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md">Contributor guide ↗</a></p></div>
-<div class="panel"><div class="badge">Optional</div><h2>Entry challenges</h2><p>Challenge forms exist for proposed research checks. Their associated recruitment/trust protocols are still drafts and do not grant authority or acceptance.</p><p><a href="https://github.com/holland202/principia-artificialis/blob/main/challenges/entry/README.md">Example challenges ↗</a></p><p><a href="https://github.com/holland202/principia-artificialis/issues/new?template=entry_challenge.yml">Declare an entry challenge ↗</a></p></div>
+<header><div class="wrap nav"><a class="brand" href="./"><span class="symbol" aria-hidden="true">Π</span>Principia Artificialis</a>
+<nav class="links" aria-label="Dashboard navigation"><a href="./">Welcome</a><a href="#opportunities">Research paths</a><a href="#public-issues">Public issues</a><a href="file-graph.html">File graph</a></nav></div></header>
+<main class="wrap">
+<div class="hero">
+<div>
+<div class="eyebrow">Public research gateway · independently testable ideas</div>
+<h1>From an idea<br>to <span>better evidence.</span></h1>
+<p class="lede">Explore open AI research questions, propose an original hypothesis, challenge an existing result or contribute a well-documented negative finding.</p>
+<p class="muted">Principia Artificialis is an independent, AI-assisted research initiative. Much of the research is exploratory; published notes and code are not automatically scientifically validated.</p>
+<div class="actions"><a class="btn" href="https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml">Submit a research idea ↗</a><a class="btn alt" href="https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md">How to participate ↗</a></div>
 </div>
-<section><div class="eyebrow">How review works</div><h2>Four simple stages.</h2>
-<div class="steps"><div class="step"><strong>01 · Submit</strong><p>State scope, a falsifier, source identity, evidence and limitations.</p></div>
-<div class="step"><strong>02 · Screen</strong><p>Check completeness, provenance and missing details.</p></div>
-<div class="step"><strong>03 · Scrutinize</strong><p>Critique the claim; run only separately permitted checks.</p></div>
-<div class="step"><strong>04 · Owner gate</strong><p>Official experiments, canonical changes, merges and publication need approval.</p></div></div>
-<p class="muted">See the <a href="https://github.com/holland202/principia-artificialis/blob/main/REVIEW_PLAYBOOK.md">existing review playbook</a>. These steps describe a process, not an assurance every issue has been independently tested.</p></section>
-<section><div class="grid"><div class="panel"><h2>Recent public research issues</h2><p>Read-only listing. Items come from the public GitHub Issues API, with no account connection or token. This is not a scientific verdict or complete archive.</p>
-<ul class="queue" id="queue" aria-live="polite"><li>Loading public issues…</li></ul><p id="queue-status" class="muted" style="font-size:13px"></p>
-<p><a href="https://github.com/holland202/principia-artificialis/issues">Browse all public issues ↗</a></p>
-</div><div class="panel"><h2>Evidence checklist</h2><ul>
-<li>Exact question, source, revision and possible disproof.</li>
-<li>Clear distinction between proposed, inspected and actually executed work.</li>
-<li>Commands, environment, raw outputs and hashes when tests were run.</li>
-<li>Limitations, contradictions and negative results kept visible.</li>
-<li>Honest human and AI provenance; accurate credit.</li>
-<li>No self-certification; a mechanism for rejecting an incorrect result.</li>
-</ul><p><a href="https://github.com/holland202/principia-artificialis/blob/main/REVIEW_PLAYBOOK.md">Full review checklist ↗</a></p></div></div></section>
-<section><div class="grid"><div class="panel"><h2>Weekly owner check-in</h2><p>Use a short private summary for each existing collaboration: last source commit, what was actually checked, open questions, decision needed and next voluntary check-in. Keep private contact details out of public issues.</p>
-<button type="button" id="copy">Copy private check-in template</button><p id="copied" role="status"></p></div>
-<div class="panel"><h2>Boundaries</h2><p>Participation is voluntary, unpaid and free, with no required hours or membership fees. A contribution does not grant repo credentials, authorship, paid work, an approved experiment or publishing authority.</p>
-<p><a href="https://github.com/holland202/principia-artificialis/blob/main/WORKFLOW.md">Research workflow ↗</a></p><p><a href="https://github.com/holland202/principia-artificialis/blob/main/CONTRIBUTOR_RIGHTS.md">Contributor rights ↗</a></p></div>
-</div></section></main>
-<footer><div class="wrap">Public navigation dashboard · Project documents remain authoritative · <a href="./">Back to homepage</a></div></footer>
+<div class="brand-visual"><img src="figures/principia_hero.png" alt="Principia Artificialis existing research artwork" width="920" loading="eager"><p>Public research is open to scrutiny. A proposal is not a confirmed scientific finding.</p></div>
+</div>
+<div class="notice"><strong>Participation update:</strong> We're prioritizing existing research collaborations and have paused proactive recruitment. Anyone can still explore public materials or submit independent questions. Responses may take time; official research execution and publication require separate approval.</div>
+<section id="opportunities">
+<div class="section-title"><div class="eyebrow">Choose your path</div><h2>Different ways to contribute.</h2><p class="muted">Contribute without a degree, paid membership, required hours or a pre-assigned task. Source-only criticism, negative results and new ideas all belong here.</p></div>
+<div class="grid">
+<article class="card"><div class="tag">Original research</div><h3>Bring your own question</h3><p>Suggest a falsifiable hypothesis in any area of AI. Explain what would count against it and which evidence would be needed.</p><a href="https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml">Propose an idea ↗</a></article>
+<article class="card"><div class="tag">Source critique</div><h3>Challenge an assumption</h3><p>Inspect a specific public claim, method or implementation. Report inconsistencies, potential counterexamples or unverified steps.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/RESEARCH_OPPORTUNITIES.md">Browse starter questions ↗</a></article>
+<article class="card"><div class="tag">Reproducibility</div><h3>Evaluate evidence carefully</h3><p>Show source revisions, exact commands, results, errors and limitations when independently performing permitted checks. Do not treat a re-run as a different implementation.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/REVIEW_PLAYBOOK.md">Review playbook ↗</a></article>
+<article class="card"><div class="tag">Optional challenge</div><h3>Try a bounded entry question</h3><p>Review one pre-scoped question and declare a possible falsifier. The challenge-based recruitment protocol is still a draft and creates no automatic rights or permissions.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/challenges/entry/README.md">Browse challenge menu ↗</a></article>
+</div></section>
+<section id="review">
+<div class="section-title"><div class="eyebrow">Scientific integrity</div><h2>How submitted work is reviewed.</h2><p class="muted">Anyone can independently start a question. Acceptance of a contribution is separate from validation of a hypothesis.</p></div>
+<div class="steps"><div class="step"><div class="number">01 / Submit</div><h3>Frame it precisely</h3><p>Give a source, falsifiable question, planned or actual checks and material AI assistance.</p></div>
+<div class="step"><div class="number">02 / Screen</div><h3>Check completeness</h3><p>Review scope, provenance, evidence availability, omissions and alternatives.</p></div>
+<div class="step"><div class="number">03 / Scrutinize</div><h3>Challenge the result</h3><p>Use criticism, counterexamples or separately authorized executable checks.</p></div>
+<div class="step"><div class="number">04 / Owner gate</div><h3>Decide what follows</h3><p>Official studies, canonical changes, merges and publication require explicit authorization.</p></div></div>
+</section>
+<section id="public-issues"><div class="grid">
+<article class="card"><div class="tag">From public GitHub</div><h2>Recent research issues</h2><p>Read-only snapshot of matching open public issues, not an exhaustive list or an approval verdict. This page never uses a GitHub account token.</p>
+<ul class="issue-list" id="issue-list" aria-live="polite"><li>Loading public issues…</li></ul><p id="issue-status" class="muted"></p>
+<a href="https://github.com/holland202/principia-artificialis/issues">Browse all GitHub issues ↗</a>
+</article>
+<article class="card"><div class="tag">For investigators and reviewers</div><h2>Evidence essentials</h2>
+<ul><li>Exact source version and a claim that could be wrong.</li>
+<li>Distinction between proposed tests, source inspection and actually executed checks.</li>
+<li>Recorded commands, environments, raw outputs, errors and hashes where applicable.</li>
+<li>Negative and unresolved findings preserved, not omitted.</li>
+<li>Accurate attribution, AI-use disclosure and human review scope.</li>
+<li>Real rejection/anti-vacuity checks, not self-certifying success.</li></ul>
+<div class="inline-links"><a href="https://github.com/holland202/principia-artificialis/blob/main/METHOD.md">Research methodology ↗</a><a href="https://github.com/holland202/principia-artificialis/blob/main/WORKFLOW.md">Official workflow ↗</a></div></article>
+</div></section>
+<section id="credit">
+<div class="grid">
+<article class="card"><div class="tag">Recognition</div><h2>Credit for real contributions.</h2><p>Documented proposals, reviews and research contributions can be accurately acknowledged with permission. Credit never implies that a hypothesis has been proven or that publication rights have been transferred.</p><div class="inline-links"><a href="https://github.com/holland202/principia-artificialis/blob/main/AUTHORS.md">Authors and contributors ↗</a><a href="https://github.com/holland202/principia-artificialis/blob/main/CONTRIBUTOR_RIGHTS.md">Contributor rights ↗</a></div></article>
+<article class="card"><div class="tag">About the initiative</div><h2>Learning and questioning openly.</h2><p>Founder Chad Holland has a professional background in specialized manufacturing and is a beginner in AI research. ChatGPT, Claude and other AI tools provide substantial assistance in research preparation, coding and documentation. That assistance is disclosed rather than represented as scientific expertise or independent validation.</p><a href="./#about">Read the founder's introduction ↗</a></article>
+</div>
+</section>
+<div class="footer"><span>Principia Artificialis · Open research pilot · © 2026 Chad Holland</span><span><a href="./">Homepage</a> · <a href="https://github.com/holland202/principia-artificialis">Source repository ↗</a></span></div>
+</main>
 <script>
-(function(){
-"use strict";
-var list=document.getElementById("queue"),status=document.getElementById("queue-status");
-function el(tag,value){var node=document.createElement(tag);node.textContent=value;return node;}
-fetch("https://api.github.com/repos/holland202/principia-artificialis/issues?state=open&sort=updated&direction=desc&per_page=100",{headers:{"Accept":"application/vnd.github+json"}})
-.then(function(r){if(!r.ok)throw Error("No public API access");return r.json();})
+(function(){'use strict';
+var list=document.getElementById('issue-list'),status=document.getElementById('issue-status');
+function node(tag,text){var e=document.createElement(tag);e.textContent=text;return e;}
+fetch('https://api.github.com/repos/holland202/principia-artificialis/issues?state=open&sort=updated&direction=desc&per_page=100',{headers:{'Accept':'application/vnd.github+json'}})
+.then(function(res){if(!res.ok)throw new Error('Unavailable');return res.json();})
 .then(function(items){
-var chosen=items.filter(function(it){return !it.pull_request && (/^(research:|entry:|PA-ENTRY)/i.test(it.title||"") || (it.labels||[]).some(function(label){return /research-evidence|entry-challenge/i.test(label.name||"");}));}).slice(0,6);
-list.textContent="";
-if(!chosen.length){list.appendChild(el("li","No matching open public issues appear in the latest listing."));}
-chosen.forEach(function(it){var li=el("li",""),a=el("a",it.title),small=el("small","#"+it.number+" · Updated "+String(it.updated_at||"").slice(0,10));a.href=it.html_url;a.rel="noopener noreferrer";li.appendChild(a);li.appendChild(small);list.appendChild(li);});
-status.textContent="Up to six recent matching public issues; other issues may exist.";
-}).catch(function(){list.textContent="";list.appendChild(el("li","Live list unavailable or rate-limited. Use the GitHub issues link below."));status.textContent="Live data is optional; no sign-in required.";});
-document.getElementById("copy").addEventListener("click",function(){
-var t="PRIVATE PA WEEKLY CHECK-IN\nWeek of:\nContributor / track:\nLast source revision:\nWork actually checked:\nUnverified or unrun work:\nBlocker:\nOwner decision required:\nNext voluntary check-in:\nPublication / permissions authorized? NO unless separately approved.";
-var msg=document.getElementById("copied");
-if(navigator.clipboard && navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(function(){msg.textContent="Copied. Keep completed check-ins private.";}).catch(function(){msg.textContent="Copy unavailable in this browser.";});}
-else{msg.textContent="Copy unavailable in this browser.";}
+var recent=items.filter(function(it){return !it.pull_request && (/^(research:|entry:|PA-ENTRY)/i.test(it.title||'')||(it.labels||[]).some(function(x){return /research-evidence|entry-challenge/i.test(x.name||'');}));}).slice(0,6);
+list.textContent='';
+if(!recent.length){list.appendChild(node('li','No matching open research submissions appear in the latest public listing.'));}
+recent.forEach(function(it){
+var li=node('li',''),a=node('a',it.title),info=node('small','#'+it.number+' · Updated '+String(it.updated_at||'').slice(0,10));
+a.href=it.html_url;a.rel='noopener noreferrer';li.appendChild(a);li.appendChild(info);list.appendChild(li);
 });
-}());
+status.textContent='Showing up to six recent matching issues. Other issues may exist.';
+})
+.catch(function(){list.textContent='';list.appendChild(node('li','Live listing unavailable or rate-limited. Use the GitHub Issues link below.'));status.textContent='The public links still work without this listing.';});
+})();
 </script></body></html>
