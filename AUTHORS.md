@@ -26,7 +26,9 @@ Based on repository history and available evidence:
 
 The following named contributions are supported by the linked public research records. This section acknowledges documented work; it does **not** establish coauthorship of unrelated notes, scientific validation, membership rights, paid status, or repository permissions.
 
-### Sandeep Sunny (GitHub: [@sunny-kavixo](https://github.com/sunny-kavixo))
+### Putluru Sandeep (GitHub: [@sunny-kavixo](https://github.com/sunny-kavixo))
+
+**Preferred public display name (confirmed 2026-10-19):** Putluru Sandeep (GitHub: @sunny-kavixo). Earlier records also refer to the same investigator as “Sandeep” or “Sandeep Sunny”; see the [dated attribution clarification](contributions/sunny-kavixo/ATTRIBUTION_2026-10-19.md). This is a name clarification, not a new scientific finding. Any dashboard design credit will be recorded when the relevant contribution is documented and reviewed.
 
 **Contribution:** Originating investigator of the proposed **Evidence-Gated Residual Representation (EGRR)** research question; contributor to experimental-protocol design, constructed instrumentation and reproducibility review.
 

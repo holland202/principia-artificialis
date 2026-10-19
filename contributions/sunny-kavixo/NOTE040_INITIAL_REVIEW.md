@@ -1,10 +1,12 @@
 # Note #040 — External reproduction intake and contributor qualification
 
 **Recorded:** 2026-10-13  
-**Investigator:** [@sunny-kavixo](https://github.com/sunny-kavixo) (Sandeep)  
+**Investigator (preferred public attribution):** Putluru Sandeep (GitHub: [@sunny-kavixo](https://github.com/sunny-kavixo))  
 **Discussion:** [Principia Artificialis #26](https://github.com/holland202/principia-artificialis/issues/26)  
 **Evidence report:** [PA_Note040_Reproduction_Evidence.md](https://github.com/user-attachments/files/33395353/PA_Note040_Reproduction_Evidence.md)  
 **Source revision investigated:** `9208fb95cb5c0a6d340fd5a46d8099734d4add45`
+
+**Attribution clarification (2026-10-19, administrative only):** The investigator's preferred public credit is **Putluru Sandeep (GitHub: @sunny-kavixo)**. The original record used “Sandeep” and/or the GitHub handle. See [the dated attribution note](ATTRIBUTION_2026-10-19.md); the original numerical findings, limitations, provenance and review disposition are unchanged.
 
 ## Administrative decision
 
