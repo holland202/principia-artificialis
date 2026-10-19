@@ -6,7 +6,7 @@
 ## What changed
 
 - `index.html`: beginner-friendly PA homepage, mission, participation path, founder's novice background, substantial use of AI tools, transparent limitations, links to existing sources.
-- `dashboard.html`: read-only public research issues view, existing submission forms, evidence checklist, and a copyable **private** weekly check-in template.
+- `dashboard.html`: read-only public research issue navigation, existing submission forms, evidence checklist, research pathways, and links to contributor attribution.
 - `file-graph.html`: byte-for-byte preservation of the previous interactive root file-graph homepage. Keep it accessible; do not discard original graphics or data.
 
 This is a static website, not a paid app. It has no logins, server database, API keys, analytics trackers, payment handling, contributor rankings, or AI-powered auto-approvals.
@@ -28,26 +28,15 @@ Independent researchers may choose their own questions and submit them without a
 
 These weeks are suggested checkpoints, not obligations placed on contributors. Contact with existing volunteers remains voluntary and at their pace. Do not publish contributors' private notes or imply their consent to new roles.
 
-## Private owner check-in template
+## Owner-only management is separate
 
-```text
-PRIVATE PA WEEKLY CHECK-IN
-Week of:
-Contributor / track:
-Last source revision:
-Work actually checked:
-Unverified or unrun work:
-Blocker:
-Owner decision required:
-Next voluntary check-in:
-Publication / permissions authorized? NO unless separately approved.
-```
+The public dashboard intentionally does **not** expose an owner progress sheet, private messages, individual volunteer workloads or private check-ins. The owner may use a separately distributed **local/off-repository tracker** for private notes. No owner tracking file or completed records are stored in this public GitHub repository, and this website has no login or access control.
 
-Keep filled-in contributor records outside the public site unless they have explicit publication permission. Scientific approval, official study execution, access grants, merges and publications remain separate owner decisions.
+Existing contributor attributions are linked via [AUTHORS.md](../AUTHORS.md); credit does not imply approval of the associated hypotheses. Volunteers control their own workload and may opt out of additional assignments.
 
 ## Publication validation and fallback
 
-Before release, confirm `file-graph.html` equals the former `index.html` and that local links point to existing paths. The dashboard uses a public, unauthenticated GitHub Issues API call and must degrade gracefully when offline or rate-limited. All issue titles are assigned with DOM `textContent` rather than rendered as HTML.
+Before release, confirm the preserved `file-graph.html` is unchanged from its earlier archived implementation and that local links point to existing paths. The dashboard uses a public, unauthenticated GitHub Issues API call and must degrade gracefully when offline or rate-limited. All issue titles are assigned with DOM `textContent` rather than rendered as HTML. Responsive layout uses a single column on smaller screens, including tablet-sized and in-app browser viewports. Existing artwork from `figures/principia_hero.png` is reused instead of introducing an unreviewed brand asset.
 
 The repository's configured homepage URL does not prove that GitHub Pages is active or reachable. Publishing files to `main` also does not prove the site has deployed; deployment must be checked separately. If needed, restore the previous root homepage from Git history without rewriting history.
 
