@@ -1,0 +1,866 @@
+2026-10-20T16:52:46.2534714Z ##[group]Run python research/pa_ns001/gate_b_checks.py
+2026-10-20T16:52:46.2536896Z [36;1mpython research/pa_ns001/gate_b_checks.py[0m
+2026-10-20T16:52:46.2721558Z shell: /usr/bin/bash -e {0}
+2026-10-20T16:52:46.2722664Z env:
+2026-10-20T16:52:46.2723728Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.2725382Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:52:46.2726983Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.2728477Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.2730234Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.2731754Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:52:46.2733055Z ##[endgroup]
+2026-10-20T16:52:46.8559658Z GATE_B_REPORT_BEGIN
+2026-10-20T16:52:46.8561641Z {
+2026-10-20T16:52:46.8562559Z   "accepted": true,
+2026-10-20T16:52:46.8563156Z   "calibration_audit": {
+2026-10-20T16:52:46.8563541Z     "all_39_explained": true,
+2026-10-20T16:52:46.8564179Z     "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+2026-10-20T16:52:46.8565154Z     "classification": "audit of existing deterministic artifacts; no threshold change or new study",
+2026-10-20T16:52:46.8565887Z     "group_counts": {
+2026-10-20T16:52:46.8566219Z       "both": 23,
+2026-10-20T16:52:46.8566563Z       "momentum_only": 14,
+2026-10-20T16:52:46.8566920Z       "sample_only": 2
+2026-10-20T16:52:46.8567248Z     },
+2026-10-20T16:52:46.8567551Z     "groups": {
+2026-10-20T16:52:46.8567858Z       "both": [
+2026-10-20T16:52:46.8568256Z         "couette/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:52:46.8568842Z         "couette/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:52:46.8569549Z         "couette/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:52:46.8570064Z         "couette/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:52:46.8570992Z         "couette/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:52:46.8571504Z         "couette/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:52:46.8572026Z         "couette/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:52:46.8572534Z         "couette/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:52:46.8573035Z         "couette/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:52:46.8573547Z         "couette/small_velocity/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8574036Z         "poiseuille/unit/n65/physical_decimal_6",
+2026-10-20T16:52:46.8574539Z         "poiseuille/unit/n257/physical_decimal_6",
+2026-10-20T16:52:46.8575069Z         "poiseuille/unit/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8575643Z         "poiseuille/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:52:46.8576260Z         "poiseuille/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:52:46.8577003Z         "poiseuille/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:52:46.8577985Z         "poiseuille/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:52:46.8578569Z         "poiseuille/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:52:46.8579172Z         "poiseuille/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:52:46.8579958Z         "poiseuille/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:52:46.8580591Z         "poiseuille/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:52:46.8581179Z         "poiseuille/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:52:46.8581784Z         "poiseuille/small_velocity/n1025/physical_decimal_6"
+2026-10-20T16:52:46.8582293Z       ],
+2026-10-20T16:52:46.8582598Z       "momentum_only": [
+2026-10-20T16:52:46.8583006Z         "couette/unit/n257/physical_decimal_6",
+2026-10-20T16:52:46.8583445Z         "couette/unit/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8583908Z         "couette/short_channel/n257/physical_decimal_6",
+2026-10-20T16:52:46.8584819Z         "couette/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8585411Z         "couette/long_channel/n257/physical_decimal_6",
+2026-10-20T16:52:46.8585948Z         "couette/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8586532Z         "couette/reverse/n257/physical_decimal_6",
+2026-10-20T16:52:46.8587088Z         "couette/reverse/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8587680Z         "poiseuille/short_channel/n257/physical_decimal_6",
+2026-10-20T16:52:46.8588319Z         "poiseuille/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8588949Z         "poiseuille/long_channel/n257/physical_decimal_6",
+2026-10-20T16:52:46.8589813Z         "poiseuille/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:46.8590427Z         "poiseuille/reverse/n257/physical_decimal_6",
+2026-10-20T16:52:46.8590997Z         "poiseuille/reverse/n1025/physical_decimal_6"
+2026-10-20T16:52:46.8591468Z       ],
+2026-10-20T16:52:46.8591764Z       "sample_only": [
+2026-10-20T16:52:46.8592180Z         "poiseuille/unit/n5/physical_decimal_6",
+2026-10-20T16:52:46.8592816Z         "poiseuille/unit/n21/physical_decimal_6"
+2026-10-20T16:52:46.8593287Z       ]
+2026-10-20T16:52:46.8593570Z     },
+2026-10-20T16:52:46.8593876Z     "momentum_cap_total": 37,
+2026-10-20T16:52:46.8594283Z     "recorded_status_counts": {
+2026-10-20T16:52:46.8594671Z       "ACCEPTED": 201,
+2026-10-20T16:52:46.8594998Z       "UNRESOLVABLE": 39
+2026-10-20T16:52:46.8595307Z     },
+2026-10-20T16:52:46.8595578Z     "rows": 240,
+2026-10-20T16:52:46.8595963Z     "sample_cap_total": 25,
+2026-10-20T16:52:46.8596437Z     "unique_ids": 240
+2026-10-20T16:52:46.8596746Z   },
+2026-10-20T16:52:46.8597042Z   "checks": {
+2026-10-20T16:52:46.8597453Z     "B1_all_malformed_envelopes_fail_matching": true,
+2026-10-20T16:52:46.8598032Z     "B1_honest_114_and_digest_unchanged": true,
+2026-10-20T16:52:46.8598559Z     "B4_39_causes_match_prediction": true,
+2026-10-20T16:52:46.8599006Z     "B4_original_240_rows": true
+2026-10-20T16:52:46.8599567Z   },
+2026-10-20T16:52:46.8600467Z   "classification": "same-author CI engineering regression; no independent scientific review or AI study",
+2026-10-20T16:52:46.8601249Z   "command": [
+2026-10-20T16:52:46.8601659Z     "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:52:46.8602186Z     "research/pa_ns001/gate_b_checks.py"
+2026-10-20T16:52:46.8602621Z   ],
+2026-10-20T16:52:46.8602904Z   "controls": [
+2026-10-20T16:52:46.8603229Z     {
+2026-10-20T16:52:46.8603515Z       "cases": 114,
+2026-10-20T16:52:46.8603857Z       "incorrectly_matched": 0,
+2026-10-20T16:52:46.8604247Z       "mode": "flipped"
+2026-10-20T16:52:46.8604582Z     },
+2026-10-20T16:52:46.8604865Z     {
+2026-10-20T16:52:46.8605141Z       "cases": 114,
+2026-10-20T16:52:46.8605475Z       "incorrectly_matched": 0,
+2026-10-20T16:52:46.8605851Z       "mode": "missing"
+2026-10-20T16:52:46.8606183Z     },
+2026-10-20T16:52:46.8606464Z     {
+2026-10-20T16:52:46.8606754Z       "cases": 114,
+2026-10-20T16:52:46.8607103Z       "incorrectly_matched": 0,
+2026-10-20T16:52:46.8607546Z       "mode": "integer_one"
+2026-10-20T16:52:46.8607901Z     },
+2026-10-20T16:52:46.8608188Z     {
+2026-10-20T16:52:46.8608475Z       "cases": 114,
+2026-10-20T16:52:46.8608852Z       "incorrectly_matched": 0,
+2026-10-20T16:52:46.8609569Z       "mode": "integer_zero"
+2026-10-20T16:52:46.8609939Z     }
+2026-10-20T16:52:46.8610207Z   ],
+2026-10-20T16:52:46.8610804Z   "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+2026-10-20T16:52:46.8611695Z   "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+2026-10-20T16:52:46.8612376Z   "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+2026-10-20T16:52:46.8613002Z   "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+2026-10-20T16:52:46.8613532Z   "sources": {
+2026-10-20T16:52:46.8613913Z     "research/pa_ns001/GATE_B_SCOPE.md": {
+2026-10-20T16:52:46.8614358Z       "bytes": 6212,
+2026-10-20T16:52:46.8614744Z       "md5": "9379954cad8f6d6f74b115c18acd1818",
+2026-10-20T16:52:46.8615738Z       "sha256": "a935ea8ce437e710c5dbab4ee543eb2db547435caf7caa0564190f7fb6e69daa"
+2026-10-20T16:52:46.8616461Z     },
+2026-10-20T16:52:46.8616869Z     "research/pa_ns001/PREREGISTRATION_DRAFT.md": {
+2026-10-20T16:52:46.8617400Z       "bytes": 15210,
+2026-10-20T16:52:46.8617811Z       "md5": "4fb9cba8f161bd67a9c13e17e1b19d14",
+2026-10-20T16:52:46.8618525Z       "sha256": "b02e9d76d10bdead34c8563e41a86496a9df6066d827a92a68897db5e7135c24"
+2026-10-20T16:52:46.8619179Z     },
+2026-10-20T16:52:46.8619700Z     "research/pa_ns001/RECORDED.json": {
+2026-10-20T16:52:46.8620117Z       "bytes": 642,
+2026-10-20T16:52:46.8620480Z       "md5": "46280f017cab51f4f7347e10f3ca07d4",
+2026-10-20T16:52:46.8621152Z       "sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c"
+2026-10-20T16:52:46.8621807Z     },
+2026-10-20T16:52:46.8622165Z     "research/pa_ns001/analytic_oracle.py": {
+2026-10-20T16:52:46.8622582Z       "bytes": 1541,
+2026-10-20T16:52:46.8622955Z       "md5": "78d3cbdceaa9abe6f7ae0f63a80cfa0f",
+2026-10-20T16:52:46.8623709Z       "sha256": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e"
+2026-10-20T16:52:46.8624391Z     },
+2026-10-20T16:52:46.8624747Z     "research/pa_ns001/calibrate.py": {
+2026-10-20T16:52:46.8625207Z       "bytes": 5483,
+2026-10-20T16:52:46.8625598Z       "md5": "bbf0c66108eff4c1627784b1252581a5",
+2026-10-20T16:52:46.8626213Z       "sha256": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059"
+2026-10-20T16:52:46.8626843Z     },
+2026-10-20T16:52:46.8627196Z     "research/pa_ns001/diagnose_prototype.py": {
+2026-10-20T16:52:46.8627664Z       "bytes": 2021,
+2026-10-20T16:52:46.8628055Z       "md5": "c579d84ea8bd4ac6d6e6af34a7f937c4",
+2026-10-20T16:52:46.8628718Z       "sha256": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320"
+2026-10-20T16:52:46.8629510Z     },
+2026-10-20T16:52:46.8629881Z     "research/pa_ns001/engineering_gate.py": {
+2026-10-20T16:52:46.8630340Z       "bytes": 3423,
+2026-10-20T16:52:46.8630706Z       "md5": "6acc35717d4a4a53fa77461f8351e3fa",
+2026-10-20T16:52:46.8631675Z       "sha256": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7"
+2026-10-20T16:52:46.8632298Z     },
+2026-10-20T16:52:46.8632659Z     "research/pa_ns001/evaluate_faults.py": {
+2026-10-20T16:52:46.8633118Z       "bytes": 3099,
+2026-10-20T16:52:46.8633478Z       "md5": "443e7ad2857cf87ddbc0319c095353b2",
+2026-10-20T16:52:46.8634144Z       "sha256": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b"
+2026-10-20T16:52:46.8634795Z     },
+2026-10-20T16:52:46.8635242Z     "research/pa_ns001/evidence/gate_b/pre_repair/INDEX.json": {
+2026-10-20T16:52:46.8635803Z       "bytes": 3595,
+2026-10-20T16:52:46.8636210Z       "md5": "bfe7ecbcd523724ff5ad1333a4238f96",
+2026-10-20T16:52:46.8636909Z       "sha256": "80c572b9ca7ca71d2616e6db953a260d50a2bd43f39014481c7bbdb282bfa6d8"
+2026-10-20T16:52:46.8637469Z     },
+2026-10-20T16:52:46.8637916Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log": {
+2026-10-20T16:52:46.8638563Z       "bytes": 9560,
+2026-10-20T16:52:46.8638971Z       "md5": "2443d7ad2bbd63e22ff7100a07d97bb0",
+2026-10-20T16:52:46.8639759Z       "sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553"
+2026-10-20T16:52:46.8640375Z     },
+2026-10-20T16:52:46.8640826Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log": {
+2026-10-20T16:52:46.8641359Z       "bytes": 9560,
+2026-10-20T16:52:46.8641707Z       "md5": "222dcdb182bfda6bd319c2a4b627aa84",
+2026-10-20T16:52:46.8642345Z       "sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d"
+2026-10-20T16:52:46.8642989Z     },
+2026-10-20T16:52:46.8643434Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log": {
+2026-10-20T16:52:46.8644015Z       "bytes": 9560,
+2026-10-20T16:52:46.8644388Z       "md5": "56095300ff07f4b222e1b1af044049ab",
+2026-10-20T16:52:46.8645066Z       "sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff"
+2026-10-20T16:52:46.8645704Z     },
+2026-10-20T16:52:46.8646244Z     "research/pa_ns001/fault_cases.py": {
+2026-10-20T16:52:46.8646695Z       "bytes": 6418,
+2026-10-20T16:52:46.8647072Z       "md5": "0062e59a1d84e78c358539eaefeec6c1",
+2026-10-20T16:52:46.8647741Z       "sha256": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5"
+2026-10-20T16:52:46.8648354Z     },
+2026-10-20T16:52:46.8648670Z     "research/pa_ns001/feasibility.py": {
+2026-10-20T16:52:46.8649115Z       "bytes": 604,
+2026-10-20T16:52:46.8649646Z       "md5": "9343cf31a56131afcdf4c1bfe726668d",
+2026-10-20T16:52:46.8650322Z       "sha256": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d"
+2026-10-20T16:52:46.8650942Z     },
+2026-10-20T16:52:46.8651278Z     "research/pa_ns001/gate_b_checks.py": {
+2026-10-20T16:52:46.8651733Z       "bytes": 6138,
+2026-10-20T16:52:46.8652069Z       "md5": "375fdfa014573f3d3c2765977a2281e8",
+2026-10-20T16:52:46.8652763Z       "sha256": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2"
+2026-10-20T16:52:46.8653445Z     },
+2026-10-20T16:52:46.8653818Z     "research/pa_ns001/mutation_checks.py": {
+2026-10-20T16:52:46.8654298Z       "bytes": 4509,
+2026-10-20T16:52:46.8654696Z       "md5": "7b478be70911c673aea01ecb8ed33e02",
+2026-10-20T16:52:46.8655396Z       "sha256": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87"
+2026-10-20T16:52:46.8656052Z     },
+2026-10-20T16:52:46.8656384Z     "research/pa_ns001/ns001.py": {
+2026-10-20T16:52:46.8656768Z       "bytes": 6358,
+2026-10-20T16:52:46.8657127Z       "md5": "55480877c0f0408dfd666555393ab2d4",
+2026-10-20T16:52:46.8657775Z       "sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518"
+2026-10-20T16:52:46.8658420Z     },
+2026-10-20T16:52:46.8658775Z     "research/pa_ns001/record_command.py": {
+2026-10-20T16:52:46.8659239Z       "bytes": 2574,
+2026-10-20T16:52:46.8660193Z       "md5": "263f4b9fad9f1d01b31399d5af3f6d1a",
+2026-10-20T16:52:46.8660814Z       "sha256": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de"
+2026-10-20T16:52:46.8661540Z     },
+2026-10-20T16:52:46.8661790Z     "research/pa_ns001/study_design.py": {
+2026-10-20T16:52:46.8662093Z       "bytes": 3101,
+2026-10-20T16:52:46.8662358Z       "md5": "3c28c87371f89df98abc2d18a68eea66",
+2026-10-20T16:52:46.8662770Z       "sha256": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94"
+2026-10-20T16:52:46.8663160Z     },
+2026-10-20T16:52:46.8663386Z     "research/pa_ns001/test_ns001.py": {
+2026-10-20T16:52:46.8663673Z       "bytes": 884,
+2026-10-20T16:52:46.8663965Z       "md5": "ff528b9fb505647e9153bf17a7516d2e",
+2026-10-20T16:52:46.8664467Z       "sha256": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294"
+2026-10-20T16:52:46.8665093Z     },
+2026-10-20T16:52:46.8665448Z     "research/pa_ns001/test_package.py": {
+2026-10-20T16:52:46.8665906Z       "bytes": 1764,
+2026-10-20T16:52:46.8666308Z       "md5": "d33c5d5da28f8a6123d17bb88e85844b",
+2026-10-20T16:52:46.8666990Z       "sha256": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620"
+2026-10-20T16:52:46.8667415Z     },
+2026-10-20T16:52:46.8667645Z     "research/pa_ns001/test_stage2.py": {
+2026-10-20T16:52:46.8667939Z       "bytes": 10007,
+2026-10-20T16:52:46.8668197Z       "md5": "196de64bfb13470073610f91866be648",
+2026-10-20T16:52:46.8668619Z       "sha256": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5"
+2026-10-20T16:52:46.8669009Z     },
+2026-10-20T16:52:46.8669464Z     "research/pa_ns001/test_study_design.py": {
+2026-10-20T16:52:46.8669817Z       "bytes": 1763,
+2026-10-20T16:52:46.8670079Z       "md5": "c1acdab095af19cd0684dcc6c68dfbd7",
+2026-10-20T16:52:46.8670505Z       "sha256": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e"
+2026-10-20T16:52:46.8670895Z     },
+2026-10-20T16:52:46.8671133Z     "research/pa_ns001/verify_package.py": {
+2026-10-20T16:52:46.8671429Z       "bytes": 2470,
+2026-10-20T16:52:46.8671677Z       "md5": "56e5c3dc4bc6e229a6c45c85c3bc2b14",
+2026-10-20T16:52:46.8672090Z       "sha256": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff"
+2026-10-20T16:52:46.8672663Z     }
+2026-10-20T16:52:46.8672869Z   }
+2026-10-20T16:52:46.8673068Z }
+2026-10-20T16:52:46.8673275Z GATE_B_REPORT_END
+2026-10-20T16:52:46.8673514Z GATE: PASS
+2026-10-20T16:52:46.8717672Z ##[group]Run set +e
+2026-10-20T16:52:46.8717956Z [36;1mset +e[0m
+2026-10-20T16:52:46.8718286Z [36;1mpython -O research/pa_ns001/gate_b_checks.py --sabotage[0m
+2026-10-20T16:52:46.8718654Z [36;1mrc=$?[0m
+2026-10-20T16:52:46.8718895Z [36;1mtest "$rc" -eq 1[0m
+2026-10-20T16:52:46.8781994Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T16:52:46.8782374Z env:
+2026-10-20T16:52:46.8782678Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.8783142Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:52:46.8783591Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.8783995Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.8784528Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:46.8784939Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:52:46.8785295Z ##[endgroup]
+2026-10-20T16:52:49.1456053Z GATE_B_REPORT_BEGIN
+2026-10-20T16:52:49.1456439Z {
+2026-10-20T16:52:49.1456762Z   "accepted": false,
+2026-10-20T16:52:49.1457108Z   "calibration_audit": {
+2026-10-20T16:52:49.1457497Z     "all_39_explained": true,
+2026-10-20T16:52:49.1458124Z     "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+2026-10-20T16:52:49.1459030Z     "classification": "audit of existing deterministic artifacts; no threshold change or new study",
+2026-10-20T16:52:49.1459841Z     "group_counts": {
+2026-10-20T16:52:49.1460199Z       "both": 23,
+2026-10-20T16:52:49.1460513Z       "momentum_only": 14,
+2026-10-20T16:52:49.1460818Z       "sample_only": 2
+2026-10-20T16:52:49.1461123Z     },
+2026-10-20T16:52:49.1461372Z     "groups": {
+2026-10-20T16:52:49.1461646Z       "both": [
+2026-10-20T16:52:49.1462467Z         "couette/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:52:49.1463012Z         "couette/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:52:49.1463564Z         "couette/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:52:49.1464131Z         "couette/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:52:49.1464663Z         "couette/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:52:49.1465179Z         "couette/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:52:49.1465707Z         "couette/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:52:49.1466234Z         "couette/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:52:49.1466759Z         "couette/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:52:49.1467306Z         "couette/small_velocity/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1467825Z         "poiseuille/unit/n65/physical_decimal_6",
+2026-10-20T16:52:49.1468315Z         "poiseuille/unit/n257/physical_decimal_6",
+2026-10-20T16:52:49.1468808Z         "poiseuille/unit/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1469639Z         "poiseuille/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:52:49.1470179Z         "poiseuille/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:52:49.1470973Z         "poiseuille/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:52:49.1471560Z         "poiseuille/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:52:49.1472105Z         "poiseuille/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:52:49.1472676Z         "poiseuille/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:52:49.1473259Z         "poiseuille/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:52:49.1473839Z         "poiseuille/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:52:49.1474424Z         "poiseuille/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:52:49.1475019Z         "poiseuille/small_velocity/n1025/physical_decimal_6"
+2026-10-20T16:52:49.1475510Z       ],
+2026-10-20T16:52:49.1475834Z       "momentum_only": [
+2026-10-20T16:52:49.1476239Z         "couette/unit/n257/physical_decimal_6",
+2026-10-20T16:52:49.1476741Z         "couette/unit/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1477626Z         "couette/short_channel/n257/physical_decimal_6",
+2026-10-20T16:52:49.1478185Z         "couette/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1478748Z         "couette/long_channel/n257/physical_decimal_6",
+2026-10-20T16:52:49.1479542Z         "couette/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1480098Z         "couette/reverse/n257/physical_decimal_6",
+2026-10-20T16:52:49.1480639Z         "couette/reverse/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1481207Z         "poiseuille/short_channel/n257/physical_decimal_6",
+2026-10-20T16:52:49.1481809Z         "poiseuille/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1482402Z         "poiseuille/long_channel/n257/physical_decimal_6",
+2026-10-20T16:52:49.1482986Z         "poiseuille/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:52:49.1483554Z         "poiseuille/reverse/n257/physical_decimal_6",
+2026-10-20T16:52:49.1484095Z         "poiseuille/reverse/n1025/physical_decimal_6"
+2026-10-20T16:52:49.1484562Z       ],
+2026-10-20T16:52:49.1484869Z       "sample_only": [
+2026-10-20T16:52:49.1485282Z         "poiseuille/unit/n5/physical_decimal_6",
+2026-10-20T16:52:49.1485801Z         "poiseuille/unit/n21/physical_decimal_6"
+2026-10-20T16:52:49.1486243Z       ]
+2026-10-20T16:52:49.1486514Z     },
+2026-10-20T16:52:49.1486821Z     "momentum_cap_total": 37,
+2026-10-20T16:52:49.1487443Z     "recorded_status_counts": {
+2026-10-20T16:52:49.1487816Z       "ACCEPTED": 201,
+2026-10-20T16:52:49.1488165Z       "UNRESOLVABLE": 39
+2026-10-20T16:52:49.1488508Z     },
+2026-10-20T16:52:49.1488789Z     "rows": 240,
+2026-10-20T16:52:49.1489161Z     "sample_cap_total": 25,
+2026-10-20T16:52:49.1489734Z     "unique_ids": 240
+2026-10-20T16:52:49.1490053Z   },
+2026-10-20T16:52:49.1490319Z   "checks": {
+2026-10-20T16:52:49.1491006Z     "B1_all_malformed_envelopes_fail_matching": false,
+2026-10-20T16:52:49.1491545Z     "B1_honest_114_and_digest_unchanged": true,
+2026-10-20T16:52:49.1492060Z     "B4_39_causes_match_prediction": true,
+2026-10-20T16:52:49.1492507Z     "B4_original_240_rows": true
+2026-10-20T16:52:49.1492895Z   },
+2026-10-20T16:52:49.1493572Z   "classification": "same-author CI engineering regression; no independent scientific review or AI study",
+2026-10-20T16:52:49.1494373Z   "command": [
+2026-10-20T16:52:49.1494796Z     "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:52:49.1495346Z     "research/pa_ns001/gate_b_checks.py",
+2026-10-20T16:52:49.1495810Z     "--sabotage"
+2026-10-20T16:52:49.1496124Z   ],
+2026-10-20T16:52:49.1496410Z   "controls": [
+2026-10-20T16:52:49.1496714Z     {
+2026-10-20T16:52:49.1497006Z       "cases": 114,
+2026-10-20T16:52:49.1497369Z       "incorrectly_matched": 114,
+2026-10-20T16:52:49.1497771Z       "mode": "flipped"
+2026-10-20T16:52:49.1498105Z     },
+2026-10-20T16:52:49.1498396Z     {
+2026-10-20T16:52:49.1498684Z       "cases": 114,
+2026-10-20T16:52:49.1499034Z       "incorrectly_matched": 114,
+2026-10-20T16:52:49.1499758Z       "mode": "missing"
+2026-10-20T16:52:49.1500117Z     },
+2026-10-20T16:52:49.1500400Z     {
+2026-10-20T16:52:49.1500682Z       "cases": 114,
+2026-10-20T16:52:49.1501028Z       "incorrectly_matched": 114,
+2026-10-20T16:52:49.1501437Z       "mode": "integer_one"
+2026-10-20T16:52:49.1501803Z     },
+2026-10-20T16:52:49.1502088Z     {
+2026-10-20T16:52:49.1502376Z       "cases": 114,
+2026-10-20T16:52:49.1502803Z       "incorrectly_matched": 114,
+2026-10-20T16:52:49.1503216Z       "mode": "integer_zero"
+2026-10-20T16:52:49.1503574Z     }
+2026-10-20T16:52:49.1503844Z   ],
+2026-10-20T16:52:49.1504463Z   "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+2026-10-20T16:52:49.1505340Z   "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+2026-10-20T16:52:49.1505963Z   "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+2026-10-20T16:52:49.1506445Z   "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+2026-10-20T16:52:49.1506764Z   "sources": {
+2026-10-20T16:52:49.1507251Z     "research/pa_ns001/GATE_B_SCOPE.md": {
+2026-10-20T16:52:49.1507530Z       "bytes": 6212,
+2026-10-20T16:52:49.1507775Z       "md5": "9379954cad8f6d6f74b115c18acd1818",
+2026-10-20T16:52:49.1508190Z       "sha256": "a935ea8ce437e710c5dbab4ee543eb2db547435caf7caa0564190f7fb6e69daa"
+2026-10-20T16:52:49.1508576Z     },
+2026-10-20T16:52:49.1508809Z     "research/pa_ns001/PREREGISTRATION_DRAFT.md": {
+2026-10-20T16:52:49.1509117Z       "bytes": 15210,
+2026-10-20T16:52:49.1509662Z       "md5": "4fb9cba8f161bd67a9c13e17e1b19d14",
+2026-10-20T16:52:49.1510075Z       "sha256": "b02e9d76d10bdead34c8563e41a86496a9df6066d827a92a68897db5e7135c24"
+2026-10-20T16:52:49.1510453Z     },
+2026-10-20T16:52:49.1510662Z     "research/pa_ns001/RECORDED.json": {
+2026-10-20T16:52:49.1510926Z       "bytes": 642,
+2026-10-20T16:52:49.1511163Z       "md5": "46280f017cab51f4f7347e10f3ca07d4",
+2026-10-20T16:52:49.1511550Z       "sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c"
+2026-10-20T16:52:49.1511919Z     },
+2026-10-20T16:52:49.1512136Z     "research/pa_ns001/analytic_oracle.py": {
+2026-10-20T16:52:49.1512417Z       "bytes": 1541,
+2026-10-20T16:52:49.1512660Z       "md5": "78d3cbdceaa9abe6f7ae0f63a80cfa0f",
+2026-10-20T16:52:49.1513053Z       "sha256": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e"
+2026-10-20T16:52:49.1513433Z     },
+2026-10-20T16:52:49.1513647Z     "research/pa_ns001/calibrate.py": {
+2026-10-20T16:52:49.1513912Z       "bytes": 5483,
+2026-10-20T16:52:49.1514140Z       "md5": "bbf0c66108eff4c1627784b1252581a5",
+2026-10-20T16:52:49.1514519Z       "sha256": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059"
+2026-10-20T16:52:49.1514872Z     },
+2026-10-20T16:52:49.1515086Z     "research/pa_ns001/diagnose_prototype.py": {
+2026-10-20T16:52:49.1515357Z       "bytes": 2021,
+2026-10-20T16:52:49.1515741Z       "md5": "c579d84ea8bd4ac6d6e6af34a7f937c4",
+2026-10-20T16:52:49.1516149Z       "sha256": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320"
+2026-10-20T16:52:49.1516517Z     },
+2026-10-20T16:52:49.1516729Z     "research/pa_ns001/engineering_gate.py": {
+2026-10-20T16:52:49.1517002Z       "bytes": 3423,
+2026-10-20T16:52:49.1517223Z       "md5": "6acc35717d4a4a53fa77461f8351e3fa",
+2026-10-20T16:52:49.1517602Z       "sha256": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7"
+2026-10-20T16:52:49.1517961Z     },
+2026-10-20T16:52:49.1518167Z     "research/pa_ns001/evaluate_faults.py": {
+2026-10-20T16:52:49.1518434Z       "bytes": 3099,
+2026-10-20T16:52:49.1518664Z       "md5": "443e7ad2857cf87ddbc0319c095353b2",
+2026-10-20T16:52:49.1519042Z       "sha256": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b"
+2026-10-20T16:52:49.1519537Z     },
+2026-10-20T16:52:49.1519806Z     "research/pa_ns001/evidence/gate_b/pre_repair/INDEX.json": {
+2026-10-20T16:52:49.1520143Z       "bytes": 3595,
+2026-10-20T16:52:49.1520368Z       "md5": "bfe7ecbcd523724ff5ad1333a4238f96",
+2026-10-20T16:52:49.1520763Z       "sha256": "80c572b9ca7ca71d2616e6db953a260d50a2bd43f39014481c7bbdb282bfa6d8"
+2026-10-20T16:52:49.1521127Z     },
+2026-10-20T16:52:49.1521404Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log": {
+2026-10-20T16:52:49.1521760Z       "bytes": 9560,
+2026-10-20T16:52:49.1521985Z       "md5": "2443d7ad2bbd63e22ff7100a07d97bb0",
+2026-10-20T16:52:49.1522374Z       "sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553"
+2026-10-20T16:52:49.1522742Z     },
+2026-10-20T16:52:49.1523012Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log": {
+2026-10-20T16:52:49.1523349Z       "bytes": 9560,
+2026-10-20T16:52:49.1523573Z       "md5": "222dcdb182bfda6bd319c2a4b627aa84",
+2026-10-20T16:52:49.1523958Z       "sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d"
+2026-10-20T16:52:49.1524330Z     },
+2026-10-20T16:52:49.1524591Z     "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log": {
+2026-10-20T16:52:49.1524928Z       "bytes": 9560,
+2026-10-20T16:52:49.1525280Z       "md5": "56095300ff07f4b222e1b1af044049ab",
+2026-10-20T16:52:49.1525680Z       "sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff"
+2026-10-20T16:52:49.1526084Z     },
+2026-10-20T16:52:49.1526292Z     "research/pa_ns001/fault_cases.py": {
+2026-10-20T16:52:49.1526555Z       "bytes": 6418,
+2026-10-20T16:52:49.1526777Z       "md5": "0062e59a1d84e78c358539eaefeec6c1",
+2026-10-20T16:52:49.1527153Z       "sha256": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5"
+2026-10-20T16:52:49.1527513Z     },
+2026-10-20T16:52:49.1527716Z     "research/pa_ns001/feasibility.py": {
+2026-10-20T16:52:49.1527980Z       "bytes": 604,
+2026-10-20T16:52:49.1528207Z       "md5": "9343cf31a56131afcdf4c1bfe726668d",
+2026-10-20T16:52:49.1528591Z       "sha256": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d"
+2026-10-20T16:52:49.1528961Z     },
+2026-10-20T16:52:49.1529167Z     "research/pa_ns001/gate_b_checks.py": {
+2026-10-20T16:52:49.1529574Z       "bytes": 6138,
+2026-10-20T16:52:49.1529796Z       "md5": "375fdfa014573f3d3c2765977a2281e8",
+2026-10-20T16:52:49.1530179Z       "sha256": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2"
+2026-10-20T16:52:49.1530543Z     },
+2026-10-20T16:52:49.1530761Z     "research/pa_ns001/mutation_checks.py": {
+2026-10-20T16:52:49.1531029Z       "bytes": 4509,
+2026-10-20T16:52:49.1531247Z       "md5": "7b478be70911c673aea01ecb8ed33e02",
+2026-10-20T16:52:49.1531625Z       "sha256": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87"
+2026-10-20T16:52:49.1531990Z     },
+2026-10-20T16:52:49.1532188Z     "research/pa_ns001/ns001.py": {
+2026-10-20T16:52:49.1532433Z       "bytes": 6358,
+2026-10-20T16:52:49.1532654Z       "md5": "55480877c0f0408dfd666555393ab2d4",
+2026-10-20T16:52:49.1533035Z       "sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518"
+2026-10-20T16:52:49.1533543Z     },
+2026-10-20T16:52:49.1533769Z     "research/pa_ns001/record_command.py": {
+2026-10-20T16:52:49.1534038Z       "bytes": 2574,
+2026-10-20T16:52:49.1534267Z       "md5": "263f4b9fad9f1d01b31399d5af3f6d1a",
+2026-10-20T16:52:49.1534645Z       "sha256": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de"
+2026-10-20T16:52:49.1535005Z     },
+2026-10-20T16:52:49.1535213Z     "research/pa_ns001/study_design.py": {
+2026-10-20T16:52:49.1535477Z       "bytes": 3101,
+2026-10-20T16:52:49.1535697Z       "md5": "3c28c87371f89df98abc2d18a68eea66",
+2026-10-20T16:52:49.1536070Z       "sha256": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94"
+2026-10-20T16:52:49.1536431Z     },
+2026-10-20T16:52:49.1536636Z     "research/pa_ns001/test_ns001.py": {
+2026-10-20T16:52:49.1536893Z       "bytes": 884,
+2026-10-20T16:52:49.1537127Z       "md5": "ff528b9fb505647e9153bf17a7516d2e",
+2026-10-20T16:52:49.1537520Z       "sha256": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294"
+2026-10-20T16:52:49.1537961Z     },
+2026-10-20T16:52:49.1538169Z     "research/pa_ns001/test_package.py": {
+2026-10-20T16:52:49.1538425Z       "bytes": 1764,
+2026-10-20T16:52:49.1538654Z       "md5": "d33c5d5da28f8a6123d17bb88e85844b",
+2026-10-20T16:52:49.1539039Z       "sha256": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620"
+2026-10-20T16:52:49.1539507Z     },
+2026-10-20T16:52:49.1539715Z     "research/pa_ns001/test_stage2.py": {
+2026-10-20T16:52:49.1539987Z       "bytes": 10007,
+2026-10-20T16:52:49.1540230Z       "md5": "196de64bfb13470073610f91866be648",
+2026-10-20T16:52:49.1540656Z       "sha256": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5"
+2026-10-20T16:52:49.1541062Z     },
+2026-10-20T16:52:49.1541284Z     "research/pa_ns001/test_study_design.py": {
+2026-10-20T16:52:49.1541567Z       "bytes": 1763,
+2026-10-20T16:52:49.1541805Z       "md5": "c1acdab095af19cd0684dcc6c68dfbd7",
+2026-10-20T16:52:49.1542196Z       "sha256": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e"
+2026-10-20T16:52:49.1542577Z     },
+2026-10-20T16:52:49.1542794Z     "research/pa_ns001/verify_package.py": {
+2026-10-20T16:52:49.1543216Z       "bytes": 2470,
+2026-10-20T16:52:49.1543460Z       "md5": "56e5c3dc4bc6e229a6c45c85c3bc2b14",
+2026-10-20T16:52:49.1543851Z       "sha256": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff"
+2026-10-20T16:52:49.1544222Z     }
+2026-10-20T16:52:49.1544406Z   }
+2026-10-20T16:52:49.1544591Z }
+2026-10-20T16:52:49.1544775Z GATE_B_REPORT_END
+2026-10-20T16:52:49.1544983Z GATE: FAIL
+2026-10-20T16:52:49.1602796Z ##[group]Run python research/pa_ns001/engineering_gate.py --output "$RUNNER_TEMP/pa-ns001-engineering"
+2026-10-20T16:52:49.1603562Z [36;1mpython research/pa_ns001/engineering_gate.py --output "$RUNNER_TEMP/pa-ns001-engineering"[0m
+2026-10-20T16:52:49.1660525Z shell: /usr/bin/bash -e {0}
+2026-10-20T16:52:49.1660786Z env:
+2026-10-20T16:52:49.1661074Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:49.1661540Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:52:49.1661964Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:49.1662335Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:49.1662701Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:52:49.1663066Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:52:49.1663383Z ##[endgroup]
+2026-10-20T16:53:08.7190682Z tests_normal exit 0 expected 0
+2026-10-20T16:53:08.7191263Z tests_optimized exit 0 expected 0
+2026-10-20T16:53:08.7191714Z tests_docstrings_removed exit 0 expected 0
+2026-10-20T16:53:08.7192167Z calibration1 exit 0 expected 0
+2026-10-20T16:53:08.7192567Z calibration2 exit 0 expected 0
+2026-10-20T16:53:08.7192970Z calibration3 exit 0 expected 0
+2026-10-20T16:53:08.7193378Z faults exit 0 expected 0
+2026-10-20T16:53:08.7193800Z control_always-accept exit 1 expected 1
+2026-10-20T16:53:08.7194672Z control_always-reject exit 1 expected 1
+2026-10-20T16:53:08.7195122Z selected_mutants exit 0 expected 0
+2026-10-20T16:53:08.7195520Z GATE: PASS
+2026-10-20T16:53:08.7292005Z ##[group]Run set +e
+2026-10-20T16:53:08.7292284Z [36;1mset +e[0m
+2026-10-20T16:53:08.7292739Z [36;1mpython research/pa_ns001/engineering_gate.py --sabotage --output "$RUNNER_TEMP/pa-ns001-sabotage"[0m
+2026-10-20T16:53:08.7293223Z [36;1mrc=$?[0m
+2026-10-20T16:53:08.7293445Z [36;1mtest "$rc" -eq 1[0m
+2026-10-20T16:53:08.7350396Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T16:53:08.7350747Z env:
+2026-10-20T16:53:08.7351021Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:08.7351453Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:53:08.7351878Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:08.7352256Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:08.7352669Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:08.7353037Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:53:08.7353401Z ##[endgroup]
+2026-10-20T16:53:25.9109805Z tests_normal exit 0 expected 0
+2026-10-20T16:53:25.9110187Z tests_optimized exit 0 expected 0
+2026-10-20T16:53:25.9110497Z tests_docstrings_removed exit 0 expected 0
+2026-10-20T16:53:25.9110982Z calibration1 exit 0 expected 0
+2026-10-20T16:53:25.9111326Z calibration2 exit 0 expected 0
+2026-10-20T16:53:25.9111665Z calibration3 exit 0 expected 0
+2026-10-20T16:53:25.9112001Z faults exit 1 expected 0
+2026-10-20T16:53:25.9112376Z control_always-accept exit 1 expected 1
+2026-10-20T16:53:25.9112804Z control_always-reject exit 1 expected 1
+2026-10-20T16:53:25.9113205Z selected_mutants exit 0 expected 0
+2026-10-20T16:53:25.9113594Z GATE: FAIL
+2026-10-20T16:53:25.9214403Z ##[group]Run python - <<'PY'
+2026-10-20T16:53:25.9214754Z [36;1mpython - <<'PY'[0m
+2026-10-20T16:53:25.9214991Z [36;1mimport os[0m
+2026-10-20T16:53:25.9215244Z [36;1mfrom pathlib import Path[0m
+2026-10-20T16:53:25.9215613Z [36;1mroot = Path(os.environ['RUNNER_TEMP']) / 'pa-ns001-engineering'[0m
+2026-10-20T16:53:25.9216115Z [36;1mfor name in ('tests_normal.stderr.txt', 'tests_optimized.stderr.txt',[0m
+2026-10-20T16:53:25.9216618Z [36;1m             'tests_docstrings_removed.stderr.txt', 'mutants/summary.json'):[0m
+2026-10-20T16:53:25.9217041Z [36;1m    print('PA_NS001_LOG_BEGIN', name)[0m
+2026-10-20T16:53:25.9217370Z [36;1m    print((root / name).read_text(), end='')[0m
+2026-10-20T16:53:25.9217722Z [36;1m    print('PA_NS001_LOG_END', name)[0m
+2026-10-20T16:53:25.9218011Z [36;1mPY[0m
+2026-10-20T16:53:25.9274906Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-20T16:53:25.9275287Z env:
+2026-10-20T16:53:25.9275616Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:25.9276056Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:53:25.9276503Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:25.9276883Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:25.9277261Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:53:25.9277646Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:53:25.9277967Z ##[endgroup]
+2026-10-20T16:53:25.9596519Z PA_NS001_LOG_BEGIN tests_normal.stderr.txt
+2026-10-20T16:53:25.9597180Z test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... ok
+2026-10-20T16:53:25.9597816Z test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+2026-10-20T16:53:25.9598368Z test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+2026-10-20T16:53:25.9599533Z test_empty_and_malformed_manifests (test_package.TestPackage.test_empty_and_malformed_manifests) ... ok
+2026-10-20T16:53:25.9600624Z test_genuine_and_modified_bytes (test_package.TestPackage.test_genuine_and_modified_bytes) ... ok
+2026-10-20T16:53:25.9602040Z test_missing_file_never_skips (test_package.TestPackage.test_missing_file_never_skips) ... ok
+2026-10-20T16:53:25.9603164Z test_paths_and_duplicates_are_rejected (test_package.TestPackage.test_paths_and_duplicates_are_rejected) ... ok
+2026-10-20T16:53:25.9604292Z test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels) ... ok
+2026-10-20T16:53:25.9605320Z test_always_accept_and_always_reject_both_fail_the_gate (test_stage2.TestStage2.test_always_accept_and_always_reject_both_fail_the_gate) ... ok
+2026-10-20T16:53:25.9606659Z test_characteristic_range_is_explicit (test_stage2.TestStage2.test_characteristic_range_is_explicit) ... ok
+2026-10-20T16:53:25.9607889Z test_configuration_checked_before_candidate_data (test_stage2.TestStage2.test_configuration_checked_before_candidate_data) ... ok
+2026-10-20T16:53:25.9608792Z test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow) ... ok
+2026-10-20T16:53:25.9609978Z test_extreme_finite_rounding_budget_does_not_crash_reporting (test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting) ... ok
+2026-10-20T16:53:25.9610974Z test_fixture_generation_and_content_hashes_are_deterministic (test_stage2.TestStage2.test_fixture_generation_and_content_hashes_are_deterministic) ... ok
+2026-10-20T16:53:25.9611852Z test_hand_derived_five_point_vectors (test_stage2.TestStage2.test_hand_derived_five_point_vectors) ... ok
+2026-10-20T16:53:25.9612615Z test_invalid_parameters_and_tolerances_raise (test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise) ... ok
+2026-10-20T16:53:25.9613495Z test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision) ... ok
+2026-10-20T16:53:25.9614798Z test_malformed_candidate_containers_fail_closed (test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed) ... ok
+2026-10-20T16:53:25.9615569Z test_malformed_samples_fail_closed (test_stage2.TestStage2.test_malformed_samples_fail_closed) ... ok
+2026-10-20T16:53:25.9616323Z test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9617112Z test_nonbinary_and_maximum_grids (test_stage2.TestStage2.test_nonbinary_and_maximum_grids) ... ok
+2026-10-20T16:53:25.9617755Z test_nonidentifiable_parameters (test_stage2.TestStage2.test_nonidentifiable_parameters) ... ok
+2026-10-20T16:53:25.9618479Z test_polynomial_satisfies_ode_and_walls_exactly (test_stage2.TestStage2.test_polynomial_satisfies_ode_and_walls_exactly) ... ok
+2026-10-20T16:53:25.9619488Z test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9620231Z test_reference_domain_and_types (test_stage2.TestStage2.test_reference_domain_and_types) ... ok
+2026-10-20T16:53:25.9620816Z test_signed_and_zero_drives (test_stage2.TestStage2.test_signed_and_zero_drives) ... ok
+2026-10-20T16:53:25.9621578Z test_unresolvable_precision_is_visible_and_not_accepted (test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted) ... ok
+2026-10-20T16:53:25.9622499Z test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries) ... ok
+2026-10-20T16:53:25.9623362Z test_binomial_closed_forms_and_symmetry (test_study_design.TestStudyDesign.test_binomial_closed_forms_and_symmetry) ... ok
+2026-10-20T16:53:25.9624109Z test_invalid_interval_inputs (test_study_design.TestStudyDesign.test_invalid_interval_inputs) ... ok
+2026-10-20T16:53:25.9624809Z test_paired_conditional_exact_test (test_study_design.TestStudyDesign.test_paired_conditional_exact_test) ... ok
+2026-10-20T16:53:25.9625499Z test_published_nist_interval (test_study_design.TestStudyDesign.test_published_nist_interval) ... ok
+2026-10-20T16:53:25.9625874Z 
+2026-10-20T16:53:25.9626225Z ----------------------------------------------------------------------
+2026-10-20T16:53:25.9626596Z Ran 32 tests in 0.846s
+2026-10-20T16:53:25.9626743Z 
+2026-10-20T16:53:25.9626827Z OK
+2026-10-20T16:53:25.9627055Z PA_NS001_LOG_END tests_normal.stderr.txt
+2026-10-20T16:53:25.9627383Z PA_NS001_LOG_BEGIN tests_optimized.stderr.txt
+2026-10-20T16:53:25.9627788Z test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... ok
+2026-10-20T16:53:25.9628252Z test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+2026-10-20T16:53:25.9628861Z test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+2026-10-20T16:53:25.9629620Z test_empty_and_malformed_manifests (test_package.TestPackage.test_empty_and_malformed_manifests) ... ok
+2026-10-20T16:53:25.9630303Z test_genuine_and_modified_bytes (test_package.TestPackage.test_genuine_and_modified_bytes) ... ok
+2026-10-20T16:53:25.9630935Z test_missing_file_never_skips (test_package.TestPackage.test_missing_file_never_skips) ... ok
+2026-10-20T16:53:25.9631613Z test_paths_and_duplicates_are_rejected (test_package.TestPackage.test_paths_and_duplicates_are_rejected) ... ok
+2026-10-20T16:53:25.9632429Z test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels) ... ok
+2026-10-20T16:53:25.9633317Z test_always_accept_and_always_reject_both_fail_the_gate (test_stage2.TestStage2.test_always_accept_and_always_reject_both_fail_the_gate) ... ok
+2026-10-20T16:53:25.9634121Z test_characteristic_range_is_explicit (test_stage2.TestStage2.test_characteristic_range_is_explicit) ... ok
+2026-10-20T16:53:25.9634890Z test_configuration_checked_before_candidate_data (test_stage2.TestStage2.test_configuration_checked_before_candidate_data) ... ok
+2026-10-20T16:53:25.9635938Z test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow) ... ok
+2026-10-20T16:53:25.9636908Z test_extreme_finite_rounding_budget_does_not_crash_reporting (test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting) ... ok
+2026-10-20T16:53:25.9638387Z test_fixture_generation_and_content_hashes_are_deterministic (test_stage2.TestStage2.test_fixture_generation_and_content_hashes_are_deterministic) ... ok
+2026-10-20T16:53:25.9639958Z test_hand_derived_five_point_vectors (test_stage2.TestStage2.test_hand_derived_five_point_vectors) ... ok
+2026-10-20T16:53:25.9641151Z test_invalid_parameters_and_tolerances_raise (test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise) ... ok
+2026-10-20T16:53:25.9642478Z test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision) ... ok
+2026-10-20T16:53:25.9643631Z test_malformed_candidate_containers_fail_closed (test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed) ... ok
+2026-10-20T16:53:25.9644528Z test_malformed_samples_fail_closed (test_stage2.TestStage2.test_malformed_samples_fail_closed) ... ok
+2026-10-20T16:53:25.9645294Z test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9646031Z test_nonbinary_and_maximum_grids (test_stage2.TestStage2.test_nonbinary_and_maximum_grids) ... ok
+2026-10-20T16:53:25.9646664Z test_nonidentifiable_parameters (test_stage2.TestStage2.test_nonidentifiable_parameters) ... ok
+2026-10-20T16:53:25.9647375Z test_polynomial_satisfies_ode_and_walls_exactly (test_stage2.TestStage2.test_polynomial_satisfies_ode_and_walls_exactly) ... ok
+2026-10-20T16:53:25.9648209Z test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9648935Z test_reference_domain_and_types (test_stage2.TestStage2.test_reference_domain_and_types) ... ok
+2026-10-20T16:53:25.9649991Z test_signed_and_zero_drives (test_stage2.TestStage2.test_signed_and_zero_drives) ... ok
+2026-10-20T16:53:25.9650778Z test_unresolvable_precision_is_visible_and_not_accepted (test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted) ... ok
+2026-10-20T16:53:25.9651925Z test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries) ... ok
+2026-10-20T16:53:25.9652784Z test_binomial_closed_forms_and_symmetry (test_study_design.TestStudyDesign.test_binomial_closed_forms_and_symmetry) ... ok
+2026-10-20T16:53:25.9653519Z test_invalid_interval_inputs (test_study_design.TestStudyDesign.test_invalid_interval_inputs) ... ok
+2026-10-20T16:53:25.9654223Z test_paired_conditional_exact_test (test_study_design.TestStudyDesign.test_paired_conditional_exact_test) ... ok
+2026-10-20T16:53:25.9654925Z test_published_nist_interval (test_study_design.TestStudyDesign.test_published_nist_interval) ... ok
+2026-10-20T16:53:25.9655296Z 
+2026-10-20T16:53:25.9655460Z ----------------------------------------------------------------------
+2026-10-20T16:53:25.9655791Z Ran 32 tests in 0.866s
+2026-10-20T16:53:25.9655938Z 
+2026-10-20T16:53:25.9656019Z OK
+2026-10-20T16:53:25.9656236Z PA_NS001_LOG_END tests_optimized.stderr.txt
+2026-10-20T16:53:25.9656569Z PA_NS001_LOG_BEGIN tests_docstrings_removed.stderr.txt
+2026-10-20T16:53:25.9656977Z test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... ok
+2026-10-20T16:53:25.9657429Z test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+2026-10-20T16:53:25.9657885Z test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+2026-10-20T16:53:25.9658441Z test_empty_and_malformed_manifests (test_package.TestPackage.test_empty_and_malformed_manifests) ... ok
+2026-10-20T16:53:25.9659096Z test_genuine_and_modified_bytes (test_package.TestPackage.test_genuine_and_modified_bytes) ... ok
+2026-10-20T16:53:25.9660160Z test_missing_file_never_skips (test_package.TestPackage.test_missing_file_never_skips) ... ok
+2026-10-20T16:53:25.9660844Z test_paths_and_duplicates_are_rejected (test_package.TestPackage.test_paths_and_duplicates_are_rejected) ... ok
+2026-10-20T16:53:25.9661653Z test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels) ... ok
+2026-10-20T16:53:25.9662550Z test_always_accept_and_always_reject_both_fail_the_gate (test_stage2.TestStage2.test_always_accept_and_always_reject_both_fail_the_gate) ... ok
+2026-10-20T16:53:25.9663351Z test_characteristic_range_is_explicit (test_stage2.TestStage2.test_characteristic_range_is_explicit) ... ok
+2026-10-20T16:53:25.9664127Z test_configuration_checked_before_candidate_data (test_stage2.TestStage2.test_configuration_checked_before_candidate_data) ... ok
+2026-10-20T16:53:25.9665004Z test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow) ... ok
+2026-10-20T16:53:25.9665952Z test_extreme_finite_rounding_budget_does_not_crash_reporting (test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting) ... ok
+2026-10-20T16:53:25.9666942Z test_fixture_generation_and_content_hashes_are_deterministic (test_stage2.TestStage2.test_fixture_generation_and_content_hashes_are_deterministic) ... ok
+2026-10-20T16:53:25.9667777Z test_hand_derived_five_point_vectors (test_stage2.TestStage2.test_hand_derived_five_point_vectors) ... ok
+2026-10-20T16:53:25.9668505Z test_invalid_parameters_and_tolerances_raise (test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise) ... ok
+2026-10-20T16:53:25.9669506Z test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision) ... ok
+2026-10-20T16:53:25.9670388Z test_malformed_candidate_containers_fail_closed (test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed) ... ok
+2026-10-20T16:53:25.9671130Z test_malformed_samples_fail_closed (test_stage2.TestStage2.test_malformed_samples_fail_closed) ... ok
+2026-10-20T16:53:25.9671878Z test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9672758Z test_nonbinary_and_maximum_grids (test_stage2.TestStage2.test_nonbinary_and_maximum_grids) ... ok
+2026-10-20T16:53:25.9673381Z test_nonidentifiable_parameters (test_stage2.TestStage2.test_nonidentifiable_parameters) ... ok
+2026-10-20T16:53:25.9674088Z test_polynomial_satisfies_ode_and_walls_exactly (test_stage2.TestStage2.test_polynomial_satisfies_ode_and_walls_exactly) ... ok
+2026-10-20T16:53:25.9674910Z test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure) ... ok
+2026-10-20T16:53:25.9675623Z test_reference_domain_and_types (test_stage2.TestStage2.test_reference_domain_and_types) ... ok
+2026-10-20T16:53:25.9676197Z test_signed_and_zero_drives (test_stage2.TestStage2.test_signed_and_zero_drives) ... ok
+2026-10-20T16:53:25.9676941Z test_unresolvable_precision_is_visible_and_not_accepted (test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted) ... ok
+2026-10-20T16:53:25.9677858Z test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries) ... ok
+2026-10-20T16:53:25.9678706Z test_binomial_closed_forms_and_symmetry (test_study_design.TestStudyDesign.test_binomial_closed_forms_and_symmetry) ... ok
+2026-10-20T16:53:25.9679608Z test_invalid_interval_inputs (test_study_design.TestStudyDesign.test_invalid_interval_inputs) ... ok
+2026-10-20T16:53:25.9680335Z test_paired_conditional_exact_test (test_study_design.TestStudyDesign.test_paired_conditional_exact_test) ... ok
+2026-10-20T16:53:25.9681019Z test_published_nist_interval (test_study_design.TestStudyDesign.test_published_nist_interval) ... ok
+2026-10-20T16:53:25.9681390Z 
+2026-10-20T16:53:25.9681540Z ----------------------------------------------------------------------
+2026-10-20T16:53:25.9682021Z Ran 32 tests in 0.849s
+2026-10-20T16:53:25.9682161Z 
+2026-10-20T16:53:25.9682247Z OK
+2026-10-20T16:53:25.9682489Z PA_NS001_LOG_END tests_docstrings_removed.stderr.txt
+2026-10-20T16:53:25.9682819Z PA_NS001_LOG_BEGIN mutants/summary.json
+2026-10-20T16:53:25.9683084Z {
+2026-10-20T16:53:25.9683287Z   "baseline_command": [
+2026-10-20T16:53:25.9683573Z     "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9683875Z     "-m",
+2026-10-20T16:53:25.9684065Z     "unittest",
+2026-10-20T16:53:25.9684269Z     "discover",
+2026-10-20T16:53:25.9684459Z     "-s",
+2026-10-20T16:53:25.9684819Z     "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001",
+2026-10-20T16:53:25.9685236Z     "-p",
+2026-10-20T16:53:25.9685421Z     "test_*.py",
+2026-10-20T16:53:25.9685620Z     "-v"
+2026-10-20T16:53:25.9685844Z   ],
+2026-10-20T16:53:25.9686042Z   "baseline_exit_code": 0,
+2026-10-20T16:53:25.9686277Z   "mutants": [
+2026-10-20T16:53:25.9686470Z     {
+2026-10-20T16:53:25.9686659Z       "command": [
+2026-10-20T16:53:25.9686933Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9687505Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9688003Z         "--mutant",
+2026-10-20T16:53:25.9688213Z         "always_accept"
+2026-10-20T16:53:25.9688424Z       ],
+2026-10-20T16:53:25.9688627Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9688894Z       "errors": [],
+2026-10-20T16:53:25.9689095Z       "exit_code": 1,
+2026-10-20T16:53:25.9689424Z       "failures": [
+2026-10-20T16:53:25.9689691Z         "test_ns001.TestReferenceAndVerifier.test_faults",
+2026-10-20T16:53:25.9690140Z         "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+2026-10-20T16:53:25.9690717Z         "test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow",
+2026-10-20T16:53:25.9691276Z         "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+2026-10-20T16:53:25.9691794Z         "test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure",
+2026-10-20T16:53:25.9692449Z         "test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure",
+2026-10-20T16:53:25.9692968Z         "test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries"
+2026-10-20T16:53:25.9693355Z       ],
+2026-10-20T16:53:25.9693556Z       "mutant": "always_accept",
+2026-10-20T16:53:25.9693816Z       "name": "always_accept",
+2026-10-20T16:53:25.9694052Z       "tests_run": 32
+2026-10-20T16:53:25.9694272Z     },
+2026-10-20T16:53:25.9694455Z     {
+2026-10-20T16:53:25.9694640Z       "command": [
+2026-10-20T16:53:25.9694908Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9695469Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9695963Z         "--mutant",
+2026-10-20T16:53:25.9696183Z         "always_reject"
+2026-10-20T16:53:25.9696391Z       ],
+2026-10-20T16:53:25.9696593Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9696861Z       "errors": [],
+2026-10-20T16:53:25.9697065Z       "exit_code": 1,
+2026-10-20T16:53:25.9697283Z       "failures": [
+2026-10-20T16:53:25.9697542Z         "test_ns001.TestReferenceAndVerifier.test_valid",
+2026-10-20T16:53:25.9697983Z         "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+2026-10-20T16:53:25.9698467Z         "test_stage2.TestStage2.test_characteristic_range_is_explicit",
+2026-10-20T16:53:25.9698968Z         "test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow",
+2026-10-20T16:53:25.9699647Z         "test_stage2.TestStage2.test_hand_derived_five_point_vectors",
+2026-10-20T16:53:25.9700148Z         "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+2026-10-20T16:53:25.9700847Z         "test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed",
+2026-10-20T16:53:25.9701326Z         "test_stage2.TestStage2.test_nonbinary_and_maximum_grids",
+2026-10-20T16:53:25.9701723Z         "test_stage2.TestStage2.test_signed_and_zero_drives"
+2026-10-20T16:53:25.9702028Z       ],
+2026-10-20T16:53:25.9702225Z       "mutant": "always_reject",
+2026-10-20T16:53:25.9702474Z       "name": "always_reject",
+2026-10-20T16:53:25.9702707Z       "tests_run": 32
+2026-10-20T16:53:25.9702910Z     },
+2026-10-20T16:53:25.9703090Z     {
+2026-10-20T16:53:25.9703270Z       "command": [
+2026-10-20T16:53:25.9703534Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9704082Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9704565Z         "--mutant",
+2026-10-20T16:53:25.9704776Z         "profile_disabled"
+2026-10-20T16:53:25.9704996Z       ],
+2026-10-20T16:53:25.9705197Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9705458Z       "errors": [],
+2026-10-20T16:53:25.9705653Z       "exit_code": 1,
+2026-10-20T16:53:25.9705853Z       "failures": [
+2026-10-20T16:53:25.9706184Z         "test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure"
+2026-10-20T16:53:25.9706563Z       ],
+2026-10-20T16:53:25.9706771Z       "mutant": "profile_disabled",
+2026-10-20T16:53:25.9707035Z       "name": "profile_disabled",
+2026-10-20T16:53:25.9707275Z       "tests_run": 32
+2026-10-20T16:53:25.9707474Z     },
+2026-10-20T16:53:25.9707649Z     {
+2026-10-20T16:53:25.9707828Z       "command": [
+2026-10-20T16:53:25.9708080Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9708611Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9709103Z         "--mutant",
+2026-10-20T16:53:25.9709526Z         "momentum_disabled"
+2026-10-20T16:53:25.9709760Z       ],
+2026-10-20T16:53:25.9709960Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9710220Z       "errors": [],
+2026-10-20T16:53:25.9710419Z       "exit_code": 1,
+2026-10-20T16:53:25.9710625Z       "failures": [
+2026-10-20T16:53:25.9711180Z         "test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure"
+2026-10-20T16:53:25.9711557Z       ],
+2026-10-20T16:53:25.9711752Z       "mutant": "momentum_disabled",
+2026-10-20T16:53:25.9712019Z       "name": "momentum_disabled",
+2026-10-20T16:53:25.9712254Z       "tests_run": 32
+2026-10-20T16:53:25.9712450Z     },
+2026-10-20T16:53:25.9712633Z     {
+2026-10-20T16:53:25.9712811Z       "command": [
+2026-10-20T16:53:25.9713058Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9713581Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9714055Z         "--mutant",
+2026-10-20T16:53:25.9714266Z         "precision_disabled"
+2026-10-20T16:53:25.9714488Z       ],
+2026-10-20T16:53:25.9714683Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9714944Z       "errors": [],
+2026-10-20T16:53:25.9715144Z       "exit_code": 1,
+2026-10-20T16:53:25.9715349Z       "failures": [
+2026-10-20T16:53:25.9715721Z         "test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting",
+2026-10-20T16:53:25.9716282Z         "test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted"
+2026-10-20T16:53:25.9716674Z       ],
+2026-10-20T16:53:25.9716871Z       "mutant": "precision_disabled",
+2026-10-20T16:53:25.9717139Z       "name": "precision_disabled",
+2026-10-20T16:53:25.9717395Z       "tests_run": 32
+2026-10-20T16:53:25.9717594Z     },
+2026-10-20T16:53:25.9717950Z     {
+2026-10-20T16:53:25.9718138Z       "command": [
+2026-10-20T16:53:25.9718393Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9718913Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9719514Z         "--mutant",
+2026-10-20T16:53:25.9719873Z         "tolerance_cap_disabled"
+2026-10-20T16:53:25.9720111Z       ],
+2026-10-20T16:53:25.9720309Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9720562Z       "errors": [],
+2026-10-20T16:53:25.9720758Z       "exit_code": 1,
+2026-10-20T16:53:25.9720964Z       "failures": [
+2026-10-20T16:53:25.9721371Z         "test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise (config={'tolerance': 0.001})"
+2026-10-20T16:53:25.9721825Z       ],
+2026-10-20T16:53:25.9722021Z       "mutant": "tolerance_cap_disabled",
+2026-10-20T16:53:25.9722299Z       "name": "tolerance_cap_disabled",
+2026-10-20T16:53:25.9722558Z       "tests_run": 32
+2026-10-20T16:53:25.9722753Z     },
+2026-10-20T16:53:25.9722931Z     {
+2026-10-20T16:53:25.9723106Z       "command": [
+2026-10-20T16:53:25.9723350Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9723870Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9724342Z         "--mutant",
+2026-10-20T16:53:25.9724551Z         "nonfinite_accepted"
+2026-10-20T16:53:25.9724773Z       ],
+2026-10-20T16:53:25.9724973Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9725225Z       "errors": [],
+2026-10-20T16:53:25.9725421Z       "exit_code": 1,
+2026-10-20T16:53:25.9725620Z       "failures": [
+2026-10-20T16:53:25.9725874Z         "test_ns001.TestReferenceAndVerifier.test_invalid",
+2026-10-20T16:53:25.9726316Z         "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+2026-10-20T16:53:25.9726776Z         "test_stage2.TestStage2.test_malformed_samples_fail_closed"
+2026-10-20T16:53:25.9727101Z       ],
+2026-10-20T16:53:25.9727302Z       "mutant": "nonfinite_accepted",
+2026-10-20T16:53:25.9727568Z       "name": "nonfinite_accepted",
+2026-10-20T16:53:25.9727808Z       "tests_run": 32
+2026-10-20T16:53:25.9728012Z     },
+2026-10-20T16:53:25.9728188Z     {
+2026-10-20T16:53:25.9728365Z       "command": [
+2026-10-20T16:53:25.9728618Z         "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:53:25.9729133Z         "/home/runner/work/principia-artificialis/principia-artificialis/research/pa_ns001/mutation_checks.py",
+2026-10-20T16:53:25.9729913Z         "--mutant",
+2026-10-20T16:53:25.9730127Z         "poiseuille_rhs_sign"
+2026-10-20T16:53:25.9730348Z       ],
+2026-10-20T16:53:25.9730550Z       "detected_by_test_failures": true,
+2026-10-20T16:53:25.9730799Z       "errors": [],
+2026-10-20T16:53:25.9730990Z       "exit_code": 1,
+2026-10-20T16:53:25.9731188Z       "failures": [
+2026-10-20T16:53:25.9731436Z         "test_ns001.TestReferenceAndVerifier.test_valid",
+2026-10-20T16:53:25.9731865Z         "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+2026-10-20T16:53:25.9732328Z         "test_stage2.TestStage2.test_hand_derived_five_point_vectors",
+2026-10-20T16:53:25.9732804Z         "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+2026-10-20T16:53:25.9733287Z         "test_stage2.TestStage2.test_nonbinary_and_maximum_grids",
+2026-10-20T16:53:25.9733668Z         "test_stage2.TestStage2.test_signed_and_zero_drives"
+2026-10-20T16:53:25.9733963Z       ],
+2026-10-20T16:53:25.9734163Z       "mutant": "poiseuille_rhs_sign",
+2026-10-20T16:53:25.9734430Z       "name": "poiseuille_rhs_sign",
+2026-10-20T16:53:25.9734679Z       "tests_run": 32
+2026-10-20T16:53:25.9734875Z     }
+2026-10-20T16:53:25.9735051Z   ],
+2026-10-20T16:53:25.9735239Z   "source_snapshot_sha256": {
+2026-10-20T16:53:25.9735640Z     "analytic_oracle.py": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+2026-10-20T16:53:25.9736209Z     "calibrate.py": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+2026-10-20T16:53:25.9736801Z     "diagnose_prototype.py": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+2026-10-20T16:53:25.9737412Z     "engineering_gate.py": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7",
+2026-10-20T16:53:25.9738133Z     "evaluate_faults.py": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b",
+2026-10-20T16:53:25.9738704Z     "fault_cases.py": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5",
+2026-10-20T16:53:25.9739447Z     "feasibility.py": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d",
+2026-10-20T16:53:25.9740021Z     "gate_b_checks.py": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2",
+2026-10-20T16:53:25.9740594Z     "mutation_checks.py": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87",
+2026-10-20T16:53:25.9741153Z     "ns001.py": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518",
+2026-10-20T16:53:25.9741695Z     "record_command.py": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+2026-10-20T16:53:25.9742259Z     "study_design.py": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94",
+2026-10-20T16:53:25.9742817Z     "test_ns001.py": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+2026-10-20T16:53:25.9743370Z     "test_package.py": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620",
+2026-10-20T16:53:25.9743928Z     "test_stage2.py": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5",
+2026-10-20T16:53:25.9744514Z     "test_study_design.py": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e",
+2026-10-20T16:53:25.9745117Z     "verify_package.py": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff"
+2026-10-20T16:53:25.9745530Z   },
+2026-10-20T16:53:25.9745737Z   "source_unchanged_during_run": true
+2026-10-20T16:53:25.9745999Z }
+2026-10-20T16:53:25.9746214Z PA_NS001_LOG_END mutants/summary.json

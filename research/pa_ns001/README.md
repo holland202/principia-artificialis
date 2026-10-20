@@ -62,3 +62,21 @@ python research/pa_ns001/engineering_gate.py --sabotage --output /tmp/pa-ns001-f
 The original three tests and source archive remain intact. Full command logs,
 including invalidated/failed engineering attempts, are in `evidence/stage2/`.
 No AI model request, official study, main merge or scientific release was performed.
+
+## Gate B remediation update — 2026-10-20
+
+See [the classified remediation record](GATE_B_REMEDIATION.md) and
+[scope plan](GATE_B_SCOPE.md). The fixture evaluator now validates the operational
+acceptance Boolean as well as its status label; the numerical verifier and
+scientific thresholds are unchanged. Independent Gate B review is still pending.
+
+The original MANIFEST.json belongs to its historical Stage 2 checkpoint. For the
+explicitly scoped current Gate B source/evidence snapshot, run:
+
+```sh
+python research/pa_ns001/verify_package.py --root . --manifest research/pa_ns001/GATE_B_SOURCE_MANIFEST.json
+```
+
+This 24-file snapshot is not a complete repository/evidence inventory. The
+before/after CI logs retain failed controls and the 39 unresolved calibration cases.
+No AI study, main merge or scientific findings release is implied.

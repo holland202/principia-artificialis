@@ -1,0 +1,177 @@
+{
+  "schema": "pa-ns001-gate-b-ci/1",
+  "records": [
+    {
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025540,
+      "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+      "raw_log": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_312.log",
+      "gate_b_checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "malformed_controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "normal_gate_exit": 0,
+      "sabotage_gate_exit": 1,
+      "unit_suites": [
+        {
+          "mode": "normal",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "optimized",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "docstrings_removed",
+          "methods": 32,
+          "passed": true
+        }
+      ],
+      "selected_mutants_detected": 8,
+      "source_unchanged": true,
+      "classification": "fresh CI engineering rerun; same-author, no scientific study"
+    },
+    {
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025728,
+      "python": "3.11.17 (main, Oct  1 2026, 14:32:31) [GCC 13.3.0]",
+      "raw_log": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_311.log",
+      "gate_b_checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "malformed_controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "normal_gate_exit": 0,
+      "sabotage_gate_exit": 1,
+      "unit_suites": [
+        {
+          "mode": "normal",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "optimized",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "docstrings_removed",
+          "methods": 32,
+          "passed": true
+        }
+      ],
+      "selected_mutants_detected": 8,
+      "source_unchanged": true,
+      "classification": "fresh CI engineering rerun; same-author, no scientific study"
+    },
+    {
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025789,
+      "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+      "raw_log": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_313.log",
+      "gate_b_checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "malformed_controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "normal_gate_exit": 0,
+      "sabotage_gate_exit": 1,
+      "unit_suites": [
+        {
+          "mode": "normal",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "optimized",
+          "methods": 32,
+          "passed": true
+        },
+        {
+          "mode": "docstrings_removed",
+          "methods": 32,
+          "passed": true
+        }
+      ],
+      "selected_mutants_detected": 8,
+      "source_unchanged": true,
+      "classification": "fresh CI engineering rerun; same-author, no scientific study"
+    }
+  ],
+  "note": "Timestamped executed verification steps and raw unit/mutant output retained verbatim; setup/cleanup omitted."
+}

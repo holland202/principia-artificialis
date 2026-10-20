@@ -53,3 +53,6 @@ jobs:
               print((root / name).read_text(), end='')
               print('PA_NS001_LOG_END', name)
           PY
+
+      - name: Verify the scoped Gate B source and pre-repair evidence manifest
+        run: python research/pa_ns001/verify_package.py --root . --manifest research/pa_ns001/GATE_B_SOURCE_MANIFEST.json

@@ -1,0 +1,152 @@
+{
+  "schema": "pa-ns001-package/1",
+  "tested_source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+  "scope": "Current PA-NS-001 top-level Python sources, original software pin, scope/preregistration drafts, and pre-repair CI evidence only.",
+  "excluded": "Not a complete repository/evidence inventory. Excludes this manifest, workflow, final reports and post-run evidence to avoid recursive hashes; those remain bound by the Git commit.",
+  "files": [
+    {
+      "path": "research/pa_ns001/GATE_B_SCOPE.md",
+      "bytes": 6212,
+      "sha256": "a935ea8ce437e710c5dbab4ee543eb2db547435caf7caa0564190f7fb6e69daa",
+      "md5": "9379954cad8f6d6f74b115c18acd1818"
+    },
+    {
+      "path": "research/pa_ns001/PREREGISTRATION_DRAFT.md",
+      "bytes": 15210,
+      "sha256": "b02e9d76d10bdead34c8563e41a86496a9df6066d827a92a68897db5e7135c24",
+      "md5": "4fb9cba8f161bd67a9c13e17e1b19d14"
+    },
+    {
+      "path": "research/pa_ns001/RECORDED.json",
+      "bytes": 642,
+      "sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c",
+      "md5": "46280f017cab51f4f7347e10f3ca07d4"
+    },
+    {
+      "path": "research/pa_ns001/analytic_oracle.py",
+      "bytes": 1541,
+      "sha256": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+      "md5": "78d3cbdceaa9abe6f7ae0f63a80cfa0f"
+    },
+    {
+      "path": "research/pa_ns001/calibrate.py",
+      "bytes": 5483,
+      "sha256": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+      "md5": "bbf0c66108eff4c1627784b1252581a5"
+    },
+    {
+      "path": "research/pa_ns001/diagnose_prototype.py",
+      "bytes": 2021,
+      "sha256": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+      "md5": "c579d84ea8bd4ac6d6e6af34a7f937c4"
+    },
+    {
+      "path": "research/pa_ns001/engineering_gate.py",
+      "bytes": 3423,
+      "sha256": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7",
+      "md5": "6acc35717d4a4a53fa77461f8351e3fa"
+    },
+    {
+      "path": "research/pa_ns001/evaluate_faults.py",
+      "bytes": 3099,
+      "sha256": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b",
+      "md5": "443e7ad2857cf87ddbc0319c095353b2"
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/INDEX.json",
+      "bytes": 3595,
+      "sha256": "80c572b9ca7ca71d2616e6db953a260d50a2bd43f39014481c7bbdb282bfa6d8",
+      "md5": "bfe7ecbcd523724ff5ad1333a4238f96"
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log",
+      "bytes": 9560,
+      "sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553",
+      "md5": "2443d7ad2bbd63e22ff7100a07d97bb0"
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log",
+      "bytes": 9560,
+      "sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d",
+      "md5": "222dcdb182bfda6bd319c2a4b627aa84"
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log",
+      "bytes": 9560,
+      "sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff",
+      "md5": "56095300ff07f4b222e1b1af044049ab"
+    },
+    {
+      "path": "research/pa_ns001/fault_cases.py",
+      "bytes": 6418,
+      "sha256": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5",
+      "md5": "0062e59a1d84e78c358539eaefeec6c1"
+    },
+    {
+      "path": "research/pa_ns001/feasibility.py",
+      "bytes": 604,
+      "sha256": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d",
+      "md5": "9343cf31a56131afcdf4c1bfe726668d"
+    },
+    {
+      "path": "research/pa_ns001/gate_b_checks.py",
+      "bytes": 6138,
+      "sha256": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2",
+      "md5": "375fdfa014573f3d3c2765977a2281e8"
+    },
+    {
+      "path": "research/pa_ns001/mutation_checks.py",
+      "bytes": 4509,
+      "sha256": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87",
+      "md5": "7b478be70911c673aea01ecb8ed33e02"
+    },
+    {
+      "path": "research/pa_ns001/ns001.py",
+      "bytes": 6358,
+      "sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518",
+      "md5": "55480877c0f0408dfd666555393ab2d4"
+    },
+    {
+      "path": "research/pa_ns001/record_command.py",
+      "bytes": 2574,
+      "sha256": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+      "md5": "263f4b9fad9f1d01b31399d5af3f6d1a"
+    },
+    {
+      "path": "research/pa_ns001/study_design.py",
+      "bytes": 3101,
+      "sha256": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94",
+      "md5": "3c28c87371f89df98abc2d18a68eea66"
+    },
+    {
+      "path": "research/pa_ns001/test_ns001.py",
+      "bytes": 884,
+      "sha256": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+      "md5": "ff528b9fb505647e9153bf17a7516d2e"
+    },
+    {
+      "path": "research/pa_ns001/test_package.py",
+      "bytes": 1764,
+      "sha256": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620",
+      "md5": "d33c5d5da28f8a6123d17bb88e85844b"
+    },
+    {
+      "path": "research/pa_ns001/test_stage2.py",
+      "bytes": 10007,
+      "sha256": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5",
+      "md5": "196de64bfb13470073610f91866be648"
+    },
+    {
+      "path": "research/pa_ns001/test_study_design.py",
+      "bytes": 1763,
+      "sha256": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e",
+      "md5": "c1acdab095af19cd0684dcc6c68dfbd7"
+    },
+    {
+      "path": "research/pa_ns001/verify_package.py",
+      "bytes": 2470,
+      "sha256": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff",
+      "md5": "56e5c3dc4bc6e229a6c45c85c3bc2b14"
+    }
+  ]
+}

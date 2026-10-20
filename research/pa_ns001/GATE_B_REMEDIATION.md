@@ -1,6 +1,6 @@
 # PA-NS-001 Gate B remediation — 2026-10-20
 
-Status: required corrections implemented; fresh post-repair CI validation pending.
+Status: required corrections implemented and freshly CI-validated; Gate B independent review remains open.
 This is same-author engineering work, not independent scientific review.
 Base a7cc5b2f02044b7b6d148ad805de0afc123f1aa9; scope plan
 68f460cc32a6f25cd50bbd268100e42292fb0aef. The numerical checker, thresholds,
@@ -12,7 +12,7 @@ calibration matrix, 114 fixture labels and original evidence are unchanged.
 |---|---|
 | B1 REQUIRED | Pre-repair CI 0333ad6ed9a9d2fd72af59bbc61003d1134d1edb falsely matched all 114 cases for each of four malformed result envelopes: flipped, missing, integer 1 and integer 0 accepted fields. The evaluator now requires a real bool consistent with the construction label/status. Regression assertions cover all four in the existing gate-control test. |
 | B2 REQUIRED | The old draft gave R a momentum-specific resolution penalty despite taking no derivatives. An appended draft amendment shares data, scale and profile rules while removing derivative-specific vetoes from R. No study arm is implemented or criterion frozen. |
-| B3 REQUIRED | Original MANIFEST.json remains tied to its historical checkpoint. A separate current-source manifest will identify this Gate B code and pre-repair evidence after CI supplies hashes. It will be explicitly scoped, not claimed to inventory/authenticate everything. |
+| B3 REQUIRED | Original MANIFEST.json remains tied to its historical checkpoint. GATE_B_SOURCE_MANIFEST.json identifies 24 current source/pin/draft/pre-repair evidence files using hashes measured in all three CI jobs. Its limited scope is explicit; it is not a complete inventory or authenticity proof. |
 | B4 BENEFICIAL | Audit the original 240-row artifact, not new cases. All 39 unresolved rows are explained: 2 sample-only, 14 momentum-only, 23 both. The case IDs are in timestamped CI reports. No thresholds were tuned and no unresolved result became accepted. |
 | B5/B6 DOCUMENT ONLY | Finite calibration does not prove a universal rounding bound or exact PDE validity. Couette viscosity and joint G/mu changes can be unidentifiable; the boundary check overlaps profile checking; adding a veto guarantees nesting, not better AI reasoning. Existing limits and negative results remain. |
 | B7 DOCUMENT ONLY | No original external Gate B review text was available in the inspected public branch/issues. No review findings, endorsement, consent or authorship are invented. Preserve supplied original reviews and add claim-by-claim dispositions when their provenance/publication status is established. |
@@ -64,3 +64,48 @@ repository, private-derived code, confidential review text, contributor snapshot
 new dependency or external contact is used. CI logs contain this public code's
 outputs on GitHub-hosted runners. New artifacts get a source/provenance review,
 not a claim of independent certification.
+
+## Post-repair validation — 2026-10-20
+
+The earlier pending status in repair commit
+6a3c40a267a9fb495d1542009b8f0f7ff59d47b6 is superseded by this dated record.
+Actual [engineering CI run 39461263112](https://github.com/holland202/principia-artificialis/actions/runs/39461263112)
+passed Python 3.11.17, 3.12.15 and 3.13.16.
+
+- All four malformed-envelope controls now match 0/114, rather than 114/114.
+- Honest results still match 114/114 and retain the original outcome digest
+  e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5.
+- All 32 unit methods pass in normal, -O and -OO modes in each Python job,
+  including the new malformed-envelope assertions.
+- The eight selected source mutants cause real assertion failures after a passing
+  unmutated baseline; no child errors and no source changes occurred during each run.
+- Both the existing whole-gate sabotage and the new status-only evaluator sabotage
+  exit exactly 1. The latter was also run with optimized Python.
+- Three repetitions of the original calibration still reproduce its recorded
+  digest and 201 accepted / 39 unresolved outcome. No case was tuned or relabelled.
+- Every inventoried source/evidence hash agrees across all three CI Python jobs.
+
+Timestamped executed step output, raw unit logs and mutant summaries are kept in
+evidence/gate_b/post_repair/, with exact source revisions, interpreter versions,
+commands, job IDs and exit statuses. The pre-repair failed steps remain unchanged.
+GATE_B_SOURCE_MANIFEST.json is a **24-file source/evidence snapshot**, covering
+top-level Python modules, the original outcome pin, scope/preregistration drafts
+and pre-repair CI records. It excludes the final report, workflow and post-run
+records to avoid recursive hashes; those remain tied to the Git commit. The old
+MANIFEST.json is still the original checkpoint's historical full inventory and
+is not advertised as passing against changed current sources.
+
+The numerical verifier ns001.py is byte-identical to the Stage 2 source (MD5
+55480877c0f0408dfd666555393ab2d4). The 114 construction labels, calibration matrix,
+thresholds and original RECORDED.json remain unchanged.
+
+A finite sample array does not determine a continuous velocity field between grid
+points. Nor does this checker validate a model's pressure metadata or explanation.
+This is DOCUMENT ONLY: restrict the claim to the declared reference-profile object;
+do not respond by adding a general CFD/PDE solver.
+
+**Minimal remaining Gate B work:** preserve the original external review texts
+when available, assign their evidence-linked dispositions, obtain independent
+approval of the bounded oracle/fault/precision contract and corrected rival design,
+and record the owner's Gate B disposition. No additional feature implementation
+is currently justified. Gate C model/budget/study choices remain a separate gate.
