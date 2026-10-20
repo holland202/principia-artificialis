@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-10-20T15:27:44.153245+00:00",
+  "finished_utc": "2026-10-20T15:27:54.911087+00:00",
+  "command": [
+    "git",
+    "clone",
+    "--single-branch",
+    "--branch",
+    "research/pa-ns-001-protocol-v0-2",
+    "https://github.com/holland202/principia-artificialis.git",
+    "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124"
+  ],
+  "source_commit": "76f112400e15ed237cd595ea66fb6781298cf136",
+  "exit_code": 0,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "acf7ec4af0ffbd42bd8c8385f4a0cf559d5f93782e91d74effb09e657e0ce18e",
+  "classification": "fresh clone of public PA only; no reference cache"
+}

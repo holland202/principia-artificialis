@@ -1,0 +1,1 @@
+{"errors": [], "failures": ["test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting", "test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted"], "mutant": "precision_disabled", "tests_run": 32}

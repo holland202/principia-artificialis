@@ -1,0 +1,21 @@
+{
+  "captured_utc": "2026-10-20T15:32:03.350Z",
+  "source_commit": "76f112400e15ed237cd595ea66fb6781298cf136",
+  "broad_ci": {
+    "id": 39448477794,
+    "name": "verify-all-notes",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/holland202/principia-artificialis/actions/runs/39448477794"
+  },
+  "engineering_ci": {
+    "id": 39448477831,
+    "name": "PA-NS-001 engineering only",
+    "head_sha": "76f112400e15ed237cd595ea66fb6781298cf136",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/holland202/principia-artificialis/actions/runs/39448477831",
+    "updated_at": "2026-10-20T15:27:33Z"
+  },
+  "note": "Later audit supplement; earlier snapshots retain their observed in-progress status. This file is Git-bound and deliberately outside the non-recursive MANIFEST inventory."
+}

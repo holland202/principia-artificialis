@@ -1,0 +1,99 @@
+test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... FAIL
+test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+test_empty_and_malformed_manifests (test_package.TestPackage.test_empty_and_malformed_manifests) ... ok
+test_genuine_and_modified_bytes (test_package.TestPackage.test_genuine_and_modified_bytes) ... ok
+test_missing_file_never_skips (test_package.TestPackage.test_missing_file_never_skips) ... ok
+test_paths_and_duplicates_are_rejected (test_package.TestPackage.test_paths_and_duplicates_are_rejected) ... ok
+test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels) ... FAIL
+test_always_accept_and_always_reject_both_fail_the_gate (test_stage2.TestStage2.test_always_accept_and_always_reject_both_fail_the_gate) ... ok
+test_characteristic_range_is_explicit (test_stage2.TestStage2.test_characteristic_range_is_explicit) ... ok
+test_configuration_checked_before_candidate_data (test_stage2.TestStage2.test_configuration_checked_before_candidate_data) ... ok
+test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow) ... FAIL
+test_extreme_finite_rounding_budget_does_not_crash_reporting (test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting) ... ok
+test_fixture_generation_and_content_hashes_are_deterministic (test_stage2.TestStage2.test_fixture_generation_and_content_hashes_are_deterministic) ... ok
+test_hand_derived_five_point_vectors (test_stage2.TestStage2.test_hand_derived_five_point_vectors) ... ok
+test_invalid_parameters_and_tolerances_raise (test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise) ... ok
+test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision) ... FAIL
+test_malformed_candidate_containers_fail_closed (test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed) ... ok
+test_malformed_samples_fail_closed (test_stage2.TestStage2.test_malformed_samples_fail_closed) ... ok
+test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure) ... FAIL
+test_nonbinary_and_maximum_grids (test_stage2.TestStage2.test_nonbinary_and_maximum_grids) ... ok
+test_nonidentifiable_parameters (test_stage2.TestStage2.test_nonidentifiable_parameters) ... ok
+test_polynomial_satisfies_ode_and_walls_exactly (test_stage2.TestStage2.test_polynomial_satisfies_ode_and_walls_exactly) ... ok
+test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure) ... FAIL
+test_reference_domain_and_types (test_stage2.TestStage2.test_reference_domain_and_types) ... ok
+test_signed_and_zero_drives (test_stage2.TestStage2.test_signed_and_zero_drives) ... ok
+test_unresolvable_precision_is_visible_and_not_accepted (test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted) ... ok
+test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries) ... FAIL
+test_binomial_closed_forms_and_symmetry (test_study_design.TestStudyDesign.test_binomial_closed_forms_and_symmetry) ... ok
+test_invalid_interval_inputs (test_study_design.TestStudyDesign.test_invalid_interval_inputs) ... ok
+test_paired_conditional_exact_test (test_study_design.TestStudyDesign.test_paired_conditional_exact_test) ... ok
+test_published_nist_interval (test_study_design.TestStudyDesign.test_published_nist_interval) ... ok
+
+======================================================================
+FAIL: test_faults (test_ns001.TestReferenceAndVerifier.test_faults)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_ns001.py", line 13, in test_faults
+    self.assertFalse(verify(kind,bad)['accepted'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 161, in test_all_constructed_fixtures_match_separate_labels
+    self.assertEqual([r['id'] for r in outcomes if not r['matched']], [])
+AssertionError: Lists differ: ['couette/unit/n21/wall_shift', 'couette/u[2485 chars]low'] != []
+
+First list contains 60 additional elements.
+First extra element 0:
+'couette/unit/n21/wall_shift'
+
+Diff is 2717 characters long. Set self.maxDiff to None to see it.
+
+======================================================================
+FAIL: test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 105, in test_dimensional_scale_changes_do_not_hide_stopped_flow
+    self.assertFalse(verify('couette', [0.0]*21, U=speed)['accepted'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 115, in test_legitimate_rounded_profile_with_declared_precision
+    self.assertFalse(verify('poiseuille', values)['accepted'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 149, in test_momentum_guard_has_a_reachable_unique_failure
+    self.assertFalse(result['accepted'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 140, in test_profile_guard_has_a_reachable_unique_failure
+    self.assertFalse(result['accepted'])
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/a1eff571ec2d/pa-ns001-cold-76f1124/research/pa_ns001/test_stage2.py", line 155, in test_wall_shift_has_zero_curvature_but_wrong_boundaries
+    self.assertFalse(result['accepted'])
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.327s
+
+FAILED (failures=7)

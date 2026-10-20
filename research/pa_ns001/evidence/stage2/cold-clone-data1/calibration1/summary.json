@@ -1,0 +1,48 @@
+{
+  "cases": 240,
+  "classification": "descriptive fixed engineering matrix; not population estimates or AI results",
+  "current_accepted": 201,
+  "current_rejected": 0,
+  "current_unresolvable": 39,
+  "digest": "73258fb30a5b2743c775c895a1d535782105affa5779a46851b6385022d27ce9",
+  "original_accepted": 183,
+  "residual_by_grid": {
+    "1025": {
+      "count": 48,
+      "max": 10493.760000000093,
+      "median": 1.734723475976807e-10,
+      "min": 0.0,
+      "p95_nearest_rank": 8.0
+    },
+    "21": {
+      "count": 48,
+      "max": 8.0,
+      "median": 5.1514348342607263e-14,
+      "min": 0.0,
+      "p95_nearest_rank": 9.380033709938292e-14
+    },
+    "257": {
+      "count": 48,
+      "max": 663.3600000000058,
+      "median": 1.0842021724855044e-11,
+      "min": 0.0,
+      "p95_nearest_rank": 8.0
+    },
+    "5": {
+      "count": 48,
+      "max": 8.0,
+      "median": 0.0,
+      "min": 0.0,
+      "p95_nearest_rank": 2.8143584468107163e-15
+    },
+    "65": {
+      "count": 48,
+      "max": 73.92000000000006,
+      "median": 0.0,
+      "min": 0.0,
+      "p95_nearest_rank": 8.0
+    }
+  },
+  "unrounded_cases": 60,
+  "unrounded_current_accepted": 60
+}

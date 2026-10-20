@@ -1,0 +1,12 @@
+{
+  "accepted": false,
+  "checked_files": 395,
+  "failures": [
+    {
+      "path": "research/pa_ns001/ns001.py",
+      "reason": "content_or_size_mismatch"
+    }
+  ],
+  "scope": "listed bytes only; an authenticated source commit/provenance review is also required"
+}
+GATE: FAIL
