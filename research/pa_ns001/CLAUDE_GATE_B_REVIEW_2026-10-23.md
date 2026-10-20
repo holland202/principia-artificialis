@@ -1,5 +1,9 @@
 # Claude read-only review brief — Friday, October 23, 2026
 
+> Updated 2026-10-20: the appended owner-brief update and the current 16-item
+> material matrix govern external-review reconciliation. Earlier instructions are
+> retained as the pre-brief record. This remains an unsent preparation document.
+
 **Prepared 2026-10-20; UNSENT. Gate B OPEN. No approval is represented.**
 
 Review only public PA-NS-001 at
@@ -139,3 +143,55 @@ or **inconclusive**, with the minimum blockers. Your recommendation is your own
 review record, not owner approval. The missing original-review reconciliation and
 owner disposition remain explicit. Gate C selection/freeze/resources/execution and
 Gate D findings release remain unauthorized regardless of this review’s outcome.
+
+## Owner-brief update — 2026-10-20
+
+Chad supplied a condensed review account, preserved in
+[reconciliation-2026-10-20.json](evidence/gate_b/reconciliation-2026-10-20.json).
+Use G01–G07 and P00–P08 in the appended current matrix of
+[GATE_B_CLOSURE_REVIEW_2026-10-20.md](GATE_B_CLOSURE_REVIEW_2026-10-20.md).
+This account is not either full report or a formal sign-off. The original full
+texts and Grok’s source/environment/commands/raw output were not inspected here.
+
+Grok’s reported disposition remains **CONDITIONAL**. Its 240-case reproduction
+and 114-label confirmation are reported external claims, distinct from project CI.
+Perplexity remains **CONDITIONAL, evidence access blocked**. Its mathematical
+derivation/challenges do not establish implementation inspection, 39-case
+reproduction, 114-label validation or an evaluator defect. Current artifact access
+does not retroactively upgrade either earlier review.
+
+The earlier review questions remain. Focus the remaining judgment on:
+
+- Deriving fault-label truth, including the 22 indistinguishable controls, rather
+  than inheriting expected statuses or CI success.
+- Adequacy of the bounded precision contract and all 39 unresolved outcomes;
+  engineering caps are not physical uncertainty limits.
+- The pressure-only G=-dp/dx definition and absence of an independent streamwise
+  body-force input. Decide if a minimal assumption clarification is needed.
+- V⊆R⊆B guarantees non-increase in false acceptance, not strict benefit. Judge the
+  corrected R precision rules and false-rejection/coverage/cost accounting.
+- Existing wall-shift, nonfinite, signed-drive and scale/rounding tests versus
+  out-of-scope continuum, absolute-pressure and symbolic-expression challenges.
+  A mathematical challenge is not an executed failure.
+
+The pinned
+[calibration plan](https://github.com/holland202/principia-artificialis/blob/7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd/research/pa_ns001/CALIBRATION_PLAN.md#L83)
+requires “an independent human/specification review.” Record your contribution as
+AI review, with actual sources/derivations/executions and expertise limits.
+Do not silently treat AI-only critique as human review or amend the gate.
+
+Return your own evidence-linked disposition. Distinguish reported claims,
+independently derived mathematics and actually reproduced implementation behavior.
+Substantiate Grok’s execution claims if relying on them for independent credit;
+otherwise keep them reported and uncredited. Full-report coverage remains
+unverified. An automatic Perplexity rerun is unnecessary if fresh adequate review
+provides the required evidence.
+
+No new implementation defect is demonstrated by the condensed brief. Recommend
+only the smallest correction for a material in-scope counterexample; classify
+other proposals DOCUMENT ONLY or DEFER. Preserve disagreement and negative results.
+Only after the independent requirements are met should the package go to Chad
+for his Gate B decision. Do not seek owner approval to replace missing review.
+
+Prepared for Friday, October 23, 2026; **UNSENT**. Gate B remains open; Gate C/D
+study execution, merge and findings release remain unauthorized.
