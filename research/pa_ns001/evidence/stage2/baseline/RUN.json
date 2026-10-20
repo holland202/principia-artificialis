@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-20T14:55:09.194133+00:00",
+  "source_commit": "8a3194f56f400a306778f7a837b51216c3b71220",
+  "python": "Python 3.12.14",
+  "command": [
+    "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "research/pa_ns001",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "working_directory": "repository root",
+  "exit_code": 0,
+  "source_sha256": {
+    "ns001.py": "3e3ac7b697c88a399ad2569fbba80c1d30b4c5c18e0357ef0a2299f8dcd1d77c",
+    "test_ns001.py": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+    "README.md": "8aabaef7559d9e23392c1369e9e34dfe9176849ac31c1ebeb8d457a16d7f6758",
+    "STAGE2_HANDOFF.md": "aad1fca4d6e30258cf9210a5d1ba74be05e81565e5cf40fe49f5112f5da06d5d"
+  },
+  "classification": "existing software unit tests; no AI evaluation"
+}

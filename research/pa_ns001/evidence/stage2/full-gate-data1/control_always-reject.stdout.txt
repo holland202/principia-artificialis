@@ -1,0 +1,58 @@
+{
+  "cases": 114,
+  "classification": "constructed software checks; not AI performance or scientific validation",
+  "expected_counts": {
+    "ACCEPTED": 38,
+    "REJECTED": 76
+  },
+  "failures": [
+    "couette/unit/n21/correct",
+    "couette/unit/n21/gradient_sign",
+    "couette/unit/n21/viscosity_mismatch",
+    "couette/unit/n21/joint_gradient_viscosity_scale",
+    "couette/unit/n21/rounding_only",
+    "couette/unit/n21/coarse_linear_interpolant",
+    "couette/unit/n65/correct",
+    "couette/unit/n65/gradient_sign",
+    "couette/unit/n65/viscosity_mismatch",
+    "couette/unit/n65/joint_gradient_viscosity_scale",
+    "couette/unit/n65/rounding_only",
+    "couette/unit/n65/coarse_linear_interpolant",
+    "couette/small_velocity/n21/correct",
+    "couette/small_velocity/n21/gradient_sign",
+    "couette/small_velocity/n21/viscosity_mismatch",
+    "couette/small_velocity/n21/joint_gradient_viscosity_scale",
+    "couette/small_velocity/n21/rounding_only",
+    "couette/small_velocity/n21/coarse_linear_interpolant",
+    "couette/small_velocity/n65/correct",
+    "couette/small_velocity/n65/gradient_sign",
+    "couette/small_velocity/n65/viscosity_mismatch",
+    "couette/small_velocity/n65/joint_gradient_viscosity_scale",
+    "couette/small_velocity/n65/rounding_only",
+    "couette/small_velocity/n65/coarse_linear_interpolant",
+    "poiseuille/unit/n21/correct",
+    "poiseuille/unit/n21/joint_gradient_viscosity_scale",
+    "poiseuille/unit/n21/rounding_only",
+    "poiseuille/unit/n65/correct",
+    "poiseuille/unit/n65/joint_gradient_viscosity_scale",
+    "poiseuille/unit/n65/rounding_only",
+    "poiseuille/small_velocity/n21/correct",
+    "poiseuille/small_velocity/n21/joint_gradient_viscosity_scale",
+    "poiseuille/small_velocity/n21/rounding_only",
+    "poiseuille/small_velocity/n65/correct",
+    "poiseuille/small_velocity/n65/joint_gradient_viscosity_scale",
+    "poiseuille/small_velocity/n65/rounding_only",
+    "couette/zero_drive/sign_reversal",
+    "poiseuille/zero_drive/sign_reversal"
+  ],
+  "indistinguishable_controls": 22,
+  "manifest_sha256": "27efb1366b885da80ada136afaf770997f6f41b629b06ee3b441048f9f832f44",
+  "matched": 76,
+  "observed_counts": {
+    "REJECTED": 114
+  },
+  "outcomes_digest": "100bf0eecc6c0f99162b9c04f4acbd0a5146167bd06407ac32dbe70d2f0a9c65"
+}
+P4: IMPLEMENTATION_ERROR
+DIGEST 100bf0eecc6c0f99162b9c04f4acbd0a5146167bd06407ac32dbe70d2f0a9c65
+GATE: FAIL

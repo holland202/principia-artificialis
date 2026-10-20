@@ -1,0 +1,17 @@
+{
+  "cases": 114,
+  "classification": "constructed software checks; not AI performance or scientific validation",
+  "expected_counts": {
+    "ACCEPTED": 38,
+    "REJECTED": 76
+  },
+  "failures": [],
+  "indistinguishable_controls": 22,
+  "manifest_sha256": "27efb1366b885da80ada136afaf770997f6f41b629b06ee3b441048f9f832f44",
+  "matched": 114,
+  "observed_counts": {
+    "ACCEPTED": 38,
+    "REJECTED": 76
+  },
+  "outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5"
+}

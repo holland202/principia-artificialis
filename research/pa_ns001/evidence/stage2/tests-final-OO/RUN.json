@@ -1,0 +1,43 @@
+{
+  "classification": "local software engineering evidence; no AI study",
+  "command": [
+    "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+    "-OO",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "research/pa_ns001",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "repository root",
+  "elapsed_seconds": 0.560350211000241,
+  "exit_code": 0,
+  "finished_utc": "2026-10-20T15:11:33.248172+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_commit": "4bdaa6535984716fa4816ad5d50c2c55a60e169f",
+  "source_sha256": {
+    "CALIBRATION_PLAN.md": "dddf0f2af69fd7544cb61646cfd10a7a42b7b3605ca5188b886b2d04cb15d136",
+    "ORACLE_AND_FAULTS.md": "fe087eae6e1e252d6524ecccdab4c72e08e4c70f07fbe847df1a5664f2e36f21",
+    "README.md": "8aabaef7559d9e23392c1369e9e34dfe9176849ac31c1ebeb8d457a16d7f6758",
+    "STAGE2_HANDOFF.md": "aad1fca4d6e30258cf9210a5d1ba74be05e81565e5cf40fe49f5112f5da06d5d",
+    "analytic_oracle.py": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+    "calibrate.py": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+    "diagnose_prototype.py": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+    "evaluate_faults.py": "c5c45a75728f9e2b8f01849e1fb1ce97e374ce0913fe4273f71add9ba2e1eaf4",
+    "fault_cases.py": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5",
+    "mutation_checks.py": "b47751bbc5b0b38e220c24d0dd2da15f3c6cd414e12ebbb0416a2629527ff7e6",
+    "ns001.py": "0afcc04f5afedebf6484a848212c48f3aa0b8e40f903a437fe370b84702768d6",
+    "record_command.py": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+    "study_design.py": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94",
+    "test_ns001.py": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+    "test_stage2.py": "8f8b7f547cb254fe2225295fd27a769f368b4285eab9ee0038a3f5b9f744912a",
+    "test_study_design.py": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e"
+  },
+  "started_utc": "2026-10-20T15:11:32.687825+00:00",
+  "stderr_sha256": "0b5a6c9a70ec978c3d029ed5f8b6a7e7c953c6638e3a9aec4720e28a90c594a1",
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

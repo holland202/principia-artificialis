@@ -1,0 +1,10 @@
+SWAY      items  61  without exactly one inventory row: 0
+A1        items  22  without exactly one inventory row: 0
+TEMPLATE  items   3  without exactly one inventory row: 0
+CLAUDE    items  43  without exactly one inventory row: 0
+A2        items  37  without exactly one inventory row: 0
+EF        items  14  without exactly one inventory row: 0
+PRW       items  52  without exactly one inventory row: 0
+TOTAL items 232  (registered 232)
+inventory rows by disposition: DOOR 14, OPS 6, RECORD 41, REPO 25, RULE 173, SUPERSEDED 4, VOCAB 11
+COVERAGE: PASS

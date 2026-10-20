@@ -1,0 +1,7 @@
+{
+  "ai_requests_executed": 0,
+  "calibration_cases": 240,
+  "engineering_fault_fixtures": 114,
+  "main_study_cases_generated": 0,
+  "main_study_feasibility": "NOT ESTABLISHED: domain/model/token/cost decisions pending"
+}

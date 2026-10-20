@@ -26,3 +26,39 @@ Run from this directory: `python -m unittest -v`.
 
 ## Limitations and publication gate
 Three local unit tests of the prototype passed during initial development; this is not an independent audit, main experiment, AI reasoning evaluation, or Navier–Stokes existence/smoothness proof. No AI runs or scientific results have been generated. Before promoting beyond draft: calibrate numerical tolerances; broaden and independently validate the fault oracle; freeze the preregistration; run controlled comparisons; independently reproduce and review evidence. Do not merge or present this draft as verified science without that review.
+
+## Stage 2 engineering update — 2026-10-20
+The preceding prototype description is retained as history. See the
+[Stage 2 report](STAGE2_REPORT.md), [numerical/fault specification](ORACLE_AND_FAULTS.md),
+[draft preregistration](PREREGISTRATION_DRAFT.md) and [owner decisions](OWNER_DECISIONS.md)
+for the current development state. This remains a draft research candidate.
+
+The updated checker uses dimensionless quantities, exact rational arithmetic on
+binary64 inputs and an explicitly bounded rounding policy. It rejects malformed
+inputs and reports insufficient precision as `UNRESOLVABLE`, never accepted.
+Signed drive extends the original positive-G examples; no new physical evidence is
+claimed. The fixed 240-case engineering calibration accepted 201 profiles and left
+39 correctly rounded profiles unresolved. This is not zero false rejection.
+The 114 construction-labelled engineering fixtures are public development data,
+not fresh scientific evidence or an AI benchmark. Independent oracle review is pending.
+
+From the repository root, with Python 3.11 or later and no added packages:
+
+```sh
+python -m unittest discover -s research/pa_ns001 -p 'test_*.py' -v
+python research/pa_ns001/engineering_gate.py --output /tmp/pa-ns001-fresh-check
+```
+
+Use a new output directory for each run; previous evidence is never overwritten.
+The full gate checks normal/optimized Python, three calibration digests, fixture
+labels, positive/negative controls and selected mutations against `RECORDED.json`.
+That file is a **post-observation software outcome pin**, not a preregistration.
+An always-accept sabotage must fail:
+
+```sh
+python research/pa_ns001/engineering_gate.py --sabotage --output /tmp/pa-ns001-fresh-sabotage
+```
+
+The original three tests and source archive remain intact. Full command logs,
+including invalidated/failed engineering attempts, are in `evidence/stage2/`.
+No AI model request, official study, main merge or scientific release was performed.

@@ -1,0 +1,70 @@
+test_clean_run_exits_0 (test_check_numbers.Exit2.test_clean_run_exits_0) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpq7pelb1o/research_notes/note992_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:145: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpq7pelb1o/research_notes/note992_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpq7pelb1o/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_missing_results_directory_is_created (test_check_numbers.Exit2.test_missing_results_directory_is_created) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpp1hfkylk/research_notes/note993_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:145: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpp1hfkylk/research_notes/note993_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpp1hfkylk/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_timeout_is_recorded_as_not_run_and_exits_2 (test_check_numbers.Exit2.test_timeout_is_recorded_as_not_run_and_exits_2) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc3j5ffxw/research_notes/note991_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:145: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc3j5ffxw/research_notes/note991_x.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpc3j5ffxw/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_a_note_that_names_its_script_wins_over_filename (test_check_numbers.Pairing.test_a_note_that_names_its_script_wins_over_filename) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpakwp6vwo/research_notes/996_old.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpakwp6vwo/research_notes/note996_new.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:145: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpakwp6vwo/research_notes/note996_new.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpakwp6vwo/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_note_that_does_not_name_its_script_is_paired_by_filename (test_check_numbers.Pairing.test_note_that_does_not_name_its_script_is_paired_by_filename) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpbue49a2_/research_notes/note994_bound.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:145: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpbue49a2_/research_notes/note994_bound.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpbue49a2_/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_shared_number_stays_unpaired (test_check_numbers.Pairing.test_shared_number_stays_unpaired) ... /workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxfgu04l1/research_notes/995_first.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/check_numbers.py:66: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxfgu04l1/research_notes/note995_second.md' mode='r' encoding='utf-8'>
+  text = open(os.path.join(ROOT, "research_notes", name), encoding="utf-8").read()
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/scripts/test_check_numbers.py:55: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmpxfgu04l1/results/NUMBER_CHECK.md' mode='r' encoding='utf-8'>
+  report = open(path, encoding="utf-8").read() if os.path.exists(path) else ""
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_broken_selftest_exits_1_and_writes_no_report (test_check_numbers.SelfTest.test_broken_selftest_exits_1_and_writes_no_report) ... ok
+test_selftest_passes_on_the_real_checker (test_check_numbers.SelfTest.test_selftest_passes_on_the_real_checker) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.558s
+
+OK

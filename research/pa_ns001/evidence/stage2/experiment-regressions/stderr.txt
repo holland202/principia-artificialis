@@ -1,0 +1,51 @@
+test_candidate_unit_not_verified (test_exp001_sensor_inventory.InventoryTests.test_candidate_unit_not_verified) ... ok
+test_no_sensor (test_exp001_sensor_inventory.InventoryTests.test_no_sensor) ... ok
+test_nonfinite (test_exp001_sensor_inventory.InventoryTests.test_nonfinite) ... ok
+test_observed_sentinel (test_exp001_sensor_inventory.InventoryTests.test_observed_sentinel) ... ok
+test_out_of_range (test_exp001_sensor_inventory.InventoryTests.test_out_of_range) ... ok
+test_unreadable_sensor (test_exp001_sensor_inventory.InventoryTests.test_unreadable_sensor) ... ok
+test_history_aliasing_cannot_be_exact (test_exp015a_composition.CompositionControls.test_history_aliasing_cannot_be_exact) ... ok
+test_identity_three_states (test_exp015a_composition.CompositionControls.test_identity_three_states) ... ok
+test_registered_controls (test_exp015a_composition.CompositionControls.test_registered_controls) ... ok
+test_reject_empty (test_exp015a_composition.CompositionControls.test_reject_empty) ... ok
+test_reject_incompatible_dimensions (test_exp015a_composition.CompositionControls.test_reject_incompatible_dimensions) ... ok
+test_reject_negative_probability (test_exp015a_composition.CompositionControls.test_reject_negative_probability) ... ok
+test_reject_non_normalized (test_exp015a_composition.CompositionControls.test_reject_non_normalized) ... ok
+test_reject_ragged (test_exp015a_composition.CompositionControls.test_reject_ragged) ... ok
+test_boolean_count_refused (test_thermal_checkpoint_v21.CheckpointTests.test_boolean_count_refused) ... ok
+test_checkpoint_mutation_detected (test_thermal_checkpoint_v21.CheckpointTests.test_checkpoint_mutation_detected) ... ok
+test_empty_refused (test_thermal_checkpoint_v21.CheckpointTests.test_empty_refused) ... ok
+test_extension_detected (test_thermal_checkpoint_v21.CheckpointTests.test_extension_detected) ... ok
+test_missing_checkpoint_field_refused (test_thermal_checkpoint_v21.CheckpointTests.test_missing_checkpoint_field_refused) ... ok
+test_positive (test_thermal_checkpoint_v21.CheckpointTests.test_positive) ... ok
+test_rewrite_detected_even_when_resealed (test_thermal_checkpoint_v21.CheckpointTests.test_rewrite_detected_even_when_resealed) ... ok
+test_truncation_detected (test_thermal_checkpoint_v21.CheckpointTests.test_truncation_detected) ... ok
+test_bad_evaluation_clock (test_thermal_evidence_v2.ThermalEvidenceTests.test_bad_evaluation_clock) ... ok
+test_ceiling_refused (test_thermal_evidence_v2.ThermalEvidenceTests.test_ceiling_refused) ... ok
+test_chain_reorder_and_truncation_limit (test_thermal_evidence_v2.ThermalEvidenceTests.test_chain_reorder_and_truncation_limit) ... ok
+test_detects_payload_mutation (test_thermal_evidence_v2.ThermalEvidenceTests.test_detects_payload_mutation) ... ok
+test_detects_resealed_false_decision (test_thermal_evidence_v2.ThermalEvidenceTests.test_detects_resealed_false_decision) ... ok
+test_empty_log_refused (test_thermal_evidence_v2.ThermalEvidenceTests.test_empty_log_refused) ... ok
+test_missing_deferred (test_thermal_evidence_v2.ThermalEvidenceTests.test_missing_deferred) ... ok
+test_missing_provenance_deferred (test_thermal_evidence_v2.ThermalEvidenceTests.test_missing_provenance_deferred) ... ok
+test_missing_type_refused (test_thermal_evidence_v2.ThermalEvidenceTests.test_missing_type_refused) ... ok
+test_nonfinite_and_out_of_range_refused (test_thermal_evidence_v2.ThermalEvidenceTests.test_nonfinite_and_out_of_range_refused) ... ok
+test_policy_rejects_invalid (test_thermal_evidence_v2.ThermalEvidenceTests.test_policy_rejects_invalid) ... ok
+test_positive_control (test_thermal_evidence_v2.ThermalEvidenceTests.test_positive_control) ... ok
+test_rejects_boolean_sequence (test_thermal_evidence_v2.ThermalEvidenceTests.test_rejects_boolean_sequence) ... ok
+test_rejects_resealed_extra_fields (test_thermal_evidence_v2.ThermalEvidenceTests.test_rejects_resealed_extra_fields) ... ok
+test_stale_and_future_deferred (test_thermal_evidence_v2.ThermalEvidenceTests.test_stale_and_future_deferred) ... ok
+test_empty_evidence (test_thermal_witness_hmac_v22.WitnessTests.test_empty_evidence) ... ok
+test_modified_checkpoint (test_thermal_witness_hmac_v22.WitnessTests.test_modified_checkpoint) ... ok
+test_positive (test_thermal_witness_hmac_v22.WitnessTests.test_positive) ... ok
+test_resealed_evidence (test_thermal_witness_hmac_v22.WitnessTests.test_resealed_evidence) ... ok
+test_short_key (test_thermal_witness_hmac_v22.WitnessTests.test_short_key) ... ok
+test_tampered_tag (test_thermal_witness_hmac_v22.WitnessTests.test_tampered_tag) ... ok
+test_truncation (test_thermal_witness_hmac_v22.WitnessTests.test_truncation) ... ok
+test_wrong_identity (test_thermal_witness_hmac_v22.WitnessTests.test_wrong_identity) ... ok
+test_wrong_key (test_thermal_witness_hmac_v22.WitnessTests.test_wrong_key) ... ok
+
+----------------------------------------------------------------------
+Ran 46 tests in 0.007s
+
+OK

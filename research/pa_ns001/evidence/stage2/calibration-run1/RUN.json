@@ -1,0 +1,30 @@
+{
+  "classification": "local software engineering evidence; no AI study",
+  "command": [
+    "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+    "research/pa_ns001/calibrate.py",
+    "--output",
+    "research/pa_ns001/evidence/stage2/calibration-data1"
+  ],
+  "cwd": "repository root",
+  "elapsed_seconds": 1.489842759000112,
+  "exit_code": 0,
+  "finished_utc": "2026-10-20T15:03:52.084756+00:00",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "source_commit": "4bdaa6535984716fa4816ad5d50c2c55a60e169f",
+  "source_sha256": {
+    "CALIBRATION_PLAN.md": "dddf0f2af69fd7544cb61646cfd10a7a42b7b3605ca5188b886b2d04cb15d136",
+    "README.md": "8aabaef7559d9e23392c1369e9e34dfe9176849ac31c1ebeb8d457a16d7f6758",
+    "STAGE2_HANDOFF.md": "aad1fca4d6e30258cf9210a5d1ba74be05e81565e5cf40fe49f5112f5da06d5d",
+    "analytic_oracle.py": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+    "calibrate.py": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+    "diagnose_prototype.py": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+    "ns001.py": "0afcc04f5afedebf6484a848212c48f3aa0b8e40f903a437fe370b84702768d6",
+    "record_command.py": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+    "test_ns001.py": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294"
+  },
+  "started_utc": "2026-10-20T15:03:50.594916+00:00",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdout_sha256": "eb9884561b230c0a36d6712ea6ef0a4a916b456872b920ddaa63ff8d4044c8f4"
+}

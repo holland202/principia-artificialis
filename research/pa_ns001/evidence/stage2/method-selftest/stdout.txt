@@ -1,0 +1,12 @@
+DETECTED DUP        as DUP        (1 violation(s))
+DETECTED PLACE      as PLACE      (3 violation(s))
+DETECTED INDEX      as INDEX      (2 violation(s))
+DETECTED TRIGGER    as TRIGGER    (2 violation(s))
+DETECTED EXCERPT    as EXCERPT    (1 violation(s))
+DETECTED HOME       as HOME       (1 violation(s))
+DETECTED NO_SOURCE  as NO_SOURCE  (1 violation(s))
+DETECTED DEPRECATED as DEPRECATED (1 violation(s))
+DETECTED RECORD     as RECORD     (1 violation(s))
+DETECTED MISSING    as MISSING    (1 violation(s))
+DETECTED EMPTY      as MISSING    (74 violation(s))
+SELFTEST: PASS

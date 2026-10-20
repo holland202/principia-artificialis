@@ -1,0 +1,8 @@
+test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... ok
+test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

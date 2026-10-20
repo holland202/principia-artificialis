@@ -1,0 +1,1 @@
+{"errors": [], "failures": ["test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure"], "mutant": "profile_disabled", "tests_run": 23}

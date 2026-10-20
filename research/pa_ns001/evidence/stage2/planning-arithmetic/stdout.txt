@@ -1,0 +1,32 @@
+{
+  "classification": "prospective arithmetic under IID Bernoulli assumptions, not observations",
+  "paired_exact_example_10_rescued_0_harmed": 0.001953125,
+  "planning_scenarios": [
+    {
+      "invalid_units": 100,
+      "minimum_rescued_for_95pct_lower_bound_at_least_5pp": 11,
+      "power_if_true_rescue_rate_10pct": 0.4168444877335321,
+      "zero_failure_95pct_one_sided_upper": 0.029513049607039932,
+      "zero_failure_95pct_two_sided_upper": 0.03621669264517642
+    },
+    {
+      "invalid_units": 200,
+      "minimum_rescued_for_95pct_lower_bound_at_least_5pp": 17,
+      "power_if_true_rescue_rate_10pct": 0.7925223986625684,
+      "zero_failure_95pct_one_sided_upper": 0.014867039231272057,
+      "zero_failure_95pct_two_sided_upper": 0.018275340355136248
+    },
+    {
+      "invalid_units": 400,
+      "minimum_rescued_for_95pct_lower_bound_at_least_5pp": 30,
+      "power_if_true_rescue_rate_10pct": 0.9643394639231883,
+      "zero_failure_95pct_one_sided_upper": 0.007461355528799603,
+      "zero_failure_95pct_two_sided_upper": 0.009179804583665262
+    }
+  ],
+  "published_NIST_4_of_20_90pct_interval": [
+    0.07135388430861786,
+    0.40102811733197485
+  ],
+  "zero_failure_units_for_one_sided_95pct_upper_below_1pct": 299
+}

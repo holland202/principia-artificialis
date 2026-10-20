@@ -1,0 +1,31 @@
+name: PA-NS-001 engineering only
+on:
+  push:
+    branches: [research/pa-ns-001-protocol-v0-2]
+    paths: [research/pa_ns001/**, .github/workflows/pa-ns001-engineering.yml]
+permissions:
+  contents: read
+jobs:
+  analytic-checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Pinned local engineering checks; no AI calls
+        run: python research/pa_ns001/engineering_gate.py --output "$RUNNER_TEMP/pa-ns001-engineering"
+      - name: A sabotaged fixture checker must exit exactly 1
+        shell: bash
+        run: |
+          set +e
+          python research/pa_ns001/engineering_gate.py --sabotage --output "$RUNNER_TEMP/pa-ns001-sabotage"
+          rc=$?
+          test "$rc" -eq 1

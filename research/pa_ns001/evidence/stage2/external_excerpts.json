@@ -1,0 +1,42 @@
+[
+  {
+    "author": "Python Software Foundation",
+    "id": "python-floats",
+    "terms": "PSF License Version 2; documentation examples additionally Zero-Clause BSD. No example code copied.",
+    "text": "Another form of exact arithmetic is supported by the fractions module which implements arithmetic based on rational numbers",
+    "url": "https://docs.python.org/3.12/tutorial/floatingpoint.html",
+    "use": "Research input, not independent approval or scientific validation",
+    "utf8_sha256": "84dc98ebef473cf59fa084ba52fa5fc296a7a4a09ca521504d929fed6fade7d8",
+    "version": "Python 3.12 documentation; displayed 3.12.15, updated 2026-10-01"
+  },
+  {
+    "author": "NIST/SEMATECH e-Handbook of Statistical Methods",
+    "id": "nist-intervals",
+    "terms": "US government handbook with separately attributed cited works. Only this short excerpt retained; no code copied.",
+    "text": "An exact method based on the binomial distribution is shown next.",
+    "url": "https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm",
+    "use": "Research input, not independent approval or scientific validation",
+    "utf8_sha256": "af68773198082610421be3bf916ce37ad7b53c6ad82df91e0a2a8ae14a4c1185",
+    "version": "section 7.2.4.1; retrieved 2026-10-20"
+  },
+  {
+    "author": "Josef Perktold, Skipper Seabold, Jonathan Taylor and statsmodels developers",
+    "id": "statsmodels-mcnemar",
+    "terms": "Documentation copyright statsmodels developers; no implementation reused and no package added.",
+    "text": "If exact is True, then the binomial distribution will be used.",
+    "url": "https://www.statsmodels.org/stable/generated/statsmodels.stats.contingency_tables.mcnemar.html",
+    "use": "Research input, not independent approval or scientific validation",
+    "utf8_sha256": "b38ad83972667003ff005c2a0245e39a757c9c4917b32ff53462f06c4027f0db",
+    "version": "stable documentation displayed 0.15.0; retrieved 2026-10-20"
+  },
+  {
+    "author": "NASA Glenn / NPARC Alliance; curator John W. Slater; glossary cites AIAA G-077-1998",
+    "id": "nasa-verification",
+    "terms": "NASA-hosted page contains AIAA-attributed definitions; do not treat all text as unrestricted. Only a short excerpt retained.",
+    "text": "Calibration has more to do with improving agreement of computational results with experimental results rather than assessing error and uncertainty.",
+    "url": "https://www.grc.nasa.gov/WWW/wind/valid/tutorial/glossary.html",
+    "use": "Research input, not independent approval or scientific validation",
+    "utf8_sha256": "8d4fce128bcd1fc9624e7a3f550cc9171740d8e3b5bbfe9595d3d5c40db5408e",
+    "version": "page last updated 2021-02-10; retrieved 2026-10-20"
+  }
+]

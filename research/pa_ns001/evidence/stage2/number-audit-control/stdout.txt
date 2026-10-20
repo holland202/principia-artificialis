@@ -1,0 +1,1 @@
+self-test: honest note 0 not found; planted wrong number flagged: ['1.6498'] -> PASS

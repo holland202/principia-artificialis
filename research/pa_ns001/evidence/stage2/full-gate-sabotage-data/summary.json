@@ -1,0 +1,177 @@
+{
+  "accepted": false,
+  "checks": [
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "tests_normal"
+    },
+    {
+      "matched": true,
+      "name": "test_count_normal"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "tests_optimized"
+    },
+    {
+      "matched": true,
+      "name": "test_count_optimized"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "-OO",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "tests_docstrings_removed"
+    },
+    {
+      "matched": true,
+      "name": "test_count_docstrings_removed"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/calibrate.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/calibration1"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "calibration1"
+    },
+    {
+      "matched": true,
+      "name": "calibration1_pinned"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/calibrate.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/calibration2"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "calibration2"
+    },
+    {
+      "matched": true,
+      "name": "calibration2_pinned"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/calibrate.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/calibration3"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "calibration3"
+    },
+    {
+      "matched": true,
+      "name": "calibration3_pinned"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/evaluate_faults.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/faults",
+        "--sabotage",
+        "always-accept"
+      ],
+      "exit_code": 1,
+      "expected_exit": 0,
+      "matched": false,
+      "name": "faults"
+    },
+    {
+      "matched": false,
+      "name": "faults_pinned"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/evaluate_faults.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/always-accept",
+        "--sabotage",
+        "always-accept"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "matched": true,
+      "name": "control_always-accept"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/evaluate_faults.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/always-reject",
+        "--sabotage",
+        "always-reject"
+      ],
+      "exit_code": 1,
+      "expected_exit": 1,
+      "matched": true,
+      "name": "control_always-reject"
+    },
+    {
+      "command": [
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+        "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+        "--output",
+        "research/pa_ns001/evidence/stage2/full-gate-sabotage-data/mutants"
+      ],
+      "exit_code": 0,
+      "expected_exit": 0,
+      "matched": true,
+      "name": "selected_mutants"
+    }
+  ],
+  "classification": "software validation only; AI evaluation NOT RUN"
+}

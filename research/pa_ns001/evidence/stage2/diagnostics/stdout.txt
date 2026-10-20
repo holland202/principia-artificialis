@@ -1,0 +1,16 @@
+{"case": "incorrect_zero_profile_infinite_tolerance", "result": {"accepted": true, "boundary_error": 1.0, "momentum_residual": 0.0, "profile_error": 1.0}}
+{"case": "boolean_samples", "result": {"accepted": false, "boundary_error": 0.0, "momentum_residual": 399.99999999999994, "profile_error": 0.9500000000000001}}
+{"case": "string_samples", "exception": "TypeError", "message": "must be real number, not str"}
+{"case": "nan_tolerance", "result": {"accepted": false, "boundary_error": 0.0, "momentum_residual": 4.4408920985006255e-14, "profile_error": 1.1102230246251565e-16}}
+{"case": "unknown_flow_and_nonfinite_data", "result": {"accepted": false, "reason": "nonfinite"}}
+{"case": "underflow_grid_spacing", "exception": "ZeroDivisionError", "message": "float division by zero"}
+{"case": "tiny_valid_flow_replaced_by_zero", "result": {"accepted": true, "boundary_error": 1e-12, "momentum_residual": 0.0, "profile_error": 1e-12}}
+{"case": "correct_poiseuille_n21", "result": {"accepted": true, "boundary_error": 0.0, "momentum_residual": 2.020605904817785e-14, "profile_error": 1.0408340855860843e-16}}
+{"case": "rounded_correct_poiseuille_n21", "result": {"accepted": true, "boundary_error": 0.0, "momentum_residual": 1.0436096431476471e-14, "profile_error": 6.245004513516506e-17}}
+{"case": "correct_poiseuille_n257", "result": {"accepted": true, "boundary_error": 0.0, "momentum_residual": 0.0, "profile_error": 0.0}}
+{"case": "rounded_correct_poiseuille_n257", "result": {"accepted": false, "boundary_error": 0.0, "momentum_residual": 0.04972800000018651, "profile_error": 4.990234374890878e-07}}
+{"case": "correct_poiseuille_n1025", "result": {"accepted": true, "boundary_error": 0.0, "momentum_residual": 0.0, "profile_error": 0.0}}
+{"case": "rounded_correct_poiseuille_n1025", "result": {"accepted": false, "boundary_error": 0.0, "momentum_residual": 0.999999999992724, "profile_error": 4.995727539147676e-07}}
+{"case": "correct_poiseuille_n4097", "result": {"accepted": true, "boundary_error": 0.0, "momentum_residual": 0.0, "profile_error": 0.0}}
+{"case": "rounded_correct_poiseuille_n4097", "result": {"accepted": false, "boundary_error": 0.0, "momentum_residual": 15.77721600024961, "profile_error": 4.998207092377083e-07}}
+DIAGNOSTIC ONLY: observations are limitations of the original software, not AI findings.

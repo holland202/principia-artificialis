@@ -1,0 +1,1 @@
+{"errors": [], "failures": ["test_ns001.TestReferenceAndVerifier.test_invalid", "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels", "test_stage2.TestStage2.test_malformed_samples_fail_closed"], "mutant": "nonfinite_accepted", "tests_run": 32}

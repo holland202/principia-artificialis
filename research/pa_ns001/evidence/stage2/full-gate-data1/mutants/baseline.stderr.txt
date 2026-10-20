@@ -1,0 +1,37 @@
+test_faults (test_ns001.TestReferenceAndVerifier.test_faults) ... ok
+test_invalid (test_ns001.TestReferenceAndVerifier.test_invalid) ... ok
+test_valid (test_ns001.TestReferenceAndVerifier.test_valid) ... ok
+test_empty_and_malformed_manifests (test_package.TestPackage.test_empty_and_malformed_manifests) ... ok
+test_genuine_and_modified_bytes (test_package.TestPackage.test_genuine_and_modified_bytes) ... ok
+test_missing_file_never_skips (test_package.TestPackage.test_missing_file_never_skips) ... ok
+test_paths_and_duplicates_are_rejected (test_package.TestPackage.test_paths_and_duplicates_are_rejected) ... ok
+test_all_constructed_fixtures_match_separate_labels (test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels) ... ok
+test_always_accept_and_always_reject_both_fail_the_gate (test_stage2.TestStage2.test_always_accept_and_always_reject_both_fail_the_gate) ... ok
+test_characteristic_range_is_explicit (test_stage2.TestStage2.test_characteristic_range_is_explicit) ... ok
+test_configuration_checked_before_candidate_data (test_stage2.TestStage2.test_configuration_checked_before_candidate_data) ... ok
+test_dimensional_scale_changes_do_not_hide_stopped_flow (test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow) ... ok
+test_extreme_finite_rounding_budget_does_not_crash_reporting (test_stage2.TestStage2.test_extreme_finite_rounding_budget_does_not_crash_reporting) ... ok
+test_fixture_generation_and_content_hashes_are_deterministic (test_stage2.TestStage2.test_fixture_generation_and_content_hashes_are_deterministic) ... ok
+test_hand_derived_five_point_vectors (test_stage2.TestStage2.test_hand_derived_five_point_vectors) ... ok
+test_invalid_parameters_and_tolerances_raise (test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise) ... ok
+test_legitimate_rounded_profile_with_declared_precision (test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision) ... ok
+test_malformed_candidate_containers_fail_closed (test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed) ... ok
+test_malformed_samples_fail_closed (test_stage2.TestStage2.test_malformed_samples_fail_closed) ... ok
+test_momentum_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure) ... ok
+test_nonbinary_and_maximum_grids (test_stage2.TestStage2.test_nonbinary_and_maximum_grids) ... ok
+test_nonidentifiable_parameters (test_stage2.TestStage2.test_nonidentifiable_parameters) ... ok
+test_polynomial_satisfies_ode_and_walls_exactly (test_stage2.TestStage2.test_polynomial_satisfies_ode_and_walls_exactly) ... ok
+test_profile_guard_has_a_reachable_unique_failure (test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure) ... ok
+test_reference_domain_and_types (test_stage2.TestStage2.test_reference_domain_and_types) ... ok
+test_signed_and_zero_drives (test_stage2.TestStage2.test_signed_and_zero_drives) ... ok
+test_unresolvable_precision_is_visible_and_not_accepted (test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted) ... ok
+test_wall_shift_has_zero_curvature_but_wrong_boundaries (test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries) ... ok
+test_binomial_closed_forms_and_symmetry (test_study_design.TestStudyDesign.test_binomial_closed_forms_and_symmetry) ... ok
+test_invalid_interval_inputs (test_study_design.TestStudyDesign.test_invalid_interval_inputs) ... ok
+test_paired_conditional_exact_test (test_study_design.TestStudyDesign.test_paired_conditional_exact_test) ... ok
+test_published_nist_interval (test_study_design.TestStudyDesign.test_published_nist_interval) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.359s
+
+OK

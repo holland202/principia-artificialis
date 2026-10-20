@@ -1,0 +1,1 @@
+{"errors": [], "failures": ["test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise (config={'tolerance': 0.001})"], "mutant": "tolerance_cap_disabled", "tests_run": 32}

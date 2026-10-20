@@ -1,0 +1,161 @@
+[
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "always_accept"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_ns001.TestReferenceAndVerifier.test_faults",
+      "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+      "test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow",
+      "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+      "test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure",
+      "test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure",
+      "test_stage2.TestStage2.test_wall_shift_has_zero_curvature_but_wrong_boundaries"
+    ],
+    "mutant": "always_accept",
+    "name": "always_accept",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "always_reject"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_ns001.TestReferenceAndVerifier.test_valid",
+      "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+      "test_stage2.TestStage2.test_characteristic_range_is_explicit",
+      "test_stage2.TestStage2.test_dimensional_scale_changes_do_not_hide_stopped_flow",
+      "test_stage2.TestStage2.test_hand_derived_five_point_vectors",
+      "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+      "test_stage2.TestStage2.test_malformed_candidate_containers_fail_closed",
+      "test_stage2.TestStage2.test_nonbinary_and_maximum_grids",
+      "test_stage2.TestStage2.test_signed_and_zero_drives"
+    ],
+    "mutant": "always_reject",
+    "name": "always_reject",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "profile_disabled"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_stage2.TestStage2.test_profile_guard_has_a_reachable_unique_failure"
+    ],
+    "mutant": "profile_disabled",
+    "name": "profile_disabled",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "momentum_disabled"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_stage2.TestStage2.test_momentum_guard_has_a_reachable_unique_failure"
+    ],
+    "mutant": "momentum_disabled",
+    "name": "momentum_disabled",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "precision_disabled"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_stage2.TestStage2.test_unresolvable_precision_is_visible_and_not_accepted"
+    ],
+    "mutant": "precision_disabled",
+    "name": "precision_disabled",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "tolerance_cap_disabled"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_stage2.TestStage2.test_invalid_parameters_and_tolerances_raise (config={'tolerance': 0.001})"
+    ],
+    "mutant": "tolerance_cap_disabled",
+    "name": "tolerance_cap_disabled",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "nonfinite_accepted"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_ns001.TestReferenceAndVerifier.test_invalid",
+      "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+      "test_stage2.TestStage2.test_malformed_samples_fail_closed"
+    ],
+    "mutant": "nonfinite_accepted",
+    "name": "nonfinite_accepted",
+    "tests_run": 27
+  },
+  {
+    "command": [
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-runtime/venv/bin/python",
+      "/workspace/scratch/a1eff571ec2d/pa-ns001-stage2-20261020/research/pa_ns001/mutation_checks.py",
+      "--mutant",
+      "poiseuille_rhs_sign"
+    ],
+    "detected_by_test_failures": true,
+    "errors": [],
+    "exit_code": 1,
+    "failures": [
+      "test_ns001.TestReferenceAndVerifier.test_valid",
+      "test_stage2.TestStage2.test_all_constructed_fixtures_match_separate_labels",
+      "test_stage2.TestStage2.test_hand_derived_five_point_vectors",
+      "test_stage2.TestStage2.test_legitimate_rounded_profile_with_declared_precision",
+      "test_stage2.TestStage2.test_nonbinary_and_maximum_grids",
+      "test_stage2.TestStage2.test_signed_and_zero_drives"
+    ],
+    "mutant": "poiseuille_rhs_sign",
+    "name": "poiseuille_rhs_sign",
+    "tests_run": 27
+  }
+]
+SELECTED MUTANTS: 8/8 detected
+GATE: PASS

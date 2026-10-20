@@ -1,0 +1,11 @@
+tests_normal exit 0 expected 0
+tests_optimized exit 0 expected 0
+tests_docstrings_removed exit 0 expected 0
+calibration1 exit 0 expected 0
+calibration2 exit 0 expected 0
+calibration3 exit 0 expected 0
+faults exit 0 expected 0
+control_always-accept exit 1 expected 1
+control_always-reject exit 1 expected 1
+selected_mutants exit 1 expected 0
+GATE: FAIL
