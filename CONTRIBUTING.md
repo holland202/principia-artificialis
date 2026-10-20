@@ -2,6 +2,8 @@
 
 Thank you for your interest in contributing!
 
+> **Conditions of participation:** This is **free, voluntary, unpaid research** for learning, curiosity, and enjoyment, at your own pace. No fees, required hours, mandatory assignments, employment, or financial compensation. **The only recognition offered is accurate attribution and possible repository publication of accepted contributions with the author's informed consent; publication is not guaranteed.** No equity, royalties, profit-sharing, ownership interest, or future commercial reward is promised. Participation alone does not transfer intellectual property rights. See [full terms](RECRUITMENT_PROTOCOL.md#11-what-contributors-get-and-what-they-dont) and [join instructions](JOIN_RESEARCH.md).
+
 **You can start on your own immediately.** No task assignment, permission to investigate, existing issue or advance approval is required to develop a new research question, work in your fork, open an issue, or propose a pull request. Suggested starter problems are optional. See [the open Research Gateway](JOIN_RESEARCH.md) for the boundary between independent exploration and a formally authorized PA research run.
 
 ## Ways to Contribute
