@@ -1,0 +1,19 @@
+{
+  "calibration": {
+    "cases": 240,
+    "current_accepted": 201,
+    "current_rejected": 0,
+    "current_unresolvable": 39,
+    "digest": "73258fb30a5b2743c775c895a1d535782105affa5779a46851b6385022d27ce9",
+    "unrounded_current_accepted": 60
+  },
+  "classification": "post-observation software outcome pin, not a scientific prediction",
+  "faults": {
+    "cases": 114,
+    "manifest_sha256": "27efb1366b885da80ada136afaf770997f6f41b629b06ee3b441048f9f832f44",
+    "matched": 114,
+    "outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5"
+  },
+  "schema": "pa-ns001-engineering-outcomes/1",
+  "tests": 32
+}
