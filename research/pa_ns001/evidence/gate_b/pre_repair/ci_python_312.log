@@ -1,0 +1,142 @@
+2026-10-20T16:47:14.4030241Z ##[group]Run python research/pa_ns001/gate_b_checks.py
+2026-10-20T16:47:14.4030951Z [36;1mpython research/pa_ns001/gate_b_checks.py[0m
+2026-10-20T16:47:14.4512550Z shell: /usr/bin/bash -e {0}
+2026-10-20T16:47:14.4512841Z env:
+2026-10-20T16:47:14.4513090Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:47:14.4513480Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-10-20T16:47:14.4513837Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:47:14.4514149Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:47:14.4514438Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-10-20T16:47:14.4514738Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-10-20T16:47:14.4515000Z ##[endgroup]
+2026-10-20T16:47:15.6752351Z GATE_B_REPORT_BEGIN
+2026-10-20T16:47:15.6752600Z {
+2026-10-20T16:47:15.6752782Z   "accepted": false,
+2026-10-20T16:47:15.6753062Z   "calibration_audit": {
+2026-10-20T16:47:15.6753268Z     "all_39_explained": true,
+2026-10-20T16:47:15.6753597Z     "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+2026-10-20T16:47:15.6754102Z     "classification": "audit of existing deterministic artifacts; no threshold change or new study",
+2026-10-20T16:47:15.6754460Z     "group_counts": {
+2026-10-20T16:47:15.6754634Z       "both": 23,
+2026-10-20T16:47:15.6754805Z       "momentum_only": 14,
+2026-10-20T16:47:15.6754985Z       "sample_only": 2
+2026-10-20T16:47:15.6755160Z     },
+2026-10-20T16:47:15.6755333Z     "groups": {
+2026-10-20T16:47:15.6755493Z       "both": [
+2026-10-20T16:47:15.6755687Z         "couette/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:47:15.6756155Z         "couette/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:47:15.6756430Z         "couette/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:47:15.6756699Z         "couette/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:47:15.6757285Z         "couette/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:47:15.6757548Z         "couette/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:47:15.6757820Z         "couette/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:47:15.6758085Z         "couette/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:47:15.6758345Z         "couette/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:47:15.6758612Z         "couette/small_velocity/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6758897Z         "poiseuille/unit/n65/physical_decimal_6",
+2026-10-20T16:47:15.6759145Z         "poiseuille/unit/n257/physical_decimal_6",
+2026-10-20T16:47:15.6759390Z         "poiseuille/unit/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6759666Z         "poiseuille/small_velocity/n5/physical_decimal_10",
+2026-10-20T16:47:15.6759951Z         "poiseuille/small_velocity/n5/physical_decimal_6",
+2026-10-20T16:47:15.6760268Z         "poiseuille/small_velocity/n21/physical_decimal_10",
+2026-10-20T16:47:15.6760612Z         "poiseuille/small_velocity/n21/physical_decimal_6",
+2026-10-20T16:47:15.6760882Z         "poiseuille/small_velocity/n65/physical_decimal_10",
+2026-10-20T16:47:15.6761303Z         "poiseuille/small_velocity/n65/physical_decimal_6",
+2026-10-20T16:47:15.6761587Z         "poiseuille/small_velocity/n257/physical_decimal_10",
+2026-10-20T16:47:15.6761896Z         "poiseuille/small_velocity/n257/physical_decimal_6",
+2026-10-20T16:47:15.6762190Z         "poiseuille/small_velocity/n1025/physical_decimal_10",
+2026-10-20T16:47:15.6762479Z         "poiseuille/small_velocity/n1025/physical_decimal_6"
+2026-10-20T16:47:15.6762714Z       ],
+2026-10-20T16:47:15.6762871Z       "momentum_only": [
+2026-10-20T16:47:15.6763071Z         "couette/unit/n257/physical_decimal_6",
+2026-10-20T16:47:15.6763308Z         "couette/unit/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6763554Z         "couette/short_channel/n257/physical_decimal_6",
+2026-10-20T16:47:15.6764048Z         "couette/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6764358Z         "couette/long_channel/n257/physical_decimal_6",
+2026-10-20T16:47:15.6764614Z         "couette/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6764863Z         "couette/reverse/n257/physical_decimal_6",
+2026-10-20T16:47:15.6765113Z         "couette/reverse/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6765377Z         "poiseuille/short_channel/n257/physical_decimal_6",
+2026-10-20T16:47:15.6765666Z         "poiseuille/short_channel/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6766189Z         "poiseuille/long_channel/n257/physical_decimal_6",
+2026-10-20T16:47:15.6766461Z         "poiseuille/long_channel/n1025/physical_decimal_6",
+2026-10-20T16:47:15.6766722Z         "poiseuille/reverse/n257/physical_decimal_6",
+2026-10-20T16:47:15.6766983Z         "poiseuille/reverse/n1025/physical_decimal_6"
+2026-10-20T16:47:15.6767200Z       ],
+2026-10-20T16:47:15.6767354Z       "sample_only": [
+2026-10-20T16:47:15.6767546Z         "poiseuille/unit/n5/physical_decimal_6",
+2026-10-20T16:47:15.6767816Z         "poiseuille/unit/n21/physical_decimal_6"
+2026-10-20T16:47:15.6768026Z       ]
+2026-10-20T16:47:15.6768169Z     },
+2026-10-20T16:47:15.6768329Z     "momentum_cap_total": 37,
+2026-10-20T16:47:15.6768526Z     "recorded_status_counts": {
+2026-10-20T16:47:15.6768721Z       "ACCEPTED": 201,
+2026-10-20T16:47:15.6768895Z       "UNRESOLVABLE": 39
+2026-10-20T16:47:15.6769072Z     },
+2026-10-20T16:47:15.6769219Z     "rows": 240,
+2026-10-20T16:47:15.6769386Z     "sample_cap_total": 25,
+2026-10-20T16:47:15.6769574Z     "unique_ids": 240
+2026-10-20T16:47:15.6769737Z   },
+2026-10-20T16:47:15.6769884Z   "checks": {
+2026-10-20T16:47:15.6770073Z     "B1_all_malformed_envelopes_fail_matching": false,
+2026-10-20T16:47:15.6770328Z     "B1_honest_114_and_digest_unchanged": true,
+2026-10-20T16:47:15.6770563Z     "B4_39_causes_match_prediction": true,
+2026-10-20T16:47:15.6770781Z     "B4_original_240_rows": true
+2026-10-20T16:47:15.6770970Z   },
+2026-10-20T16:47:15.6771440Z   "classification": "same-author CI engineering regression; no independent scientific review or AI study",
+2026-10-20T16:47:15.6771810Z   "command": [
+2026-10-20T16:47:15.6772022Z     "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+2026-10-20T16:47:15.6772279Z     "research/pa_ns001/gate_b_checks.py"
+2026-10-20T16:47:15.6772480Z   ],
+2026-10-20T16:47:15.6772619Z   "controls": [
+2026-10-20T16:47:15.6772772Z     {
+2026-10-20T16:47:15.6772920Z       "cases": 114,
+2026-10-20T16:47:15.6773100Z       "incorrectly_matched": 114,
+2026-10-20T16:47:15.6773311Z       "mode": "flipped"
+2026-10-20T16:47:15.6773481Z     },
+2026-10-20T16:47:15.6773622Z     {
+2026-10-20T16:47:15.6773764Z       "cases": 114,
+2026-10-20T16:47:15.6773932Z       "incorrectly_matched": 114,
+2026-10-20T16:47:15.6774122Z       "mode": "missing"
+2026-10-20T16:47:15.6774284Z     },
+2026-10-20T16:47:15.6774425Z     {
+2026-10-20T16:47:15.6774569Z       "cases": 114,
+2026-10-20T16:47:15.6774733Z       "incorrectly_matched": 114,
+2026-10-20T16:47:15.6774948Z       "mode": "integer_one"
+2026-10-20T16:47:15.6775124Z     },
+2026-10-20T16:47:15.6775263Z     {
+2026-10-20T16:47:15.6775412Z       "cases": 114,
+2026-10-20T16:47:15.6775585Z       "incorrectly_matched": 114,
+2026-10-20T16:47:15.6775785Z       "mode": "integer_zero"
+2026-10-20T16:47:15.6776071Z     }
+2026-10-20T16:47:15.6776223Z   ],
+2026-10-20T16:47:15.6776526Z   "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+2026-10-20T16:47:15.6776939Z   "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+2026-10-20T16:47:15.6777244Z   "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+2026-10-20T16:47:15.6777540Z   "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+2026-10-20T16:47:15.6777786Z   "sources": {
+2026-10-20T16:47:15.6777949Z     "RECORDED.json": {
+2026-10-20T16:47:15.6778140Z       "md5": "46280f017cab51f4f7347e10f3ca07d4",
+2026-10-20T16:47:15.6778459Z       "sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c"
+2026-10-20T16:47:15.6778892Z     },
+2026-10-20T16:47:15.6779063Z     "evaluate_faults.py": {
+2026-10-20T16:47:15.6779273Z       "md5": "591540e46fa2504d1b6b8108d5249a0d",
+2026-10-20T16:47:15.6779584Z       "sha256": "c5c45a75728f9e2b8f01849e1fb1ce97e374ce0913fe4273f71add9ba2e1eaf4"
+2026-10-20T16:47:15.6779880Z     },
+2026-10-20T16:47:15.6780040Z     "gate_b_checks.py": {
+2026-10-20T16:47:15.6780238Z       "md5": "825bd82744f11ff59452bc8f9c8495f0",
+2026-10-20T16:47:15.6780547Z       "sha256": "a91ea15ba74ce3bdc6c1f274c71d498a9f4150e7f33896ff7f26baab01bf3d8b"
+2026-10-20T16:47:15.6780833Z     },
+2026-10-20T16:47:15.6780981Z     "ns001.py": {
+2026-10-20T16:47:15.6781155Z       "md5": "55480877c0f0408dfd666555393ab2d4",
+2026-10-20T16:47:15.6781458Z       "sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518"
+2026-10-20T16:47:15.6781742Z     },
+2026-10-20T16:47:15.6781891Z     "test_stage2.py": {
+2026-10-20T16:47:15.6782077Z       "md5": "d4816085f6c53ba8003eef23e5aae6df",
+2026-10-20T16:47:15.6782391Z       "sha256": "f3f6dc0e42c67183140a99df8231d0eed9f5c7f86ce0a834c2df62cdcfd81cb6"
+2026-10-20T16:47:15.6782677Z     }
+2026-10-20T16:47:15.6782820Z   }
+2026-10-20T16:47:15.6782959Z }
+2026-10-20T16:47:15.6783109Z GATE_B_REPORT_END
+2026-10-20T16:47:15.6783270Z GATE: FAIL
+2026-10-20T16:47:15.6826826Z ##[error]Process completed with exit code 1.

@@ -22,6 +22,13 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Gate B verdict-contract and existing-artifact checks; no AI calls
         run: python research/pa_ns001/gate_b_checks.py
+      - name: Gate B status-only sabotage must exit exactly 1
+        shell: bash
+        run: |
+          set +e
+          python -O research/pa_ns001/gate_b_checks.py --sabotage
+          rc=$?
+          test "$rc" -eq 1
       - name: Pinned local engineering checks; no AI calls
         run: python research/pa_ns001/engineering_gate.py --output "$RUNNER_TEMP/pa-ns001-engineering"
       - name: A sabotaged fixture checker must exit exactly 1
@@ -31,3 +38,18 @@ jobs:
           python research/pa_ns001/engineering_gate.py --sabotage --output "$RUNNER_TEMP/pa-ns001-sabotage"
           rc=$?
           test "$rc" -eq 1
+
+      - name: Retain raw regression and mutant output in the job log
+        if: always()
+        shell: bash
+        run: |
+          python - <<'PY'
+          import os
+          from pathlib import Path
+          root = Path(os.environ['RUNNER_TEMP']) / 'pa-ns001-engineering'
+          for name in ('tests_normal.stderr.txt', 'tests_optimized.stderr.txt',
+                       'tests_docstrings_removed.stderr.txt', 'mutants/summary.json'):
+              print('PA_NS001_LOG_BEGIN', name)
+              print((root / name).read_text(), end='')
+              print('PA_NS001_LOG_END', name)
+          PY

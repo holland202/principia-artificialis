@@ -1,0 +1,120 @@
+{
+  "schema": "pa-ns001-gate-b-ci/1",
+  "records": [
+    {
+      "python_matrix": "3.11",
+      "python_executed": "3.11.17 (main, Oct  1 2026, 14:32:31) [GCC 13.3.0]",
+      "job_id": 118758307645,
+      "run_id": 39460470381,
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "step_command": "python research/pa_ns001/gate_b_checks.py",
+      "exit_code": 1,
+      "raw_step_log": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log",
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_zero"
+        }
+      ],
+      "calibration_group_counts": {
+        "both": 23,
+        "momentum_only": 14,
+        "sample_only": 2
+      },
+      "classification": "before-repair public CI engineering counterexample; not external scientific review"
+    },
+    {
+      "python_matrix": "3.13",
+      "python_executed": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+      "job_id": 118758308152,
+      "run_id": 39460470381,
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "step_command": "python research/pa_ns001/gate_b_checks.py",
+      "exit_code": 1,
+      "raw_step_log": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log",
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_zero"
+        }
+      ],
+      "calibration_group_counts": {
+        "both": 23,
+        "momentum_only": 14,
+        "sample_only": 2
+      },
+      "classification": "before-repair public CI engineering counterexample; not external scientific review"
+    },
+    {
+      "python_matrix": "3.12",
+      "python_executed": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+      "job_id": 118758308390,
+      "run_id": 39460470381,
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "step_command": "python research/pa_ns001/gate_b_checks.py",
+      "exit_code": 1,
+      "raw_step_log": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log",
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 114,
+          "mode": "integer_zero"
+        }
+      ],
+      "calibration_group_counts": {
+        "both": 23,
+        "momentum_only": 14,
+        "sample_only": 2
+      },
+      "classification": "before-repair public CI engineering counterexample; not external scientific review"
+    }
+  ],
+  "note": "Original timestamped step lines retained verbatim. Other job setup/cleanup text omitted; no review text reconstructed."
+}

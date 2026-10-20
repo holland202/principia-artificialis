@@ -199,3 +199,24 @@ Delta below .05, too much false rejection, profile-only rival equally effective,
 oracle disagreement, unresolved precision or insufficient independent evidence.
 Preserve these without relabeling them as success. Next unrun discriminating step:
 Gate B specification review and approved task/domain/arm design, not an AI benchmark.
+
+## Gate B draft amendment — 2026-10-20: fair profile-only rival
+
+**DRAFT, NOT FROZEN.** This corrects section 3's sentence requiring identical
+precision limits in V and the profile-only rival R. It does not approve or execute
+a study, change V's thresholds, or select study A over B.
+
+R and V receive identical profiles, representation/uncertainty information, physical
+parameters, scale and profile-error tolerance. Shared input validity rules and the
+profile's own sample-resolution cap apply to both. **R does not inherit a
+momentum-residual or grid-amplified momentum-resolution veto**, because R takes no
+second derivative. A cap needed only by V cannot be imposed on R to make the two
+methods look equally applicable.
+
+R may therefore resolve a case that V declines solely because V's derivative-error
+allowance exceeds its momentum cap. Count that distinction in coverage and
+conservative false rejection; do not exclude those cases from either primary
+denominator. Any comparison limited to jointly resolvable cases is secondary and
+must be fixed before outcomes are seen. This is an arm-design correction, not an
+implemented study adapter. Independent review and Gate C owner approval remain
+required. The original wording above is kept as history.

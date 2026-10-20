@@ -15,8 +15,14 @@ def evaluate(verifier=verify):
         kwargs = {k: float(v) for k, v in row['parameters'].items()}
         result = verifier(row['family'], decode_values(row),
                           sample_error_bound=row['sample_error_bound'], **kwargs)
+        # A correct status label cannot excuse an absent, non-Boolean or
+        # contradictory operational acceptance field.
+        matched = (type(result) is dict
+                   and result.get('status') == row['expected_status']
+                   and type(result.get('accepted')) is bool
+                   and result['accepted'] is (row['expected_status'] == 'ACCEPTED'))
         outcomes.append({'id': row['id'], 'expected_status': row['expected_status'],
-                         'observed': result, 'matched': result['status'] == row['expected_status']})
+                         'observed': result, 'matched': matched})
     return fixtures, outcomes
 
 

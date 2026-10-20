@@ -173,6 +173,22 @@ class TestStage2(unittest.TestCase):
         for status in ('ACCEPTED', 'REJECTED'):
             _, outcomes = evaluate(lambda *a, **k: {'accepted': status == 'ACCEPTED', 'status': status})
             self.assertTrue(any(not r['matched'] for r in outcomes))
+        # Keep the real status labels but corrupt the operational result field.
+        # Each of these four controls falsely scored 114/114 before Gate B repair.
+        for mode in ('flipped', 'missing', 'integer_one', 'integer_zero'):
+            def malformed(*args, _mode=mode, **kwargs):
+                result = dict(verify(*args, **kwargs))
+                if _mode == 'flipped':
+                    result['accepted'] = not result['accepted']
+                elif _mode == 'missing':
+                    result.pop('accepted')
+                else:
+                    result['accepted'] = 1 if _mode == 'integer_one' else 0
+                return result
+            _, outcomes = evaluate(malformed)
+            with self.subTest(malformed_result=mode):
+                self.assertTrue(outcomes)
+                self.assertTrue(all(not r['matched'] for r in outcomes))
 
 
 if __name__ == '__main__':

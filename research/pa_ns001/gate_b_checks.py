@@ -99,11 +99,17 @@ def main():
         'B4_original_240_rows': calibration['rows'] == 240 and calibration['unique_ids'] == 240,
         'B4_39_causes_match_prediction': calibration['all_39_explained'] and calibration['group_counts'] == {'sample_only': 2, 'momentum_only': 14, 'both': 23},
     }
-    files = ['ns001.py', 'evaluate_faults.py', 'test_stage2.py', 'gate_b_checks.py', 'RECORDED.json']
+    # Explicit current-source scope; this is not a whole-repository inventory.
+    paths = sorted(HERE.glob('*.py')) + [HERE/name for name in
+             ('RECORDED.json', 'GATE_B_SCOPE.md', 'PREREGISTRATION_DRAFT.md')]
+    paths += sorted((HERE/'evidence/gate_b/pre_repair').glob('*'))
     source = {}
-    for name in files:
-        data = (HERE/name).read_bytes()
-        source[name] = {'sha256': hashlib.sha256(data).hexdigest(), 'md5': hashlib.md5(data).hexdigest()}
+    for path in paths:
+        data = path.read_bytes()
+        source[path.relative_to(ROOT).as_posix()] = {
+            'bytes': len(data), 'sha256': hashlib.sha256(data).hexdigest(),
+            'md5': hashlib.md5(data).hexdigest()}
+
     report = {
         'source_commit': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip(),
         'command': [sys.executable, *sys.argv], 'python': sys.version, 'platform': platform.platform(),
