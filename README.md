@@ -4,9 +4,13 @@
 
 > **Participation conditions — read before joining.** Principia Artificialis is a **free, strictly voluntary, unpaid research community**. Join for fun, curiosity, learning, and independent investigation, at **your own pace**: no fees, required hours, assignments, or membership obligations. **The only recognition offered is accurate contributor credit and the possibility of publishing accepted work in this repository with the contributor's written consent.** Publication requires review and is not guaranteed. **No wages, consulting fees, expense reimbursement, equity, royalties, co-ownership, commercial partnership, or future financial rewards are offered or promised.** Participation alone does not transfer anyone's intellectual property. See [full recruitment terms](RECRUITMENT_PROTOCOL.md#11-what-contributors-get-and-what-they-dont) and [research onboarding](JOIN_RESEARCH.md).
 
+**[Visit the PA Public Research Dashboard →](https://holland202.github.io/principia-artificialis/dashboard.html)** · [Public homepage](https://holland202.github.io/principia-artificialis/) · [How to contribute](JOIN_RESEARCH.md) · [Contributor acknowledgments](AUTHORS.md)
+
+**Public pilot update (2026-10-19):** Active outreach/recruitment is paused while existing collaborations receive priority. Anyone may still explore or submit independent research. Participation remains voluntary, unpaid and at your own pace; submission does not confer scientific approval, publication authority or repository access.
+
 **Research is open — start your own idea today.** You do **not** need an assignment, a starter issue or advance permission to explore a question or [submit a PR from your fork](JOIN_RESEARCH.md). [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Optional starter questions](RESEARCH_OPPORTUNITIES.md) · [Volunteer review process](REVIEW_PLAYBOOK.md). Official PA experiments, canonical rule changes and merges still follow the research controls.
 
-![Principia Artificialis](figures/principia_hero.png)
+[![Principia Artificialis — existing research artwork](figures/principia_hero.png)](https://holland202.github.io/principia-artificialis/dashboard.html)
 
 ![repo fetch](figures/principia_fetch.svg)
 
