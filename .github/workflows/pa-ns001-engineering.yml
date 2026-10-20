@@ -20,6 +20,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python }}
+      - name: Gate B verdict-contract and existing-artifact checks; no AI calls
+        run: python research/pa_ns001/gate_b_checks.py
       - name: Pinned local engineering checks; no AI calls
         run: python research/pa_ns001/engineering_gate.py --output "$RUNNER_TEMP/pa-ns001-engineering"
       - name: A sabotaged fixture checker must exit exactly 1
