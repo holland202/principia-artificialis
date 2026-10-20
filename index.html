@@ -1,329 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Principia Artificialis — File Graph</title>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#101c29">
+<meta property="og:title" content="Principia Artificialis — Open AI Research">
+<meta property="og:image" content="https://holland202.github.io/principia-artificialis/figures/principia_hero.png">
+<meta name="description" content="Principia Artificialis: open, evidence-focused, AI-assisted research into mathematics and artificial intelligence.">
+<title>Principia Artificialis | Open AI Research</title>
 <style>
-  :root{
-    --void:#05070C; --panel:#0C1119; --rule:#1A2431; --text:#D6E2F0;
-    --dim:#7288A3; --faint:#3D4C60; --hot:#FFB454;
-    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
-    --serif:Georgia,"Iowan Old Style",serif;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html,body{height:100%;background:var(--void);color:var(--text);
-    font-family:var(--mono);overflow:hidden;-webkit-text-size-adjust:100%}
-  canvas{display:block;width:100vw;height:100vh;touch-action:none;cursor:grab}
-  canvas.drag{cursor:grabbing}
-
-  .panel{position:fixed;background:rgba(12,17,25,.93);border:1px solid var(--rule)}
-
-  #hud{top:0;left:0;bottom:0;width:270px;border-width:0 1px 0 0;
-    padding:20px 18px;overflow-y:auto;z-index:10}
-  #hud h1{font-family:var(--serif);font-size:19px;font-weight:400;line-height:1.15}
-  #hud h1 em{font-style:italic;color:var(--dim);display:block;font-size:15px}
-  .stamp{font-size:9px;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--faint);margin:6px 0 20px}
-
-  .hero{border-left:2px solid var(--hot);padding:11px 13px;
-    background:rgba(255,180,84,.05);margin-bottom:20px}
-  .hero .n{font-family:var(--serif);font-size:34px;line-height:1;color:var(--hot);
-    font-variant-numeric:tabular-nums}
-  .hero .l{font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
-    color:var(--dim);margin-top:4px;line-height:1.5}
-
-  .sec{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);
-    padding-bottom:6px;margin:0 0 8px;border-bottom:1px solid var(--rule)}
-  .grp{margin-bottom:20px}
-  .r{display:flex;justify-content:space-between;font-size:11.5px;
-    padding:2.5px 0;color:var(--dim)}
-  .r b{color:var(--text);font-weight:500;font-variant-numeric:tabular-nums}
-  .k{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--dim);padding:2.5px 0}
-  .d{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:0 0 7px currentColor}
-
-  #tip{display:none;max-width:290px;padding:12px 14px;z-index:30;pointer-events:none}
-  #tip .p{font-size:9px;letter-spacing:.13em;color:var(--faint);
-    text-transform:uppercase;word-break:break-all}
-  #tip .t{font-family:var(--serif);font-size:14.5px;line-height:1.3;margin:4px 0 7px;
-    word-break:break-word}
-  #tip .m{font-size:11px;color:var(--dim);line-height:1.55}
-
-  #bar{position:fixed;left:270px;right:0;bottom:0;padding:8px 16px;font-size:10px;
-    color:var(--faint);letter-spacing:.04em;z-index:5;
-    background:linear-gradient(transparent,var(--void) 65%)}
-  @media(max-width:760px){
-    #hud{width:100%;bottom:auto;max-height:44vh;border-width:0 0 1px 0}
-    #bar{left:0}
-  }
-</style>
-</head>
-<body>
-<canvas id="c"></canvas>
-
-<aside class="panel" id="hud">
-  <h1>File Graph<em>Principia Artificialis</em></h1>
-  <div class="stamp" id="stamp"></div>
-
-  <div class="hero">
-    <div class="n" id="hE">—</div>
-    <div class="l">measured edges<br>none invented</div>
-  </div>
-
-  <div class="grp">
-    <div class="sec">Nodes</div>
-    <div class="r"><span>files</span><b id="sF">—</b></div>
-    <div class="r"><span>directories</span><b id="sD">—</b></div>
-    <div class="r"><span>orphans</span><b id="sO">—</b></div>
-  </div>
-
-  <div class="grp">
-    <div class="sec">Edges by kind</div>
-    <div class="r"><span>contains</span><b id="eC">—</b></div>
-    <div class="r"><span>sibling</span><b id="eS">—</b></div>
-    <div class="r"><span>builds&nbsp;on</span><b id="eB">—</b></div>
-  </div>
-
-  <div class="grp">
-    <div class="sec">Legend</div>
-    <div id="leg"></div>
-  </div>
-
-  <div class="grp">
-    <div class="sec">Reading it</div>
-    <div class="r" style="display:block;line-height:1.55">
-      <span>Amber halo marks a note whose registered claim failed and was
-      kept. Sibling edges join a note to its figure and its reference
-      script &mdash; the same artifact in three files.</span>
-    </div>
-  </div>
-</aside>
-
-<div class="panel" id="tip">
-  <div class="p" id="tp"></div>
-  <div class="t" id="tt"></div>
-  <div class="m" id="tm"></div>
-</div>
-
-<div id="bar">drag to orbit &middot; pinch or scroll to zoom &middot; tap a node</div>
-
-<script id="D" type="application/json">{"nodes":[{"id":"/","label":"(root)","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":37,"orphan":false},{"id":"Exp003","label":"Exp003","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":2,"orphan":false},{"id":"data","label":"data","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"datasets","label":"datasets","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":2,"orphan":false},{"id":"discussions","label":"discussions","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"examples/verified_model_example","label":"examples/verified_model_example","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"experiments","label":"experiments","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":8,"orphan":false},{"id":"experiments/information_geometry","label":"experiments/information_geometry","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"figures","label":"figures","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":50,"orphan":false},{"id":"formal","label":"formal","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":2,"orphan":false},{"id":"notes","label":"notes","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"references","label":"references","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"research_notes","label":"research_notes","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":79,"orphan":false},{"id":"results","label":"results","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":3,"orphan":false},{"id":"scripts","label":"scripts","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":32,"orphan":false},{"id":"simulations","label":"simulations","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":8,"orphan":false},{"id":"sovereign_core","label":"sovereign_core","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":10,"orphan":false},{"id":"whitepapers","label":"whitepapers","kind":"dir","num":null,"status":"","cls":"dir","bytes":0,"deg":9,"orphan":false}],"edges":[],"stats":{"files":228,"dirs":18,"nodes":246,"edges":380,"contains":244,"sibling":95,"builds_on":41,"orphans":0},"kinds":{"dir":18,"code":48,"data":10,"other":6,"doc":115,"build":1,"proof":1,"figure":47},"generated":"generated 2026-07-24"}</script>
-<script>
-(function(){
-"use strict";
-var D=JSON.parse(document.getElementById('D').textContent),S=D.stats;
-function T(i,v){var e=document.getElementById(i);if(e)e.textContent=v;}
-T('stamp',D.generated||'');T('hE',S.edges);T('sF',S.files);T('sD',S.dirs);
-T('sO',S.orphans);T('eC',S.contains);T('eS',S.sibling);T('eB',S.builds_on);
-
-var COL={dir:'#5B7FA8',doc:'#8FA8C4',code:'#4FD6B8',figure:'#C77DD6',
-         data:'#E0C060',proof:'#FF7B6B',build:'#6B7C93',other:'#46566B',
-         refuted:'#FFB454',verified:'#4FD6B8',draft:'#8FA8C4',
-         speculative:'#6A7E9B',unlabeled:'#46566B'};
-var LEG=[['dir','directory'],['doc','markdown note'],['code','python / shell'],
-         ['figure','figure or gif'],['data','data + logs'],['refuted','refuted, kept']];
-var lg=document.getElementById('leg');
-LEG.forEach(function(p){var d=document.createElement('div');d.className='k';
-  d.innerHTML='<span class="d" style="background:'+COL[p[0]]+';color:'+COL[p[0]]+'"></span>'+p[1];
-  lg.appendChild(d);});
-
-var N=D.nodes.map(function(n){return Object.assign({},n);});
-var ix={};N.forEach(function(n,i){ix[n.id]=i;});
-var E=D.edges.filter(function(e){return ix[e.source]!==undefined&&ix[e.target]!==undefined;})
-             .map(function(e){return {s:ix[e.source],t:ix[e.target],k:e.kind};});
-
-var _s=1337;function rnd(){_s=(_s*1103515245+12345)&0x7fffffff;return _s/0x7fffffff;}
-N.forEach(function(n,i){
-  var u=rnd()*2-1,th=rnd()*6.2832,r=170*Math.cbrt(rnd())+40;
-  var s=Math.sqrt(1-u*u);
-  n.x=r*s*Math.cos(th);n.y=r*s*Math.sin(th);n.z=r*u;
-  n.vx=n.vy=n.vz=0;
-  n.m=n.kind==='dir'?3.2:1;
-  n.rad=n.kind==='dir'?3.4:(1.5+Math.min(3.2,Math.log(1+n.bytes/900)));
-  n.col=COL[n.cls]||COL[n.kind]||COL.other;
-});
-
-var cv=document.getElementById('c'),cx=cv.getContext('2d'),DPR=1;
-function fit(){DPR=Math.min(devicePixelRatio||1,2);
-  cv.width=Math.round(cv.clientWidth*DPR);cv.height=Math.round(cv.clientHeight*DPR);}
-addEventListener('resize',function(){fit();paint();});fit();
-
-var rotY=0.4,rotX=-0.22,zoom=innerWidth<760?1.05:1.7,alpha=1,auto=true;
-
-function tick(){
-  if(alpha<0.0025)return false;
-  alpha*=0.986;
-  var i,j,a,b,dx,dy,dz,d2,d,f,u;
-  for(i=0;i<N.length;i++){
-    a=N[i];
-    for(j=i+1;j<N.length;j++){
-      b=N[j];dx=b.x-a.x;dy=b.y-a.y;dz=b.z-a.z;d2=dx*dx+dy*dy+dz*dz;
-      if(d2<1e-4){dx=rnd()-.5;dy=rnd()-.5;dz=rnd()-.5;d2=1e-4;}
-      if(d2>250000)continue;
-      d=Math.sqrt(d2);f=900*a.m*b.m/d2/d;
-      a.vx-=dx*f;a.vy-=dy*f;a.vz-=dz*f;
-      b.vx+=dx*f;b.vy+=dy*f;b.vz+=dz*f;
-    }
-  }
-  for(i=0;i<E.length;i++){
-    a=N[E[i].s];b=N[E[i].t];
-    dx=b.x-a.x;dy=b.y-a.y;dz=b.z-a.z;
-    d=Math.sqrt(dx*dx+dy*dy+dz*dz)||1e-4;
-    u=E[i].k==='contains'?46:(E[i].k==='sibling'?26:62);
-    f=(d-u)*(E[i].k==='sibling'?0.030:0.016)/d;
-    a.vx+=dx*f;a.vy+=dy*f;a.vz+=dz*f;
-    b.vx-=dx*f;b.vy-=dy*f;b.vz-=dz*f;
-  }
-  for(i=0;i<N.length;i++){
-    a=N[i];
-    a.vx-=a.x*0.0075;a.vy-=a.y*0.0075;a.vz-=a.z*0.0075;
-    a.x+=a.vx*alpha*1.7;a.y+=a.vy*alpha*1.7;a.z+=a.vz*alpha*1.7;
-    a.vx*=0.80;a.vy*=0.80;a.vz*=0.80;
-  }
-  return true;
-}
-
-var W,H,CXp,CYp;
-function proj(n){
-  var cy=Math.cos(rotY),sy=Math.sin(rotY),cxr=Math.cos(rotX),sxr=Math.sin(rotX);
-  var x=n.x*cy-n.z*sy, z=n.x*sy+n.z*cy;
-  var y=n.y*cxr-z*sxr;  z=n.y*sxr+z*cxr;
-  var p=760/(760+z+420);
-  n.px=CXp+x*p*zoom; n.py=CYp+y*p*zoom; n.pz=z; n.pp=p;
-}
-
-function paint(){
-  W=cv.clientWidth;H=cv.clientHeight;CXp=W/2+(W>760?135:0);CYp=H/2;
-  cx.setTransform(DPR,0,0,DPR,0,0);
-  cx.globalCompositeOperation='source-over';
-  var g=cx.createRadialGradient(CXp,CYp,0,CXp,CYp,Math.max(W,H)*.78);
-  g.addColorStop(0,'#0B1220');g.addColorStop(1,'#05070C');
-  cx.fillStyle=g;cx.fillRect(0,0,W,H);
-
-  var i,n;
-  for(i=0;i<N.length;i++)proj(N[i]);
-
-  cx.globalCompositeOperation='lighter';
-  for(i=0;i<E.length;i++){
-    var a=N[E[i].s],b=N[E[i].t];
-    var dep=Math.max(.08,Math.min(1,(a.pp+b.pp)/2));
-    var o,c;
-    if(E[i].k==='sibling'){c='199,125,214';o=.40*dep;}
-    else if(E[i].k==='builds_on'){c='79,214,184';o=.34*dep;}
-    else {c='70,92,124';o=.16*dep;}
-    cx.strokeStyle='rgba('+c+','+o.toFixed(3)+')';
-    cx.lineWidth=(E[i].k==='contains'?.6:1.05)*dep;
-    cx.beginPath();cx.moveTo(a.px,a.py);cx.lineTo(b.px,b.py);cx.stroke();
-  }
-
-  var ord=N.slice().sort(function(p,q){return q.pz-p.pz;});
-  for(i=0;i<ord.length;i++){
-    n=ord[i];
-    var r=Math.max(.7,n.rad*n.pp*zoom),dep=Math.max(.1,Math.min(1,n.pp));
-    var gr=cx.createRadialGradient(n.px,n.py,0,n.px,n.py,r*7);
-    gr.addColorStop(0,hex(n.col,.62*dep));
-    gr.addColorStop(.35,hex(n.col,.14*dep));
-    gr.addColorStop(1,hex(n.col,0));
-    cx.fillStyle=gr;
-    cx.beginPath();cx.arc(n.px,n.py,r*7,0,6.2832);cx.fill();
-  }
-  cx.globalCompositeOperation='source-over';
-  for(i=0;i<ord.length;i++){
-    n=ord[i];
-    var r=Math.max(.7,n.rad*n.pp*zoom),dep=Math.max(.15,Math.min(1,n.pp));
-    cx.fillStyle=hex(n.col,.55+.45*dep);
-    cx.beginPath();cx.arc(n.px,n.py,r,0,6.2832);cx.fill();
-    if(n.cls==='refuted'){
-      cx.strokeStyle='rgba(255,180,84,.72)';cx.lineWidth=1.25;
-      cx.beginPath();cx.arc(n.px,n.py,r+3.4,0,6.2832);cx.stroke();
-    }
-    if(n===hov){
-      cx.strokeStyle='rgba(214,226,240,.92)';cx.lineWidth=1.15;
-      cx.beginPath();cx.arc(n.px,n.py,r+6,0,6.2832);cx.stroke();
-    }
-  }
-
-  cx.font='500 10px '+getComputedStyle(document.body).fontFamily;
-  cx.textAlign='center';
-  for(i=0;i<N.length;i++){
-    n=N[i];
-    if(n.kind==='dir'&&n.pp>.62&&zoom>.75){
-      cx.fillStyle='rgba(114,136,163,'+Math.min(.85,n.pp).toFixed(2)+')';
-      cx.fillText(n.label,n.px,n.py-n.rad*n.pp*zoom-7);
-    }
-  }
-}
-function hex(h,a){var n=parseInt(h.slice(1),16);
-  return 'rgba('+(n>>16)+','+((n>>8)&255)+','+(n&255)+','+a.toFixed(3)+')';}
-
-var hov=null,tip=document.getElementById('tip');
-function pick(mx,my){
-  var best=null,bd=1e9;
-  for(var i=0;i<N.length;i++){
-    var n=N[i],dx=n.px-mx,dy=n.py-my,d=dx*dx+dy*dy;
-    var rr=Math.max(7,n.rad*n.pp*zoom+7);rr*=rr;
-    if(d<rr&&d<bd){bd=d;best=n;}
-  }
-  return best;
-}
-function showTip(n,mx,my){
-  if(!n){tip.style.display='none';hov=null;paint();return;}
-  hov=n;
-  document.getElementById('tp').textContent=n.id;
-  document.getElementById('tt').textContent=n.label;
-  var kb=n.bytes>=1024?(n.bytes/1024).toFixed(1)+' KB':n.bytes+' B';
-  document.getElementById('tm').textContent=
-    (n.status?n.status+'\u2003':'')+n.kind+
-    (n.kind==='dir'?'':' \u00b7 '+kb)+' \u00b7 '+n.deg+
-    ' edge'+(n.deg===1?'':'s');
-  tip.style.display='block';
-  var tw=tip.offsetWidth,th=tip.offsetHeight;
-  tip.style.left=Math.max(6,Math.min(mx+15,innerWidth-tw-6))+'px';
-  tip.style.top =Math.max(6,Math.min(my+15,innerHeight-th-6))+'px';
-  paint();
-}
-
-var down=false,lx=0,ly=0,mv=0;
-function pDown(x,y){down=true;lx=x;ly=y;mv=0;auto=false;cv.classList.add('drag');}
-function pMove(x,y){
-  if(down){rotY+=(x-lx)*0.0058;rotX+=(y-ly)*0.0058;
-    rotX=Math.max(-1.5,Math.min(1.5,rotX));
-    mv+=Math.abs(x-lx)+Math.abs(y-ly);lx=x;ly=y;paint();}
-  else showTip(pick(x,y),x,y);
-}
-function pUp(x,y){if(down&&mv<6)showTip(pick(x,y),x,y);
-  down=false;cv.classList.remove('drag');}
-cv.addEventListener('mousedown',function(e){pDown(e.clientX,e.clientY);});
-addEventListener('mousemove',function(e){pMove(e.clientX,e.clientY);});
-addEventListener('mouseup',function(e){pUp(e.clientX,e.clientY);});
-cv.addEventListener('touchstart',function(e){
-  if(e.touches.length===1){var t=e.touches[0];pDown(t.clientX,t.clientY);}},{passive:true});
-cv.addEventListener('touchmove',function(e){
-  if(e.touches.length===1){var t=e.touches[0];pMove(t.clientX,t.clientY);}},{passive:true});
-cv.addEventListener('touchend',function(e){
-  var t=e.changedTouches[0];pUp(t.clientX,t.clientY);},{passive:true});
-cv.addEventListener('wheel',function(e){
-  e.preventDefault();auto=false;
-  zoom=Math.max(.25,Math.min(7,zoom*(e.deltaY<0?1.1:.909)));paint();},{passive:false});
-var pd=0;
-cv.addEventListener('touchstart',function(e){
-  if(e.touches.length===2){auto=false;
-    pd=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,
-                  e.touches[0].clientY-e.touches[1].clientY);}},{passive:true});
-cv.addEventListener('touchmove',function(e){
-  if(e.touches.length===2&&pd){
-    var d=Math.hypot(e.touches[0].clientX-e.touches[1].clientX,
-                     e.touches[0].clientY-e.touches[1].clientY);
-    zoom=Math.max(.25,Math.min(7,zoom*(d/pd)));pd=d;down=false;paint();}},{passive:true});
-
-var slow=matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-if(slow){for(var q=0;q<320;q++)tick();alpha=0;paint();}
-else{(function loop(){
-  var live=tick();
-  if(auto)rotY+=0.00075;
-  if(live||auto){paint();requestAnimationFrame(loop);}else paint();
-})();}
-})();
-</script>
-</body>
-</html>
+:root{color-scheme:dark;--bg:#0c1623;--panel:#162637;--line:#3a4c5d;--text:#eef1ed;--dim:#bac9cc;--mint:#cee8a3;--aqua:#a5e2e5}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+body:before{content:"";position:absolute;top:0;left:0;right:0;height:600px;background:radial-gradient(ellipse at 95% 0%,#28464c 0%,transparent 55%);pointer-events:none}
+a{color:var(--aqua)}a:focus-visible,button:focus-visible{outline:3px solid var(--mint);outline-offset:3px}
+.wrap{position:relative;max-width:1160px;margin:0 auto;padding:0 24px}
+header{border-bottom:1px solid var(--line)}.nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--text);font-weight:800;letter-spacing:.07em;text-transform:uppercase;font-size:13px;line-height:1.3}
+.logo b{border:1px solid var(--mint);color:var(--mint);font:27px Georgia,serif;display:grid;place-items:center;width:43px;height:43px;border-radius:50%}
+.logo small{display:block;font-size:10px;color:var(--dim);font-weight:400;letter-spacing:.1em}
+nav{display:flex;flex-wrap:wrap;gap:19px}nav a{color:var(--dim);font-size:14px;text-decoration:none}nav a:hover{color:var(--text)}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:65px;padding-top:102px;padding-bottom:90px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);font-weight:800}
+h1,h2,h3{font:normal 400 1.13 Georgia,Times,serif;letter-spacing:-.02em}h1{font-size:clamp(44px,5.8vw,78px);margin:17px 0 24px}h1 span{color:var(--mint)}
+h2{font-size:clamp(32px,3.3vw,44px);margin:13px 0 18px}h3{font-size:24px;margin:16px 0 12px}
+p{margin:0 0 17px}.lede{font-size:19px;color:#d4dfe0;max-width:630px}.muted{color:var(--dim)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--mint);padding:11px 19px;min-height:47px;border-radius:5px;background:var(--mint);color:#12231d;text-decoration:none;font-weight:800;font-size:14px}
+.btn:hover{background:#e1f4bf;color:#12231d}.btn.alt{border-color:#71889a;background:transparent;color:var(--text)}.btn.alt:hover{background:#253b4b}
+.aside{border:1px solid #496467;border-radius:9px;background:linear-gradient(135deg,#193239,#162533);padding:34px;box-shadow:0 20px 60px #0003}
+.aside img{width:100%;height:auto;max-height:210px;object-fit:contain;margin:0 0 20px;border-radius:4px;display:block}.aside h2{font-size:31px}.aside p{color:var(--dim);font-size:15px}
+.aside .rule{border-top:1px solid #476063;margin:19px 0}.aside strong{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#e9caaf}
+section{border-top:1px solid var(--line);padding:68px 0}.intro{max-width:780px;margin-bottom:35px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:27px}
+.card .num{color:var(--mint);font-size:12px;font-weight:800;letter-spacing:.1em}
+.card p{font-size:14px;color:var(--dim)}.card a{font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.step{background:#142536;border-top:2px solid var(--mint);padding:22px}.step b{color:var(--mint);font-size:13px}.step p{font-size:14px;color:var(--dim)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:46px}
+.quote{background:#1b332f;border-left:3px solid var(--mint);padding:28px;align-self:start;border-radius:0 5px 5px 0}
+.links a{display:block;border:1px solid var(--line);background:var(--panel);padding:14px 17px;margin-bottom:10px;color:var(--text);text-decoration:none}.links a:hover{border-color:var(--mint)}
+.note{margin-top:22px;font-size:14px;color:var(--dim)}
+footer{border-top:1px solid var(--line);padding:31px 0 45px;color:var(--dim);font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:880px){.hero,.two{grid-template-columns:1fr}.hero{padding-top:68px;gap:26px}.grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.nav{align-items:flex-start;flex-direction:column;padding:18px 0;gap:15px}}
+@media(max-width:560px){.wrap{padding:0 18px}.grid,.steps{grid-template-columns:1fr}.hero{padding-top:54px;padding-bottom:55px}section{padding:47px 0}.lede{font-size:17px}h1{font-size:44px}.aside{padding:22px}.actions .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style></head><body>
+<header><div class="wrap nav"><a class="logo" href="./"><b aria-hidden="true">Π</b><span>Principia Artificialis<small>Independent research notebook</small></span></a><nav aria-label="Main navigation"><a href="#research">Research</a><a href="#contribute">Contribute</a><a href="dashboard.html">Dashboard</a><a href="#about">About</a><a href="file-graph.html">File graph ↗</a></nav></div></header>
+<main><div class="wrap hero"><div><div class="eyebrow">Open research · public pilot</div><h1>Better questions.<br><span>Stronger evidence.</span></h1>
+<p class="lede">Principia Artificialis explores mathematical and evidence-based questions about artificial intelligence. Testable ideas, source critiques, independently checked findings and negative results are all welcome.</p>
+<div class="actions"><a class="btn" href="#contribute">Explore contributing →</a><a class="btn alt" href="https://github.com/holland202/principia-artificialis">View the research on GitHub ↗</a></div></div>
+<aside class="aside"><img src="figures/principia_hero.png" width="920" alt="Existing Principia Artificialis research artwork"><div class="eyebrow">Our principle</div><h2>Ideas are proposals. Evidence changes their status.</h2>
+<p>Research notes may be speculative or unfinished. Recorded demonstrations do not automatically become scientific findings, and official studies need separate review and authorization.</p><div class="rule"></div><strong>Falsifiable questions · reproducible records · clear limitations</strong></aside></div>
+<section id="research"><div class="wrap"><div class="intro"><div class="eyebrow">Research directions</div><h2>Explore, question, test.</h2><p class="muted">The project began with mathematics of AI inference. Original proposals from other AI fields are welcome when the question and evidence are clear.</p></div>
+<div class="grid"><article class="card"><div class="num">01 / FOUNDATIONS</div><h3>Mathematics of AI</h3><p>Information geometry, topology, dynamical systems, thermodynamics and formal reasoning.</p></article>
+<article class="card"><div class="num">02 / SYSTEMS</div><h3>AI architectures</h3><p>Reasoning systems, agent coordination, evaluation, reliability and failure boundaries.</p></article>
+<article class="card"><div class="num">03 / CRITIQUE</div><h3>Research verification</h3><p>Counterexamples, independent reviews, negative controls, reproducible methods and honest attribution.</p></article></div>
+<p class="note"><a href="https://github.com/holland202/principia-artificialis/blob/main/RESEARCH_OPPORTUNITIES.md">Browse optional starter questions ↗</a></p></div></section>
+<section id="contribute"><div class="wrap"><div class="intro"><div class="eyebrow">Participate on your own terms</div><h2>No degree or invitation required.</h2><p class="muted">Independent researchers can explore public work or propose original questions. Official PA experiment runs, changes to governed research, publication and repository merges still require explicit authority.</p></div>
+<div class="steps"><div class="step"><b>01</b><h3>Choose a question</h3><p>Explore a starter topic, critique a claim or bring an original hypothesis.</p></div>
+<div class="step"><b>02</b><h3>Name a falsifier</h3><p>State the claim precisely and what observation would challenge it.</p></div>
+<div class="step"><b>03</b><h3>Keep the record</h3><p>Explain methods, real results, limitations, negative outcomes and AI assistance.</p></div>
+<div class="step"><b>04</b><h3>Invite review</h3><p>Submit a public GitHub issue or forked PR. Review is not automatic endorsement.</p></div></div>
+<div class="actions"><a class="btn" href="https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml">Submit a research idea ↗</a><a class="btn alt" href="https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md">Read how to participate ↗</a><a class="btn alt" href="dashboard.html">Research dashboard →</a></div>
+<p class="note">Participation is entirely voluntary, unpaid and free, with no required hours, dues or membership fees. Proactive recruitment is currently paused while existing collaborations receive priority. Independent submissions remain open; responses may take time.</p></div></section>
+<section id="about"><div class="wrap two"><div><div class="eyebrow">A note from the founder</div><h2>Learning openly,<br>with AI assistance.</h2>
+<p>I'm Chad Holland. I'm a beginner in AI research, and I'm still learning. ChatGPT, Claude and other AI tools have assisted me extensively with understanding technical ideas, developing code and organizing research.</p>
+<p>I don't claim that assistance as personal scientific expertise, or treat an AI-generated explanation as validation. I coordinate the initiative and take responsibility for decisions. Research claims must stand on independently checkable evidence.</p></div>
+<div><div class="eyebrow">Research culture</div><div class="quote"><p>Disagreement is welcome. A clear negative result can be a valuable contribution. Credit must reflect actual work; uncertainty, incomplete tests, and AI assistance must be disclosed.</p><p style="margin-bottom:0">No contributor gets credentials, scientific approval, or publishing authority simply by joining.</p></div></div></div></section>
+<section><div class="wrap"><div class="intro"><div class="eyebrow">Find your way</div><h2>Guides and source records.</h2><p class="muted">This site helps people navigate. The repository's methodology and workflow documents remain authoritative.</p></div>
+<div class="grid"><div class="links"><a href="https://github.com/holland202/principia-artificialis/blob/main/START_HERE.md">Start here ↗</a><a href="https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md">Join the research ↗</a></div>
+<div class="links"><a href="https://github.com/holland202/principia-artificialis/blob/main/METHOD.md">Research method ↗</a><a href="https://github.com/holland202/principia-artificialis/blob/main/REVIEW_PLAYBOOK.md">Reviewer playbook ↗</a></div>
+<div class="links"><a href="file-graph.html">Interactive file graph →</a><a href="https://github.com/holland202/principia-artificialis/blob/main/CONTRIBUTOR_RIGHTS.md">Contributor rights ↗</a></div></div></div></section></main>
+<footer><div class="wrap"><span>© 2026 Chad Holland · Principia Artificialis</span><span>Public research pilot · <a href="dashboard.html">Dashboard</a> · <a href="https://github.com/holland202/principia-artificialis">Source on GitHub</a></span></div></footer>
+</body></html>
