@@ -1,0 +1,982 @@
+{
+  "schema": "pa-ns001-gate-b-closure-evidence/1",
+  "observed_at_utc": "2026-10-20T17:11:46.039Z",
+  "prepared_for_review_date": "2026-10-23",
+  "reviewed_commit": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+  "repository": "holland202/principia-artificialis",
+  "repository_id": 1302030647,
+  "visibility": "public",
+  "branch": "research/pa-ns-001-protocol-v0-2",
+  "main_observed_unchanged": "ae0afc07f8fae8b5f63657ed01b5fae988c777d6",
+  "classification": "Read-only inspection and byte-consistency audit of prior engineering evidence. No new Python test execution, AI study, scientific finding or independent sign-off.",
+  "reviewer": "ChatGPT (OpenAI GPT-6), same remediation author; owner direction only",
+  "local_execution": "Unavailable. Existing GitHub CI records read, not rerun in this pass.",
+  "review_sources": [
+    {
+      "named_by_owner": "Grok",
+      "original_text_available": false,
+      "reviewed_source_revision": null,
+      "execution_claims_verified": false,
+      "findings_reconciled": false,
+      "disposition": "OPEN: original text and source/provenance/handling required; no findings or endorsement inferred"
+    },
+    {
+      "named_by_owner": "Perplexity",
+      "original_text_available": false,
+      "reviewed_source_revision": null,
+      "execution_claims_verified": false,
+      "findings_reconciled": false,
+      "disposition": "OPEN: original text and source/provenance/handling required; no findings or endorsement inferred"
+    }
+  ],
+  "final_ci": [
+    {
+      "id": 39461927066,
+      "name": "PA-NS-001 engineering only",
+      "head_sha": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+      "head_branch": "research/pa-ns-001-protocol-v0-2",
+      "event": "push",
+      "run_attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "updated_at": "2026-10-20T16:58:15Z",
+      "url": "https://github.com/holland202/principia-artificialis/actions/runs/39461927066"
+    },
+    {
+      "id": 39461926988,
+      "name": "verify-all-notes",
+      "head_sha": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+      "head_branch": "research/pa-ns-001-protocol-v0-2",
+      "event": "push",
+      "run_attempt": 1,
+      "status": "completed",
+      "conclusion": "success",
+      "updated_at": "2026-10-20T17:01:26Z",
+      "url": "https://github.com/holland202/principia-artificialis/actions/runs/39461926988"
+    }
+  ],
+  "engineering_jobs": [
+    {
+      "id": 118763315204,
+      "name": "analytic-checks (3.11)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B verdict-contract and existing-artifact checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B status-only sabotage must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Pinned local engineering checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "A sabotaged fixture checker must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain raw regression and mutant output in the job log",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify the scoped Gate B source and pre-repair evidence manifest",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118763315873,
+      "name": "analytic-checks (3.12)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B verdict-contract and existing-artifact checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B status-only sabotage must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Pinned local engineering checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "A sabotaged fixture checker must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain raw regression and mutant output in the job log",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify the scoped Gate B source and pre-repair evidence manifest",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 118763315892,
+      "name": "analytic-checks (3.13)",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B verdict-contract and existing-artifact checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Gate B status-only sabotage must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Pinned local engineering checks; no AI calls",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "A sabotaged fixture checker must exit exactly 1",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Retain raw regression and mutant output in the job log",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify the scoped Gate B source and pre-repair evidence manifest",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "engineering_observations": [
+    {
+      "job_id": 118763315204,
+      "source_commit": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+      "python": "3.11.17 (main, Oct  1 2026, 14:32:31) [GCC 13.3.0]",
+      "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+        "research/pa_ns001/gate_b_checks.py"
+      ],
+      "accepted": true,
+      "checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+      "calibration_audit": {
+        "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+        "rows": 240,
+        "unique_ids": 240,
+        "recorded_status_counts": {
+          "ACCEPTED": 201,
+          "UNRESOLVABLE": 39
+        },
+        "group_counts": {
+          "both": 23,
+          "momentum_only": 14,
+          "sample_only": 2
+        },
+        "sample_cap_total": 25,
+        "momentum_cap_total": 37,
+        "all_39_explained": true,
+        "case_id_location": "Existing timestamped Gate B CI report in saved post-repair logs."
+      },
+      "raw_final_job_log_sha256": "16a9ace2729d2b6abc62bece0abfcc2afaba9b517fbf6981fba52a8d6a4f1275"
+    },
+    {
+      "job_id": 118763315873,
+      "source_commit": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+      "python": "3.12.15 (main, Oct  1 2026, 02:35:59) [GCC 13.3.0]",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.12.15/x64/bin/python",
+        "research/pa_ns001/gate_b_checks.py"
+      ],
+      "accepted": true,
+      "checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+      "calibration_audit": {
+        "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+        "rows": 240,
+        "unique_ids": 240,
+        "recorded_status_counts": {
+          "ACCEPTED": 201,
+          "UNRESOLVABLE": 39
+        },
+        "group_counts": {
+          "both": 23,
+          "momentum_only": 14,
+          "sample_only": 2
+        },
+        "sample_cap_total": 25,
+        "momentum_cap_total": 37,
+        "all_39_explained": true,
+        "case_id_location": "Existing timestamped Gate B CI report in saved post-repair logs."
+      },
+      "raw_final_job_log_sha256": "7b89c58648226fe474556c00660a2176939c05ca2785723d20944c9129c5bffd"
+    },
+    {
+      "job_id": 118763315892,
+      "source_commit": "7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd",
+      "python": "3.13.16 (main, Oct  1 2026, 02:37:54) [GCC 13.3.0]",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "command": [
+        "/opt/hostedtoolcache/Python/3.13.16/x64/bin/python",
+        "research/pa_ns001/gate_b_checks.py"
+      ],
+      "accepted": true,
+      "checks": {
+        "B1_all_malformed_envelopes_fail_matching": true,
+        "B1_honest_114_and_digest_unchanged": true,
+        "B4_39_causes_match_prediction": true,
+        "B4_original_240_rows": true
+      },
+      "controls": [
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "flipped"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "missing"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_one"
+        },
+        {
+          "cases": 114,
+          "incorrectly_matched": 0,
+          "mode": "integer_zero"
+        }
+      ],
+      "honest_outcomes_digest": "e0c09b0409f96adaf02a827cd34711b58bb7e64fef0e0def76b109bff2e35aa5",
+      "calibration_audit": {
+        "artifact_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+        "rows": 240,
+        "unique_ids": 240,
+        "recorded_status_counts": {
+          "ACCEPTED": 201,
+          "UNRESOLVABLE": 39
+        },
+        "group_counts": {
+          "both": 23,
+          "momentum_only": 14,
+          "sample_only": 2
+        },
+        "sample_cap_total": 25,
+        "momentum_cap_total": 37,
+        "all_39_explained": true,
+        "case_id_location": "Existing timestamped Gate B CI report in saved post-repair logs."
+      },
+      "raw_final_job_log_sha256": "7988e88c5b0e96a18509a401c97ecfb9abfb165f1400af0907a490a5834147b3"
+    }
+  ],
+  "scoped_manifest": {
+    "path": "research/pa_ns001/GATE_B_SOURCE_MANIFEST.json",
+    "bytes": 5803,
+    "sha256": "ef86749ca64e787b3d6a5a58db71573c29275cb0ba8e20771d3899212e2bbac2",
+    "git_blob_sha1": "7684ac00b23df7d267fa43463f2aac44bcfb65ee",
+    "tested_source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+    "scope": "Current PA-NS-001 top-level Python sources, original software pin, scope/preregistration drafts, and pre-repair CI evidence only.",
+    "excluded": "Not a complete repository/evidence inventory. Excludes this manifest, workflow, final reports and post-run evidence to avoid recursive hashes; those remain bound by the Git commit.",
+    "entries": 24,
+    "hash_implementation": "Separate transient JavaScript SHA-256 / Git blob SHA-1 recomputation over fetched UTF-8 bytes, with empty and abc standard-vector self-checks; same author, not independent scientific verification",
+    "algorithm_self_checks": [
+      {
+        "text": "",
+        "sha256": true,
+        "sha1": true
+      },
+      {
+        "text": "abc",
+        "sha256": true,
+        "sha1": true
+      }
+    ],
+    "checks": [
+      {
+        "path": "research/pa_ns001/GATE_B_SCOPE.md",
+        "bytes": 6212,
+        "sha256": "a935ea8ce437e710c5dbab4ee543eb2db547435caf7caa0564190f7fb6e69daa",
+        "git_blob_sha1": "e695b46191266e525d139ef2d2a282debeab9255",
+        "expected_sha256": "a935ea8ce437e710c5dbab4ee543eb2db547435caf7caa0564190f7fb6e69daa",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/PREREGISTRATION_DRAFT.md",
+        "bytes": 15210,
+        "sha256": "b02e9d76d10bdead34c8563e41a86496a9df6066d827a92a68897db5e7135c24",
+        "git_blob_sha1": "61b4b9f60071de5cff893a44c98ee110b7f295b9",
+        "expected_sha256": "b02e9d76d10bdead34c8563e41a86496a9df6066d827a92a68897db5e7135c24",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/RECORDED.json",
+        "bytes": 642,
+        "sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c",
+        "git_blob_sha1": "1d300885d92f61aebd7cb66d60063b8c093de785",
+        "expected_sha256": "bafc7976ea9d0df6b7608c813af134b31c0d2b2977674dbcd911aca6c3049a9c",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/analytic_oracle.py",
+        "bytes": 1541,
+        "sha256": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+        "git_blob_sha1": "245a0fb88d43a9e34059cc076f99b7eedaa1cb92",
+        "expected_sha256": "f26d3d4a85995b9ecc4903d04a1ff464761e981d90e89c8a26389765be0b3b0e",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/calibrate.py",
+        "bytes": 5483,
+        "sha256": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+        "git_blob_sha1": "8d8a7f1a1177ec8dc818d56e1711cea49848b7d6",
+        "expected_sha256": "a3654434014544246f4d5af65f8dc9809d1dc8ff05424497b9f07251a3ef5059",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/diagnose_prototype.py",
+        "bytes": 2021,
+        "sha256": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+        "git_blob_sha1": "9d02a3fad80c916b818d0bf51e75c9f909ade50e",
+        "expected_sha256": "d4af23630b8729a5e1b2ff4ba581baaf95d79b942e055bbd1d7cdfa2a63b2320",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/engineering_gate.py",
+        "bytes": 3423,
+        "sha256": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7",
+        "git_blob_sha1": "a9c11bebc957bc7238b7e97669e9ed085e276a6f",
+        "expected_sha256": "3d5afca15f717e08ed0b4a54f6fa1ef31a64dee80421083b95291f86867f90d7",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/evaluate_faults.py",
+        "bytes": 3099,
+        "sha256": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b",
+        "git_blob_sha1": "c2e09fcef2b1c19ec18211f90f2377f7ed668825",
+        "expected_sha256": "87adb9c1346392b0b1b87d11ba7f8a1a3418230985b919b133f73c753b537b8b",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/evidence/gate_b/pre_repair/INDEX.json",
+        "bytes": 3595,
+        "sha256": "80c572b9ca7ca71d2616e6db953a260d50a2bd43f39014481c7bbdb282bfa6d8",
+        "git_blob_sha1": "9841cf7407b7791fe0bc2b5d3cb8979f74dcf7ee",
+        "expected_sha256": "80c572b9ca7ca71d2616e6db953a260d50a2bd43f39014481c7bbdb282bfa6d8",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log",
+        "bytes": 9560,
+        "sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553",
+        "git_blob_sha1": "3b194f29e564d2306f3e06399a998ca55ce908ae",
+        "expected_sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log",
+        "bytes": 9560,
+        "sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d",
+        "git_blob_sha1": "1f695b02a822aafeb3e26946531c8b3241280713",
+        "expected_sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log",
+        "bytes": 9560,
+        "sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff",
+        "git_blob_sha1": "22cfa8ed69c4475e7ef3a6ea50dc8d48e58f15df",
+        "expected_sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/fault_cases.py",
+        "bytes": 6418,
+        "sha256": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5",
+        "git_blob_sha1": "d7790d0d22d437617ba65a4478b93cf42f419630",
+        "expected_sha256": "0d0a7611a202e242235d0c069af4bdabcb44a29895ab333ec3a1f1a3038840c5",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/feasibility.py",
+        "bytes": 604,
+        "sha256": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d",
+        "git_blob_sha1": "f8923dd9e4a8f5116510ce4abacbc3561a86cf2d",
+        "expected_sha256": "0e57b879a71c84c007bc68b0c2c1a641c7ca91627933ab580a59d703da412a9d",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/gate_b_checks.py",
+        "bytes": 6138,
+        "sha256": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2",
+        "git_blob_sha1": "205e1f968af6df8785c5314ab95925bf6bb979ff",
+        "expected_sha256": "3ca7d7f24813416c5bf5cc48e78c9fbbbcbb64915dbe0c9801c60f32b396f2c2",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/mutation_checks.py",
+        "bytes": 4509,
+        "sha256": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87",
+        "git_blob_sha1": "cfea50c4a589981af16a3875a728891193011e1f",
+        "expected_sha256": "c6392948dbd4b799b52bdbabcf82e1fe8dae4530433959327ed5893321cf8b87",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/ns001.py",
+        "bytes": 6358,
+        "sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518",
+        "git_blob_sha1": "ebd3b55db6dd0891d9e31a5c92b0658d351785d9",
+        "expected_sha256": "4aaf992c2df62abb225b92607f65ddf4808d57afd5a313c1799743581c822518",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/record_command.py",
+        "bytes": 2574,
+        "sha256": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+        "git_blob_sha1": "7bea60146f25b7e2a42968f9925bca5e3ca551ee",
+        "expected_sha256": "30a63e9554779f4b6c8a0c18b233de6a5206671baa89db58d4ab53b4bf1c92de",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/study_design.py",
+        "bytes": 3101,
+        "sha256": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94",
+        "git_blob_sha1": "4ec0f6314eda7ec79310a342fd815b4d65724949",
+        "expected_sha256": "6a769f47b1e3ead34df8914df32f5e6d573629e20f3cd14933a12ba115c8ea94",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/test_ns001.py",
+        "bytes": 884,
+        "sha256": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+        "git_blob_sha1": "c2cd890f80bf7f4091969d9a616458a998c279f7",
+        "expected_sha256": "31bb1ad6b7d092d467fcf2501d4eb4f8826e6febc21f379b6d5d8a8e4829c294",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/test_package.py",
+        "bytes": 1764,
+        "sha256": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620",
+        "git_blob_sha1": "cfb9b78a257fbb3c262ab17698ca1ad519f50a32",
+        "expected_sha256": "afaeb603c487d5ec3ab0bf8ab3845488ed3e5263fb4eca53cf254252c47f0620",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/test_stage2.py",
+        "bytes": 10007,
+        "sha256": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5",
+        "git_blob_sha1": "d87fd0376f8779445cfbca653b4e38373b1a1361",
+        "expected_sha256": "051e2362aedc6deebc9cecce030aa68021ff46a835b59a7ee72be75c6f6746a5",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/test_study_design.py",
+        "bytes": 1763,
+        "sha256": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e",
+        "git_blob_sha1": "7b737364ea7019d4d482413e7c3a7598593f2d5e",
+        "expected_sha256": "3c7fef649515d057246cc19dd081ad287e62fb6de946c2ccf8f4a4288f0b125e",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      },
+      {
+        "path": "research/pa_ns001/verify_package.py",
+        "bytes": 2470,
+        "sha256": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff",
+        "git_blob_sha1": "f64698d8e5e18e4816f34bac8cf0298a6300b8a9",
+        "expected_sha256": "b309270d54685f3e2287e3f2987ffc2ad6782e15e23ede854ae8edf35d37a6ff",
+        "sha256_pass": true,
+        "bytes_pass": true,
+        "git_sha1_pass": true
+      }
+    ]
+  },
+  "preserved_original_objects": [
+    {
+      "path": "research/pa_ns001/evidence/stage2",
+      "historical_object": "11cf9e409115048b53163679cad752f3c6cbf910",
+      "current_object": "11cf9e409115048b53163679cad752f3c6cbf910",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/MANIFEST.json",
+      "historical_object": "30945eb03c5a1051f36a9d676135a80172020567",
+      "current_object": "30945eb03c5a1051f36a9d676135a80172020567",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/RECORDED.json",
+      "historical_object": "1d300885d92f61aebd7cb66d60063b8c093de785",
+      "current_object": "1d300885d92f61aebd7cb66d60063b8c093de785",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/ns001.py",
+      "historical_object": "ebd3b55db6dd0891d9e31a5c92b0658d351785d9",
+      "current_object": "ebd3b55db6dd0891d9e31a5c92b0658d351785d9",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/analytic_oracle.py",
+      "historical_object": "245a0fb88d43a9e34059cc076f99b7eedaa1cb92",
+      "current_object": "245a0fb88d43a9e34059cc076f99b7eedaa1cb92",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/fault_cases.py",
+      "historical_object": "d7790d0d22d437617ba65a4478b93cf42f419630",
+      "current_object": "d7790d0d22d437617ba65a4478b93cf42f419630",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/CALIBRATION_PLAN.md",
+      "historical_object": "b8ed5cd551c27fb48e3056402a81fe98b6d5fdf5",
+      "current_object": "b8ed5cd551c27fb48e3056402a81fe98b6d5fdf5",
+      "unchanged": true
+    },
+    {
+      "path": "research/pa_ns001/ORACLE_AND_FAULTS.md",
+      "historical_object": "352f3e89b4ab2f411915b0979e60c25f102ab370",
+      "current_object": "352f3e89b4ab2f411915b0979e60c25f102ab370",
+      "unchanged": true
+    }
+  ],
+  "historical_manifest": {
+    "path": "research/pa_ns001/MANIFEST.json",
+    "bytes": 101001,
+    "sha256": "fa0f608f15fb26fb7b94ccf47008c567c040953435811a0c6708c0a0126cdc8a",
+    "git_blob_sha1": "30945eb03c5a1051f36a9d676135a80172020567",
+    "entries": 395,
+    "classification": "Historical checkpoint inventory, unchanged. Not rerun in full against changed current sources."
+  },
+  "saved_step_log_checks": [
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_311.log",
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "run_id": 39460470381,
+      "job_id": 118758307645,
+      "bytes": 9560,
+      "sha256": "e7e213b147dba1d58c4874a9c2707cca374a29d3f0f79faee5bba56fcc115553",
+      "git_blob_sha1": "3b194f29e564d2306f3e06399a998ca55ce908ae",
+      "git_tree_blob_match": true,
+      "saved_lines": 142,
+      "remote_lines": 287,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_313.log",
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "run_id": 39460470381,
+      "job_id": 118758308152,
+      "bytes": 9560,
+      "sha256": "52850a5b99baa9caca309d82a60940bf1d56edacb4b41dc8e8359b1890cfbcff",
+      "git_blob_sha1": "22cfa8ed69c4475e7ef3a6ea50dc8d48e58f15df",
+      "git_tree_blob_match": true,
+      "saved_lines": 142,
+      "remote_lines": 287,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/pre_repair/ci_python_312.log",
+      "source_commit": "0333ad6ed9a9d2fd72af59bbc61003d1134d1edb",
+      "run_id": 39460470381,
+      "job_id": 118758308390,
+      "bytes": 9560,
+      "sha256": "0b9e0ac3131591116da0d6e2fbb4a5a68414ab8a198768d8abe11c50ddce9c0d",
+      "git_blob_sha1": "1f695b02a822aafeb3e26946531c8b3241280713",
+      "git_tree_blob_match": true,
+      "saved_lines": 142,
+      "remote_lines": 287,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_312.log",
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025540,
+      "bytes": 67082,
+      "sha256": "3c00da8c23487a52264213a123d6a2f5c52a4e8165e6aae2b50ef4780ab9a250",
+      "git_blob_sha1": "d3e30a8cda3cfd28a4f9c39e20f226d49e91368f",
+      "git_tree_blob_match": true,
+      "saved_lines": 866,
+      "remote_lines": 1014,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_311.log",
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025728,
+      "bytes": 67082,
+      "sha256": "c0580269777b175f11d3a8e96e4be5b3fce57f7e3a1a046bc32a46201af0ff52",
+      "git_blob_sha1": "85afbfd4d719702bc18e961c40f23e229cca820c",
+      "git_tree_blob_match": true,
+      "saved_lines": 866,
+      "remote_lines": 1014,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    },
+    {
+      "path": "research/pa_ns001/evidence/gate_b/post_repair/ci_python_313.log",
+      "source_commit": "6a3c40a267a9fb495d1542009b8f0f7ff59d47b6",
+      "run_id": 39461263112,
+      "job_id": 118761025789,
+      "bytes": 67082,
+      "sha256": "34504f5e8941f0ef71315b08d30897b60581c8baf3ee151e9c8d41f08b64130f",
+      "git_blob_sha1": "82bf0869c51fd130709ffc83d4efc0d1a2ab58ae",
+      "git_tree_blob_match": true,
+      "saved_lines": 866,
+      "remote_lines": 1014,
+      "missing_or_reordered_lines": 0,
+      "verbatim_subsequence": true,
+      "contiguous_segment": true
+    }
+  ],
+  "original_artifact_checks": [
+    {
+      "path": "research/pa_ns001/evidence/stage2/calibration-data1/cases.jsonl",
+      "bytes": 170702,
+      "sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+      "git_blob_sha1": "f0ae162f0596592d0331f2d101a0ed0d7401fdbb",
+      "expected_historical_sha256": "b1a80952aa41e38300055c386cb4505a4e122254632b2e19e6ec4450f7a2c1bb",
+      "expected_historical_bytes": 170702,
+      "sha256_matches_historical_manifest": true,
+      "bytes_matches_historical_manifest": true,
+      "git_blob_matches": true,
+      "rows": 240
+    },
+    {
+      "path": "research/pa_ns001/evidence/stage2/fault-data1/manifest.jsonl",
+      "bytes": 124631,
+      "sha256": "27efb1366b885da80ada136afaf770997f6f41b629b06ee3b441048f9f832f44",
+      "git_blob_sha1": "6e87e218c3e9192294bfeb871f55bd4485f8ca69",
+      "expected_historical_sha256": "27efb1366b885da80ada136afaf770997f6f41b629b06ee3b441048f9f832f44",
+      "expected_historical_bytes": 124631,
+      "sha256_matches_historical_manifest": true,
+      "bytes_matches_historical_manifest": true,
+      "git_blob_matches": true,
+      "rows": 114
+    },
+    {
+      "path": "research/pa_ns001/evidence/stage2/fault-data1/outcomes.jsonl",
+      "bytes": 42631,
+      "sha256": "6bbc1f0e50915c1d89dfd0003f898da04a9abd05edc21030e7a39a81d0226a86",
+      "git_blob_sha1": "458406d9831d55246979cfdf258b66f62b37fdc4",
+      "expected_historical_sha256": "6bbc1f0e50915c1d89dfd0003f898da04a9abd05edc21030e7a39a81d0226a86",
+      "expected_historical_bytes": 42631,
+      "sha256_matches_historical_manifest": true,
+      "bytes_matches_historical_manifest": true,
+      "git_blob_matches": true,
+      "rows": 114
+    }
+  ],
+  "calibration_counts": {
+    "ACCEPTED": 201,
+    "UNRESOLVABLE": 39
+  },
+  "fixture_expected_counts": {
+    "ACCEPTED": 38,
+    "REJECTED": 76
+  },
+  "saved_outcome_record_audit": {
+    "rows": 114,
+    "recorded_matched": 114,
+    "recomputed_status_acceptance_consistency_same_author": 114,
+    "failures": [],
+    "classification": "Audit of saved outcome fields, not fresh verifier execution or independent scientific review."
+  },
+  "evidence_limits": [
+    "Exact byte consistency with pinned Git objects and existing CI evidence; not proof of mathematical correctness, input truth, authorship or general numerical validity.",
+    "The final source commit is unsigned; authenticated GitHub retrieval plus object identity is the provenance boundary used here.",
+    "Original Grok/Perplexity review texts were not found in available relevant sources. No reviewer-specific material finding can be dispositioned without them.",
+    "No independent reproduction by Grok, Perplexity or Claude is established by these same-author CI logs.",
+    "Repository-wide number-audit reporting is intentionally non-gating; a green workflow is not validation of every scientific claim.",
+    "Only the stated sources, artifacts and retained step segments were byte-audited. The six saved logs are contiguous segments of the remote logs, not complete setup/cleanup logs."
+  ],
+  "gate_b_closed": false,
+  "remaining_blockers": [
+    "Obtain original Grok/Perplexity review texts with reviewed revision, execution evidence and permitted handling; reconcile material findings without retroactively assigning endorsement.",
+    "Record actual independent judgment on oracle/fault labels, precision contract/39 nonacceptances, claim scope and fair profile-only rival; resolve any material defect narrowly.",
+    "Record owner Gate B disposition after reviewing those records. Gate C study choices/freezing/execution remain separately unauthorized."
+  ],
+  "changed_implementation_files": 0,
+  "new_python_runs": 0,
+  "main_ai_calls": 0,
+  "change_classification": [
+    {
+      "class": "REQUIRED",
+      "change": "Document final CI completion and source/evidence consistency at 7beb5e6.",
+      "reason": "Closes previously pending evidence checks without altering original records."
+    },
+    {
+      "class": "REQUIRED",
+      "change": "Explicitly mark missing original reviews and absent independent disposition.",
+      "reason": "Prevents fabricated reviewer-specific reconciliation or sign-off."
+    },
+    {
+      "class": "BENEFICIAL",
+      "change": "Prepare a concise, pinned read-only Claude brief and common finding matrix.",
+      "reason": "Directly supports the scheduled review milestone without new features."
+    },
+    {
+      "class": "DOCUMENT ONLY",
+      "change": "Retain bounded-profile, precision, identifiability and independence limitations.",
+      "reason": "No demonstrated new implementation defect."
+    },
+    {
+      "class": "DEFER",
+      "change": "Study adapters, new solvers, framework expansion and main AI evaluation.",
+      "reason": "Separate gate or outside approved scope."
+    }
+  ],
+  "reproduction_methods": [
+    {
+      "operation": "CI read",
+      "endpoints": [
+        "GET /repos/holland202/principia-artificialis/actions/runs?head_sha=7beb5e646ee1d00ce5a2eae9568e5b869abf2ddd&per_page=20",
+        "GET /repos/holland202/principia-artificialis/actions/runs/39461927066/jobs",
+        "GET /repos/holland202/principia-artificialis/actions/runs/39461926988/jobs"
+      ],
+      "result": "Both final workflows completed successfully on the pinned branch/source."
+    },
+    {
+      "operation": "Hash audit",
+      "result": "Fetched all 24 scoped files at the pinned commit; recomputed UTF-8 byte length, SHA-256 and Git blob SHA-1. All matched. Existing CI separately checks byte length, SHA-256 and MD5."
+    },
+    {
+      "operation": "History identity",
+      "endpoints": [
+        "GET /repos/holland202/principia-artificialis/git/trees/a7cc5b2f02044b7b6d148ad805de0afc123f1aa9?recursive=1",
+        "GET /repos/holland202/principia-artificialis/git/trees/0fc02aee961e7d2ba34f4139a12cf464593abf88?recursive=1"
+      ],
+      "result": "Original Stage 2 evidence subtree, manifest, oracle, checker, fixture generator, numerical plan and recorded pins have identical object IDs."
+    },
+    {
+      "operation": "Retained step logs",
+      "result": "Fetched each of the six indexed GitHub job logs; each saved timestamped segment occurs contiguously and verbatim. Saved bytes also match current Git tree blobs."
+    }
+  ]
+}
