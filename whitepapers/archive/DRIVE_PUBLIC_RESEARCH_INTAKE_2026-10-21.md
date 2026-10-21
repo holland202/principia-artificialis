@@ -61,3 +61,19 @@ No new numbered note, experiment, security finding, or formal W2 registration wa
 - Confirm that the twelve GitHub files still contain the intended original source bodies plus the archival warning and that existing public documentation was not overwritten.
 - Compare draft topics to the current public research catalogue, then classify **historical only / useful proposal / verified prior art** on independent grounds.
 - Do not merge if a personal identifier or private-project implementation is found. Do not represent GitHub CI as proof that the old research is true.
+
+## Additional historical PA research discovered in older contribution folders
+
+Two original AI-assisted drafts from the connected Drive were discovered under historical public-project contribution folders. They **conflict with current numbered research notes** and are preserved as **orphaned historical drafts**, not as current Note #006 or #007:
+
+| Old label | Recovered subject | Archival copy | Scientific caution |
+|---|---|---|---|
+| Legacy #006 | Quantum entanglement and correlation on information manifolds | [historical draft](2026_drive_historical_legacy_note_006_quantum_information_manifold.md) | Equating entanglement with ordinary statistical correlation is not established and requires a rigorous counterexample/definition check. |
+| Legacy #007 | Memory dynamics as gradient flow | [historical draft](2026_drive_historical_legacy_note_007_memory_gradient_flow.md) | Gradient flows are not generally geodesics; proposed equivalences and links to reasoning quality remain untested. |
+
+These were full-text screened for recognizable credentials, direct identifiers, and named private-system material before archival. The original documents credited an AI research contributor; its attribution was preserved. Do not reassign the canonical PA numbering, and do not claim that these archived drafts are validated or preregistered.
+
+### Previously existing corpus entries not duplicated
+
+The historical public-project folder also contains a geodesic-bridge experiment proposal and a simulation file, but these **already have paths in the current public repository** (`experiments/quantum_geodesic_bridge.md` and `simulations/information_manifold_topology.py`). This intake did not overwrite either. It has not proven byte-for-byte equivalence between the Drive items and existing GitHub versions, and the Drive's simulation-file text fetch was empty.
+
