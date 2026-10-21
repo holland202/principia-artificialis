@@ -1,0 +1,39 @@
+name: Documentation evidence integrity (bounded)
+
+on:
+  pull_request:
+    paths:
+      - '**/*.md'
+      - 'scripts/doc_evidence_check.py'
+      - 'scripts/test_doc_evidence_check.py'
+      - '.github/workflows/doc-evidence-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  documentation-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Synthetic unit tests (no scientific execution)
+        run: python -m unittest discover -s scripts -p 'test_doc_evidence_check.py' -v
+      - name: Checker can pass clean fixture
+        run: python scripts/doc_evidence_check.py --selftest
+      - name: Checker refuses planted broken link
+        run: |
+          set +e
+          python scripts/doc_evidence_check.py --sabotage
+          rc=$?
+          test "$rc" -eq 1
+      - name: Broken links in changed Markdown (PR only)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        run: python scripts/doc_evidence_check.py --changed-base "origin/$BASE_REF"
