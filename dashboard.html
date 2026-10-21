@@ -4,6 +4,7 @@
 <meta property="og:title" content="Principia Artificialis · Public Research Dashboard">
 <meta property="og:description" content="A public gateway for questions, constructive criticism, falsifiable research and independent scrutiny.">
 <meta property="og:image" content="https://holland202.github.io/principia-artificialis/figures/principia_hero.png">
+<link rel="canonical" href="https://holland202.github.io/principia-artificialis/dashboard.html">
 <title>Public Research Dashboard | Principia Artificialis</title>
 <style>
 :root{color-scheme:dark;--bg:#0b1622;--card:#15283a;--card2:#1b3244;--line:#385265;--text:#eff5f3;--muted:#bfd0d3;--accent:#d5ebae;--link:#a8e3e7}
@@ -13,6 +14,8 @@ body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-a
 body:before{content:"";position:absolute;inset:0 0 auto;height:620px;background:radial-gradient(ellipse at 85% 0%,#284a4b 0%,transparent 54%),radial-gradient(ellipse at 5% 0%,#1a293a 0%,transparent 53%);pointer-events:none}
 a{color:var(--link);overflow-wrap:anywhere}a:hover{color:#e1f5f5}a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .wrap{width:100%;max-width:1120px;margin:auto;padding:0 22px;position:relative}
+.skip-link{position:absolute;left:16px;top:-90px;background:var(--accent);color:#17281b;padding:11px 16px;border-radius:5px;font-weight:800;z-index:10}
+.skip-link:focus{top:12px}
 header{border-bottom:1px solid var(--line);position:relative;background:#0d1927ea}
 .nav{min-height:83px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:12px;padding-bottom:12px}
 .brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;font-weight:750;letter-spacing:.075em;text-transform:uppercase;font-size:13px}
@@ -36,6 +39,17 @@ p{margin:0 0 16px}
 .brand-visual img{display:block;width:100%;height:auto;max-height:290px;object-fit:contain;border-radius:4px}
 .brand-visual p{margin:13px 0 0;color:var(--muted);font-size:13px}
 .notice{background:#20362f;border-left:3px solid var(--accent);padding:19px 24px;color:#eff7e9;border-radius:0 4px 4px 0}
+.research-card{background:linear-gradient(145deg,#172d3d,#122435);border:1px solid var(--line);border-radius:8px;padding:29px}
+.research-card>h3{margin-top:10px}
+.research-card p{color:var(--muted)}
+.research-statuses{display:flex;gap:9px;flex-wrap:wrap;margin:20px 0 25px}
+.research-statuses span{border:1px solid #607c89;border-radius:5px;padding:7px 10px;font-size:12px;font-weight:750;color:var(--text)}
+.research-card .grid h4{margin:0 0 8px;font-size:16px;color:var(--text)}
+.research-card .grid p{font-size:14px;margin-bottom:9px}
+.research-card .attribution{font-size:14px;margin:15px 0}
+.research-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:17px}
+.research-links a{display:inline-block;border:1px solid var(--line);padding:9px 13px;border-radius:5px;text-decoration:none;font-size:14px;font-weight:700}
+.research-links a:hover{border-color:var(--accent)}
 section{margin-top:65px}
 .section-title{max-width:775px;margin-bottom:27px}
 .muted{color:var(--muted)}
@@ -61,12 +75,13 @@ section{margin-top:65px}
 .inline-links a:hover{border-color:var(--accent)}
 .footer{margin-top:75px;border-top:1px solid var(--line);padding-top:27px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media(max-width:920px){.hero{grid-template-columns:minmax(0,1fr)}.brand-visual{max-width:560px}.grid{grid-template-columns:minmax(0,1fr)}.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(max-width:620px){.wrap{padding:0 17px}.hero{padding:45px 0 34px;gap:25px}.actions .btn{width:100%}section{margin-top:45px}.steps{grid-template-columns:minmax(0,1fr)}h1{font-size:41px}.card{padding:19px}.nav{align-items:flex-start;flex-direction:column}.links{gap:12px}}
+@media(max-width:620px){.wrap{padding:0 17px}.hero{padding:45px 0 34px;gap:25px}.actions .btn{width:100%}section{margin-top:45px}.steps{grid-template-columns:minmax(0,1fr)}h1{font-size:41px}.card,.research-card{padding:19px}.nav{align-items:flex-start;flex-direction:column}.links{gap:12px}.research-links a{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head><body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <header><div class="wrap nav"><a class="brand" href="./"><span class="symbol" aria-hidden="true">Π</span>Principia Artificialis</a>
-<nav class="links" aria-label="Dashboard navigation"><a href="./">Welcome</a><a href="#opportunities">Research paths</a><a href="#public-issues">Public issues</a><a href="file-graph.html">File graph</a></nav></div></header>
-<main class="wrap">
+<nav class="links" aria-label="Dashboard navigation"><a href="./">Welcome</a><a href="#research-status">Research status</a><a href="#opportunities">Research paths</a><a href="#public-issues">Public issues</a><a href="file-graph.html">File graph</a></nav></div></header>
+<main class="wrap" id="main">
 <div class="hero">
 <div>
 <div class="eyebrow">Public research gateway · independently testable ideas</div>
@@ -78,13 +93,29 @@ section{margin-top:65px}
 <div class="brand-visual"><img src="figures/principia_hero.png" alt="Principia Artificialis existing research artwork" width="920" loading="eager"><p>Public research is open to scrutiny. A proposal is not a confirmed scientific finding.</p></div>
 </div>
 <div class="notice"><strong>Participation update:</strong> We're prioritizing existing research collaborations and have paused proactive recruitment. Anyone can still explore public materials or submit independent questions. Responses may take time; official research execution and publication require separate approval.</div>
+<section id="research-status" aria-labelledby="research-status-title">
+<div class="section-title"><div class="eyebrow">Research in progress</div><h2 id="research-status-title">See the evidence status, not just the idea.</h2><p class="muted">One public example from an open AI-research program. Other fields and original proposals are welcome; a featured project is not a preferred or validated result.</p></div>
+<article class="research-card" aria-labelledby="egrr-title">
+<div class="tag">Research snapshot · EGRR-DESC-001</div>
+<h3 id="egrr-title">Evidence-Gated Residual Representation (EGRR)</h3>
+<p>Can carefully selected residual corrections preserve model quality at the same total low-bit representation size? Public discussions are exploratory; engineering checks are not proof of scientific benefit.</p>
+<div class="research-statuses" aria-label="Current EGRR research status">
+<span>Protocol: DRAFT / NOT FROZEN</span><span>Confirmatory study: NOT EXECUTED</span><span>Population P1: UNRESOLVED / NOT APPROVED</span>
+</div>
+<div class="grid">
+<div><h4>Public evidence</h4><p>The proposal, protocol draft and contributor engineering submission are available for inspection. Their reported test results are not automatically independently reproduced.</p></div>
+<div><h4>Open verification</h4><p>The retained qualification package awaits independent inspection. Payload binding, malformed inputs, and mandatory-entrypoint acceptance rules remain under review.</p></div>
+</div>
+<p class="attribution"><strong>Contributor:</strong> Putluru Sandeep (<a href="https://github.com/sunny-kavixo">@sunny-kavixo</a>). Attribution does not imply scientific validation.</p>
+<div class="research-links"><a href="https://github.com/holland202/principia-artificialis/issues/28">Research proposal #28 ↗</a><a href="https://github.com/holland202/principia-artificialis/pull/37">Protocol draft PR #37 ↗</a><a href="https://github.com/sunny-kavixo/principia-artificialis/pull/2">Contributor draft PR #2 ↗</a></div>
+</article></section>
 <section id="opportunities">
 <div class="section-title"><div class="eyebrow">Choose your path</div><h2>Different ways to contribute.</h2><p class="muted">Contribute without a degree, paid membership, required hours or a pre-assigned task. Source-only criticism, negative results and new ideas all belong here.</p></div>
 <div class="grid">
 <article class="card"><div class="tag">Original research</div><h3>Bring your own question</h3><p>Suggest a falsifiable hypothesis in any area of AI. Explain what would count against it and which evidence would be needed.</p><a href="https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml">Propose an idea ↗</a></article>
 <article class="card"><div class="tag">Source critique</div><h3>Challenge an assumption</h3><p>Inspect a specific public claim, method or implementation. Report inconsistencies, potential counterexamples or unverified steps.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/RESEARCH_OPPORTUNITIES.md">Browse starter questions ↗</a></article>
 <article class="card"><div class="tag">Reproducibility</div><h3>Evaluate evidence carefully</h3><p>Show source revisions, exact commands, results, errors and limitations when independently performing permitted checks. Do not treat a re-run as a different implementation.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/REVIEW_PLAYBOOK.md">Review playbook ↗</a></article>
-<article class="card"><div class="tag">Optional challenge</div><h3>Try a bounded entry question</h3><p>Review one pre-scoped question and declare a possible falsifier. The challenge-based recruitment protocol is still a draft and creates no automatic rights or permissions.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/challenges/entry/README.md">Browse challenge menu ↗</a></article>
+<article class="card"><div class="tag">Optional challenge</div><h3>Try a bounded entry question</h3><p>Review one pre-scoped question and declare a possible falsifier. Entry challenges are optional and create no automatic rights or repository permissions; any elevated access requires separate owner approval.</p><a href="https://github.com/holland202/principia-artificialis/blob/main/challenges/entry/README.md">Browse challenge menu ↗</a></article>
 </div></section>
 <section id="review">
 <div class="section-title"><div class="eyebrow">Scientific integrity</div><h2>How submitted work is reviewed.</h2><p class="muted">Anyone can independently start a question. Acceptance of a contribution is separate from validation of a hypothesis.</p></div>
@@ -95,7 +126,7 @@ section{margin-top:65px}
 </section>
 <section id="public-issues"><div class="grid">
 <article class="card"><div class="tag">From public GitHub</div><h2>Recent research issues</h2><p>Read-only snapshot of matching open public issues, not an exhaustive list or an approval verdict. This page never uses a GitHub account token.</p>
-<ul class="issue-list" id="issue-list" aria-live="polite"><li>Loading public issues…</li></ul><p id="issue-status" class="muted"></p>
+<ul class="issue-list" id="issue-list" aria-live="polite"><li><a href="https://github.com/holland202/principia-artificialis/issues">Browse current research issues on GitHub ↗</a><small>Recent matching issues appear here when live loading is available.</small></li></ul><p id="issue-status" class="muted"></p>
 <a href="https://github.com/holland202/principia-artificialis/issues">Browse all GitHub issues ↗</a>
 </article>
 <article class="card"><div class="tag">For investigators and reviewers</div><h2>Evidence essentials</h2>
@@ -122,7 +153,8 @@ function node(tag,text){var e=document.createElement(tag);e.textContent=text;ret
 fetch('https://api.github.com/repos/holland202/principia-artificialis/issues?state=open&sort=updated&direction=desc&per_page=100',{headers:{'Accept':'application/vnd.github+json'}})
 .then(function(res){if(!res.ok)throw new Error('Unavailable');return res.json();})
 .then(function(items){
-var recent=items.filter(function(it){return !it.pull_request && (/^(research:|entry:|PA-ENTRY)/i.test(it.title||'')||(it.labels||[]).some(function(x){return /research-evidence|entry-challenge/i.test(x.name||'');}));}).slice(0,6);
+if(!Array.isArray(items))throw new Error('Unexpected issue listing');
+var recent=items.filter(function(it){return !it.pull_request && (/^(research(?: proposal)?:|entry:|PA-ENTRY(?:-|:))/i.test(it.title||'')||(it.labels||[]).some(function(x){return /research-evidence|entry-challenge/i.test(x.name||'');}));}).slice(0,6);
 list.textContent='';
 if(!recent.length){list.appendChild(node('li','No matching open research submissions appear in the latest public listing.'));}
 recent.forEach(function(it){
