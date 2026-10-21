@@ -20,7 +20,7 @@ A lower observed power level under slower execution is insufficient to establish
 
 ## Connection to existing EXP001 evidence limits
 
-The existing \`experiments/records/EXP001_2026-10-14_MORNING_FIELD_RECORD.md\` describes preliminary S25 Ultra/Termux thermal-zone readings whose sensor identity/calibration were not independently verified. It also records missing/incomplete CPU/charge observability and a wall-clock/monotonic discrepancy in one run. Its results do **not** establish workload-to-temperature causality, energy savings, or a verified thermodynamic law. Those limits carry into any proposed pacing work.
+The existing `experiments/records/EXP001_2026-10-14_MORNING_FIELD_RECORD.md` describes preliminary S25 Ultra/Termux thermal-zone readings whose sensor identity/calibration were not independently verified. It also records missing/incomplete CPU/charge observability and a wall-clock/monotonic discrepancy in one run. Its results do **not** establish workload-to-temperature causality, energy savings, or a verified thermodynamic law. Those limits carry into any proposed pacing work.
 
 ## Future-only minimal design alternatives
 
@@ -32,6 +32,6 @@ Possible outcomes include lower peak temperature with higher task energy, less e
 
 ## Governance / research boundary
 
-This is **not** an adopted experiment, frozen W2 registration, prediction, protocol update, evidence correction, run request, or authorization. A later proposed study must follow PA's current \`METHOD.md\`, \`WORKFLOW.md\`, and \`CONTROLS.md\`, define an independent measurement and falsification plan, state exact acceptance criteria and source revision, and obtain explicit owner approval before execution.
+This is **not** an adopted experiment, frozen W2 registration, prediction, protocol update, evidence correction, run request, or authorization. A later proposed study must follow PA's current `METHOD.md`, `WORKFLOW.md`, and `CONTROLS.md`, define an independent measurement and falsification plan, state exact acceptance criteria and source revision, and obtain explicit owner approval before execution.
 
 Do not change EGRR, PA-NS-001 or other research projects based on this note.
