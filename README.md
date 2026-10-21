@@ -277,6 +277,12 @@ See [research_notes/note063_evidence_bound_learning_loop.md](research_notes/note
 
 ## Research notes
 
+**Research literature intake (2026-10-21; speculative / not registered / not run):**
+[PA-QM-OBS-001 — Quantum Measurement, Observers, and Consciousness](docs/PA_QM_OBS_001_LITERATURE_INTAKE_2026-10-21.md)
+and its [checked source-identity ledger](docs/external/PA_QM_OBS_001_SOURCES_2026-10-21.md).
+These references do not establish consciousness-induced quantum collapse or AI consciousness, and are separate from the generated notes index.
+
+
 **Historical description (count preserved, not current): 80 notes** spanning measurement, geometry of reasoning,
 thermodynamics of cognition, quantum-information frameworks, and
 labeled exotic frontiers (emergent gravity, holographic duality,
