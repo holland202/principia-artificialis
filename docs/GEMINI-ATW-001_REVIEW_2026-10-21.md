@@ -48,3 +48,17 @@ Prepare a **source-pinned, complete W2 preregistration draft** only after resolv
 **Provenance (M13):** Gemini (reported Gemini 1.5 Pro) produced the original proposal → human direction only → ChatGPT (OpenAI GPT-6) prepared this independent documentary critique for owner review → owner retains responsibility for accepting subsequent research stages.
 
 *Vincit Omnia Veritas.*
+
+---
+
+## Owner decision — 2026-10-21: PARKED / UNRESOLVED (append-only W9 update)
+
+**Disposition:** The repository owner agreed with the independent review recommendation to **park GEMINI-ATW-001** after repeated source-level engineering defects and unsupported readiness claims. **No further engineering correction cycles, C-FEAS runs, C-NOISE runs, model downloads, W2 registration, or scientific execution are authorized.** Reopening requires an explicit new owner decision and independent review; the original scientific question has **not** been experimentally refuted.
+
+**Status boundaries:** Scientific proposal **SPECULATIVE / PROPOSED / NOT RUN / NOT REGISTERED**; engineering effort **PARKED / UNRESOLVED**. Nothing in this entry raises an evidence label or claims an executed result. The original Gemini proposal and earlier documentary review remain unchanged.
+
+**Evidence supporting the pause:** The latest owner-supplied source draft (not committed or executed here) retained a test source defect: `test_jaccard_exact_boundary_rejection()` references `THRESHOLD_L_MAX` without importing it in the submitted test file. The declared "exact token distance" instead tokenizes `padding_text` alone, without measuring the Γ-to-Θ separation in the final rendered prompt. Authentic independently verified seed families, model identities, feasibility counts, hardware noise checks, and statistical power remain unavailable; claims that all defects were corrected are therefore **NOT VERIFIED**. These are engineering-review findings, not empirical findings about LLM behavior. Other unexecuted draft versions remain in the owner-supplied correspondence, not as repository implementations.
+
+**Change-control and provenance:** Owner decision conveyed on 2026-10-21 as agreement with parking. ChatGPT (OpenAI GPT-6) transcribed this dated disposition under W9, M8, M12 and M13. This is a source-level documentary review, **not** a human line-by-line mathematical validation, code execution, independent replication, or an official W2 study state. No code has been added and no experimental results generated. PR #79 stays **open and unmerged** as the intake/review vehicle, with no automatic merge recommendation.
+
+**Optional reopening criteria (not currently authorized):** A separately approved attempt would need coherent, fully source-reviewed case generator, verifier and genuine positive/negative tests, exact tokenizer-message boundaries, authentic family identities and clustering assumptions, pinned external artifacts, and defensible statistics. Any future C-FEAS counts or experiments require separate execution approval and frozen provenance.
