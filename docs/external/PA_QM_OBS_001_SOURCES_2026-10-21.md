@@ -15,7 +15,7 @@ David J. Chalmers; Kelvin J. McQueen | Consciousness and the Collapse of the Wav
 **Identity SHA-256:** `b0e300959d0a9b2cac3216d965b06107b70a158901badac9da4ba90b1cb498fb`  
 **Primary record:** https://academic.oup.com/book/44484/chapter-abstract/392574703  
 **Additional author/preprint record:** https://arxiv.org/abs/2105.02314  
-**Publication class:** Peer-reviewed? Academic book chapter (OUP, 2022); author preprint (2021).
+**Publication class:** Academic book chapter (OUP, 2022); author preprint (2021).
 
 ## S02
 **Identity (UTF-8, no trailing newline):**
