@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "0.1",
+  "id": "PA-EGRR-001",
+  "title": "Evidence-Gated Residual Representation (EGRR)",
+  "question": "Can sensitivity-selected sparse residual corrections improve low-bit quality at matched serialized storage, compared with simpler selection rules?",
+  "reviewedAt": "2026-10-22",
+  "reviewedBy": "Claude (Anthropic, Opus 5.5) at Chad Holland's direction; human review level: direction only",
+  "states": {
+    "question":     {"value": "admitted-for-protocol-development", "sourceIds": ["issue-28-decision"]},
+    "protocol":     {"value": "draft-under-review", "sourceIds": ["pr-37", "fork-pr-1"]},
+    "execution":    {"value": "not-tested", "sourceIds": ["archive-manifest"]},
+    "engineering":  {"value": "changes-requested", "sourceIds": ["fork-pr-2"]},
+    "reproduction": {"value": "none-documented", "sourceIds": ["archive-manifest"]},
+    "claim":        {"value": "not-tested", "sourceIds": ["archive-manifest", "stat-feasibility"]}
+  },
+  "observations": [
+    {"text": "Calibration MSE on one 16×8 synthetic case (seed 28, 3-bit quantizer, 8 corrections, 111 EGR2 bytes per corrected arm): covariance-greedy 0.8220074902, residual magnitude 0.8896527392.",
+     "originator": "Putluru Sandeep (investigator-reported, 2026-10-13)",
+     "limitation": "The same calibration inputs were used for selection and evaluation, so this is not held-out improvement or generalization. Raw arrays and run logs were not archived.",
+     "sourceIds": ["archive-manifest"]},
+    {"text": "21 of 21 local structural and numerical tests reported passing at commit 2885adbc.",
+     "originator": "Putluru Sandeep (investigator-reported)",
+     "limitation": "Logs and exit codes were not archived; PA has not re-run them. A passing test is not a scientific result.",
+     "sourceIds": ["archive-manifest"]}
+  ],
+  "adverse": [
+    {"text": "No useful lower support or variance bound has been proven for the population P1 ratio estimand, so the proposed fixed-sample 5% claim is unresolved and not approved.",
+     "sourceIds": ["stat-feasibility"]},
+    {"text": "The canonical aggregator accepted 100 constructed non-EGR2 stand-in records as valid; it trusts a reported decode flag instead of decoding the bytes.",
+     "sourceIds": ["fork-pr-2"]}
+  ],
+  "openDecisions": [
+    {"text": "Statistical estimand and decision rule for P1", "sourceIds": ["stat-feasibility"]},
+    {"text": "Selector conventions, tolerances and control arms before any protocol freeze", "sourceIds": ["pr-37"]},
+    {"text": "A mandatory verification boundary: decode, reconstruct and rescore before aggregation; registration loaded by the entrypoint, not supplied by the caller", "sourceIds": ["fork-pr-2"]},
+    {"text": "Delivery of the contributor's retained qualification package for inspection", "sourceIds": ["fork-pr-2"]}
+  ],
+  "nextReview": "When the qualification package is delivered or fork PR #2 changes. No date is scheduled and nothing here authorizes a run.",
+  "timeline": [
+    {"date": "2026-10-13", "text": "Admitted for protocol development only (owner decision on Issue #28)", "sourceIds": ["issue-28-decision"]},
+    {"date": "2026-10-14", "text": "Protocol and source draft opened (PR #37, not merged)", "sourceIds": ["pr-37"]},
+    {"date": "2026-10-14", "text": "Historical archive merged as a record, no scientific promotion (PR #48)", "sourceIds": ["pr-48"]},
+    {"date": "2026-10-20", "text": "Constructed qualification gates submitted (fork PR #2)", "sourceIds": ["fork-pr-2"]},
+    {"date": "2026-10-21", "text": "Owner requested revisions: evidence delivery and a complete acceptance contract", "sourceIds": ["fork-pr-2"]}
+  ],
+  "credits": [
+    {"name": "Putluru Sandeep (@sunny-kavixo)", "role": "Originating EGRR investigator and protocol contributor; this card's layout follows his 2026-10-20 design proposal", "sourceIds": ["authors"]},
+    {"name": "Chad Holland", "role": "PA maintainer; protocol-development decision and archive curation", "sourceIds": ["authors", "issue-28-decision"]}
+  ],
+  "sources": [
+    {"id": "issue-28-decision", "label": "Issue #28", "url": "https://github.com/holland202/principia-artificialis/issues/28"},
+    {"id": "pr-37", "label": "PR #37 (open)", "url": "https://github.com/holland202/principia-artificialis/pull/37"},
+    {"id": "pr-48", "label": "PR #48 (archive)", "url": "https://github.com/holland202/principia-artificialis/pull/48"},
+    {"id": "fork-pr-1", "label": "fork PR #1 (draft)", "url": "https://github.com/sunny-kavixo/principia-artificialis/pull/1"},
+    {"id": "fork-pr-2", "label": "fork PR #2 (draft)", "url": "https://github.com/sunny-kavixo/principia-artificialis/pull/2"},
+    {"id": "archive-manifest", "label": "archive manifest", "url": "https://github.com/holland202/principia-artificialis/blob/main/contributions/sunny-kavixo/egrr/2026-10-14_snapshot/README.md"},
+    {"id": "stat-feasibility", "label": "statistical feasibility", "url": "https://github.com/holland202/principia-artificialis/blob/main/contributions/sunny-kavixo/egrr/2026-10-14_snapshot/records/egrr_issue28_statistical_feasibility.md"},
+    {"id": "authors", "label": "AUTHORS.md", "url": "https://github.com/holland202/principia-artificialis/blob/main/AUTHORS.md"}
+  ]
+}

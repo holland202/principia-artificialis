@@ -19,6 +19,10 @@ jobs:
           python scripts/method_lint.py --sabotage
           rc=$?
           test "$rc" -eq 1
+      - name: dashboard status sections match their sources (drift exits 1)
+        run: python scripts/make_dashboard.py --check
+      - name: dashboard generator tests (planted defects must stop the build)
+        run: python -m unittest scripts/test_make_dashboard.py -v
       - name: rule inventory covers the pre-amendment sources (needs full history; exit 2 = could not run)
         run: python scripts/method_lint.py --coverage
       - run: pip install numpy scipy matplotlib
