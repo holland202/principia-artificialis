@@ -56,6 +56,7 @@ section{margin-top:65px}
 .muted{color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .grid>*{min-width:0}
+.grid-top{align-items:start}
 .card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:26px}
 .card p,.card li{font-size:15px;color:var(--muted)}
 .card ul{padding-left:20px;margin-bottom:16px}.card li{margin:8px 0}
@@ -146,7 +147,7 @@ a.src{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:1px 
 </div></section>
 <section id="public-issues" aria-labelledby="questions-title">
 <div class="section-title"><div class="eyebrow">3 · Open questions</div><h2 id="questions-title">What is still unresolved.</h2><p class="muted">The EGRR card above lists its own open decisions. Every research note also ends with at least one unrun prediction, a door anyone may walk through.</p></div>
-<div class="grid">
+<div class="grid grid-top">
 <article class="card"><div class="tag">From public GitHub</div><h3>Recent research issues</h3><p>Read-only snapshot of matching open public issues, not an exhaustive list or an approval verdict. This page never uses a GitHub account token.</p>
 <ul class="issue-list" id="issue-list" aria-live="polite"><li><a href="https://github.com/holland202/principia-artificialis/issues">Browse current research issues on GitHub ↗</a><small>Recent matching issues appear here when live loading is available.</small></li></ul><p id="issue-status" class="muted"></p>
 <a href="https://github.com/holland202/principia-artificialis/issues">Browse all GitHub issues ↗</a></article>
