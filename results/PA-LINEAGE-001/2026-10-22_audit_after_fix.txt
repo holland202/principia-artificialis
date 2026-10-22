@@ -1,0 +1,37 @@
+PA-LINEAGE-001 audit, after fix (Python 3.13.16, x86_64, 2026-10-22T10:54:43Z). Self-tested by Claude (Opus 5.5); not independent.
+## unittest (original + audit)
+Ran 17 tests in 0.112s
+
+OK
+## run_acceptance
+P7_STATIC_SOURCE_CHECK: PRESENT (not browser execution)
+P1 HELD
+P2 HELD
+P3 HELD
+P4 HELD
+P5 HELD
+P6 HELD
+P7 NOT RUN
+VERDICT 6 of 7 as registered
+DIGEST 209e78c4bb5385a44fb6bf8b3493df37b6786b14a8b63b313712812790af6d66
+exit=0
+## probe (registered 2026-10-22, sha e1746fb5)
+C1 accepted
+C2 JournalError: event digest mismatch
+R3 JournalError: unknown hypothesis
+R6 exit 2 no-traceback GATE: FAIL — unknown hypothesis
+R4 JournalError: invalid kind/data
+R5a JournalError: AI contribution must declare review_level
+R5b JournalError: unknown prediction outcome
+R5c JournalError: unknown hypothesis
+R7 accepted
+R8 JournalError: invalid review_level graph review_level = none
+R9 JournalError: journal does not exist; run init first lock created: True
+R10 accepted
+## mutants (F4) and tightened gate (F5)
+mutant kind: KILLED (FAILED (errors=4))
+mutant hypothesis_id: KILLED (FAILED (failures=1, errors=4))
+mutant outcome: KILLED (FAILED (errors=4))
+mutant ai_review_level: KILLED (FAILED (errors=4))
+mutant human_review_level: KILLED (FAILED (failures=9))
+F5 crash mutant: rc=1; old gate PASSES; tightened gate FAILS

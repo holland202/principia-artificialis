@@ -1,0 +1,10 @@
+{
+ "status_on_load": "4 of 4 records \u00b7 FICTIONAL example only; no genuine experiments or citations \u00b7 exported head: not-a-real-journ",
+ "detail_after_sample": "HYPOTHESISFive agents always outperform oneclaimFor every evaluation case, five ",
+ "status_after_injection_file": "1 of 1 records \u00b7 probe \u00b7 exported head: 0000000000000000",
+ "injected_script_ran": null,
+ "injected_img_elements": 0,
+ "title_rendered_as_text": true,
+ "page_errors": [],
+ "external_requests": []
+}
