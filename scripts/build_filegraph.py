@@ -112,6 +112,16 @@ def selftest():
         else:
             print(f"[FAIL] wikilink edges: {p['stats']}")
 
+        # Case 8: an excluded path is not a node, and is listed as excluded rather than dropped silently
+        total += 1
+        p = scan_files(d, ("a/alpha.txt", "b/"))
+        ids = {n["id"] for n in p["nodes"]}
+        if "a/alpha.txt" not in ids and "b/beta.txt" not in ids and p["excluded"] == ["a/alpha.txt", "b/beta.txt"]:
+            print("[PASS] excluded file and prefix are left out and listed")
+            ok += 1
+        else:
+            print(f"[FAIL] exclusion: excluded={p['excluded']}")
+
         # Case 7: --verify must say the other thing on a page whose counts disagree with its data
         page = os.path.join(d, "page.html")
         good = scan_files(d)
@@ -251,6 +261,7 @@ SHELL = r"""<!DOCTYPE html>
     <div class="r"><label><input type="checkbox" data-k="builds_on" checked><span class="sw" style="background:rgb(79,214,184)"></span>builds on</label><b id="eB">—</b></div>
     <div class="r"><label><input type="checkbox" data-k="links_to" checked><span class="sw" style="background:rgb(120,170,255)"></span>links to</label><b id="eL">—</b></div>
     <div class="note" id="unres"></div>
+    <div class="note" id="excl"></div>
   </div>
 
   <div class="grp">
@@ -321,6 +332,7 @@ T('stamp',(D.generated||''));T('hE',E.length);T('sF',nFiles);T('sD',nDirs);
 T('eC',cnt.contains);T('eS',cnt.sibling);T('eB',cnt.builds_on);T('eL',cnt.links_to);
 T('unres',(D.stats.links_unresolved||0)+' written link'+(D.stats.links_unresolved===1?'':'s')+' point at nothing in the repo and draw no line.');
 
+if((D.excluded||[]).length)T('excl','Left out by the owner: '+D.excluded.join(', ')+'.');
 var adj=N.map(function(){return [];});
 E.forEach(function(e){adj[e.s].push({j:e.t,k:e.k,out:true});adj[e.t].push({j:e.s,k:e.k,out:false});});
 N.forEach(function(n,i){n.deg=adj[i].length;});
@@ -556,12 +568,12 @@ if(location.hash.length>1){var h=decodeURIComponent(location.hash.slice(1));if(i
 
 // ---------- live check: is this page behind GitHub? ----------
 (function(){
-  var live=$('live'),gen={};(D.generated_pages||[]).forEach(function(p){gen[p]=true;});
+  var live=$('live'),gen={};(D.generated_pages||[]).concat(D.excluded||[]).forEach(function(p){gen[p]=true;});
   var have={};N.forEach(function(n){if(n.kind!=='dir')have[n.id]=true;});
   var api='https://api.github.com/repos/'+REPO.replace('https://github.com/','')+'/git/trees/'+BR+'?recursive=1';
   fetch(api).then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();}).then(function(j){
     var now={},added=[],removed=[];
-    (j.tree||[]).forEach(function(t){if(t.type==='blob'&&!gen[t.path])now[t.path]=true;});
+    (j.tree||[]).forEach(function(t){if(t.type==='blob'&&!gen[t.path]&&!(D.excluded_rules||[]).some(function(e){return t.path===e||(e.slice(-1)==='/'&&t.path.indexOf(e)===0);}))now[t.path]=true;});
     Object.keys(now).forEach(function(p){if(!have[p])added.push(p);});
     Object.keys(have).forEach(function(p){if(!now[p])removed.push(p);});
     live.textContent='';
@@ -577,6 +589,12 @@ if(location.hash.length>1){var h=decodeURIComponent(location.hash.slice(1));if(i
 </body>
 </html>
 """
+
+
+# Left out of the site graph by owner decision (Chad Holland, 2026-10-22): the "Second Brain" page and the stray
+# `brain.html ` directory (trailing space) holding an old copy of this page. The page lists them; nothing else is
+# left out except generated pages.
+EXCLUDE = ("brain.html", "brain.html /")
 
 
 def page_data(path):
@@ -629,6 +647,8 @@ def main():
     ap.add_argument("--out", default="graph_files.html")
     ap.add_argument("--repo", default="https://github.com/holland202/principia-artificialis")
     ap.add_argument("--branch", default="main")
+    ap.add_argument("--exclude", action="append", default=None, metavar="PATH",
+                    help="leave a file (or a prefix ending in /) out; repeatable. Default: the owner's list, EXCLUDE")
     a = ap.parse_args()
 
     if a.selftest:
@@ -637,9 +657,10 @@ def main():
         sys.exit(0 if verify(a.verify) else 1)
 
     root = os.path.abspath(a.root)
-    p = scan_files(root)
+    p = scan_files(root, tuple(EXCLUDE if a.exclude is None else a.exclude))
     p["generated"] = "generated " + datetime.date.today().isoformat()
     p["repo"], p["branch"] = a.repo.rstrip("/"), a.branch
+    p["excluded_rules"] = list(EXCLUDE if a.exclude is None else a.exclude)
 
     data = json.dumps(p, separators=(",", ":")).replace("</", "<\\/")
     out = os.path.join(root, a.out)

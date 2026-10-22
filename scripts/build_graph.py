@@ -198,16 +198,20 @@ def _link_targets(text):
     return MDLINK_RE.findall(text), WIKILINK_RE.findall(text)
 
 
-def scan_files(root):
+def scan_files(root, exclude=()):
     """Every tracked file is a node. Edges are REAL relations only:
       contains  — directory holds file       (structural, always true)
       sibling   — same note number, different file (naming convention)
       builds_on — note header reference      (prose citation)
     No edge is invented to make the picture denser.
     """
-    paths, generated = [], []
+    paths, generated, excluded = [], [], []
     tracked, candidates = _candidate_files(root)
     for rel in candidates:
+        # Owner-decided exclusions (exact path, or a prefix ending in "/"), listed on the page, never silent.
+        if any(rel == e or (e.endswith("/") and rel.startswith(e)) for e in exclude):
+            excluded.append(rel)
+            continue
         # In a git checkout every tracked file counts, dotfiles and .github included. Only on a plain directory
         # walk are dotfiles and SKIP_DIRS (caches) left out, since nothing says which of them are real.
         if not tracked and (rel.startswith(".") or "/." in rel or any(part in SKIP_DIRS for part in rel.split("/")[:-1])):
@@ -363,6 +367,7 @@ def scan_files(root):
         },
         "kinds": dict(kinds),
         "generated_pages": sorted(generated),
+        "excluded": sorted(excluded),
     }
 
 
