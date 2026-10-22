@@ -5,11 +5,14 @@ status: "DRAFT — literature analysis, unregistered, unexecuted"
 project: "Principia Artificialis"
 tags: [principia-artificialis, sovereign-evolution, sovereign-veritas, evidence, agents, research, MASS, preregistration]
 author_note: "AI-assisted literature synthesis; no independent reproduction of MASS and no test of PA-MASS-001"
+provenance: "Added 2026-10-22: drafted with AI assistance; the model was not recorded when this was written and is not recoverable from the commits. Human validation: not recorded; human responsibility: Chad Holland, who gave direction."
 ---
 
 # PA-MASS-001 — Research dossier
 
 **Status:** LITERATURE-SUPPORTED MOTIVATION / RESEARCH HYPOTHESIS. **No new experiments executed.** **No claim of novelty, mechanism verification, autonomous safety, or edge-hardware performance.**
+
+> **Status note, 2026-10-22 (W9).** Two statements below are out of date and are kept as written. (1) Sovereign Veritas is no longer maintenance-only: that period ended on 2026-10-22 ([sovereign-veritas #88](https://github.com/holland202/sovereign-veritas/pull/88)). This design still treats SV as a pinned, read-only reference by choice. (2) "No GitHub or Obsidian vault write has been performed" was true at drafting time (2026-10-15); this file was later committed to GitHub in PA #52.
 
 **Question:** Can optimization of multi-agent information contracts and execution order improve verified task performance under matched total computational budgets, while independently enforced evidence and action constraints prevent task substitution, verdict laundering, and unauthorized execution?
 

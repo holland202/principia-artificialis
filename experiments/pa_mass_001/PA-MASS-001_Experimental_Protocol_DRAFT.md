@@ -4,11 +4,14 @@ date: 2026-10-15
 status: "DESIGN ONLY — NOT PREREGISTERED, NOT EXECUTED"
 project: Principia Artificialis
 tags: [research, draft, methodology, anti-vacuity, MAS, evidence-ledger]
+provenance: "Added 2026-10-22: drafted with AI assistance; the model was not recorded when this was written and is not recoverable from the commits. Human validation: not recorded; human responsibility: Chad Holland, who gave direction."
 ---
 
 # PA-MASS-001: experimental protocol — DRAFT
 
 **Not a preregistration** and not an authorization to run. This is an experimental design for review. All numeric bounds and sample counts must be fixed **before confirmatory outcomes** under the canonical PA `METHOD.md`; pilot results may inform a **new** registration but must never be relabeled confirmatory. Source research: [Lee et al. (2026)](https://arxiv.org/pdf/2610.12176). Method: [PA METHOD.md](https://github.com/holland202/principia-artificialis/blob/main/METHOD.md).
+
+> **Status note, 2026-10-22 (W9).** Where this protocol calls Sovereign Veritas maintenance-only, that is out of date and kept as written: the maintenance-only period ended on 2026-10-22 ([sovereign-veritas #88](https://github.com/holland202/sovereign-veritas/pull/88)). The protocol still treats SV as a pinned, read-only reference by choice. "No GitHub mutations" in the research status was true at drafting time (2026-10-15); this file was later committed to GitHub in PA #52.
 
 ## Exact question
 
