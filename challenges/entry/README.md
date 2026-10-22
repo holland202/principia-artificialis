@@ -29,7 +29,7 @@ None of these items asserts that a defect currently exists. Check the source at 
 
 ## Other public repositories (welcome; the record lives in that repo, with a pointer here)
 
-The owner must confirm this list before adoption.
+Confirmed by the owner on 2026-10-22; all seven repositories were checked reachable that day. *(Superseded line, kept verbatim: "The owner must confirm this list before adoption.")*
 
 | Repo | Challenge | Notes |
 |---|---|---|

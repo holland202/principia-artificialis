@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Principia Artificialis">
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="40" x2="0" y2="472"><stop offset="0" stop-color="#eaf8d2"/><stop offset="1" stop-color="#8fd3a6"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0b1622"/>
+  <polygon points="256,36 446,146 446,366 256,476 66,366 66,146" fill="#15283a" stroke="url(#g)" stroke-width="22" stroke-linejoin="round"/>
+  <rect x="136" y="150" width="240" height="56" rx="8" fill="url(#g)"/>
+  <rect x="168" y="206" width="60" height="170" fill="url(#g)"/>
+  <rect x="284" y="206" width="60" height="170" fill="url(#g)"/>
+</svg>
