@@ -46,3 +46,19 @@ R10 accepted
 Anti-vacuity (M3): F1 shows the new tests can fail; F4 shows each guard is needed; F5 shows the gate can say no.
 
 Door (M15, unrun): monotonic or anchored timestamps (L4); lock-file hygiene (L5); an independently authored validator (from the original door list).
+
+---
+
+## Results (appended after the fix; W6)
+
+Fix commit: type checks before every set/frozenset membership test in `core.py` (`kind`, `hypothesis_id`, `outcome`, AI `review_level`), plus validation of a human `review_level` when one is present. The CI sabotage step now also requires `mutation detected` in stdout, and CI runs the new test file. Raw output: [2026-10-22_audit_after_fix.txt](../results/PA-LINEAGE-001/2026-10-22_audit_after_fix.txt). Pre-fix failing run: [2026-10-22_audit_F1_before_fix.txt](../results/PA-LINEAGE-001/2026-10-22_audit_F1_before_fix.txt). Probe, mutant and browser scripts: [audit_2026-10-22/](../results/PA-LINEAGE-001/audit_2026-10-22/).
+
+| Prediction | Observed | Outcome |
+|---|---|---|
+| F1 new tests fail on unfixed code | `FAILED (failures=10, errors=16)`, `TypeError: unhashable type` for list and dict | HELD |
+| F2 malformed types → `JournalError`; CLI exits 2, no traceback | All subtests pass; probe R3–R5 now `JournalError`; `R6 exit 2 no-traceback GATE: FAIL — unknown hypothesis` | HELD |
+| F3 original 14 tests pass; acceptance unchanged | `Ran 17 tests … OK`; `VERDICT 6 of 7`, digest `209e78c4…6d66`, exit 0 | HELD |
+| F4 each guard's removal is caught | 5 of 5 mutants KILLED | HELD |
+| F5 tightened gate rejects the crash mutant | `rc=1; old gate PASSES; tightened gate FAILS` | HELD |
+
+**VERDICT 5 of 5 as registered.** All of it is self-tested, on Python 3.13.16 / x86_64 in a Linux container. It has not been run on the S25, under Python 3.14, or in other browsers. L4 (non-monotonic timestamps) and L5 (lock-file residue) are unchanged and remain doors.
