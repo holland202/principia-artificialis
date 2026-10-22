@@ -10,7 +10,7 @@
 
 **Research is open — start your own idea today.** You do **not** need an assignment, a starter issue or advance permission to explore a question or [submit a PR from your fork](JOIN_RESEARCH.md). [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Optional starter questions](RESEARCH_OPPORTUNITIES.md) · [Volunteer review process](REVIEW_PLAYBOOK.md). Official PA experiments, canonical rule changes and merges still follow the research controls.
 
-[![Principia Artificialis — existing research artwork](figures/principia_hero.png)](https://holland202.github.io/principia-artificialis/dashboard.html)
+<a href="https://holland202.github.io/principia-artificialis/dashboard.html"><picture><source media="(prefers-reduced-motion: reduce)" srcset="figures/principia_hero.png"><img src="figures/principia_hero_animated.webp" alt="Principia Artificialis: the 600-cell turning in four dimensions"></picture></a>
 
 ![repo fetch](figures/principia_fetch.svg)
 
@@ -305,7 +305,8 @@ plot are the numbers the code prints.
 
 | Figure | From | Shows |
 |---|---|---|
-| `figures/principia_hero.png` | `figures/make_logo.py` | the logo is the exact 600-cell: 120 unit quaternions of 2I, 720 edges of length 1/φ |
+| `figures/principia_hero.png` | `figures/make_logo.py` (referenced here but not present in the repository) | the logo is the exact 600-cell: 120 unit quaternions of 2I, 720 edges of length 1/φ |
+| `figures/principia_hero_animated.webp` | `scripts/make_logo_animated.py` | the same 600-cell under an isoclinic 4D rotation by an element of 2I, so the 36° loop closes exactly; the script prints its checks |
 | `figures/note047_cloister_chorus.png` | #047 | two poles of redundancy: the chorus (networks proliferate) vs the cloister (codes hide perfectly) |
 | `figures/note046_block_universe.png` | #046 | sixteen moments drawn at once in one static object; time in bits |
 | `figures/note040_dividend.png` | #040 | redundancy predicts fault survival; lost vs lying observers |
