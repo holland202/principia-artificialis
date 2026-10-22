@@ -1,0 +1,148 @@
+{
+ "schemaVersion": "0.1",
+ "id": "PA-QM-OBS-001",
+ "title": "Observation and collapse: can a consciousness-linked term be told apart from ordinary noise?",
+ "question": "Could a consciousness-linked collapse term in a quantum model produce measurement statistics that differ from ordinary environmental dephasing?",
+ "reviewedAt": "2026-10-22",
+ "reviewedBy": "Claude (Anthropic, Opus 5.5), drafted at Chad Holland's direction; human review level: direction only",
+ "states": {
+  "question": {
+   "value": "speculative-proposal",
+   "sourceIds": [
+    "intake"
+   ]
+  },
+  "protocol": {
+   "value": "not-drafted",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  "execution": {
+   "value": "not-tested",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  "engineering": {
+   "value": "not-submitted",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  "reproduction": {
+   "value": "none-documented",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  "claim": {
+   "value": "not-tested",
+   "sourceIds": [
+    "audit"
+   ]
+  }
+ },
+ "observations": [
+  {
+   "text": "In the simplest paper-faithful case (collapse operators diagonal in the classical-state basis, n = 4), the collapse term equals ordinary dephasing with at most 3 operators: worst superoperator residual 2.13e-14 over 200 random cases. Control with one non-diagonal operator added: minimum residual 3.98e-01.",
+   "originator": "Claude (Anthropic, Opus 5.5), audit derivation and registered numerical check, 2026-10-22",
+   "limitation": "Self-tested: it checks the auditor's own derivation for one model class. It says nothing about non-commuting operators or an independently constrained environment, and it is not a study result.",
+   "sourceIds": [
+    "audit",
+    "check"
+   ]
+  },
+  {
+   "text": "10 of 10 source identity hashes in the literature intake reproduced.",
+   "originator": "Claude (Anthropic, Opus 5.5), 2026-10-22",
+   "limitation": "Checks the identity lines only. The intake's per-source summaries were not audited paper by paper.",
+   "sourceIds": [
+    "audit"
+   ]
+  }
+ ],
+ "adverse": [
+  {
+   "text": "For that model class the question is not identifiable against generic environmental dephasing. Telling them apart needs non-commuting collapse operators or an independently constrained environment.",
+   "sourceIds": [
+    "audit"
+   ]
+  }
+ ],
+ "openDecisions": [
+  {
+   "text": "The audit recommends REVISE: revise the intake, then a math-only registration, and park any empirical or consciousness-causation arm. Owner decision pending.",
+   "sourceIds": [
+    "audit"
+   ]
+  }
+ ],
+ "nextReview": "When the intake is revised or a math-only registration is proposed. Nothing here authorizes a run.",
+ "timeline": [
+  {
+   "date": "2026-10-21",
+   "text": "Literature intake merged (PR #80)",
+   "sourceIds": [
+    "pr-80"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Audit and its numerical check recorded (PR #91)",
+   "sourceIds": [
+    "pr-91"
+   ]
+  }
+ ],
+ "credits": [
+  {
+   "name": "GPT-6 (OpenAI)",
+   "role": "Drafted the literature intake, at Chad Holland's direction",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  {
+   "name": "Claude (Anthropic, Opus 5.5)",
+   "role": "Audit and numerical check, at Chad Holland's direction",
+   "sourceIds": [
+    "audit"
+   ]
+  },
+  {
+   "name": "Chad Holland",
+   "role": "Direction; responsible for the record",
+   "sourceIds": [
+    "audit"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "intake",
+   "label": "literature intake",
+   "url": "https://github.com/holland202/principia-artificialis/blob/main/docs/PA_QM_OBS_001_LITERATURE_INTAKE_2026-10-21.md"
+  },
+  {
+   "id": "audit",
+   "label": "audit",
+   "url": "https://github.com/holland202/principia-artificialis/blob/main/docs/PA_QM_OBS_001_AUDIT_2026-10-22.md"
+  },
+  {
+   "id": "check",
+   "label": "numerical check",
+   "url": "https://github.com/holland202/principia-artificialis/tree/main/experiments/qm_obs_001_audit"
+  },
+  {
+   "id": "pr-80",
+   "label": "PR #80",
+   "url": "https://github.com/holland202/principia-artificialis/pull/80"
+  },
+  {
+   "id": "pr-91",
+   "label": "PR #91",
+   "url": "https://github.com/holland202/principia-artificialis/pull/91"
+  }
+ ]
+}
