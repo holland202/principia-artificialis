@@ -30,3 +30,25 @@ Recorded by Claude (Anthropic, Opus 5.5) at Chad Holland's direction. Human revi
 - At 09:42 CDT (14:42 UTC) the owner sent the canary from **Azure Cloud Shell**, not Termux. curl printed `000`: no HTTP response, so the request never reached the sensor or was refused before HTTP.
 - Claude's workspace cannot reach the sensor's IP: its outbound proxy answered `503` itself, at connect time 0.001 s. That attempt says nothing about the sensor.
 - **Status:** C1 NOT PASSED. The instrument is unvalidated. The cause is not yet diagnosed. Candidates, each to be checked on the VM and the network security group, not guessed: the inbound rule not applied, the service not listening on the public interface, or Cloud Shell's outbound path.
+
+## D4 (2026-10-22): port-80 sensor could not write its log (instrument defect, found by C1 diagnosis)
+
+**Observed** (owner-run `az vm run-command`, about 14:56 UTC):
+- Both ports are listening (`0.0.0.0:80`, `0.0.0.0:443`), and the network security group allows inbound 80/443.
+- A canary sent **from the VM to itself** on port 80 got `local=000`.
+- Only `/var/lib/pa-honey/https443.jsonl` exists, with 18 lines. **`http80.jsonl` was never created.**
+- Cloud Shell can reach an ordinary website (`example.com` → 200), so Cloud Shell's outbound path is not the cause.
+
+**Diagnosis (inference, to be confirmed by the fix command's output):**
+- The two systemd units share `StateDirectory=pa-honey` with `DynamicUser=yes`. Each unit gets its own dynamic UID, and the directory belongs to whichever started last (the HTTPS unit).
+- Every port-80 request therefore hit a permission error while logging. `sensor.py` catches `OSError` in `handle_one_request` and closes the connection, so the failure was **silent**: no reply, no log line.
+
+**Consequences:**
+- **Every port-80 request from 11:58:20Z until the fix is lost.** That includes the window around the 16:00 UTC disclosure, if the fix lands after it.
+- Port-443 data is unaffected.
+- Self-test gap: the sensor was tested on loopback as one user and the units were checked with `systemd-analyze verify`. The two-unit, shared-directory combination was never run before deployment.
+
+**Fix (configuration only; `sensor.py` and `classify.py` unchanged and still hash-pinned):**
+- The HTTP unit gets its own `StateDirectory=pa-honey-http` and log path. `cloud-init.yaml` is updated in the same commit for any future sensor. The live VM is fixed with one `sed` on the unit file, then a restart.
+
+**Known instrument weakness, not changed mid-run:** `sensor.py` drops a request silently when it cannot write the log. Changing the registered sensor during collection would break the hash pin, so this is recorded here as a door instead.

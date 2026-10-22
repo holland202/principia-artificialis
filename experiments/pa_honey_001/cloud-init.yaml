@@ -9,7 +9,10 @@ write_files:
       After=network-online.target
       [Service]
       DynamicUser=yes
-      StateDirectory=pa-honey
+      # D4: each unit needs its own state directory. With DynamicUser, two units sharing one
+      # StateDirectory get different UIDs and the second to start takes ownership, so the first
+      # cannot write its log.
+      StateDirectory=pa-honey-http
       AmbientCapabilities=CAP_NET_BIND_SERVICE
       CapabilityBoundingSet=CAP_NET_BIND_SERVICE
       NoNewPrivileges=yes
@@ -17,7 +20,7 @@ write_files:
       ProtectHome=yes
       PrivateTmp=yes
       MemoryMax=512M
-      ExecStart=/usr/bin/python3 -I /opt/pa-honey/sensor.py --port 80 --log /var/lib/pa-honey/http80.jsonl
+      ExecStart=/usr/bin/python3 -I /opt/pa-honey/sensor.py --port 80 --log /var/lib/pa-honey-http/http80.jsonl
       Restart=always
       [Install]
       WantedBy=multi-user.target
