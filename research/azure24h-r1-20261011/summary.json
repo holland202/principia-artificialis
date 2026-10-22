@@ -1,0 +1,98 @@
+{
+  "schema": "veritas-science.azure24h-r1-summary/1",
+  "derivation": "Counts transcribed from operator-provided Azure/Termux output; separately rechecked by an operator-run S25 offline audit of preserved raw records. Neither procedure is external replication.",
+  "status": "PRELIMINARY_OPERATOR_OFFLINE_ACCOUNTING_MATCH",
+  "scope": "Azure aarch64 local probes; not full-platform or independent security validation",
+  "campaign": {
+    "run_id": "unattended-20261011T215619Z",
+    "started_utc": "2026-10-11T21:56:19.356975+00:00",
+    "deadline_utc": "2026-10-12T21:08:00+00:00",
+    "finished_utc": "2026-10-12T21:08:01.516151+00:00",
+    "checkpoint_state": "DEADLINE_REACHED",
+    "rounds_complete": 23408,
+    "project_executions": 93632,
+    "passed": 93632,
+    "nonzero_exit_codes": 0,
+    "timeouts": 0,
+    "findings_reported": 0,
+    "invalid_jsonl_records": 0,
+    "seed_slots": 1123584,
+    "internal_checks_reported": 36963662,
+    "manifest_entry_count": 93639,
+    "manifest_sha256_check_exit": 0
+  },
+  "projects": [
+    {
+      "project": "evidence-ledger",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 21090608,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    },
+    {
+      "project": "skn-v1-",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 5337024,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    },
+    {
+      "project": "slc-v12-",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 9131550,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 23408,
+      "mock_only_false": 0,
+      "mock_only_absent": 0
+    },
+    {
+      "project": "veritas-companion",
+      "executions": 23408,
+      "passed": 23408,
+      "exit_code_zero": 23408,
+      "timeouts": 0,
+      "seed_slots": 280896,
+      "checks_reported": 1404480,
+      "nonempty_failure_lists": 0,
+      "mock_only_true": 0,
+      "mock_only_false": 0,
+      "mock_only_absent": 23408
+    }
+  ],
+  "provenance": {
+    "evidence_archive": "azure24h-R1-20261011T215619Z.tar.gz",
+    "evidence_archive_sha256": "3bf2ba76ae947c5dd11ecc52060590f30357dd41b5a9ada24dc09ce12bc565de",
+    "probe_py_sha256": "832d6ac64f2cdd33288bced12dadbfead0006d462c8b0386192506a7ef015a4d",
+    "campaign_sh_sha256": "c4df4e04fba2b4106602afe760da37b4468247c8bc39ae969bc9ff7b7fbb1768",
+    "original_source_commit_shas": "NOT_YET_ESTABLISHED",
+    "independent_replication": "NOT_PERFORMED",
+    "full_workspace_archive_sha256": "621b3dc7fcea9ca74ff3f4937f0158ce70f5097acd55ccfa5052059b43f13b47"
+  },
+  "operator_offline_preservation_audit": {
+    "status": "LOCAL_PRESERVATION_CONSISTENCY_VERIFIED",
+    "archive_regular_files_compared": 108192,
+    "directories_checked": 25185,
+    "links_checked": 48,
+    "r1_manifest_entries_matched": 93639,
+    "raw_jsonl_records_recounted": 93632,
+    "invalid_jsonl_records": 0,
+    "rounds_complete": 23408,
+    "source": "operator-provided S25 audit console output; no third-party attestation"
+  }
+}
