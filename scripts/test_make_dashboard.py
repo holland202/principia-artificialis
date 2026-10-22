@@ -70,6 +70,52 @@ class PlantedDefectsAreRejected(unittest.TestCase):
             md.build(PAGE.replace("<!-- generated:egrr-card:start -->", ""), INDEX, copy.deepcopy(CARD))
 
 
+class FurtherCards(unittest.TestCase):
+    """data/dashboard/cards/*.json: same rules as the featured card, plus unique ids across the page."""
+
+    def extra(self, edit=None):
+        cards = [(p, copy.deepcopy(c)) for p, c in md.load_cards()]
+        self.assertGreater(len(cards), 0, "fixture: no cards in data/dashboard/cards")
+        if edit:
+            edit(cards[0][1])
+        return cards
+
+    def test_real_cards_validate(self):
+        for _, c in md.load_cards():
+            with self.subTest(c["id"]):
+                md.validate_card(copy.deepcopy(c))
+
+    def test_planted_defects_in_a_further_card_stop_the_build(self):
+        cases = {
+            "id equal to the featured card": lambda c: c.update(id=CARD["id"]),
+            "claim judged while the run is in progress": lambda c: (
+                c["states"]["execution"].update(value="registered-experiment-running"),
+                c["states"]["claim"].update(value="refuted")),
+            "observation without its limitation": lambda c: c["observations"][0].update(limitation=""),
+            "source outside the allowlist": lambda c: c["sources"][0].update(url="http://github.com/x"),
+        }
+        for name, edit in cases.items():
+            with self.subTest(name):
+                with self.assertRaises(md.BuildError):
+                    md.build(PAGE, INDEX, copy.deepcopy(CARD), self.extra(edit))
+
+    def test_two_further_cards_with_one_id(self):
+        cards = self.extra()
+        with self.assertRaises(md.BuildError):
+            md.build(PAGE, INDEX, copy.deepcopy(CARD), cards + [("data/dashboard/cards/zz.json", copy.deepcopy(cards[0][1]))])
+
+    def test_no_further_cards_says_so(self):
+        out = md.render_cards(copy.deepcopy(CARD), [])
+        self.assertIn("No further research cards yet", out)
+
+    def test_further_card_text_is_escaped_and_ids_are_safe(self):
+        cards = self.extra(lambda c: (c.update(title="<img src=x onerror=alert(1)>", id="PA \"X\" 1"),
+                                      c["credits"][0].update(name="<img src=y>")))
+        out = md.render_cards(copy.deepcopy(CARD), cards)
+        self.assertNotIn("<img", out)
+        self.assertIn('id="pa-x-1-title"', out)
+
+
 class OutputSafety(unittest.TestCase):
     def test_card_text_is_escaped(self):
         c = planted(lambda c: c.update(title="<script>alert(1)</script>"))

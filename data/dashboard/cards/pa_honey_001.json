@@ -1,0 +1,147 @@
+{
+ "schemaVersion": "0.1",
+ "id": "PA-HONEY-001",
+ "title": "Do new, unadvertised servers get probed for a freshly announced PHP flaw?",
+ "question": "Within a fixed window, does a brand-new cloud server with no DNS name, links or content receive any request carrying the published PHP_SESSION_UPLOAD_PROGRESS probe signature?",
+ "reviewedAt": "2026-10-22",
+ "reviewedBy": "Claude (Anthropic, Opus 5.5), drafted at Chad Holland's direction; human review level: direction only",
+ "states": {
+  "question": {
+   "value": "admitted-for-study",
+   "sourceIds": [
+    "prereg"
+   ]
+  },
+  "protocol": {
+   "value": "frozen",
+   "sourceIds": [
+    "prereg"
+   ]
+  },
+  "execution": {
+   "value": "registered-experiment-running",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  "engineering": {
+   "value": "accepted",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  "reproduction": {
+   "value": "none-documented",
+   "sourceIds": [
+    "prereg"
+   ]
+  },
+  "claim": {
+   "value": "not-tested",
+   "sourceIds": [
+    "prereg"
+   ]
+  }
+ },
+ "observations": [
+  {
+   "text": "Canary control C1 passed after the D4 fix: the owner's planted probe was classified as CANARY DETECTED, exit 0.",
+   "originator": "Chad Holland (owner-run, 2026-10-22, about 15:05 UTC)",
+   "limitation": "One sensor and one planted probe. It shows the instrument can detect the signature, not that anyone else sent it. The canary came from Cloud Shell rather than Termux as registered.",
+   "sourceIds": [
+    "deviations"
+   ]
+  }
+ ],
+ "adverse": [
+  {
+   "text": "D1: one sensor instead of the two registered (Azure quota and size availability), so a \"no\" for H2 is weaker evidence than registered.",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  {
+   "text": "D2: inbound ports were opened about 2 h 40 min after the sensor started. H1 is scored as registered; H1b is a post-hoc variant and not confirmatory.",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  {
+   "text": "D4: the port-80 sensor could not write its log until a configuration fix, and dropped those requests silently. Port-80 data before the fix is lost.",
+   "sourceIds": [
+    "deviations"
+   ]
+  }
+ ],
+ "openDecisions": [
+  {
+   "text": "Score H1, H1b (post hoc) and H2 after collection stops at 2026-11-05T12:00Z. Raw logs stay private; only classifier counts are published.",
+   "sourceIds": [
+    "prereg"
+   ]
+  },
+  {
+   "text": "Copy the logs off before the Azure credit ends on 2026-11-06, then delete the resource group (owner step).",
+   "sourceIds": [
+    "prereg"
+   ]
+  }
+ ],
+ "nextReview": "When collection stops on 2026-11-05. Nothing is scored before then.",
+ "timeline": [
+  {
+   "date": "2026-10-22",
+   "text": "Registered before the flaw's scheduled public disclosure (commit 0c5f79b)",
+   "sourceIds": [
+    "prereg"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "text": "One sensor started in Central US (D1); ports opened later (D2)",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  {
+   "date": "2026-10-22",
+   "text": "Port-80 logging defect found and fixed (D4); canary control C1 passed",
+   "sourceIds": [
+    "deviations"
+   ]
+  }
+ ],
+ "credits": [
+  {
+   "name": "Chad Holland",
+   "role": "Direction; ran the deployment, the diagnosis and the canary",
+   "sourceIds": [
+    "deviations"
+   ]
+  },
+  {
+   "name": "Claude (Anthropic, Opus 5.5)",
+   "role": "Registration, sensor, classifier and deviation records, at the owner's direction",
+   "sourceIds": [
+    "prereg"
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "prereg",
+   "label": "PREREG.md",
+   "url": "https://github.com/holland202/principia-artificialis/blob/df4c3973b2229265d4ffa3614658035fad1bb9ce/experiments/pa_honey_001/PREREG.md"
+  },
+  {
+   "id": "deviations",
+   "label": "DEVIATIONS.md",
+   "url": "https://github.com/holland202/principia-artificialis/blob/df4c3973b2229265d4ffa3614658035fad1bb9ce/experiments/pa_honey_001/DEVIATIONS.md"
+  },
+  {
+   "id": "pr-87",
+   "label": "PR #87 (draft)",
+   "url": "https://github.com/holland202/principia-artificialis/pull/87"
+  }
+ ]
+}
