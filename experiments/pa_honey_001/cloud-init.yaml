@@ -1,0 +1,65 @@
+#cloud-config
+# PA-HONEY-001 sensor VM. Downloads the registered sensor and classifier at a pinned commit, checks their
+# SHA-256 hashes, and starts the sensor only if both match. Nothing else is installed.
+write_files:
+  - path: /etc/systemd/system/pa-honey-http.service
+    content: |
+      [Unit]
+      Description=PA-HONEY-001 sensor (HTTP 80)
+      After=network-online.target
+      [Service]
+      DynamicUser=yes
+      StateDirectory=pa-honey
+      AmbientCapabilities=CAP_NET_BIND_SERVICE
+      CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+      NoNewPrivileges=yes
+      ProtectSystem=strict
+      ProtectHome=yes
+      PrivateTmp=yes
+      MemoryMax=512M
+      ExecStart=/usr/bin/python3 -I /opt/pa-honey/sensor.py --port 80 --log /var/lib/pa-honey/http80.jsonl
+      Restart=always
+      [Install]
+      WantedBy=multi-user.target
+  - path: /etc/systemd/system/pa-honey-https.service
+    content: |
+      [Unit]
+      Description=PA-HONEY-001 sensor (HTTPS 443, self-signed)
+      After=network-online.target
+      [Service]
+      DynamicUser=yes
+      StateDirectory=pa-honey
+      LoadCredential=cert:/etc/pa-honey/cert.pem
+      LoadCredential=key:/etc/pa-honey/key.pem
+      AmbientCapabilities=CAP_NET_BIND_SERVICE
+      CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+      NoNewPrivileges=yes
+      ProtectSystem=strict
+      ProtectHome=yes
+      PrivateTmp=yes
+      MemoryMax=512M
+      ExecStart=/bin/sh -c 'exec /usr/bin/python3 -I /opt/pa-honey/sensor.py --port 443 --log /var/lib/pa-honey/https443.jsonl --tls-cert "$CREDENTIALS_DIRECTORY/cert" --tls-key "$CREDENTIALS_DIRECTORY/key"'
+      Restart=always
+      [Install]
+      WantedBy=multi-user.target
+runcmd:
+  - - bash
+    - -c
+    - |
+      set -euo pipefail
+      SHA=0c5f79b2eb73bc1fe76375772b7f982ee088ca23
+      BASE=https://raw.githubusercontent.com/holland202/principia-artificialis/$SHA/experiments/pa_honey_001
+      mkdir -p /opt/pa-honey /etc/pa-honey
+      cd /opt/pa-honey
+      curl -fsSL -o sensor.py "$BASE/sensor.py"
+      curl -fsSL -o classify.py "$BASE/classify.py"
+      printf '%s  %s\n' \
+        343022665ceb21dff9818e8b3c669ee2fe4e4a18305f30e48a693178a35f1f9a sensor.py \
+        064ee830455a921a0f976c8132d4ae89a8d11b78ed219a453490467ed02f9788 classify.py > SHA256SUMS
+      if ! sha256sum -c SHA256SUMS; then echo "PA-HONEY HASH MISMATCH: sensor not started" > /var/log/pa-honey-FAILED; exit 1; fi
+      openssl req -x509 -newkey rsa:2048 -nodes -days 30 -subj "/CN=localhost" \
+        -keyout /etc/pa-honey/key.pem -out /etc/pa-honey/cert.pem 2>/dev/null
+      chmod 600 /etc/pa-honey/key.pem
+      systemctl daemon-reload
+      systemctl enable --now pa-honey-http.service pa-honey-https.service
+      echo "PA-HONEY started $(date -u +%FT%TZ)" > /var/log/pa-honey-STARTED
