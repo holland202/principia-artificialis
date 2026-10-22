@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Principia Artificialis">
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="0" y1="60" x2="0" y2="460"><stop offset="0" stop-color="#eaf8d2"/><stop offset="1" stop-color="#8fd3a6"/></linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="#0b1622"/>
+  <polygon points="256,40 444,148 444,364 256,472 68,364 68,148" fill="#15283a" stroke="url(#g)" stroke-width="16" stroke-linejoin="round"/>
+  <polygon points="256,90 400,173 400,339 256,422 112,339 112,173" fill="none" stroke="#385265" stroke-width="5"/>
+  <rect x="146" y="160" width="220" height="46" rx="7" fill="url(#g)"/>
+  <rect x="176" y="206" width="48" height="146" fill="url(#g)"/>
+  <rect x="288" y="206" width="48" height="146" fill="url(#g)"/>
+  <text x="256" y="398" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="30" letter-spacing="7" fill="#bfd0d3">VERITAS</text>
+</svg>
