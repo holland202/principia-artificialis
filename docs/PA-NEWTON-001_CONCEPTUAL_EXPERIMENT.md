@@ -10,6 +10,7 @@
 **Related external project (read-only):** [Sovereign Veritas](https://github.com/holland202/sovereign-veritas), **v0.2.0 maintenance-only**, release tag `ecd4de9`; do not change that repository for this experiment. Confirm full annotated tag and exact source commit before building an adapter.  
 
 > **Status note, 2026-10-22 (W9).** Sovereign Veritas's maintenance-only period ended on 2026-10-22 ([sovereign-veritas #88](https://github.com/holland202/sovereign-veritas/pull/88)). The lines here that call it maintenance-only are kept as written on 2026-10-14. This experiment still treats SV as read-only and version-pinned by choice.
+
 **Status axes:** Mathematical: NOT RUN; implementation: NOT RUN; empirical: NOT RUN. Simulator/physics integration: NOT BUILT.
 
 ## Central falsifiable question
