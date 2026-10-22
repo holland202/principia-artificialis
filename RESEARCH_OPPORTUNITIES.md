@@ -2,6 +2,8 @@
 
 **All starter tasks are optional examples, not an approved-subject list.** Researchers may propose an original topic, develop independent exploratory work in a fork, and open an issue or PR immediately without seeking permission or an assignment. These bounded, unassigned leads are **not** assertions that any defect still exists or authorizations for official PA scientific execution. Check current sources and [open starter issues](https://github.com/holland202/principia-artificialis/issues?q=is%3Aissue+is%3Aopen+PA-ENTRY) if choosing one of these examples.
 
+**How these relate to the [challenge menu](challenges/entry/README.md):** the menu's PA-C1–PA-C6 are open challenge *categories*; each PA-ENTRY item below is one pre-scoped *instance* (PA-ENTRY-01 is a PA-C1-style task, PA-ENTRY-02 a PA-C2-style task). Either route is valid.
+
 A good starter task has a precise source, one question, a concrete evidence deliverable and a stopping point. Estimated effort is a planning aid, not observed performance.
 
 | ID | Task | Approximate effort | Smallest acceptable submission |

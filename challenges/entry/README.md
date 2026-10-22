@@ -4,7 +4,9 @@
 
 Pick one challenge, then open an [entry-challenge issue](../../.github/ISSUE_TEMPLATE/entry_challenge.yml) and declare
 your claim and falsifier **before** you run anything. One accepted, reproduced challenge is the evidence for
-[Contributor Trust Path](../../CONTRIBUTOR_TRUST_PATH.md) Stage 1.
+[Contributor Trust Path](../../CONTRIBUTOR_TRUST_PATH.md) Stage 1 (that policy is still a proposal; its status is the owner's decision).
+
+Pre-scoped instances of these categories, with open issues, are listed in [RESEARCH_OPPORTUNITIES.md](../../RESEARCH_OPPORTUNITIES.md) as PA-ENTRY-01–04.
 
 **The deal:** you do one checkable piece of work. We reproduce it, and if you consent, we credit you publicly in your own
 words. It is unpaid and there is no automatic access. Negative and null results count fully.
