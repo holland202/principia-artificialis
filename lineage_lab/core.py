@@ -59,16 +59,19 @@ def _who(data):
     _text(data, "contributor")
     if data.get("contributor_kind") not in ("human", "ai"):
         raise JournalError("contributor_kind must be human or ai")
+    level = data.get("review_level")
     if data["contributor_kind"] == "ai":
         _text(data, "model")
-        if data.get("review_level") not in REVIEW:
+        if not isinstance(level, str) or level not in REVIEW:  # audit L1: type before membership
             raise JournalError("AI contribution must declare review_level")
     elif data.get("model", ""):
         raise JournalError("human contributions cannot declare an AI model as themselves")
+    elif level is not None and (not isinstance(level, str) or level not in REVIEW):  # audit L3
+        raise JournalError("invalid review_level")
 
 
 def _data(kind, d, prior):
-    if kind not in KINDS or not isinstance(d, dict):
+    if not isinstance(kind, str) or kind not in KINDS or not isinstance(d, dict):  # audit L1
         raise JournalError("invalid kind/data")
     allowed = {
         "hypothesis": {"title", "claim", "parent_id", "reason", "contributor", "contributor_kind", "model", "review_level"},
@@ -88,7 +91,7 @@ def _data(kind, d, prior):
                 raise JournalError("unknown parent hypothesis")
             _text(d, "reason")
     else:
-        if d.get("hypothesis_id") not in hypotheses:
+        if not isinstance(d.get("hypothesis_id"), str) or d["hypothesis_id"] not in hypotheses:  # audit L1
             raise JournalError("unknown hypothesis")
         if kind == "source":
             _text(d, "reference")
@@ -98,7 +101,7 @@ def _data(kind, d, prior):
             _text(d, "observation", required=False)
             _text(d, "lesson", required=False)
             _text(d, "next_question", required=False)
-            if d.get("outcome") not in OUTCOMES:
+            if not isinstance(d.get("outcome"), str) or d["outcome"] not in OUTCOMES:  # audit L1
                 raise JournalError("unknown prediction outcome")
             if d["outcome"] in ("HELD", "REFUTED"):
                 _text(d, "scope")

@@ -21,6 +21,8 @@ jobs:
           python-version: '3.11'
       - name: Unit tests with negative cases
         run: python -m unittest lineage_lab.test_lineage -v
+      - name: Audit 2026-10-22 malformed-type tests
+        run: python -m unittest lineage_lab.test_audit_malformed -v
       - name: Registered PA-LINEAGE-001 acceptance instrument
         run: python -m lineage_lab.run_acceptance
       - name: Adversarial CLI sabotage must exit 1
@@ -29,7 +31,10 @@ jobs:
           python -m lineage_lab demo --journal "$RUNNER_TEMP/pa-lineage.jsonl"
           python -m lineage_lab verify --journal "$RUNNER_TEMP/pa-lineage.jsonl"
           set +e
-          python -m lineage_lab verify --journal "$RUNNER_TEMP/pa-lineage.jsonl" --sabotage
+          python -m lineage_lab verify --journal "$RUNNER_TEMP/pa-lineage.jsonl" --sabotage > "$RUNNER_TEMP/sabotage.out"
           rc=$?
           set -e
+          cat "$RUNNER_TEMP/sabotage.out"
           test "$rc" -eq 1
+          # audit L2: exit 1 alone is also what an uncaught exception gives; require the detection message
+          grep -q "mutation detected" "$RUNNER_TEMP/sabotage.out"
