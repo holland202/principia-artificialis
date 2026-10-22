@@ -1,0 +1,21 @@
+== AMB-2 (SABOTAGE: surrogate = full grid)
+  seed 0: round0 T_full 0.3533 T_S 0.3533 | final T_full ENGINE 0.3598  RANDOM 0.3642  NONE 0.3533 | ENGINE gap -0.0185
+  seed 1: round0 T_full 0.3564 T_S 0.3564 | final T_full ENGINE 0.3614  RANDOM 0.3443  NONE 0.3564 | ENGINE gap -0.0185
+  seed 2: round0 T_full 0.3567 T_S 0.3567 | final T_full ENGINE 0.3639  RANDOM 0.3689  NONE 0.3567 | ENGINE gap -0.0185
+  seed 3: round0 T_full 0.3802 T_S 0.3802 | final T_full ENGINE 0.3802  RANDOM 0.3602  NONE 0.3802 | ENGINE gap -0.0180
+  seed 4: round0 T_full 0.3352 T_S 0.3352 | final T_full ENGINE 0.3352  RANDOM 0.3443  NONE 0.3352 | ENGINE gap -0.0193
+  seed 5: round0 T_full 0.3869 T_S 0.3869 | final T_full ENGINE 0.3850  RANDOM 0.3815  NONE 0.3869 | ENGINE gap -0.0139
+  seed 6: round0 T_full 0.3371 T_S 0.3371 | final T_full ENGINE 0.3420  RANDOM 0.3321  NONE 0.3371 | ENGINE gap -0.0191
+  seed 7: round0 T_full 0.3254 T_S 0.3254 | final T_full ENGINE 0.3271  RANDOM 0.3268  NONE 0.3254 | ENGINE gap -0.0194
+  seed 8: round0 T_full 0.3510 T_S 0.3510 | final T_full ENGINE 0.3473  RANDOM 0.3598  NONE 0.3510 | ENGINE gap -0.0188
+  seed 9: round0 T_full 0.3899 T_S 0.3899 | final T_full ENGINE 0.3854  RANDOM 0.3640  NONE 0.3899 | ENGINE gap -0.0173
+  mean round0 T_full 0.3572  T_S 0.3572  gap 0.0000
+  mean final T_full  ENGINE 0.3587  RANDOM 0.3546  NONE 0.3572;  ENGINE lower than RANDOM in 4 of 10 seeds
+  mean final gap     ENGINE -0.0182  RANDOM -0.0003  NONE 0.0000;  B1 uniform T_full 1.000
+  B1  HELD
+  B2  REFUTED
+  B3  REFUTED
+  B4  HELD
+VERDICT 2 of 4 as registered (B5 is --sabotage; B6 is the door)
+DIGEST b1d65fb062f3221e645c23fbc5aeb7c64686970e894e029d88edfbfedf0682c1
+sabotage exit 1

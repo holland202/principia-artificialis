@@ -2,8 +2,8 @@
 
 **Status:** Draft, verified reference code — 7 of 8 registered predictions held; **Q2 REFUTED (kept)**. Registration committed at `2c4cb6d`, before the code existed.
 **Theme:** Learning Theory / Evaluation / Evidence
-**Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's request ("attack the remaining dependency on
-the outcome source")
+**Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's direction
+(2026-10-03)
 **Builds on:** [[note064_governed_outcome_feedback]] (its NC2: a corrupted outcome source shared by learner
 and evaluator made every arm harmful, 1.00; its unrun door D1), [[note063_evidence_bound_learning_loop]]
 (EBLL records), evidence-ledger EL-007 (counting independent roots, not documents)

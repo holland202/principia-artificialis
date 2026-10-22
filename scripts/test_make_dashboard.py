@@ -4,6 +4,7 @@ Each planted defect must stop the build (C-BUILD fail-closed); the real sources 
 return 1 on a hand-edited page and 0 on the generated one. Run: python -m unittest scripts/test_make_dashboard.py
 """
 import copy
+import re
 import json
 import sys
 import unittest
@@ -58,7 +59,8 @@ class PlantedDefectsAreRejected(unittest.TestCase):
                     md.build(PAGE, INDEX, planted(edit))
 
     def test_index_whose_header_disagrees_with_its_table(self):
-        bad = INDEX.replace("**92 notes indexed", "**91 notes indexed", 1)
+        # Derive the count from the live index; a hardcoded "92" broke this test as soon as a note was added.
+        bad = re.sub(r"\*\*(\d+) notes indexed", lambda m: "**%d notes indexed" % (int(m.group(1)) - 1), INDEX, count=1)
         self.assertNotEqual(bad, INDEX, "fixture: header text not found")
         with self.assertRaises(md.BuildError):
             md.parse_index(bad)
