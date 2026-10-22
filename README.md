@@ -6,7 +6,7 @@
 
 **[Visit the PA Public Research Dashboard →](https://holland202.github.io/principia-artificialis/dashboard.html)** · [Public homepage](https://holland202.github.io/principia-artificialis/) · [How to contribute](JOIN_RESEARCH.md) · [Contributor acknowledgments](AUTHORS.md)
 
-**Public pilot update (2026-10-19):** Active outreach/recruitment is paused while existing collaborations receive priority. Anyone may still explore or submit independent research. Participation remains voluntary, unpaid and at your own pace; submission does not confer scientific approval, publication authority or repository access.
+**Public pilot update (2026-10-22):** Recruitment is open again. The pause announced on 2026-10-19 has ended. New contributors are welcome through the [entry challenges](challenges/entry/README.md) or their own research questions ([JOIN_RESEARCH.md](JOIN_RESEARCH.md)). Participation remains voluntary, unpaid and at your own pace; submission does not confer scientific approval, publication authority or repository access.
 
 **Research is open — start your own idea today.** You do **not** need an assignment, a starter issue or advance permission to explore a question or [submit a PR from your fork](JOIN_RESEARCH.md). [Join the Research Gateway pilot](JOIN_RESEARCH.md) · [Optional starter questions](RESEARCH_OPPORTUNITIES.md) · [Volunteer review process](REVIEW_PLAYBOOK.md). Official PA experiments, canonical rule changes and merges still follow the research controls.
 

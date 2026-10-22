@@ -1,6 +1,6 @@
 # Entry challenges — menu
 
-**Status: DRAFT (part of [RECRUITMENT_PROTOCOL.md](../../RECRUITMENT_PROTOCOL.md)); not in effect until the owner merges.**
+**Status: IN EFFECT (pilot; part of [RECRUITMENT_PROTOCOL.md](../../RECRUITMENT_PROTOCOL.md)).** Merged in PR #63 (2026-10-18); recruitment reopened 2026-10-22. *(Superseded status line, kept verbatim: "DRAFT (part of RECRUITMENT_PROTOCOL.md); not in effect until the owner merges.")*
 
 Pick one challenge, then open an [entry-challenge issue](../../.github/ISSUE_TEMPLATE/entry_challenge.yml) and declare
 your claim and falsifier **before** you run anything. One accepted, reproduced challenge is the evidence for

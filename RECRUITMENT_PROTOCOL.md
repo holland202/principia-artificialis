@@ -1,6 +1,6 @@
 # Challenge-Based Recruitment Protocol
 
-**Status: DRAFT — proposed by AI, pending owner review. Not in effect until the owner merges it.**
+**Status: IN EFFECT (pilot).** Merged from the owner's account in PR #63 (2026-10-18); recruitment reopened by owner direction on 2026-10-22. *(Superseded status line, kept verbatim: "DRAFT — proposed by AI, pending owner review. Not in effect until the owner merges it.")*
 **Scope:** how a stranger becomes a trusted research contributor across holland202's public repositories, by passing a
 challenge instead of asking for access. Principia Artificialis is the default home. The protocol sits beside
 [JOIN_RESEARCH.md](JOIN_RESEARCH.md), which stays open to anyone. It is the evidence route into Stage 1 of the
