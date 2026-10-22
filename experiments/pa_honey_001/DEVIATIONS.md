@@ -52,3 +52,13 @@ Recorded by Claude (Anthropic, Opus 5.5) at Chad Holland's direction. Human revi
 - The HTTP unit gets its own `StateDirectory=pa-honey-http` and log path. `cloud-init.yaml` is updated in the same commit for any future sensor. The live VM is fixed with one `sed` on the unit file, then a restart.
 
 **Known instrument weakness, not changed mid-run:** `sensor.py` drops a request silently when it cannot write the log. Changing the registered sensor during collection would break the hash pin, so this is recorded here as a door instead.
+
+## C1 status update (2026-10-22, about 15:05 UTC): canary control PASSED after the D4 fix
+
+The owner ran each step through `az vm run-command` or Cloud Shell:
+- **Diagnosis confirmed.** Before the fix, `pa-honey-http uid=63699`, `pa-honey-https uid=64663` and `dir-owner-uid=64663`: the port-80 unit did not own the shared state directory.
+- **After the fix:** a local port-80 canary got `local=200`; `http80.jsonl` has 1 line and `https443.jsonl` has 18.
+- The owner's canary from Cloud Shell to `http://132.196.92.136/` got **200**.
+- `classify.py … --expect-canary chad-c-20261022` printed `CANARY DETECTED chad-c-20261022` and exited **0**.
+
+**C1 PASSED.** The instrument is validated for port 80 from this point on. The owner's canary came from Cloud Shell, not Termux as registered; this is a minor deviation, and the shape is the same. H2 can now be scored either way. Port-80 data before the fix is lost (D4).
