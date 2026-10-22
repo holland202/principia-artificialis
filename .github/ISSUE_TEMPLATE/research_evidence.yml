@@ -1,6 +1,7 @@
 name: Research idea, evidence or counterexample
 description: Propose your own idea without approval, or submit a bounded evidence review, negative finding, mathematical critique, or source correction.
 title: "research: <question, original proposal, or finding>"
+labels: ["research"]
 body:
   - type: markdown
     attributes:
