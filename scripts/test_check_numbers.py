@@ -128,5 +128,21 @@ class Pairing(Fixture):
         self.assertIn("| 996 | note996_new.md | 0 |", report)
 
 
+
+class Pattern(unittest.TestCase):
+    """note062 P9 (2026-10-16): sentence-final numbers count; version strings still do not."""
+
+    def test_sentence_final_number_is_extracted(self):
+        self.assertEqual(["1.6398"], C.NUM.findall("slope 1.6398."))
+
+    def test_version_string_yields_nothing(self):
+        self.assertEqual([], C.NUM.findall("Python 3.11.2"))
+
+    def test_range_left_endpoint_only(self):
+        # "0.004980..0.012872": since P9 the left endpoint counts. The right one never did (the lookbehind
+        # refuses a number preceded by a period). Known asymmetry, recorded in note062; pinned so a change is seen.
+        self.assertEqual(["0.004980"], C.NUM.findall("bound 0.004980..0.012872"))
+
+
 if __name__ == "__main__":
     unittest.main()

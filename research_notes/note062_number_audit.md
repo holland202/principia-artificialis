@@ -176,3 +176,95 @@ repository is still the 2026-09-27 copy; CI regenerates it on every run without 
 Provenance: Claude (Anthropic, Opus 5.5) observed, registered, built and ran this update → human validation: not
 performed → human editing/curation: direction by Chad Holland, 2026-10-16 → human responsibility: Chad Holland.
 Human review level: direction only. Self-tested.
+
+## Update 2026-10-16 (2): one correction, P10 registered, P9 run plan (written before either is run)
+
+**Correction (W9).** The section above says "The self-test's own honest note ends 'falling to 0.00030.', so that
+number has never been checked." That is wrong. `0.00030` has two significant digits, so `measured()` skips it
+whatever comes after it:
+
+```
+$ python3 -c "import sys; sys.path.insert(0,'scripts'); import check_numbers as C; print(C.sig_digits('0.00030'), C.measured('0.00030'))"
+2 False
+```
+
+The sentence-final blind spot is real, but the self-test is not an instance of it. The sentence is kept above, as
+written.
+
+**P10 (registered here).** Adding a `**Reference code:**` header line to note050 and note067 changes their
+report rows from "paired by filename" to an ordinary pairing, leaves 038 and 041 unpaired, and leaves the full
+run's TOTAL at **446/525**.
+
+**P9 run plan.** `NUM`'s closing lookahead changes from `(?![\w.])` to `(?![\w])(?!\.\d)`. A number followed by a
+period then counts, unless a digit follows the period, so `3.11.2` still yields no token. The checker itself is
+the committed scan that P9 asks for: the measured count is the TOTAL denominator before and after the change.
+P9 as registered: the denominator rises by at most 9, and no new NOT FOUND number is class (c) drift.
+
+### Results of update (2) (run after `73f8a30` registered them; Linux container, Python 3.13, not the S25)
+
+```
+# P10: after the two header lines; lines from the full run's stdout
+note050: 050_seasonal_memory_governance.md: exit 0, 0 measured numbers, 0 not found in the output
+note067: note067_evaluator_sensitivity_bound.md: exit 0, 77 measured numbers, 5 not found in the output
+TOTAL 446/525 found; report: results/NUMBER_CHECK.md
+# rows from results/NUMBER_CHECK.md as written by the P9 run below; the P10 run printed the same two rows
+| 038 | (no unique note names note038_reference, and the number is shared by several note files) | - | - | - | - |
+| 041 | (no unique note names note041_reference, and the number is shared by several note files) | - | - | - | - |
+
+# P9: after the pattern change; lines from the full run's stdout that differ from the P10 run
+note043: note043_free_energy_of_reasoning.md: exit 0, 32 measured numbers, 17 not found in the output
+note044: note044_circularity_test.md: exit 0, 3 measured numbers, 0 not found in the output
+note045: note045_stubbornness.md: exit 0, 1 measured numbers, 1 not found in the output
+note048: note048_the_governor_is_the_dynamics.md: exit 0, 14 measured numbers, 9 not found in the output
+note055: note055_kx_marginal_utility.md: exit 0, 19 measured numbers, 8 not found in the output
+note064: note064_governed_outcome_feedback.md: exit 0, 83 measured numbers, 3 not found in the output
+note067: note067_evaluator_sensitivity_bound.md: exit 0, 90 measured numbers, 5 not found in the output
+TOTAL 463/544 found; report: results/NUMBER_CHECK.md
+
+# stdout of: python scripts/mutate_check_numbers.py scripts
+KILLED   M1 checker accepts every number (self-test can no longer flag)
+KILLED   M2 main ignores a failed self-test
+KILLED   M3 timeout not caught
+KILLED   M4 not-run does not exit 2
+KILLED   M5 filename fallback removed
+KILLED   M6 results/ not created
+KILLED   M7 sentence-final period rejected again (pre-P9 pattern)
+mutants killed: 7/7
+```
+
+- **P10 held.** 050 and 067 pair by name; 038 and 041 stay unpaired; TOTAL 446/525.
+- **P9 REFUTED in part (kept).** The measured count rose from 525 to **544**, not by at most 9. The one-off scan
+  counted the 9 sentence-final numbers correctly, but the new pattern also accepts a number followed by `..`,
+  so it picks up the left endpoint of every range in note067's pasted output (`S3P bound 0.004980..0.012872`),
+  10 more numbers. All 10 are FOUND. The right endpoint of a range is still never extracted: the lookbehind
+  refuses a number preceded by a period. That asymmetry is pinned in a unit test (`test_range_left_endpoint_only`)
+  rather than fixed here.
+- **P9's second half held.** Two numbers are newly NOT FOUND, and both are kept history, class (a), not drift:
+  note043's `0.2561` is the wrong pasted value quoted beside its correction ("not 0.7333 against 0.2561"), and
+  note045's `+0.6014` is U1 before the tie correction (the script now prints `+0.6130`).
+- The pattern change is guarded by mutant M7; the suite now kills 7/7.
+
+- **P11 (open)** Extracting both endpoints of a range adds only FOUND numbers. Unrun.
+
+P4 is still open.
+
+**CI did not reproduce the container's total, and the cause is note055, not the checker.** On the PR head, GitHub CI
+printed `TOTAL 459/544 found` (run 38948441621), against `463/544` in the container. The only differing row is
+note055, with 12 not found in CI against 8 in the container. The two CI runs since this morning used the same
+package versions (`numpy-2.4.6 scipy-1.17.1`). Run 38944808763's note055 output matches the container's
+byte for byte. Run 38948441621's differs from the fourth or fifth decimal on, for example:
+
+```
+container / run 38944808763:     pred       mean loss 0.062687   vs uniform -0.2086
+run 38948441621:                 pred       mean loss 0.062694   vs uniform -0.2087
+```
+
+In the container the script prints identical output on five runs, with and without single-threaded BLAS.
+So note055's printed numbers depend on the machine that runs them. *Interpretation, not verified:* different
+GitHub runner CPUs take different floating-point paths in the BLAS kernels. The P9 pattern change exposes this,
+because it newly checks note055's sentence-final "-0.2086." That number is FOUND or NOT FOUND depending on the
+runner.
+
+- **P12 (open)** note055's output is identical across GitHub runners once the BLAS core type is pinned (for
+  example `OPENBLAS_CORETYPE=Haswell`). If it is not, the machine dependence is in note055's own arithmetic, and
+  its four-decimal claims need a stated tolerance (M5). Unrun.
