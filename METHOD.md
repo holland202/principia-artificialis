@@ -249,7 +249,7 @@ in CONTROLS.md.
 | Method comparison | the study compares methods | C-METHCOMP | |
 | People's data | the work collects, stores or publishes data about identifiable people (IP addresses, names, messages included), or handles material marked private or restricted | C-PRIVATE | |
 | Design | a claim goes beyond "this code, on these inputs, gives this output": a cause, a population, people's behaviour, or a field | C-DESIGN | |
-| Held-out | anything is selected, tuned, trained or thresholded on data | C-HOLDOUT | |
+| Held-out | the same evidence could be used both to choose something (a selection, tuning, training, a threshold, or a change to a generator or harness) and to judge the claim | C-HOLDOUT | |
 | Generated inputs | generated or synthetic inputs (generators, mutators, scenarios, synthetic datasets) feed a result | C-SYNTH | |
 <!-- /canonical:triggers -->
 

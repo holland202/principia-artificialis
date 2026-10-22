@@ -128,15 +128,19 @@ controls whose triggers fire apply; the M rules always apply.
     audit or literature review.
   - Name the strongest kind of claim it supports: causal, associational, descriptive or existence.
   - State any stronger claim as out of scope.
+  - A deterministic test supports existence claims ("this input breaks it", "these inputs are handled") and
+    conformance on the inputs tested. It never supports a rate, a reliability figure or a population claim.
 
-  *Source: Amendment 4 D2 (PA-QM-OBS-001: an arm no measurement could decide).*
+  *Source: Amendment 4 D2 (PA-QM-OBS-001: an arm no measurement could decide); revision R2.*
 - **C-HOLDOUT** · MUST · **Decide on one set, judge on another.**
   - Data used to select, tune, train or set a threshold is separated, before running, from the data used
     to judge.
   - The split is recorded with its identities (hashes or seeds).
   - A result judged on the deciding data is labelled in-sample and does not count toward the claim.
+  - Not triggered by verification that chooses nothing from the evidence it judges, such as a deterministic
+    test of fixed cases.
 
-  *Source: Amendment 4 D3 (EGRR: the same calibration inputs used for selection and evaluation).*
+  *Source: Amendment 4 D3 (EGRR: the same calibration inputs used for selection and evaluation); revision R1.*
 - **C-SYNTH** · MUST · **Generated inputs are looked at.**
   - Before a result from generated or synthetic inputs counts, report how the cases fall across the
     outcome classes they are meant to reach.
