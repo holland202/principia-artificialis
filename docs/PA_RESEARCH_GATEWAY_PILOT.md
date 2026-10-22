@@ -17,9 +17,9 @@ Follow `JOIN_RESEARCH.md`, `METHOD.md`, `WORKFLOW.md`, `CONTROLS.md`, `REVIEW_PL
 
 **Status update, 2026-10-22:** `RECRUITMENT_PROTOCOL.md` is **in effect as a pilot** (PR #83: recruitment reopened by owner direction). `CONTRIBUTOR_TRUST_PATH.md` is still a **draft proposal, not adopted**. Its procedures must not be represented as in force.
 
-Independent researchers may choose their own questions and submit them without an invitation.
+Independent researchers may choose their own questions and submit them without an invitation. No deadlines, membership fees, required work hours, or automatic access.
 
-*(Superseded lines, kept verbatim: "`RECRUITMENT_PROTOCOL.md` and `CONTRIBUTOR_TRUST_PATH.md` are marked **draft, not adopted**. Their procedures must not be misrepresented as automatically in force." and "The pause affects **outbound recruitment**, not independent public submissions.")* No deadlines, membership fees, required work hours, or automatic access.
+*(Superseded lines, kept verbatim: "`RECRUITMENT_PROTOCOL.md` and `CONTRIBUTOR_TRUST_PATH.md` are marked **draft, not adopted**. Their procedures must not be misrepresented as automatically in force." and "The pause affects **outbound recruitment**, not independent public submissions.")*
 
 ## Lightweight pilot plan
 
