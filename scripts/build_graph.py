@@ -167,6 +167,37 @@ KIND_BY_EXT = {
 }
 
 
+def _candidate_files(root):
+    """Tracked files when `root` is a git checkout (what GitHub shows, so the page's live check compares like with
+    like); every file on disk otherwise (the self-test's temporary trees)."""
+    import subprocess
+    try:
+        out = subprocess.run(["git", "-C", root, "ls-files", "-z"], capture_output=True, check=True).stdout
+        top = subprocess.run(["git", "-C", root, "rev-parse", "--show-toplevel"], capture_output=True,
+                             check=True, text=True).stdout.strip()
+        if os.path.realpath(top) == os.path.realpath(root):
+            return True, sorted(p for p in out.decode("utf-8").split("\0") if p and os.path.isfile(os.path.join(root, p)))
+    except (OSError, subprocess.CalledProcessError):
+        pass
+    found = []
+    for base, dirs, fs in os.walk(root):
+        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
+        for f in fs:
+            found.append(os.path.relpath(os.path.join(base, f), root).replace("\\", "/"))
+    return False, sorted(found)
+
+
+FENCE_RE = re.compile(r"^(```|~~~).*?^\1", re.M | re.S)
+INLINE_CODE_RE = re.compile(r"`[^`\n]*`")
+MDLINK_RE = re.compile(r"\]\(\s*<?([^)\s>]+)>?(?:\s+[\"'][^)]*[\"'])?\s*\)")
+
+
+def _link_targets(text):
+    """(markdown targets, wikilink names) outside fenced and inline code."""
+    text = INLINE_CODE_RE.sub("", FENCE_RE.sub("", text))
+    return MDLINK_RE.findall(text), WIKILINK_RE.findall(text)
+
+
 def scan_files(root):
     """Every tracked file is a node. Edges are REAL relations only:
       contains  — directory holds file       (structural, always true)
@@ -174,16 +205,17 @@ def scan_files(root):
       builds_on — note header reference      (prose citation)
     No edge is invented to make the picture denser.
     """
-    paths = []
-    for base, dirs, fs in os.walk(root):
-        dirs[:] = [d for d in dirs if d not in SKIP_DIRS]
-        for f in fs:
-            rel = os.path.relpath(os.path.join(base, f), root)
-            if rel.startswith(".") or "/." in rel:
-                continue
-            if _is_generated(os.path.join(base, f)):
-                continue
-            paths.append(rel.replace("\\", "/"))
+    paths, generated = [], []
+    tracked, candidates = _candidate_files(root)
+    for rel in candidates:
+        # In a git checkout every tracked file counts, dotfiles and .github included. Only on a plain directory
+        # walk are dotfiles and SKIP_DIRS (caches) left out, since nothing says which of them are real.
+        if not tracked and (rel.startswith(".") or "/." in rel or any(part in SKIP_DIRS for part in rel.split("/")[:-1])):
+            continue
+        if _is_generated(os.path.join(root, rel)):
+            generated.append(rel)
+            continue
+        paths.append(rel)
 
     nodes = {}
     dirs_seen = set()
@@ -268,6 +300,44 @@ def scan_files(root):
             if t:
                 add(p, t, "builds_on")
 
+    # links_to: a link written in a markdown file that resolves to a file or directory in this graph.
+    # Unresolved, external and in-page links make no edge; they are counted, not drawn.
+    import posixpath
+    from urllib.parse import unquote
+    by_stem = collections.defaultdict(list)
+    for p in paths:
+        by_stem[os.path.splitext(os.path.basename(p))[0]].append(p)
+        by_stem[os.path.basename(p)].append(p)
+    unresolved = 0
+    for p in paths:
+        if not p.endswith(".md"):
+            continue
+        try:
+            txt = open(os.path.join(root, p), encoding="utf-8", errors="replace").read()
+        except OSError:
+            continue
+        md_targets, wiki_names = _link_targets(txt)
+        for t in md_targets:
+            t = t.split("#", 1)[0].split("?", 1)[0]
+            if not t or re.match(r"^[a-zA-Z][a-zA-Z0-9+.-]*:", t):
+                continue          # in-page anchor, or an external scheme (https:, mailto:)
+            t = unquote(t)
+            base = "" if t.startswith("/") else posixpath.dirname(p)
+            target = posixpath.normpath(posixpath.join(base, t.lstrip("/"))) or "/"
+            if target == ".":
+                target = "/"
+            if target in nodes and target != p:
+                add(p, target, "links_to")
+            else:
+                unresolved += 1
+        for w in wiki_names:
+            name = w.split("|", 1)[0].split("#", 1)[0].strip()
+            cands = sorted(set(by_stem.get(name, []) + ([name] if name in nodes else [])))
+            if len(cands) == 1 and cands[0] != p:
+                add(p, cands[0], "links_to")
+            else:
+                unresolved += 1   # missing, or ambiguous (two files share the name): no guess
+
     deg = collections.Counter()
     for e in edges:
         deg[e["source"]] += 1
@@ -287,9 +357,12 @@ def scan_files(root):
             "contains": ekinds.get("contains", 0),
             "sibling": ekinds.get("sibling", 0),
             "builds_on": ekinds.get("builds_on", 0),
+            "links_to": ekinds.get("links_to", 0),
+            "links_unresolved": unresolved,
             "orphans": sum(1 for n in nodes.values() if n["orphan"]),
         },
         "kinds": dict(kinds),
+        "generated_pages": sorted(generated),
     }
 
 
