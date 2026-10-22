@@ -49,6 +49,10 @@ Answer every row: yes, or no with a reason. A blank row counts as yes. The contr
 | Verdict code | the artifact returns a verdict (a gate, guard, verifier, check or lint) | C-BUILD | |
 | Exploration | anything run before registration produced outputs on the registered cases, or the claim came out of exploratory search | C-EXPLORE | |
 | Method comparison | the study compares methods | C-METHCOMP | |
+| People's data | the work collects, stores or publishes data about identifiable people (IP addresses, names, messages included), or handles material marked private or restricted | C-PRIVATE | |
+| Design | a claim goes beyond "this code, on these inputs, gives this output": a cause, a population, people's behaviour, or a field | C-DESIGN | |
+| Held-out | anything is selected, tuned, trained or thresholded on data | C-HOLDOUT | |
+| Generated inputs | generated or synthetic inputs (generators, mutators, scenarios, synthetic datasets) feed a result | C-SYNTH | |
 <!-- /excerpt -->
 
 ## Falsifiable next predictions (M15)

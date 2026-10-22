@@ -46,7 +46,7 @@ SOURCES = {  # key: (kind, location)
     "EF": ("file", "methodology/record/skills/experiment-first.SKILL.md"),
     "PRW": ("file", "methodology/record/skills/prereg-research-workflow.SKILL.md"),
 }
-REF_KEYS = set(SOURCES) | {"A3"}  # A3: rules introduced by Amendment 3 itself
+REF_KEYS = set(SOURCES) | {"A3", "A4"}  # A3, A4: rules introduced by Amendments 3 and 4 themselves
 EXPECTED_COUNTS = {"SWAY": 61, "A1": 22, "A2": 37, "TEMPLATE": 3, "CLAUDE": 43, "EF": 14, "PRW": 52}
 
 DEF = re.compile(r"^\s*- \*\*([A-Z][A-Z0-9-]*\d*|C-[A-Z]+)\*\* · (MUST|SHOULD|MAY) · \*\*(.+?)\*\*")

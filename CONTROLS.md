@@ -55,9 +55,12 @@ controls whose triggers fire apply; the M rules always apply.
   - An outside question is credited as a question, with no implied endorsement or validation.
   - Influence claims go in `LINEAGE.md` with their evidence and a lineage status. Unknown authorship
     stays `INDETERMINATE`.
+  - Each specific claim taken from outside material is checked against the source cited for that claim,
+    not only against the material that repeats it. AI-generated summaries are outside material. A claim
+    not found at its cited source is recorded as not found there, and is not used.
 
   *Source: prereg skill §6 (the Perplexity record; Amos Tipton's question; the "Dependent Evidence"
-  drafter).*
+  drafter); Amendment 4 D4 (two AI summaries citing pages that do not contain their claims).*
 - **C-DEVICE** · MUST · **Device claims.**
   - A claim about a device or platform needs a run on it, with the output pasted verbatim.
   - File identity is checked by md5 after every transfer between machines.
@@ -110,6 +113,39 @@ controls whose triggers fire apply; the M rules always apply.
 
   *Source: Stage 1; Amendment 3 D13.*
 
+- **C-PRIVATE** · MUST · **People's data and restricted material.**
+  - Say what data about identifiable people is collected and why, and collect no more.
+  - Say who can see the raw data, where it is kept and when it is deleted.
+  - Say what is published, and in what reduced form.
+  - Record the owner's or the contributor's permission for anything marked private or restricted.
+  - Private-repository and restricted material never enters a public repository, or a repository that
+    may become public.
+
+  *Source: Amendment 4 D1 (EGRR evidence paths; the honeypot's IP addresses; private handoff notes found
+  in another private repository).*
+- **C-DESIGN** · MUST · **Design type and the claim it can carry.**
+  - Name the design: experiment, observational study, correlational study, case study, simulation,
+    audit or literature review.
+  - Name the strongest kind of claim it supports: causal, associational, descriptive or existence.
+  - State any stronger claim as out of scope.
+
+  *Source: Amendment 4 D2 (PA-QM-OBS-001: an arm no measurement could decide).*
+- **C-HOLDOUT** · MUST · **Decide on one set, judge on another.**
+  - Data used to select, tune, train or set a threshold is separated, before running, from the data used
+    to judge.
+  - The split is recorded with its identities (hashes or seeds).
+  - A result judged on the deciding data is labelled in-sample and does not count toward the claim.
+
+  *Source: Amendment 4 D3 (EGRR: the same calibration inputs used for selection and evaluation).*
+- **C-SYNTH** · MUST · **Generated inputs are looked at.**
+  - Before a result from generated or synthetic inputs counts, report how the cases fall across the
+    outcome classes they are meant to reach.
+  - Report how many distinct kinds of case there are, as opposed to repeats.
+  - A person looks at a small, named sample.
+
+  *Source: Amendment 4 D5 (DIFF-001's first generator: 1,990 of 2,000 cases REFUSE; a red-team run whose
+  96 scenarios were 2 classes repeated).*
+
 ## Doors (not adopted)
 
 These are kept as doors and are not rules. Each becomes one only through M18.
@@ -119,3 +155,6 @@ These are kept as doors and are not rules. Each becomes one only through M18.
   claim ledger per repository, and the discovery-versus-confirmation question.
 - The Amendment 2 draft's "DOORS": a fixed output shape, and interactive artifacts as instruments.
 - Amendment 3 D12: a high-consequence trigger, and a fuller methodology lint.
+- Amendment 4 "Doors": a conflict-of-interest line, the AI's role per study, agreement statistics,
+  question-selection bias, measured rather than estimated runtimes, early outside experts, and where
+  safety limits are enforced before an agent actuates hardware.

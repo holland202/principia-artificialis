@@ -77,6 +77,10 @@ are M1, M2, M3, M8, M6, M15 and M8 there.
 | C-EXPLORE | MUST | Exploration is disclosed |
 | C-DISCOVER | MAY | The discovery loop |
 | C-METHCOMP | MUST | Methodology comparison protocol |
+| C-PRIVATE | MUST | People's data and restricted material |
+| C-DESIGN | MUST | Design type and the claim it can carry |
+| C-HOLDOUT | MUST | Decide on one set, judge on another |
+| C-SYNTH | MUST | Generated inputs are looked at |
 <!-- /excerpt -->
 
 ---
