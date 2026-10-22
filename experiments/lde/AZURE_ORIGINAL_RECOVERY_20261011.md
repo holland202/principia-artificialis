@@ -43,3 +43,7 @@ Original directory contains 15 files: `01_preregistration/LDE2G_PREREG.md`; `02_
 6. Deallocate the Azure VM once originals are safely copied and verified.
 
 **Claim status: ORIGINAL_VM_ACCESSED; TWO_RECORDED_EXIT_STATUSES; CROSS_SUBSTRATE_SCIENTIFIC_VALIDATION_NOT_ESTABLISHED.**
+
+## Addendum, 2026-10-22: original-to-staged comparison (W9)
+
+Recorded here because it appeared only in [AZURE_CAMPAIGN_PLAN_20261011.md](AZURE_CAMPAIGN_PLAN_20261011.md): the owner's comparison of the 15 Azure originals with the staged release reported **14 MATCH, 1 MISMATCH, 0 ABSENT**. The differing file is `03_substrates/s25/environment.txt`. Both versions should be preserved and the difference explained before any claim relies on that file. Owner-reported; not rerun for this addendum. The pinned Hugging Face comparison (step 2 above) is still pending.

@@ -2,6 +2,9 @@
 
 **Status: REMOTE_CONTENT_MATCH_REPORTED; SOURCE_AUTHENTICITY_NOT_ESTABLISHED.**
 
+> **Superseded in part, 2026-10-22 (W9).** The Azure "exit 1" reading below is superseded by [AZURE_ORIGINAL_RECOVERY_20261011.md](AZURE_ORIGINAL_RECOVERY_20261011.md): on the original VM, `exit_code.txt = 1` came from a failed import (`ModuleNotFoundError: No module named 'lde'`), and the captured confirmatory run's `confirmatory_exit_code.txt` is `0`. The text below is kept as written on 2026-10-11.
+
+
 Owner executed an S25 Termux `huggingface_hub` download-and-SHA-256 comparison against the published dataset revision and provided the terminal output.
 
 - Dataset: `holland202/lde-cross-substrate-research`

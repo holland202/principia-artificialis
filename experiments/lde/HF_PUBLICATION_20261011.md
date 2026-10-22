@@ -2,6 +2,9 @@
 
 **State: REPORTED UPLOAD; REMOTE CONTENT MATCH NOT YET VERIFIED.**
 
+> **Superseded in part, 2026-10-22 (W9).** The Azure "exit 1" reading below is superseded by [AZURE_ORIGINAL_RECOVERY_20261011.md](AZURE_ORIGINAL_RECOVERY_20261011.md): on the original VM, `exit_code.txt = 1` came from a failed import (`ModuleNotFoundError: No module named 'lde'`), and the captured confirmatory run's `confirmatory_exit_code.txt` is `0`. The text below is kept as written on 2026-10-11.
+
+
 The experiment owner executed `huggingface_hub.HfApi.upload_folder` from S25 Termux and supplied the returned commit URL:
 
 - Dataset: https://huggingface.co/datasets/holland202/lde-cross-substrate-research

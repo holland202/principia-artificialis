@@ -2,6 +2,9 @@
 
 **Status: INTAKE / NOT INDEPENDENTLY VERIFIED.** This is a claim and source-location index based on a Termux audit transcript supplied by the experiment owner. It is not a copy of the primary data, an independent rerun, or a certification of the Azure VM's current disk contents. Do not treat this index as a normative amendment to PA's methodology.
 
+> **Superseded in part, 2026-10-22 (W9).** The Azure "exit 1" reading below is superseded by [AZURE_ORIGINAL_RECOVERY_20261011.md](AZURE_ORIGINAL_RECOVERY_20261011.md): on the original VM, `exit_code.txt = 1` came from a failed import (`ModuleNotFoundError: No module named 'lde'`), and the captured confirmatory run's `confirmatory_exit_code.txt` is `0`. The text below is kept as written on 2026-10-11.
+
+
 ## Authoritative locations and roles
 
 - **Source / frozen experiment code:** [Codeberg local-discovery-engine](https://codeberg.org/badatchess/local-discovery-engine). Record exact commit hashes for each execution, not only a branch name.
