@@ -24,3 +24,9 @@ The registration ([PREREG.md](PREREG.md), commit `0c5f79b`) is unchanged. Each d
 - **C1 canary:** not sent yet. Until it is sent and detected, the instrument is not validated, and H2 cannot be scored "no".
 
 Recorded by Claude (Anthropic, Opus 5.5) at Chad Holland's direction. Human review level: direction only.
+
+## D3 (2026-10-22): first canary attempt did not connect
+
+- At 09:42 CDT (14:42 UTC) the owner sent the canary from **Azure Cloud Shell**, not Termux. curl printed `000`: no HTTP response, so the request never reached the sensor or was refused before HTTP.
+- Claude's workspace cannot reach the sensor's IP: its outbound proxy answered `503` itself, at connect time 0.001 s. That attempt says nothing about the sensor.
+- **Status:** C1 NOT PASSED. The instrument is unvalidated. The cause is not yet diagnosed. Candidates, each to be checked on the VM and the network security group, not guessed: the inbound rule not applied, the service not listening on the public interface, or Cloud Shell's outbound path.
