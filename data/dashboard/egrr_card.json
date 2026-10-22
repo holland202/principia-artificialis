@@ -4,7 +4,7 @@
   "title": "Evidence-Gated Residual Representation (EGRR)",
   "question": "Can sensitivity-selected sparse residual corrections improve low-bit quality at matched serialized storage, compared with simpler selection rules?",
   "reviewedAt": "2026-10-22",
-  "reviewedBy": "Claude (Anthropic, Opus 5.5) at Chad Holland's direction; human review level: direction only",
+  "reviewedBy": "Claude (Anthropic, Opus 5.5), drafted at Chad Holland's direction; human review level: outcome review by Chad Holland (2026-10-22)",
   "states": {
     "question":     {"value": "admitted-for-protocol-development", "sourceIds": ["issue-28-decision"]},
     "protocol":     {"value": "draft-under-review", "sourceIds": ["pr-37", "fork-pr-1"]},
