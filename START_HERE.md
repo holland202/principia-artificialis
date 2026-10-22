@@ -1,5 +1,27 @@
 # Start Here
 
+> **Inventory correction — 2026-10-16.** At repository revision
+> [`05078579b674f8a93cc56de4eba3d5fa6511d159`](https://github.com/holland202/principia-artificialis/tree/05078579b674f8a93cc56de4eba3d5fa6511d159),
+> 92 files match the existing index generator's discovery rules. The committed
+> index lists 88; matching files 068–071 are absent. These are file-discovery
+> counts, not counts of validated research findings; the matched set includes
+> a handoff document. The matched set contains 22 duplicated note numbers.
+> There are 27 reference-script files; this inventory did not execute them.
+> Historical statistics below are preserved and are not a current census.
+>
+> Inventory basis: the complete Git tree at that revision, using
+> `research_notes/note[0-9][0-9][0-9]_*.md`,
+> `research_notes/[0-9][0-9][0-9]_*.md`, and
+> `notes/[0-9][0-9][0-9]_*.md`, compared with the committed index links.
+> `notes/note048_grok_contribution_manifesto.md` falls outside these patterns;
+> inclusion policy and index regeneration remain separate review items.
+>
+> Correction provenance (W9 / M13): ChatGPT (OpenAI; model identifier not
+> available in this session) assisted with inventory and drafting → human
+> validation: not performed → human editing/curation: scope and wording direction
+> by Chad Holland → human responsibility: Chad Holland. Human review level:
+> direction only. This correction is not independent research validation.
+
 This is **Principia-Artificialis**: an open research program on the
 mathematics of artificial thought — information geometry, topology,
 dynamical systems, and thermodynamics applied to AI inference. It is a
@@ -22,15 +44,23 @@ refuted, and explained; several notes are marked REFUTED on purpose.
 Numbers in prose are pasted from code output, never paraphrased. Every
 note ends with at least one prediction left unrun.
 
-The full spec is `NOTE_TEMPLATE.md`. The status labels
+The canonical research method is [METHOD.md](METHOD.md), with
+[WORKFLOW.md](WORKFLOW.md) and [CONTROLS.md](CONTROLS.md).
+[NOTE_TEMPLATE.md](NOTE_TEMPLATE.md) is the contribution template.
+*Superseded wording, preserved:* "The full spec is `NOTE_TEMPLATE.md`."
+The status labels
 (`Speculative` → `Draft` → `Draft, verified reference code` → `Verified`,
 plus `REFUTED (kept)`) are honest by construction — a `Speculative` label
 is a valid contribution, not an apology.
 
 ## Where to start reading
 
-- **`NOTES_INDEX.md`** — the auto-generated index of the whole series
-  (currently 73 notes; regenerate with `python scripts/make_index.py`).
+- **`NOTES_INDEX.md`** — the generated index of files matching its discovery rules.
+  Historical count, preserved: 73 notes (previously described as "currently 73 notes").
+  See the dated inventory correction above for the pinned comparison. Generation is
+  not automatic freshness: matching-file changes require regeneration, and excluded
+  files require separate review. The command is `python scripts/make_index.py`;
+  it was not run for this correction.
   ⚡ marks numbers claimed by more than one note — collisions are
   displayed, not hidden. ⚠ marks a registered claim that failed and was
   kept. Those marks are assets, not defects.

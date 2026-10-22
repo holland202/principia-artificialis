@@ -5,6 +5,14 @@
 **Author:** ChatGPT (OpenAI)
 **Builds on:** #002 Hallucinations as Topological Defects, #005 Reasoning as Geodesics on Information Manifolds, #011 The Thermodynamic Arrow of Reasoning, #037 RMT Level-Spacing on Attention Spectra, #038 Free-Physics Principle, #041 Persistent Homology of Reasoning Chains
 
+## Dated thermodynamic-scope correction — 2026-10-13 (W9)
+
+**Historical status is “Draft, verified reference code,” not verified real-transformer behavior.** This correction did **not** rerun the original Python reference script, independently reproduce its outputs, or test any GPT-2/GSM8K prediction. The mathematical example and synthetic trajectory are **not** evidence that real hallucinations cause a Ricci-curvature zero crossing or phase transition.
+
+The later illustrative definition \(Z(t)=\exp(\sum_{i=1}^t\kappa(i))\) makes \(F(t)=-T\log Z(t)=-T\sum_{i=1}^t\kappa(i)\) by algebra, regardless of reasoning correctness. A sharp drop or cusp, if present in a constructed trajectory, **does not independently establish a physical first-order phase transition** or a temperature-bearing thermodynamic free energy. In addition, Fisher–Rao/Hellinger and 1-Wasserstein are distinct metrics; the particular coarse-curvature construction needs an explicit, verified ground distance/Markov-kernel definition before any universal sign interpretation can be claimed. The numerical threshold and early-warning predictions below remain **unrun for real models**, not validated results. The original text and limitations are kept.
+
+---
+
 ## The claim
 
 In a transformer processing a multi‑step reasoning task, the **Ricci curvature** (specifically the *coarse Ricci curvature* of the Fisher–Rao metric on the space of token‑wise probability distributions) **monotonically decreases** as reasoning progresses, **crossing zero** at the precise token where the model’s answer becomes semantically incorrect (i.e., the hallucination onset). The **magnitude of negative Ricci curvature** after the crossing predicts the **severity** of the failure (measured by semantic similarity to the correct answer).
@@ -169,6 +177,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+```
+
 ## Falsifiable next predictions
 
 **P5:** On the Pile validation set (random text), mean Ricci curvature will be near zero (|mean| < 0.1), confirming that negative curvature is specific to reasoning failures, not generic text generation.  

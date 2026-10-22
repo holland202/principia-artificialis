@@ -1,0 +1,12 @@
+C1 accepted
+C2 JournalError: event digest mismatch
+R3 TypeError: unhashable type: 'list'
+R6 exit 1 traceback TypeError: unhashable type: 'list'
+R4 TypeError: unhashable type: 'list'
+R5a TypeError: unhashable type: 'list'
+R5b TypeError: unhashable type: 'list'
+R5c TypeError: unhashable type: 'dict'
+R7 accepted
+R8 accepted graph review_level = 123
+R9 JournalError: journal does not exist; run init first lock created: True
+R10 accepted

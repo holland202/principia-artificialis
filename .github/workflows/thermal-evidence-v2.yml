@@ -1,0 +1,29 @@
+name: thermal-evidence-v2
+on:
+  push:
+    paths:
+      - 'experiments/thermal_evidence_v2.py'
+      - 'experiments/test_thermal_evidence_v2.py'
+      - '.github/workflows/thermal-evidence-v2.yml'
+  pull_request:
+    paths:
+      - 'experiments/thermal_evidence_v2.py'
+      - 'experiments/test_thermal_evidence_v2.py'
+      - '.github/workflows/thermal-evidence-v2.yml'
+permissions:
+  contents: read
+jobs:
+  deterministic-controls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run adversarial and positive controls
+        run: python -m unittest discover -s experiments -p 'test_thermal_evidence_v2.py' -v
+      - name: Check CLI fail-closed output and replay
+        run: |
+          python experiments/thermal_evidence_v2.py evaluate --now-s 101 --out /tmp/thermal-evidence.jsonl
+          python experiments/thermal_evidence_v2.py verify /tmp/thermal-evidence.jsonl

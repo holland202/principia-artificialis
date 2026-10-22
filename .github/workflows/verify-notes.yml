@@ -19,6 +19,10 @@ jobs:
           python scripts/method_lint.py --sabotage
           rc=$?
           test "$rc" -eq 1
+      - name: dashboard status sections match their sources (drift exits 1)
+        run: python scripts/make_dashboard.py --check
+      - name: dashboard generator tests (planted defects must stop the build)
+        run: python -m unittest scripts/test_make_dashboard.py -v
       - name: rule inventory covers the pre-amendment sources (needs full history; exit 2 = could not run)
         run: python scripts/method_lint.py --coverage
       - run: pip install numpy scipy matplotlib
@@ -33,5 +37,11 @@ jobs:
               *) timeout 900 python "$f" ;;
             esac
           done
+      - name: EXP015-A exact-rational and adversarial controls
+        run: python -m unittest discover -s experiments -p 'test_exp015a_composition.py' -v
+      - name: number audit self-test (note062 P1/P5) - must pass; the report below cannot fail the build
+        run: python scripts/check_numbers.py --plant
+      - name: number audit unit tests (note062 P8)
+        run: python -m unittest discover -s scripts -p 'test_check_numbers.py' -v
       - name: number audit (note062) - report only, never fails the build
         run: python scripts/check_numbers.py || true

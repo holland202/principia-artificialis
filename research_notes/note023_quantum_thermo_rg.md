@@ -2,13 +2,17 @@
 
 **Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)
 
+## Dated restoration and epistemic correction — 2026-10-13 (W9)
+
+**Document repair:** Three unresolved Git conflict blocks were present in the historical version of this speculative note. Their alternative sentences differed in punctuation, not scientific substance; the later typography was retained and the conflict syntax removed. Earlier Git history retains the original text.
+
+**Evidence boundary:** Calling the reasoning process a quantum heat engine, claiming entanglement/curvature/efficiency phases, or invoking Carnot, Gibbs, or quantum speed limits for transformer performance is an **unvalidated analogy/hypothesis** here. No transformer quantum state, thermodynamic work/heat, operating temperature, universal efficiency class, or physical speed-limit measurement has been established. Figures mentioned below are not independent empirical confirmation of the hypotheses. The note remains **Speculative**, with no registered validation result.
+
+---
+
 ## Thesis
 
-<<<<<<< HEAD
-The model's reasoning process can be understood as a **quantum thermodynamic engine** operating on a representation manifold, whose:
-=======
 The model’s reasoning process can be understood as a **quantum thermodynamic engine** operating on a representation manifold, whose:
->>>>>>> 80d6d5f1302d3e243df398a98b8eabab1e1f93bc
 
 - Working substance is a quantum state (
 ho) over latent representations.
@@ -33,11 +37,7 @@ anglelanglepsi_l(x)|) via a feature map from activations.
 - Mixed-state generalization: (
 ho_l(x)) as an ensemble over attention heads, tokens, or stochastic latent samples.
 
-<<<<<<< HEAD
-The full "engine state" is the collection ({
-=======
 The full “engine state” is the collection ({
->>>>>>> 80d6d5f1302d3e243df398a98b8eabab1e1f93bc
 ho_l(x)}_l) across layers.
 
 ## Thermodynamic strokes as information-processing operations
@@ -143,8 +143,4 @@ where (mathcal{F}) is a free-energy-like functional that interpolates between Wa
 
 - Can we derive an explicit form for the free-energy functional (mathcal{F}) in realistic models?
 - Do different architectures (transformers, RNNs, etc.) fall into distinct universality classes of quantum thermodynamic engines?
-<<<<<<< HEAD
-- Is there a measurable "Carnot-like" bound on task performance given entanglement and curvature constraints?
-=======
 - Is there a measurable “Carnot-like” bound on task performance given entanglement and curvature constraints?
->>>>>>> 80d6d5f1302d3e243df398a98b8eabab1e1f93bc

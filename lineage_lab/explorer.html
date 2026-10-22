@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; img-src 'none'; connect-src 'none'">
+<title>PA · Scientific Lineage Lab (local prototype)</title>
+<style>
+:root{color-scheme:dark;--bg:#080d16;--panel:#101928;--edge:#2c3e52;--ink:#e5edf7;--dim:#a2b6ca;--cyan:#55d5d0;--gold:#ffcd76;--rose:#f19eab;--green:#8de0af}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,sans-serif}
+header{padding:20px 24px;border-bottom:1px solid var(--edge);display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
+h1{font-size:22px;letter-spacing:.02em;margin:0;font-weight:650}h1 span{color:var(--cyan)}
+h2{font-size:17px;margin:0 0 12px}h3{font-size:14px;margin:0 0 4px;color:var(--dim);letter-spacing:.05em;text-transform:uppercase}
+sub,small,.muted{color:var(--dim)}p{margin:7px 0 12px}button,input,select,textarea{font:inherit}
+button,.pick{border:1px solid #477283;background:#183342;border-radius:8px;padding:9px 12px;color:var(--ink);cursor:pointer}
+button:hover,.pick:hover{border-color:var(--cyan)}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold)}
+.pick input{position:absolute;opacity:0;width:1px;height:1px}
+button.primary{background:#1a5960;border-color:#68caca}
+.actions{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.wrap{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(300px,1fr);gap:16px;padding:16px;max-width:1600px;margin:auto}
+.panel{border:1px solid var(--edge);background:var(--panel);border-radius:14px;padding:16px;min-width:0}
+.graph{width:100%;height:min(62vh,620px);min-height:320px;border:1px solid #1e3549;border-radius:9px;background:radial-gradient(ellipse at 45% 40%,#172941,#09111e 75%)}
+svg text{font-size:12px;fill:var(--ink);pointer-events:none}
+.node{cursor:pointer}.node:focus-visible circle{stroke:var(--gold);stroke-width:4}
+.line{stroke:#537089;stroke-opacity:.48;stroke-width:1.5}
+.legend{display:flex;gap:15px;flex-wrap:wrap;font-size:12px;color:var(--dim);margin:10px 0}
+.dot{width:10px;height:10px;display:inline-block;border-radius:50%;margin-right:4px}
+label{font-size:13px;color:var(--dim);display:block;margin:8px 0 4px}
+input,textarea,select{width:100%;background:#091424;border:1px solid #36536d;border-radius:8px;color:var(--ink);padding:10px}
+textarea{min-height:75px;resize:vertical}
+section{margin-bottom:16px}
+#detail{overflow-wrap:anywhere;min-height:145px}
+.key{font-size:12px;color:var(--dim);text-transform:uppercase;letter-spacing:.04em;margin-top:10px}
+.value{white-space:pre-wrap;margin-top:3px}
+#status{color:var(--cyan);font-size:13px}
+hr{border:0;border-top:1px solid var(--edge);margin:17px 0}
+strong{color:var(--ink)}
+footer{padding:14px 20px 25px;color:var(--dim);font-size:13px;max-width:1600px;margin:auto}
+@media(max-width:850px){.wrap{grid-template-columns:1fr}.graph{height:380px}header{padding:16px}.panel{padding:13px}}
+</style>
+</head>
+<body>
+<header>
+<div><h1><span>PA</span> · Scientific Lineage Lab</h1><small>Ideas survive. Predictions can fail. Evidence stays traceable.</small></div>
+<div class="actions"><button id="sample">Fictional example</button><label class="pick">Open graph.json <input id="file" type="file" accept=".json,application/json"></label></div>
+</header>
+<main class="wrap">
+<article class="panel">
+<h2>Explore a scientific idea's history</h2>
+<p class="muted">Tap a node to inspect its claim, experiment, source or revised descendant. Shapes and colors indicate record types—not whether a claim is true.</p>
+<label for="search">Search ideas, observations and contributors</label>
+<input id="search" placeholder="e.g. collaboration, counterexample, evidence">
+<div class="legend"><span><i class="dot" style="background:var(--cyan)"></i>Hypothesis (unassessed)</span><span><i class="dot" style="background:var(--gold)"></i>Result (reported)</span><span><i class="dot" style="background:var(--rose)"></i>Source reference</span></div>
+<svg class="graph" id="graph" viewBox="0 0 800 560" role="img" aria-label="Interactive scientific lineage graph"></svg>
+<p id="status" role="status">Fictional classroom example loaded.</p>
+</article>
+<aside class="panel">
+<section>
+<h2>Selected record</h2>
+<div id="detail" aria-live="polite">Choose a node.</div>
+</section>
+<hr>
+<section>
+<h2>Contribute a hypothesis</h2>
+<p class="muted">Beginner-friendly intake. This creates a local JSON proposal for explicit review; it does <strong>not</strong> publish or write into PA.</p>
+<form id="proposal">
+<label for="title">Short idea title</label><input id="title" required maxlength="160" placeholder="Something you suspect might be true">
+<label for="claim">Precisely what do you think will happen?</label><textarea id="claim" required maxlength="4000" placeholder="Try to say what observation could prove your idea wrong."></textarea>
+<label for="person">Your credited name / AI identifier</label><input id="person" required maxlength="160">
+<label for="kind">Contributor kind</label><select id="kind"><option value="human">Human</option><option value="ai">AI agent</option></select>
+<div id="modelbox" hidden><label for="model">AI model identifier</label><input id="model" maxlength="160"><label for="review">Human review actually performed</label><select id="review"><option value="none">None</option><option value="direction only">Direction only</option><option value="outcome review">Outcome review</option><option value="line-by-line">Line-by-line</option></select></div>
+<label for="parent">Revises an earlier hypothesis? (optional)</label><select id="parent"><option value="">New idea, no parent</option></select>
+<label for="reason">Why does this revision differ? (required if revising)</label><textarea id="reason" maxlength="4000" placeholder="What did earlier tests teach you?"></textarea>
+<button type="submit" class="primary">Save proposal JSON</button>
+</form>
+<p class="muted">To admit a reviewed proposal locally: <code>python -m lineage_lab admit --journal journal.jsonl --proposal proposal.json</code></p>
+</section>
+</aside>
+</main>
+<footer>
+<strong>Scope:</strong> read-only explorer of local graph files, not a hosted research network or scientific verifier. Imported citations and prediction outcomes are contributor-reported. Scientific status remains UNASSESSED unless separately evaluated. No information is transmitted by this page. PA-LINEAGE-001 · experimental prototype.
+</footer>
+<script>
+"use strict";
+const NS="http://www.w3.org/2000/svg";
+const $=id=>document.getElementById(id);
+const colors={hypothesis:"#55d5d0",result:"#ffcd76",source:"#f19eab"};
+const example={
+ schema:"pa.lineage.graph/1",source:"FICTIONAL example only; no genuine experiments or citations",journal_head:"not-a-real-journal",
+ nodes:[
+ {id:"idea-a",kind:"hypothesis",title:"Five agents always outperform one",claim:"For every evaluation case, five collaborating agents improve accuracy over one.",scientific_status:"UNASSESSED",contributor:"Fictional learner",created_utc:"Example only"},
+ {id:"src-a",kind:"source",title:"synthetic:classroom-example",description:"Illustrative source label, not a published study.",contributor:"Fictional learner"},
+ {id:"test-a",kind:"result",title:"Five agents beat one in every constructed case",observation:"One toy case ties the single agent.",outcome:"REFUTED",scope:"Fictional classroom exercise",evidence_ref:"synthetic:toy-case-only",lesson:"A universal claim can fail on a single legitimate counterexample.",next_question:"When do multiple agents help?",contributor:"Fictional learner"},
+ {id:"idea-b",kind:"hypothesis",title:"Conditional collaboration benefit",claim:"Collaboration may help when agents make less-correlated errors.",scientific_status:"UNASSESSED",contributor:"Fictional learner"}
+ ],
+ edges:[{from:"src-a",to:"idea-a",relation:"references"},{from:"test-a",to:"idea-a",relation:"tests"},{from:"idea-b",to:"idea-a",relation:"revises"}]
+};
+let data=example,selected="idea-a";
+function el(tag,attrs,text){
+ const e=document.createElementNS(NS,tag);
+ Object.keys(attrs||{}).forEach(k=>e.setAttribute(k,String(attrs[k])));
+ if(text!==undefined)e.textContent=String(text);return e;
+}
+function detailField(container,name,value){
+ if(value===undefined || value===null || value==="")return;
+ const k=document.createElement("div");k.className="key";k.textContent=name;container.appendChild(k);
+ const v=document.createElement("div");v.className="value";v.textContent=String(value);container.appendChild(v);
+}
+function showDetail(node){
+ selected=node.id;
+ const d=$("detail");d.replaceChildren();
+ const h=document.createElement("h3");h.textContent=(node.kind||"record").toUpperCase();d.appendChild(h);
+ const title=document.createElement("strong");title.textContent=node.title||node.id;d.appendChild(title);
+ ["claim","scientific_status","outcome","observation","scope","evidence_ref","lesson","next_question","description","reason","contributor","contributor_kind","model","review_level","created_utc"].forEach(k=>detailField(d,k.replaceAll("_"," "),node[k]));
+ detailField(d,"record ID",node.id);
+ render();
+}
+function validate(input){
+ if(!input || input.schema!=="pa.lineage.graph/1" || !Array.isArray(input.nodes)||!Array.isArray(input.edges)||input.nodes.length>150||input.edges.length>400)throw Error("Invalid or overlarge PA graph");
+ let ids=new Set();
+ for(const n of input.nodes){if(!n || typeof n.id!=="string"||ids.has(n.id)||!colors[n.kind])throw Error("Invalid graph node");ids.add(n.id);}
+ for(const e of input.edges){if(!ids.has(e.from)||!ids.has(e.to)||!["tests","revises","references"].includes(e.relation))throw Error("Invalid graph edge");}
+ return input;
+}
+function render(){
+ const svg=$("graph");svg.replaceChildren();
+ const q=$("search").value.toLowerCase().trim();
+ const visible=data.nodes.filter(n=>!q||JSON.stringify([n.title,n.claim,n.observation,n.contributor]).toLowerCase().includes(q));
+ const set=new Set(visible.map(n=>n.id));
+ const points=new Map();
+ visible.forEach((n,i)=>{
+   const r=visible.length<=1?0:Math.min(206,110+Math.floor(i/14)*48);
+   const a=i*2.399963229728653;
+   points.set(n.id,{x:400+Math.cos(a)*r,y:280+Math.sin(a)*r});
+ });
+ data.edges.filter(e=>set.has(e.from)&&set.has(e.to)).forEach(e=>{
+   const a=points.get(e.from),b=points.get(e.to);
+   svg.appendChild(el("line",{x1:a.x,y1:a.y,x2:b.x,y2:b.y,class:"line"}));
+ });
+ visible.forEach(n=>{
+   const p=points.get(n.id),g=el("g",{class:"node",tabindex:"0",role:"button","aria-label":n.kind+" "+(n.title||"")+" open details"});
+   g.appendChild(el("circle",{cx:p.x,cy:p.y,r:n.id===selected?24:19,fill:"#102536",stroke:colors[n.kind],"stroke-width":n.id===selected?4:2}));
+   g.appendChild(el("text",{x:p.x,y:p.y+4,"text-anchor":"middle","font-size":"12"},n.kind==="hypothesis"?"H":n.kind==="result"?"R":"S"));
+   const label=(n.title||"").slice(0,26);
+   g.appendChild(el("text",{x:p.x,y:p.y+40,"text-anchor":"middle"},label));
+   g.addEventListener("click",()=>showDetail(n));
+   g.addEventListener("keydown",ev=>{if(ev.key==="Enter"||ev.key===" "){ev.preventDefault();showDetail(n);}});
+   svg.appendChild(g);
+ });
+ $("status").textContent=visible.length+" of "+data.nodes.length+" records · "+data.source+" · exported head: "+String(data.journal_head).slice(0,16);
+ const sel=$("parent");sel.replaceChildren();
+ const opt=document.createElement("option");opt.value="";opt.textContent="New idea, no parent";sel.appendChild(opt);
+ data.nodes.filter(n=>n.kind==="hypothesis").forEach(n=>{const o=document.createElement("option");o.value=n.id;o.textContent=(n.title||n.id).slice(0,70);sel.appendChild(o);});
+}
+$("search").addEventListener("input",render);
+$("sample").addEventListener("click",()=>{data=example;selected="idea-a";showDetail(data.nodes[0]);});
+$("file").addEventListener("change",async ev=>{
+ const file=ev.target.files[0];if(!file)return;
+ try{if(file.size>4000000)throw Error("File exceeds 4MB viewer limit");
+ data=validate(JSON.parse(await file.text()));
+ selected=data.nodes[0]&&data.nodes[0].id;render();
+ if(data.nodes.length)showDetail(data.nodes[0]);else $("detail").textContent="This graph contains no nodes.";
+ }catch(e){data=example;selected="idea-a";render();$("status").textContent="Could not load file: "+e.message;}
+ ev.target.value="";
+});
+$("kind").addEventListener("change",()=>{$("modelbox").hidden=$("kind").value!=="ai";});
+$("proposal").addEventListener("submit",ev=>{
+ ev.preventDefault();
+ const ai=$("kind").value==="ai", parent=$("parent").value||null;
+ if(parent&&!$("reason").value.trim()){alert("Describe why the new hypothesis revises the parent.");return;}
+ if(ai&&!$("model").value.trim()){alert("Name the AI model.");return;}
+ const obj={kind:"hypothesis",data:{
+  title:$("title").value.trim(),claim:$("claim").value.trim(),parent_id:parent,
+  reason:$("reason").value.trim(),contributor:$("person").value.trim(),
+  contributor_kind:ai?"ai":"human",model:ai?$("model").value.trim():"",
+  review_level:ai?$("review").value:"none"
+ }};
+ const blob=new Blob([JSON.stringify(obj,null,2)+"\n"],{type:"application/json"});
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download="pa-hypothesis-proposal.json";a.click();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+showDetail(data.nodes[0]);
+</script>
+</body>
+</html>

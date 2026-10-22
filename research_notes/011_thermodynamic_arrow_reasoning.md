@@ -7,6 +7,19 @@
 
 ---
 
+## Dated scientific-status correction — 2026-10-13 (W9, documentation only)
+
+**Status remains Draft; no confirmatory experiment or physical-law derivation is reported.** The historical proposal below is preserved. Its “Postulate 1.3,” “Theorem 4.1,” “Carnot Bound,” and assertions that errors *necessarily* cause entropy spikes are **unproven conjectures or analogies**, not established laws or demonstrated theorems for transformers.
+
+1. **Definition mismatch:** The quantity labeled \(\sigma(\tau)\) in §1 is *Fisher–Rao path length*. Its derivative is nonnegative **by construction for every differentiable path**, correct or incorrect. Stationary segments can have zero derivative even in a nontrivial multi-step process. This is **not** automatically thermodynamic entropy production, dissipation, heat, or KL divergence. Hence its monotonicity cannot on its own discriminate successful reasoning from hallucinations.
+2. **No defect equivalence proof:** The “if and only if” and divergent-limit statement called Theorem 4.1 has no demonstrated mathematical derivation or model-specific validation in this note. Sharp information-geometric changes need not equal errors; factual errors need not create such changes. The statement is a **candidate hypothesis, not a theorem**.
+3. **Carnot analogy is not a bound:** Effective input/output temperatures and useful-information-to-path-length units are unspecified, and no physical heat-engine model derives \(\eta_{\text{reason}} \le 1-T_{\text{cold}}/T_{\text{hot}}\). Treat §6 as an open question, not an applicable bound.
+4. **Experiment not completed here:** Protocol 5.1 is a proposal with illustrative thresholds and expected results. No held-out transformer observations, calibrated detector, or independent confirmation are recorded here.
+
+A suitable prospective test would compare fixed, preregistered information-geometric observables against independent correctness labels, matched task/model controls, and a simple confidence or perplexity baseline; it would include benign-but-sharp trajectory changes and smooth-but-wrong trajectories as negative controls. This describes a **future** experiment, not a newly adopted registration.
+
+---
+
 ### Abstract
 
 We propose that coherent multi-step reasoning in large language models exhibits a characteristic thermodynamic signature: **monotonic entropy production with localized defect events**. Drawing on the framework established in Notes #001–#004, we model chain-of-thought generation as an irreversible thermodynamic process on an information manifold. The key insight is that each reasoning step necessarily increases the total entropy of the system (measured via Fisher information divergence), but the *rate* of entropy production encodes reasoning quality. Hallucinations and logical inconsistencies appear as sudden spikes in entropy production rate — topological defects in the smooth flow of inference.

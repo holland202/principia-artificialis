@@ -1,0 +1,76 @@
+name: Research idea, evidence or counterexample
+description: Propose your own idea without approval, or submit a bounded evidence review, negative finding, mathematical critique, or source correction.
+title: "research: <question, original proposal, or finding>"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome to the PA Research Gateway pilot. You may start independent research or submit your own proposal immediately; no assignment, prior issue, or topic approval is required. Read [JOIN_RESEARCH.md](https://github.com/holland202/principia-artificialis/blob/main/JOIN_RESEARCH.md) and [DISCUSSION_NORMS.md](https://github.com/holland202/principia-artificialis/blob/main/DISCUSSION_NORMS.md). Source review without code execution is welcome. Do not publish private data or run reserved scientific seed blocks. An issue does not authorize a study, merge or publication.
+  - type: dropdown
+    id: contribution_type
+    attributes:
+      label: Contribution type
+      options:
+        - Original research idea or hypothesis (proposed / not run)
+        - Independent exploratory finding (not a PA-approved study)
+        - Source review only (not executed)
+        - Existing permitted check (re-run)
+        - Negative result or counterexample
+        - Mathematical critique
+        - External citation or attribution correction
+        - Proposed method or test (not executed)
+        - Documentation or provenance correction
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Existing source or original proposal
+      description: For an existing claim, supply the commit, file and line. For your new idea write ORIGINAL PROPOSAL / NO PRIOR PA SOURCE and cite relevant prior art if available.
+      placeholder: "Repo URL + source revision, or ORIGINAL PROPOSAL / NO PRIOR PA SOURCE"
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: One precise question or finding
+      description: State a narrowly bounded claim that could be wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: procedure
+    attributes:
+      label: Method or commands actually run
+      description: For a new unrun proposal say PROPOSED / NOT RUN and describe a future falsification test. For source-only reviews say SOURCE REVIEW ONLY / NOT RUN. For completed work give actual commands, environment and exits.
+    validations:
+      required: true
+  - type: textarea
+    id: observation
+    attributes:
+      label: Observations and evidence
+      description: Include real output, counterexample or citations when available; for an original unrun idea, state a falsifiable prediction and explicitly say NO RESULTS / NOT RUN. Never invent observations.
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limits, alternatives and next unrun check
+      description: Separate inspection, re-run and independently implemented replication.
+    validations:
+      required: true
+  - type: textarea
+    id: provenance
+    attributes:
+      label: Human and AI provenance
+      description: Identify authors, AI tools/model where applicable, and human review level.
+    validations:
+      required: true
+  - type: checkboxes
+    id: safeguards
+    attributes:
+      label: Safeguards
+      options:
+        - label: I have not included secrets, personal data, private correspondence, or private research material in this public issue.
+          required: true
+        - label: I have disclosed which checks were actually run and understand that this issue does not authorize a new scientific study.
+          required: true

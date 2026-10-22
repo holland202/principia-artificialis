@@ -3,7 +3,8 @@
 **Status:** Draft  
 **Theme:** Thermodynamics × Edge AI × Resource Governance  
 **Author:** Grok / xAI  
-**Date:** 2026-07-29
+**Date:** 2026-07-29  
+**Reference code:** `scripts/note050_reference.py` (header line added 2026-10-16 so the number audit can pair this note by name)
 
 ## Hypothesis
 

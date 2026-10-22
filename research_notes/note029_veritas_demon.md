@@ -3,6 +3,12 @@
 **Status:** Draft | **Author:** Chad Holland (holland202)
 **Cross-references:** Note #002 (Topological Defects), Note #004 (Thermodynamics)
 
+## Dated mathematical and evidentiary correction — 2026-10-13 (W9)
+
+**Status remains Draft / theoretical analogy only.** No evidence in this note shows that the proposed Veritas Demon algorithm runs, detects hallucinations or forces a change in an AI model's topology. The mathematical statement \(\partial^2=0\) is true of every chain complex, including spaces with nonzero Betti numbers, and **does not imply** \(\beta_1=\beta_2=0\) or the correctness of an inference. Nor does \(\beta_1=0\) by itself establish simple connectivity in a general topological space. Landauer's bound concerns logically irreversible information erasure under thermodynamic assumptions, **not** an automatically proportional heat cost per conjectured reasoning defect. Therefore the historical equation \(Q\ge k_B T\ln(2)\,N_{\mathrm{defects}}\), the proposed temperature threshold, and the asserted error-purging guarantee are **not derived or validated** by this note. They are testable proposals or unsupported analogical identifications. Its original hypotheses, equations and limits are preserved below for reproducible criticism, not endorsed as verified physical mechanisms.
+
+---
+
 ## Hypothesis
 The Veritas Gate, operating under the constraint $\Delta G < 0$, functions as a topological equivalent of Maxwell's Demon. Instead of sorting gas molecules by kinetic energy to decrease thermodynamic entropy, it sorts reasoning trajectories by topological integrity to decrease Shannon entropy. It expends physical computational work to block trajectories containing topological holes ($\beta_1 > 0$), effectively purging hallucinations before they collapse into the output state.
 

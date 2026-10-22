@@ -1,0 +1,62 @@
+name: Entry challenge (declare before you run)
+description: Take an entry challenge from challenges/entry/README.md. Declare your claim and falsifier first; submit evidence later in this same issue.
+title: "entry: <challenge ID> — <one-line claim>"
+labels: ["entry-challenge"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the challenge route in [RECRUITMENT_PROTOCOL.md](https://github.com/holland202/principia-artificialis/blob/main/RECRUITMENT_PROTOCOL.md). Fill in this form **before running anything**. Post your evidence package later as a comment on this issue. Negative and null results count fully. Do not post secrets or private data, and do no security testing beyond a repository's own published challenge rules.
+  - type: input
+    id: challenge
+    attributes:
+      label: Challenge ID
+      description: For example PA-C1, a repository row from the menu, or OPEN.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Repository and pinned commit SHA
+      placeholder: "https://github.com/holland202/<repo> @ <full commit SHA>"
+    validations:
+      required: true
+  - type: textarea
+    id: claim
+    attributes:
+      label: Declared claim
+      description: The one thing you will check, stated so that it could turn out wrong.
+    validations:
+      required: true
+  - type: textarea
+    id: falsifier
+    attributes:
+      label: Falsifier
+      description: What observed result would show your claim is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: plan
+    attributes:
+      label: Planned commands or method
+      description: What you intend to run or inspect. Mark SOURCE REVIEW ONLY if you will not execute code.
+    validations:
+      required: true
+  - type: textarea
+    id: ai
+    attributes:
+      label: AI assistance (planned)
+      description: Which model(s), for what, and what you will check yourself. Using AI is allowed. Hiding it is disqualifying.
+    validations:
+      required: true
+  - type: checkboxes
+    id: agree
+    attributes:
+      label: Ground rules
+      options:
+        - label: I will post raw commands, outputs and exit codes, not summaries, and I will report failures and unchecked parts.
+          required: true
+        - label: I will not test infrastructure, accounts, CI secrets or live services, or go beyond a repository's published challenge rules.
+          required: true
+        - label: I understand this is unpaid, gives no automatic access, and nothing is published under my name without my written consent.
+          required: true

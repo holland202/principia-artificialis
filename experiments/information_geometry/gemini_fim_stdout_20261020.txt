@@ -1,0 +1,13 @@
+EXACT GEMINI SCRIPT STDOUT:
+--- MATHEMATICALLY REDESIGNED RESULTS ---
+FIM Base Subspace Rank: 4
+Initial Cross-Entropy Loss: 0.6352
+Isolated Subspace Ratio: 0.9770
+PYTHON: 3.13.5
+NUMPY: 2.3.5
+base_condition=4.10699068080622
+base_loss=0.63524954185891
+base_rank=4
+lr=0.01 rank=4 initial_cond=4.10699068080622 next_cond=4.09802805318961 ratio=0.99781771415784 loss_before=0.63524954185891 loss_after=0.63242918239846 loss_reduction_pct=0.44397662250948
+lr=0.10 rank=4 initial_cond=4.10699068080622 next_cond=4.01252153328626 ratio=0.97699796399309 loss_before=0.63524954185891 loss_after=0.60749023718788 loss_reduction_pct=4.36982679118421
+lr=0.50 rank=4 initial_cond=4.10699068080622 next_cond=3.54882975987388 ratio=0.86409491418111 loss_before=0.63524954185891 loss_after=0.50634259021379 loss_reduction_pct=20.29233287880907

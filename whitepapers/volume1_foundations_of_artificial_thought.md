@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-...full whitepaper content...
-=======
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 # Principia Artificialis: A Verified Model of Artificial Thought
 
 **Subtitle:** Geometry, thermodynamics, topology, and epistemic status in AI systems
@@ -9,6 +5,16 @@
 **Status:** Draft  
 **Author:** holland202, with AI assistance for brainstorming and structural feedback  
 **Repository:** Principia-Artificialis
+
+## Dated document-integrity correction — 2026-10-13 (W9)
+
+**Status: Draft synthesis; not a verified theory.** This file previously contained sixteen unresolved Git conflict blocks, an initial placeholder, and a Python code fence without its closing delimiter. For the conflicts involving duplicate mathematical prose, the alternative containing inline mathematics was retained (though further typesetting work may still be needed). The stray branch-only appendix inserted inside Python was moved to a separate attribution note below; original Git history is unchanged. No new experiment or full reference-code validation is claimed.
+
+The toy free-energy sketch is not empirical evidence that neural networks obey a physical free-energy law or that an intermediate attention regime is optimal. For its uniform prior and constants, the script's form obeys \(F=\log 20-0.5S\) and has no accuracy measurements. Likewise “Verified Model” in the historical title describes a research ambition; the work is **Draft** and not independently validated as a physical model.
+
+Some later prose uses unresolved citation tokens such as `[web:72]`. These are **unverified placeholders**, not usable external references; the associated claims are not independently sourced by this document. The citation gap is retained visibly for subsequent provenance work rather than replaced with invented citations.
+
+---
 
 ## Abstract
 
@@ -53,21 +59,13 @@ The structure is intentional: each note is a hypothesis; each experiment is a pr
 
 ## 4. A geometric model of reasoning
 
-<<<<<<< HEAD
-Let (mathcal{X}) denote the space of possible reasoning states. A reasoning trajectory is a curve
-=======
 Let $mathcal{X}$ denote the space of possible reasoning states. A reasoning trajectory is a curve
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 gamma: [0,T] \to mathcal{X}, quad t mapsto x_t.
 ]
 
-<<<<<<< HEAD
-If (mathcal{X}) is endowed with a Riemannian metric (g), then the instantaneous “effort” or “nonlinearity” of the trajectory can be characterized by its covariant acceleration
-=======
 If $mathcal{X}$ is endowed with a Riemannian metric $g$, then the instantaneous “effort” or “nonlinearity” of the trajectory can be characterized by its covariant acceleration
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 a(t) = 
@@ -90,11 +88,7 @@ This quantity is not a theory of intelligence by itself. It is a candidate obser
 
 ### 4.1 Information geometry as the natural metric
 
-<<<<<<< HEAD
-Suppose the AI state at time (t) induces a categorical distribution (p_t(y)) over outcomes. Then the Fisher information metric is a natural local metric on the manifold of such distributions. For a parametric family (p(y mid \theta)),
-=======
 Suppose the AI state at time $t$ induces a categorical distribution $p_t(y)$ over outcomes. Then the Fisher information metric is a natural local metric on the manifold of such distributions. For a parametric family $p(y mid \theta)$,
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 I_{ij}(\theta) = mathbb{E}_{y sim p(cdot mid \theta)}left[\frac{partial log p(ymid\theta)}{partial \theta_i}\frac{partial log p(ymid\theta)}{partial \theta_j}
@@ -105,11 +99,7 @@ This suggests a way to measure the geometry of reasoning: not in Euclidean laten
 
 ### 4.2 The polyphonic case
 
-<<<<<<< HEAD
-Reasoning is often multi-lens rather than single-path. Let there be (L) lenses, each producing a distribution (p^{(ell)}). Then the state is a tuple
-=======
 Reasoning is often multi-lens rather than single-path. Let there be $L$ lenses, each producing a distribution $p^{(ell)}$. Then the state is a tuple
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 mathbf{p} = \bigl(p^{(1)}, dots, p^{(L)}\bigr),
@@ -117,11 +107,7 @@ mathbf{p} = \bigl(p^{(1)}, dots, p^{(L)}\bigr),
 
 living in a product manifold. The important point is that we do not average away disagreement too early. Disagreement itself is information. A “verdict” should therefore include the consensus component and the residual conflict.
 
-<<<<<<< HEAD
-One can define a consensus distribution (p^*) as a barycenter under a metric such as Fisher–Rao or Wasserstein:
-=======
 One can define a consensus distribution $p^*$ as a barycenter under a metric such as Fisher–Rao or Wasserstein:
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 p^* = argmin_p sum_{ell=1}^L w_ell d^2(p, p^{(ell)}).
@@ -139,53 +125,31 @@ The repository’s polyphonic manifold notes use this logic to keep different le
 
 Thermodynamics is useful because it gives us a vocabulary for tradeoffs. If a reasoning process is an evolving distribution, then entropy and free energy become natural observables.
 
-<<<<<<< HEAD
-For a distribution (p), define entropy
-=======
 For a distribution $p$, define entropy
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 S(p) = -sum_i p_i log p_i.
 ]
 
-<<<<<<< HEAD
-If (p_0) is a reference or prior distribution, define a free-energy-like functional
-=======
 If $p_0$ is a reference or prior distribution, define a free-energy-like functional
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 F(p) = lambda D_{mathrm{KL}}(p | p_0) + \beta^{-1} S(p),
 ]
 
-<<<<<<< HEAD
-where (lambda > 0) and (\beta^{-1}) is a temperature-like scale. In the toy interpretation used in the repository, high entropy corresponds to diffuse attention or uncertainty, while high divergence from the prior captures focus or specialization. The interesting regime is not “minimize everything” but rather the band where a system is focused enough to solve the task without collapsing into brittle certainty.
-
-This is the logic behind the entropic elasticity of attention note. One can parameterize attention distributions by a focus parameter (alpha):
-=======
 where $lambda > 0$ and $\beta^{-1}$ is a temperature-like scale. In the toy interpretation used in the repository, high entropy corresponds to diffuse attention or uncertainty, while high divergence from the prior captures focus or specialization. The interesting regime is not “minimize everything” but rather the band where a system is focused enough to solve the task without collapsing into brittle certainty.
 
 This is the logic behind the entropic elasticity of attention note. One can parameterize attention distributions by a focus parameter $alpha$:
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 a_i(alpha) = \frac{e^{alpha s_i}}{sum_j e^{alpha s_j}},
 ]
 
-<<<<<<< HEAD
-with scores (s_i). Then one measures entropy, KL divergence, and free energy as functions of (alpha). The point is to see whether there is a Goldilocks band where performance is best and pathology least likely.
-
-### 5.1 Entropy production and depth
-
-A deeper inference process may not just be low entropy; it may produce entropy in structured ways. Let (Delta S_t) be the entropy change across a step and let (w_t) be a relevance weight. Then a thermodynamic depth observable can be written as
-=======
 with scores $s_i$. Then one measures entropy, KL divergence, and free energy as functions of $alpha$. The point is to see whether there is a Goldilocks band where performance is best and pathology least likely.
 
 ### 5.1 Entropy production and depth
 
 A deeper inference process may not just be low entropy; it may produce entropy in structured ways. Let $Delta S_t$ be the entropy change across a step and let $w_t$ be a relevance weight. Then a thermodynamic depth observable can be written as
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 D_{mathrm{th}} = sum_{t=1}^T w_t Delta S_t.
@@ -197,11 +161,7 @@ This is deliberately analogous to logical depth, but expressed in physical terms
 
 Geometry tells us about local shape; topology tells us about global structure. The repository uses topological language for recurring failure modes: loops, holes, defects, and inability to contract a reasoning path to a stable conclusion.
 
-<<<<<<< HEAD
-Given a point cloud of states ({x_i}), persistent homology can detect features such as connected components (H_0) and loops (H_1). In a toy interpretation, a persistent (H_1) class in a topic region may correspond to a question that the system keeps circling without resolving. This is not a proof that a model has a “hole in its understanding.” It is a way to ask whether repeated revisitation of a topic is topologically structured rather than random.
-=======
 Given a point cloud of states ${x_i}$, persistent homology can detect features such as connected components $H_0$ and loops $H_1$. In a toy interpretation, a persistent $H_1$ class in a topic region may correspond to a question that the system keeps circling without resolving. This is not a proof that a model has a “hole in its understanding.” It is a way to ask whether repeated revisitation of a topic is topologically structured rather than random.
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 A toy risk score can be written as
 
@@ -209,27 +169,16 @@ A toy risk score can be written as
 R_{mathrm{topo}}(gamma) = sum_{ell} w_ell, mathrm{wind}_ell(gamma), e^{-d_ell/sigma},
 ]
 
-<<<<<<< HEAD
-where (mathrm{wind}_ell) is a winding measure around a loop or defect and (d_ell) is distance to the defect core. The precise definition can vary. The important point is that repeated circling of a conceptual region can be scored and compared across tasks.
-=======
 where $mathrm{wind}_ell$ is a winding measure around a loop or defect and $d_ell$ is distance to the defect core. The precise definition can vary. The important point is that repeated circling of a conceptual region can be scored and compared across tasks.
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 ## 7. A verified model discipline
 
 AI-generated code is easy to produce and easy to misdescribe. The repository therefore treats the model of a component as a first-class object. This is the idea behind the verified-model note and the drift ledger.
 
-<<<<<<< HEAD
-For a component (C) and model (M), define a verification envelope
-
-[
-E(C, M) = {\\text{properties checked for } C \\text{ under } M\\}.
-=======
 For a component $C$ and model $M$, define a verification envelope
 
 [
 E(C, M) = {\text{properties checked for } C \text{ under } M}.
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 ]
 
 The envelope is not the same as “verification” in the absolute sense. It is a scoped claim: these properties, under this model, have been checked. If the model changes, the envelope changes. That is what the drift ledger records.
@@ -242,11 +191,7 @@ The repository already includes simple scripts that generate CSV files and plots
 
 ### 8.1 Curvature toy model
 
-<<<<<<< HEAD
-A synthetic reasoning trajectory may be represented as a sequence of points in (mathbb{R}^2) or (mathbb{R}^d). The discrete curvature can be approximated by
-=======
 A synthetic reasoning trajectory may be represented as a sequence of points in $mathbb{R}^2$ or $mathbb{R}^d$. The discrete curvature can be approximated by
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 [
 kappa_t approx \frac{|Delta^2 x_t|}{|Delta x_t|^3}
@@ -256,11 +201,7 @@ when the discretization is well behaved. A script can generate “geodesic,” �
 
 ### 8.2 Entropic attention toy model
 
-<<<<<<< HEAD
-A focus parameter (alpha) generates attention distributions by softmaxing a score vector. The script computes entropy, KL divergence, and free energy across (alpha) and writes both a CSV and a PNG. The point is to have a completely reproducible example whose numerical values are exactly the ones in the plot.
-=======
 A focus parameter $alpha$ generates attention distributions by softmaxing a score vector. The script computes entropy, KL divergence, and free energy across $alpha$ and writes both a CSV and a PNG. The point is to have a completely reproducible example whose numerical values are exactly the ones in the plot.
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
 
 ### 8.3 Memory manifold toy model
 
@@ -337,12 +278,13 @@ for alpha in alphas:
     D = kl_div(p, prior)
     F = D + 0.5 * S
     rows.append((alpha, S, D, F))
-<<<<<<< HEAD
-=======
-Appendix C. Notes on AI assistance
-AI assistance was used for brainstorming and structural feedback. The repository content, note structure, and final editorial decisions are under human authorship.
->>>>>>> d33c4b2 (Add whitepaper volume 1 and whitepapers index (holland202))
+```
 
+
+
+### Appendix C. Notes on AI assistance
+
+AI assistance contributed to brainstorming and structure. Authorship and review detail beyond what is explicitly recorded here are not independently verified.
 
 ## The Hidden Layer: What Models Can Optimize Without Admitting It
 
