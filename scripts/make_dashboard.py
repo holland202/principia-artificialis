@@ -124,10 +124,12 @@ def parse_index(text):
     if len(rows) != int(head.group(1)):
         raise BuildError(f"NOTES_INDEX.md: header says {head.group(1)} notes, table has {len(rows)} rows")
     kept = []
+    authors = {}
     for r in rows:
         cells = [c.strip() for c in r.strip("|").split("|")]
-        if len(cells) < 3:
+        if len(cells) < 5:
             raise BuildError("NOTES_INDEX.md: malformed row")
+        authors[cells[4]] = authors.get(cells[4], 0) + 1
         if "⚠" in cells[2]:
             m = re.match(r"\[(.+)\]\((.+)\)$", cells[1])
             if not m:
@@ -135,7 +137,7 @@ def parse_index(text):
             kept.append({"num": cells[0].replace("⚡", "").strip(), "title": m.group(1), "path": m.group(2)})
     return {"total": int(head.group(1)), "collisions": int(head.group(2)), "generated": gen.group(1),
             "tiers": dict(zip(("Verified", "Draft", "Speculative", "Unmapped"), map(int, tiers.groups()))),
-            "kept": kept}
+            "kept": kept, "authors": authors}
 
 
 E = html.escape
@@ -155,6 +157,51 @@ def render_status(ix):
             f'<a href="{REPO}NOTES_INDEX.md">NOTES_INDEX.md</a> (generated {E(ix["generated"])}).</p>\n'
             f'<details><summary>{len(ix["kept"])} notes keep a refuted prediction (⚠): failures stay on the record'
             f'</summary><ul class="kept">{kept}</ul></details>')
+
+
+# Where a study stands, derived only from its card's own states (never typed by hand). Order matters: the first
+# rule that matches wins, from the furthest stage back.
+STAGES = ("Proposed", "Registered", "Running", "Scored", "Reproduced")
+
+
+def stage_of(card):
+    st = {d: card["states"][d]["value"] for d in VOCAB}
+    if st["reproduction"] == "independent-reproduction-documented":
+        return "Reproduced"
+    if st["execution"] == "registered-experiment-executed":
+        return "Scored"
+    if st["execution"] == "registered-experiment-running":
+        return "Running"
+    if st["protocol"] == "frozen":
+        return "Registered"
+    return "Proposed"
+
+
+def render_overview(ix, cards):
+    """The program at a glance: every research card placed on one pipeline, plus counts from NOTES_INDEX.md."""
+    cols = []
+    for stage in STAGES:
+        items = "".join(
+            f'<li><a href="#{E(card_slug(c) if c is not cards[0] else "egrr")}-title">{E(c["id"])}</a>'
+            + (' <span class="refuted">refuted</span>' if c["states"]["claim"]["value"] == "refuted" else "")
+            + "</li>" for c in cards if stage_of(c) == stage)
+        cols.append(f'<div class="stage"><h4>{E(stage)}</h4><ul>{items or "<li class=muted>none</li>"}</ul></div>')
+    named = {a: n for a, n in ix["authors"].items() if a not in ("—", "")}
+    unnamed = ix["total"] - sum(named.values())
+    who = "".join(f'<li>{E(a)}: {n}</li>' for a, n in sorted(named.items(), key=lambda kv: (-kv[1], kv[0])))
+    return (f'<div class="pipeline" aria-label="Research cards by stage">{"".join(cols)}</div>\n'
+            f'<p class="muted">Stage is derived from each card\'s own statuses: Registered means a frozen protocol, '
+            f'Running a registered run in progress, Scored an executed registered run, Reproduced an independent '
+            f'reproduction on record. A stage is not a verdict.</p>\n'
+            f'<div class="tiles" aria-label="Program counts">'
+            f'<div class="tile"><b>{len(cards)}</b><span>research cards</span></div>'
+            f'<div class="tile"><b>{ix["total"]}</b><span>research notes</span></div>'
+            f'<div class="tile"><b>{len(ix["kept"])}</b><span>notes keep a refuted prediction</span></div>'
+            f'<div class="tile"><b>{ix["total"] - unnamed}</b><span>notes name their author</span></div></div>\n'
+            f'<details><summary>Notes by author, as each note names it ({unnamed} name no author)</summary>'
+            f'<ul class="kept">{who}</ul></details>\n'
+            f'<p class="muted">Not shown, because it cannot yet be counted reliably from the notes: how many predictions '
+            f'are registered, and how many are still unrun.</p>')
 
 
 def card_slug(card):
@@ -226,9 +273,12 @@ def render_cards(featured, extra):
 def build(page_text, index_text, card_obj, extra_cards=None):
     featured = validate_card(card_obj)
     extra = load_cards() if extra_cards is None else extra_cards
-    blocks = {"status-board": render_status(parse_index(index_text)),
+    ix = parse_index(index_text)
+    blocks = {"overview": None,
+              "status-board": render_status(ix),
               "egrr-card": render_card(featured),
               "research-cards": render_cards(featured, extra)}
+    blocks["overview"] = render_overview(ix, [featured] + [c for _, c in extra])
     out = page_text
     for name, body in blocks.items():
         pat = re.compile(rf"(<!-- generated:{name}:start -->\n).*?(<!-- generated:{name}:end -->)", re.S)
