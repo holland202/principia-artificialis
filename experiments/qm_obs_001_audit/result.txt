@@ -1,0 +1,3 @@
+equivalence: worst residual 2.13e-14 over 200 cases; max operators needed 3 (n-1=3)
+control (non-diagonal operator added): min residual 3.98e-01
+CLAIM D HELD | CONTROL HELD
