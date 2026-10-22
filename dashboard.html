@@ -77,6 +77,7 @@ section{margin-top:65px}
 .inline-links a{background:#203547;border:1px solid var(--line);padding:13px 16px;text-decoration:none;color:var(--text);border-radius:5px}
 .inline-links a:hover{border-color:var(--accent)}
 .tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:14px 0 16px}
+.pipeline{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:14px 0 8px}.stage{border:1px solid var(--line);border-radius:6px;padding:10px}.stage h4{margin:0 0 6px;font-size:13px;color:var(--muted)}.stage ul{list-style:none;padding:0;margin:0}.stage li{font-size:13px;margin:4px 0}.refuted{color:#f0a3a3;font-weight:700}#research-status>article+article{margin-top:18px}@media(max-width:620px){.pipeline{grid-template-columns:minmax(0,1fr)}}
 .tile{background:var(--card2);border:1px solid var(--line);border-radius:6px;padding:12px 14px}.tile b{display:block;font:30px Georgia,serif;color:var(--text)}.tile span{font-size:13px;color:var(--muted)}
 details{margin-top:6px}summary{cursor:pointer;color:var(--link);font-weight:700}summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .kept{columns:2;column-gap:24px;padding-left:18px}.kept li{break-inside:avoid;font-size:14px}
@@ -109,6 +110,15 @@ a.src{font-size:12px;border:1px solid var(--line);border-radius:4px;padding:1px 
 <div class="notice"><strong>Participation update (2026-10-22):</strong> Recruitment is open again. New contributors are welcome to explore public materials, try an entry challenge or submit an independent question. Responses may take time; official research execution and publication require separate approval.</div>
 <section id="research-status" aria-labelledby="research-status-title">
 <div class="section-title"><div class="eyebrow">1 · Research status</div><h2 id="research-status-title">See the evidence status, not just the idea.</h2><p class="muted">Each status below is generated from a named source file, so the page cannot quietly drift from the record. A featured project is not a preferred or validated result.</p></div>
+<article class="card" aria-labelledby="overview-title"><div class="tag">Program overview</div><h3 id="overview-title">Every study, by stage</h3>
+<!-- generated:overview:start -->
+<div class="pipeline" aria-label="Research cards by stage"><div class="stage"><h4>Proposed</h4><ul><li><a href="#egrr-title">PA-EGRR-001</a></li><li><a href="#pa-qm-obs-001-title">PA-QM-OBS-001</a></li></ul></div><div class="stage"><h4>Registered</h4><ul><li class=muted>none</li></ul></div><div class="stage"><h4>Running</h4><ul><li><a href="#pa-honey-001-title">PA-HONEY-001</a></li></ul></div><div class="stage"><h4>Scored</h4><ul><li class=muted>none</li></ul></div><div class="stage"><h4>Reproduced</h4><ul><li class=muted>none</li></ul></div></div>
+<p class="muted">Stage is derived from each card's own statuses: Registered means a frozen protocol, Running a registered run in progress, Scored an executed registered run, Reproduced an independent reproduction on record. A stage is not a verdict.</p>
+<div class="tiles" aria-label="Program counts"><div class="tile"><b>3</b><span>research cards</span></div><div class="tile"><b>93</b><span>research notes</span></div><div class="tile"><b>14</b><span>notes keep a refuted prediction</span></div><div class="tile"><b>50</b><span>notes name their author</span></div></div>
+<details><summary>Notes by author, as each note names it (43 name no author)</summary><ul class="kept"><li>Grok / xAI: 14</li><li>Claude: 12</li><li>Kimi: 7</li><li>Perplexity: 5</li><li>holland202: 4</li><li>Chad Edward Holland: 3</li><li>ChatGPT: 3</li><li>Chad Holland: 1</li><li>Claude Fable 5: 1</li></ul></details>
+<p class="muted">Not shown, because it cannot yet be counted reliably from the notes: how many predictions are registered, and how many are still unrun.</p>
+<!-- generated:overview:end -->
+</article>
 <article class="card" aria-label="Notes program status board"><div class="tag">Notes program</div><h3>All research notes, by status</h3>
 <!-- generated:status-board:start -->
 <div class="tiles" aria-label="Notes by status tier"><div class="tile"><b>23</b><span>Verified</span></div><div class="tile"><b>21</b><span>Draft</span></div><div class="tile"><b>40</b><span>Speculative</span></div><div class="tile"><b>9</b><span>Unmapped</span></div></div>

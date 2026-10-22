@@ -116,6 +116,47 @@ class FurtherCards(unittest.TestCase):
         self.assertIn('id="pa-x-1-title"', out)
 
 
+class Overview(unittest.TestCase):
+    """The pipeline and counts: every card exactly once, stages derived from states only, counts add up."""
+
+    def card_with(self, **states):
+        c = copy.deepcopy(CARD)
+        for dim, value in states.items():
+            c["states"][dim]["value"] = value
+        return c
+
+    def test_stage_rules(self):
+        base = dict(protocol="draft-under-review", execution="not-tested", reproduction="none-documented",
+                    claim="not-tested")
+        cases = [
+            ({}, "Proposed"),
+            ({"protocol": "frozen"}, "Registered"),
+            ({"protocol": "frozen", "execution": "registered-experiment-running"}, "Running"),
+            ({"protocol": "frozen", "execution": "registered-experiment-executed", "claim": "refuted"}, "Scored"),
+            ({"protocol": "frozen", "execution": "registered-experiment-executed",
+              "reproduction": "independent-reproduction-documented", "claim": "supported"}, "Reproduced"),
+        ]
+        for extra, want in cases:
+            with self.subTest(want):
+                self.assertEqual(md.stage_of(self.card_with(**{**base, **extra})), want)
+
+    def test_every_card_appears_once_and_counts_add_up(self):
+        ix = md.parse_index(INDEX)
+        cards = [copy.deepcopy(CARD)] + [c for _, c in md.load_cards()]
+        out = md.render_overview(ix, cards)
+        for c in cards:
+            with self.subTest(c["id"]):
+                self.assertEqual(out.count(">" + c["id"] + "</a>"), 1)
+        self.assertEqual(sum(ix["authors"].values()), ix["total"])
+        self.assertIn(f"<b>{len(cards)}</b><span>research cards</span>", out)
+
+    def test_refuted_claim_is_marked(self):
+        ix = md.parse_index(INDEX)
+        c = self.card_with(protocol="frozen", execution="registered-experiment-executed", claim="refuted")
+        self.assertIn('class="refuted"', md.render_overview(ix, [c]))
+        self.assertNotIn('class="refuted"', md.render_overview(ix, [copy.deepcopy(CARD)]))
+
+
 class OutputSafety(unittest.TestCase):
     def test_card_text_is_escaped(self):
         c = planted(lambda c: c.update(title="<script>alert(1)</script>"))
