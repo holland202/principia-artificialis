@@ -15,9 +15,11 @@ This is a static website, not a paid app. It has no logins, server database, API
 
 Follow `JOIN_RESEARCH.md`, `METHOD.md`, `WORKFLOW.md`, `CONTROLS.md`, `REVIEW_PLAYBOOK.md` and `CONTRIBUTOR_RIGHTS.md`.
 
-`RECRUITMENT_PROTOCOL.md` and `CONTRIBUTOR_TRUST_PATH.md` are marked **draft, not adopted**. Their procedures must not be misrepresented as automatically in force.
+**Status update, 2026-10-22:** `RECRUITMENT_PROTOCOL.md` is **in effect as a pilot** (PR #83: recruitment reopened by owner direction). `CONTRIBUTOR_TRUST_PATH.md` is still a **draft proposal, not adopted**. Its procedures must not be represented as in force.
 
-Independent researchers may choose their own questions and submit them without an invitation. The pause affects **outbound recruitment**, not independent public submissions. No deadlines, membership fees, required work hours, or automatic access.
+Independent researchers may choose their own questions and submit them without an invitation.
+
+*(Superseded lines, kept verbatim: "`RECRUITMENT_PROTOCOL.md` and `CONTRIBUTOR_TRUST_PATH.md` are marked **draft, not adopted**. Their procedures must not be misrepresented as automatically in force." and "The pause affects **outbound recruitment**, not independent public submissions.")* No deadlines, membership fees, required work hours, or automatic access.
 
 ## Lightweight pilot plan
 

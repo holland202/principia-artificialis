@@ -28,7 +28,9 @@ The following named contributions are supported by the linked public research re
 
 ### Putluru Sandeep (GitHub: [@sunny-kavixo](https://github.com/sunny-kavixo))
 
-**Preferred public display name (confirmed 2026-10-19):** Putluru Sandeep (GitHub: @sunny-kavixo). Earlier records also refer to the same investigator as “Sandeep” or “Sandeep Sunny”; see the [dated attribution clarification](contributions/sunny-kavixo/ATTRIBUTION_2026-10-19.md). This is a name clarification, not a new scientific finding. Any dashboard design credit will be recorded when the relevant contribution is documented and reviewed.
+**Preferred public display name (confirmed 2026-10-19):** Putluru Sandeep (GitHub: @sunny-kavixo). Earlier records also refer to the same investigator as “Sandeep” or “Sandeep Sunny”; see the [dated attribution clarification](contributions/sunny-kavixo/ATTRIBUTION_2026-10-19.md). This is a name clarification, not a new scientific finding.
+
+**Dashboard design credit (recorded 2026-10-22):** Sandeep shared two founder-review design proposals privately with the maintainer on 2026-10-20: an EGRR dashboard pilot and a curated, read-only research portal. The PA dashboard's EGRR research card ([PR #86](https://github.com/holland202/principia-artificialis/pull/86), outcome review by Chad Holland) follows the first proposal's layout. These are design contributions only; they are not a scientific result. *(Superseded sentence, kept verbatim: "Any dashboard design credit will be recorded when the relevant contribution is documented and reviewed.")*
 
 **Contribution:** Originating investigator of the proposed **Evidence-Gated Residual Representation (EGRR)** research question; contributor to experimental-protocol design, constructed instrumentation and reproducibility review.
 
