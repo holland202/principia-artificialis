@@ -23,6 +23,10 @@ jobs:
         run: python scripts/make_dashboard.py --check
       - name: dashboard generator tests (planted defects must stop the build)
         run: python -m unittest scripts/test_make_dashboard.py -v
+      - name: file graph self-test (planted links and a page whose counts are not drawn must be caught)
+        run: python scripts/build_filegraph.py --selftest
+      - name: file graph page draws what it counts (the 2026-10-19 page claimed 380 edges and drew 0)
+        run: python scripts/build_filegraph.py --verify file-graph.html
       - name: rule inventory covers the pre-amendment sources (needs full history; exit 2 = could not run)
         run: python scripts/method_lint.py --coverage
       - run: pip install numpy scipy matplotlib
