@@ -23,6 +23,8 @@ There are two paths:
   - numbered predictions (M2, M5);
   - the simplest rival (M14);
   - the anti-vacuity control, and how it fires (M3);
+  - a pre-mortem: the two or three likeliest ways the instrument could record nothing, or the wrong
+    thing, and how each would show up (Amendment 4 D6);
   - the stand-ins (M4);
   - the answered trigger table (M16), and the controls it switches on;
   - the limits;
@@ -58,7 +60,9 @@ There are two paths:
   - reviews that did not happen.
 
   Then it gives:
-  - the raw output, pasted;
+  - the raw output, pasted. At least one raw output per prediction (a log, a file, a plot) is opened and
+    read before the results are written, not only a summary or an automated pass. If it cannot be
+    opened, that prediction stays `NOT RUN` or `UNRESOLVED` (Amendment 4 D7);
   - the prediction table, with refutations kept;
   - observation before interpretation (M9);
   - what the result shows and does not show, by validity axis (M7);

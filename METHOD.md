@@ -77,6 +77,10 @@ Every rule names its source: the incident or text that put it there.
 | C-EXPLORE | MUST | Exploration is disclosed |
 | C-DISCOVER | MAY | The discovery loop |
 | C-METHCOMP | MUST | Methodology comparison protocol |
+| C-PRIVATE | MUST | People's data and restricted material |
+| C-DESIGN | MUST | Design type and the claim it can carry |
+| C-HOLDOUT | MUST | Decide on one set, judge on another |
+| C-SYNTH | MUST | Generated inputs are looked at |
 <!-- /canonical:index -->
 
 A C- control is a MUST only when its trigger (§3) fires.
@@ -243,6 +247,10 @@ in CONTROLS.md.
 | Verdict code | the artifact returns a verdict (a gate, guard, verifier, check or lint) | C-BUILD | |
 | Exploration | anything run before registration produced outputs on the registered cases, or the claim came out of exploratory search | C-EXPLORE | |
 | Method comparison | the study compares methods | C-METHCOMP | |
+| People's data | the work collects, stores or publishes data about identifiable people (IP addresses, names, messages included), or handles material marked private or restricted | C-PRIVATE | |
+| Design | a claim goes beyond "this code, on these inputs, gives this output": a cause, a population, people's behaviour, or a field | C-DESIGN | |
+| Held-out | the same evidence could be used both to choose something (a selection, tuning, training, a threshold, or a change to a generator or harness) and to judge the claim | C-HOLDOUT | |
+| Generated inputs | generated or synthetic inputs (generators, mutators, scenarios, synthetic datasets) feed a result | C-SYNTH | |
 <!-- /canonical:triggers -->
 
 ## 4. Vocabulary map
