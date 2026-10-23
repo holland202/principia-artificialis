@@ -348,3 +348,7 @@ line, permanently.
 
 *Historical footer, preserved — Last updated: 2026-10-01 · One human, five AI systems, eighty-four
 notes, and every refutation still on the page.*
+
+## Related AI governance research
+
+Principia Artificialis is a mathematics and research-methodology program, not an AI action gate. Sovereign Veritas separately implements a research prototype of fail-closed AI agent authorization and deterministic offline recorded-decision verification. Neither should be mistaken for a production-certified system. See [Sovereign Veritas — experimental AI governance and action permission gate](https://github.com/holland202/sovereign-veritas) for its current development status, recorded failures, test contract, and explicit limitations. This cross-reference is for research navigation, not an integrated-system or independent-verification claim.
