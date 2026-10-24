@@ -11,7 +11,7 @@ and [CONTROLS.md](../CONTROLS.md).
   `python scripts/method_lint.py --coverage` re-extracts them and checks this table;
 - normative prose, read and added by hand. Its line column says `prose`, and the coverage check cannot
   see a prose rule that was missed;
-- `A3-Dn` rows for rules that Amendment 3's decisions introduced.
+- `A3-Dn` rows for rules that Amendment 3's decisions introduced, and `A4-Dn` rows for Amendment 4's.
 
 **Hash:** the first 10 hex digits of the sha256 of the item's whitespace-normalized text.
 
@@ -313,3 +313,10 @@ disposition by hand. That is self-tested. Human review: direction only. Responsi
 | A3-D9 | METHOD_SWAY_AMENDMENT_3.md@0c634a1 | decision | `6d3a92cfdb` | One definition per rule; excerpts checked by method_lint.py. | RULE | M17 |
 | A3-D10 | METHOD_SWAY_AMENDMENT_3.md@0c634a1 | decision | `7b2a56938b` | Unused machinery is kept and labelled with its use counts. | RULE | C-DISCOVER, C-EXPLORE, C-STAT |
 | A3-D13 | METHOD_SWAY_AMENDMENT_3.md@0c634a1 | decision | `9314c9a20c` | The methodology comparison is parked at Stage 2 revision 4; status UNRUN. | RULE | C-METHCOMP |
+| A4-D1 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `2c64b640b5` | People's data and restricted material: minimize, say who sees it, publish reduced, record permission. | RULE | C-PRIVATE |
+| A4-D2 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `1f6fea2a56` | Name the design type and the strongest claim it supports. | RULE | C-DESIGN |
+| A4-D3 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `b7de0d8103` | Decide on one set, judge on another; in-sample results do not count. | RULE | C-HOLDOUT |
+| A4-D4 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `167989d754` | Each outside claim is checked against its own cited source; AI summaries are outside material. | RULE | C-EXT |
+| A4-D5 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `676f52e637` | Generated inputs: report class coverage and distinct kinds, and a person looks at a sample. | RULE | C-SYNTH |
+| A4-D6 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `945579e32b` | Registrations carry a pre-mortem of how the instrument could record nothing or the wrong thing. | RULE | W2 |
+| A4-D7 | METHOD_SWAY_AMENDMENT_4.md@3400469 | decision | `ab038d03b1` | At least one raw output per prediction is opened before results are written. | RULE | W6 |
