@@ -213,7 +213,7 @@ fetch('https://api.github.com/repos/holland202/principia-artificialis/issues?sta
 .then(function(res){if(!res.ok)throw new Error('Unavailable');return res.json();})
 .then(function(items){
 if(!Array.isArray(items))throw new Error('Unexpected issue listing');
-var recent=items.filter(function(it){return !it.pull_request && (/^(research(?: proposal)?:|entry:|PA-ENTRY(?:-|:))/i.test(it.title||'')||(it.labels||[]).some(function(x){return /research-evidence|entry-challenge/i.test(x.name||'');}));}).slice(0,6);
+var recent=items.filter(function(it){return !it.pull_request && (/^(research(?: proposal)?:|entry:|PA-ENTRY(?:-|:))/i.test(it.title||'')||(it.labels||[]).some(function(x){return /^(research|entry-challenge)$/i.test(x.name||'');}));}).slice(0,6);
 list.textContent='';
 if(!recent.length){list.appendChild(node('li','No matching open research submissions appear in the latest public listing.'));}
 recent.forEach(function(it){
