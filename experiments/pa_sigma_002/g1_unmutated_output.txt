@@ -1,0 +1,7 @@
+win7-x86 checker_exit=0 11s raw_findings=252 matchgrep_exit=0 No matches found.
+Logs_Client checker_exit=0 53s raw_findings=4146 matchgrep_exit=0 No matches found.
+Logs_Win11 checker_exit=0 93s raw_findings=5911 matchgrep_exit=0 No matches found.
+Logs_Win11_2023 checker_exit=0 107s raw_findings=8194 matchgrep_exit=0 No matches found.
+win2022-evtx checker_exit=0 17s raw_findings=731 matchgrep_exit=0 No matches found.
+Win2022-AD checker_exit=0 30s raw_findings=2823 matchgrep_exit=0 No matches found.
+win2022-0-20348-azure checker_exit=0 96s raw_findings=7575 matchgrep_exit=0 No matches found.
