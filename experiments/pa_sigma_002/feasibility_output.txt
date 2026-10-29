@@ -1,0 +1,10 @@
+0. broadening mutants rebuilt 1502; PA-SIGMA-001 recorded 1502; identical sets: True
+1. broadening mutants by what limits the goodlog job (bucket x operator):
+   out_of_scope  total     0 in   0 rules | {'DROP_VALUE': 0, 'DROP_FIELD': 0, 'NEVER_SEL': 0}
+   level_low     total    32 in   3 rules | {'DROP_VALUE': 14, 'DROP_FIELD': 15, 'NEVER_SEL': 3}
+   known_fp_all  total     8 in   3 rules | {'DROP_VALUE': 0, 'DROP_FIELD': 6, 'NEVER_SEL': 2}
+   catchable     total  1462 in 276 rules | {'DROP_VALUE': 855, 'DROP_FIELD': 298, 'NEVER_SEL': 309}
+2. catchable mutants whose rule has a known-FP row with a narrower pattern: 41 mutants in 6 rules
+3. catchable mutants by logsource product: {'windows': 1462}
+4. identity of the broadening set (sha256 of sorted rule:k:sha lines): 4bb6343d864618f43b895e98a711c7599f29e895173adaec5ef7621d5d596ba0
+exit 0

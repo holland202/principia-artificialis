@@ -1,0 +1,6 @@
+[PASS] restamp changes the id line only
+[PASS] restamp refuses a rule without that id
+[PASS] real matchgrep.sh drops a known-FP '.*' finding and a low-level finding, keeps the other
+[PASS] two-stage matchgrep gives the same caught items as one call (stage 2 catches a late survivor)
+[PASS] an empty findings file passes matchgrep.sh (why G1b also checks the raw count)
+exit 0

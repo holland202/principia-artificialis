@@ -1,0 +1,5 @@
+PA-SIGMA-002 harness
+environment: Linux x86_64 | Python 3.13.18 | PyYAML 6.0.3 | SigmaHQ 05d1031 | checker d672e07a516f
+staged items: {'MUTANT': 1502, 'IDENTITY': 282, 'NEVER_FIRE': 282, 'MATCH_ALL': 10}
+  win7-x86                  12.9s unmutated raw   252 (G1 run   252) G1 matchgrep exit 0 | staged items with raw findings  115 | caught   96
+(aborted by Claude after the first baseline, to make P4 count the 276 rules with catchable mutants as registered; nothing from this run is used)

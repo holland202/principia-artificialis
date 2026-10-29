@@ -1,0 +1,6 @@
+catchable 1462; caught 305 (matches results.json: True)
+rules with at least one CAUGHT mutant: 133 of 276
+CAUGHT mutants per such rule: {1: 70, 2: 31, 3: 8, 4: 5, 5: 9, 6: 2, 7: 2, 8: 1, 9: 3, 11: 1, 12: 1}
+most CAUGHT mutants in one rule: [('cbf93e5d-ca6c-4722-8bea-e9119007c248', 12), ('e54279c7-4910-4e2c-902c-c56a25b549f6', 11), ('36480ae1-a1cb-4eaa-a0d6-29801d7e9142', 9), ('7047d730-036f-4f40-b9d8-1c63e36d5e62', 9), ('c977cb50-3dff-4a9f-b873-9290f56132f1', 9)]
+look sample: 5 CAUGHT + 5 not caught; identities in results/pa_sigma_002/look_sample.json; diffs in /tmp/claude-0/-home-claude/20deaf03-7883-5e1f-bdbb-23fc34858bca/scratchpad/pa_sigma_002_look_diffs.md
+exit 0

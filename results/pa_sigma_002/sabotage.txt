@@ -1,0 +1,26 @@
+PA-SIGMA-002 harness  *** SABOTAGE: every mutant staged as its original rule ***
+environment: Linux x86_64 | Python 3.13.18 | PyYAML 6.0.3 | SigmaHQ 05d1031 | checker d672e07a516f
+staged items: {'MUTANT': 1502, 'IDENTITY': 282, 'NEVER_FIRE': 282, 'MATCH_ALL': 10}
+  win7-x86                  13.2s unmutated raw   252 (G1 run   252) G1 matchgrep exit 0 | staged items with raw findings   25 | caught   10
+  Logs_Client               47.4s unmutated raw  4146 (G1 run  4146) G1 matchgrep exit 0 | staged items with raw findings   48 | caught   10
+  Logs_Win11                99.6s unmutated raw  5911 (G1 run  5911) G1 matchgrep exit 0 | staged items with raw findings   26 | caught   10
+  Logs_Win11_2023          118.5s unmutated raw  8194 (G1 run  8194) G1 matchgrep exit 0 | staged items with raw findings   37 | caught   10
+  win2022-evtx              20.3s unmutated raw   731 (G1 run   731) G1 matchgrep exit 0 | staged items with raw findings   16 | caught   10
+  Win2022-AD                38.2s unmutated raw  2823 (G1 run  2823) G1 matchgrep exit 0 | staged items with raw findings   19 | caught   10
+  win2022-0-20348-azure    106.4s unmutated raw  7575 (G1 run  7575) G1 matchgrep exit 0 | staged items with raw findings   31 | caught   10
+G1 PASS
+G1b PASS
+G3 PASS
+G4 PASS
+G5 PASS
+controls caught on any baseline: {'IDENTITY': 0, 'MATCH_ALL': 10, 'NEVER_FIRE': 0} (IDENTITY must be 0, MATCH_ALL >= 9 of 10); NEVER_FIRE raw findings 0 (must be 0)
+P1 catchable mutants caught by the goodlog job: 0 of 1462 (0.00%); registered < 50% -> HELD
+P2 same fraction >= 5% -> REFUTED
+P3 NEVER_SEL caught 0.00% vs DROP_VALUE 0.00% (by operator {'DROP_VALUE': [0, 855], 'DROP_FIELD': [0, 298], 'NEVER_SEL': [0, 309]}); registered NEVER_SEL > DROP_VALUE -> REFUTED
+P4 rules with at least one broadening mutant passing both jobs: 276 of 276 rules with catchable mutants; registered >= 138 of 276 -> HELD
+broadening mutants passing both jobs: 1502 of 1502 (uncatchable by construction: {'level_low': 32, 'known_fp_all': 8})
+caught per baseline: {'win7-x86': 0, 'Logs_Client': 0, 'Logs_Win11': 0, 'Logs_Win11_2023': 0, 'win2022-evtx': 0, 'Win2022-AD': 0, 'win2022-0-20348-azure': 0}
+VERDICT 2 of 4 as registered
+DIGEST 2b3cf0862f9c1a463d994befd85a401e7c4801f6f23611bbbfc1dd9f77420908
+RECORDED: NOT reproduced
+exit 1

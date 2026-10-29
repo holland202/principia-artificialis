@@ -1,0 +1,26 @@
+PA-SIGMA-002 harness
+environment: Linux x86_64 | Python 3.13.18 | PyYAML 6.0.3 | SigmaHQ 05d1031 | checker d672e07a516f
+staged items: {'MUTANT': 1502, 'IDENTITY': 282, 'NEVER_FIRE': 282, 'MATCH_ALL': 10}
+  win7-x86                  13.2s unmutated raw   252 (G1 run   252) G1 matchgrep exit 0 | staged items with raw findings  115 | caught   96
+  Logs_Client               48.3s unmutated raw  4146 (G1 run  4146) G1 matchgrep exit 0 | staged items with raw findings  205 | caught  165
+  Logs_Win11               103.3s unmutated raw  5911 (G1 run  5911) G1 matchgrep exit 0 | staged items with raw findings  214 | caught  191
+  Logs_Win11_2023          117.9s unmutated raw  8194 (G1 run  8194) G1 matchgrep exit 0 | staged items with raw findings  255 | caught  222
+  win2022-evtx              20.0s unmutated raw   731 (G1 run   731) G1 matchgrep exit 0 | staged items with raw findings  123 | caught  113
+  Win2022-AD                36.9s unmutated raw  2823 (G1 run  2823) G1 matchgrep exit 0 | staged items with raw findings  137 | caught  123
+  win2022-0-20348-azure    102.6s unmutated raw  7575 (G1 run  7575) G1 matchgrep exit 0 | staged items with raw findings  199 | caught  171
+G1 PASS
+G1b PASS
+G3 PASS
+G4 PASS
+G5 PASS
+controls caught on any baseline: {'IDENTITY': 0, 'MATCH_ALL': 10, 'NEVER_FIRE': 0} (IDENTITY must be 0, MATCH_ALL >= 9 of 10); NEVER_FIRE raw findings 0 (must be 0)
+P1 catchable mutants caught by the goodlog job: 305 of 1462 (20.86%); registered < 50% -> HELD
+P2 same fraction >= 5% -> HELD
+P3 NEVER_SEL caught 30.10% vs DROP_VALUE 11.93% (by operator {'DROP_VALUE': [102, 855], 'DROP_FIELD': [110, 298], 'NEVER_SEL': [93, 309]}); registered NEVER_SEL > DROP_VALUE -> HELD
+P4 rules with at least one broadening mutant passing both jobs: 267 of 276 rules with catchable mutants; registered >= 138 of 276 -> HELD
+broadening mutants passing both jobs: 1197 of 1502 (uncatchable by construction: {'level_low': 32, 'known_fp_all': 8})
+caught per baseline: {'win7-x86': 86, 'Logs_Client': 155, 'Logs_Win11': 181, 'Logs_Win11_2023': 212, 'win2022-evtx': 103, 'Win2022-AD': 113, 'win2022-0-20348-azure': 161}
+VERDICT 4 of 4 as registered
+DIGEST e79ce1e58c59f945d9f53d9a6d02c49f3dfc0965a2473f1739fc0e8b9c6766f9
+RECORDED: reproduced
+exit 0

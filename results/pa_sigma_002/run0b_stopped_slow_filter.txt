@@ -1,0 +1,6 @@
+PA-SIGMA-002 harness
+environment: Linux x86_64 | Python 3.13.18 | PyYAML 6.0.3 | SigmaHQ 05d1031 | checker d672e07a516f
+staged items: {'MUTANT': 1502, 'IDENTITY': 282, 'NEVER_FIRE': 282, 'MATCH_ALL': 10}
+  win7-x86                  22.4s unmutated raw   252 (G1 run   252) G1 matchgrep exit 0 | staged items with raw findings  115 | caught   96
+exit 143
+(stopped by Claude during Logs_Client's matchgrep.sh, which was still running after more than 4 minutes on 278 MB; the harness was changed to a two-stage filter with the same decision rule; nothing from this run is used)
