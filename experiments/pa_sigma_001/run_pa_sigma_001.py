@@ -55,7 +55,8 @@ MAX_INVALID = 275                # G3: more than 5% of 5,509 operator mutants IN
 PASSES = 2                       # G4: the full census is run twice and must agree
 PREDICTIONS = ("P1", "P2", "P3", "P4")
 # Pinned after the first published run, in a separate commit (W4): (prediction outcomes, DIGEST).
-RECORDED = None
+# Run outputs: results/pa_sigma_001/run1.txt and run2.txt (commit 5a26f40), harness md5 d05d24ae2490baf38c96483c2c5f6ff4.
+RECORDED = (("HELD", "HELD", "HELD", "HELD"), "765032efccf9cb7e6c9f7a6c41195980a9dfe78ef075b8bbbc40e107cbef929d")
 
 PRECHECK_RX = re.compile(r"could not add rules from (\S+?\.yml): ")
 # Lines the runner prints only on paths that are not a plain pass or a plain "match count too low".
