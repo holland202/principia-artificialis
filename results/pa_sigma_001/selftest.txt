@@ -1,0 +1,64 @@
+[1] polarity of selections in conditions
+  ok   plain selection is positive
+  ok   'and not' makes an exclusion
+  ok   nested not flips twice
+  ok   1 of pattern, both polarities split
+  ok   'them' skips names starting with _
+  ok   skip: aggregation (aggregation in condition)
+  ok   skip: list (condition is a list)
+  ok   skip: unknown selection (unknown selection 'unknown')
+  ok   skip: unbalanced (unbalanced parentheses)
+  ok   skip: matches no selection (pattern 'nomatch_*' matches no selection)
+  ok   skip: ends early (condition ends early)
+  ok   a selection with both polarities is skipped
+[2] directions on a hand-written rule
+  ok   toy rule is not skipped
+  ok   DROP_VALUE selection/0/Image|endswith[0] is NARROWING
+  ok   DROP_VALUE selection/0/CommandLine|contains|all[1] is BROADENING
+  ok   DROP_VALUE sel2/1/OriginalFileName[0] is NARROWING
+  ok   DROP_VALUE filter/0/ParentImage|endswith[1] is BROADENING
+  ok   DROP_VALUE filter/0/User|contains|all[0] is NARROWING
+  ok   DROP_VALUE keywords[1] is NARROWING
+  ok   DROP_FIELD selection/0/Image|endswith is BROADENING
+  ok   DROP_FIELD filter/0/User|contains|all is NARROWING
+  ok   NEVER_SEL selection is NARROWING
+  ok   NEVER_SEL sel2 is NARROWING
+  ok   NEVER_SEL filter is BROADENING
+  ok   NEVER_SEL keywords is NARROWING
+  ok   controls come first
+  ok   IDENTITY is the input text
+  ok   NEVER_FIRE ANDs a never-matching selection
+  ok   NEVER_SEL on a list of maps puts the never value in every map
+  ok   NEVER_SEL on a keyword list leaves only the never value
+  ok   DROP_VALUE removes exactly that value
+  ok   cap: at most 25 DROP_VALUE mutants per rule
+  ok   identical mutant texts are kept once
+[3] scoring boundaries and gates (registered thresholds)
+  ok   P2 at exactly half is REFUTED
+  ok   P4 at exactly 10% is HELD
+  ok   P4 below 10% is REFUTED
+  ok   P1 with one BROADENING KILLED is REFUTED
+  ok   P3 at exactly half of rules is REFUTED
+  ok   G2: 24 excluded rules -> COULD NOT RUN AS REGISTERED
+  ok   G2: 23 excluded rules still scores
+  ok   G3: 276 INVALID -> COULD NOT RUN AS REGISTERED
+  ok   G1 failure -> IMPLEMENTATION_ERROR
+  ok   pre-check message parsed to the file
+[4] the real runner, checker and json path on three rules (needs the registered environment)
+  ok   three rules planned, one with a json test
+  ok   0022869c IDENTITY SURVIVED
+  ok   0022869c ROUNDTRIP SURVIVED
+  ok   0022869c NEVER_FIRE KILLED
+  ok   02030f2f IDENTITY SURVIVED
+  ok   02030f2f ROUNDTRIP SURVIVED
+  ok   02030f2f NEVER_FIRE KILLED
+  ok   7dbbcac2 IDENTITY SURVIVED
+  ok   7dbbcac2 ROUNDTRIP SURVIVED
+  ok   7dbbcac2 NEVER_FIRE KILLED
+  ok   the broken copy differs from the rule
+  ok   a broken rule is INVALID, not KILLED
+  ok   a file the harness did not stage aborts
+  ok   staged bytes that differ from the mutant abort
+  ok   under sabotage NEVER_FIRE SURVIVES (so G2 would fail)
+SELFTEST: PASS (0 failure(s))
+exit 0

@@ -1,0 +1,98 @@
+[
+ {
+  "cell": "BROADENING/SURVIVED",
+  "counts": [
+   1
+  ],
+  "dir": "BROADENING",
+  "expect": [
+   1
+  ],
+  "k": 15,
+  "op": "DROP_FIELD",
+  "out": "SURVIVED",
+  "rule": "08249dc0-a28d-4555-8ba5-9255a198e08c",
+  "sha": "000d0f77608c6336434305de04e99e87e61fd230fe918660df67672adc4dbd9e",
+  "site": "selection/0/DestinationIp|cidr"
+ },
+ {
+  "cell": "BROADENING/SURVIVED",
+  "counts": [
+   1
+  ],
+  "dir": "BROADENING",
+  "expect": [
+   1
+  ],
+  "k": 32,
+  "op": "DROP_FIELD",
+  "out": "SURVIVED",
+  "rule": "b8fd0e93-ff58-4cbd-8f48-1c114e342e62",
+  "sha": "0089a48de2bcdac1c2ba6fcd4c13ba8ce7e78b606a8a2a07e925d23b5f43d8b1",
+  "site": "selection_special/0/TargetFilename|endswith"
+ },
+ {
+  "cell": "NARROWING/SURVIVED",
+  "counts": [
+   1
+  ],
+  "dir": "NARROWING",
+  "expect": [
+   1
+  ],
+  "k": 4,
+  "op": "DROP_VALUE",
+  "out": "SURVIVED",
+  "rule": "e312efd0-35a1-407f-8439-b8d434b438a6",
+  "sha": "00237515085b4fa72709bf1f4c27e120d89f8e1df774c5e0a5ae867d04bf5ce2",
+  "site": "selection/0/CommandLine|contains[1]"
+ },
+ {
+  "cell": "NARROWING/SURVIVED",
+  "counts": [
+   1
+  ],
+  "dir": "NARROWING",
+  "expect": [
+   1
+  ],
+  "k": 5,
+  "op": "DROP_VALUE",
+  "out": "SURVIVED",
+  "rule": "ea0cdc3e-2239-4f26-a947-4e8f8224e464",
+  "sha": "0044eeb4146134abe9009cd9cbed52a16a514563da06fe830241c8ef1af5c001",
+  "site": "selection_extension/0/CommandLine|contains[0]"
+ },
+ {
+  "cell": "NARROWING/KILLED",
+  "counts": [
+   0
+  ],
+  "dir": "NARROWING",
+  "expect": [
+   1
+  ],
+  "k": 3,
+  "op": "DROP_VALUE",
+  "out": "KILLED",
+  "rule": "d93129cd-1ee0-479f-bc03-ca6f129882e3",
+  "sha": "003dc9d75681dff5e171f6b38350d60956749e8bcf895e322ff196d0a7fcb493",
+  "site": "selection_action/0/ScriptBlockText|contains[0]"
+ },
+ {
+  "cell": "NARROWING/KILLED",
+  "counts": [
+   0
+  ],
+  "dir": "NARROWING",
+  "expect": [
+   1
+  ],
+  "k": 9,
+  "op": "NEVER_SEL",
+  "out": "KILLED",
+  "rule": "6225c53a-a96e-4235-b28f-8d7997cd96eb",
+  "sha": "0045b984e88d56868d2454d1282ab210731b681123d533ef2b615c0ebcbd2562",
+  "site": "selection_img"
+ }
+]
