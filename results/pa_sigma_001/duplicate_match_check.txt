@@ -1,0 +1,4 @@
+rule 06d71506-7beb-4f22-8888-e2e5e2ca7fd8: logsource {'product': 'windows'}, condition 'keywords and not filter', match_count 1
+sample (python-evtx): records 1, record numbers [1], header next record number 2, chunks 1
+runner's match lines for the rule: 2; distinct Event payloads among them: 1
+exit 0

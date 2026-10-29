@@ -1,0 +1,26 @@
+SigmaHQ/sigma HEAD 05d1031f537e830b76da53bae2400c5814c89165
+evtx-sigma-checker sha256 d672e07a516f3f72eaae8244f99fa2c5b133885a4401eb05a272903857d767e2
+json_checker sha256 abd279e669a04f63db2bb505efc94e36be79d740aec5221b3547b53551966368
+rules with regression tests (runner discovery): 471
+tests: 474 by type {'evtx': 471, 'json': 3}
+rules by test types: {('evtx',): 468, ('evtx', 'json'): 3}
+rule files containing a carriage return: 0; starting with a UTF-8 BOM: 0
+test/stable rules without regression_tests_path (runner's own count): 3028
+match_count values: {1: 436, 2: 2, 3: 3, 4: 2, 7: 1, None: 30}
+sample events per test: n=474 min=1 median=1 max=66
+tests whose sample holds no more events than the expected match count: 464
+tests whose sample holds more events than the expected match count: 10
+tests with no sample file found: 0
+rules mutated: 471; skipped: 0 {}
+  DROP_FIELD BROADENING mutants   319  rules  128
+  DROP_FIELD NARROWING  mutants   250  rules   48
+  DROP_VALUE BROADENING mutants   869  rules  182
+  DROP_VALUE NARROWING  mutants  2879  rules  289
+  IDENTITY   CONTROL    mutants   471  rules  471
+  NEVER_FIRE CONTROL    mutants   471  rules  471
+  NEVER_SEL  BROADENING mutants   314  rules  126
+  NEVER_SEL  NARROWING  mutants   878  rules  464
+  ROUNDTRIP  CONTROL    mutants   471  rules  471
+rules reaching the per-operator cap of 25: {'DROP_VALUE': 53, 'DROP_FIELD': 1}
+mutants per rule incl. controls: max 76 (rounds needed), total 6922
+mutants incl. controls of the 3 rules that also have a json test: 62

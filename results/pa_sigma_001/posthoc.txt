@@ -1,0 +1,76 @@
+Q0 headline fractions from the registered run (scored operator mutants; all 471 rules included)
+  all BROADENING: SURVIVED 1502 of 1502 (100.0%)
+  all NARROWING: SURVIVED 2966 of 4007 (74.0%)
+  DROP_VALUE NARROWING: SURVIVED 2571 of 2879 (89.3%)
+  DROP_FIELD NARROWING (an exclusion broadened): SURVIVED 236 of 250 (94.4%)
+  NEVER_SEL NARROWING (a positive selection disabled): SURVIVED 159 of 878 (18.1%)
+  NEVER_SEL BROADENING (an exclusion switched off): SURVIVED 314 of 314 (100.0%)
+  rules with a surviving NARROWING mutant: 313 of 466 (67.2%)
+
+Q1 D2 exceptions: tests where IDENTITY's count differs from the sample's events
+  06d71506-7beb-4f22-8888-e2e5e2ca7fd8 evtx: IDENTITY count 2, sample events 1, match_count 1
+  0b9ad457-2554-44c1-82c2-d56a99c42377 evtx: IDENTITY count 3, sample events 5, match_count 3
+  1547e27c-3974-43e2-a7d7-7f484fb928ec json: IDENTITY count 1, sample events 52, match_count 1
+  47e4bab7-c626-47dc-967b-255608c9a920 evtx: IDENTITY count 1, sample events 3, match_count 1
+  4fe074b4-b833-4081-8f24-7dcfeca72b42 evtx: IDENTITY count 1, sample events 3, match_count 1
+  5299fadf-f228-4526-8274-251db1960be9 evtx: IDENTITY count 1, sample events 6, match_count None
+  7dbbcac2-57a0-45ac-b306-ff30a8bd2981 json: IDENTITY count 1, sample events 66, match_count 1
+  8fbf3271-1ef6-4e94-8210-03c2317947f6 evtx: IDENTITY count 3, sample events 6, match_count 3
+  d7b81144-b866-48a4-9bcc-275dc69d870e json: IDENTITY count 1, sample events 66, match_count 1
+
+Q1b the same with JSON samples counted as documents, not lines (feasibility.py counted non-empty lines for every non-EVTX sample; a 'json' sample is one JSON document)
+  tests whose sample holds no more events than the expected count: 467; more: 7
+  IDENTITY's count equals the sample's events: 468 of 474; among the 467: 466
+
+Q2 NARROWING survivors whose match count changed (the drop stayed at or above match_count)
+  5bac7a56-da88-4c27-922e-c81e113b20cb NEVER_SEL selection_worker_img: counts [1], IDENTITY [2], match_count [None]
+  5bac7a56-da88-4c27-922e-c81e113b20cb NEVER_SEL selection_worker_cli: counts [1], IDENTITY [2], match_count [None]
+  5bac7a56-da88-4c27-922e-c81e113b20cb NEVER_SEL selection_listener_img: counts [1], IDENTITY [2], match_count [None]
+  5bac7a56-da88-4c27-922e-c81e113b20cb NEVER_SEL selection_listener_cli: counts [1], IDENTITY [2], match_count [None]
+
+Q3 NARROWING survivors carrying the runner's over-match warning, by rule
+  06d71506-7beb-4f22-8888-e2e5e2ca7fd8: 19 (IDENTITY counts [2], match_count [1], IDENTITY over-match True)
+
+Q4 rules in which no NARROWING mutant is KILLED
+  54773c5f-f1cc-4703-9126-2f797d96a69d: 2 narrowing mutants {'NEVER_SEL': 2}; IDENTITY counts [1] match_count [1]; condition shape: 1-S-S
+  589ac73f-8e12-409c-964e-31a2f5775ae2: 3 narrowing mutants {'NEVER_SEL': 3}; IDENTITY counts [1] match_count [None]; condition shape: 1-S-S
+  5bac7a56-da88-4c27-922e-c81e113b20cb: 6 narrowing mutants {'NEVER_SEL': 4, 'DROP_VALUE': 2}; IDENTITY counts [2] match_count [None]; condition shape: all-S-S or all-S-S
+  7124aebe-4cd7-4ccb-8df0-6d6b93c96795: 2 narrowing mutants {'NEVER_SEL': 2}; IDENTITY counts [2] match_count [None]; condition shape: 1-S-S
+  74a12f18-505c-4114-8d0b-8448dd5485c6: 5 narrowing mutants {'NEVER_SEL': 2, 'DROP_VALUE': 3}; IDENTITY counts [1] match_count [1]; condition shape: 1-S-S
+  a642964e-bead-4bed-8910-1bb4d63e3b4d: 26 narrowing mutants {'DROP_VALUE': 23, 'NEVER_SEL': 3}; IDENTITY counts [1] match_count [1]; condition shape: 1-S-S
+  c598cc0c-9e70-4852-b9eb-8921af79f598: 12 narrowing mutants {'DROP_VALUE': 10, 'NEVER_SEL': 2}; IDENTITY counts [1] match_count [None]; condition shape: 1-S-S
+  df55196f-f105-44d3-a675-e9dfb6cc2f2b: 28 narrowing mutants {'DROP_VALUE': 25, 'NEVER_SEL': 3}; IDENTITY counts [1] match_count [1]; condition shape: 1-S-S and not S
+  f91e51c9-f344-4b32-969b-0b6f6b8537d4: 18 narrowing mutants {'DROP_VALUE': 15, 'NEVER_SEL': 3}; IDENTITY counts [1] match_count [1]; condition shape: (all-S-S and not S and not S) or (S and not S)
+
+Q5 NEVER_SEL NARROWING outcome by whether the condition lets two positive selections stand in for each other ('or' outside a negation, or '1 of'/'any of')
+  heuristic checked on hand-written conditions: 12 of 12 as expected
+  positive OR    : KILLED   99 SURVIVED  159 (rules with a survivor 71)
+  no positive OR : KILLED  620 SURVIVED    0 (rules with a survivor 0)
+
+Q6 the 10 tests whose sample holds more events than match_count: BROADENING mutants of those rules
+  0b9ad457-2554-44c1-82c2-d56a99c42377: sample events 5, match_count 3, IDENTITY [3]; BROADENING mutants 0, count changed 0
+  1547e27c-3974-43e2-a7d7-7f484fb928ec: sample events 52, match_count 1, IDENTITY [1, 1]; BROADENING mutants 12, count changed 0
+  47e4bab7-c626-47dc-967b-255608c9a920: sample events 3, match_count 1, IDENTITY [1]; BROADENING mutants 3, count changed 0
+  4fe074b4-b833-4081-8f24-7dcfeca72b42: sample events 3, match_count 1, IDENTITY [1]; BROADENING mutants 0, count changed 0
+  5299fadf-f228-4526-8274-251db1960be9: sample events 6, match_count None, IDENTITY [1]; BROADENING mutants 2, count changed 0
+  5bac7a56-da88-4c27-922e-c81e113b20cb: sample events 2, match_count None, IDENTITY [2]; BROADENING mutants 0, count changed 0
+  7124aebe-4cd7-4ccb-8df0-6d6b93c96795: sample events 2, match_count None, IDENTITY [2]; BROADENING mutants 4, count changed 0
+  7dbbcac2-57a0-45ac-b306-ff30a8bd2981: sample events 66, match_count 1, IDENTITY [1, 1]; BROADENING mutants 2, count changed 0
+  8fbf3271-1ef6-4e94-8210-03c2317947f6: sample events 6, match_count 3, IDENTITY [3]; BROADENING mutants 0, count changed 0
+  d7b81144-b866-48a4-9bcc-275dc69d870e: sample events 66, match_count 1, IDENTITY [1, 1]; BROADENING mutants 0, count changed 0
+  the same with JSON samples counted as documents (Q1b): EVTX tests only
+  tests 7; BROADENING mutants of their rules 9; count changed 0
+
+Q7 the three rules with EVTX and JSON tests: mutants whose two tests disagree (one passes, one fails)
+  1547e27c-3974-43e2-a7d7-7f484fb928ec: 26 mutants incl. controls; tests disagree on 3
+  7dbbcac2-57a0-45ac-b306-ff30a8bd2981: 17 mutants incl. controls; tests disagree on 4
+  d7b81144-b866-48a4-9bcc-275dc69d870e: 19 mutants incl. controls; tests disagree on 7
+
+Q7b JSON tests across every mutant of those three rules (controls included): how often the JSON test passed by the runner's rule, and how often its EVTX test failed at the same time
+  JSON test passed for 62 of 62 mutants; EVTX failed while JSON passed: 14
+
+Q8 KILLED fraction by operator and direction, per rule (rules with at least one such mutant)
+  DROP_VALUE NARROWING: rules 289, median kill fraction 0.125, all killed 2, none killed 63
+  DROP_FIELD NARROWING: rules 48, median kill fraction 0.000, all killed 0, none killed 35
+  NEVER_SEL  NARROWING: rules 464, median kill fraction 1.000, all killed 393, none killed 9
+exit 0

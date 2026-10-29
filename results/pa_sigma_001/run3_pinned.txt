@@ -1,0 +1,55 @@
+==============================================================================
+PA-SIGMA-001: SigmaHQ regression-test job against one-point mutants (self-tested)
+==============================================================================
+sigma_head: 05d1031f537e830b76da53bae2400c5814c89165
+runner_sha256: d1b88d4b465ce3b227b26a8f76bdd59249e1c79c8f7fc018618f053e0080a438
+thor_sha256: 8e72d9223e2c3c1d2d647b08e10118a3a067975ce7eba37dc1623f9d79604120
+evtx_checker_sha256: d672e07a516f3f72eaae8244f99fa2c5b133885a4401eb05a272903857d767e2
+json_checker_sha256: abd279e669a04f63db2bb505efc94e36be79d740aec5221b3547b53551966368
+mutants_md5: 97b57d4f5fd5ebbbf4ff9a1b93bbcd0f
+harness_md5: 2f02c1cef28605bf459f29d425912354
+python: 3.13.18
+platform: Linux x86_64
+packages: {'pySigma': '1.5.1', 'sigma-cli': '3.1.0', 'pySigma-backend-golangexpr': '1.0.0', 'PyYAML': '6.0.3', 'python-evtx': '0.8.1'}
+sabotage: False
+rules: 471
+mutants: 6922
+passes: 2 (55 s, 58 s)
+
+FAILURES AND EXCLUSIONS FIRST
+  G4 UNRESOLVED (outcome or counts differ between passes): 0 []
+  G1 IDENTITY not SURVIVED: 0 []
+  G2 rules excluded (IDENTITY/ROUNDTRIP not SURVIVED or NEVER_FIRE not KILLED): 0 (max 23) []
+  G3 INVALID operator mutants: 0 (max 275)
+  INVALID controls: 0 []
+  G5 direction-label violations (count moved against the label): 0 []
+
+OUTCOMES BY OPERATOR AND DIRECTION (all rules; INVALID and UNRESOLVED shown)
+  IDENTITY   CONTROL    KILLED     0  SURVIVED   471  INVALID    0  UNRESOLVED   0
+  ROUNDTRIP  CONTROL    KILLED     0  SURVIVED   471  INVALID    0  UNRESOLVED   0
+  NEVER_FIRE CONTROL    KILLED   471  SURVIVED     0  INVALID    0  UNRESOLVED   0
+  DROP_VALUE BROADENING KILLED     0  SURVIVED   869  INVALID    0  UNRESOLVED   0
+  DROP_VALUE NARROWING  KILLED   308  SURVIVED  2571  INVALID    0  UNRESOLVED   0
+  DROP_FIELD BROADENING KILLED     0  SURVIVED   319  INVALID    0  UNRESOLVED   0
+  DROP_FIELD NARROWING  KILLED    14  SURVIVED   236  INVALID    0  UNRESOLVED   0
+  NEVER_SEL  BROADENING KILLED     0  SURVIVED   314  INVALID    0  UNRESOLVED   0
+  NEVER_SEL  NARROWING  KILLED   719  SURVIVED   159  INVALID    0  UNRESOLVED   0
+  operator mutants 5509; distinct texts (sha256) 5509; included rules 471
+
+SURVIVORS: CAN THE SAMPLE SEE THEM? (scored mutants of included rules)
+  BROADENING SURVIVED  1502: match count CHANGED     0, unchanged  1502; over-match warning 0
+  NARROWING  SURVIVED  2966: match count CHANGED     4, unchanged  2962; over-match warning 19
+  NEVER_SEL BROADENING (an exclusion switched off): SURVIVED 314 of 314; rules with such a survivor 126 of 126
+  D2: tests where IDENTITY matches every sample event: 465 of 474; among the 464 tests whose sample holds no more events than expected: 463
+  per-rule NARROWING kill fraction over 466 rules: min 0.000 q25 0.214 median 0.500 q75 1.000 max 1.000; rules with every narrowing mutant KILLED 153; with none KILLED 9
+
+PREDICTIONS (registered in PREREG.md)
+  P1: HELD  (BROADENING mutants KILLED: 0 of 1502)
+  P2: HELD  (DROP_VALUE NARROWING SURVIVED: 2571 of 2879)
+  P3: HELD  (rules with a surviving NARROWING mutant: 313 of 466)
+  P4: HELD  (NEVER_SEL NARROWING SURVIVED: 159 of 878)
+VERDICT 4 of 4 as registered
+DIGEST 765032efccf9cb7e6c9f7a6c41195980a9dfe78ef075b8bbbc40e107cbef929d
+GATE: PASS
+RECORDED: reproduced
+exit 0

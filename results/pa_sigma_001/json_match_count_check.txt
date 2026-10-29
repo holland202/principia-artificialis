@@ -1,0 +1,14 @@
+rules with a JSON test: 3; JSON tests: 3
+
+json_checker on literal expressions, and what the runner's counting rule keeps:
+  expr 'true': output ['MATCH']; lines the runner counts as matches: 1
+  expr 'false': output ['NO-MATCH']; lines the runner counts as matches: 1
+
+the runner's own run_json_checker on each rule, unchanged and with a never-matching condition:
+  d7b81144-b866-48a4-9bcc-275dc69d870e unchanged      : runner verdict PASS, counted matches 1, match_count 1, lines counted ['MATCH']
+  d7b81144-b866-48a4-9bcc-275dc69d870e never-matching : runner verdict PASS, counted matches 1, match_count 1, lines counted ['NO-MATCH']
+  7dbbcac2-57a0-45ac-b306-ff30a8bd2981 unchanged      : runner verdict PASS, counted matches 1, match_count 1, lines counted ['MATCH']
+  7dbbcac2-57a0-45ac-b306-ff30a8bd2981 never-matching : runner verdict PASS, counted matches 1, match_count 1, lines counted ['NO-MATCH']
+  1547e27c-3974-43e2-a7d7-7f484fb928ec unchanged      : runner verdict PASS, counted matches 1, match_count 1, lines counted ['MATCH']
+  1547e27c-3974-43e2-a7d7-7f484fb928ec never-matching : runner verdict PASS, counted matches 1, match_count 1, lines counted ['NO-MATCH']
+exit 0
