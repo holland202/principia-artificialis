@@ -75,7 +75,8 @@ BASELINES = {
     "win2022-0-20348-azure": ("win2022-0-20348-azure.tgz", "4b3337d857f8e03273f831ad25db75e02a5a8b26b5ec14bb63727459250a5a73", None),
 }
 NS = uuid.UUID("6f1d2a7e-3c55-4d0e-9a51-5a1900020000")  # namespace for staged-rule ids
-RECORDED = None  # pinned after the first full run, in a separate commit: (statuses, digest)
+RECORDED = (("HELD", "HELD", "HELD", "HELD"),  # pinned after runs 1 and 2, in a separate commit
+            "e79ce1e58c59f945d9f53d9a6d02c49f3dfc0965a2473f1739fc0e8b9c6766f9")
 IDS = ["P1", "P2", "P3", "P4"]
 
 
