@@ -1,0 +1,82 @@
+[
+ {
+  "rule": "b8fd0e93-ff58-4cbd-8f48-1c114e342e62",
+  "k": 32,
+  "op": "DROP_FIELD",
+  "sha256": "0089a48de2bcdac1c2ba6fcd4c13ba8ce7e78b606a8a2a07e925d23b5f43d8b1",
+  "caught": true,
+  "path": "rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml"
+ },
+ {
+  "rule": "f37b4bce-49d0-4087-9f5b-58bffda77316",
+  "k": 13,
+  "op": "DROP_VALUE",
+  "sha256": "0371f286ccc01b3fd75a2eba308e2aa26ebda57e01d5388bd10f67be81fb0468",
+  "caught": true,
+  "path": "rules/windows/registry/registry_set/registry_set_disable_autologger_sessions.yml"
+ },
+ {
+  "rule": "1547e27c-3974-43e2-a7d7-7f484fb928ec",
+  "k": 7,
+  "op": "DROP_FIELD",
+  "sha256": "03c6359e763ec0d8ce8badaf20be1c106f6f2ff929eb0477347ea496089a3298",
+  "caught": true,
+  "path": "rules/windows/registry/registry_set/registry_set_add_load_service_in_safe_mode.yml"
+ },
+ {
+  "rule": "b8fd0e93-ff58-4cbd-8f48-1c114e342e62",
+  "k": 31,
+  "op": "DROP_FIELD",
+  "sha256": "04d715cf2b3f85cf2a7c55b24070f7e702f89eb90468ba78fe8b8584abc22909",
+  "caught": true,
+  "path": "rules/windows/file/file_event/file_event_win_shell_write_susp_files_extensions.yml"
+ },
+ {
+  "rule": "36480ae1-a1cb-4eaa-a0d6-29801d7e9142",
+  "k": 24,
+  "op": "DROP_VALUE",
+  "sha256": "05f5a53d4676a9da7f2772594941efd71393121d3ce0689ec86687b7390366a9",
+  "caught": true,
+  "path": "rules/windows/process_creation/proc_creation_win_renamed_binary.yml"
+ },
+ {
+  "rule": "08249dc0-a28d-4555-8ba5-9255a198e08c",
+  "k": 15,
+  "op": "DROP_FIELD",
+  "sha256": "000d0f77608c6336434305de04e99e87e61fd230fe918660df67672adc4dbd9e",
+  "caught": false,
+  "path": "rules/windows/network_connection/net_connection_win_wscript_cscript_local_connection.yml"
+ },
+ {
+  "rule": "ae7fbf8e-f3cb-49fd-8db4-5f3bed522c71",
+  "k": 7,
+  "op": "DROP_VALUE",
+  "sha256": "00a4a746dae1f3786cf7674c1e503bda3f590d068147b62cc6073ded231fe018",
+  "caught": false,
+  "path": "rules/windows/powershell/powershell_script/posh_ps_susp_invocation_specific.yml"
+ },
+ {
+  "rule": "b4926b47-a9d7-434c-b3a0-adc3fa0bd13e",
+  "k": 7,
+  "op": "DROP_VALUE",
+  "sha256": "00f74a7efffc7c99fc5f487f6bb5f21cc16684abb215662724dc9f06a70a4cbc",
+  "caught": false,
+  "path": "rules/windows/file/file_event/file_event_win_susp_double_extension.yml"
+ },
+ {
+  "rule": "88d306e9-8e2d-4025-9768-28757d2732db",
+  "k": 10,
+  "op": "DROP_VALUE",
+  "sha256": "00fa64b46f81c7bf8bd40282f78afb9f5b99d2569023c7656e57a41a42d06d03",
+  "caught": false,
+  "path": "rules/windows/process_creation/proc_creation_win_wsl_binary_hijack_execution.yml"
+ },
+ {
+  "rule": "cbf93e5d-ca6c-4722-8bea-e9119007c248",
+  "k": 19,
+  "op": "NEVER_SEL",
+  "sha256": "00fc983cea09549f03835918a0852c42c764393ec16ee6f43880576975e2e5f0",
+  "caught": false,
+  "path": "rules/windows/registry/registry_set/registry_set_asep_reg_keys_modification_currentversion_nt.yml"
+ }
+]

@@ -1,0 +1,119 @@
+{
+ "digest": "2b3cf0862f9c1a463d994befd85a401e7c4801f6f23611bbbfc1dd9f77420908",
+ "gates": {
+  "G1": true,
+  "G1b": true,
+  "G3": true,
+  "G4": true,
+  "G5": true
+ },
+ "per_baseline": {
+  "Logs_Client": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 4146,
+   "seconds": 47.4,
+   "stage2_lines": 0,
+   "staged_lines": 22898
+  },
+  "Logs_Win11": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 5911,
+   "seconds": 99.6,
+   "stage2_lines": 762,
+   "staged_lines": 23695
+  },
+  "Logs_Win11_2023": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 8194,
+   "seconds": 118.5,
+   "stage2_lines": 813,
+   "staged_lines": 50046
+  },
+  "Win2022-AD": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 2823,
+   "seconds": 38.2,
+   "stage2_lines": 1746,
+   "staged_lines": 77240
+  },
+  "win2022-0-20348-azure": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 7575,
+   "seconds": 106.4,
+   "stage2_lines": 7753,
+   "staged_lines": 36540
+  },
+  "win2022-evtx": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 731,
+   "seconds": 20.3,
+   "stage2_lines": 0,
+   "staged_lines": 25702
+  },
+  "win7-x86": {
+   "g1_exit": 0,
+   "g1_out": "No matches found.",
+   "orig_raw": 252,
+   "seconds": 13.2,
+   "stage2_lines": 0,
+   "staged_lines": 12302
+  }
+ },
+ "results": {
+  "by_op": {
+   "DROP_FIELD": [
+    0,
+    298
+   ],
+   "DROP_VALUE": [
+    0,
+    855
+   ],
+   "NEVER_SEL": [
+    0,
+    309
+   ]
+  },
+  "catchable": 1462,
+  "caught": 0,
+  "caught_mutants": [],
+  "controls": {
+   "IDENTITY": 0,
+   "MATCH_ALL": 10,
+   "NEVER_FIRE": 0
+  },
+  "frac": 0.0,
+  "frac_drop_value": 0.0,
+  "frac_never_sel": 0.0,
+  "never_fire_raw": 0,
+  "passing_both_jobs_total": 1502,
+  "per_baseline_caught": {
+   "Logs_Client": 0,
+   "Logs_Win11": 0,
+   "Logs_Win11_2023": 0,
+   "Win2022-AD": 0,
+   "win2022-0-20348-azure": 0,
+   "win2022-evtx": 0,
+   "win7-x86": 0
+  },
+  "rules": 276,
+  "rules_with_a_mutant_passing_both_jobs": 276,
+  "uncatchable": {
+   "known_fp_all": 8,
+   "level_low": 32
+  }
+ },
+ "statuses": {
+  "P1": "HELD",
+  "P2": "REFUTED",
+  "P3": "REFUTED",
+  "P4": "HELD"
+ },
+ "study": "PA-SIGMA-002"
+}
