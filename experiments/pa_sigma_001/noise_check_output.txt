@@ -1,0 +1,9 @@
+run 1: evtx tests 471, match lines 494, tests with zero matches 0; json tests 3, passing 3, match lines 3
+run 2: evtx tests 471, match lines 494, tests with zero matches 0; json tests 3, passing 3, match lines 3
+run 3: evtx tests 471, match lines 494, tests with zero matches 0; json tests 3, passing 3, match lines 3
+evtx tests whose match count differs across the 3 runs: 0
+evtx tests whose match lines differ across the 3 runs, as printed: 471
+fields that differ between run 1 and run 2 in any match line: ['File', 'MatchStrings', 'RulePath']
+evtx tests whose match lines differ with ['File', 'RulePath'] removed and ['MatchStrings'] sorted: 0
+json tests whose (pass, match count) differs across the 3 runs: 0
+evtx match count distribution (run 1): {1: 460, 2: 5, 3: 3, 4: 2, 7: 1}
