@@ -28,7 +28,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(os.path.dirname(HERE))
 SIGMA_COMMIT = "05d1031f537e830b76da53bae2400c5814c89165"
 SURV_IDENTITY = "b0c45e1108bb89987bac7fb7b75a7d5fa1863aba3b237d8469d4f382ac11bc6b"
-RECORDED = None  # pinned after run 1 and run 2: (statuses, digest)
+RECORDED = (("REFUTED", "REFUTED", "HELD", "REFUTED"),
+            "9bcbc280ccf46938c55330e60607700a3c16598d83a7c0a49dc8e3b3ba4f83ca")  # runs 1 and 2 (G7)
 
 
 def _load(name, path):
