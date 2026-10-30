@@ -1,0 +1,121 @@
+[
+ {
+  "label": "arm A FLAGGED",
+  "key": "05164d17-8e11-4d7d-973e-9e4962436b87:3:a3e1bb7fb8eeda02fb601bd7695110c7ac6dc676740b119b9b56152c3a53d43c",
+  "op": "DROP_VALUE",
+  "path": "rules-emerging-threats/2024/TA/SlashAndGrab-Exploitation-In-Wild/file_event_win_apt_unknown_exploitation_indicators.yml",
+  "arm_a_flags": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "arm_b_flags": {}
+ },
+ {
+  "label": "arm A FLAGGED",
+  "key": "056c7317-9a09-4bd4-9067-d051312752ea:4:9c56a98fbaba96f8d50b5e4e3592840dd625915afec5962c583857fbb77f45bb",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/process_creation/proc_creation_win_conhost_headless_powershell.yml",
+  "arm_a_flags": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "arm_b_flags": {}
+ },
+ {
+  "label": "arm A FLAGGED",
+  "key": "0718cd72-f316-4aa2-988f-838ea8533277:6:41638851da4778ae7249cad9b9b1ef98cde05ae70235f04a68e9e987a0c4620f",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/powershell/powershell_script/posh_ps_susp_start_process.yml",
+  "arm_a_flags": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "arm_b_flags": {}
+ },
+ {
+  "label": "arm B FLAGGED (SigmahqInvalidAllModifierIssue)",
+  "key": "0b7163dc-7eee-4960-af17-c0cd517f92da:4:64bb757ac9bee49b254277506a843ffc7f5c6f1d08db7a44874e60bc35937b92",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/process_creation/proc_creation_win_wmic_service_manipulation.yml",
+  "arm_a_flags": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "arm_b_flags": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  }
+ },
+ {
+  "label": "arm B FLAGGED (SigmahqFieldUserIssue)",
+  "key": "944e8941-f6f6-4ee8-ac05-1c224e923c0e:6:4047b3012fa36e99d6bab12742770650431ed508d7452aed2d657c1b1788d3f7",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/registry/registry_set/registry_set_add_port_monitor.yml",
+  "arm_a_flags": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "arm_b_flags": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  }
+ },
+ {
+  "label": "arm B FLAGGED (test_duplicate_detections)",
+  "key": "aba15bdd-657f-422a-bab3-ac2d2a0d6f1c:12:ec6f9bdf82e3a5b06c8385232d783ac99906973ce6c410ada7d4c518a17bad5f",
+  "op": "DROP_FIELD",
+  "path": "rules/windows/file/file_event/file_event_win_dump_file_susp_creation.yml",
+  "arm_a_flags": {
+   "TR": [
+    "test_duplicate_detections"
+   ]
+  },
+  "arm_b_flags": "same text as arm A"
+ },
+ {
+  "label": "SURV, not flagged in either arm",
+  "key": "03d83090-8cba-44a0-b02f-0b756a050306:10:8c76729702c174df4d60cd2ba3ec0b7125909ac1a076cab4d058c87bb1b87298",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/powershell/powershell_script/posh_ps_win_api_susp_access.yml",
+  "arm_a_flags": {},
+  "arm_b_flags": "same text as arm A"
+ },
+ {
+  "label": "SURV, not flagged in either arm",
+  "key": "0022869c-49f7-4ff2-ba03-85ac42ddac58:11:cf36a6a79c55c7a7d002e4f51340acdcf3931107e34b86f9c5c8d9de0cf334cb",
+  "op": "DROP_FIELD",
+  "path": "rules/windows/process_creation/proc_creation_win_discovery_via_reg_queries.yml",
+  "arm_a_flags": {},
+  "arm_b_flags": "same text as arm A"
+ },
+ {
+  "label": "SURV, not flagged in either arm",
+  "key": "02ee49e2-e294-4d0f-9278-f5b3212fc588:36:e7e0af4f83342983efc5a60ac5aefcc72756522c05ff5c4d6cbceaf6328c18a1",
+  "op": "NEVER_SEL",
+  "path": "rules/windows/registry/registry_set/registry_set_susp_run_key_img_folder.yml",
+  "arm_a_flags": {},
+  "arm_b_flags": "same text as arm A"
+ }
+]
