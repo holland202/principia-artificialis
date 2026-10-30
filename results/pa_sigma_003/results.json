@@ -1,0 +1,3819 @@
+{
+ "digest": "9bcbc280ccf46938c55330e60607700a3c16598d83a7c0a49dc8e3b3ba4f83ca",
+ "equivalence": {
+  "parse": 6,
+  "query": 344
+ },
+ "facts": {
+  "arm_a": {
+   "SC": 217,
+   "TL": 0,
+   "TR": 352,
+   "any": 352,
+   "any_in_surv": 294
+  },
+  "arm_b": {
+   "SC": 24,
+   "TL": 0,
+   "TR": 2,
+   "any": 26,
+   "any_in_surv": 24
+  },
+  "by_op_arm_a_any": {
+   "DROP_FIELD": 2,
+   "DROP_VALUE": 350
+  },
+  "by_op_arm_b_any": {
+   "DROP_FIELD": 2,
+   "DROP_VALUE": 24
+  },
+  "derived": {
+   "SC": 211,
+   "TR": 350,
+   "arm_b_SC": 18
+  },
+  "mismatch": {
+   "P1_derived_not_flagged": [],
+   "P1_flagged_not_derived": [
+    "aba15bdd-657f-422a-bab3-ac2d2a0d6f1c:12:ec6f9bdf82e3a5b06c8385232d783ac99906973ce6c410ada7d4c518a17bad5f",
+    "c7da8edc-49ae-45a2-9e61-9fd860e4e73d:13:8e6a1fd32cf54b0d61d8daa94b3c18621e8cfd2e3167ab35cdbcb68caf68e49f"
+   ],
+   "P2_derived_not_flagged": [],
+   "P2_flagged_not_derived": [
+    "944e8941-f6f6-4ee8-ac05-1c224e923c0e:6:4047b3012fa36e99d6bab12742770650431ed508d7452aed2d657c1b1788d3f7",
+    "944e8941-f6f6-4ee8-ac05-1c224e923c0e:7:48b34982042a195b754f3af6eb044ae13dc6fb49241642311f0d82439dcd8323",
+    "9e3cb244-bdb8-4632-8c90-6079c8f4f16d:15:408ccfe831478f5543f046bec76a8445bd4da3a35c248949b5071474b34bde30",
+    "9e3cb244-bdb8-4632-8c90-6079c8f4f16d:16:d050c6501cfc15aa648937143d5118f98237a04eaea751986d373a5a7ae4edd1",
+    "f674e36a-4b91-431e-8aef-f8a96c2aca35:22:c3efd0da66383287b14ac66d0a851109823231d9df87ee520ca56bc2d935746e",
+    "f674e36a-4b91-431e-8aef-f8a96c2aca35:23:0d5629d3987d27640f5f38c24b2d92d94adc4c4dba12c066afe0928f0b4904a1"
+   ],
+   "P3_flagged": [],
+   "P4_sc_derived_not_flagged": [],
+   "P4_sc_flagged_not_derived": [
+    "944e8941-f6f6-4ee8-ac05-1c224e923c0e:6:4047b3012fa36e99d6bab12742770650431ed508d7452aed2d657c1b1788d3f7",
+    "944e8941-f6f6-4ee8-ac05-1c224e923c0e:7:48b34982042a195b754f3af6eb044ae13dc6fb49241642311f0d82439dcd8323",
+    "9e3cb244-bdb8-4632-8c90-6079c8f4f16d:15:408ccfe831478f5543f046bec76a8445bd4da3a35c248949b5071474b34bde30",
+    "9e3cb244-bdb8-4632-8c90-6079c8f4f16d:16:d050c6501cfc15aa648937143d5118f98237a04eaea751986d373a5a7ae4edd1",
+    "f674e36a-4b91-431e-8aef-f8a96c2aca35:22:c3efd0da66383287b14ac66d0a851109823231d9df87ee520ca56bc2d935746e",
+    "f674e36a-4b91-431e-8aef-f8a96c2aca35:23:0d5629d3987d27640f5f38c24b2d92d94adc4c4dba12c066afe0928f0b4904a1"
+   ],
+   "P4_tr_flagged": [
+    "aba15bdd-657f-422a-bab3-ac2d2a0d6f1c:12:ec6f9bdf82e3a5b06c8385232d783ac99906973ce6c410ada7d4c518a17bad5f",
+    "c7da8edc-49ae-45a2-9e61-9fd860e4e73d:13:8e6a1fd32cf54b0d61d8daa94b3c18621e8cfd2e3167ab35cdbcb68caf68e49f"
+   ]
+  },
+  "pass_everything_arm_a": 903,
+  "pass_everything_arm_b": 1173,
+  "rules_with_a_surv_mutant": 273,
+  "rules_with_a_surv_mutant_passing_everything_arm_b": 271,
+  "surv": 1197
+ },
+ "flag_reasons": {
+  "SC:SigmahqFieldUserIssue": 12,
+  "SC:SigmahqInvalidAllModifierIssue": 229,
+  "TR:test_duplicate_detections": 4,
+  "TR:test_selection_list_one_value": 350
+ },
+ "flagged": {
+  "A:05164d17-8e11-4d7d-973e-9e4962436b87:3:a3e1bb7fb8eeda02fb601bd7695110c7ac6dc676740b119b9b56152c3a53d43c": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:05164d17-8e11-4d7d-973e-9e4962436b87:4:26a80f96cbccd9c2b50641ad50203425c40b65c1d920baddf513a56ec3e52e5f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:056c7317-9a09-4bd4-9067-d051312752ea:4:9c56a98fbaba96f8d50b5e4e3592840dd625915afec5962c583857fbb77f45bb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:056c7317-9a09-4bd4-9067-d051312752ea:5:28830ca4d3d855cfa958d1e1caf92df2012c3636745ea0b47434aeddb46e99ad": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0718cd72-f316-4aa2-988f-838ea8533277:6:41638851da4778ae7249cad9b9b1ef98cde05ae70235f04a68e9e987a0c4620f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0718cd72-f316-4aa2-988f-838ea8533277:7:c8d43b1ce8a16e7aa5a637af51ce64d3d3fca023523eb79cf204e1fbbf7781d6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:07aa184a-870d-413d-893a-157f317f6f58:4:f6a6a8c4b8497857504ff821ee5dfda947341a4c3c38570aa71f37be44035e03": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:07aa184a-870d-413d-893a-157f317f6f58:5:0a871019dcabbcd3f7c400ab9b57a08cd96b7feaccbcaee0efd9133c994ab589": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0b7163dc-7eee-4960-af17-c0cd517f92da:4:64bb757ac9bee49b254277506a843ffc7f5c6f1d08db7a44874e60bc35937b92": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0b7163dc-7eee-4960-af17-c0cd517f92da:5:7c912aa2dbb2b350331bdfabc472e5e9abe561fdfe9ea3070e20207a219dac17": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0d5675be-bc88-4172-86d3-1e96a4476536:10:58932ce5a2970b9a49028ed71f5a0647b3249381773468b6aa04d541d13b45e5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0d5675be-bc88-4172-86d3-1e96a4476536:9:5a0b40d51b1ac751d76086ebfa3e7661e5497bbb2b27cd6b10752f025d974c93": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e:28:e9aacd7fbda350f0e76bb7c5bcb31413c39124f9123a542dd18a3e2a5f28051a": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e:29:41981d41a7b17c5dd4a6e41d64418f796b8a0870b45eea11a5c064fa3af6b8d0": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e:30:ad685cf425a51eb66d1cd07e4e3793db30d00e53a17fd2911d9ba0664c7c9282": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e:31:8e7d966b4139ba8179ac4a543f802fe78fc5a93883781ad35578faac3ff726b5": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1228c958-e64e-4e71-92ad-7d429f4138ba:30:5b193c0e37e3e56dd8640e8a16be052e03737816f814d86d91b980e4c2161c06": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1228c958-e64e-4e71-92ad-7d429f4138ba:31:c5bbaf11548ffd6978238ca0a62b69aeb7a11d4cb2532fe33109880014a6de50": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:15434e33-5027-4914-88d5-3d4145ec25a9:5:9b3575b430f47e66963ebb75159121bcb81fd08f4cad454856f10acefaf21474": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:15434e33-5027-4914-88d5-3d4145ec25a9:6:ac0e88c970ad49fb7f15649f78f07efc9a1e2ff4a5c1509f8c085d4fad5ac73a": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1547e27c-3974-43e2-a7d7-7f484fb928ec:10:d6a759b9a8a469b00c278d1b42d6a9dd255703bc8f4ba966e907098ccb2d5dc1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1547e27c-3974-43e2-a7d7-7f484fb928ec:9:f6af3b65f5130ee66016bdf15f60c51cb80f153b43f63e06a6c5faad0fa24c2b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:17a1be64-8d88-40bf-b5ff-a4f7a50ebcc8:3:ead516f44420fb53c1b582075bb9fbff2819b51d7bbebdd9a115ed2fa1febeea": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:17a1be64-8d88-40bf-b5ff-a4f7a50ebcc8:4:d22e2f6cfb02902af66ff8e757cf7959096cf8cf09988ea5be41ea453b0581ce": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:17a1be64-8d88-40bf-b5ff-a4f7a50ebcc8:8:29bb0e3e634a65dabf94980725cc591a5c430d2360ffcbdcf134cbc99786a9f8": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:17a1be64-8d88-40bf-b5ff-a4f7a50ebcc8:9:2fbe9acb4806963763923f9e7aa61112ca21a48f068d4ce073c952ee4f6ffaf4": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:189e3b02-82b2-4b90-9662-411eb64486d4:3:ed012b250e7a022776ef3d959109835fe1f8f3af920d8bfaeee7db7203792517": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:189e3b02-82b2-4b90-9662-411eb64486d4:4:8ecef32462519df16802e1298909faf22ea4c053aac614b274fb0986b88fb386": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:189e3b02-82b2-4b90-9662-411eb64486d4:7:6e1adfe7d1a53e0aa27b1e46a837777da45491e41ca9f6b5b991fcc8ae9be00f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:189e3b02-82b2-4b90-9662-411eb64486d4:8:566080e4ea1d8f8d7cda7fd111337c2e1812152655c4eec19eeb097470765cdb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1a5fefe6-734f-452e-a07d-fc1c35bce4b2:4:af7f804f6b62d815bb7a4b52318bb09589a35890cfe5a8d15ce96be8ba1ceab3": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1a5fefe6-734f-452e-a07d-fc1c35bce4b2:5:7c919f1dbb1330a01cdbe7921a5f39928241888ce1d0100c869c65c1cea4c879": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1af57a4b-460a-4738-9034-db68b880c665:3:914c99f1125be95eddb2c440d4a5be0ee180f1fa1ca4fc755b3750fad6e77fac": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1af57a4b-460a-4738-9034-db68b880c665:4:b9097a37940b330520146bffacebbad1c9e01eb355033b4aa050c2b3e69e1982": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1fb76ab8-fa60-4b01-bddd-71e89bf555da:3:cfacc7f9d864aba8a14b04b49ef27da050ecba8dfe2ac938196aa2428cfd54fb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:1fb76ab8-fa60-4b01-bddd-71e89bf555da:4:d8f30d58479cf8a68b1958c58986188daa225d9308d4c65632c99afb467e61a2": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:22154f0e-5132-4a54-aa78-cc62f6def531:15:75570fb8a6e903be0a80bee20761e28d255fab7909f6accb5ae8db3ba324df1f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:22154f0e-5132-4a54-aa78-cc62f6def531:16:7814a90351cfaba73a2f29c466b5423add27166531a5451e4ca755d87121718d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:277dc340-0540-42e7-8efb-5ff460045e07:20:0f1d7d5ed15e01e7c52c879741662fba01baa1947a4190e20381aec5b33a59bf": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:277dc340-0540-42e7-8efb-5ff460045e07:21:221771c96363492a2b69f383f016fd19c84c1a9cdd836d2a73d69de702dda91b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:277dc340-0540-42e7-8efb-5ff460045e07:3:6c801de23f2b7ecf1eb3e8297cf3e189ccae769ef9842c58a38a61254080e333": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:277dc340-0540-42e7-8efb-5ff460045e07:4:5e9ae3f1f8de9954fb2b26269d627874656343ec00f1cb841397f470eb1d2d23": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:28ac00d6-22d9-4a3c-927f-bbd770104573:3:34fe75e3e8713dadc15d53abf8f3b19c5107a1e63723ca1dd846a877e04223dc": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:28ac00d6-22d9-4a3c-927f-bbd770104573:4:3cf5de396fcf0ebb329d54063953d21e542f6a72b83257fe1627e5983d1b4667": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:2f400434-01e1-416b-b52c-bb5bfbb9eb78:10:a2c943da2cc90a93eb5ed70d99d7d7b1951b672820fc1f933e58cf345706ae0d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:2f400434-01e1-416b-b52c-bb5bfbb9eb78:6:06fc8cb20872d91b56eb897624e33f3f79cbf8eaf1106b140e331b1d28a35a34": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:2f400434-01e1-416b-b52c-bb5bfbb9eb78:7:967d26574ea07e8227de62eb515961378ed6f8f4e2aa41a3a8a30cdc58493788": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:2f400434-01e1-416b-b52c-bb5bfbb9eb78:9:2865a1a21fcaf748a2ef53e1a3f310a5fabac9b48232db0745137bbb2cb2236f": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:33efc23c-6ea2-4503-8cfe-bdf82ce8f705:11:ccaa0783e21d1a67ac1efbd64c2f59de61398588c0db39f35c99da9f8b6a1b26": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:33efc23c-6ea2-4503-8cfe-bdf82ce8f705:12:4102d8f45bcbc47c004b782a40b3b83619da5852400f5c991b2d37ec364dee1e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:33efc23c-6ea2-4503-8cfe-bdf82ce8f705:6:2cee5d24da89bb983b4b3dad92d31bcc78ad959e3541c90ba146c56f6899d989": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:33efc23c-6ea2-4503-8cfe-bdf82ce8f705:7:be371336cbe6f1d1380856cd931032ac37af61205cb4eee5a9a0d4063cef086d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:17:6f3208fb1f44be96f6af87afc2ed0fff8b0dff7f5cd699c8493c8fc981eb86c6": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:18:ff42b433b02caee8211f79777f84ae582052cda28d2be24caafe2833787e7bd6": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:21:e1a457d357909ee5f0e625b923dc844ba862b0f0a950313c6ccaad6b62fcca0c": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:22:6b6c7244f4518bbd8344d88f1e494eccc568f933f54a49a7584024b8de5ec543": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:6:b80342c7f43e92e0de31b77ae33fe975e1f9ad6d9256138f48ab9da46046c6ee": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:349d891d-fef0-4fe4-bc53-eee623a15969:7:4a980549914527e48f7c38e07722bbdead03e69761d30daabbd52f6f3f5616b5": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:34f90d3c-c297-49e9-b26d-911b05a4866c:4:f88bcc04eb73604d629111112ee6c555a91f547defc30e12dcf357eda8a99a51": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:34f90d3c-c297-49e9-b26d-911b05a4866c:5:9f16812ebbf26c6d7ae6aa70a61f11d5810af5b4b630fcd165d76489f19a9710": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:36475a7d-0f6d-4dce-9b01-6aeb473bbaf1:3:cde0efdbf833b751b07370c4704434f448a56b0762b650af95619cb33d4cf1dd": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:36475a7d-0f6d-4dce-9b01-6aeb473bbaf1:4:9a41b8e36d6ff4cf02c7bc3f047a1a7547d88f3152739162272596bf7ca5f14e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:36803969-5421-41ec-b92f-8500f79c23b0:7:b2ffd05a6205d84d8d457fd47269c3c0732485e642bd58354e13c873afcfd74f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:36803969-5421-41ec-b92f-8500f79c23b0:8:75c1c6f6a92aea456e45f2217a52ff666a0b61c0dbfb453c29f487423a4bca9b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:40b19fa6-d835-400c-b301-41f3a2baacaf:3:88cd9b3a760c858bd01ccf895884316eba20d9f29c2ad6d4a34e7a6a966b0847": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:40b19fa6-d835-400c-b301-41f3a2baacaf:4:695cd84c20daa6311439b5bf82e09d64887add804b1512181c59e5906b3af958": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:43e32da2-fdd0-4156-90de-50dfd62636f9:3:24de18750ff3e9ce2a8326b37d3bc137dba386aefde507a9875323e8348fd477": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:43e32da2-fdd0-4156-90de-50dfd62636f9:4:99af0fdeabbeb88d80ec7c0a4cac2d270e2f3366a4c237298cbdd6e721abacd8": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:43e32da2-fdd0-4156-90de-50dfd62636f9:8:77ee1917e3773863a9b4f52f24cb7fe130fb5aecfe47e46d27b4d26b1660e348": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:43e32da2-fdd0-4156-90de-50dfd62636f9:9:83dd27f916fe3e415545273e4daacfdbfaa8108f06a9e9aa118026185f0f9bd8": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:45a594aa-1fbd-4972-a809-ff5a99dd81b8:7:6c8ecf591969f435503b64b491bec47ba42ba9b858d533db8508eea7b0810e56": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:45a594aa-1fbd-4972-a809-ff5a99dd81b8:8:2e09b7d87e602877bb91177713772bfc6403eaceb93e529bb7f3f4bcc2152359": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4782eb5a-a513-4523-a0ac-f3082b26ac5c:3:4a1b94b7d6f5622bc3bc79fa51ffb4f4ed4ea3c9d40665e55fd9fdecc0206363": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4782eb5a-a513-4523-a0ac-f3082b26ac5c:4:39cdf6a1bafc59dbb0a99f04f3f79f2652f44ecead49ae20864360de41e0d85d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:49d9671b-0a0a-4c09-8280-d215bfd30662:4:30507ec3702f4e910a934c9b0520a663363ff667a7bf80344b8b24c8eeef8500": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:49d9671b-0a0a-4c09-8280-d215bfd30662:5:e7ab5f1fb24b0f646ec3934519e7f831558396e7bf9b6bd7d5b5e274f8c74aa6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4a2a2c3e-209f-4d01-b513-4155a540b469:6:d971f7ae6c5a33c144c77b9e6ab878d970885c4ee05babc38c42eaf3add2776e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4a2a2c3e-209f-4d01-b513-4155a540b469:7:9d1dfcbb2a6806696b036913462dfd29a153494d1e63cebbfd48fa3368e627bc": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4ede543c-e098-43d9-a28f-dd784a13132f:10:3d924cc3ac0b5bac7dbcd72e85d6ab1ce6eb53b5ebe02199ade8271383b8ccfe": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:4ede543c-e098-43d9-a28f-dd784a13132f:9:9ec3b73e0d81300c792d8dcd189a76c122d78d2105bdef076b1793339666690f": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:502b42de-4306-40b4-9596-6f590c81f073:10:3a67b0592b350b474d093bc8986eaad733226ad33939b88bc497414db2c6e496": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:502b42de-4306-40b4-9596-6f590c81f073:11:52bcbad0fd9d841f3d041546e3e3352378266e38934c6757fe5ce547f0cb6134": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:517490a7-115a-48c6-8862-1a481504d5a8:5:a8c6e64f4e0e3ee6e7c2998feeebe837f42557b085dac38c1a0573cb15be7d23": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:517490a7-115a-48c6-8862-1a481504d5a8:6:30bec7928023f10655bc875a9fec8b2621ee6d59b7b02390f6473b56b6654e3e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:526cc8bc-1cdc-48ad-8b26-f19bff969cec:3:9e75fcd8dd108d301407f221474dd0c25c0e0fcafb9245c14b4e432830252103": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:526cc8bc-1cdc-48ad-8b26-f19bff969cec:4:78d583f009659824e90abe61420e3ca33bf1d5d749b3767a134d62a10193aead": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_duplicate_detections",
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:54773c5f-f1cc-4703-9126-2f797d96a69d:4:b50c17101bcc81ea0f71ca486b211f61fe789afbd4e9397c2290ceffdc2a6073": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:54773c5f-f1cc-4703-9126-2f797d96a69d:5:46d50f9114c25792b0bfe5d66c8a73e29ce0240c23acca34e4d878807987e823": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:554601fb-9b71-4bcc-abf4-21a611be4fde:3:20298dac0ce46d12fa0756341746b0a9e2252b3cf6d02682f2145e9bbd791381": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:554601fb-9b71-4bcc-abf4-21a611be4fde:4:55217409f45e6877a223b3e3a0e02515d3d48d78ba7ea643005da2f82fe0e089": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:5947497f-1aa4-41dd-9693-c9848d58727d:3:48209ed57a7ae9717f9b115385fc0b34b5179958e66268db66811bdffd2807a6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:5947497f-1aa4-41dd-9693-c9848d58727d:4:23992bcec4b6a021cf8cb53a01f89aef46964814ecdec2caa73a642556601f37": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:61d0475c-173f-4844-86f7-f3eebae1c66b:7:bf1c98398a01f4bdff71c079f46cf9806ee4eeba59d9c335f4a8ed9e78b3986b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:61d0475c-173f-4844-86f7-f3eebae1c66b:8:74dbe9f4140d246563682adc7c9708698be55e925168f3d0eb8e5cf8d353cc41": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:639c9081-f482-47d3-a0bd-ddee3d4ecd76:4:cc3b1a64420b318f009c54660536de4e892272c73480c938513596eccb1b9576": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:639c9081-f482-47d3-a0bd-ddee3d4ecd76:5:7a8611e5aa8b81bbc48e3b7f763f2e5b633a052d8264976019f248d89ff6e2d5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:646ea171-dded-4578-8a4d-65e9822892e3:4:725fcf1829d6c690afc3295c5b5cdcf4a4859565d5a678f6a41461aaae2675e6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:646ea171-dded-4578-8a4d-65e9822892e3:5:759930bbf6ec9a702f4bb7c5cf7c66150424f730a6f17ee6e01d8e78d1182f45": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6648f900-4a7d-47e3-bad6-952b313a1c0e:3:29eea4e459b17a84cd9fd3944412630bf34789de0cc14d57379e53d1d17f6d5d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6648f900-4a7d-47e3-bad6-952b313a1c0e:4:482ee9bfc4e03fa230da8af82330836d968d1ee0e4dabc33e0e90cf91b47d9cf": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:68bcd73b-37ef-49cb-95fc-edc809730be6:4:b704ad915a14a2c91d7a7ccf213a60191c11ae1e95dac525e3d7a35b8394307e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:68bcd73b-37ef-49cb-95fc-edc809730be6:5:a86ad71792733418faac0c2e02b05d4df78bc18687ef6862335bde0e62708388": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6c6d9280-e6d0-4b9d-80ac-254701b64916:4:924cad13e4a687dce86f3cdec238b2e6613206596d1fb6158a44a59ff89ed46a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6c6d9280-e6d0-4b9d-80ac-254701b64916:5:6288267c084ea0bebf7aed453d860d9d1666e6e1dc0f55117f192f9a048cd2cc": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6c8fbee5-dee8-49bc-851d-c3142d02aa47:4:b5faea8aeb8884127d75928096a66657278a30bc3dda17743ceb10ce661180b7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:6c8fbee5-dee8-49bc-851d-c3142d02aa47:5:649faeefe71412657dd342e0e868e6d8b5b53f9addb23335c2eb9ff0a68e32b1": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:24:50ca27d800b77c3408493167215aa86dfea3f436647990dca0d526e5d4ec0c02": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:25:399cdbc224a9ee89a822a70f9d869c990964b59de7ea9f103ad289d56fdb06a7": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:30:9b56905ce7f3e205ababbc555199f2400b8d30c94769bda634f2c7ba01054cec": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:31:557f586a3070c460aeff068c3360b43d99b2e0a48e1ea3a4f6c58cc7b597a277": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:32:7266fce3bb8d390a114c2b9b356ca376e8c4ba5dfdbf1ed3bdd7b13050a1e8f1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7047d730-036f-4f40-b9d8-1c63e36d5e62:33:2ca5c375b20d54e825703b038f24ec5e039375ee9ea8ab533947c2f91fd4f058": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7124aebe-4cd7-4ccb-8df0-6d6b93c96795:6:c0d02df04121adc2977776cfde3bee9316ed9bccbcaa8f89f3cdff98ee35c1d8": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7124aebe-4cd7-4ccb-8df0-6d6b93c96795:7:83994821bc08f719af21aacfe2ae40fcc817941a8212064e6c5824569d346481": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:76f55eaa-d27f-4213-9d45-7b0e4b60bbae:5:144eaaccfc552e2250630640c983f08d169b1635654c8fa5070b76f22c9f48b1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:76f55eaa-d27f-4213-9d45-7b0e4b60bbae:6:0df9ad26b2986ed7a333cfa5d792885b0b98e6b3b0a59d5efe06c279ca9b4e26": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7773b877-5abb-4a3e-b9c9-fd0369b59b00:5:6f8b288811008429770b34e3f672cd53cd3b53c591f7b971b77f06408d088499": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7773b877-5abb-4a3e-b9c9-fd0369b59b00:6:d5ad4b00b43bc82ce8434ff316699cb09ed7765aca75eb69c9465fb08bea435e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:79a87aa6-e4bd-42fc-a5bb-5e6fbdcd62f5:11:166f0a65b890da5e8e6919f8177f11237aa2a75802ec73aa66c6577fd9957d7b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:79a87aa6-e4bd-42fc-a5bb-5e6fbdcd62f5:12:c39de188feee99dfa1c0479c0711a8dc3e3d388e8dc029dbe706f76936681522": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7b836d7f-179c-4ba4-90a7-a7e60afb48e6:3:a036f1bf3587bdf9ac679e346d946d03233d1364787e79d3241957bb722350a6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7b836d7f-179c-4ba4-90a7-a7e60afb48e6:4:6266433dfdf2159f0b4b206a9e4a3f58d1aa484941d9046f147d39e86032e513": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7dbbcac2-57a0-45ac-b306-ff30a8bd2981:3:960b0876872c8810644e73681bc7a5d4eed829b841a22c0c5cdab1630a059528": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7dbbcac2-57a0-45ac-b306-ff30a8bd2981:4:7dd7ae90f481ea5539c3806e9c4ecc8c101c97ab655237360998d4260e177bb9": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:10:217e5fdb7a2a71de9bd0d7b0db9622c39bd7d2fd736020a4d640baa3f8f73cf6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:11:56e0aace56d7374e31fec375017a8166ad7e0813fb20effb4f33169a7ca3fc8e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:13:ac78feec46544ba711e424fb3b69f4e3eda04e5480966170d7a2def8caf65042": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:14:359f2bea838adf640f86b784a50715a54b2999b29578cb59c6a49ab0326e1492": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:4:6d3dcb273cbc98ac4b4d9bcb907119131196582b9010656138b8b45ada743cd7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:5:31e468db76498600b15ea387e39521a48edf2202d15da7c4c913fc7524088c81": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:7:91efccba1602a626b913a5cb32dc12a9fabdda46b29de5757c39534e909d378d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:7f43c430-5001-4f8b-aaa9-c3b88f18fa5c:8:488a2a6f3de7a5648f941eb708ee817bb2a93fae7ef25055b8686132bbf213b9": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:83475063-b1c8-4774-9568-69bbda71a539:10:a721477c22adda8944c5bce3fd7fd2d675accd894b5aa68e0916114bf0327d5b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:83475063-b1c8-4774-9568-69bbda71a539:11:4e74ead958c900a85a0a3ba396e6f5fd763692f8bed8a49e6644362b5bade64a": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:83475063-b1c8-4774-9568-69bbda71a539:4:55c9c5f1ce7cb0def794959c97ee594f291ca481542b0685fb977b07ac66b80f": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:83475063-b1c8-4774-9568-69bbda71a539:5:72f2052b8015c8fd6b9a675c144f6cfa9554bbeaea911b8569307da9334c5ca3": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:847d5ff3-8a31-4737-a970-aeae8fe21765:10:aa5809394015a61b06bf81d6df2ec41c9b63545b2df9569d0c811a8af8053df3": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:847d5ff3-8a31-4737-a970-aeae8fe21765:9:488b381628ccbc2bebb90c53140715c54ff2e927114b27f9366d75d22035cabb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:17:1177a964318b6cdf04f525cc90d84950bf19671b5babe863b880ae1b0b09e9f5": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:18:de4f29a276d96f317942e43d8ee77e6c41f54d53b4ac6cf4309a838388d09b7c": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:19:824bfb3a5c832b6c4c2b3f2e1a14946aafc99637fb01c8884961182f70097977": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:20:d3a641dfe145c294a99a13212ea04c9a4727f3e14006d0ef0d8c127ed4ab12f2": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:27:4f6a4edd68d21204c7b752d9c677c15fe14cd0d8c1ad9129739f97a21cc7bcb4": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:87e3c4e8-a6a8-4ad9-bb4f-46e7ff99a180:28:a2fd57b39feb36947db4d9dfe9b586f3f3cf830e96f3cfb3920e49425d39acbd": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:88d306e9-8e2d-4025-9768-28757d2732db:6:c9db8ed98a3ce2c5027a8295523850aa90104a0702e936b85be63fab879093bd": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:88d306e9-8e2d-4025-9768-28757d2732db:7:927b171db3acf9d1fc6b4e1d7d34cae6f5154c6ff3b2ba41a1b35dc7050e6dbe": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:14:5327980aa135d461bd5b65411fbeac3d8c2ae4d15dcb17069e6589c5f54414f9": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:15:9cf588eb0741492eeb70026f3692d90d44c180ca9074fdfc8bb542069326b002": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:22:42f3330c18e3eabdd1de128fc09d44205e6183e366ee7ce40b32aa74f131925d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:23:aeab0546a0d8526c248717c1d81c40eaad50f9f8b1a9ba8116124a503460d562": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:8:9ae0903139bef4983197f37643eadc8a242612b029bf0f98ef732b8f299419e0": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:899133d5-4d7c-4a7f-94ee-27355c879d90:9:8949aafa70e70f4d10b3d1741d0c2b31982dc4395a2f7f155413567953e4f1ed": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:11:18dd2e7dca5a3666321ce409886d21991892295e16de79483411a23f7382c2d5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:12:7ebec346d64fe38df7a103e58f1b6a036ec7e2127a2a9de73e466f6fc6267275": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:14:6aec0fb866ba3679626cd628ce6987e4e1115a316618ba150a7b34b249acc261": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:15:b2f1165136c235013db072b7bd9b7e6155599d787b040377f80ca3ceb4673f1d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:17:31024d03cca302a8e73fbf5cb2787f10dbc1748b9cb64634162a9d190bfe7b49": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:18:96fe685fde97a74ebec1c5a0ac0efb11aca4d13d6f5a9787ce873681893c4b22": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:5:cffe69973a2bd7996ef8a7932aabe2e0ed506b6ef795520866e1a16d40b5dc92": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:6:f1f6781fda8def14f113a5545030a8b8b43254e89970261a51dcecca81145c79": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:8:ede900c9442ec4af927e2d8ebde2661fc5d846412dcad1df6070cb59c23bb235": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:8bc64091-6875-4881-aaf9-7bd25b5dda08:9:ccf7d61206e098ef00158a2b87207becf03991866d183dc6868d4786b86f051b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:944e8941-f6f6-4ee8-ac05-1c224e923c0e:6:4047b3012fa36e99d6bab12742770650431ed508d7452aed2d657c1b1788d3f7": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:944e8941-f6f6-4ee8-ac05-1c224e923c0e:7:48b34982042a195b754f3af6eb044ae13dc6fb49241642311f0d82439dcd8323": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:95afc12e-3cbb-40c3-9340-84a032e596a3:3:aa1cbb05f9bfa90750a7020cb707edd22aa8753baed469181ad95cb554b70db7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:95afc12e-3cbb-40c3-9340-84a032e596a3:4:97e8c54aef9002ade5917dbd7e5c97da7d42f0e30bfae7c2dfbd7842fdf489cc": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:99c49d9c-34ea-45f7-84a7-4751ae6b2cbc:6:62ba5ec66b17dc06165484f6244a109a5366aaf3af51e8f8a2c5053de57d2270": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:99c49d9c-34ea-45f7-84a7-4751ae6b2cbc:7:14b5c309a4302fa10b38977137f9e7675ff1f51e1e849f391199f1b595a5f249": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9c226817-8dc9-46c2-a58d-66655aafd7dc:11:ca105ee806e4f230b1d41d8754af94de8bfde6b98638be0fae5d38d60b440824": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9c226817-8dc9-46c2-a58d-66655aafd7dc:12:6a49cc4a192281c03efe158e84b2bf4b117d2e501a4ecf839b147fa4bed139ca": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9c226817-8dc9-46c2-a58d-66655aafd7dc:14:5a648f14e015fdbd6daaaca41f28586b357af9ddf99a2c99f4badae8a7e176e9": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9c226817-8dc9-46c2-a58d-66655aafd7dc:15:e8547e3ce5435696bb7200e020aeb1ce23c47aa3d9fe1ad24057ccec9f23edca": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9cd55b6c-430a-4fa9-96f4-7cadf5229e9f:3:9febbf812080633be2b4ca97db98516f0c7934114dbf375984506db8d69656a7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9cd55b6c-430a-4fa9-96f4-7cadf5229e9f:4:45b9a994bc4c98b835982c92f7dd541af58d51f5e72d4a3b93d4983f80662732": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9e3cb244-bdb8-4632-8c90-6079c8f4f16d:15:408ccfe831478f5543f046bec76a8445bd4da3a35c248949b5071474b34bde30": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:9e3cb244-bdb8-4632-8c90-6079c8f4f16d:16:d050c6501cfc15aa648937143d5118f98237a04eaea751986d373a5a7ae4edd1": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a0edd39f-a0c6-4c17-8141-261f958e8d8f:3:2c7bdced346d1e7fd2a0d2a2abcb2467e61e0537650aec2796da48427084d0b4": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a0edd39f-a0c6-4c17-8141-261f958e8d8f:4:fb46c8168f202da2350e44faa86f3ccc7bd32aae72b1459c71c83b77505bc1ec": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a4694263-59a8-4608-a3a0-6f8d3a51664c:4:46863798bd4a3d06ee023de7d1cec4646e177f9b4dfc589f12641cb59332569e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a4694263-59a8-4608-a3a0-6f8d3a51664c:5:aaaef1fb472c4ed7cd99fd7d9242ad9d270a763811182894d53ea554b4e0821b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a6a39bdb-935c-4f0a-ab77-35f4bbf44d33:21:4776eb21f07b2b3cf969fe2093990c86159f6caba02a1f2c39b19c466eb61513": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:a6a39bdb-935c-4f0a-ab77-35f4bbf44d33:22:ef4853b75e1e4bebb9309406d0f2b42ed4665585282f4a5ee821e2c97dcf12b1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:aba15bdd-657f-422a-bab3-ac2d2a0d6f1c:12:ec6f9bdf82e3a5b06c8385232d783ac99906973ce6c410ada7d4c518a17bad5f": {
+   "TR": [
+    "test_duplicate_detections"
+   ]
+  },
+  "A:acd74772-5f88-45c7-956b-6a7b36c294d2:3:c1218ce1dcbb8bfebe5b2711c290b2af9e33729b32f19c6f78b3b8a99696e868": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:acd74772-5f88-45c7-956b-6a7b36c294d2:4:38e037bb91ea5fb9a7bcc092834d89bb60e7a1b232290d0e93efc86c6727b99a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_duplicate_detections",
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:adf876b3-f1f8-4aa9-a4e4-a64106feec06:7:219ceabc88811849b3862de5dfca0f7be2b6dd12f060c8c8b84bb220a8094a2d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:adf876b3-f1f8-4aa9-a4e4-a64106feec06:8:5d559d13460dd918753306c7601bfeab77696f2eb0af6c1327a06853809160ba": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b17ea6f7-6e90-447e-a799-e6c0a493d6ce:12:1ed9252cc271d6e3d9fae7e3bd24645d337d35170b8634e7d4d0e8d2908b7e52": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b17ea6f7-6e90-447e-a799-e6c0a493d6ce:13:8ecb28ebe2f8052be8eafca2fab1b248df9fea5d15505270b19d38867d7b2621": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b53317a0-8acf-4fd1-8de8-a5401e776b96:4:018095804bb32e06439d3a65b1819c12411b6b40bac795b3f68df5c53d93b137": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b53317a0-8acf-4fd1-8de8-a5401e776b96:5:264db08ed527780923f1184c86ceb9951b2176ada208b31d56df448a63bb144c": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:24:e76fe786465594e9964a002311e94f5911ead28a7d8909a0a07dc881a56bbdcd": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:25:6856ab8213757ab1e09ed26805bd37dbf858d566d95f1a10b1e6305bf4fb4739": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:26:db3284d70656eea0b2718c70f0636608ec303421d899d016bac24885b02aa5fe": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:27:c7203486d311ffa3928d4a565bb7ed26f8496e593b0d29baaa19a58994d51722": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:28:dc6799b3a1727ec067661faa51b5852524eb6cbd57bd097b921cf47354258eeb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:29:517cff42034dad608cf0a1bb3bc080ea1c8e45a607eaf28c6de4154d07dc133a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:30:d55a0dfa905bbc61106b274d747d688551ed1d94880aaddf829cd90e062c7e81": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:31:62035f9aaca2afc02671297d0311b75cc41aa138e13c07eabe11245b60c1f780": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b730a276-6b63-41b8-bcf8-55930c8fc6ee:33:e5f96764de448cc09212c2c1366e1bb9c37449c1089fff862cb93039bf3dca02": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b9d9cc83-380b-4ba3-8d8f-60c0e7e2930c:21:793047d1b98e0312f80c61849d4602f50d8e759300b8b138b65e2b4403647ddd": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:b9d9cc83-380b-4ba3-8d8f-60c0e7e2930c:22:c9058a8a4f5a8a0180acc136404483ccc8dd463b17ae4348f1de1b34c87135cc": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:baef1ec6-2ca9-47a3-97cc-4cf2bda10b77:3:361af6e3fc193486255d36ce9b24adedb11eff7e47cd9b4f7132c681c0bb6ccb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:baef1ec6-2ca9-47a3-97cc-4cf2bda10b77:4:9c16254e631c87f9ede5bc67419bb50167a73fa8004dfb1d84e874038ad02eae": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:bafac3d6-7de9-4dd9-8874-4a1194b493ed:3:1fe2bc479a25d368493192f76a3385a794fb332be93efc3913b529c9cc4f46ae": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:bafac3d6-7de9-4dd9-8874-4a1194b493ed:4:994267b8b9be225f94f7661100a4fa193bb1ba21cc808f03044239ddd423f698": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:be58d2e2-06c8-4f58-b666-b99f6dc3b6cd:4:1597c5f0b19ee9df9c82aa08a906840dae0cc130f5283bffa46c4d080f834781": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:be58d2e2-06c8-4f58-b666-b99f6dc3b6cd:5:630115830e97af2859de4a3d5af7621a631705f84d0691020281e0377df41866": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:beaa66d6-aa1b-4e3c-80f5-e0145369bfaf:3:adcef307caa0a17b35775ab22c4c8968ff1ac7c6875f80d5dd8ad2c85c31862f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:beaa66d6-aa1b-4e3c-80f5-e0145369bfaf:4:baa2a6830b01a42dc2a5b955fc00911bb9e11ff85585805cadf20a1abb4eddea": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:bef37fa2-f205-4a7b-b484-0759bfd5f86f:4:64eca0ec5b628b78dcb24a2d3d3f396435faf62ea9eec5e433866da0acccade3": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:bef37fa2-f205-4a7b-b484-0759bfd5f86f:5:fc09aa7d11a81d01ce09d994da88264c672e4e7a1cea5372d9b5bedf59318d8a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c0514f28-fdae-42df-b886-06e2b2bc5b37:4:1a21672ef2cd3bc0f2b55be8e64ebf0f4cab2f4b942eaea827edf08cc005ab65": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c0514f28-fdae-42df-b886-06e2b2bc5b37:5:49a50bf28da14167378b92d43eea2a75e7d7f9e2b02186474bc1ae27a442d161": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c43a5405-e8e1-4221-9ac9-dbe3fa14e886:4:7141fe0f9f378636fffcbfa23575f28e2210822c66b4397c50512e43ab16996f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c43a5405-e8e1-4221-9ac9-dbe3fa14e886:5:139d94602f53597965c9fc5bfe3c1770b926ac19b0fa8b9de81e731a4f4285ba": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c453ab7a-1f5c-4716-a3b4-dea8135fb43a:4:64660600e3a5433cf7703d584d7ef7d0f5a4b39da05ff8d9e9b265bf9e9e11fa": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c453ab7a-1f5c-4716-a3b4-dea8135fb43a:5:36dbdc76c13474cd7e39854f040f4f1337bfd72bb73b36e1cac036026c0644cb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:16:4729bb673e368d61ac83da134c1873b5e49fdf14db2de3840aafd22ef105c200": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:17:1b560e0d4fc92c27d4dc35c6d6bd47fbe275401dffb90361911c891c6dd38b87": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:18:436a8415905ef398901ddee6ced5cd1fa0950b51b4f42adf8a48b46b74655379": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:19:54bea3882b0e2d228091867c3aaa3815ff8737b6c96745c669dd5fda9fa1cd91": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:23:7373bc6103978e2f042aa3851ffcbac025e1c58c04e282dd9c2970f7ae1c3897": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c539afac-c12a-46ed-b1bd-5a5567c9f045:24:af441078aeba164929c08ef9e4c3f852f3d388b040a3a16e3a89a1f943f2549e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c69fc6a2-607d-4530-b7d1-75823af1bde4:7:29dac9a87d3653ae2efcf337e9519c0ad2cc0fcf37916b7f64b0df37ca063f0d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c69fc6a2-607d-4530-b7d1-75823af1bde4:8:a08ba99bf901a8e877af9ddb9f695496a5bbae06c98afe3b6834e55842837f23": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c73124a7-3e89-44a3-bdc1-25fe4df754b1:3:d1f514d3c2582ea76701eb82726c01c4c7f5e114e5c25595ab0ae85f1f0d2c55": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c73124a7-3e89-44a3-bdc1-25fe4df754b1:4:a451f09834d2c433117a19431d2e3b097b8bc9ba5796591c32870eadbeda6396": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c79da740-5030-45ec-a2e0-479e824a562c:6:a5ed00d245ee6f64b817f539c6e03d766653e68f648430ff5095437c6e26dc9f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c79da740-5030-45ec-a2e0-479e824a562c:7:ad151410371f4a9988dfb9e916a7ecc15cacb1ca354df3a6aaafebd7010a145d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c79da740-5030-45ec-a2e0-479e824a562c:8:075165d504d266ed110181088ddb23aed64a5784f3495372911fd7f8be30e405": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c79da740-5030-45ec-a2e0-479e824a562c:9:d819801987cc603d9f38144043b83637223a722389f601fac66f3b840871ec68": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c7da8edc-49ae-45a2-9e61-9fd860e4e73d:13:8e6a1fd32cf54b0d61d8daa94b3c18621e8cfd2e3167ab35cdbcb68caf68e49f": {
+   "TR": [
+    "test_duplicate_detections"
+   ]
+  },
+  "A:c977cb50-3dff-4a9f-b873-9290f56132f1:21:d32407ce0762e5cc5047e459058de9bbb1a8cd4eb47d22fa09b5b3bab5c917d6": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c977cb50-3dff-4a9f-b873-9290f56132f1:22:e00df0717d03d4e653e8fd58429a5f9610f29c2658159e8a0f62f57b48a11aa3": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c9e5f013-4a6f-4d8c-9b0e-f7a4c3d26e95:8:29a1f064afa0f126d6d91033d2501800e5de10f49ef108e3019746ea881836cb": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:c9e5f013-4a6f-4d8c-9b0e-f7a4c3d26e95:9:af6d9a1981fdf22ad1b46f81c6c728ac88767dc094e3edc965d8d2d01a7f40f5": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:caf02a0a-1e1c-4552-9b48-5e070bd88d11:3:e7a578c215fbd3b09fe0aeb1c462bd334b4bb06b78820538bff18a8328d2c5a5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:caf02a0a-1e1c-4552-9b48-5e070bd88d11:4:2012abf2a53a34fc746b35fdaf98b8a4956e30f4426d17123c944df4aae210ab": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cafeeba3-01da-4ab4-b6c4-a31b1d9730c7:3:ecaad324693e1a716ed7ab5ac1a58862ba26971d5a46400ed22bf9cc8afc9352": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cafeeba3-01da-4ab4-b6c4-a31b1d9730c7:4:6f3657aa0c6f06564ee242783c80fd3515ff7f527a549b5ae150e5c8d2394460": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:22:ab06844283dec8e1419e62093f71a914599d662e89cfe0608d2dac5becdbdd10": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:23:59066436fc7c368cd1029f702b842eb25b8b9aa111407aa9dcfd587974a466bf": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:27:c0db7bcbabd6625d0ae78a1043d5cee881417cf48b2bdc88299bb94cf235d2ff": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:28:20e48dd8430f5df0c59e148df6aebefa03c3b632392eef53233ab2f76a646c0d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:42:f22286a132096fdfb20d2ac61537ba5d863f239345c6b05225ff4f9fe765ba9e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:43:7a5b7d7f321b13e60e4093eab40466593243071b0cec8e9d3847c8cfc31cf5c1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:44:a7d5ccf7434c9dbb5b856ea788fc7480b2a88b26f05c35ebbafae71033b9645f": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:cbf93e5d-ca6c-4722-8bea-e9119007c248:45:653fb656a65c6c989cb66044b604160bc8ffc7af460016405bec55dd86da0662": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ce7cf472-6fcc-490a-9481-3786840b5d9b:3:87c3e4ebcc585cecb32f85fb9cd29801123279878d3c67222a2df0d944d9f65a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ce7cf472-6fcc-490a-9481-3786840b5d9b:4:d418a9c4bf8da5f7ae57385195665c76d244fff6270b1618dc5327c50ded23b2": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d042284c-a296-4988-9be5-f424fadcc28c:3:7aa1ff6319fdbabef2eafbf8ad1fd5da015b733fa30b8f1134d4f615c0709403": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d042284c-a296-4988-9be5-f424fadcc28c:4:217623d63225a38f9c97395e009436243601107b3054edf0de30610d01cb767f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b749ee-4225-417e-b20e-a8d2193cbb84:3:fb3ab6bd589d35651fcf6982c5ed2bf63f36b841f5abd0fea5be15704befb227": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b749ee-4225-417e-b20e-a8d2193cbb84:4:05f37022b03fc0f1e27459545a8a1a43d73827aff9a9fe0176880a2b93a1844d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b7a134-9c3e-4f8a-b56d-e0c1f8a29b47:12:3381f4a6b13228ce0af8ab722ed4faf34eaee54bb42dd58ee816ace5fcfc619e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b7a134-9c3e-4f8a-b56d-e0c1f8a29b47:13:101036aee3caa8ba6c0031fd00b71b10787eb38332fb85c8df914e3df5974297": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b7a134-9c3e-4f8a-b56d-e0c1f8a29b47:14:e768dba33e0ae524a1f1ac4a866e965c0ffa1e374431557426acc14ffde91168": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d2b7a134-9c3e-4f8a-b56d-e0c1f8a29b47:15:a23ca0bc9263b863811cf0ebb0ceffdfc9d4387d94ac7aff491af75e96fa6dd1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d3bf399f-b0cf-4250-8bb4-dfc192ab81dc:4:f5a48217c724d519edf3ff8f4fa2b97a01bced2b65fe4694f2ec65265745adc7": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d3bf399f-b0cf-4250-8bb4-dfc192ab81dc:5:f3aac3a658cd54cdec2c78387e37abd769f6702ade20e12cc74399cc9d2550d3": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d4f1a2b3-7c8e-4d5f-b6a9-1e0c2d3f4e5b:3:f0d43fc6b08aca10bc57098e3300cc2e7a75926e4aa053d2a59656b1659b3980": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d4f1a2b3-7c8e-4d5f-b6a9-1e0c2d3f4e5b:4:3dfd2f86c1a1ca3019c8f109099ef1b6899c5c5155dd11493d5bce342f9378eb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d7bcd677-645d-4691-a8d4-7a5602b780d1:10:10159886b4ce59c68ea7efb68a251d13cf2a4860a244d0beec4ebe1d78ea41e2": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:d7bcd677-645d-4691-a8d4-7a5602b780d1:11:b32e518bb3a516706b41e1e5c0e26746e5e78b62362f477b217e21fe34b40e73": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:10:679c8b9e1b51c94fde958428e6b3b6d8bd5b27ef3f2bc135a18c7d48ed1c7da2": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:11:7421539321df71bae508543c9578b72ba9e2002779813801e87a105ad94d98b6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:12:696c58d5f932f8ed6d25a21becc6dd983b20218916dbf40ef8b56950a309c2ae": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:13:3d1639dc6be49dff4921293739a6f22c505794a15348df16035350e329aabc78": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:14:aece04af090a9ffe520a3b230f863c9d64951f5a03c74a4dd29ad10e096bf1d5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:15:3161a04e6b45fa332c9cedcc5713f5be9ec2933ce08cd28c4fcbb13604f9bb8b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:16:437d73e3755c10d99f8d69fa780a55f6baba5e42fba085a940641a2ca211efd9": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:17:c95b8385250cadbf633a6803efa3201c1fe9e36a396c1a139c52480cf8075446": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:20:ac33ba7535c6e51545a63c87feb49646c6e9e38d1188497aad04dd381a78f4b9": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:21:dca3c7a943dfc5f9e737159de1c6d16abd6116d2e1bf586725d6b54654cd9617": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:25:2b4cbf9544954a8d159dae34bfc1a9b128ec5a0c5209104aacf56fdc8f1c62e1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:dcaa3f04-70c3-427a-80b4-b870d73c94c4:26:353931e00ce2bba313aa76b7b67db208ae98c142fcd371c70fa85febaea44956": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ddcd88cb-7f62-4ce5-86f9-1704190feb0a:4:b63e0880ac6568f21492b42e3bdf2661070331fb5708bba5fdb64c91696f4226": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ddcd88cb-7f62-4ce5-86f9-1704190feb0a:5:a3bf2f06d3c4a14c21436425b15acb8cd9b0133a01e62b7731d9265849736ee2": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:de587dce-915e-4218-aac4-835ca6af6f70:3:b3299e3c2ca354bef74bbbcaa44dc71c22deb67c69fd69dc5feff23a1de701e1": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:de587dce-915e-4218-aac4-835ca6af6f70:4:bf06ea2712375de6735f7ff8a60d4df2457f13cccde71a01ba0d1a5fcd184392": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e3c6d245-7b8f-4e2a-c17f-a9d0e5b38f62:12:94b66dff0200d9f788fb1a5f2adfedf912d662c024c5b40273ea36b1eb06443c": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e3c6d245-7b8f-4e2a-c17f-a9d0e5b38f62:13:20d449dea130e73223729d242c2c8fab439fe0edc7509cb924a886253a291267": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:10:1aecca9cddda952cb907fb26eb3b7be9644c7fd551760ca7a3be498f9030671a": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:12:af97bda0c64e898cc9f25bc61d1bcbe5d362fc259a9c6ad1757e9b7a6304ba51": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:13:8b04992e75899d04012780e073050c2e6f29ae7ba80618d2ba6210c618fd812f": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:6:4af63a7d832b318cf4e07eed35e71dea8f1f84ceea0d1c044482f2fbd9fdeba5": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:7:1a6740a4db4c63fefb1e817c4a21fc044aeff731224fa9b27d9f402a162f34da": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e54279c7-4910-4e2c-902c-c56a25b549f6:9:d70ae884fdea01b6c6fc41478548181a5fe76ff1302a61c8e99095674bdb8e51": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:10:a4c8a93702fac12a1e93d1a6f13b1da4cbbd0616bec08c0d73e322d6f2b6b4d6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:11:de0dc105046061c1bde6d2d8b9412bafbff8ee5c041a39883ee7ff6f26755a49": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:12:9c1a07010d76bed6a2300e8339a305c58cec551d0a48c6158e7f4345e4815dc5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:13:8652001fcea99f4c02f2fdb3be5bda2c7cca5244293c4303fad76c0eb19979b2": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:14:547986055df842636a2fe7acefe8a5363a319dfce110626dc963aed986121e75": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:15:7970423e20e1bac4327f5263def2e810b571bf3fbb7d9cc47ec6a581d5d270f6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:16:bf8e87a89cf1f40dfaf88fcb51821fe8ba6a0dfb00e7d01a97c88c33d280684b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:17:fbed15197e349bba885727209a59b66b817412b19b3af7139576ea3fa5a1ed17": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:18:a63ca81f9b480b57c92da4e15e9c338dc301fce672a3f22d72fb2be0c8b24e71": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:19:30f70e685d4ecac6abc513728b3d69b02bcfd7cd7f24d83a1966337521baedae": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:20:85bf4b783c71ee5b4eaa225c77d3064af8d00ed9ed9c8f32bcd6e64f8ad5bea2": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:21:9399862f1c4fa381ddecb3a3e5a8b0ef39f5d3eee1efe379bb678a581fba54a1": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:22:a52f89fb40ebc6d7ee09a7b0038cf2351bae01e35923bc2d79299c28714fa0c1": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:23:05c5635a5c090d838ffd9e9665a8dd72552dde383143727f2cbf3d86b4dda3e7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:24:5565ac1bd724228cce1645db71d9fdfc408f89259cf43db9930bbbafb9b6b19e": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:25:673b91287a54ff891ed0eb409106be8a41746d798c6f287921754bd4f2261d28": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:26:7474d428721ec129d2752f0229659638682bd23b450629aa768d7cb93d536e95": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:27:0d3d94a40983b8af211b11a8f8c0e829fdf6cb0aea458aa45ad04541a5f6f669": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:3:e41598d903696281a6f4db6fe616c7400c317c3f5f1ed131e36e62f1d3665953": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:4:29ee389c1931bf81cfc7a70b2f5e4595613970f58b2d89e15cdd55cb3c4e1536": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:5:d32f0f76c2bea548b201ccb5695bb3161dbe8b226663d630698123f0891edf8f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:6:fd6159d23eb1c5e7144e22c270bfab7ff946c1999324da9b2ec5f22a2ecdb002": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:7:a21ac77e306216efc10ecab2f99c5d57949894e7959e216b32ea7b676808e2fd": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:8:166940ab397387086fc91a674b581a00990f9250526bab176b39c11bca8463a3": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e593cf51-88db-4ee1-b920-37e89012a3c9:9:bebe262fb1469e82071014a0fa9789b58bb6b852d42b2a7a2802e9db8f2f15f5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e6313acd-208c-44fc-a0ff-db85d572e90e:3:a62ae1b31b8d5486a6dad37d19a9f768f15ba9998ee755194833f671d50c8bc7": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e6313acd-208c-44fc-a0ff-db85d572e90e:4:32e177283b07390f90e9ead44bb25a09fe265db1ddf47d022a337b9d5751cf05": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e6474a1b-5390-49cd-ab41-8d88655f7394:6:2d1503a6cc459042dd68f87a0310b3299fab9085f246b3d809dd2a522c4a4261": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:e6474a1b-5390-49cd-ab41-8d88655f7394:7:53c7f7b86e87c352fee497271bfd2df25e6e3f3115b1f3af35d2910034e2ea36": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:13:b6a5260e2ca58d44f19d05e85a5655e3d656733a12d61aa9495c1e1bdf43bf77": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:14:d2399766b22347ca20b4a95b3735993e8e0d7dafc28cb4d42b1f76ba1afa6d5b": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:34:017d99674a6904d0e0dc2006f5023124f1f2428b7add7a3b95121f5533d51b18": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:35:7a19f95edbfd4b314728bc03ac6a82740b3ff9f59ea1f9c15d38801b04ca835d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:40:8aca751ca1ac38301db6699ced768185bf76d847ccff2ff63909bd1dd769d75c": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:41:743c4a9261cb9248e693bef3401fb08b841b7cae3580f1840eedd777c4279509": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:6:fcadad4c29266b6a3bae064cbd8a8207c45c0d053956cc7668d465a1802c7372": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ed74fe75-7594-4b4b-ae38-e38e3fd2eb23:7:457713ff6e43a6e2817ebfbb2de6773493b52aaafe0aee7ff56d532b4d726e7d": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:efc21479-9e83-41da-8cf1-122e06ba8db3:3:576765bdb519b1fb29ecef71d0db0e1a5999565c67b5a66b153e873d47e2789f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:efc21479-9e83-41da-8cf1-122e06ba8db3:4:2ba5526b1fa1572a4a8b030fcce5799c52bf06202cc85fcd66af93d08952a6e5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f2e4b7d9-5c3a-4f8b-9e1d-7a6c2b3f4e5d:3:c1a489b8225aacdeb10e999032878694ac794de1d41274b59c42910c80cb2434": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f2e4b7d9-5c3a-4f8b-9e1d-7a6c2b3f4e5d:4:40315b97d5cdec5fd7bd48af62f6a48629054fcb3757aed92d07e6972fdadf88": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f376c8a7-a2d0-4ddc-aa0c-16c17236d962:16:6efc621e946c64334c5b3cf83c8819c22e1e92a1ef950e299e339e55a49cde27": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f376c8a7-a2d0-4ddc-aa0c-16c17236d962:17:b63f87a13706fdcf079934142f354c08131381071c6edea06842af56085c24e4": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f376c8a7-a2d0-4ddc-aa0c-16c17236d962:19:cc890d490b68cc12434cd2c493b39aa36bb57ca9f0d9c7143b52c438b4e0ce9f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f376c8a7-a2d0-4ddc-aa0c-16c17236d962:20:5bd4c4f771757deaf7d8bf6f15f03b86f5492fe4e4f34362e9b36dada3bb3fa0": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f37b4bce-49d0-4087-9f5b-58bffda77316:16:7c84bc810db99ed4d69a91732a1c7e19e4de5af3891238f9dd219a548e6d53d2": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f37b4bce-49d0-4087-9f5b-58bffda77316:17:fb21efff97e7322b36a0063cf6cb148c117955e1d3d0284e228929bab8bfb3fa": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f3a98ce4-6164-4dd4-867c-4d83de7eca51:5:1b5d309dba063b889cd7dc4f6fdf09684867fa7b5c5b011d0f611bcd44ea6c55": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f3a98ce4-6164-4dd4-867c-4d83de7eca51:6:a756654480dab95799ac7263960c0507099360f2642fa5dffcc9237e4b102c43": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f674e36a-4b91-431e-8aef-f8a96c2aca35:16:13ba8df1d8834ca177d88cb94e3e592f65035b0d4c4935905c3d6894248cb9c1": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f674e36a-4b91-431e-8aef-f8a96c2aca35:17:45915f661917915558698ec8ca07065f56e3c31cf65b17d2e7dc15ac3e751234": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f674e36a-4b91-431e-8aef-f8a96c2aca35:22:c3efd0da66383287b14ac66d0a851109823231d9df87ee520ca56bc2d935746e": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f674e36a-4b91-431e-8aef-f8a96c2aca35:23:0d5629d3987d27640f5f38c24b2d92d94adc4c4dba12c066afe0928f0b4904a1": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f7b5f842-a6af-4da5-9e95-e32478f3cd2f:3:64cba8b709e515d9086ad92201777eb83af274a97c45ed34bc97201c25e76597": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:f7b5f842-a6af-4da5-9e95-e32478f3cd2f:4:3caf62c67ce275cc93f766e47140ce5441a18350bbbcfb20be5e11cd0553eb6a": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:fb843269-508c-4b76-8b8d-88679db22ce7:14:fbc3fa6ee105cf90a74b981d247062f09b6eb7f954e8497761f140d644279e7e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:fb843269-508c-4b76-8b8d-88679db22ce7:15:20cb698c24cf7a610656e9a278a60d3e12524b9266e6773e3084794d2da1d85e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:12:c51e4da3bf6ae9cc4efcdb77ffb13ffe667a70ee46e7e03ee243d4b2b63d6596": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:13:5769eb255c9f324409aacc1112a548c8e1bc41986d146e6ea0e871b2e2f78573": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:14:16e32aa02f3678986b2fb4339095a9ff2acc44f955c6257ca545617445cc77bf": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:15:cc6123e2ef7c61a0e36b301880d04a66cde3838143a2d247efd78c108ff74940": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:16:231e0a290b797b550bb26e9a5e3706285441d8df0b5d96cb275a84235dab4486": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "A:ffa6861c-4461-4f59-8a41-578c39f3f23e:17:27813406bec7c7651c1a6d6d0cbd5363264baf8fe5259640d1c2871b7fe3a813": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ],
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "B:0b7163dc-7eee-4960-af17-c0cd517f92da:4:64bb757ac9bee49b254277506a843ffc7f5c6f1d08db7a44874e60bc35937b92": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:0b7163dc-7eee-4960-af17-c0cd517f92da:5:7c912aa2dbb2b350331bdfabc472e5e9abe561fdfe9ea3070e20207a219dac17": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:36803969-5421-41ec-b92f-8500f79c23b0:7:b2ffd05a6205d84d8d457fd47269c3c0732485e642bd58354e13c873afcfd74f": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:36803969-5421-41ec-b92f-8500f79c23b0:8:75c1c6f6a92aea456e45f2217a52ff666a0b61c0dbfb453c29f487423a4bca9b": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:4782eb5a-a513-4523-a0ac-f3082b26ac5c:3:4a1b94b7d6f5622bc3bc79fa51ffb4f4ed4ea3c9d40665e55fd9fdecc0206363": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:4782eb5a-a513-4523-a0ac-f3082b26ac5c:4:39cdf6a1bafc59dbb0a99f04f3f79f2652f44ecead49ae20864360de41e0d85d": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:639c9081-f482-47d3-a0bd-ddee3d4ecd76:4:cc3b1a64420b318f009c54660536de4e892272c73480c938513596eccb1b9576": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:639c9081-f482-47d3-a0bd-ddee3d4ecd76:5:7a8611e5aa8b81bbc48e3b7f763f2e5b633a052d8264976019f248d89ff6e2d5": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:646ea171-dded-4578-8a4d-65e9822892e3:4:725fcf1829d6c690afc3295c5b5cdcf4a4859565d5a678f6a41461aaae2675e6": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:646ea171-dded-4578-8a4d-65e9822892e3:5:759930bbf6ec9a702f4bb7c5cf7c66150424f730a6f17ee6e01d8e78d1182f45": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:847d5ff3-8a31-4737-a970-aeae8fe21765:10:aa5809394015a61b06bf81d6df2ec41c9b63545b2df9569d0c811a8af8053df3": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:847d5ff3-8a31-4737-a970-aeae8fe21765:9:488b381628ccbc2bebb90c53140715c54ff2e927114b27f9366d75d22035cabb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:944e8941-f6f6-4ee8-ac05-1c224e923c0e:6:4047b3012fa36e99d6bab12742770650431ed508d7452aed2d657c1b1788d3f7": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "B:944e8941-f6f6-4ee8-ac05-1c224e923c0e:7:48b34982042a195b754f3af6eb044ae13dc6fb49241642311f0d82439dcd8323": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "B:9e3cb244-bdb8-4632-8c90-6079c8f4f16d:15:408ccfe831478f5543f046bec76a8445bd4da3a35c248949b5071474b34bde30": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "B:9e3cb244-bdb8-4632-8c90-6079c8f4f16d:16:d050c6501cfc15aa648937143d5118f98237a04eaea751986d373a5a7ae4edd1": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "B:c0514f28-fdae-42df-b886-06e2b2bc5b37:4:1a21672ef2cd3bc0f2b55be8e64ebf0f4cab2f4b942eaea827edf08cc005ab65": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:c0514f28-fdae-42df-b886-06e2b2bc5b37:5:49a50bf28da14167378b92d43eea2a75e7d7f9e2b02186474bc1ae27a442d161": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:c453ab7a-1f5c-4716-a3b4-dea8135fb43a:4:64660600e3a5433cf7703d584d7ef7d0f5a4b39da05ff8d9e9b265bf9e9e11fa": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:c453ab7a-1f5c-4716-a3b4-dea8135fb43a:5:36dbdc76c13474cd7e39854f040f4f1337bfd72bb73b36e1cac036026c0644cb": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:de587dce-915e-4218-aac4-835ca6af6f70:3:b3299e3c2ca354bef74bbbcaa44dc71c22deb67c69fd69dc5feff23a1de701e1": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:de587dce-915e-4218-aac4-835ca6af6f70:4:bf06ea2712375de6735f7ff8a60d4df2457f13cccde71a01ba0d1a5fcd184392": {
+   "SC": [
+    "SigmahqInvalidAllModifierIssue"
+   ]
+  },
+  "B:f674e36a-4b91-431e-8aef-f8a96c2aca35:22:c3efd0da66383287b14ac66d0a851109823231d9df87ee520ca56bc2d935746e": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "B:f674e36a-4b91-431e-8aef-f8a96c2aca35:23:0d5629d3987d27640f5f38c24b2d92d94adc4c4dba12c066afe0928f0b4904a1": {
+   "SC": [
+    "SigmahqFieldUserIssue"
+   ]
+  },
+  "BAD_LOGSOURCE:0022869c-49f7-4ff2-ba03-85ac42ddac58": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:02ee49e2-e294-4d0f-9278-f5b3212fc588": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:056c7317-9a09-4bd4-9067-d051312752ea": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:07aa184a-870d-413d-893a-157f317f6f58": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:08249dc0-a28d-4555-8ba5-9255a198e08c": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:0b7163dc-7eee-4960-af17-c0cd517f92da": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:0ba1da6d-b6ce-4366-828c-18826c9de23e": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:0d5675be-bc88-4172-86d3-1e96a4476536": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "BAD_LOGSOURCE:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e": {
+   "SC": [
+    "FieldnameLogsourceIssue"
+   ],
+   "TL": [
+    "test_invalid_logsource_attributes"
+   ]
+  },
+  "DANGLING:0022869c-49f7-4ff2-ba03-85ac42ddac58": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:02ee49e2-e294-4d0f-9278-f5b3212fc588": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:056c7317-9a09-4bd4-9067-d051312752ea": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:07aa184a-870d-413d-893a-157f317f6f58": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:08249dc0-a28d-4555-8ba5-9255a198e08c": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:0b7163dc-7eee-4960-af17-c0cd517f92da": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:0ba1da6d-b6ce-4366-828c-18826c9de23e": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:0d5675be-bc88-4172-86d3-1e96a4476536": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "DANGLING:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e": {
+   "SC": [
+    "DanglingDetectionIssue"
+   ]
+  },
+  "ONE_VALUE:0022869c-49f7-4ff2-ba03-85ac42ddac58": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:02ee49e2-e294-4d0f-9278-f5b3212fc588": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:056c7317-9a09-4bd4-9067-d051312752ea": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:07aa184a-870d-413d-893a-157f317f6f58": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:08249dc0-a28d-4555-8ba5-9255a198e08c": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:0b7163dc-7eee-4960-af17-c0cd517f92da": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:0ba1da6d-b6ce-4366-828c-18826c9de23e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:0c3ebe9f-df09-4e00-be0f-73d4ca8d62f6": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:0d5675be-bc88-4172-86d3-1e96a4476536": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  },
+  "ONE_VALUE:0e8cfe08-02c9-4815-a2f8-0d157b7ed33e": {
+   "TR": [
+    "test_selection_list_one_value"
+   ]
+  }
+ },
+ "gates": {
+  "G1": true,
+  "G2": true,
+  "G3": true,
+  "G4": true,
+  "G5": true,
+  "G6": true,
+  "G8": true,
+  "G9": true
+ },
+ "rounds": [
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.9
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.6
+   },
+   "items": 282
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.3
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 10.1
+   },
+   "items": 282
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 67,
+    "seconds": 14.2
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 84,
+    "seconds": 9.7
+   },
+   "items": 282
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 7,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 21,
+    "seconds": 9.9
+   },
+   "items": 261
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 74,
+    "seconds": 14.5
+   },
+   "TL": {
+    "exit": 1,
+    "flagged": 10,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 79,
+    "seconds": 9.8
+   },
+   "items": 217
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 11,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 22,
+    "seconds": 9.7
+   },
+   "items": 186
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 19,
+    "seconds": 14.4
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 23,
+    "seconds": 9.8
+   },
+   "items": 138
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 6,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 15,
+    "seconds": 9.9
+   },
+   "items": 115
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 16,
+    "seconds": 13.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 19,
+    "seconds": 9.7
+   },
+   "items": 91
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 4,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 8,
+    "seconds": 10.1
+   },
+   "items": 74
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 12,
+    "seconds": 14.2
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 18,
+    "seconds": 9.8
+   },
+   "items": 57
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 14.5
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 5,
+    "seconds": 10.0
+   },
+   "items": 50
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 9,
+    "seconds": 14.4
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 12,
+    "seconds": 9.9
+   },
+   "items": 46
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.3
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 3,
+    "seconds": 9.7
+   },
+   "items": 40
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 6,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 10,
+    "seconds": 10.4
+   },
+   "items": 32
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.2
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 3,
+    "seconds": 9.8
+   },
+   "items": 29
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 5,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 8,
+    "seconds": 9.4
+   },
+   "items": 25
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 10.2
+   },
+   "items": 24
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 4,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 5,
+    "seconds": 10.1
+   },
+   "items": 22
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 3,
+    "seconds": 9.9
+   },
+   "items": 20
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 3,
+    "seconds": 14.5
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 6,
+    "seconds": 9.5
+   },
+   "items": 19
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 10.1
+   },
+   "items": 18
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 10.1
+   },
+   "items": 16
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 10.0
+   },
+   "items": 16
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 9.4
+   },
+   "items": 14
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 9.5
+   },
+   "items": 10
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 3,
+    "seconds": 9.9
+   },
+   "items": 10
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.6
+   },
+   "items": 8
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 2,
+    "seconds": 9.8
+   },
+   "items": 5
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.9
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 10.3
+   },
+   "items": 5
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.3
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.3
+   },
+   "items": 4
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.5
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.5
+   },
+   "items": 4
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.4
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.5
+   },
+   "items": 4
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.7
+   },
+   "items": 3
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.7
+   },
+   "items": 3
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.4
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.6
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.9
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.2
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 10.1
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.6
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.5
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.4
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.1
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 10.0
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 10.5
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 13.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.5
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.5
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 10.2
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.1
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 13.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.7
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.7
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 13.8
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.8
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.5
+   },
+   "items": 2
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.2
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.8
+   },
+   "items": 1
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.0
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.6
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.7
+   },
+   "items": 1
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 13.9
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.8
+   },
+   "items": 1
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.4
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.9
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.6
+   },
+   "items": 1
+  },
+  {
+   "SC": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 14.7
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.9
+   },
+   "TR": {
+    "exit": 1,
+    "flagged": 1,
+    "seconds": 9.8
+   },
+   "items": 1
+  },
+  {
+   "SC": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 14.3
+   },
+   "TL": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 5.5
+   },
+   "TR": {
+    "exit": 0,
+    "flagged": 0,
+    "seconds": 9.7
+   },
+   "items": 1
+  }
+ ],
+ "sabotage": false,
+ "solo": [
+  "A:1321dc4e-a1fe-481d-a016-52c45f0c8b4f:4:eff2e10a591ced8e09755ae2e732f952b8ba50e88f8f465b0a06cd278e0f3d9a",
+  "A:37b437cf-3fc5-4c8e-9c94-1d7c9aff842b:3:deab9fddce9b4703fd18cbb8368290bd79abd9a8e563985490734c63d2623bb3",
+  "A:3ae1a046-f7db-439d-b7ce-b8b366b81fa6:3:0ceb61ffe30ddba797abe321aa2ca0151c1e53ff7a8f0dc70018993a4264f199",
+  "B:526cc8bc-1cdc-48ad-8b26-f19bff969cec:4:78d583f009659824e90abe61420e3ca33bf1d5d749b3767a134d62a10193aead",
+  "A:73921b9c-cafd-4446-b0c6-fdb0ace42bc0:6:7f42d4b3a331d2bcf6bf8c1403800c23a1e2b51d87c8d12784526073cfa566ba",
+  "A:801bd44f-ceed-4eb6-887c-11544633c0aa:9:6193cb7311be82b356347aa08466ae6c1567df69895ebc07d751464ba1373bf5",
+  "A:83314318-052a-4c90-a1ad-660ece38d276:6:559c892e8ef0587451502d7774954b49414bf77f2225c9c8a71bf1bbfa636971",
+  "A:8b7273a4-ba5d-4d8a-b04f-11f2900d043a:6:ed372966d352583fce15c53a31eb312e0165b9683f349cc6182be2b97dca0d90",
+  "A:a2863fbc-d5cb-48d5-83fb-d976d4b1743b:6:21ee42169d38a33ec5738f7567aeffc89cade06243f59af1b2a3196e29dc9aac",
+  "A:aa37cbb0-da36-42cb-a90f-fdf216fc7467:3:7bf5175512232dfdba728f5f0c57a49e7836616aa391a404bc1715a0af3d2e8b",
+  "A:aba15bdd-657f-422a-bab3-ac2d2a0d6f1c:12:ec6f9bdf82e3a5b06c8385232d783ac99906973ce6c410ada7d4c518a17bad5f",
+  "B:acd74772-5f88-45c7-956b-6a7b36c294d2:4:38e037bb91ea5fb9a7bcc092834d89bb60e7a1b232290d0e93efc86c6727b99a",
+  "A:c7da8edc-49ae-45a2-9e61-9fd860e4e73d:13:8e6a1fd32cf54b0d61d8daa94b3c18621e8cfd2e3167ab35cdbcb68caf68e49f",
+  "A:d526c60a-e236-4011-b165-831ffa52ab70:3:7a4adf82fe8a2146159d1d34caf210e71387b5838c9a62e87d79d613a6363280",
+  "A:f8aebc67-a56d-4ec9-9fbe-7b0e8b7b4efd:3:1f1cf6ba729605d26a3c0d616ef830787e095cafd1ca2fcb32a84c54a8ccfd50"
+ ],
+ "statuses": [
+  "REFUTED",
+  "REFUTED",
+  "HELD",
+  "REFUTED"
+ ],
+ "study": "PA-SIGMA-003"
+}

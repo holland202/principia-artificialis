@@ -84,16 +84,24 @@ def completed(check, code, out):
     return bool(m) and int(m.group(1)) == EXPECTED_TESTS[check]
 
 
+def _absolute_patterns(root, rel):
+    """The staged file's absolute path, under the round root as given and as resolved (a check may print either)."""
+    forms = {os.path.join(root, rel), os.path.join(os.path.realpath(root), rel)}
+    return [re.compile(re.escape(f) + r"(?![\w.-])") for f in sorted(forms)]
+
+
 def attribute(check, root, out, rels):
-    """{rel: set of reasons} for the staged paths this check's output names."""
+    """{rel: set of reasons} for the staged paths this check's output names.
+
+    Deviation D3 (after run 0): test_logsource.py prints absolute paths (it joins the working directory to each
+    rule folder), so TR and TL also match the path under the round root, not only the relative path."""
     hits = {}
     if check == "SC":
         lines = out.splitlines()
         for rel in rels:
-            absolute = os.path.join(root, rel)
-            pat = re.compile(re.escape(absolute) + r"(?![\w.-])")
+            pats = _absolute_patterns(root, rel)
             for line in lines:
-                if pat.search(line):
+                if any(p.search(line) for p in pats):
                     m = _ISSUE.search(line)
                     hits.setdefault(rel, set()).add(m.group(1) if m else "error-line")
         return hits
@@ -103,9 +111,9 @@ def attribute(check, root, out, rels):
         end = marks[i + 1].start() if i + 1 < len(marks) else len(out)
         blocks.append((m.group(2), out[m.start():end]))
     for rel in rels:
-        pat = re.compile(r"(?<![\w./-])" + re.escape(rel) + r"(?![\w.-])")
+        pats = [re.compile(r"(?<![\w./-])" + re.escape(rel) + r"(?![\w.-])")] + _absolute_patterns(root, rel)
         for name, text in blocks:
-            if pat.search(text):
+            if any(p.search(text) for p in pats):
                 hits.setdefault(rel, set()).add(name)
     return hits
 
