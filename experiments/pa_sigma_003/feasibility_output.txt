@@ -1,0 +1,18 @@
+SigmaHQ 05d1031f537e830b76da53bae2400c5814c89165
+0. broadening mutants rebuilt 1502 in 282 rules; identity 4bb6343d864618f43b895e98a711c7599f29e895173adaec5ef7621d5d596ba0 (registered 4bb6343d...: True)
+   PA-SIGMA-002 caught 305; SURV (pass both behavioural jobs) 1197; SURV identity b0c45e1108bb89987bac7fb7b75a7d5fa1863aba3b237d8469d4f382ac11bc6b
+1. by operator: all {'DROP_FIELD': 319, 'DROP_VALUE': 869, 'NEVER_SEL': 314}; SURV {'DROP_FIELD': 209, 'DROP_VALUE': 767, 'NEVER_SEL': 221}
+2. originals with a derived TR or SC flag (must be 0, since the unmutated checks pass): TR 0, SC 0
+3. arm A all : DERIVED_TR  350 {'DROP_VALUE': 350}
+            DERIVED_SC  211 {'DROP_VALUE': 211}
+            DERIVED_TR or SC  350 {'DROP_VALUE': 350}
+3. arm A SURV: DERIVED_TR  292 {'DROP_VALUE': 292}
+            DERIVED_SC  189 {'DROP_VALUE': 189}
+            DERIVED_TR or SC  292 {'DROP_VALUE': 292}
+4. arm B: 350 mutants change under house style (292 in SURV); |all kept because dropping it would duplicate a key: 18 (18 in SURV); arm B DERIVED_TR 0, DERIVED_SC 18 (18 in SURV)
+5. arm B equivalence (G6): {'parse': 6, 'query': 344} (query: same Lucene query; parse: backend cannot convert, same pySigma detection)
+6. staged items 2446 {'BAD_LOGSOURCE': 10, 'DANGLING': 10, 'IDENTITY': 282, 'MUTANT': 1852, 'ONE_VALUE': 10, 'ROUNDTRIP': 282}; rounds needed 55 (items per rule: min 3, median 6)
+7. rule files under rules* with a d3fend tag: 0
+8. tools: pysigma 2.0.1 | sigma-cli 4.0.0 | pysigma-validators-sigmahq 0.21.0 | pyyaml 6.0.3 | colorama 0.4.6 | python 3.11.18 | ATT&CK file sha256 81113ba98afa2928f3dcff62022539f7ce30c315c32e14422f11ff95ce534352 (pinned: True)
+9. G1 unmutated tree: SC exit 0 completed True 14.0s; TR exit 0 completed True 9.4s; TL exit 0 completed True 5.6s
+10. ROUNDTRIP pre-check, 282 rules in one round: SC exit 0 completed True flagged 0; TR exit 0 completed True flagged 0; TL exit 0 completed True flagged 0
