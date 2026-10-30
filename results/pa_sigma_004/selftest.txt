@@ -1,0 +1,12 @@
+PASS yamllint rule name
+PASS yamllint ./ prefix and warnings
+PASS yamllint line without a rule
+PASS schema relative path
+PASS schema absolute path made relative
+PASS schema prose lines ignored
+PASS score all held
+PASS score: one arm-A pass refutes P3 only
+PASS score: a B4 schema flag refutes P2
+PASS combined count
+PASS combined uses arm B when the mutant changed
+selftest: 11/11 passed
