@@ -1,0 +1,10 @@
+0. items 3588 {'IDENTITY': 282, 'LAYOUT_BAD': 10, 'MUTANT/A': 1502, 'MUTANT/B4': 1502, 'ROUNDTRIP4': 282, 'SCHEMA_BAD': 10}
+1. B4 texts that parse back to their house-style rule: 1502 of 1502; SURV 1197; by operator {'DROP_FIELD': 319, 'DROP_VALUE': 869, 'NEVER_SEL': 314}
+2. tools: yamllint 1.38.0 | check-jsonschema 0.39.0 | jsonschema 4.26.0 | python 3.11.18 | schema sha256 eb95ddb1bc2503145a6e84511e38990f74fe9a843067065a23d3763457fb2d95 (pinned: True)
+3. G1 yamllint over the unmutated checkout: exit 0, files flagged 0, 14s
+4. G1 schema check over 3804 rule files: exit 0, files flagged 0, 9s; last line: 'ok -- validation done'
+5. IDENTITY control pre-check, 282 files: yamllint flagged 0, schema flagged 0
+5. ROUNDTRIP4 control pre-check, 282 files: yamllint flagged 0, schema flagged 0
+5. LAYOUT_BAD control pre-check, 10 files: yamllint flagged 10, schema flagged 0
+5. SCHEMA_BAD control pre-check, 10 files: yamllint flagged 0, schema flagged 10
+   yamllint reasons on controls: {'indentation': 10}
