@@ -1,0 +1,24 @@
+PA-SIGMA-004 harness
+environment: Linux x86_64 | harness Python 3.13.18 | checks: yamllint 1.38.0 | check-jsonschema 0.39.0 | jsonschema 4.26.0 | python 3.11.18 | SigmaHQ 05d1031 | schema eb95ddb1bc25
+items: {'IDENTITY': 282, 'LAYOUT_BAD': 10, 'MUTANT/A': 1502, 'MUTANT/B4': 1502, 'ROUNDTRIP4': 282, 'SCHEMA_BAD': 10}
+G1 unmutated checkout: yamllint exit 0; schema exit 0 over 3804 rule files
+staged run: yamllint exit 1, files flagged 1512; schema exit 1, files flagged 10; flagged paths not staged here: 0
+controls flagged (either check): IDENTITY 0 of 282, ROUNDTRIP4 0 of 282; LAYOUT_BAD by yamllint 10 of 10; SCHEMA_BAD by schema 10 of 10 (each needs >= 9)
+G1 PASS
+G2 PASS
+G3 PASS
+G4 PASS
+G5 PASS
+G6 PASS
+G8 PASS
+G9 PASS
+P1 B4, yamllint flags 0 of 1502; registered: none -> HELD
+P2 B4, schema flags 0 of 1502; registered: none -> HELD
+P3 arm A, yamllint flags 1502 of 1502; registered: every one -> HELD
+P4 arm A, schema flags 0 of 1502; registered: none -> HELD
+yamllint rules on arm A: {'indentation': 1502}
+combined (house style): of 1197 SURV, PA-SIGMA-003 arm B flags 24, this study's B4 flags 0; pass all seven checks: 1173 of 1502 broadening mutants; rules keeping one: 271 of 273
+VERDICT 4 of 4 as registered
+DIGEST 6f598a26ae03548b91f6ac0becaee7aedad4fedc36e38f8b0d38373898ae7890
+RECORDED: not pinned yet
+exit 0

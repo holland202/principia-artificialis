@@ -1,0 +1,20 @@
+[
+ {
+  "key": "03d83090-8cba-44a0-b02f-0b756a050306:10:8c76729702c174df4d60cd2ba3ec0b7125909ac1a076cab4d058c87bb1b87298",
+  "op": "DROP_VALUE",
+  "path": "rules/windows/powershell/powershell_script/posh_ps_win_api_susp_access.yml",
+  "surv": true
+ },
+ {
+  "key": "0022869c-49f7-4ff2-ba03-85ac42ddac58:11:cf36a6a79c55c7a7d002e4f51340acdcf3931107e34b86f9c5c8d9de0cf334cb",
+  "op": "DROP_FIELD",
+  "path": "rules/windows/process_creation/proc_creation_win_discovery_via_reg_queries.yml",
+  "surv": true
+ },
+ {
+  "key": "02ee49e2-e294-4d0f-9278-f5b3212fc588:36:e7e0af4f83342983efc5a60ac5aefcc72756522c05ff5c4d6cbceaf6328c18a1",
+  "op": "NEVER_SEL",
+  "path": "rules/windows/registry/registry_set/registry_set_susp_run_key_img_folder.yml",
+  "surv": true
+ }
+]

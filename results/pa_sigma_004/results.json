@@ -1,0 +1,152 @@
+{
+ "arm_a_flag_counts": {
+  "SCH": 0,
+  "YL": 1502
+ },
+ "combined": {
+  "flagged_by_003_arm_b": 24,
+  "flagged_here_b4": 0,
+  "pass_all_seven": 1173,
+  "rules_keeping_one": 271,
+  "rules_with_surv": 273,
+  "surv": 1197
+ },
+ "digest": "6f598a26ae03548b91f6ac0becaee7aedad4fedc36e38f8b0d38373898ae7890",
+ "facts": {
+  "A": {
+   "SCH": 0,
+   "YL": 1502,
+   "n": 1502
+  },
+  "B4": {
+   "SCH": 0,
+   "YL": 0
+  },
+  "a_not_yl": [],
+  "a_sch": [],
+  "b4_flagged": []
+ },
+ "flagged": {
+  "LAYOUT_BAD:0022869c-49f7-4ff2-ba03-85ac42ddac58": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:02ee49e2-e294-4d0f-9278-f5b3212fc588": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:03d83090-8cba-44a0-b02f-0b756a050306": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:05164d17-8e11-4d7d-973e-9e4962436b87": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:056c7317-9a09-4bd4-9067-d051312752ea": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:060c3ef1-fd0a-4091-bf46-e7d625f60b73": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:0718cd72-f316-4aa2-988f-838ea8533277": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:07aa184a-870d-413d-893a-157f317f6f58": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:08249dc0-a28d-4555-8ba5-9255a198e08c": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "LAYOUT_BAD:09576804-7a05-458e-a817-eb718ca91f54": {
+   "YL": [
+    "indentation"
+   ]
+  },
+  "SCHEMA_BAD:0022869c-49f7-4ff2-ba03-85ac42ddac58": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:02ee49e2-e294-4d0f-9278-f5b3212fc588": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:03d83090-8cba-44a0-b02f-0b756a050306": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:05164d17-8e11-4d7d-973e-9e4962436b87": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:056c7317-9a09-4bd4-9067-d051312752ea": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:060c3ef1-fd0a-4091-bf46-e7d625f60b73": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:0718cd72-f316-4aa2-988f-838ea8533277": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:07aa184a-870d-413d-893a-157f317f6f58": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:08249dc0-a28d-4555-8ba5-9255a198e08c": {
+   "SCH": [
+    "$.level"
+   ]
+  },
+  "SCHEMA_BAD:09576804-7a05-458e-a817-eb718ca91f54": {
+   "SCH": [
+    "$.level"
+   ]
+  }
+ },
+ "gates": {
+  "G1": true,
+  "G2": true,
+  "G3": true,
+  "G4": true,
+  "G5": true,
+  "G6": true,
+  "G8": true,
+  "G9": true
+ },
+ "sabotage": false,
+ "statuses": [
+  "HELD",
+  "HELD",
+  "HELD",
+  "HELD"
+ ],
+ "study": "PA-SIGMA-004",
+ "yamllint_rules_arm_a": {
+  "indentation": 1502
+ }
+}
