@@ -1,0 +1,23 @@
+PASS SC path attribution
+PASS SC cross-rule reason kept
+PASS SC no prefix match
+PASS TR print-only path is not a flag
+PASS TR block attribution
+PASS TR rules/ vs rules-threat-hunting/ kept apart
+PASS TL absolute path under this round's root (D3)
+PASS TL absolute path under another root is not a flag
+PASS completed TR
+PASS completed SC
+PASS cross-rule only
+PASS derived_tr
+PASS derived_sc
+PASS normalize one value
+PASS normalize |all
+PASS normalize clash keeps |all
+PASS schedule
+PASS score all held
+PASS score: missing flag refutes P1 only
+PASS score: extra SC flag refutes P2 and P4
+PASS score: arm-B TR flag refutes P4
+PASS digest ignores empty flags
+selftest: 22/22 passed
