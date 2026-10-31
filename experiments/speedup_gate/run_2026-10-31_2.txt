@@ -1,0 +1,23 @@
+speedup_gate.py  |  numpy 2.5.3  |  linux  |  python 3.13.18
+dtype float32, batch 64, tol 1e-04
+
+ANTI-VACUITY
+  A0 broken candidate fails gate 1 : PASS   (rel err 1.033e+00 on 'wide dynamic range', tol 1e-04)
+  A1 baseline-as-candidate shows no win : PASS   (ratio 0.975x, band 0.80-1.25)
+
+     n   theory  measured   verdict  base GF/s  cand GF/s  cand/base
+--------------------------------------------------------------------
+    64     4.0x     0.26x      LOSS      37.17       2.43      6.5%
+   256     8.0x     2.38x       WIN      42.44      12.65     29.8%
+  1024    16.0x    12.14x       WIN      46.42      35.23     75.9%
+  4096    32.0x    39.52x       WIN      47.29      58.40    123.5%
+
+REGISTERED PREDICTIONS
+  P1 op-count ratio == sqrt(n)/2 exactly            : CONFIRMED
+  P2 n=1024 measured < 8.0x (theory 16.0x)          : REFUTED   measured 12.14x
+  P3 a crossover exists and sits at n >= 256        : REFUTED   losses at n=64
+  P4 n=4096 candidate GF/s < 40% of baseline        : REFUTED   measured 123.5%
+  P5 same sweep on aarch64/Termux S25              : UNRUN (the door)
+
+A candidate losing is a result, not a build failure. exit 0.
+exit=0

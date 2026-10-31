@@ -1,0 +1,10 @@
+speedup_gate.py  |  numpy 2.5.3  |  linux  |  python 3.13.18
+dtype float32, batch 64, tol 1e-04
+
+ANTI-VACUITY
+  A0 broken candidate fails gate 1 : FAIL   (rel err 5.801e-07 on 'wide dynamic range', tol 1e-04)
+     [--sabotage: fed an intact candidate where a broken one belongs]
+  A1 baseline-as-candidate shows no win : PASS   (ratio 0.999x, band 0.80-1.25)
+
+INSTRUMENT UNTRUSTWORTHY — anti-vacuity failed. All speed numbers void.
+exit=1

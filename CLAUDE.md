@@ -113,8 +113,8 @@ Two conventions are in use and both are live:
 - `noteNNN_short_title.md` — 39 files in `research_notes/` (later series)
 
 `scripts/make_index.py` matches both patterns in `research_notes/`, plus
-`notes/NNN_*.md`: **92 files**. The committed `NOTES_INDEX.md` lists all **92**
-(regenerated 2026-10-16). A generated index goes stale until someone re-runs it. Files matching neither pattern are invisible to the
+`notes/NNN_*.md`. The committed `NOTES_INDEX.md` lists **94**
+(regenerated 2026-10-31). A generated index goes stale until someone re-runs it. Files matching neither pattern are invisible to the
 index: `research_notes/QFI_THERMO_AGENDA.md`, `README.md`, `TEMPLATE.md` and
 `notes/note048_grok_contribution_manifesto.md`. Before adding a note, match one
 of the two patterns exactly or it will not appear in `NOTES_INDEX.md`.
@@ -237,3 +237,10 @@ Correction provenance (W9 / M13): Claude (Anthropic, Opus 5.5) recounted and
 drafted → human validation: not performed → human editing/curation: direction
 by Chad Holland → human responsibility: Chad Holland. Human review level:
 direction only.
+
+**2026-10-31.** `NOTES_INDEX.md` was regenerated with `scripts/make_index.py` when note072 was added: 94 notes. On
+`main` before this change a regeneration already changed the index (it was stale), so 94 is 92 + one note added
+since 2026-10-16 + note072. The other counts in this file were not recounted. Superseded, verbatim:
+"`notes/NNN_*.md`: **92 files**. The committed `NOTES_INDEX.md` lists all **92** (regenerated 2026-10-16)."
+Provenance: Claude (Anthropic, Opus 5.5) → human validation: not performed → human editing/curation: direction by
+Chad Holland → human responsibility: Chad Holland. Review level: direction only.
