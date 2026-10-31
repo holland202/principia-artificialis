@@ -1,0 +1,11 @@
+SOVEREIGN_EVOLUTION ~/principia-artificialis $ for i in 2 3; do python3 scripts/speedup_gate.py | grep -E "A1|^ +(64|256|1024|4096) |P2 "; done   A1 baseline-as-candidate shows no win : PASS   (ratio 0.945x, band 0.80-1.25)
+    64     4.0x     0.60x      LOSS      34.66       5.21     15.0%
+   256     8.0x     5.27x       WIN      35.30      23.23     65.8%         1024    16.0x     9.92x       WIN      48.14      29.85     62.0%
+  4096    32.0x    17.78x       WIN      47.89      26.60     55.6%
+  P2 n=1024 measured < 8.0x (theory 16.0x)          : REFUTED   measured 9.92x
+  A1 baseline-as-candidate shows no win : PASS   (ratio 0.993x, band 0.80-1.25)
+    64     4.0x     0.63x      LOSS      16.41       2.58     15.7%
+   256     8.0x     5.12x       WIN      19.36      12.38     64.0%
+  1024    16.0x    11.69x       WIN      21.39      15.63     73.1%
+  4096    32.0x    31.37x       WIN      16.39      16.07     98.0%
+  P2 n=1024 measured < 8.0x (theory 16.0x)          : REFUTED   measured 11.69x

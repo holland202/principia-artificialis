@@ -108,3 +108,34 @@ P0 (both controls), P1 (op-count ratio exactly √n/2), P2–P4 (above), P5 (S25
 - **P6.** Cache residency: sweep the butterfly weight footprint against L2/L3 size and look for a knee.
 - **P7.** Does the n=64 loss survive on aarch64?
 - **P8.** Expressivity: can a two-factor butterfly approximate a trained dense layer within a stated error budget? A speedup on an operator that cannot do the job is worth nothing.
+
+## Addendum 2026-10-31 — P5 run on the S25 (owner-run)
+
+Chad Holland ran `scripts/speedup_gate.py` on the Samsung S25 Ultra under Termux (Python 3.14.6, NumPy 2.4.4, aarch64) three times on 2026-10-31. The output is in [run_2026-10-31_S25_1_as_pasted.txt](../experiments/speedup_gate/run_2026-10-31_S25_1_as_pasted.txt) and [run_2026-10-31_S25_2_3_as_pasted.txt](../experiments/speedup_gate/run_2026-10-31_S25_2_3_as_pasted.txt), kept exactly as pasted from the terminal, including its collapsed line breaks.
+- Run 1 is the full output.
+- Runs 2 and 3 were filtered to the A1, table and P2 lines.
+
+**P5 is now RUN.** The status line at the top of this note still says "NOT VALIDATED on the S25". That line is left as written, because the record is append-only; this addendum supersedes it for P5.
+
+| S25 run | A1 ratio | n=64 | n=256 | n=1024 | n=4096 | n=4096 cand/base GF/s |
+|---|---|---|---|---|---|---|
+| 1 | 0.980x | 0.59x LOSS | 4.70x | 8.89x | 30.71x | 96.0% |
+| 2 | 0.945x | 0.60x LOSS | 5.27x | 9.92x | 17.78x | 55.6% |
+| 3 | 0.993x | 0.63x LOSS | 5.12x | 11.69x | 31.37x | 98.0% |
+
+**Verdicts on the S25:**
+- **P1:** CONFIRMED (run 1 prints it; the op count does not depend on the machine).
+- **P2:** REFUTED in all 3 runs (8.89x, 9.92x, 11.69x against the registered < 8.0x). Run 1 was the narrowest miss of any run on any machine.
+- **P3:** REFUTED in all 3, with the loss at n=64 each time.
+- **P4:** REFUTED in all 3. For run 1 this is the printed verdict. For runs 2 and 3 the P4 line was filtered out of the paste, so the verdict comes from their cand/base column (55.6% and 98.0% against the < 40% line).
+
+**P7 is answered:** the n=64 loss survives on aarch64.
+
+**Observed, not explained.**
+- **Run-to-run spread is much larger on the phone.** At n=4096 the speedup went 30.71x, then 17.78x, then 31.37x.
+- **Run 3's absolute throughput fell to roughly half.** Dense dropped from 46.60–48.14 GF/s at n=1024 in runs 1–2 to 21.39 in run 3, and from 47.07–47.89 at n=4096 to 16.39.
+- **Possible causes:** thermal throttling, or scheduler migration between performance and efficiency cores. Neither was measured; no temperature or core affinity was recorded. On this device, a single "X times faster" number is an even thinner sample of the surface than in a container.
+
+**C-DEVICE / C-INDEP:** the owner ran it on his own device, and Claude wrote the tool. That is a device result, not independent replication.
+
+**New door, P9.** Repeat the S25 sweep with the CPU temperature logged and the process pinned to one core cluster, and see whether the spread collapses.
