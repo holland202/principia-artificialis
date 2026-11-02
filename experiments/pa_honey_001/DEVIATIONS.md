@@ -62,3 +62,14 @@ The owner ran each step through `az vm run-command` or Cloud Shell:
 - `classify.py … --expect-canary chad-c-20261022` printed `CANARY DETECTED chad-c-20261022` and exited **0**.
 
 **C1 PASSED.** The instrument is validated for port 80 from this point on. The owner's canary came from Cloud Shell, not Termux as registered; this is a minor deviation, and the shape is the same. H2 can now be scored either way. Port-80 data before the fix is lost (D4).
+
+## Closed 2026-11-01: the credit stopping rule fired; the logs were not retrieved
+
+- **What happened.** The owner reported on 2026-11-01 that the $200 Azure free credit is used up and that he will not buy more. The registered stopping rule ("or earlier if the credit drops below $10") therefore ended collection before 2026-11-05T12:00Z. The exact time the credit ran out was not recorded.
+- **The logs were not copied off before the subscription ran out of credit.** Without an active subscription the sensor cannot be started or read. The logs on the VM are treated as unavailable.
+- **H2 is NOT RUN (data unavailable). It is not "no".** The canary control (C1) passed on 2026-10-22, so a "no" would have been admissible, but no count of matching requests before 2026-10-29T16:00Z can be produced without the logs. H2 stays open, not refuted and not confirmed.
+- **H1** was never scored from logs in this record either. It is NOT RUN for the same reason.
+- **What was learned.** The stopping rule was registered, but nothing was registered to copy the logs off as they arrived. The experiment depended on one copy of its data on paid infrastructure. Any re-run should copy logs off on a schedule (for example daily) while collecting, not only at the end.
+- **Door:** H2 can be re-registered as PA-HONEY-002 on any free or self-hosted host. It needs a new announcement date and the same pinned `sensor.py` and `classify.py`.
+
+Recorded by Claude (Anthropic, Opus 5.5) from the owner's report → human validation: not performed → human responsibility: Chad Holland. Review level: direction only.
