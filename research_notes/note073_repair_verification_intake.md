@@ -41,7 +41,9 @@ This note links to that evidence and copies none of it. Implementation, tests, r
 
 A repair can make the existing tests pass without removing the defect. Telling the two apart needs evidence the
 existing suite cannot give: at least (a) the original failure still reproducing on the unfixed code, and (b) an arm
-with the fix removed that fails again under the same instrument. This note asks how often AI-assisted repair and
+with the fix removed that fails again under the same instrument. Those two establish that the instrument is
+sensitive to the known failure, not that the repaired implementation is correct in general: that needs evaluation
+against an independently specified property or oracle. This note asks how often AI-assisted repair and
 verification, as practised in this estate, would mistake the first kind of repair for the second (AVF-001 below).
 The claim is precisely wrong if, on a registered set of repairs, "existing suite passes" and "defect removed by the
 stronger criterion" never disagree.
@@ -63,7 +65,7 @@ stronger criterion" never disagree.
 |---|---|---|---|
 | SEC-004 registered | Race between a holder's token check and its write, in `FileReservations` | — | `docs/SEC004_PREREG.md` |
 | SEC-004 run, 2026-10-11 | `SECURITY_FAIL`: the stale completion replaced the fresh reservation (P2 held) | SELF-TESTED (CI) | `docs/SEC004_RESULTS.md`, PR #76 |
-| Existing test suite on unfixed code | 10 of 12 `test` matrix legs passed on `7e40c12` while the race was present; 2 macOS legs never got a runner | CI | PR #76 checks |
+| Existing test suite on unfixed code | On `7e40c12`, with the race present, the 10 `test` matrix legs that ran all passed. The other 2 (macOS, Python 3.12 and 3.14) were cancelled before running because no runner was assigned, so they give no result either way | CI | PR #76 checks |
 | Re-run on unfixed code, 2026-11-02 and 2026-11-03 | `SECURITY_FAIL` again at `7e40c12` (the 2026-11-03 re-run was a check and was not saved to a file) | SELF-TESTED | `results/sec005/run1/sec004_baseline_7e40c12.txt` |
 | SEC-005 registered before any code | Per-key OS lock across reserve, move and release | — | `docs/SEC005_PREREG.md` (`31d667d`) |
 | SEC-005 run | `FIXED_IN_TESTED_SCHEDULES`, 6 of 6 as registered. The same run's no-lock arm reproduces the overwrite; `--sabotage` flips the verdict | SELF-TESTED | `docs/SEC005_RESULTS.md`, PR #98 |
@@ -72,8 +74,10 @@ stronger criterion" never disagree.
 | Independent challenge | Not yet designed or run. ChatGPT is to design the first one | NOT RUN | — |
 
 What the case shows: in this one case, neither the existing test suite nor the old probe could confirm the fix.
-The suite passed with the race present (PR #76), and the old probe refused to run on the changed code. Confirmation needed a new instrument that reuses the
-old schedule and keeps an arm that still fails without the fix. What it does not show: that the fix is correct
+The suite passed on every leg that ran (10 of 10; 2 legs never ran) with the race present (PR #76), and the old probe refused to run on the changed code. Confirming the fix against the known failure needed a new instrument that reuses the
+old schedule and keeps an arm that still fails without the fix. That new instrument, together with the old-code
+reproduction, shows the test is sensitive to the known failure. It does not show the repaired implementation is
+correct in general, which needs evaluation against an independently specified property or oracle. What it does not show: that the fix is correct
 outside the forced schedules, on Android, on network filesystems, or under independent attack. A Windows
 error-handling issue in the lock loop has been identified from reading the source and is not reproduced.
 
