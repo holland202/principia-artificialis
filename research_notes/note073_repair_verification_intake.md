@@ -150,3 +150,15 @@ None. No experiment exists for this note. The case study's code is in Sovereign 
 *Provenance (M13): Claude (Anthropic, Opus 5.5) checked the sources and drafted this note → human validation: not
 performed → human editing/curation: direction by Chad Edward Holland, 2026-11-03 → human responsibility: Chad Edward
 Holland. Review level: direction only.*
+
+## Intake addendum, 2026-11-04 (appended; the text above is unchanged)
+
+Source surfaced by ChatGPT's 2026-11-04 research scan; checked by Claude (Anthropic, Opus 5.5) against its page the
+same day.
+
+| Work | Verified | What it reports | Licence | Bearing on AVF-001 |
+|---|---|---|---|---|
+| Gonzalez, Jagannath, Rajani, Habib (Collinear AI), *CWE-bench v2: More coverage, quality, and transparency*, Hugging Face blog, 2026-11-03 | Yes (blog page) | 100 public security-repair tasks covering 91 CWEs, each a Docker/Harbor task with a deterministic programmatic verifier. Per task the authors state they checked that the starter code fails, the reference fix passes, existing functionality still works, and that verifiers should fail the memorised upstream patch. A held-out set is kept at cwebench.com (evaluation on request). Reported: 11 models; best pass@1 67.8% | Dataset gated; licence not stated on the blog page, not checked on the dataset page | Direct: a public set of repairs with independent oracles and the negative controls AVF-001 asks for (unfixed code must fail, fix must pass, a known patch must not be what is graded) |
+
+The reported scores are the authors' and were not reproduced. Running any task needs the gated dataset's terms
+accepted first.
