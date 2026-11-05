@@ -29,9 +29,14 @@ def junk_score(X):                       # deliberately meaningless
     return X[:, ::3].var(axis=1)
 
 def auc(s0, s1):
-    """P(score of class1 > class0), tie-corrected."""
+    """P(score of class1 > class0), tie-corrected (ties count one half).
+
+    Correction 2026-11-05 (issue #109): this used argsort(argsort(.)), which breaks ties by position, so an
+    all-tied input gave 1.0 instead of 0.5. It now uses average ranks. Every score in this script's benchmarks
+    is distinct, so the printed numbers are unchanged."""
     allv = np.concatenate([s0, s1])
-    r = np.argsort(np.argsort(allv)) + 1
+    _, inv, cnt = np.unique(allv, return_inverse=True, return_counts=True)
+    r = (np.cumsum(cnt) - (cnt - 1) / 2)[inv]          # average (mid) ranks, 1-based
     r1 = r[len(s0):]
     return (r1.sum() - len(s1)*(len(s1)+1)/2) / (len(s0)*len(s1))
 
