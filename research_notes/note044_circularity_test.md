@@ -14,6 +14,10 @@ The informative quantity is **edge retention under mechanism transfer**:
 (AUC − 0.5) on a benchmark whose failures arise from a *different*
 mechanism, divided by (AUC − 0.5) on the self-benchmark.
 
+> **Correction, 2026-11-05** (see [Corrections](#corrections-2026-11-05)): "any functional" is too broad. The
+> claim holds for a functional *the benchmark was generated along*. A functional that ignores the inflated
+> coordinates stays near chance on the same benchmark. The sentence above is kept as written.
+
 ## Verified demonstration
 A deliberately junk functional (variance of every 3rd coordinate):
 - **Self-generated benchmark: AUC 0.984.** (C1 registered ≥ 0.99 —
@@ -42,6 +46,23 @@ needs before AUC > 0.99 means anything. The repo's own norms
   survive an adversary.
 
 *Reference code: `scripts/note044_reference.py`.*
+
+## Corrections (2026-11-05)
+
+Appended. The claim, results and doors above are unchanged. Both points were raised by GitHub Copilot (chat on
+github.com, 2026-11-04, model not recorded) at Chad Holland's request, and checked by Claude (Anthropic, Opus
+5.5), who also wrote this note, so the checks are not independent of the note's author.
+
+1. **The claim needs its condition** ([issue #108](https://github.com/holland202/principia-artificialis/issues/108)).
+   "Expected for any functional" should read "expected for any functional the benchmark was generated along".
+   The reference script already registered that condition (its docstring: "a synthetic benchmark generated to
+   differ along its own axis"); this note's one-line claim dropped it. Check, five seeds including 23, same
+   benchmark: a functional reading an untouched coordinate gave AUC 0.477–0.539, while `junk_score` gave
+   0.975–0.986. C1–C3 are unaffected.
+2. **The AUC helper's tie handling** ([issue #109](https://github.com/holland202/principia-artificialis/issues/109)).
+   `auc()` said "tie-corrected" but ranked ties by position (an all-tied input gave 1.0, not 0.5). It now uses
+   average ranks. Every score in this note's benchmarks is distinct, so the script's printed output is
+   byte-identical before and after the change (0.984 / 0.510 / 2%; C1 False, C2 True, C3 True).
 
 ---
 *Number collision: #044 is also claimed by [[044_resonance_codex]]. Displayed, not resolved.*
