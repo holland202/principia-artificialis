@@ -282,3 +282,63 @@ known.
 no Python file is recorded as unavailable with the reason and is NOT replaced.
 Replacing a dead entry with a live one after seeing the others' results is a
 selection channel and is therefore closed in advance. The pool can only shrink.
+
+---
+
+## Amendment 2 — 2026-11-07. Procedure for running P6/P8, fixed before any pool repository is cloned.
+
+Amendment 1 was registered on 2026-09-06 and never run. This amendment changes nothing it registered: the pool, the
+predictions, the 5-point threshold, the stratum rule, the exclusions and the no-replacement rule all stand. It
+only fixes how the run is carried out, in places Amendment 1 left open.
+
+**Why now, and what changed since.** The sandbox could not reach GitHub in September; public repositories can now
+be cloned. Amendment 1's registration is the one being run. A mechanical sampler would be better, but switching
+frames now would quietly replace a registered pool, so it is a separate door (P10 below).
+
+**Instrument.** `vacuity_lint.py` at `a468d2c7005f26a45a985a792fc12bfcf07dc81b`, file sha256 beginning
+`7a5b8d100457128f`. Its selftest reported `20/20 checks passed` on 2026-11-07 (container, Python 3.13.18).
+The driver refuses to scan unless the hash matches and the selftest prints 20/20. Later versions of the tool
+fixed false-positive classes (VLFP001–003). They are not used, because Amendment 1 pinned this commit.
+
+**Driver.** `experiments/note052_p6/run_p6.py`, committed with this amendment, before any clone. Each repository
+is cloned shallow at its default branch, and the head SHA and date are recorded. Exclusions are applied by copying
+the tree without `examples/` directories and `conftest.py` files, then running the pinned linter on the copy.
+"Verification-shaped entry points" is the linter's own `verification-shaped` count.
+
+**Hand-check rules, fixed before any finding is seen.** A finding is **TP** only if both hold:
+1. the file is meant to be run as a check or test by its authors (its name, docstring, or how the project invokes
+   it says so); and
+2. reading the file and anything it imports from the same repository, no input makes the check report failure
+   through a nonzero exit, a raised exception, or a pytest/unittest failure.
+
+It is **FP** if the file is not a check (a library module, demo, benchmark, build or docs script), or if a fail
+path exists that the linter does not see (for example `unittest.main()`, a fixture or helper that raises, or
+`sys.exit(main())`). Each verdict carries a one-line reason.
+
+**Blinding, partial.** Findings are shuffled (seed 52) and listed by ID and file path only. Strata are computed
+during the scan, written to `strata.json`, and not read until every finding has a verdict. File paths and contents
+can still reveal which project a file comes from, so this blinds the stratum label, not the project.
+
+**Anti-vacuity control.** In the same environment, a planted Type A file (`verify_output.py`, prints PASS/FAIL,
+no fail path) must be flagged, and a clean copy must give no findings. Run before registering: PASS.
+
+**Scoring.** As registered. P6 holds if stratum B's TP rate per verification-shaped entry point exceeds A's by at
+least 5 points. P8 holds if 1.2 < density(B) < density(A). If either stratum has fewer than 3 repositories, both
+are reported as underpowered and no rate claim is made. Any interval or test beyond that is labelled exploratory
+and cannot change a verdict.
+
+**Pre-mortem: how this could mislead.**
+- The pool was picked by memory, and frame 2 is a guess. A large gap could come from which projects were picked,
+  not from CI.
+- The heads are 2026 code. "Human-authored" in Amendment 1 meant the projects, not each line; recent commits may
+  be AI-assisted. Head dates are recorded so this can be checked.
+- One AI does the hand-check. It is blinded to stratum only, and is not independent.
+- Counts are small. Strata of 3–10 repositories cannot support a general claim either way.
+- `.github/workflows` is the registered definition of CI. A project using another CI service lands in B.
+
+**P10 — unrun, the door.** The same predictions on a mechanically drawn sample from the GitHub search API: Python
+repositories with a fixed star band and a fixed push window, drawn before stratum is known. Registered as a door
+only.
+
+Provenance (M13): Amendment 2 and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed →
+human direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
