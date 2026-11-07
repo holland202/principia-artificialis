@@ -2,7 +2,7 @@
 
 **All starter tasks are optional examples, not an approved-subject list.** Researchers may propose an original topic, develop independent exploratory work in a fork, and open an issue or PR immediately without seeking permission or an assignment. These bounded, unassigned leads are **not** assertions that any defect still exists or authorizations for official PA scientific execution. Check current sources and [open starter issues](https://github.com/holland202/principia-artificialis/issues?q=is%3Aissue+is%3Aopen+PA-ENTRY) if choosing one of these examples.
 
-**How these relate to the [challenge menu](challenges/entry/README.md):** the menu's PA-C1–PA-C6 are open challenge *categories*; each PA-ENTRY item below is one pre-scoped *instance* (PA-ENTRY-01 is a PA-C1-style task, PA-ENTRY-02 a PA-C2-style task). Either route is valid.
+**How these relate to the [challenge menu](challenges/entry/README.md):** the menu's PA-C1–PA-C8 are open challenge *categories*; each PA-ENTRY item below is one pre-scoped *instance* (PA-ENTRY-01 is a PA-C1-style task, PA-ENTRY-02 a PA-C2-style task). Either route is valid.
 
 A good starter task has a precise source, one question, a concrete evidence deliverable and a stopping point. Estimated effort is a planning aid, not observed performance.
 
@@ -12,6 +12,7 @@ A good starter task has a precise source, one question, a concrete evidence deli
 | PA-ENTRY-02 | Trace one potentially vacuous verification gate | 30–90 minutes | Proposed admissible counterexample and whether it was tested |
 | PA-ENTRY-03 | Check one paper attribution in exploratory notes | 30–90 minutes | Exact cited passage, original reference and bounded correction |
 | PA-ENTRY-04 | Challenge one assumption in the Circularity Test | 1–3 hours | One precise mathematical critique or counterexample |
+| PA-ENTRY-05 | Try to slip one wrong number past `check_numbers.py` (the Liar's Note) | 30 minutes – 3 hours | A registered entry and the judge's full output |
 
 ## PA-ENTRY-01 — one number, not a census
 
@@ -52,6 +53,16 @@ A good starter task has a precise source, one question, a concrete evidence deli
 **Deliverable:** One short derivation or counterexample with assumptions, source location, and limits. An unexecuted proposed test must be labeled NOT RUN.
 
 **Stop:** One claim, without rewriting the original finding.
+
+## PA-ENTRY-05 — the Liar's Note (PA-C8)
+
+**Sources:** [check_numbers.py](scripts/check_numbers.py), the [Liar's Note judge and rules](challenges/redteam/liars_note/README.md).
+
+**Question:** Can a note's prose report a number its output does not support, while `check_numbers.py` reports it FOUND?
+
+**Deliverable:** The mechanism you registered, your three entry files and the judge's full output. If the checker held, report that and what you tried.
+
+**Stop:** Synthetic entries only. Do not edit real notes. A stated limit (a number matched anywhere in the output; integers and one- or two-digit decimals skipped) is not a new mechanism.
 
 ## Explicitly gated: EGRR
 

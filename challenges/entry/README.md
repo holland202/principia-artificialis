@@ -6,7 +6,7 @@ Pick one challenge, then open an [entry-challenge issue](../../.github/ISSUE_TEM
 your claim and falsifier **before** you run anything. One accepted, reproduced challenge is the evidence for
 [Contributor Trust Path](../../CONTRIBUTOR_TRUST_PATH.md) Stage 1 (that policy is still a proposal; its status is the owner's decision).
 
-Pre-scoped instances of these categories, with open issues, are listed in [RESEARCH_OPPORTUNITIES.md](../../RESEARCH_OPPORTUNITIES.md) as PA-ENTRY-01–04.
+Pre-scoped instances of these categories, with open issues, are listed in [RESEARCH_OPPORTUNITIES.md](../../RESEARCH_OPPORTUNITIES.md) as PA-ENTRY-01–05. *(Superseded, kept verbatim: "as PA-ENTRY-01–04.")*
 
 **The deal:** you do one checkable piece of work. We reproduce it, and if you consent, we credit you publicly in your own
 words. It is unpaid and there is no automatic access. Negative and null results count fully.
@@ -26,6 +26,8 @@ None of these items asserts that a defect currently exists. Check the source at 
 | PA-C4 | **Walk through a door.** Pick one note's open, unrun prediction. Register it in your issue, then run it in your own environment and report it whichever way it comes out (M2, M15). This is not an official PA study unless authorized through WORKFLOW W2. | 3–10 h | open |
 | PA-C5 | **Break the governance suite.** Run `python sovereign_core/test_sovereign.py`. Find a change to the governance engine that the suite does not catch (a surviving mutant), or show that each guard is load-bearing. | 2–6 h | open |
 | PA-C6 | **Sealed items.** Posted here once the owner seals them; see [SEALED.md](SEALED.md). | varies | sealed |
+| PA-C7 | **Red-team the instruments.** Make one of the repo's checkers give a wrong verdict: a false pass on an input that breaks its rule, or a false fail on an honest one. Targets, baseline and rules of engagement: [challenges/redteam/README.md](../redteam/README.md). Added 2026-11-06. | 2–6 h | open |
+| PA-C8 | **The Liar's Note.** Get a wrong number past the number checker. A judge script tells you whether you won, and new mechanisms go on a public board. Start at [challenges/redteam/liars_note/README.md](../redteam/liars_note/README.md). Added 2026-11-06. | 30 min – 3 h | open |
 
 ## Other public repositories (welcome; the record lives in that repo, with a pointer here)
 
