@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Liar's Note</title>
+<style>
+  :root { --bg:#ffffff; --fg:#1b1d22; --muted:#5b616e; --line:#d7dae0; --box:#f5f6f8; --accent:#b4232a; --ok:#1f6f43; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#0f1115; --fg:#e7e9ee; --muted:#9aa1ae; --line:#2a2f3a; --box:#171a21; --accent:#ff6b6b; --ok:#5fd39a; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+  main { max-width:980px; margin:0 auto; padding:24px 16px 48px; }
+  h1 { margin:0 0 4px; font-size:1.8rem; }
+  .lede { color:var(--muted); margin:0 0 20px; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .row { display:grid; grid-template-columns:110px 1fr 1fr; gap:16px; margin-top:16px; }
+  @media (max-width:700px) { .grid, .row { grid-template-columns:1fr; } }
+  label { display:block; font-weight:600; font-size:.9rem; margin-bottom:6px; }
+  textarea, input { width:100%; background:var(--box); color:var(--fg); border:1px solid var(--line); border-radius:8px; padding:10px; font:14px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  textarea { min-height:140px; resize:vertical; }
+  button { margin-top:16px; background:var(--accent); color:#fff; border:0; border-radius:8px; padding:10px 18px; font-weight:600; font-size:1rem; cursor:pointer; }
+  button.secondary { background:transparent; color:var(--fg); border:1px solid var(--line); }
+  button:disabled { opacity:.5; cursor:wait; }
+  pre { white-space:pre-wrap; background:var(--box); border:1px solid var(--line); border-radius:8px; padding:12px; min-height:3em; font:14px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+  .win { border-color:var(--ok); }
+  .status { color:var(--muted); font-size:.9rem; }
+  a { color:inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>The Liar's Note</h1>
+  <p class="lede">Get a wrong number past the number checker. Principia Artificialis has one rule it treats as law: every number in a
+  research note must match what its code printed. <code>check_numbers.py</code> enforces it. Write a note whose number the output
+  does not support, and get the checker to report it FOUND. Correct rounding and coincidences (another printed number that rounds to
+  yours) are not wins. No defect is asserted.
+  <a href="https://github.com/holland202/principia-artificialis/tree/main/challenges/redteam/liars_note">Rules, board and how to submit</a>.</p>
+
+  <div class="grid">
+    <div><label for="note">note.md: the prose</label>
+      <textarea id="note" maxlength="20000">On the held-out set the classifier reached an AUC of 0.984.
+</textarea></div>
+    <div><label for="out">output.txt: what the script printed</label>
+      <textarea id="out" maxlength="20000">held-out AUC 0.984217
+</textarea></div>
+  </div>
+  <div class="row">
+    <div><label for="line">line</label><input id="line" type="number" min="1" value="1"></div>
+    <div><label for="prose">prose: the number as written in the note</label><input id="prose" value="0.984" maxlength="200"></div>
+    <div><label for="true">true: the value it should report, as printed</label><input id="true" value="0.984217" maxlength="200"></div>
+  </div>
+  <button id="go" disabled>Judge it</button>
+  <button id="st" class="secondary" disabled>Run the judge's self-test</button>
+  <p class="status" id="status">Loading Python in your browser (Pyodide). The first load takes a few seconds.</p>
+  <pre id="verdict" aria-live="polite"></pre>
+  <p class="status">Everything runs in your browser: the unmodified <code>check_numbers.py</code> and <code>judge.py</code> from the
+  repository, in Python compiled to WebAssembly. Nothing you type is sent anywhere or run as code. A win counts once a maintainer
+  reproduces it from a clone with ordinary Python.</p>
+</main>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.28.3/full/pyodide.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+let py = null;
+async function boot() {
+  try {
+    py = await loadPyodide();
+    py.FS.mkdirTree("/app");
+    for (const f of ["check_numbers.py", "judge.py"]) {
+      const r = await fetch(f, { cache: "no-cache" });
+      if (!r.ok) throw new Error("could not load " + f);
+      py.FS.writeFile("/app/" + f, await r.text());
+    }
+    py.runPython(`
+import sys, io, json, hashlib, contextlib
+sys.path.insert(0, "/app")
+import judge
+CHECKER = hashlib.sha256(open("/app/check_numbers.py", "rb").read()).hexdigest()[:16]
+def run(note, out, line, prose, true):
+    try:
+        win, verdict, _ = judge.judge(note, out, {"line": int(line), "prose": prose.strip(), "true": true.strip()})
+    except Exception as e:
+        return json.dumps({"win": False, "text": f"BAD ENTRY: {type(e).__name__}: {e}"})
+    return json.dumps({"win": win, "text": verdict + "\\n\\nchecker: check_numbers.py sha256 " + CHECKER})
+def selftest():
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        ok = judge.selftest()
+    return buf.getvalue() + ("" if ok else "\\nSELF-TEST FAILED: do not trust these verdicts.")
+`);
+    $("go").disabled = false; $("st").disabled = false;
+    $("status").textContent = "Ready. Python " + py.runPython("import sys; sys.version.split()[0]") + " in your browser.";
+  } catch (e) {
+    $("status").textContent = "Could not start: " + e.message;
+  }
+}
+$("go").onclick = () => {
+  const res = JSON.parse(py.globals.get("run")($("note").value, $("out").value, $("line").value || "0", $("prose").value, $("true").value));
+  const v = $("verdict");
+  v.textContent = (res.win ? "WIN. " : "") + res.text +
+    (res.win ? "\n\nReproduce it from a clone, then submit it: open an entry-challenge issue with challenge ID PA-C8." : "");
+  v.className = res.win ? "win" : "";
+};
+$("st").onclick = () => { $("verdict").className = ""; $("verdict").textContent = py.globals.get("selftest")(); };
+boot();
+</script>
+</body>
+</html>
