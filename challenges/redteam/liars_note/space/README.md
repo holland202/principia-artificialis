@@ -3,9 +3,8 @@ title: The Liar's Note
 emoji: 🤥
 colorFrom: gray
 colorTo: red
-sdk: gradio
-sdk_version: 6.30.0
-app_file: app.py
+sdk: static
+app_file: index.html
 pinned: false
 license: mit
 short_description: Get a wrong number past a research number checker.
@@ -26,7 +25,8 @@ Paste a note, the output it should match, and which number is the lie. The judge
 reports that number FOUND while exact decimal arithmetic says the output does not support it. Correct rounding and
 coincidences do not count.
 
-- **Nothing you paste is run.** The judge reads text with regular expressions and decimal arithmetic.
+- **It runs in your browser.** The unmodified Python files run in Pyodide (Python compiled to WebAssembly), loaded from jsDelivr
+  at a pinned version. Nothing you paste is sent anywhere or run as code.
 - **Rules, the board and how to submit:**
   [challenges/redteam/liars_note](https://github.com/holland202/principia-artificialis/tree/main/challenges/redteam/liars_note).
   A win counts once a maintainer reproduces it from a clone.
@@ -36,6 +36,11 @@ coincidences do not count.
 
 `check_numbers.py` and `judge.py` are unmodified copies from the repository, pinned in `MANIFEST.sha256`. The
 repository's `scripts/check_space_copies.py` fails if they drift from the originals.
+
+## History
+
+- 2026-11-07: first built as a Gradio app. Gradio Spaces on free hardware now need a PRO subscription, so it was rebuilt as a
+  static Space running the same files in the browser. In a test, Pyodide gave the same verdicts as CPython.
 
 ## Provenance
 
