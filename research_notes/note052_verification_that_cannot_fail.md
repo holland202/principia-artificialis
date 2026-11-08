@@ -342,3 +342,60 @@ only.
 
 Provenance (M13): Amendment 2 and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed →
 human direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 2 results — 2026-11-07. P6 and P8: UNDERPOWERED. The registered design cannot test the question.
+
+Raw files: `experiments/note052_p6/results_2026-11-07/` (clone log with head SHAs and dates, scan, strata,
+blinded hand-check sheet and key, score). Container, Python 3.13.18. NOT VALIDATED on the S25.
+
+### What went wrong, first
+
+1. **The no-CI frame was wrong.** Of the 19 repositories that could be cloned, **18 have `.github/workflows`**.
+   Only `bslatkin/effectivepython` landed in stratum B. Every frame-2 repository but that one moved to stratum A, as
+   Amendment 1's rule required. Stratum B has 1 repository, under the registered minimum of 3, so **P6 and P8 are
+   UNDERPOWERED and no rate claim is made.** The pre-mortem named this risk ("frame 2 is a guess"); it is what
+   happened.
+2. **One pool entry was unavailable.** `kennethreitz/pipenv-old` could not be cloned (the URL asks for credentials,
+   which GitHub does for a repository that does not exist or is private). Recorded and not replaced, as registered.
+3. **The pinned instrument's precision on outside code is poor.** 17 of 18 findings were false positives:
+   generated tests the linter cannot see (pytest attributes from `generate_*` helpers; unittest tests built by
+   `load_fixtures`), config fixtures named `test_cfg*.py`, library modules, a report generator, and a script that
+   fails through a library call that raises. Later versions of the tool address some of these classes; they were
+   not used, because the commit was pinned.
+
+### Observations (descriptive only; no stratum comparison)
+
+| | Stratum A (CI) | Stratum B (no CI) |
+|---|---|---|
+| repositories | 18 | 1 |
+| verification-shaped entry points | 596 | 15 |
+| findings | 18 | 0 |
+| true positives after hand-check | 1 | 0 |
+| density (entry points per repository) | 33.1 | 15.0 |
+
+- The one true positive: `celery/celery` `t/unit/bin/test_multi.py` at head `768e476b`, a 0-byte test module. A
+  test file with no tests cannot report a failure.
+- Across all 19 repositories: 1 true positive in 611 verification-shaped entry points (0.16%).
+- Anti-vacuity control, rerun after the scan with the same pinned instrument: the planted file was flagged and the
+  clean copy gave no findings (PASS).
+
+### What this does and does not say
+
+- It says that **a hand-picked pool of well-known Python projects cannot supply a no-CI stratum in 2026**: CI
+  through GitHub Actions is close to universal among them. The registered design is the problem, not the question.
+- It does **not** say anything about whether CI reduces vacuous checks. With one stratum-B repository, there is no
+  comparison.
+- The 17-of-18 false-positive rate applies to the pinned instrument on mature outside projects. It is not a
+  measurement of the current tool.
+
+### The door: P10, now runnable
+
+GitHub's search API is reachable from this environment (checked 2026-11-07), so P10 can be registered concretely:
+a mechanically drawn sample from fixed search criteria, with the no-CI stratum filled by measurement, not by
+recall. It needs its own registration before any repository is drawn.
+
+Provenance (M13): run, hand-check and write-up by Claude (Anthropic, Opus 5.5); the hand-check was blinded to
+stratum, not to project → human validation: not performed → human direction: Chad Holland, 2026-11-07 → human
+responsibility: Chad Holland. Review level: direction only.

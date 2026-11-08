@@ -1,0 +1,139 @@
+{
+ "P6": "UNDERPOWERED",
+ "P8": "UNDERPOWERED",
+ "per_repo": {
+  "amoffat/sh": {
+   "findings": 0,
+   "shaped": 1,
+   "stratum": "A",
+   "tp": 0
+  },
+  "benoitc/gunicorn": {
+   "findings": 4,
+   "shaped": 112,
+   "stratum": "A",
+   "tp": 0
+  },
+  "bslatkin/effectivepython": {
+   "findings": 0,
+   "shaped": 15,
+   "stratum": "B",
+   "tp": 0
+  },
+  "celery/celery": {
+   "findings": 2,
+   "shaped": 181,
+   "stratum": "A",
+   "tp": 1
+  },
+  "dbader/schedule": {
+   "findings": 0,
+   "shaped": 1,
+   "stratum": "A",
+   "tp": 0
+  },
+  "gruns/furl": {
+   "findings": 0,
+   "shaped": 2,
+   "stratum": "A",
+   "tp": 0
+  },
+  "jd/tenacity": {
+   "findings": 0,
+   "shaped": 6,
+   "stratum": "A",
+   "tp": 0
+  },
+  "jsvine/pdfplumber": {
+   "findings": 0,
+   "shaped": 17,
+   "stratum": "A",
+   "tp": 0
+  },
+  "kennethreitz/maya": {
+   "findings": 0,
+   "shaped": 2,
+   "stratum": "A",
+   "tp": 0
+  },
+  "kennethreitz/records": {
+   "findings": 0,
+   "shaped": 4,
+   "stratum": "A",
+   "tp": 0
+  },
+  "lepture/mistune": {
+   "findings": 4,
+   "shaped": 20,
+   "stratum": "A",
+   "tp": 0
+  },
+  "mitsuhiko/rye": {
+   "findings": 0,
+   "shaped": 1,
+   "stratum": "A",
+   "tp": 0
+  },
+  "mkorpela/pabot": {
+   "findings": 0,
+   "shaped": 30,
+   "stratum": "A",
+   "tp": 0
+  },
+  "pallets/click": {
+   "findings": 0,
+   "shaped": 45,
+   "stratum": "A",
+   "tp": 0
+  },
+  "pallets/jinja": {
+   "findings": 0,
+   "shaped": 24,
+   "stratum": "A",
+   "tp": 0
+  },
+  "psf/requests": {
+   "findings": 1,
+   "shaped": 10,
+   "stratum": "A",
+   "tp": 0
+  },
+  "pyca/cryptography": {
+   "findings": 7,
+   "shaped": 95,
+   "stratum": "A",
+   "tp": 0
+  },
+  "python-attrs/attrs": {
+   "findings": 0,
+   "shaped": 26,
+   "stratum": "A",
+   "tp": 0
+  },
+  "tqdm/tqdm": {
+   "findings": 0,
+   "shaped": 19,
+   "stratum": "A",
+   "tp": 0
+  }
+ },
+ "strata": {
+  "A": {
+   "density": 33.111111111111114,
+   "findings": 18,
+   "rate": 0.0016778523489932886,
+   "repos": 18,
+   "shaped": 596,
+   "tp": 1
+  },
+  "B": {
+   "density": 15.0,
+   "findings": 0,
+   "rate": 0.0,
+   "repos": 1,
+   "shaped": 15,
+   "tp": 0
+  }
+ },
+ "underpowered": true
+}
