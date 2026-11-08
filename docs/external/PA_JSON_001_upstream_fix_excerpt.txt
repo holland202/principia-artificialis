@@ -1,0 +1,5 @@
+Be sure to do floating-point to text conversions in JSON to the full
+17-digits.
+
+-      jsonPrintf(100, p, "%!0.15g", sqlite3_value_double(pValue));
++      jsonPrintf(100, p, "%!0.17g", sqlite3_value_double(pValue));

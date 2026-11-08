@@ -12,6 +12,12 @@ any knowledge of the research. All you need is Python 3.
 
 ## Play
 
+**In your browser, nothing to install:** [huggingface.co/spaces/holland202/liars-note](https://huggingface.co/spaces/holland202/liars-note).
+It runs the same `check_numbers.py` and `judge.py` (copies pinned in `space/MANIFEST.sha256`) in Pyodide. A win found
+there still counts only once it is reproduced from a clone, as below.
+
+**From a clone:**
+
 ```
 git clone https://github.com/holland202/principia-artificialis
 cd principia-artificialis

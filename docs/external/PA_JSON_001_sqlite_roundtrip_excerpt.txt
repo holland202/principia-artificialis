@@ -1,0 +1,1 @@
+Rounding to 15 significant digits or less can often gives this exact round-trip result, but not always.

@@ -1,0 +1,13 @@
+{
+  "positive": 8144,
+  "normal": 16377,
+  "noninteger_valued": 8633,
+  "sqlite_numeric_loss": 15384,
+  "integer_valued": 7751,
+  "negative": 8240,
+  "sqlite_numeric_preserved": 1000,
+  "subnormal": 7,
+  "cases": 16384,
+  "distinct_bit_patterns": 16384,
+  "distinct_exponent_fields": 2046
+}
