@@ -399,3 +399,66 @@ recall. It needs its own registration before any repository is drawn.
 Provenance (M13): run, hand-check and write-up by Claude (Anthropic, Opus 5.5); the hand-check was blinded to
 stratum, not to project → human validation: not performed → human direction: Chad Holland, 2026-11-07 → human
 responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 3 — 2026-11-07. P10 registered: a mechanically drawn sample. Nothing drawn yet.
+
+Amendment 2 showed that hand-picking cannot produce a no-CI stratum. P10 draws the sample by a fixed procedure, and
+pins each repository to code written before AI coding assistants were common, so "human-authored" means something.
+
+**Question.** Among small public Python repositories, as they stood before 2022-12-01, are checks that cannot fail
+more common in repositories without CI?
+
+**Sampling (driver: `experiments/note052_p6/run_p10.py`, committed with this amendment).**
+- Query: `language:python stars:20..300 fork:false archived:false size:<100000 created:<month window>`, one
+  calendar-month window from 2017-01 to 2021-12.
+- Order: seed 1010 picks a window, then a result page (1 to 10, within the result count), then one item. Repeats
+  and repositories owned by holland202 are skipped. Up to 400 draws; the candidate list is written to
+  `sample.json` and committed **before** any clone.
+- Eligibility, in candidate order, until 80 are eligible: it clones; it has a commit before 2022-12-01; the
+  pinned tree contains a Python file. Ineligible candidates are recorded with the reason. Eligibility never looks
+  at findings.
+- Pin: the last commit on the default branch before 2022-12-01. GitHub Copilot was public from mid-2021, so
+  "before AI assistance" is approximate, not guaranteed.
+
+**Strata, measured at the pinned commit.**
+- **Primary (decides):** A = has CI configuration: `.github/workflows/*.yml|yaml`, `.travis.yml`, `.gitlab-ci.yml`,
+  `azure-pipelines.yml`, `appveyor.yml`, `.appveyor.yml` or `.circleci/`. B = none of these.
+- **Secondary (reported, does not decide):** GitHub Actions only, as in Amendment 1.
+
+**Instrument.** `vacuity_lint.py` at `b8bb09e0fc30cac3305dc2db99bbce1b8dd3ac9d` (file sha256 beginning
+`a92963c69fa129db`), the current tool. Selftest 20/20 is required before scanning. Exclusions as Amendment 1:
+`examples/` and `conftest.py`.
+
+**Hand-check.** Amendment 2's TP/FP rules, unchanged, blinded to stratum the same way. If there are more than 150
+findings, a seed-1010 random 150 are checked. That limit is fixed now; the verdicts still decide repository counts.
+
+**Predictions.** The unit is the repository. A repository "has a TP" if at least one hand-checked finding in it
+is TP.
+- **P10a.** The share of no-CI repositories with a TP exceeds the share of CI repositories with a TP by at least 10
+  percentage points, and a one-sided Fisher exact test gives p < 0.05. If the gap holds but p ≥ 0.05:
+  INCONCLUSIVE. If the gap is under 10 points or reversed: REFUTED.
+- **P10b.** No-CI repositories have fewer verification-shaped entry points: lower median, and a one-sided
+  permutation test on the Mann–Whitney U gives p < 0.05 (20,000 permutations, seed 1010). Otherwise REFUTED.
+- If either stratum has fewer than 10 eligible repositories, both predictions are UNDERPOWERED.
+- The sample size and both tests are fixed now; no draws are added after the result is known (C-STAT).
+
+**Anti-vacuity.** The planted-file control with this instrument: PASS (2026-11-07, before registering).
+
+**Pre-mortem.**
+- GitHub search ranks by "best match", not at random. Random pages and items within month windows reduce this
+  but do not remove it.
+- Stars and visibility in 2026 decide who is in the population; repositories deleted since then are invisible.
+- One AI hand-checks, blind to stratum only.
+- A repository can "have CI" that never ran. Configuration presence is the measure, not CI health.
+- If no-CI repositories have very few verification-shaped files, their TP share can be low simply because there is
+  little to find. P10b reports the denominator so that reading is visible.
+
+**What either result would mean.** If P10a holds, missing CI goes with more checks that cannot fail, in code that
+predates AI assistance, which supports reading note052's estate gap as a review effect. If P10a is refuted,
+review process does not explain it in this population. Both outcomes are about software in general, not this
+estate.
+
+Provenance (M13): registration and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed →
+human direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
