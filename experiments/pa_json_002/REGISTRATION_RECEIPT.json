@@ -1,0 +1,17 @@
+{
+  "commit": "5089867192d5d42d5c0ab9a3cd1f967cb596bb9f",
+  "committed_at": "2026-11-08T00:40:20Z",
+  "tree": "3f7cdf1b0c6a612127fe71a28860b8f0a2e6a45a",
+  "parent": "936ee25f708156ec005d3356735a270633837c63",
+  "files": [
+    "docs/PA-JSON-002_PREREG.md",
+    "docs/external/PA_JSON_002_exponent_cap.txt",
+    "docs/external/PA_JSON_002_precision_excerpt.txt",
+    "experiments/pa_json_002/BUILD.json",
+    "experiments/pa_json_002/FEASIBILITY.json",
+    "experiments/pa_json_002/SOURCES.json",
+    "experiments/pa_json_002/cases.py",
+    "experiments/pa_json_002/feasibility.py"
+  ],
+  "note": "Remote registration commit was confirmed before harness creation and first candidate numeric execution."
+}
