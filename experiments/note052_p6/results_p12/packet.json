@@ -1,0 +1,246 @@
+{
+ "seed": 1212,
+ "n": 30,
+ "items": [
+  {
+   "id": "R01",
+   "linter_category": "UNPARSEABLE",
+   "repository": "csyhhu/L-OBS",
+   "path": "PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py",
+   "commit": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+   "url": "https://github.com/csyhhu/L-OBS/blob/346e67977955f34b10b0461ab4d60ef8d35dc145/PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py"
+  },
+  {
+   "id": "R02",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_40spin/train_and_test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/train_and_test_eco.py"
+  },
+  {
+   "id": "R03",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_100spin/test/test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_100spin/test/test_s2v.py"
+  },
+  {
+   "id": "R04",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_200spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/test/test_eco.py"
+  },
+  {
+   "id": "R05",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_200spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/test/test_eco.py"
+  },
+  {
+   "id": "R06",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "nasa/giant",
+   "path": "unittests/utilities/test_utilities.py",
+   "commit": "2b1ceeaf5847f2829f440b21ad3ca1977589eda4",
+   "url": "https://github.com/nasa/giant/blob/2b1ceeaf5847f2829f440b21ad3ca1977589eda4/unittests/utilities/test_utilities.py"
+  },
+  {
+   "id": "R07",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "DurhamDecLab/ARBInterp",
+   "path": "tests/test_ARBInterp.py",
+   "commit": "56d88b1fdb28f2356c738dfe9bd34d65709ed0f8",
+   "url": "https://github.com/DurhamDecLab/ARBInterp/blob/56d88b1fdb28f2356c738dfe9bd34d65709ed0f8/tests/test_ARBInterp.py"
+  },
+  {
+   "id": "R08",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_60spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_60spin/test/test_eco.py"
+  },
+  {
+   "id": "R09",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_60spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_60spin/test/test_eco.py"
+  },
+  {
+   "id": "R10",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_200spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_200spin/test/test_eco.py"
+  },
+  {
+   "id": "R11",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "shailshouryya/yt-videos-list",
+   "path": "python/tests/test_dependencies_json.py",
+   "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+   "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_dependencies_json.py"
+  },
+  {
+   "id": "R12",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "shailshouryya/yt-videos-list",
+   "path": "docs/preparing/checkAttrs.py",
+   "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+   "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/docs/preparing/checkAttrs.py"
+  },
+  {
+   "id": "R13",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_200spin/train_and_test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/train_and_test_eco.py"
+  },
+  {
+   "id": "R14",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "hezhangsprinter/DID-MDN",
+   "path": "test.py",
+   "commit": "44bb9e84ab48cba764316bebeee0b47f5fad28a1",
+   "url": "https://github.com/hezhangsprinter/DID-MDN/blob/44bb9e84ab48cba764316bebeee0b47f5fad28a1/test.py"
+  },
+  {
+   "id": "R15",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_100spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_100spin/test/test_eco.py"
+  },
+  {
+   "id": "R16",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "shailshouryya/yt-videos-list",
+   "path": "python/tests/test_dependencies_json.py",
+   "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+   "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_dependencies_json.py"
+  },
+  {
+   "id": "R17",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_200spin/train_and_test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/train_and_test_s2v.py"
+  },
+  {
+   "id": "R18",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_20spin/train_and_test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_20spin/train_and_test_eco.py"
+  },
+  {
+   "id": "R19",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "shailshouryya/yt-videos-list",
+   "path": "python/tests/test_safaridriver.py",
+   "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+   "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_safaridriver.py"
+  },
+  {
+   "id": "R20",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_200spin/test/test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_200spin/test/test_s2v.py"
+  },
+  {
+   "id": "R21",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_40spin/test/test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/test/test_s2v.py"
+  },
+  {
+   "id": "R22",
+   "linter_category": "UNPARSEABLE",
+   "repository": "xyj77/MCF-3D-CNN",
+   "path": "utils/avg_roc.py",
+   "commit": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+   "url": "https://github.com/xyj77/MCF-3D-CNN/blob/32576a5b2132d1e41146f57cee4d3228fd1ace92/utils/avg_roc.py"
+  },
+  {
+   "id": "R23",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_40spin/train_and_test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/train_and_test_s2v.py"
+  },
+  {
+   "id": "R24",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_20spin/train_and_test_s2v.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_20spin/train_and_test_s2v.py"
+  },
+  {
+   "id": "R25",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/ER_20spin/train_and_test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_20spin/train_and_test_eco.py"
+  },
+  {
+   "id": "R26",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "csyhhu/L-OBS",
+   "path": "PyTorch/ImageNet/validate-AlexNet.py",
+   "commit": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+   "url": "https://github.com/csyhhu/L-OBS/blob/346e67977955f34b10b0461ab4d60ef8d35dc145/PyTorch/ImageNet/validate-AlexNet.py"
+  },
+  {
+   "id": "R27",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "NVIDIA/Dataset_Utilities",
+   "path": "nvdu/tools/test_nvdu_visualizer.py",
+   "commit": "532b8c76e3d7946748a10af3398438b35383f157",
+   "url": "https://github.com/NVIDIA/Dataset_Utilities/blob/532b8c76e3d7946748a10af3398438b35383f157/nvdu/tools/test_nvdu_visualizer.py"
+  },
+  {
+   "id": "R28",
+   "linter_category": "NO_FAIL_PATH",
+   "repository": "shailshouryya/yt-videos-list",
+   "path": "python/tests/test_safaridriver.py",
+   "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+   "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_safaridriver.py"
+  },
+  {
+   "id": "R29",
+   "linter_category": "UNCOLLECTABLE_TEST",
+   "repository": "tomdbar/eco-dqn",
+   "path": "experiments/BA_60spin/test/test_eco.py",
+   "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+   "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_60spin/test/test_eco.py"
+  },
+  {
+   "id": "R30",
+   "linter_category": "UNPARSEABLE",
+   "repository": "xyj77/MCF-3D-CNN",
+   "path": "utils/utils.py",
+   "commit": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+   "url": "https://github.com/xyj77/MCF-3D-CNN/blob/32576a5b2132d1e41146f57cee4d3228fd1ace92/utils/utils.py"
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+$ python3 experiments/note052_p6/run_p11.py score P10RUN OUT
+{
+ "P11a": {
+  "groups": [
+   "BB",
+   "BA"
+  ],
+  "median_delta": [
+   0.0,
+   1
+  ],
+  "n": [
+   60,
+   1
+  ],
+  "share_delta_positive": [
+   0.05,
+   1.0
+  ],
+  "verdict": "UNDERPOWERED"
+ },
+ "dormant": 53,
+ "excluded": [],
+ "median_delta_by_transition": {
+  "AA": 0,
+  "AB": null,
+  "BA": 1,
+  "BB": 0.0
+ },
+ "n_measured": 80,
+ "secondary_BB_active_vs_BA": {
+  "groups": [
+   "BB with commits after pin",
+   "BA"
+  ],
+  "median_delta": [
+   0.0,
+   1
+  ],
+  "n": [
+   14,
+   1
+  ],
+  "share_delta_positive": [
+   0.21428571428571427,
+   1.0
+  ],
+  "verdict": "UNDERPOWERED"
+ },
+ "transitions": {
+  "AA": 19,
+  "AB": 0,
+  "BA": 1,
+  "BB": 60
+ },
+ "verdicts": {
+  "P11a": "UNDERPOWERED",
+  "P11b": "HELD",
+  "P11c": "HELD"
+ }
+}
+exit 0

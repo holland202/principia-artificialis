@@ -782,3 +782,87 @@ verdict correct. If ChatGPT and I share a blind spot, P12 cannot see it.
 Provenance (M13): registration and driver by Claude (Anthropic, Opus 5.5); reviewer ChatGPT (OpenAI), not yet run
 → human validation: not performed → human direction: Chad Holland, 2026-11-07 → human responsibility: Chad
 Holland. Review level: direction only.
+
+---
+
+## Amendment 5 results — 2026-11-07. P11a UNDERPOWERED: 1 of 61 repositories without CI added it in four years. P11b and P11c HELD.
+
+Raw files: `experiments/note052_p6/results_p11/` (`control.txt`, `measure.txt`, `score.txt`, plus the JSON).
+`describe.txt` was written after scoring, by `describe_p11.py`. It is descriptive and decides nothing. The
+registration was committed and pushed at `85450df` before anything ran. Container, Python 3.13.18. NOT VALIDATED
+on the S25.
+
+### What went wrong, first
+
+1. **P11a, the main prediction, cannot be tested on this sample.** Of the 61 repositories without CI at the pin,
+   one added CI by its 2026 head; 60 did not. The registered minimum was 8 per group, so P11a is UNDERPOWERED. The
+   secondary comparison is UNDERPOWERED for the same reason.
+2. **The pre-mortem's first risk is what happened.** 53 of the 80 repositories have no commit after the pin.
+   Within-repository change is too rare in this population to ask whether adding CI goes with adding checks.
+
+### Results
+
+```
+control BA: transition BA, delta 1
+control BB: transition BB, delta 0
+control: PASS
+measured 80; excluded 0
+"transitions": {"AA": 19, "AB": 0, "BA": 1, "BB": 60}
+"dormant": 53
+```
+
+| | prediction | result |
+|---|---|---|
+| control | planted BA repository gives Δ = +1, planted BB gives Δ = 0 | PASS |
+| P11a | BA gained more checks than BB | **UNDERPOWERED**: BA 1, BB 60. BB median Δ 0.0, and 5% of BB have Δ > 0 |
+| P11b | at least half have no commit after the pin | HELD: 53 of 80 |
+| P11c | at most 2 removed CI | HELD: 0 |
+| secondary | BA against BB with commits after the pin | UNDERPOWERED: 1 against 14. 21% of those 14 have Δ > 0 |
+
+Every pin, re-measured, agreed with P10's CI result and count; the driver would have stopped otherwise. No
+repository was excluded.
+
+**Descriptive, after scoring (`describe.txt`; decides nothing):**
+
+| at pin → at head | repositories | with commits after the pin | Δ > 0 | Δ < 0 | verification-shaped files, pins → heads |
+|---|---|---|---|---|---|
+| CI → CI (AA) | 19 | 12 | 2 | 2 | 199 → 239 |
+| no CI → CI (BA) | 1 | 1 | 1 | 0 | 1 → 2 |
+| no CI → no CI (BB) | 60 | 14 | 3 | 0 | 160 → 171 |
+
+The one repository that added CI is `DoubleYouC/Bethini-Pie-Performance-INI-Editor` (425 commits after the pin,
+1 → 2 verification-shaped files). Most of the growth with CI comes from two repositories: `sarartur/chess.com`
+(3 → 33) and `fabiangeisler/pyshotgrid` (1 → 14).
+
+### What this says about software in general
+
+In this sample of small public Python repositories (20–300 stars), from the last commit before December 2022 to
+the default branch as cloned on 2026-11-07:
+- **Most did not change at all.** 53 of 80 had no commit in four years.
+- **Taking up CI later was rare.** One of 61 repositories without CI adopted it. Missing CI in this population is
+  mostly a lasting state, not a stage on the way to having CI.
+- So P10b's density gap is a difference between projects, and this population cannot show it moving within a
+  project. Testing that needs a sample of repositories that are still changing.
+
+**What it does not say.** Nothing about why projects stop changing, or about repositories outside this star band
+and age. The growth figures in the descriptive table come from six repositories: two with CI throughout, the one that added
+it and three without. None of their files was hand-checked.
+
+### Door
+
+- **P14 (unrun).** The within-repository question on a population that changes: Python repositories created before
+  2022 with commits in the last year, drawn the same mechanical way, measured at a 2022 pin and at the head. It
+  needs its own registration, including a minimum count of repositories that added CI before anything is fetched.
+
+Provenance (M13): run and write-up by Claude (Anthropic, Opus 5.5) → human validation: not performed → human
+direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 6 status — 2026-11-07. P12's sample is drawn; the second review has not run.
+
+`run_p12.py draw` (seed 1212) drew 30 of the 137 findings, from 8 repositories: 17 NO_FAIL_PATH, 10
+UNCOLLECTABLE_TEST and 3 UNPARSEABLE. All 30 paths exist at their pinned commits, checked against P10's clones.
+The packet is `experiments/note052_p6/results_p12/PACKET.md`, and the reviewer's instructions are in
+`INSTRUCTIONS.md` next to it. I have not checked how many of the 30 are TPs by my verdicts; the score will show it.
+P12a and P12b stay unrun until a reviewer submits ratings.

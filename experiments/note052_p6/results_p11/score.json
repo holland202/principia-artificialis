@@ -1,0 +1,1191 @@
+{
+ "P11a": {
+  "groups": [
+   "BB",
+   "BA"
+  ],
+  "median_delta": [
+   0.0,
+   1
+  ],
+  "n": [
+   60,
+   1
+  ],
+  "share_delta_positive": [
+   0.05,
+   1.0
+  ],
+  "verdict": "UNDERPOWERED"
+ },
+ "dormant": 53,
+ "excluded": [],
+ "median_delta_by_transition": {
+  "AA": 0,
+  "AB": null,
+  "BA": 1,
+  "BB": 0.0
+ },
+ "n_measured": 80,
+ "per_repo": {
+  "ARBML/tnkeeh": {
+   "commits_after_pin": 2,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "Actasidiot/EFIFSTR": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    3,
+    3
+   ],
+   "transition": "BB"
+  },
+  "Ben-Louis/Deep-Image-Analogy-PyTorch": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "Bohao-Lee/CME": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "BornToBeRoot/check_nextcloud": {
+   "commits_after_pin": 10,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "CCExtractor/Rekognition": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    2,
+    2
+   ],
+   "transition": "AA"
+  },
+  "CFMTech/Jupytab": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    5,
+    5
+   ],
+   "transition": "AA"
+  },
+  "ChemLez/xmcTiaoJiInformation_Pachong": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "DoubleYouC/Bethini-Pie-Performance-INI-Editor": {
+   "commits_after_pin": 425,
+   "delta": 1,
+   "findings_unchecked": [
+    1,
+    2
+   ],
+   "shaped": [
+    1,
+    2
+   ],
+   "transition": "BA"
+  },
+  "Draven996/PwdBUD": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "DurhamDecLab/ARBInterp": {
+   "commits_after_pin": 6,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "AA"
+  },
+  "GIScience/ohsome-quality-api": {
+   "commits_after_pin": 1418,
+   "delta": -2,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    47,
+    45
+   ],
+   "transition": "AA"
+  },
+  "HelloMaoTai/jd-seckill-maotai": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "ICD-API/Python-samples": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "InteractiveAdvertisingBureau/adstxtcrawler": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "JDAI-CV/FADA": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "JaminFong/dali-pytorch": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "JasprW/ColorCorrection": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    2,
+    2
+   ],
+   "transition": "BB"
+  },
+  "KalleHallden/BlackFridayScrape": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "KnowZero/Krita-PythonPluginDeveloperTools": {
+   "commits_after_pin": 44,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    12
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "LaoYang1994/PanopticSegmentation": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "Mellcap/MellPlayer": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "Morizeyao/Decoders-Chinese-TF2.0": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "MortenHannemose/pytorch-vfi-cft": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "NVIDIA/Dataset_Utilities": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "PackeTsar/checkmyip": {
+   "commits_after_pin": 1,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "PaulChongPeng/YOLO2TensorFlow": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "YRdddream/attattr": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "alan-turing-institute/TCPD": {
+   "commits_after_pin": 11,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    14,
+    14
+   ],
+   "transition": "AA"
+  },
+  "algorithmiaio/danku": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    3,
+    3
+   ],
+   "transition": "BB"
+  },
+  "atomistic-machine-learning/SchNOrb": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "baldassarreFe/pytorch-densenet-tiramisu": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    8,
+    8
+   ],
+   "transition": "BB"
+  },
+  "bhaveshgawri/PageRank": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "cloneofsimo/clipping-CLIP-to-GAN": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "crazydonkey200/minimal-nn": {
+   "commits_after_pin": 1,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "csyhhu/L-OBS": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    14,
+    14
+   ],
+   "shaped": [
+    4,
+    4
+   ],
+   "transition": "BB"
+  },
+  "cutelittletiantian/python-for-office": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "disrupted/things-cloud-api": {
+   "commits_after_pin": 55,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    3,
+    3
+   ],
+   "transition": "AA"
+  },
+  "dxywill/deepknowledgetracing": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "fabiangeisler/pyshotgrid": {
+   "commits_after_pin": 237,
+   "delta": 13,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    14
+   ],
+   "transition": "AA"
+  },
+  "free5gmano/free5gmano": {
+   "commits_after_pin": 24,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "geaxgx/UniversalHandControl": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "graphql-python/graphene-tornado": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    10,
+    10
+   ],
+   "transition": "AA"
+  },
+  "gyim/vim-boxdraw": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "harshsbais/Amazon-Price-Drop-Alert": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "heyeshuang/beancount-homemade-importers": {
+   "commits_after_pin": 14,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "hezhangsprinter/DID-MDN": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "hugovk/pypistats": {
+   "commits_after_pin": 422,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    4,
+    4
+   ],
+   "transition": "AA"
+  },
+  "jhwang1992/network-visualization": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "joh/xmldiffs": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "jtoy/sketchnet": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "kakaoenterprise/Learning-Debiased-Disentangled": {
+   "commits_after_pin": 1,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    2,
+    2
+   ],
+   "transition": "BB"
+  },
+  "liuyukid/transformers-ner": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "mikeckennedy/cookiecutter-course": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    2,
+    2
+   ],
+   "transition": "BB"
+  },
+  "mit-aera/Blackbird-Dataset": {
+   "commits_after_pin": 1,
+   "delta": 0,
+   "findings_unchecked": [
+    2,
+    2
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "nasa/giant": {
+   "commits_after_pin": 13,
+   "delta": 5,
+   "findings_unchecked": [
+    5,
+    5
+   ],
+   "shaped": [
+    17,
+    22
+   ],
+   "transition": "BB"
+  },
+  "nathanhi/pyfatfs": {
+   "commits_after_pin": 36,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    8,
+    8
+   ],
+   "transition": "AA"
+  },
+  "npschafer/openawsem": {
+   "commits_after_pin": 94,
+   "delta": 5,
+   "findings_unchecked": [
+    1,
+    2
+   ],
+   "shaped": [
+    2,
+    7
+   ],
+   "transition": "BB"
+  },
+  "odwdinc/SSBU_Amiibo": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "AA"
+  },
+  "ofirpress/shortformer": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    38,
+    38
+   ],
+   "transition": "AA"
+  },
+  "oxwhirl/facmac": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "petersn/six-char-max": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "pieterblok/maskal": {
+   "commits_after_pin": 3,
+   "delta": 0,
+   "findings_unchecked": [
+    4,
+    4
+   ],
+   "shaped": [
+    54,
+    54
+   ],
+   "transition": "BB"
+  },
+  "portugueslab/arrayqueues": {
+   "commits_after_pin": 8,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    2,
+    2
+   ],
+   "transition": "AA"
+  },
+  "pratikpv/malware_classification": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "pyro-ppl/funsor": {
+   "commits_after_pin": 16,
+   "delta": -1,
+   "findings_unchecked": [
+    2,
+    1
+   ],
+   "shaped": [
+    42,
+    41
+   ],
+   "transition": "AA"
+  },
+  "pyscaffold/configupdater": {
+   "commits_after_pin": 166,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    0
+   ],
+   "shaped": [
+    6,
+    6
+   ],
+   "transition": "AA"
+  },
+  "redcaps-dataset/redcaps-downloader": {
+   "commits_after_pin": 6,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "sarartur/chess.com": {
+   "commits_after_pin": 197,
+   "delta": 30,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    3,
+    33
+   ],
+   "transition": "AA"
+  },
+  "sdushantha/pine": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "shailshouryya/yt-videos-list": {
+   "commits_after_pin": 59,
+   "delta": 1,
+   "findings_unchecked": [
+    12,
+    12
+   ],
+   "shaped": [
+    7,
+    8
+   ],
+   "transition": "BB"
+  },
+  "shchers/ecu-simulator": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "techjacker/systemdlogger": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    5,
+    5
+   ],
+   "transition": "AA"
+  },
+  "tomdbar/eco-dqn": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    64,
+    64
+   ],
+   "shaped": [
+    43,
+    43
+   ],
+   "transition": "BB"
+  },
+  "tonybaloney/requests-staticmock": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "AA"
+  },
+  "val-iisc/lsc-cnn": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    1,
+    1
+   ],
+   "transition": "BB"
+  },
+  "wangleiai/dVectorSpeakerRecognition": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    1,
+    1
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  },
+  "watermarkhu/qsurface": {
+   "commits_after_pin": 4,
+   "delta": 0,
+   "findings_unchecked": [
+    0,
+    0
+   ],
+   "shaped": [
+    8,
+    8
+   ],
+   "transition": "AA"
+  },
+  "xyj77/MCF-3D-CNN": {
+   "commits_after_pin": 0,
+   "delta": 0,
+   "findings_unchecked": [
+    7,
+    7
+   ],
+   "shaped": [
+    0,
+    0
+   ],
+   "transition": "BB"
+  }
+ },
+ "secondary_BB_active_vs_BA": {
+  "groups": [
+   "BB with commits after pin",
+   "BA"
+  ],
+  "median_delta": [
+   0.0,
+   1
+  ],
+  "n": [
+   14,
+   1
+  ],
+  "share_delta_positive": [
+   0.21428571428571427,
+   1.0
+  ],
+  "verdict": "UNDERPOWERED"
+ },
+ "transition_repos": {
+  "AA": [
+   "CCExtractor/Rekognition",
+   "CFMTech/Jupytab",
+   "DurhamDecLab/ARBInterp",
+   "GIScience/ohsome-quality-api",
+   "alan-turing-institute/TCPD",
+   "disrupted/things-cloud-api",
+   "fabiangeisler/pyshotgrid",
+   "graphql-python/graphene-tornado",
+   "hugovk/pypistats",
+   "nathanhi/pyfatfs",
+   "odwdinc/SSBU_Amiibo",
+   "ofirpress/shortformer",
+   "portugueslab/arrayqueues",
+   "pyro-ppl/funsor",
+   "pyscaffold/configupdater",
+   "sarartur/chess.com",
+   "techjacker/systemdlogger",
+   "tonybaloney/requests-staticmock",
+   "watermarkhu/qsurface"
+  ],
+  "AB": [],
+  "BA": [
+   "DoubleYouC/Bethini-Pie-Performance-INI-Editor"
+  ],
+  "BB": [
+   "ARBML/tnkeeh",
+   "Actasidiot/EFIFSTR",
+   "Ben-Louis/Deep-Image-Analogy-PyTorch",
+   "Bohao-Lee/CME",
+   "BornToBeRoot/check_nextcloud",
+   "ChemLez/xmcTiaoJiInformation_Pachong",
+   "Draven996/PwdBUD",
+   "HelloMaoTai/jd-seckill-maotai",
+   "ICD-API/Python-samples",
+   "InteractiveAdvertisingBureau/adstxtcrawler",
+   "JDAI-CV/FADA",
+   "JaminFong/dali-pytorch",
+   "JasprW/ColorCorrection",
+   "KalleHallden/BlackFridayScrape",
+   "KnowZero/Krita-PythonPluginDeveloperTools",
+   "LaoYang1994/PanopticSegmentation",
+   "Mellcap/MellPlayer",
+   "Morizeyao/Decoders-Chinese-TF2.0",
+   "MortenHannemose/pytorch-vfi-cft",
+   "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA",
+   "NVIDIA/Dataset_Utilities",
+   "PackeTsar/checkmyip",
+   "PaulChongPeng/YOLO2TensorFlow",
+   "YRdddream/attattr",
+   "algorithmiaio/danku",
+   "atomistic-machine-learning/SchNOrb",
+   "baldassarreFe/pytorch-densenet-tiramisu",
+   "bhaveshgawri/PageRank",
+   "cloneofsimo/clipping-CLIP-to-GAN",
+   "crazydonkey200/minimal-nn",
+   "csyhhu/L-OBS",
+   "cutelittletiantian/python-for-office",
+   "dxywill/deepknowledgetracing",
+   "free5gmano/free5gmano",
+   "geaxgx/UniversalHandControl",
+   "gyim/vim-boxdraw",
+   "harshsbais/Amazon-Price-Drop-Alert",
+   "heyeshuang/beancount-homemade-importers",
+   "hezhangsprinter/DID-MDN",
+   "jhwang1992/network-visualization",
+   "joh/xmldiffs",
+   "jtoy/sketchnet",
+   "kakaoenterprise/Learning-Debiased-Disentangled",
+   "liuyukid/transformers-ner",
+   "mikeckennedy/cookiecutter-course",
+   "mit-aera/Blackbird-Dataset",
+   "nasa/giant",
+   "npschafer/openawsem",
+   "oxwhirl/facmac",
+   "petersn/six-char-max",
+   "pieterblok/maskal",
+   "pratikpv/malware_classification",
+   "redcaps-dataset/redcaps-downloader",
+   "sdushantha/pine",
+   "shailshouryya/yt-videos-list",
+   "shchers/ecu-simulator",
+   "tomdbar/eco-dqn",
+   "val-iisc/lsc-cnn",
+   "wangleiai/dVectorSpeakerRecognition",
+   "xyj77/MCF-3D-CNN"
+  ]
+ },
+ "transitions": {
+  "AA": 19,
+  "AB": 0,
+  "BA": 1,
+  "BB": 60
+ },
+ "verdicts": {
+  "P11a": "UNDERPOWERED",
+  "P11b": "HELD",
+  "P11c": "HELD"
+ }
+}
