@@ -1,0 +1,14 @@
+$ python3 -I experiments/note052_p6/describe_p11.py OUT
+AA: 19 repositories, 12 with commits after the pin; delta > 0 in 2, < 0 in 2; verification-shaped files 199 at pins, 239 at heads
+AB: 0 repositories
+BA: 1 repositories, 1 with commits after the pin; delta > 0 in 1, < 0 in 0; verification-shaped files 1 at pins, 2 at heads
+BB: 60 repositories, 14 with commits after the pin; delta > 0 in 3, < 0 in 0; verification-shaped files 160 at pins, 171 at heads
+  DoubleYouC/Bethini-Pie-Performance-INI-Editor: BA, commits after pin 425, shaped 1 -> 2, unchecked findings 1 -> 2
+  GIScience/ohsome-quality-api: AA, commits after pin 1418, shaped 47 -> 45, unchecked findings 2 -> 2
+  fabiangeisler/pyshotgrid: AA, commits after pin 237, shaped 1 -> 14, unchecked findings 0 -> 0
+  nasa/giant: BB, commits after pin 13, shaped 17 -> 22, unchecked findings 5 -> 5
+  npschafer/openawsem: BB, commits after pin 94, shaped 2 -> 7, unchecked findings 1 -> 2
+  pyro-ppl/funsor: AA, commits after pin 16, shaped 42 -> 41, unchecked findings 2 -> 1
+  sarartur/chess.com: AA, commits after pin 197, shaped 3 -> 33, unchecked findings 0 -> 0
+  shailshouryya/yt-videos-list: BB, commits after pin 59, shaped 7 -> 8, unchecked findings 12 -> 12
+exit 0

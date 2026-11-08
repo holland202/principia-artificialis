@@ -1,0 +1,2162 @@
+{
+ "ARBML/tnkeeh": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 2,
+  "head": "f23d505f34030db7dc70b05e1ae3576b5d485725",
+  "head_date": "2023-09-28T19:52:54+03:00",
+  "pin": "ba25ab3aad6bc8f4b34cc6e2215a1de1da9851c0",
+  "pin_is_ancestor": true
+ },
+ "Actasidiot/EFIFSTR": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 3
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 3
+  },
+  "commits_after_pin": 0,
+  "head": "87022fe267ac73599719318a53557288eebef3fb",
+  "head_date": "2020-11-30T20:29:20+08:00",
+  "pin": "87022fe267ac73599719318a53557288eebef3fb",
+  "pin_is_ancestor": true
+ },
+ "Ben-Louis/Deep-Image-Analogy-PyTorch": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "51dc48172cf915c8f29d7034f94fe80cd619efac",
+  "head_date": "2021-12-11T16:31:22+08:00",
+  "pin": "51dc48172cf915c8f29d7034f94fe80cd619efac",
+  "pin_is_ancestor": true
+ },
+ "Bohao-Lee/CME": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "6b1549aaa6a30c83b760f19e7e02c89af40b9017",
+  "head_date": "2021-11-23T19:57:11+08:00",
+  "pin": "6b1549aaa6a30c83b760f19e7e02c89af40b9017",
+  "pin_is_ancestor": true
+ },
+ "BornToBeRoot/check_nextcloud": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 10,
+  "head": "76cc8510e759ab92671a0e2dde40989587efac69",
+  "head_date": "2026-09-12T00:11:51+02:00",
+  "pin": "cdf34d6a2d0ca3db919bc98959f41f4f6c70e3f9",
+  "pin_is_ancestor": true
+ },
+ "CCExtractor/Rekognition": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 0,
+  "head": "c0f7d80f00d438d7f7b3fd019f5030af781b2a12",
+  "head_date": "2022-05-25T22:18:01+05:30",
+  "pin": "c0f7d80f00d438d7f7b3fd019f5030af781b2a12",
+  "pin_is_ancestor": true
+ },
+ "CFMTech/Jupytab": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 5
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 5
+  },
+  "commits_after_pin": 0,
+  "head": "bdc2abf6eae2bafe73b75de18aa7f784d1161096",
+  "head_date": "2021-11-12T16:31:51+01:00",
+  "pin": "bdc2abf6eae2bafe73b75de18aa7f784d1161096",
+  "pin_is_ancestor": true
+ },
+ "ChemLez/xmcTiaoJiInformation_Pachong": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "24c8659120198f3eb7700fe5eca6c4d6e13be855",
+  "head_date": "2020-04-13T19:29:55+08:00",
+  "pin": "24c8659120198f3eb7700fe5eca6c4d6e13be855",
+  "pin_is_ancestor": true
+ },
+ "DoubleYouC/Bethini-Pie-Performance-INI-Editor": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 425,
+  "head": "f47b7bf5c95201a95bcd5d3cde9c51057099ff29",
+  "head_date": "2026-01-31T18:24:09-05:00",
+  "pin": "1945b193869b8e74f2cc2929ac9da7358d83f46f",
+  "pin_is_ancestor": true
+ },
+ "Draven996/PwdBUD": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "a670979da8e0cd7d11f439f18b8d8e02cfd838ea",
+  "head_date": "2021-12-07T15:12:58+08:00",
+  "pin": "a670979da8e0cd7d11f439f18b8d8e02cfd838ea",
+  "pin_is_ancestor": true
+ },
+ "DurhamDecLab/ARBInterp": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 6,
+  "head": "aa0198b5b2c042866def83c4e8379aeef233b4bb",
+  "head_date": "2026-08-03T22:18:29+01:00",
+  "pin": "56d88b1fdb28f2356c738dfe9bd34d65709ed0f8",
+  "pin_is_ancestor": true
+ },
+ "GIScience/ohsome-quality-api": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 45
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 47
+  },
+  "commits_after_pin": 1418,
+  "head": "000dd4cb2ef5f4def36997a1b667ce256fe80fab",
+  "head_date": "2026-11-02T11:01:29+01:00",
+  "pin": "e7987f4d6ba0beab956604201fe0ea05a8c5cdd8",
+  "pin_is_ancestor": true
+ },
+ "HelloMaoTai/jd-seckill-maotai": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "c146afead5d62e741d5ff9f3aeb527b89b79109f",
+  "head_date": "2021-01-20T22:46:21+08:00",
+  "pin": "c146afead5d62e741d5ff9f3aeb527b89b79109f",
+  "pin_is_ancestor": true
+ },
+ "ICD-API/Python-samples": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "e817dcdc76f5a5cc5baab22853d2ace574f3f3d6",
+  "head_date": "2019-07-31T13:42:05+02:00",
+  "pin": "e817dcdc76f5a5cc5baab22853d2ace574f3f3d6",
+  "pin_is_ancestor": true
+ },
+ "InteractiveAdvertisingBureau/adstxtcrawler": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "804d648b3bd255d02900475e483b289e3f53be5d",
+  "head_date": "2020-10-08T13:30:53-04:00",
+  "pin": "804d648b3bd255d02900475e483b289e3f53be5d",
+  "pin_is_ancestor": true
+ },
+ "JDAI-CV/FADA": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "a1c6403963184a3427eda68cc94b03ff6143368a",
+  "head_date": "2020-09-30T15:10:49+02:00",
+  "pin": "a1c6403963184a3427eda68cc94b03ff6143368a",
+  "pin_is_ancestor": true
+ },
+ "JaminFong/dali-pytorch": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "7bd5d2380d210a32d24c7309da69c8d2c5db8759",
+  "head_date": "2020-12-04T21:24:42+08:00",
+  "pin": "7bd5d2380d210a32d24c7309da69c8d2c5db8759",
+  "pin_is_ancestor": true
+ },
+ "JasprW/ColorCorrection": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 0,
+  "head": "a526b9463f575bea58b09e205a58fad0c03937df",
+  "head_date": "2019-03-15T16:38:52+08:00",
+  "pin": "a526b9463f575bea58b09e205a58fad0c03937df",
+  "pin_is_ancestor": true
+ },
+ "KalleHallden/BlackFridayScrape": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "61a9a8f937b9c60f225c9eb0b6af12e2864a9028",
+  "head_date": "2020-03-07T09:22:47+01:00",
+  "pin": "61a9a8f937b9c60f225c9eb0b6af12e2864a9028",
+  "pin_is_ancestor": true
+ },
+ "KnowZero/Krita-PythonPluginDeveloperTools": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 12,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 44,
+  "head": "2f6c7b42e8d60e5532912e4e634a1fc1c0428905",
+  "head_date": "2026-02-18T16:14:42+00:00",
+  "pin": "230d34a71055831c25a7c7efcc51446ff8b9def0",
+  "pin_is_ancestor": true
+ },
+ "LaoYang1994/PanopticSegmentation": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "ca9b693a8adc93e6f7d8504f69c6820637a2b2b3",
+  "head_date": "2019-10-14T20:59:39+08:00",
+  "pin": "ca9b693a8adc93e6f7d8504f69c6820637a2b2b3",
+  "pin_is_ancestor": true
+ },
+ "Mellcap/MellPlayer": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "90b3210eaaed675552fd69717b6b953fd0e0b07d",
+  "head_date": "2017-10-16T22:11:12-05:00",
+  "pin": "90b3210eaaed675552fd69717b6b953fd0e0b07d",
+  "pin_is_ancestor": true
+ },
+ "Morizeyao/Decoders-Chinese-TF2.0": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "0068aa8ab8be5f536557d44d226a051b9188e4ec",
+  "head_date": "2020-09-28T18:52:43+08:00",
+  "pin": "0068aa8ab8be5f536557d44d226a051b9188e4ec",
+  "pin_is_ancestor": true
+ },
+ "MortenHannemose/pytorch-vfi-cft": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "ab42b475b408755d7d430c3cd5dbc00403fcf2f4",
+  "head_date": "2019-11-13T14:16:39+01:00",
+  "pin": "ab42b475b408755d7d430c3cd5dbc00403fcf2f4",
+  "pin_is_ancestor": true
+ },
+ "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "22e99e01836fa2136879e79c2330ec8581e2c575",
+  "head_date": "2022-02-26T14:33:05+02:00",
+  "pin": "22e99e01836fa2136879e79c2330ec8581e2c575",
+  "pin_is_ancestor": true
+ },
+ "NVIDIA/Dataset_Utilities": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "532b8c76e3d7946748a10af3398438b35383f157",
+  "head_date": "2019-08-12T10:47:39-07:00",
+  "pin": "532b8c76e3d7946748a10af3398438b35383f157",
+  "pin_is_ancestor": true
+ },
+ "PackeTsar/checkmyip": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 1,
+  "head": "ce0c11532e86a936a3da15deea3bb7198f195d9d",
+  "head_date": "2024-08-06T07:36:50-07:00",
+  "pin": "24f9d0e5dee4d5559b53456b07e418c3c623b0af",
+  "pin_is_ancestor": true
+ },
+ "PaulChongPeng/YOLO2TensorFlow": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "0f6ad1f153b8846fce20144b27ec9ffe5e17229f",
+  "head_date": "2017-08-09T10:23:22+08:00",
+  "pin": "0f6ad1f153b8846fce20144b27ec9ffe5e17229f",
+  "pin_is_ancestor": true
+ },
+ "YRdddream/attattr": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "f5a7396bee476504e22424b8f11a5ad4e7e55a00",
+  "head_date": "2021-03-23T15:42:50+08:00",
+  "pin": "f5a7396bee476504e22424b8f11a5ad4e7e55a00",
+  "pin_is_ancestor": true
+ },
+ "alan-turing-institute/TCPD": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 14
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 14
+  },
+  "commits_after_pin": 11,
+  "head": "e8f19a3635e3b7f1a8aff59ce7f4d9bea17525c0",
+  "head_date": "2025-07-25T10:26:57+01:00",
+  "pin": "216b26a5cff380b35b76de6b5498c1ee902c5c70",
+  "pin_is_ancestor": true
+ },
+ "algorithmiaio/danku": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 3
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 3
+  },
+  "commits_after_pin": 0,
+  "head": "7c6a5cf548af183f1c894973c491b8760adf4914",
+  "head_date": "2018-07-19T11:08:14-07:00",
+  "pin": "7c6a5cf548af183f1c894973c491b8760adf4914",
+  "pin_is_ancestor": true
+ },
+ "atomistic-machine-learning/SchNOrb": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "38cb268ea431b46e3b2088dda48bcd1983462ff5",
+  "head_date": "2019-09-17T16:31:19+02:00",
+  "pin": "38cb268ea431b46e3b2088dda48bcd1983462ff5",
+  "pin_is_ancestor": true
+ },
+ "baldassarreFe/pytorch-densenet-tiramisu": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "commits_after_pin": 0,
+  "head": "7d29cec4765514c872927dbcbffcdfa642ea65ed",
+  "head_date": "2019-05-16T16:35:45+02:00",
+  "pin": "7d29cec4765514c872927dbcbffcdfa642ea65ed",
+  "pin_is_ancestor": true
+ },
+ "bhaveshgawri/PageRank": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "9fc4972846fff1cf5b0b3edbe210ae617c5411f9",
+  "head_date": "2017-11-24T16:06:35+05:30",
+  "pin": "9fc4972846fff1cf5b0b3edbe210ae617c5411f9",
+  "pin_is_ancestor": true
+ },
+ "cloneofsimo/clipping-CLIP-to-GAN": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "bf29856550892cbe8a39d94635b954423798bebb",
+  "head_date": "2021-01-22T12:09:26+09:00",
+  "pin": "bf29856550892cbe8a39d94635b954423798bebb",
+  "pin_is_ancestor": true
+ },
+ "crazydonkey200/minimal-nn": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 1,
+  "head": "c8e3c239dc656b7be437c3387323e3245a4c15b1",
+  "head_date": "2024-01-08T13:41:05-08:00",
+  "pin": "93818c0549ba1171442b9b2a7e3c81bb741d4c46",
+  "pin_is_ancestor": true
+ },
+ "csyhhu/L-OBS": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 14,
+   "ok": true,
+   "shaped": 4
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 14,
+   "ok": true,
+   "shaped": 4
+  },
+  "commits_after_pin": 0,
+  "head": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+  "head_date": "2018-05-31T15:33:01+08:00",
+  "pin": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+  "pin_is_ancestor": true
+ },
+ "cutelittletiantian/python-for-office": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "1f8710ddcb391c7c293e4a6a981b595fecdecaa5",
+  "head_date": "2021-08-14T12:40:29+08:00",
+  "pin": "1f8710ddcb391c7c293e4a6a981b595fecdecaa5",
+  "pin_is_ancestor": true
+ },
+ "disrupted/things-cloud-api": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 3
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 3
+  },
+  "commits_after_pin": 55,
+  "head": "5698384efcdcc7383dfe5535e6caf4ce648496b2",
+  "head_date": "2025-01-09T00:36:27+01:00",
+  "pin": "b83c1b2bda1b7e484d0483eb354508c5ef5e02c4",
+  "pin_is_ancestor": true
+ },
+ "dxywill/deepknowledgetracing": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "f43493fd19760e30e6178360c6b9cf4f0e7bd6b4",
+  "head_date": "2018-08-28T10:14:07-05:00",
+  "pin": "f43493fd19760e30e6178360c6b9cf4f0e7bd6b4",
+  "pin_is_ancestor": true
+ },
+ "fabiangeisler/pyshotgrid": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 14
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 237,
+  "head": "c9009887bcee38a9c46909e4eea4f6030a14a928",
+  "head_date": "2026-02-02T07:23:09+01:00",
+  "pin": "919a4695eef362573078b9ce393eedd7741d79bd",
+  "pin_is_ancestor": true
+ },
+ "free5gmano/free5gmano": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 24,
+  "head": "9f118516bc6edc32cd562c61f7f38add2f87a82d",
+  "head_date": "2025-07-11T15:41:20+08:00",
+  "pin": "615024370ea7e0de0903a8aa93528ce3d122a4a1",
+  "pin_is_ancestor": true
+ },
+ "geaxgx/UniversalHandControl": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "f4e10258c945015101d9b0b260b63237b85e412e",
+  "head_date": "2020-10-31T19:54:31+01:00",
+  "pin": "f4e10258c945015101d9b0b260b63237b85e412e",
+  "pin_is_ancestor": true
+ },
+ "graphql-python/graphene-tornado": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 10
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 10
+  },
+  "commits_after_pin": 0,
+  "head": "e4fa7d7b4c2256fa37f5ad89cbfd4d4bf6fdb606",
+  "head_date": "2022-11-27T23:23:57+01:00",
+  "pin": "e4fa7d7b4c2256fa37f5ad89cbfd4d4bf6fdb606",
+  "pin_is_ancestor": true
+ },
+ "gyim/vim-boxdraw": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "b7f789f305b1c5b0b4623585e0f10adb417f2966",
+  "head_date": "2021-01-28T18:24:43+01:00",
+  "pin": "b7f789f305b1c5b0b4623585e0f10adb417f2966",
+  "pin_is_ancestor": true
+ },
+ "harshsbais/Amazon-Price-Drop-Alert": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "26256d4115eec6db51428eb7032056717519aa51",
+  "head_date": "2021-04-07T11:14:05+05:30",
+  "pin": "26256d4115eec6db51428eb7032056717519aa51",
+  "pin_is_ancestor": true
+ },
+ "heyeshuang/beancount-homemade-importers": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 14,
+  "head": "42edabf6e32db62aa7cb75118d700b4a6021af81",
+  "head_date": "2025-11-22T23:06:34+08:00",
+  "pin": "f050d7e6e581575d770a6d3d401883a76a4ec50e",
+  "pin_is_ancestor": true
+ },
+ "hezhangsprinter/DID-MDN": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "44bb9e84ab48cba764316bebeee0b47f5fad28a1",
+  "head_date": "2020-09-29T18:29:25-07:00",
+  "pin": "44bb9e84ab48cba764316bebeee0b47f5fad28a1",
+  "pin_is_ancestor": true
+ },
+ "hugovk/pypistats": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 4
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 4
+  },
+  "commits_after_pin": 422,
+  "head": "3d44c800b011b9bf6872e1bc0ebe663e7eb6190a",
+  "head_date": "2026-11-01T07:25:09+02:00",
+  "pin": "6a09f747688ed599c542143bab922031ae882b54",
+  "pin_is_ancestor": true
+ },
+ "jhwang1992/network-visualization": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "3f842c617eea568a2cdb478140fffab156b97b0d",
+  "head_date": "2020-02-17T20:52:21+08:00",
+  "pin": "3f842c617eea568a2cdb478140fffab156b97b0d",
+  "pin_is_ancestor": true
+ },
+ "joh/xmldiffs": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "55e997e38dc027f6bfcfcadad84eee0a925138da",
+  "head_date": "2022-08-17T12:19:35+02:00",
+  "pin": "55e997e38dc027f6bfcfcadad84eee0a925138da",
+  "pin_is_ancestor": true
+ },
+ "jtoy/sketchnet": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "8c814f464a30249863cbdd31d2e0695a21b8e14d",
+  "head_date": "2017-09-08T19:11:18-07:00",
+  "pin": "8c814f464a30249863cbdd31d2e0695a21b8e14d",
+  "pin_is_ancestor": true
+ },
+ "kakaoenterprise/Learning-Debiased-Disentangled": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 1,
+  "head": "7626f3692f412ebae8d872480fdaa85ab9cddec0",
+  "head_date": "2023-03-23T16:59:21+09:00",
+  "pin": "af1aa82fddbcda94759f87968e69f4e75d719f84",
+  "pin_is_ancestor": true
+ },
+ "liuyukid/transformers-ner": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "f3bfcad46526c9cc454e3fdc49c6d19da5c419b7",
+  "head_date": "2020-06-01T15:33:18+08:00",
+  "pin": "f3bfcad46526c9cc454e3fdc49c6d19da5c419b7",
+  "pin_is_ancestor": true
+ },
+ "mikeckennedy/cookiecutter-course": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 0,
+  "head": "895e81bcdcd1ca23320034d5c5fca0af43087709",
+  "head_date": "2018-10-05T09:51:14-07:00",
+  "pin": "895e81bcdcd1ca23320034d5c5fca0af43087709",
+  "pin_is_ancestor": true
+ },
+ "mit-aera/Blackbird-Dataset": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 1,
+  "head": "8f02a207a85bea415e32375b67b56bf8b0e1c02d",
+  "head_date": "2022-12-15T16:50:37-05:00",
+  "pin": "c0aaf533c187ad0166970e1c4a6d880448fa5b8f",
+  "pin_is_ancestor": true
+ },
+ "nasa/giant": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 5,
+   "ok": true,
+   "shaped": 22
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 5,
+   "ok": true,
+   "shaped": 17
+  },
+  "commits_after_pin": 13,
+  "head": "2c2225a90eef8f99cbb4f56c8e91999bc722d267",
+  "head_date": "2025-09-03T06:55:40-04:00",
+  "pin": "2b1ceeaf5847f2829f440b21ad3ca1977589eda4",
+  "pin_is_ancestor": true
+ },
+ "nathanhi/pyfatfs": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "commits_after_pin": 36,
+  "head": "5590fb853b6ada93ca8efc8f7987f8600a601ee5",
+  "head_date": "2024-03-03T21:38:31+01:00",
+  "pin": "6b271a5395eec7ee34a62437e180366d4d89913d",
+  "pin_is_ancestor": true
+ },
+ "npschafer/openawsem": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 7
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 94,
+  "head": "663000560e5f8d13444f65f976573e031e9daeea",
+  "head_date": "2024-05-22T18:40:40-05:00",
+  "pin": "a460ec3a91902ac8ef155666e1357b5c6a3ca333",
+  "pin_is_ancestor": true
+ },
+ "odwdinc/SSBU_Amiibo": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "32d73a2a29ae9854a92a543845e605a3ad199906",
+  "head_date": "2021-01-10T10:16:20-08:00",
+  "pin": "32d73a2a29ae9854a92a543845e605a3ad199906",
+  "pin_is_ancestor": true
+ },
+ "ofirpress/shortformer": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 38
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 38
+  },
+  "commits_after_pin": 0,
+  "head": "edc411ff896ae042c01d939a32c1e4a33e238083",
+  "head_date": "2021-07-26T13:42:16-07:00",
+  "pin": "edc411ff896ae042c01d939a32c1e4a33e238083",
+  "pin_is_ancestor": true
+ },
+ "oxwhirl/facmac": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "d7e62b8c51a5a77330de85f83c10553d0bd18fe5",
+  "head_date": "2021-10-25T14:29:29+01:00",
+  "pin": "d7e62b8c51a5a77330de85f83c10553d0bd18fe5",
+  "pin_is_ancestor": true
+ },
+ "petersn/six-char-max": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "1ba625b90331ded11b7b7b2fa014e16c15641986",
+  "head_date": "2017-06-01T18:24:12-04:00",
+  "pin": "1ba625b90331ded11b7b7b2fa014e16c15641986",
+  "pin_is_ancestor": true
+ },
+ "pieterblok/maskal": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 4,
+   "ok": true,
+   "shaped": 54
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 4,
+   "ok": true,
+   "shaped": 54
+  },
+  "commits_after_pin": 3,
+  "head": "3215fa7f8215315e3742f79d80fd22e17b43a3d5",
+  "head_date": "2024-04-10T10:27:23+09:00",
+  "pin": "f33846860d52d8fbb4f6e81a7363f0799c3f429f",
+  "pin_is_ancestor": true
+ },
+ "portugueslab/arrayqueues": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 2
+  },
+  "commits_after_pin": 8,
+  "head": "047d1139d28a4d93a3f6e27377ec66912ed2af14",
+  "head_date": "2023-08-02T16:06:35+02:00",
+  "pin": "84b096419463eae3feb0b7d36dd860b542d10325",
+  "pin_is_ancestor": true
+ },
+ "pratikpv/malware_classification": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "7e82986ba1d68c2167505fa7d18a2084a42433b0",
+  "head_date": "2022-02-11T18:20:34-08:00",
+  "pin": "7e82986ba1d68c2167505fa7d18a2084a42433b0",
+  "pin_is_ancestor": true
+ },
+ "pyro-ppl/funsor": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 41
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 2,
+   "ok": true,
+   "shaped": 42
+  },
+  "commits_after_pin": 16,
+  "head": "d9ceb0d3c6add16950138f781f2e5a7ee3df521f",
+  "head_date": "2026-08-03T11:38:00-04:00",
+  "pin": "1b9b68d7f47277ce023346e124c944abffa601e7",
+  "pin_is_ancestor": true
+ },
+ "pyscaffold/configupdater": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 6
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 6
+  },
+  "commits_after_pin": 166,
+  "head": "9f51d41ad4267c0300d14c95a4a1032e387f7f9e",
+  "head_date": "2026-11-05T18:23:08+01:00",
+  "pin": "0622abc726c0d7ff3eb69a660ef8f276188fde94",
+  "pin_is_ancestor": true
+ },
+ "redcaps-dataset/redcaps-downloader": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 6,
+  "head": "e232dcffebe442f0f623a0b8a513c78543102af8",
+  "head_date": "2023-12-18T08:04:21-06:00",
+  "pin": "c04c39afeeb56ed76ef0fc21096ef6e13ec2af03",
+  "pin_is_ancestor": true
+ },
+ "sarartur/chess.com": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 33
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 3
+  },
+  "commits_after_pin": 197,
+  "head": "4ea67f858260802f7d42fccaf679962321356a0d",
+  "head_date": "2025-09-22T14:03:56-04:00",
+  "pin": "aa24d387c765c28a4e92b65c107e575d9d39bcc4",
+  "pin_is_ancestor": true
+ },
+ "sdushantha/pine": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "33a98e975877bc456a37fec4779fea6835a97ed2",
+  "head_date": "2020-07-16T20:28:13+02:00",
+  "pin": "33a98e975877bc456a37fec4779fea6835a97ed2",
+  "pin_is_ancestor": true
+ },
+ "shailshouryya/yt-videos-list": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 12,
+   "ok": true,
+   "shaped": 8
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 12,
+   "ok": true,
+   "shaped": 7
+  },
+  "commits_after_pin": 59,
+  "head": "7f22794d1ab5601a385d08462e68df612c85b367",
+  "head_date": "2023-11-15T21:49:22-08:00",
+  "pin": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+  "pin_is_ancestor": true
+ },
+ "shchers/ecu-simulator": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "9c48c64b38ec55ee4f858ac14b7333025d4711de",
+  "head_date": "2020-09-30T00:25:43+03:00",
+  "pin": "9c48c64b38ec55ee4f858ac14b7333025d4711de",
+  "pin_is_ancestor": true
+ },
+ "techjacker/systemdlogger": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 5
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 5
+  },
+  "commits_after_pin": 0,
+  "head": "738a02ebeb581038d2b874a19904a50c28b5a4b1",
+  "head_date": "2019-10-20T16:51:44+01:00",
+  "pin": "738a02ebeb581038d2b874a19904a50c28b5a4b1",
+  "pin_is_ancestor": true
+ },
+ "tomdbar/eco-dqn": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 64,
+   "ok": true,
+   "shaped": 43
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 64,
+   "ok": true,
+   "shaped": 43
+  },
+  "commits_after_pin": 0,
+  "head": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+  "head_date": "2020-10-23T19:46:39+01:00",
+  "pin": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+  "pin_is_ancestor": true
+ },
+ "tonybaloney/requests-staticmock": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "011cd3fd240582df042193439738fb1e0b0b03b2",
+  "head_date": "2022-01-26T20:29:40+00:00",
+  "pin": "011cd3fd240582df042193439738fb1e0b0b03b2",
+  "pin_is_ancestor": true
+ },
+ "val-iisc/lsc-cnn": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 1
+  },
+  "commits_after_pin": 0,
+  "head": "e6c65caabea8638e0845d768b51d8d77738527bb",
+  "head_date": "2020-04-09T12:55:33-04:00",
+  "pin": "e6c65caabea8638e0845d768b51d8d77738527bb",
+  "pin_is_ancestor": true
+ },
+ "wangleiai/dVectorSpeakerRecognition": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 1,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "dd65ecc7cefad83d25a6d85c56fbd4f34178894b",
+  "head_date": "2020-11-30T11:39:30+08:00",
+  "pin": "dd65ecc7cefad83d25a6d85c56fbd4f34178894b",
+  "pin_is_ancestor": true
+ },
+ "watermarkhu/qsurface": {
+  "at_head": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "A",
+    "primary": "A"
+   },
+   "exit": 0,
+   "findings": 0,
+   "ok": true,
+   "shaped": 8
+  },
+  "commits_after_pin": 4,
+  "head": "9ab4e0871335b7422c8be846397eba2384a86968",
+  "head_date": "2025-11-22T17:41:37+01:00",
+  "pin": "9817d9b188d397c1478410aef6f92e5508e45b57",
+  "pin_is_ancestor": true
+ },
+ "xyj77/MCF-3D-CNN": {
+  "at_head": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 7,
+   "ok": true,
+   "shaped": 0
+  },
+  "at_pin": {
+   "ci": {
+    "gha_only": "B",
+    "primary": "B"
+   },
+   "exit": 1,
+   "findings": 7,
+   "ok": true,
+   "shaped": 0
+  },
+  "commits_after_pin": 0,
+  "head": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+  "head_date": "2019-05-19T21:23:54+08:00",
+  "pin": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+  "pin_is_ancestor": true
+ }
+}

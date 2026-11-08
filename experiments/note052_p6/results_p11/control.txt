@@ -1,0 +1,6 @@
+$ python3 experiments/note052_p6/run_p11.py control P10RUN OUT
+linter B: db98e60 sha256 a6c8a65d6a9150f6, selftest 20/20 checks passed
+control BA: transition BA, delta 1
+control BB: transition BB, delta 0
+control: PASS
+exit 0

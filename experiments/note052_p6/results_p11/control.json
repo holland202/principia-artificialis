@@ -1,0 +1,10 @@
+{
+ "BA": {
+  "delta": 1,
+  "transition": "BA"
+ },
+ "BB": {
+  "delta": 0,
+  "transition": "BB"
+ }
+}
