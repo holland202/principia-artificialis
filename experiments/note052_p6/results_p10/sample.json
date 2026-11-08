@@ -1,0 +1,3206 @@
+{
+ "query": "language:python stars:20..300 fork:false archived:false size:<100000 created:{a}..{b}",
+ "seed": 1010,
+ "candidates": [
+  {
+   "order": 1,
+   "repo": "sdushantha/pine",
+   "created": "2020-07-16T17:58:26Z",
+   "stars": 55,
+   "window": "2020-07-01",
+   "page": 10
+  },
+  {
+   "order": 2,
+   "repo": "alan-turing-institute/TCPD",
+   "created": "2019-11-28T16:07:55Z",
+   "stars": 162,
+   "window": "2019-11-01",
+   "page": 2
+  },
+  {
+   "order": 3,
+   "repo": "shchers/ecu-simulator",
+   "created": "2019-04-15T15:40:05Z",
+   "stars": 72,
+   "window": "2019-04-01",
+   "page": 7
+  },
+  {
+   "order": 4,
+   "repo": "bhaveshgawri/PageRank",
+   "created": "2017-10-20T22:26:43Z",
+   "stars": 44,
+   "window": "2017-10-01",
+   "page": 7
+  },
+  {
+   "order": 5,
+   "repo": "nasa/giant",
+   "created": "2021-09-08T15:58:13Z",
+   "stars": 95,
+   "window": "2021-09-01",
+   "page": 4
+  },
+  {
+   "order": 6,
+   "repo": "disrupted/things-cloud-api",
+   "created": "2021-06-14T19:56:16Z",
+   "stars": 49,
+   "window": "2021-06-01",
+   "page": 9
+  },
+  {
+   "order": 7,
+   "repo": "atomistic-machine-learning/SchNOrb",
+   "created": "2019-09-17T12:41:48Z",
+   "stars": 72,
+   "window": "2019-09-01",
+   "page": 6
+  },
+  {
+   "order": 8,
+   "repo": "free5gmano/free5gmano",
+   "created": "2020-01-07T03:26:49Z",
+   "stars": 121,
+   "window": "2020-01-01",
+   "page": 3
+  },
+  {
+   "order": 9,
+   "repo": "nathanhi/pyfatfs",
+   "created": "2019-07-14T20:25:29Z",
+   "stars": 40,
+   "window": "2019-07-01",
+   "page": 10
+  },
+  {
+   "order": 10,
+   "repo": "Bohao-Lee/CME",
+   "created": "2020-11-16T10:13:21Z",
+   "stars": 68,
+   "window": "2020-11-01",
+   "page": 6
+  },
+  {
+   "order": 11,
+   "repo": "InteractiveAdvertisingBureau/adstxtcrawler",
+   "created": "2017-05-26T14:45:39Z",
+   "stars": 201,
+   "window": "2017-05-01",
+   "page": 1
+  },
+  {
+   "order": 12,
+   "repo": "pratikpv/malware_classification",
+   "created": "2019-10-22T17:11:07Z",
+   "stars": 47,
+   "window": "2019-10-01",
+   "page": 9
+  },
+  {
+   "order": 13,
+   "repo": "NVIDIA/Dataset_Utilities",
+   "created": "2018-07-12T21:57:42Z",
+   "stars": 132,
+   "window": "2018-07-01",
+   "page": 3
+  },
+  {
+   "order": 14,
+   "repo": "jhwang1992/network-visualization",
+   "created": "2019-09-15T07:55:39Z",
+   "stars": 119,
+   "window": "2019-09-01",
+   "page": 3
+  },
+  {
+   "order": 15,
+   "repo": "mikeckennedy/cookiecutter-course",
+   "created": "2017-02-26T22:45:45Z",
+   "stars": 75,
+   "window": "2017-02-01",
+   "page": 4
+  },
+  {
+   "order": 16,
+   "repo": "gyim/vim-boxdraw",
+   "created": "2017-07-24T06:30:37Z",
+   "stars": 198,
+   "window": "2017-07-01",
+   "page": 1
+  },
+  {
+   "order": 17,
+   "repo": "Draven996/PwdBUD",
+   "created": "2021-12-14T07:02:35Z",
+   "stars": 286,
+   "window": "2021-12-01",
+   "page": 1
+  },
+  {
+   "order": 18,
+   "repo": "KalleHallden/BlackFridayScrape",
+   "created": "2019-11-07T12:18:43Z",
+   "stars": 208,
+   "window": "2019-11-01",
+   "page": 1
+  },
+  {
+   "order": 19,
+   "repo": "cloneofsimo/clipping-CLIP-to-GAN",
+   "created": "2021-01-19T22:50:12Z",
+   "stars": 42,
+   "window": "2021-01-01",
+   "page": 10
+  },
+  {
+   "order": 20,
+   "repo": "crazydonkey200/minimal-nn",
+   "created": "2017-04-21T21:58:37Z",
+   "stars": 74,
+   "window": "2017-04-01",
+   "page": 5
+  },
+  {
+   "order": 21,
+   "repo": "Ben-Louis/Deep-Image-Analogy-PyTorch",
+   "created": "2018-03-01T01:56:43Z",
+   "stars": 185,
+   "window": "2018-03-01",
+   "page": 2
+  },
+  {
+   "order": 22,
+   "repo": "ARBML/tnkeeh",
+   "created": "2020-08-05T23:32:32Z",
+   "stars": 77,
+   "window": "2020-08-01",
+   "page": 5
+  },
+  {
+   "order": 23,
+   "repo": "wangleiai/dVectorSpeakerRecognition",
+   "created": "2018-08-17T02:53:31Z",
+   "stars": 89,
+   "window": "2018-08-01",
+   "page": 4
+  },
+  {
+   "order": 24,
+   "repo": "DoubleYouC/Bethini-Pie-Performance-INI-Editor",
+   "created": "2021-02-27T18:32:03Z",
+   "stars": 100,
+   "window": "2021-02-01",
+   "page": 4
+  },
+  {
+   "order": 25,
+   "repo": "graphql-python/graphene-tornado",
+   "created": "2017-09-23T20:22:08Z",
+   "stars": 51,
+   "window": "2017-09-01",
+   "page": 6
+  },
+  {
+   "order": 26,
+   "repo": "jtoy/sketchnet",
+   "created": "2017-06-19T20:59:34Z",
+   "stars": 38,
+   "window": "2017-06-01",
+   "page": 8
+  },
+  {
+   "order": 27,
+   "repo": "pyro-ppl/funsor",
+   "created": "2019-01-30T23:13:39Z",
+   "stars": 251,
+   "window": "2019-01-01",
+   "page": 1
+  },
+  {
+   "order": 28,
+   "repo": "algorithmiaio/danku",
+   "created": "2017-12-29T06:53:46Z",
+   "stars": 146,
+   "window": "2017-12-01",
+   "page": 2
+  },
+  {
+   "order": 29,
+   "repo": "baldassarreFe/pytorch-densenet-tiramisu",
+   "created": "2018-03-06T14:52:32Z",
+   "stars": 56,
+   "window": "2018-03-01",
+   "page": 8
+  },
+  {
+   "order": 30,
+   "repo": "Mellcap/MellPlayer",
+   "created": "2017-02-16T09:12:53Z",
+   "stars": 173,
+   "window": "2017-02-01",
+   "page": 2
+  },
+  {
+   "order": 31,
+   "repo": "JasprW/ColorCorrection",
+   "created": "2019-01-08T02:56:32Z",
+   "stars": 40,
+   "window": "2019-01-01",
+   "page": 10
+  },
+  {
+   "order": 32,
+   "repo": "PackeTsar/checkmyip",
+   "created": "2017-09-01T08:49:34Z",
+   "stars": 61,
+   "window": "2017-08-01",
+   "page": 6
+  },
+  {
+   "order": 33,
+   "repo": "kakaoenterprise/Learning-Debiased-Disentangled",
+   "created": "2021-10-20T01:54:53Z",
+   "stars": 106,
+   "window": "2021-10-01",
+   "page": 4
+  },
+  {
+   "order": 34,
+   "repo": "npschafer/openawsem",
+   "created": "2017-07-19T15:08:42Z",
+   "stars": 40,
+   "window": "2017-07-01",
+   "page": 8
+  },
+  {
+   "order": 35,
+   "repo": "pieterblok/maskal",
+   "created": "2021-09-02T14:45:54Z",
+   "stars": 65,
+   "window": "2021-09-01",
+   "page": 6
+  },
+  {
+   "order": 36,
+   "repo": "mit-aera/Blackbird-Dataset",
+   "created": "2018-08-20T22:32:27Z",
+   "stars": 162,
+   "window": "2018-08-01",
+   "page": 2
+  },
+  {
+   "order": 37,
+   "repo": "techjacker/systemdlogger",
+   "created": "2017-01-03T15:42:09Z",
+   "stars": 90,
+   "window": "2017-01-01",
+   "page": 3
+  },
+  {
+   "order": 38,
+   "repo": "HelloMaoTai/jd-seckill-maotai",
+   "created": "2021-01-07T04:32:32Z",
+   "stars": 138,
+   "window": "2021-01-01",
+   "page": 2
+  },
+  {
+   "order": 39,
+   "repo": "harshsbais/Amazon-Price-Drop-Alert",
+   "created": "2019-10-28T16:11:55Z",
+   "stars": 48,
+   "window": "2019-10-01",
+   "page": 9
+  },
+  {
+   "order": 40,
+   "repo": "liuyukid/transformers-ner",
+   "created": "2020-05-09T04:05:33Z",
+   "stars": 209,
+   "window": "2020-05-01",
+   "page": 1
+  },
+  {
+   "order": 41,
+   "repo": "CCExtractor/Rekognition",
+   "created": "2019-05-18T02:04:07Z",
+   "stars": 121,
+   "window": "2019-05-01",
+   "page": 4
+  },
+  {
+   "order": 42,
+   "repo": "joh/xmldiffs",
+   "created": "2017-03-22T23:36:04Z",
+   "stars": 96,
+   "window": "2017-03-01",
+   "page": 4
+  },
+  {
+   "order": 43,
+   "repo": "portugueslab/arrayqueues",
+   "created": "2018-05-18T16:03:02Z",
+   "stars": 60,
+   "window": "2018-05-01",
+   "page": 7
+  },
+  {
+   "order": 44,
+   "repo": "ChemLez/xmcTiaoJiInformation_Pachong",
+   "created": "2020-04-08T18:18:42Z",
+   "stars": 66,
+   "window": "2020-04-01",
+   "page": 9
+  },
+  {
+   "order": 45,
+   "repo": "pyscaffold/configupdater",
+   "created": "2018-06-15T08:27:36Z",
+   "stars": 73,
+   "window": "2018-06-01",
+   "page": 5
+  },
+  {
+   "order": 46,
+   "repo": "hezhangsprinter/DID-MDN",
+   "created": "2018-02-21T00:14:52Z",
+   "stars": 270,
+   "window": "2018-02-01",
+   "page": 1
+  },
+  {
+   "order": 47,
+   "repo": "val-iisc/lsc-cnn",
+   "created": "2019-05-30T05:30:41Z",
+   "stars": 216,
+   "window": "2019-05-01",
+   "page": 1
+  },
+  {
+   "order": 48,
+   "repo": "shailshouryya/yt-videos-list",
+   "created": "2019-08-31T01:16:50Z",
+   "stars": 111,
+   "window": "2019-08-01",
+   "page": 4
+  },
+  {
+   "order": 49,
+   "repo": "ofirpress/shortformer",
+   "created": "2020-12-30T01:19:14Z",
+   "stars": 145,
+   "window": "2020-12-01",
+   "page": 3
+  },
+  {
+   "order": 50,
+   "repo": "xyj77/MCF-3D-CNN",
+   "created": "2018-04-24T12:30:14Z",
+   "stars": 49,
+   "window": "2018-04-01",
+   "page": 8
+  },
+  {
+   "order": 51,
+   "repo": "oxwhirl/facmac",
+   "created": "2021-10-25T13:25:28Z",
+   "stars": 116,
+   "window": "2021-10-01",
+   "page": 3
+  },
+  {
+   "order": 52,
+   "repo": "csyhhu/L-OBS",
+   "created": "2017-10-20T08:51:04Z",
+   "stars": 79,
+   "window": "2017-10-01",
+   "page": 4
+  },
+  {
+   "order": 53,
+   "repo": "GIScience/ohsome-quality-api",
+   "created": "2021-05-10T08:52:20Z",
+   "stars": 51,
+   "window": "2021-05-01",
+   "page": 9
+  },
+  {
+   "order": 54,
+   "repo": "petersn/six-char-max",
+   "created": "2017-06-01T22:07:32Z",
+   "stars": 73,
+   "window": "2017-06-01",
+   "page": 4
+  },
+  {
+   "order": 55,
+   "repo": "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA",
+   "created": "2020-09-26T05:29:57Z",
+   "stars": 44,
+   "window": "2020-09-01",
+   "page": 9
+  },
+  {
+   "order": 56,
+   "repo": "LaoYang1994/PanopticSegmentation",
+   "created": "2019-03-02T10:44:46Z",
+   "stars": 73,
+   "window": "2019-03-01",
+   "page": 6
+  },
+  {
+   "order": 57,
+   "repo": "dxywill/deepknowledgetracing",
+   "created": "2018-08-28T15:06:15Z",
+   "stars": 39,
+   "window": "2018-08-01",
+   "page": 9
+  },
+  {
+   "order": 58,
+   "repo": "sarartur/chess.com",
+   "created": "2020-06-23T07:47:40Z",
+   "stars": 69,
+   "window": "2020-06-01",
+   "page": 8
+  },
+  {
+   "order": 59,
+   "repo": "cutelittletiantian/python-for-office",
+   "created": "2021-02-22T20:08:46Z",
+   "stars": 118,
+   "window": "2021-02-01",
+   "page": 3
+  },
+  {
+   "order": 60,
+   "repo": "redcaps-dataset/redcaps-downloader",
+   "created": "2021-09-20T00:42:33Z",
+   "stars": 52,
+   "window": "2021-09-01",
+   "page": 7
+  },
+  {
+   "order": 61,
+   "repo": "JaminFong/dali-pytorch",
+   "created": "2020-11-25T07:50:10Z",
+   "stars": 51,
+   "window": "2020-11-01",
+   "page": 8
+  },
+  {
+   "order": 62,
+   "repo": "tonybaloney/requests-staticmock",
+   "created": "2017-01-20T01:28:18Z",
+   "stars": 44,
+   "window": "2017-01-01",
+   "page": 6
+  },
+  {
+   "order": 63,
+   "repo": "DurhamDecLab/ARBInterp",
+   "created": "2019-01-24T13:04:38Z",
+   "stars": 39,
+   "window": "2019-01-01",
+   "page": 10
+  },
+  {
+   "order": 64,
+   "repo": "MortenHannemose/pytorch-vfi-cft",
+   "created": "2019-07-09T16:38:20Z",
+   "stars": 154,
+   "window": "2019-07-01",
+   "page": 2
+  },
+  {
+   "order": 65,
+   "repo": "heyeshuang/beancount-homemade-importers",
+   "created": "2019-11-09T14:09:12Z",
+   "stars": 89,
+   "window": "2019-11-01",
+   "page": 5
+  },
+  {
+   "order": 66,
+   "repo": "hugovk/pypistats",
+   "created": "2018-09-22T09:19:12Z",
+   "stars": 242,
+   "window": "2018-09-01",
+   "page": 1
+  },
+  {
+   "order": 67,
+   "repo": "YRdddream/attattr",
+   "created": "2021-03-22T18:00:21Z",
+   "stars": 89,
+   "window": "2021-03-01",
+   "page": 7
+  },
+  {
+   "order": 68,
+   "repo": "PaulChongPeng/YOLO2TensorFlow",
+   "created": "2017-06-23T06:07:10Z",
+   "stars": 37,
+   "window": "2017-06-01",
+   "page": 8
+  },
+  {
+   "order": 69,
+   "repo": "watermarkhu/qsurface",
+   "created": "2019-04-01T11:04:12Z",
+   "stars": 82,
+   "window": "2019-03-01",
+   "page": 6
+  },
+  {
+   "order": 70,
+   "repo": "ICD-API/Python-samples",
+   "created": "2017-10-18T13:49:37Z",
+   "stars": 66,
+   "window": "2017-10-01",
+   "page": 5
+  },
+  {
+   "order": 71,
+   "repo": "tomdbar/eco-dqn",
+   "created": "2019-09-02T13:02:03Z",
+   "stars": 82,
+   "window": "2019-09-01",
+   "page": 5
+  },
+  {
+   "order": 72,
+   "repo": "fabiangeisler/pyshotgrid",
+   "created": "2021-10-10T19:24:15Z",
+   "stars": 50,
+   "window": "2021-10-01",
+   "page": 8
+  },
+  {
+   "order": 73,
+   "repo": "JDAI-CV/FADA",
+   "created": "2020-07-17T06:53:39Z",
+   "stars": 141,
+   "window": "2020-07-01",
+   "page": 3
+  },
+  {
+   "order": 74,
+   "repo": "KnowZero/Krita-PythonPluginDeveloperTools",
+   "created": "2021-10-20T03:40:31Z",
+   "stars": 84,
+   "window": "2021-10-01",
+   "page": 5
+  },
+  {
+   "order": 75,
+   "repo": "CFMTech/Jupytab",
+   "created": "2019-08-02T14:44:16Z",
+   "stars": 104,
+   "window": "2019-08-01",
+   "page": 4
+  },
+  {
+   "order": 76,
+   "repo": "BornToBeRoot/check_nextcloud",
+   "created": "2017-09-26T08:05:44Z",
+   "stars": 36,
+   "window": "2017-09-01",
+   "page": 8
+  },
+  {
+   "order": 77,
+   "repo": "Morizeyao/Decoders-Chinese-TF2.0",
+   "created": "2019-12-07T10:32:09Z",
+   "stars": 149,
+   "window": "2019-12-01",
+   "page": 2
+  },
+  {
+   "order": 78,
+   "repo": "geaxgx/UniversalHandControl",
+   "created": "2020-10-31T18:48:37Z",
+   "stars": 46,
+   "window": "2020-10-01",
+   "page": 10
+  },
+  {
+   "order": 79,
+   "repo": "odwdinc/SSBU_Amiibo",
+   "created": "2018-12-24T19:43:35Z",
+   "stars": 55,
+   "window": "2018-12-01",
+   "page": 7
+  },
+  {
+   "order": 80,
+   "repo": "Actasidiot/EFIFSTR",
+   "created": "2020-08-01T09:07:42Z",
+   "stars": 44,
+   "window": "2020-08-01",
+   "page": 10
+  },
+  {
+   "order": 81,
+   "repo": "yandexdataschool/satellite-collision-avoidance",
+   "created": "2017-11-21T20:25:07Z",
+   "stars": 39,
+   "window": "2017-11-01",
+   "page": 9
+  },
+  {
+   "order": 82,
+   "repo": "Deeksha96/Deep-MIMO-Detection",
+   "created": "2018-10-27T06:16:38Z",
+   "stars": 42,
+   "window": "2018-10-01",
+   "page": 9
+  },
+  {
+   "order": 83,
+   "repo": "zjunlp/OntoProtein",
+   "created": "2021-12-18T04:15:18Z",
+   "stars": 153,
+   "window": "2021-12-01",
+   "page": 2
+  },
+  {
+   "order": 84,
+   "repo": "afiaka87/pyglide",
+   "created": "2021-12-24T00:02:48Z",
+   "stars": 66,
+   "window": "2021-12-01",
+   "page": 6
+  },
+  {
+   "order": 85,
+   "repo": "wonderseen/Handpose-WonderSeen-Net",
+   "created": "2018-02-28T16:30:42Z",
+   "stars": 38,
+   "window": "2018-02-01",
+   "page": 9
+  },
+  {
+   "order": 86,
+   "repo": "marl/autopool",
+   "created": "2018-04-24T15:35:45Z",
+   "stars": 78,
+   "window": "2018-04-01",
+   "page": 5
+  },
+  {
+   "order": 87,
+   "repo": "cheese-roll/light-anime-face-detector",
+   "created": "2020-04-15T17:49:28Z",
+   "stars": 72,
+   "window": "2020-04-01",
+   "page": 8
+  },
+  {
+   "order": 88,
+   "repo": "mthbernardes/ipChecker",
+   "created": "2018-01-29T18:53:38Z",
+   "stars": 56,
+   "window": "2018-01-01",
+   "page": 8
+  },
+  {
+   "order": 89,
+   "repo": "iwyoo/tf_ThinPlateSpline",
+   "created": "2017-01-28T10:27:53Z",
+   "stars": 72,
+   "window": "2017-01-01",
+   "page": 4
+  },
+  {
+   "order": 90,
+   "repo": "conbench/conbench",
+   "created": "2021-03-02T17:16:44Z",
+   "stars": 126,
+   "window": "2021-03-01",
+   "page": 4
+  },
+  {
+   "order": 91,
+   "repo": "TianLin0509/Easiest-SRGAN-demo",
+   "created": "2019-04-22T09:01:03Z",
+   "stars": 79,
+   "window": "2019-04-01",
+   "page": 6
+  },
+  {
+   "order": 92,
+   "repo": "davidonzo/apiosintDS",
+   "created": "2019-10-13T16:35:14Z",
+   "stars": 60,
+   "window": "2019-10-01",
+   "page": 7
+  },
+  {
+   "order": 93,
+   "repo": "D-X-Y/NATS-Bench",
+   "created": "2020-10-12T12:01:04Z",
+   "stars": 196,
+   "window": "2020-10-01",
+   "page": 2
+  },
+  {
+   "order": 94,
+   "repo": "iamkubi/pydactyl",
+   "created": "2019-09-05T22:17:26Z",
+   "stars": 95,
+   "window": "2019-09-01",
+   "page": 4
+  },
+  {
+   "order": 95,
+   "repo": "blockdiag/seqdiag",
+   "created": "2018-05-03T07:48:11Z",
+   "stars": 75,
+   "window": "2018-05-01",
+   "page": 5
+  },
+  {
+   "order": 96,
+   "repo": "craigerl/aprsd",
+   "created": "2017-10-31T16:47:27Z",
+   "stars": 209,
+   "window": "2017-10-01",
+   "page": 1
+  },
+  {
+   "order": 97,
+   "repo": "MousaviSajad/ECG-Heartbeat-Classification-seq2seq-model",
+   "created": "2019-02-11T02:18:24Z",
+   "stars": 226,
+   "window": "2019-02-01",
+   "page": 1
+  },
+  {
+   "order": 98,
+   "repo": "mosegontar/Pinku",
+   "created": "2017-09-24T15:34:43Z",
+   "stars": 31,
+   "window": "2017-09-01",
+   "page": 9
+  },
+  {
+   "order": 99,
+   "repo": "kcyu2014/eval-nas",
+   "created": "2019-11-22T15:52:14Z",
+   "stars": 49,
+   "window": "2019-11-01",
+   "page": 8
+  },
+  {
+   "order": 100,
+   "repo": "amaximus/bkk_stop",
+   "created": "2018-03-18T18:41:44Z",
+   "stars": 43,
+   "window": "2018-03-01",
+   "page": 10
+  },
+  {
+   "order": 101,
+   "repo": "fitoprincipe/geebap",
+   "created": "2017-10-27T15:48:03Z",
+   "stars": 87,
+   "window": "2017-10-01",
+   "page": 4
+  },
+  {
+   "order": 102,
+   "repo": "joeljang/continual-knowledge-learning",
+   "created": "2021-10-07T03:39:13Z",
+   "stars": 91,
+   "window": "2021-10-01",
+   "page": 4
+  },
+  {
+   "order": 103,
+   "repo": "uclaml/Padam",
+   "created": "2018-05-31T21:10:50Z",
+   "stars": 40,
+   "window": "2018-05-01",
+   "page": 10
+  },
+  {
+   "order": 104,
+   "repo": "sulc/tfrecord-viewer",
+   "created": "2019-06-11T08:19:07Z",
+   "stars": 185,
+   "window": "2019-06-01",
+   "page": 2
+  },
+  {
+   "order": 105,
+   "repo": "matthewrenze/powerpoint-to-pdf",
+   "created": "2018-08-21T00:34:39Z",
+   "stars": 110,
+   "window": "2018-08-01",
+   "page": 3
+  },
+  {
+   "order": 106,
+   "repo": "octree-nn/ocnn-pytorch",
+   "created": "2021-12-06T15:13:36Z",
+   "stars": 258,
+   "window": "2021-12-01",
+   "page": 1
+  },
+  {
+   "order": 107,
+   "repo": "lfasci/homeassistant-prometheus-query",
+   "created": "2020-03-25T07:34:49Z",
+   "stars": 55,
+   "window": "2020-03-01",
+   "page": 10
+  },
+  {
+   "order": 108,
+   "repo": "x-wrt/build-release",
+   "created": "2019-11-28T15:35:53Z",
+   "stars": 128,
+   "window": "2019-11-01",
+   "page": 3
+  },
+  {
+   "order": 109,
+   "repo": "hemanth-nag/Camera_Flask_App",
+   "created": "2021-05-29T12:21:18Z",
+   "stars": 85,
+   "window": "2021-05-01",
+   "page": 5
+  },
+  {
+   "order": 110,
+   "repo": "dmis-lab/covidAsk",
+   "created": "2020-03-26T00:05:29Z",
+   "stars": 64,
+   "window": "2020-03-01",
+   "page": 9
+  },
+  {
+   "order": 111,
+   "repo": "BBVA/timecop",
+   "created": "2018-07-23T12:08:55Z",
+   "stars": 81,
+   "window": "2018-07-01",
+   "page": 5
+  },
+  {
+   "order": 112,
+   "repo": "SydCaption/SAAT",
+   "created": "2020-03-17T02:25:35Z",
+   "stars": 61,
+   "window": "2020-03-01",
+   "page": 9
+  },
+  {
+   "order": 113,
+   "repo": "felixkreuk/SegFeat",
+   "created": "2019-10-20T11:38:56Z",
+   "stars": 83,
+   "window": "2019-10-01",
+   "page": 5
+  },
+  {
+   "order": 114,
+   "repo": "asottile/cfgv",
+   "created": "2018-01-20T23:08:14Z",
+   "stars": 52,
+   "window": "2018-01-01",
+   "page": 8
+  },
+  {
+   "order": 115,
+   "repo": "kata-ai/indosum",
+   "created": "2018-09-12T05:41:33Z",
+   "stars": 75,
+   "window": "2018-09-01",
+   "page": 5
+  },
+  {
+   "order": 116,
+   "repo": "oxwhirl/treeqn",
+   "created": "2018-03-08T10:35:13Z",
+   "stars": 93,
+   "window": "2018-03-01",
+   "page": 5
+  },
+  {
+   "order": 117,
+   "repo": "geoyee/PdRSCD",
+   "created": "2021-04-20T08:37:26Z",
+   "stars": 72,
+   "window": "2021-04-01",
+   "page": 6
+  },
+  {
+   "order": 118,
+   "repo": "meezan-mallick/space_invader_game",
+   "created": "2020-05-09T16:35:39Z",
+   "stars": 52,
+   "window": "2020-05-01",
+   "page": 10
+  },
+  {
+   "order": 119,
+   "repo": "hobincar/SA-LSTM",
+   "created": "2019-03-10T11:40:08Z",
+   "stars": 48,
+   "window": "2019-03-01",
+   "page": 9
+  },
+  {
+   "order": 120,
+   "repo": "KM4YRI/pyFldigi",
+   "created": "2017-01-28T15:06:23Z",
+   "stars": 43,
+   "window": "2017-01-01",
+   "page": 6
+  },
+  {
+   "order": 121,
+   "repo": "google/emboss",
+   "created": "2019-08-01T00:30:02Z",
+   "stars": 93,
+   "window": "2019-08-01",
+   "page": 5
+  },
+  {
+   "order": 122,
+   "repo": "LUSSeg/ImageNet-S",
+   "created": "2021-06-06T15:05:44Z",
+   "stars": 191,
+   "window": "2021-06-01",
+   "page": 2
+  },
+  {
+   "order": 123,
+   "repo": "briancaffey/sec-filings-app",
+   "created": "2020-11-29T18:30:03Z",
+   "stars": 52,
+   "window": "2020-11-01",
+   "page": 8
+  },
+  {
+   "order": 124,
+   "repo": "gitshanks/fer2013",
+   "created": "2018-11-01T02:30:56Z",
+   "stars": 173,
+   "window": "2018-11-01",
+   "page": 2
+  },
+  {
+   "order": 125,
+   "repo": "mattdodge/yahoofantasy",
+   "created": "2019-06-23T22:30:30Z",
+   "stars": 88,
+   "window": "2019-06-01",
+   "page": 5
+  },
+  {
+   "order": 126,
+   "repo": "EricZhu-42/PedagogySquare_Downloader",
+   "created": "2020-03-31T07:07:32Z",
+   "stars": 170,
+   "window": "2020-03-01",
+   "page": 2
+  },
+  {
+   "order": 127,
+   "repo": "katieshiqihe/music_in_python",
+   "created": "2021-03-21T05:48:55Z",
+   "stars": 66,
+   "window": "2021-03-01",
+   "page": 9
+  },
+  {
+   "order": 128,
+   "repo": "Rybec/pyRTOS",
+   "created": "2021-06-01T01:03:45Z",
+   "stars": 178,
+   "window": "2021-05-01",
+   "page": 2
+  },
+  {
+   "order": 129,
+   "repo": "teemtee/tmt",
+   "created": "2019-09-06T11:15:26Z",
+   "stars": 158,
+   "window": "2019-09-01",
+   "page": 2
+  },
+  {
+   "order": 130,
+   "repo": "chingyaoc/photo-editing-tensorflow",
+   "created": "2017-04-08T18:24:38Z",
+   "stars": 54,
+   "window": "2017-04-01",
+   "page": 6
+  },
+  {
+   "order": 131,
+   "repo": "NevilArt/BsMax",
+   "created": "2019-10-21T17:18:50Z",
+   "stars": 290,
+   "window": "2019-10-01",
+   "page": 1
+  },
+  {
+   "order": 132,
+   "repo": "yselivonchyk/Tensorflow_WhatWhereAutoencoder",
+   "created": "2017-03-01T15:10:09Z",
+   "stars": 40,
+   "window": "2017-03-01",
+   "page": 8
+  },
+  {
+   "order": 133,
+   "repo": "awslabs/compliant-framework-for-federal-and-dod-workloads-in-aws-govcloud-us",
+   "created": "2020-12-16T21:34:57Z",
+   "stars": 62,
+   "window": "2020-12-01",
+   "page": 7
+  },
+  {
+   "order": 134,
+   "repo": "kennethreitz-archive/howtopython.org",
+   "created": "2018-01-14T14:23:44Z",
+   "stars": 161,
+   "window": "2018-01-01",
+   "page": 2
+  },
+  {
+   "order": 135,
+   "repo": "rorybyrne/git-plan",
+   "created": "2021-02-08T06:26:57Z",
+   "stars": 182,
+   "window": "2021-02-01",
+   "page": 2
+  },
+  {
+   "order": 136,
+   "repo": "HuiResearch/tfbert",
+   "created": "2020-09-21T09:03:25Z",
+   "stars": 58,
+   "window": "2020-09-01",
+   "page": 7
+  },
+  {
+   "order": 137,
+   "repo": "geometalab/Vector-Tiles-Reader-QGIS-Plugin",
+   "created": "2017-02-28T22:52:14Z",
+   "stars": 153,
+   "window": "2017-02-01",
+   "page": 2
+  },
+  {
+   "order": 138,
+   "repo": "anvilistas/anvil-extras",
+   "created": "2021-02-24T10:26:31Z",
+   "stars": 87,
+   "window": "2021-02-01",
+   "page": 5
+  },
+  {
+   "order": 139,
+   "repo": "Hackathonners/vania",
+   "created": "2017-03-24T13:47:21Z",
+   "stars": 76,
+   "window": "2017-03-01",
+   "page": 5
+  },
+  {
+   "order": 140,
+   "repo": "zzw922cn/TensorFlow-Input-Pipeline",
+   "created": "2017-04-20T14:58:34Z",
+   "stars": 53,
+   "window": "2017-04-01",
+   "page": 6
+  },
+  {
+   "order": 141,
+   "repo": "crowsonkb/v-diffusion-jax",
+   "created": "2021-11-07T12:54:28Z",
+   "stars": 218,
+   "window": "2021-11-01",
+   "page": 1
+  },
+  {
+   "order": 142,
+   "repo": "beaston02/CamsterRecorder",
+   "created": "2017-05-29T19:35:17Z",
+   "stars": 37,
+   "window": "2017-05-01",
+   "page": 9
+  },
+  {
+   "order": 143,
+   "repo": "imryche/blockkit",
+   "created": "2019-10-23T11:01:11Z",
+   "stars": 105,
+   "window": "2019-10-01",
+   "page": 4
+  },
+  {
+   "order": 144,
+   "repo": "noneplugin/nonebot-plugin-shindan",
+   "created": "2021-11-28T16:41:54Z",
+   "stars": 51,
+   "window": "2021-11-01",
+   "page": 7
+  },
+  {
+   "order": 145,
+   "repo": "t0mm4rx/binance_crypto_arbitrage",
+   "created": "2020-08-04T05:00:48Z",
+   "stars": 46,
+   "window": "2020-08-01",
+   "page": 9
+  },
+  {
+   "order": 146,
+   "repo": "RuihongQiu/DuoRec",
+   "created": "2021-10-14T13:45:38Z",
+   "stars": 126,
+   "window": "2021-10-01",
+   "page": 3
+  },
+  {
+   "order": 147,
+   "repo": "lipiji/Guyu",
+   "created": "2019-08-12T06:45:44Z",
+   "stars": 187,
+   "window": "2019-08-01",
+   "page": 2
+  },
+  {
+   "order": 148,
+   "repo": "VSainteuf/mcssa",
+   "created": "2018-02-18T18:53:25Z",
+   "stars": 42,
+   "window": "2018-02-01",
+   "page": 9
+  },
+  {
+   "order": 149,
+   "repo": "JihongJu/keras-fcn",
+   "created": "2017-02-22T21:56:23Z",
+   "stars": 202,
+   "window": "2017-02-01",
+   "page": 1
+  },
+  {
+   "order": 150,
+   "repo": "tirthajyoti/doepy",
+   "created": "2019-07-21T23:56:34Z",
+   "stars": 168,
+   "window": "2019-07-01",
+   "page": 2
+  },
+  {
+   "order": 151,
+   "repo": "dropbox/dbx-career-framework",
+   "created": "2021-06-09T23:48:04Z",
+   "stars": 100,
+   "window": "2021-06-01",
+   "page": 4
+  },
+  {
+   "order": 152,
+   "repo": "kongxiangchx/Shopping-mall-management-system",
+   "created": "2021-04-25T05:33:36Z",
+   "stars": 83,
+   "window": "2021-04-01",
+   "page": 5
+  },
+  {
+   "order": 153,
+   "repo": "mcba1n/polar-codes",
+   "created": "2019-10-07T07:44:20Z",
+   "stars": 70,
+   "window": "2019-10-01",
+   "page": 6
+  },
+  {
+   "order": 154,
+   "repo": "MLBazaar/BTB",
+   "created": "2017-11-03T00:18:41Z",
+   "stars": 176,
+   "window": "2017-11-01",
+   "page": 2
+  },
+  {
+   "order": 155,
+   "repo": "ZhengyuLiang24/Conv4d-PyTorch",
+   "created": "2021-06-12T06:45:31Z",
+   "stars": 47,
+   "window": "2021-06-01",
+   "page": 10
+  },
+  {
+   "order": 156,
+   "repo": "FeiWang96/GTR",
+   "created": "2021-04-23T02:43:06Z",
+   "stars": 48,
+   "window": "2021-04-01",
+   "page": 9
+  },
+  {
+   "order": 157,
+   "repo": "equinor/seismic-zfp",
+   "created": "2019-10-18T14:19:43Z",
+   "stars": 73,
+   "window": "2019-10-01",
+   "page": 6
+  },
+  {
+   "order": 158,
+   "repo": "rschroll/rmfuse",
+   "created": "2021-02-07T05:57:14Z",
+   "stars": 103,
+   "window": "2021-02-01",
+   "page": 4
+  },
+  {
+   "order": 159,
+   "repo": "brett-fitz/pyMalleableProfileParser",
+   "created": "2021-09-06T22:58:40Z",
+   "stars": 64,
+   "window": "2021-09-01",
+   "page": 6
+  },
+  {
+   "order": 160,
+   "repo": "spel-uchile/Pypredict",
+   "created": "2018-12-04T18:58:15Z",
+   "stars": 66,
+   "window": "2018-12-01",
+   "page": 6
+  },
+  {
+   "order": 161,
+   "repo": "koichiro11/residual-attention-network",
+   "created": "2017-08-29T05:34:42Z",
+   "stars": 92,
+   "window": "2017-08-01",
+   "page": 4
+  },
+  {
+   "order": 162,
+   "repo": "willowj/python_dataEE",
+   "created": "2017-09-16T13:42:15Z",
+   "stars": 83,
+   "window": "2017-09-01",
+   "page": 4
+  },
+  {
+   "order": 163,
+   "repo": "VITA-Group/AGD",
+   "created": "2020-06-14T23:59:02Z",
+   "stars": 105,
+   "window": "2020-06-01",
+   "page": 5
+  },
+  {
+   "order": 164,
+   "repo": "areed1192/sigma-coding",
+   "created": "2020-08-15T15:42:24Z",
+   "stars": 41,
+   "window": "2020-08-01",
+   "page": 10
+  },
+  {
+   "order": 165,
+   "repo": "awslabs/aws-service-catalog-factory",
+   "created": "2019-04-10T21:21:38Z",
+   "stars": 132,
+   "window": "2019-04-01",
+   "page": 3
+  },
+  {
+   "order": 166,
+   "repo": "aqara/home-assistant",
+   "created": "2021-09-02T02:46:35Z",
+   "stars": 55,
+   "window": "2021-09-01",
+   "page": 7
+  },
+  {
+   "order": 167,
+   "repo": "tf2jaguar/pytorch_train",
+   "created": "2020-05-01T10:02:56Z",
+   "stars": 115,
+   "window": "2020-04-01",
+   "page": 4
+  },
+  {
+   "order": 168,
+   "repo": "4uiiurz1/kaggle-aptos2019-blindness-detection",
+   "created": "2019-06-28T14:30:11Z",
+   "stars": 46,
+   "window": "2019-06-01",
+   "page": 9
+  },
+  {
+   "order": 169,
+   "repo": "tropicoo/hikvision-camera-bot",
+   "created": "2018-04-13T10:59:19Z",
+   "stars": 123,
+   "window": "2018-04-01",
+   "page": 3
+  },
+  {
+   "order": 170,
+   "repo": "JonathanLaneMcDonald/ML_for_SLA",
+   "created": "2020-07-01T12:20:33Z",
+   "stars": 57,
+   "window": "2020-06-01",
+   "page": 10
+  },
+  {
+   "order": 171,
+   "repo": "Lvfeifan/MBLLEN",
+   "created": "2019-12-03T06:56:37Z",
+   "stars": 265,
+   "window": "2019-12-01",
+   "page": 1
+  },
+  {
+   "order": 172,
+   "repo": "vasgaowei/pytorch_MELM",
+   "created": "2019-03-14T00:32:33Z",
+   "stars": 101,
+   "window": "2019-03-01",
+   "page": 4
+  },
+  {
+   "order": 173,
+   "repo": "autosoft-dev/tree-hugger",
+   "created": "2020-03-01T11:46:26Z",
+   "stars": 132,
+   "window": "2020-02-01",
+   "page": 3
+  },
+  {
+   "order": 174,
+   "repo": "Postuf/Toroxy",
+   "created": "2019-09-10T10:50:54Z",
+   "stars": 66,
+   "window": "2019-09-01",
+   "page": 6
+  },
+  {
+   "order": 175,
+   "repo": "JOHW85/ScrapeFandom",
+   "created": "2021-05-24T01:36:45Z",
+   "stars": 45,
+   "window": "2021-05-01",
+   "page": 10
+  },
+  {
+   "order": 176,
+   "repo": "GanjinZero/ChineseEHRBert",
+   "created": "2019-10-14T03:33:41Z",
+   "stars": 270,
+   "window": "2019-10-01",
+   "page": 1
+  },
+  {
+   "order": 177,
+   "repo": "savvagen/playwright-pytest-example",
+   "created": "2020-11-04T07:57:18Z",
+   "stars": 69,
+   "window": "2020-11-01",
+   "page": 6
+  },
+  {
+   "order": 178,
+   "repo": "adityaSomak/PSLQA",
+   "created": "2018-06-01T18:57:09Z",
+   "stars": 53,
+   "window": "2018-06-01",
+   "page": 7
+  },
+  {
+   "order": 179,
+   "repo": "perseus784/BvS",
+   "created": "2017-08-18T16:55:04Z",
+   "stars": 52,
+   "window": "2017-08-01",
+   "page": 7
+  },
+  {
+   "order": 180,
+   "repo": "lennardv2/ehh",
+   "created": "2021-01-11T13:12:56Z",
+   "stars": 81,
+   "window": "2021-01-01",
+   "page": 5
+  },
+  {
+   "order": 181,
+   "repo": "luckiezhou/DynamicTriad",
+   "created": "2017-11-19T03:44:56Z",
+   "stars": 140,
+   "window": "2017-11-01",
+   "page": 2
+  },
+  {
+   "order": 182,
+   "repo": "kegiljarhus/pyBEMT",
+   "created": "2020-05-28T13:02:04Z",
+   "stars": 90,
+   "window": "2020-05-01",
+   "page": 6
+  },
+  {
+   "order": 183,
+   "repo": "ronreiter/bruteforce-seed",
+   "created": "2021-01-22T01:37:28Z",
+   "stars": 80,
+   "window": "2021-01-01",
+   "page": 5
+  },
+  {
+   "order": 184,
+   "repo": "khufkens/align_images",
+   "created": "2019-08-18T13:29:55Z",
+   "stars": 64,
+   "window": "2019-08-01",
+   "page": 7
+  },
+  {
+   "order": 185,
+   "repo": "aruba/aos-switch-ansible-collection",
+   "created": "2020-06-19T20:31:39Z",
+   "stars": 80,
+   "window": "2020-06-01",
+   "page": 7
+  },
+  {
+   "order": 186,
+   "repo": "imfing/sketch-to-art",
+   "created": "2018-06-07T01:52:02Z",
+   "stars": 210,
+   "window": "2018-06-01",
+   "page": 1
+  },
+  {
+   "order": 187,
+   "repo": "asweigart/nicewin",
+   "created": "2018-09-28T23:17:15Z",
+   "stars": 165,
+   "window": "2018-09-01",
+   "page": 2
+  },
+  {
+   "order": 188,
+   "repo": "Excaive/miraicle",
+   "created": "2021-06-03T01:38:02Z",
+   "stars": 52,
+   "window": "2021-06-01",
+   "page": 9
+  },
+  {
+   "order": 189,
+   "repo": "CRED-CLUB/ARTIF",
+   "created": "2021-06-20T06:31:50Z",
+   "stars": 248,
+   "window": "2021-06-01",
+   "page": 1
+  },
+  {
+   "order": 190,
+   "repo": "OpenIDEA-YunanUniversity/ycimpute",
+   "created": "2018-03-02T15:21:39Z",
+   "stars": 107,
+   "window": "2018-03-01",
+   "page": 4
+  },
+  {
+   "order": 191,
+   "repo": "felko/ton-lang",
+   "created": "2020-03-21T10:32:04Z",
+   "stars": 64,
+   "window": "2020-03-01",
+   "page": 9
+  },
+  {
+   "order": 192,
+   "repo": "philschmid/cdk-samples",
+   "created": "2021-10-02T08:51:23Z",
+   "stars": 57,
+   "window": "2021-10-01",
+   "page": 7
+  },
+  {
+   "order": 193,
+   "repo": "gaussic/keras-examples",
+   "created": "2017-02-26T07:43:14Z",
+   "stars": 39,
+   "window": "2017-02-01",
+   "page": 7
+  },
+  {
+   "order": 194,
+   "repo": "zbnio/zbn",
+   "created": "2020-11-15T15:14:21Z",
+   "stars": 62,
+   "window": "2020-11-01",
+   "page": 7
+  },
+  {
+   "order": 195,
+   "repo": "jonassagild/Track-to-Track-Fusion",
+   "created": "2020-08-24T11:53:59Z",
+   "stars": 50,
+   "window": "2020-08-01",
+   "page": 8
+  },
+  {
+   "order": 196,
+   "repo": "aws-deepracer-community/deepracer-log-guru",
+   "created": "2020-06-10T12:27:58Z",
+   "stars": 65,
+   "window": "2020-06-01",
+   "page": 9
+  },
+  {
+   "order": 197,
+   "repo": "dataplayer12/Fly-LSH",
+   "created": "2017-12-01T15:19:16Z",
+   "stars": 90,
+   "window": "2017-12-01",
+   "page": 4
+  },
+  {
+   "order": 198,
+   "repo": "wimagguc/tf-weather",
+   "created": "2018-08-01T16:02:18Z",
+   "stars": 38,
+   "window": "2018-08-01",
+   "page": 10
+  },
+  {
+   "order": 199,
+   "repo": "manjimnav/Informer-Tensorflow",
+   "created": "2021-02-13T15:15:50Z",
+   "stars": 55,
+   "window": "2021-02-01",
+   "page": 8
+  },
+  {
+   "order": 200,
+   "repo": "Owen718/ECCV22-Perceiving-and-Modeling-Density-for-Image-Dehazing",
+   "created": "2021-11-19T02:00:09Z",
+   "stars": 59,
+   "window": "2021-11-01",
+   "page": 6
+  },
+  {
+   "order": 201,
+   "repo": "sxpro/HetConvolution2d_pytorch",
+   "created": "2019-03-28T07:57:57Z",
+   "stars": 44,
+   "window": "2019-03-01",
+   "page": 10
+  },
+  {
+   "order": 202,
+   "repo": "cjymz886/text_bert_cnn",
+   "created": "2019-03-29T09:11:37Z",
+   "stars": 78,
+   "window": "2019-03-01",
+   "page": 6
+  },
+  {
+   "order": 203,
+   "repo": "JiachengLi1995/UCTopic",
+   "created": "2021-06-04T18:37:28Z",
+   "stars": 46,
+   "window": "2021-06-01",
+   "page": 10
+  },
+  {
+   "order": 204,
+   "repo": "shiluyuan/Reinforcement-Learning-in-Path-Finding",
+   "created": "2017-09-05T01:08:08Z",
+   "stars": 102,
+   "window": "2017-09-01",
+   "page": 3
+  },
+  {
+   "order": 205,
+   "repo": "nabla-c0d3/nassl",
+   "created": "2017-02-28T06:09:17Z",
+   "stars": 40,
+   "window": "2017-02-01",
+   "page": 7
+  },
+  {
+   "order": 206,
+   "repo": "mcauser/micropython-max7219",
+   "created": "2017-10-01T13:10:56Z",
+   "stars": 212,
+   "window": "2017-09-01",
+   "page": 1
+  },
+  {
+   "order": 207,
+   "repo": "pyeden/FastAPI-demo",
+   "created": "2020-06-24T09:13:20Z",
+   "stars": 247,
+   "window": "2020-06-01",
+   "page": 1
+  },
+  {
+   "order": 208,
+   "repo": "gitabtion/SoftMaskedBert-PyTorch",
+   "created": "2021-01-11T08:01:57Z",
+   "stars": 94,
+   "window": "2021-01-01",
+   "page": 4
+  },
+  {
+   "order": 209,
+   "repo": "rishikksh20/HiFi-GAN",
+   "created": "2020-10-13T02:51:22Z",
+   "stars": 83,
+   "window": "2020-10-01",
+   "page": 5
+  },
+  {
+   "order": 210,
+   "repo": "lemzoo/flask-rabbitmq",
+   "created": "2017-10-25T22:42:05Z",
+   "stars": 41,
+   "window": "2017-10-01",
+   "page": 8
+  },
+  {
+   "order": 211,
+   "repo": "watakandai/hiro_pytorch",
+   "created": "2019-11-27T19:28:29Z",
+   "stars": 119,
+   "window": "2019-11-01",
+   "page": 3
+  },
+  {
+   "order": 212,
+   "repo": "hackping/XXEpayload",
+   "created": "2018-10-25T02:34:53Z",
+   "stars": 84,
+   "window": "2018-10-01",
+   "page": 5
+  },
+  {
+   "order": 213,
+   "repo": "Cargill/OpenSIEM-Logstash-Parsing",
+   "created": "2021-03-11T22:37:49Z",
+   "stars": 199,
+   "window": "2021-03-01",
+   "page": 2
+  },
+  {
+   "order": 214,
+   "repo": "QIN2DIM/awesome-hugo-themes",
+   "created": "2021-10-03T00:48:18Z",
+   "stars": 125,
+   "window": "2021-10-01",
+   "page": 3
+  },
+  {
+   "order": 215,
+   "repo": "tengattack/certbot-dns-dnspod",
+   "created": "2018-03-14T16:28:53Z",
+   "stars": 85,
+   "window": "2018-03-01",
+   "page": 5
+  },
+  {
+   "order": 216,
+   "repo": "random-robbie/cve-2020-0688",
+   "created": "2020-02-25T23:44:16Z",
+   "stars": 164,
+   "window": "2020-02-01",
+   "page": 2
+  },
+  {
+   "order": 217,
+   "repo": "TangXu-Group/Remote-Sensing-Images-Classification",
+   "created": "2021-01-11T07:37:04Z",
+   "stars": 66,
+   "window": "2021-01-01",
+   "page": 6
+  },
+  {
+   "order": 218,
+   "repo": "LeviBorodenko/non-api-fb-scraper",
+   "created": "2019-01-01T15:46:02Z",
+   "stars": 47,
+   "window": "2018-12-01",
+   "page": 8
+  },
+  {
+   "order": 219,
+   "repo": "ncorbuk/Python-Tutorial---Hunt-Down-Social-Media-Accounts-by-Usernames-for-Open-Source-Intelligence-",
+   "created": "2019-03-01T18:34:25Z",
+   "stars": 76,
+   "window": "2019-02-01",
+   "page": 5
+  },
+  {
+   "order": 220,
+   "repo": "muimota/miniminer",
+   "created": "2017-03-03T16:03:00Z",
+   "stars": 50,
+   "window": "2017-03-01",
+   "page": 7
+  },
+  {
+   "order": 221,
+   "repo": "cyoon1729/distributedRL",
+   "created": "2019-11-03T22:00:05Z",
+   "stars": 97,
+   "window": "2019-11-01",
+   "page": 4
+  },
+  {
+   "order": 222,
+   "repo": "mrahtz/tensorflow-rl-pong",
+   "created": "2017-05-02T17:45:24Z",
+   "stars": 52,
+   "window": "2017-05-01",
+   "page": 6
+  },
+  {
+   "order": 223,
+   "repo": "coderedcorp/django-sass",
+   "created": "2019-05-10T17:16:52Z",
+   "stars": 73,
+   "window": "2019-05-01",
+   "page": 7
+  },
+  {
+   "order": 224,
+   "repo": "megvii-research/megfile",
+   "created": "2021-08-23T08:11:25Z",
+   "stars": 179,
+   "window": "2021-08-01",
+   "page": 2
+  },
+  {
+   "order": 225,
+   "repo": "liuquande/SAML",
+   "created": "2020-06-23T08:15:07Z",
+   "stars": 132,
+   "window": "2020-06-01",
+   "page": 3
+  },
+  {
+   "order": 226,
+   "repo": "dawnranger/pytorch-AGNN",
+   "created": "2017-12-27T06:56:55Z",
+   "stars": 145,
+   "window": "2017-12-01",
+   "page": 2
+  },
+  {
+   "order": 227,
+   "repo": "ultrafunkamsterdam/googletranslate",
+   "created": "2019-08-25T13:32:37Z",
+   "stars": 185,
+   "window": "2019-08-01",
+   "page": 2
+  },
+  {
+   "order": 228,
+   "repo": "exploit3dguy/ipwndfu",
+   "created": "2020-08-05T11:29:07Z",
+   "stars": 58,
+   "window": "2020-08-01",
+   "page": 7
+  },
+  {
+   "order": 229,
+   "repo": "scikit-hep/resample",
+   "created": "2018-08-23T00:07:35Z",
+   "stars": 86,
+   "window": "2018-08-01",
+   "page": 4
+  },
+  {
+   "order": 230,
+   "repo": "connorcoley/ochem_predict_nn",
+   "created": "2017-03-08T18:34:13Z",
+   "stars": 117,
+   "window": "2017-03-01",
+   "page": 3
+  },
+  {
+   "order": 231,
+   "repo": "EndlessLethe/jddc2019-3th-retrieve-model",
+   "created": "2019-08-29T06:03:05Z",
+   "stars": 53,
+   "window": "2019-08-01",
+   "page": 9
+  },
+  {
+   "order": 232,
+   "repo": "gusibi/Metis",
+   "created": "2017-07-22T05:20:27Z",
+   "stars": 78,
+   "window": "2017-07-01",
+   "page": 5
+  },
+  {
+   "order": 233,
+   "repo": "MatteoGuadrini/pyreports",
+   "created": "2021-02-01T16:28:54Z",
+   "stars": 114,
+   "window": "2021-01-01",
+   "page": 3
+  },
+  {
+   "order": 234,
+   "repo": "moneyDboat/ConvMF",
+   "created": "2017-04-11T05:46:27Z",
+   "stars": 128,
+   "window": "2017-04-01",
+   "page": 3
+  },
+  {
+   "order": 235,
+   "repo": "zuokai/KDDCUP_2020_MultimodalitiesRecall_2nd_Place",
+   "created": "2020-07-31T03:50:43Z",
+   "stars": 133,
+   "window": "2020-07-01",
+   "page": 4
+  },
+  {
+   "order": 236,
+   "repo": "haltakov/simple-photo-gallery",
+   "created": "2020-01-22T12:30:40Z",
+   "stars": 238,
+   "window": "2020-01-01",
+   "page": 1
+  },
+  {
+   "order": 237,
+   "repo": "PacktPublishing/Building-Serverless-Python-Web-Services-with-Zappa",
+   "created": "2018-02-21T05:03:29Z",
+   "stars": 43,
+   "window": "2018-02-01",
+   "page": 8
+  },
+  {
+   "order": 238,
+   "repo": "rvojcik/gitlab-project-export",
+   "created": "2018-12-20T12:23:25Z",
+   "stars": 115,
+   "window": "2018-12-01",
+   "page": 3
+  },
+  {
+   "order": 239,
+   "repo": "budhiahimanshu96/Text-Semantic-Similarity-MachineLearning",
+   "created": "2017-02-07T19:28:46Z",
+   "stars": 26,
+   "window": "2017-02-01",
+   "page": 10
+  },
+  {
+   "order": 240,
+   "repo": "alexa/alexa-with-dstc9-track1-dataset",
+   "created": "2020-06-02T18:35:38Z",
+   "stars": 106,
+   "window": "2020-06-01",
+   "page": 5
+  },
+  {
+   "order": 241,
+   "repo": "howardhsu/DE-CNN",
+   "created": "2018-05-22T03:14:47Z",
+   "stars": 147,
+   "window": "2018-05-01",
+   "page": 2
+  },
+  {
+   "order": 242,
+   "repo": "JuliaPoo/Bad-Apple-on-IDA",
+   "created": "2021-04-07T13:43:12Z",
+   "stars": 48,
+   "window": "2021-04-01",
+   "page": 9
+  },
+  {
+   "order": 243,
+   "repo": "jiangxiluning/facenet_mtcnn_to_mobile",
+   "created": "2019-01-08T06:16:22Z",
+   "stars": 202,
+   "window": "2019-01-01",
+   "page": 2
+  },
+  {
+   "order": 244,
+   "repo": "perforce/p4transfer",
+   "created": "2021-01-29T17:23:49Z",
+   "stars": 61,
+   "window": "2021-01-01",
+   "page": 7
+  },
+  {
+   "order": 245,
+   "repo": "cystanford/Titanic_Data",
+   "created": "2018-11-27T07:51:20Z",
+   "stars": 62,
+   "window": "2018-11-01",
+   "page": 7
+  },
+  {
+   "order": 246,
+   "repo": "cainesap/syllabify",
+   "created": "2017-09-05T19:39:14Z",
+   "stars": 33,
+   "window": "2017-09-01",
+   "page": 9
+  },
+  {
+   "order": 247,
+   "repo": "xiaoxiong74/Time-Extractor",
+   "created": "2020-12-26T03:39:15Z",
+   "stars": 52,
+   "window": "2020-12-01",
+   "page": 8
+  },
+  {
+   "order": 248,
+   "repo": "gngdb/pytorch-minimize",
+   "created": "2021-02-19T16:03:03Z",
+   "stars": 74,
+   "window": "2021-02-01",
+   "page": 6
+  },
+  {
+   "order": 249,
+   "repo": "nupurkmr9/S2M2_fewshot",
+   "created": "2019-10-18T18:36:25Z",
+   "stars": 116,
+   "window": "2019-10-01",
+   "page": 4
+  },
+  {
+   "order": 250,
+   "repo": "eriknyquist/generate_life_calendar",
+   "created": "2017-09-11T03:33:06Z",
+   "stars": 157,
+   "window": "2017-09-01",
+   "page": 2
+  },
+  {
+   "order": 251,
+   "repo": "lancopku/WEAN",
+   "created": "2018-02-27T11:09:11Z",
+   "stars": 92,
+   "window": "2018-02-01",
+   "page": 4
+  },
+  {
+   "order": 252,
+   "repo": "omarryhan/aiogoogle",
+   "created": "2018-11-10T16:55:49Z",
+   "stars": 225,
+   "window": "2018-11-01",
+   "page": 1
+  },
+  {
+   "order": 253,
+   "repo": "techbanca/coinai",
+   "created": "2018-04-29T05:10:48Z",
+   "stars": 246,
+   "window": "2018-04-01",
+   "page": 1
+  },
+  {
+   "order": 254,
+   "repo": "bipul21/scrapy_django",
+   "created": "2017-02-07T13:06:35Z",
+   "stars": 26,
+   "window": "2017-02-01",
+   "page": 10
+  },
+  {
+   "order": 255,
+   "repo": "cleitonleonel/pypix",
+   "created": "2020-12-20T07:34:49Z",
+   "stars": 59,
+   "window": "2020-12-01",
+   "page": 7
+  },
+  {
+   "order": 256,
+   "repo": "lanagarmire/deepimpute",
+   "created": "2018-05-25T21:03:27Z",
+   "stars": 91,
+   "window": "2018-05-01",
+   "page": 4
+  },
+  {
+   "order": 257,
+   "repo": "Justin900429/Facial-Graph-Representation-Learning",
+   "created": "2021-08-14T10:38:42Z",
+   "stars": 75,
+   "window": "2021-08-01",
+   "page": 6
+  },
+  {
+   "order": 258,
+   "repo": "alibaba/acm-sdk-python",
+   "created": "2018-02-01T14:36:59Z",
+   "stars": 59,
+   "window": "2018-02-01",
+   "page": 7
+  },
+  {
+   "order": 259,
+   "repo": "SySS-Research/WireBug",
+   "created": "2020-06-01T11:56:49Z",
+   "stars": 175,
+   "window": "2020-05-01",
+   "page": 2
+  },
+  {
+   "order": 260,
+   "repo": "milad-azami/Nobitex",
+   "created": "2019-12-06T15:24:52Z",
+   "stars": 39,
+   "window": "2019-12-01",
+   "page": 10
+  },
+  {
+   "order": 261,
+   "repo": "nitishgupta/nmn-drop",
+   "created": "2018-10-01T06:02:13Z",
+   "stars": 119,
+   "window": "2018-10-01",
+   "page": 3
+  },
+  {
+   "order": 262,
+   "repo": "akshatapatel/Iris-Recognition",
+   "created": "2018-11-16T04:32:28Z",
+   "stars": 65,
+   "window": "2018-11-01",
+   "page": 6
+  },
+  {
+   "order": 263,
+   "repo": "jesse-ai/project-template",
+   "created": "2021-12-02T06:23:25Z",
+   "stars": 59,
+   "window": "2021-12-01",
+   "page": 7
+  },
+  {
+   "order": 264,
+   "repo": "mrlibw/ControlGAN",
+   "created": "2019-12-20T22:44:54Z",
+   "stars": 169,
+   "window": "2019-12-01",
+   "page": 2
+  },
+  {
+   "order": 265,
+   "repo": "admintony/ePortalGetPass",
+   "created": "2018-02-26T08:23:26Z",
+   "stars": 38,
+   "window": "2018-02-01",
+   "page": 9
+  },
+  {
+   "order": 266,
+   "repo": "littleredxh/DREML",
+   "created": "2018-07-10T19:29:01Z",
+   "stars": 67,
+   "window": "2018-07-01",
+   "page": 6
+  },
+  {
+   "order": 267,
+   "repo": "ntpz870817/Chamaeleo",
+   "created": "2019-05-31T02:12:10Z",
+   "stars": 46,
+   "window": "2019-05-01",
+   "page": 10
+  },
+  {
+   "order": 268,
+   "repo": "HimangiM/Just-Go-with-the-Flow-Self-Supervised-Scene-Flow-Estimation",
+   "created": "2020-02-06T04:16:36Z",
+   "stars": 68,
+   "window": "2020-02-01",
+   "page": 6
+  },
+  {
+   "order": 269,
+   "repo": "djansen1987/SAJeSolar",
+   "created": "2021-07-02T12:10:57Z",
+   "stars": 42,
+   "window": "2021-07-01",
+   "page": 10
+  },
+  {
+   "order": 270,
+   "repo": "AdivarekarBhumit/ID-Card-Segmentation",
+   "created": "2019-01-26T16:16:52Z",
+   "stars": 106,
+   "window": "2019-01-01",
+   "page": 4
+  },
+  {
+   "order": 271,
+   "repo": "screenbreak/SingleFile-dockerized",
+   "created": "2020-09-13T09:39:32Z",
+   "stars": 56,
+   "window": "2020-09-01",
+   "page": 7
+  },
+  {
+   "order": 272,
+   "repo": "outerbounds/dsbook",
+   "created": "2021-04-14T02:15:42Z",
+   "stars": 116,
+   "window": "2021-04-01",
+   "page": 3
+  },
+  {
+   "order": 273,
+   "repo": "stacklens/django-docker-tutorial",
+   "created": "2019-10-06T11:44:48Z",
+   "stars": 85,
+   "window": "2019-10-01",
+   "page": 5
+  },
+  {
+   "order": 274,
+   "repo": "posit-dev/py-shinywidgets",
+   "created": "2021-12-02T21:09:21Z",
+   "stars": 55,
+   "window": "2021-12-01",
+   "page": 7
+  },
+  {
+   "order": 275,
+   "repo": "sasasavic82/deepracer-reward",
+   "created": "2019-05-04T04:08:57Z",
+   "stars": 72,
+   "window": "2019-05-01",
+   "page": 7
+  },
+  {
+   "order": 276,
+   "repo": "fkie-cad/dewolf",
+   "created": "2021-12-01T08:29:24Z",
+   "stars": 236,
+   "window": "2021-12-01",
+   "page": 1
+  },
+  {
+   "order": 277,
+   "repo": "pidahbus/deep-image-orientation-angle-detection",
+   "created": "2021-01-19T20:14:28Z",
+   "stars": 122,
+   "window": "2021-01-01",
+   "page": 3
+  },
+  {
+   "order": 278,
+   "repo": "kobiso/CBAM-tensorflow-slim",
+   "created": "2018-08-06T12:45:21Z",
+   "stars": 106,
+   "window": "2018-08-01",
+   "page": 3
+  },
+  {
+   "order": 279,
+   "repo": "aleaforny/python-invoice-generator",
+   "created": "2020-08-23T19:38:44Z",
+   "stars": 43,
+   "window": "2020-08-01",
+   "page": 10
+  },
+  {
+   "order": 280,
+   "repo": "abisee/cs224n-win18-squad",
+   "created": "2018-02-01T02:46:41Z",
+   "stars": 38,
+   "window": "2018-02-01",
+   "page": 9
+  },
+  {
+   "order": 281,
+   "repo": "cmake-lint/cmake-lint",
+   "created": "2019-06-08T06:13:37Z",
+   "stars": 108,
+   "window": "2019-06-01",
+   "page": 4
+  },
+  {
+   "order": 282,
+   "repo": "leogomezz4t/PyTextNow_API",
+   "created": "2021-02-01T18:10:08Z",
+   "stars": 85,
+   "window": "2021-01-01",
+   "page": 4
+  },
+  {
+   "order": 283,
+   "repo": "JohnWoodman/remoteInjector",
+   "created": "2019-11-28T04:10:02Z",
+   "stars": 188,
+   "window": "2019-11-01",
+   "page": 2
+  },
+  {
+   "order": 284,
+   "repo": "qeeqbox/seahorse",
+   "created": "2020-08-24T23:39:45Z",
+   "stars": 51,
+   "window": "2020-08-01",
+   "page": 8
+  },
+  {
+   "order": 285,
+   "repo": "frappe/intellisense",
+   "created": "2020-10-18T07:32:17Z",
+   "stars": 63,
+   "window": "2020-10-01",
+   "page": 7
+  },
+  {
+   "order": 286,
+   "repo": "geometalab/pyGeoTile",
+   "created": "2017-04-18T06:57:31Z",
+   "stars": 103,
+   "window": "2017-04-01",
+   "page": 3
+  },
+  {
+   "order": 287,
+   "repo": "f90/Seq-U-Net",
+   "created": "2019-11-14T21:40:14Z",
+   "stars": 82,
+   "window": "2019-11-01",
+   "page": 5
+  },
+  {
+   "order": 288,
+   "repo": "walid0925/AI_Artistry",
+   "created": "2017-10-25T13:54:32Z",
+   "stars": 104,
+   "window": "2017-10-01",
+   "page": 3
+  },
+  {
+   "order": 289,
+   "repo": "KeepThisTicket/weatherClock",
+   "created": "2021-07-17T21:32:52Z",
+   "stars": 156,
+   "window": "2021-07-01",
+   "page": 2
+  },
+  {
+   "order": 290,
+   "repo": "ankit-ai/GAN_breast_mammography_segmentation",
+   "created": "2019-01-07T05:36:01Z",
+   "stars": 77,
+   "window": "2019-01-01",
+   "page": 6
+  },
+  {
+   "order": 291,
+   "repo": "rictom/cnpj-mysql",
+   "created": "2021-11-14T13:51:39Z",
+   "stars": 88,
+   "window": "2021-11-01",
+   "page": 4
+  },
+  {
+   "order": 292,
+   "repo": "artemave/tmux_super_fingers",
+   "created": "2021-05-16T21:12:44Z",
+   "stars": 108,
+   "window": "2021-05-01",
+   "page": 4
+  },
+  {
+   "order": 293,
+   "repo": "abhishekkrthakur/clickbaits_revisited",
+   "created": "2017-03-12T12:53:06Z",
+   "stars": 169,
+   "window": "2017-03-01",
+   "page": 2
+  },
+  {
+   "order": 294,
+   "repo": "gifale95/eeg_encoding",
+   "created": "2021-06-29T10:39:32Z",
+   "stars": 114,
+   "window": "2021-06-01",
+   "page": 3
+  },
+  {
+   "order": 295,
+   "repo": "lshiwjx/deform_conv3d_pytorch_op",
+   "created": "2017-09-28T02:04:32Z",
+   "stars": 35,
+   "window": "2017-09-01",
+   "page": 9
+  },
+  {
+   "order": 296,
+   "repo": "oRazeD/GrabDoc",
+   "created": "2020-12-07T00:26:05Z",
+   "stars": 134,
+   "window": "2020-12-01",
+   "page": 3
+  },
+  {
+   "order": 297,
+   "repo": "ylfeng250/FengSpider",
+   "created": "2017-10-20T14:13:59Z",
+   "stars": 50,
+   "window": "2017-10-01",
+   "page": 7
+  },
+  {
+   "order": 298,
+   "repo": "xiaolei00/yolov5_monocular_camera_ranging",
+   "created": "2021-08-18T13:14:49Z",
+   "stars": 64,
+   "window": "2021-08-01",
+   "page": 7
+  },
+  {
+   "order": 299,
+   "repo": "johnbumgarner/wordhoard",
+   "created": "2020-10-23T19:28:04Z",
+   "stars": 128,
+   "window": "2020-10-01",
+   "page": 3
+  },
+  {
+   "order": 300,
+   "repo": "Alexander-H-Liu/MalConv-Pytorch",
+   "created": "2018-01-20T12:44:04Z",
+   "stars": 72,
+   "window": "2018-01-01",
+   "page": 6
+  },
+  {
+   "order": 301,
+   "repo": "SALT-NLP/Structure-Aware-BART",
+   "created": "2021-04-10T00:05:39Z",
+   "stars": 65,
+   "window": "2021-04-01",
+   "page": 7
+  },
+  {
+   "order": 302,
+   "repo": "Netflix-Skunkworks/cloudtrail-anomaly",
+   "created": "2019-10-17T15:48:00Z",
+   "stars": 84,
+   "window": "2019-10-01",
+   "page": 5
+  },
+  {
+   "order": 303,
+   "repo": "mailmahee/pytorch-generative-adversarial-networks",
+   "created": "2017-02-19T02:10:42Z",
+   "stars": 32,
+   "window": "2017-02-01",
+   "page": 8
+  },
+  {
+   "order": 304,
+   "repo": "kristijanbartol/Deep-Music-Tagger",
+   "created": "2017-10-11T16:21:05Z",
+   "stars": 70,
+   "window": "2017-10-01",
+   "page": 5
+  },
+  {
+   "order": 305,
+   "repo": "cgrok/clashroyale",
+   "created": "2017-12-25T04:08:23Z",
+   "stars": 49,
+   "window": "2017-12-01",
+   "page": 7
+  },
+  {
+   "order": 306,
+   "repo": "shionhonda/viton-gan",
+   "created": "2019-02-02T04:05:50Z",
+   "stars": 107,
+   "window": "2019-02-01",
+   "page": 4
+  },
+  {
+   "order": 307,
+   "repo": "pyecore/pyecoregen",
+   "created": "2017-05-18T07:39:07Z",
+   "stars": 32,
+   "window": "2017-05-01",
+   "page": 10
+  },
+  {
+   "order": 308,
+   "repo": "epwalsh/pytorch-crf",
+   "created": "2018-05-22T20:50:55Z",
+   "stars": 63,
+   "window": "2018-05-01",
+   "page": 7
+  },
+  {
+   "order": 309,
+   "repo": "Leeon123/Aoyama",
+   "created": "2019-07-16T13:04:07Z",
+   "stars": 269,
+   "window": "2019-07-01",
+   "page": 1
+  },
+  {
+   "order": 310,
+   "repo": "Horizon733/customer-care-chatbot",
+   "created": "2021-08-23T05:08:17Z",
+   "stars": 44,
+   "window": "2021-08-01",
+   "page": 10
+  },
+  {
+   "order": 311,
+   "repo": "Britefury/batchup",
+   "created": "2017-04-08T09:26:33Z",
+   "stars": 86,
+   "window": "2017-04-01",
+   "page": 4
+  },
+  {
+   "order": 312,
+   "repo": "aruba/arubaos-switch-api-python",
+   "created": "2018-03-07T17:08:12Z",
+   "stars": 42,
+   "window": "2018-03-01",
+   "page": 10
+  },
+  {
+   "order": 313,
+   "repo": "ctlab/ITMO_FS",
+   "created": "2020-02-26T08:13:44Z",
+   "stars": 148,
+   "window": "2020-02-01",
+   "page": 2
+  },
+  {
+   "order": 314,
+   "repo": "oscarYCL/deepracer-waypoints-workshop",
+   "created": "2020-12-17T15:54:55Z",
+   "stars": 104,
+   "window": "2020-12-01",
+   "page": 4
+  },
+  {
+   "order": 315,
+   "repo": "oneai-nlp/oneai-python",
+   "created": "2021-12-06T20:39:15Z",
+   "stars": 39,
+   "window": "2021-12-01",
+   "page": 10
+  },
+  {
+   "order": 316,
+   "repo": "NVlabs/nvbitfi",
+   "created": "2020-04-10T17:47:54Z",
+   "stars": 88,
+   "window": "2020-04-01",
+   "page": 6
+  },
+  {
+   "order": 317,
+   "repo": "XYZliang/HUAWEI-STORE-GO",
+   "created": "2021-01-17T14:41:20Z",
+   "stars": 168,
+   "window": "2021-01-01",
+   "page": 2
+  },
+  {
+   "order": 318,
+   "repo": "shyamal-b/ss-tad",
+   "created": "2017-07-19T03:34:58Z",
+   "stars": 108,
+   "window": "2017-07-01",
+   "page": 3
+  },
+  {
+   "order": 319,
+   "repo": "LandGrey/taoman",
+   "created": "2017-04-18T08:07:53Z",
+   "stars": 220,
+   "window": "2017-04-01",
+   "page": 1
+  },
+  {
+   "order": 320,
+   "repo": "pseeth/soxbindings",
+   "created": "2020-05-26T22:09:46Z",
+   "stars": 56,
+   "window": "2020-05-01",
+   "page": 9
+  },
+  {
+   "order": 321,
+   "repo": "KentoNishi/torch-time-stretch",
+   "created": "2021-10-10T17:41:46Z",
+   "stars": 40,
+   "window": "2021-10-01",
+   "page": 10
+  },
+  {
+   "order": 322,
+   "repo": "long2ice/asynch",
+   "created": "2020-08-26T14:25:00Z",
+   "stars": 242,
+   "window": "2020-08-01",
+   "page": 1
+  },
+  {
+   "order": 323,
+   "repo": "yunshengb/GraphSim",
+   "created": "2020-01-27T03:31:43Z",
+   "stars": 57,
+   "window": "2020-01-01",
+   "page": 7
+  },
+  {
+   "order": 324,
+   "repo": "ys1305/sklearn-ml",
+   "created": "2019-07-10T10:55:34Z",
+   "stars": 96,
+   "window": "2019-07-01",
+   "page": 4
+  },
+  {
+   "order": 325,
+   "repo": "encoding-ninja/per-title-analysis",
+   "created": "2017-12-22T14:47:23Z",
+   "stars": 60,
+   "window": "2017-12-01",
+   "page": 6
+  },
+  {
+   "order": 326,
+   "repo": "zhangqianhui/Sawn",
+   "created": "2021-06-01T01:30:57Z",
+   "stars": 56,
+   "window": "2021-05-01",
+   "page": 8
+  },
+  {
+   "order": 327,
+   "repo": "isalirezag/TReS",
+   "created": "2021-08-08T17:37:54Z",
+   "stars": 163,
+   "window": "2021-08-01",
+   "page": 2
+  },
+  {
+   "order": 328,
+   "repo": "thepanacealab/SMMT",
+   "created": "2020-02-05T00:24:00Z",
+   "stars": 140,
+   "window": "2020-02-01",
+   "page": 3
+  },
+  {
+   "order": 329,
+   "repo": "braindynamicslab/dyneusr",
+   "created": "2019-04-24T20:58:55Z",
+   "stars": 56,
+   "window": "2019-04-01",
+   "page": 9
+  },
+  {
+   "order": 330,
+   "repo": "coleygroup/Graph2SMILES",
+   "created": "2021-10-08T15:09:26Z",
+   "stars": 71,
+   "window": "2021-10-01",
+   "page": 6
+  },
+  {
+   "order": 331,
+   "repo": "shaonianzhentan/conversation",
+   "created": "2020-06-14T14:55:44Z",
+   "stars": 206,
+   "window": "2020-06-01",
+   "page": 2
+  },
+  {
+   "order": 332,
+   "repo": "NVIDIA/ansible-role-nvidia-driver",
+   "created": "2019-04-30T16:00:53Z",
+   "stars": 135,
+   "window": "2019-04-01",
+   "page": 3
+  },
+  {
+   "order": 333,
+   "repo": "HansiChan/SoccerPredictor",
+   "created": "2019-11-01T09:31:28Z",
+   "stars": 64,
+   "window": "2019-11-01",
+   "page": 6
+  },
+  {
+   "order": 334,
+   "repo": "Sl-Sanda-Ru/Py-Fuscate",
+   "created": "2021-09-03T09:30:04Z",
+   "stars": 173,
+   "window": "2021-09-01",
+   "page": 2
+  },
+  {
+   "order": 335,
+   "repo": "orangetwo/ernie-csc",
+   "created": "2021-12-04T13:37:24Z",
+   "stars": 40,
+   "window": "2021-12-01",
+   "page": 10
+  },
+  {
+   "order": 336,
+   "repo": "firstmover/Indoor_wifi_localization",
+   "created": "2018-05-19T09:21:22Z",
+   "stars": 40,
+   "window": "2018-05-01",
+   "page": 10
+  },
+  {
+   "order": 337,
+   "repo": "weiyu666/Graduation_Design-Distributed_Web_Spider",
+   "created": "2018-05-19T13:39:39Z",
+   "stars": 80,
+   "window": "2018-05-01",
+   "page": 5
+  },
+  {
+   "order": 338,
+   "repo": "yanbeic/Deep-Association-Learning",
+   "created": "2018-08-21T11:46:15Z",
+   "stars": 65,
+   "window": "2018-08-01",
+   "page": 6
+  },
+  {
+   "order": 339,
+   "repo": "ermongroup/ssdkl",
+   "created": "2018-10-24T08:20:23Z",
+   "stars": 77,
+   "window": "2018-10-01",
+   "page": 5
+  },
+  {
+   "order": 340,
+   "repo": "ropnop/dockerfiles",
+   "created": "2019-02-12T15:35:48Z",
+   "stars": 88,
+   "window": "2019-02-01",
+   "page": 5
+  },
+  {
+   "order": 341,
+   "repo": "NatLabRockies/MoorPy",
+   "created": "2020-12-11T21:36:06Z",
+   "stars": 57,
+   "window": "2020-12-01",
+   "page": 8
+  },
+  {
+   "order": 342,
+   "repo": "joergmlpts/nature-id",
+   "created": "2020-09-25T21:53:01Z",
+   "stars": 53,
+   "window": "2020-09-01",
+   "page": 8
+  },
+  {
+   "order": 343,
+   "repo": "AyushExel/Neo",
+   "created": "2018-06-02T04:15:05Z",
+   "stars": 44,
+   "window": "2018-06-01",
+   "page": 8
+  },
+  {
+   "order": 344,
+   "repo": "RicardoSky/signalsort",
+   "created": "2017-06-30T00:54:00Z",
+   "stars": 38,
+   "window": "2017-06-01",
+   "page": 8
+  },
+  {
+   "order": 345,
+   "repo": "fordai/CCKS2019-Chinese-Clinical-NER",
+   "created": "2019-08-01T05:02:13Z",
+   "stars": 76,
+   "window": "2019-08-01",
+   "page": 6
+  },
+  {
+   "order": 346,
+   "repo": "oxwhirl/comix",
+   "created": "2020-11-29T16:50:48Z",
+   "stars": 43,
+   "window": "2020-11-01",
+   "page": 9
+  },
+  {
+   "order": 347,
+   "repo": "IBM/jsonsubschema",
+   "created": "2019-08-01T14:01:39Z",
+   "stars": 107,
+   "window": "2019-07-01",
+   "page": 4
+  },
+  {
+   "order": 348,
+   "repo": "Datadolittle/Photo_Mosaic",
+   "created": "2020-06-20T16:16:20Z",
+   "stars": 94,
+   "window": "2020-06-01",
+   "page": 5
+  },
+  {
+   "order": 349,
+   "repo": "howardchenhd/Syntax-awared-NMT",
+   "created": "2017-04-14T19:18:29Z",
+   "stars": 42,
+   "window": "2017-04-01",
+   "page": 8
+  },
+  {
+   "order": 350,
+   "repo": "torbjornbjorkman/cif2cell",
+   "created": "2019-09-11T14:06:39Z",
+   "stars": 48,
+   "window": "2019-09-01",
+   "page": 9
+  },
+  {
+   "order": 351,
+   "repo": "Huang-yihao/houseprice_prediction_with_ML",
+   "created": "2017-06-03T13:21:45Z",
+   "stars": 33,
+   "window": "2017-06-01",
+   "page": 9
+  },
+  {
+   "order": 352,
+   "repo": "dhrumilp15/haystackfs",
+   "created": "2021-04-30T13:38:14Z",
+   "stars": 89,
+   "window": "2021-04-01",
+   "page": 5
+  },
+  {
+   "order": 353,
+   "repo": "aerele/bank_api_integration",
+   "created": "2020-11-19T04:52:40Z",
+   "stars": 72,
+   "window": "2020-11-01",
+   "page": 6
+  },
+  {
+   "order": 354,
+   "repo": "Kxrr/nutstore-cli",
+   "created": "2017-03-03T16:03:28Z",
+   "stars": 38,
+   "window": "2017-03-01",
+   "page": 9
+  },
+  {
+   "order": 355,
+   "repo": "Ayppo/uploader",
+   "created": "2018-09-26T14:59:20Z",
+   "stars": 71,
+   "window": "2018-09-01",
+   "page": 5
+  },
+  {
+   "order": 356,
+   "repo": "anthonycorletti/cloudrun-fastapi",
+   "created": "2020-02-06T18:18:27Z",
+   "stars": 281,
+   "window": "2020-02-01",
+   "page": 1
+  },
+  {
+   "order": 357,
+   "repo": "electronicarts/siggraph-asia-2019-gata",
+   "created": "2019-09-03T18:14:15Z",
+   "stars": 43,
+   "window": "2019-09-01",
+   "page": 10
+  },
+  {
+   "order": 358,
+   "repo": "rowanz/merlot_reserve",
+   "created": "2021-12-29T22:19:21Z",
+   "stars": 146,
+   "window": "2021-12-01",
+   "page": 2
+  },
+  {
+   "order": 359,
+   "repo": "aboutmydreams/pycapt",
+   "created": "2019-03-30T07:35:45Z",
+   "stars": 111,
+   "window": "2019-03-01",
+   "page": 4
+  },
+  {
+   "order": 360,
+   "repo": "leondavi/NErlNet",
+   "created": "2020-05-13T03:34:41Z",
+   "stars": 54,
+   "window": "2020-05-01",
+   "page": 10
+  },
+  {
+   "order": 361,
+   "repo": "phonon/blender-minecraft-json",
+   "created": "2020-02-03T01:44:47Z",
+   "stars": 90,
+   "window": "2020-02-01",
+   "page": 5
+  },
+  {
+   "order": 362,
+   "repo": "mampfes/hacs_dwd_pollenflug",
+   "created": "2021-09-29T15:49:03Z",
+   "stars": 150,
+   "window": "2021-09-01",
+   "page": 2
+  },
+  {
+   "order": 363,
+   "repo": "canyon289/PyTestforDataScience_PyDataLA",
+   "created": "2018-10-14T18:21:35Z",
+   "stars": 61,
+   "window": "2018-10-01",
+   "page": 7
+  },
+  {
+   "order": 364,
+   "repo": "fmcarlucci/JigenDG",
+   "created": "2019-03-15T11:20:53Z",
+   "stars": 250,
+   "window": "2019-03-01",
+   "page": 1
+  },
+  {
+   "order": 365,
+   "repo": "bb-Ricardo/check_redfish",
+   "created": "2019-08-07T11:27:19Z",
+   "stars": 151,
+   "window": "2019-08-01",
+   "page": 3
+  },
+  {
+   "order": 366,
+   "repo": "Ritam-Guha/Py_FS",
+   "created": "2020-09-30T08:11:13Z",
+   "stars": 64,
+   "window": "2020-09-01",
+   "page": 6
+  },
+  {
+   "order": 367,
+   "repo": "Sevenstax/FreeV2G",
+   "created": "2021-04-22T08:41:44Z",
+   "stars": 71,
+   "window": "2021-04-01",
+   "page": 6
+  },
+  {
+   "order": 368,
+   "repo": "lvsn/deeptracking",
+   "created": "2017-03-20T16:39:14Z",
+   "stars": 37,
+   "window": "2017-03-01",
+   "page": 9
+  },
+  {
+   "order": 369,
+   "repo": "maiyajj/AutoTest_script-Appium_Connect",
+   "created": "2017-11-29T08:41:48Z",
+   "stars": 40,
+   "window": "2017-11-01",
+   "page": 9
+  },
+  {
+   "order": 370,
+   "repo": "stranskyjan/dem-fem-coupling",
+   "created": "2017-06-21T19:49:48Z",
+   "stars": 60,
+   "window": "2017-06-01",
+   "page": 5
+  },
+  {
+   "order": 371,
+   "repo": "jonahthelion/cvpr_with_code",
+   "created": "2019-05-21T00:22:58Z",
+   "stars": 154,
+   "window": "2019-05-01",
+   "page": 2
+  },
+  {
+   "order": 372,
+   "repo": "qtli/EmpDG",
+   "created": "2020-10-09T07:56:19Z",
+   "stars": 50,
+   "window": "2020-10-01",
+   "page": 9
+  },
+  {
+   "order": 373,
+   "repo": "JASchilz/AnkiSyncDuolingo",
+   "created": "2017-10-08T17:18:43Z",
+   "stars": 110,
+   "window": "2017-10-01",
+   "page": 3
+  },
+  {
+   "order": 374,
+   "repo": "uestcchicken/crowd-counting-MCNN",
+   "created": "2017-09-29T08:24:23Z",
+   "stars": 36,
+   "window": "2017-09-01",
+   "page": 9
+  },
+  {
+   "order": 375,
+   "repo": "g-traveller/cantonese-corpus",
+   "created": "2018-07-29T14:34:22Z",
+   "stars": 48,
+   "window": "2018-07-01",
+   "page": 8
+  },
+  {
+   "order": 376,
+   "repo": "pythological/kanren",
+   "created": "2019-03-20T17:50:10Z",
+   "stars": 253,
+   "window": "2019-03-01",
+   "page": 1
+  },
+  {
+   "order": 377,
+   "repo": "aws-samples/amazon-mwaa-examples",
+   "created": "2021-03-01T22:29:28Z",
+   "stars": 120,
+   "window": "2021-02-01",
+   "page": 3
+  },
+  {
+   "order": 378,
+   "repo": "younes38/pygame-tutorial",
+   "created": "2020-07-06T15:50:00Z",
+   "stars": 113,
+   "window": "2020-07-01",
+   "page": 5
+  },
+  {
+   "order": 379,
+   "repo": "yukunqi/Chinese-Word2Vec-Model",
+   "created": "2018-04-11T13:48:10Z",
+   "stars": 69,
+   "window": "2018-04-01",
+   "page": 6
+  },
+  {
+   "order": 380,
+   "repo": "matteyeux/ios-tools",
+   "created": "2018-06-10T14:07:47Z",
+   "stars": 34,
+   "window": "2018-06-01",
+   "page": 10
+  },
+  {
+   "order": 381,
+   "repo": "valeriobasile/hurtlex",
+   "created": "2019-07-29T15:19:40Z",
+   "stars": 104,
+   "window": "2019-07-01",
+   "page": 4
+  },
+  {
+   "order": 382,
+   "repo": "cmsj/macOSrecon",
+   "created": "2017-02-07T23:31:05Z",
+   "stars": 30,
+   "window": "2017-02-01",
+   "page": 9
+  },
+  {
+   "order": 383,
+   "repo": "BroadbandForum/usp",
+   "created": "2017-06-14T17:51:12Z",
+   "stars": 43,
+   "window": "2017-06-01",
+   "page": 8
+  },
+  {
+   "order": 384,
+   "repo": "Anfany/Codility-Lessons-By-Python3",
+   "created": "2019-01-29T02:23:51Z",
+   "stars": 70,
+   "window": "2019-01-01",
+   "page": 6
+  },
+  {
+   "order": 385,
+   "repo": "infinityglow/Algorithm-and-Complexity",
+   "created": "2019-12-26T16:07:37Z",
+   "stars": 36,
+   "window": "2019-12-01",
+   "page": 10
+  },
+  {
+   "order": 386,
+   "repo": "prs-eth/Scene-Recognition-in-3D",
+   "created": "2020-02-27T19:37:57Z",
+   "stars": 59,
+   "window": "2020-02-01",
+   "page": 7
+  },
+  {
+   "order": 387,
+   "repo": "CZWin32768/XNLG",
+   "created": "2019-09-22T16:16:40Z",
+   "stars": 128,
+   "window": "2019-09-01",
+   "page": 3
+  },
+  {
+   "order": 388,
+   "repo": "DyGRec/ASReP",
+   "created": "2021-04-15T17:10:26Z",
+   "stars": 51,
+   "window": "2021-04-01",
+   "page": 9
+  },
+  {
+   "order": 389,
+   "repo": "thomashirtz/notion-scholar",
+   "created": "2021-11-15T15:09:37Z",
+   "stars": 172,
+   "window": "2021-11-01",
+   "page": 2
+  },
+  {
+   "order": 390,
+   "repo": "lrxjason/Attention3DHumanPose",
+   "created": "2020-03-28T01:52:31Z",
+   "stars": 151,
+   "window": "2020-03-01",
+   "page": 3
+  },
+  {
+   "order": 391,
+   "repo": "greatlog/SWAHR-HumanPose",
+   "created": "2021-03-03T06:51:12Z",
+   "stars": 124,
+   "window": "2021-03-01",
+   "page": 4
+  },
+  {
+   "order": 392,
+   "repo": "MartinoMensio/spacy-universal-sentence-encoder",
+   "created": "2020-01-20T14:31:37Z",
+   "stars": 182,
+   "window": "2020-01-01",
+   "page": 2
+  },
+  {
+   "order": 393,
+   "repo": "Liwenbin1996/Data_Structures_and_Algorithms",
+   "created": "2017-11-21T14:48:10Z",
+   "stars": 32,
+   "window": "2017-11-01",
+   "page": 10
+  },
+  {
+   "order": 394,
+   "repo": "noseworm/ADEM",
+   "created": "2017-07-24T21:12:41Z",
+   "stars": 55,
+   "window": "2017-07-01",
+   "page": 6
+  },
+  {
+   "order": 395,
+   "repo": "wenkesj/holdem",
+   "created": "2018-01-07T19:56:52Z",
+   "stars": 163,
+   "window": "2018-01-01",
+   "page": 2
+  },
+  {
+   "order": 396,
+   "repo": "agranya99/MOSS-winnowing-seqMatcher",
+   "created": "2018-05-01T16:33:44Z",
+   "stars": 49,
+   "window": "2018-04-01",
+   "page": 8
+  },
+  {
+   "order": 397,
+   "repo": "OValery16/Language-Translation-with-deep-learning-",
+   "created": "2018-01-03T04:01:32Z",
+   "stars": 61,
+   "window": "2018-01-01",
+   "page": 7
+  },
+  {
+   "order": 398,
+   "repo": "hufu6371/GcGAN",
+   "created": "2019-04-18T02:19:03Z",
+   "stars": 77,
+   "window": "2019-04-01",
+   "page": 6
+  },
+  {
+   "order": 399,
+   "repo": "raghavchalapathy/rcae",
+   "created": "2017-04-21T06:18:21Z",
+   "stars": 37,
+   "window": "2017-04-01",
+   "page": 8
+  },
+  {
+   "order": 400,
+   "repo": "KIOS-Research/LeakDB",
+   "created": "2018-04-25T13:57:48Z",
+   "stars": 81,
+   "window": "2018-04-01",
+   "page": 5
+  }
+ ]
+}
