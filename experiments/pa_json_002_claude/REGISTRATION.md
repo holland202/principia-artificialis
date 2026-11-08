@@ -105,3 +105,35 @@ band predictions are relative to the observed N, not to a number fixed now.
 Provenance (M13): registration, observer and driver by Claude (Anthropic, Opus 5.5) → human validation: not
 performed → human direction: Chad Holland, 2026-11-08 → human responsibility: Chad Holland. Review level:
 direction only.
+
+---
+
+## Amendment 1 — 2026-11-08. Part C registered after reading `sqlite3AtoF()`, before running any Part C token
+
+**Why.** Part A refuted my threshold (C3a) and band (C3b) predictions. After the run I read `sqlite3AtoF()` in the
+verified `sqlite3.c` (quoted in [RESULTS.md](RESULTS.md)):
+- an explicit exponent of up to 99,999 is read exactly;
+- any larger exponent becomes exactly 10,000;
+- padding digits move the decimal exponent with no limit.
+
+Part C tests the predictions that follow from that code. They are source-derived, not fresh. Their value is that
+they are exact and could still fail. Driver: `check_c.py`, committed with this amendment. Same build, observer and
+oracles as Part A.
+
+**Model.** model(token) = the token with any explicit exponent above 99,999 replaced by 10,000, then correctly
+rounded.
+
+| ID | Prediction | HELD if |
+|---|---|---|
+| D1 | the exact threshold | `"1"+"0"*n+"e-"+n` is exact for every n ≤ 99,999 and +inf for every n ≥ 100,000. `"0."+"0"*n+"1e"+(n+1)` is exact for every n ≤ 99,998 and +0 for every n ≥ 99,999. Tested at every n in 99,900–100,100, plus 131,072 |
+| D2 (X1) | an underflowing value read as a finite number | `"1"+"0"*(10000+k)+"e-100000"`, whose exact value underflows to +0, is read within 1 ULP of 10^k for −5 ≤ k ≤ 308, and as +inf for 309 ≤ k ≤ 320 |
+| D2 (X2) | an overflowing value read as a finite number | `"0."+"0"*(9999+j)+"1e100000"`, whose exact value overflows to +inf, is read within 1 ULP of 10^−j for −5 ≤ j ≤ 323, and as +0 for 324 ≤ j ≤ 330 |
+| D3 | the model explains everything | every long token from Parts A and C is within 1 ULP of model(token) |
+| D4 | an arbitrary value hidden in a number that should be zero | coefficients 42, −7 and 123456789 with 10,000+k zeros and `e-100000` (k = 0, 3): the exact value is ±0, and SQLite reads coefficient × 10^k |
+| D5 | still accepted | `json_valid` 1, type `real`, and JSON and CAST identical, for every Part C token |
+
+Controls K1–K4 are repeated inside Part C's own run. If D3 fails anywhere, the model is incomplete, and the failing
+tokens are listed.
+
+Provenance (M13): Claude (Anthropic, Opus 5.5) → human validation: not performed → human direction: Chad Holland,
+2026-11-08 → human responsibility: Chad Holland. Review level: direction only.
