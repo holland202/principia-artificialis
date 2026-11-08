@@ -1,0 +1,26 @@
+{
+  "recorded_at_utc": "2026-11-08T00:54:58.397069+00:00",
+  "kind": "post-hoc convenience witness and archive description; no corpus expansion",
+  "minimal_sql_sha256": "590dd35b387e0573629f80713f58c87a46b68448703617ac1133ed282f3166ae",
+  "cli_stdout_sha256": "674cfda76b23ae84ba5affe51de1ff5699e3845eb18bba236ce65a9cea0deeb9",
+  "cli_binary_sha256": "1bf04f8f7261c2bb6dbe9604037bda556fbf7a6e5e30b9155a6dce6a03e9d843",
+  "cli_build": [
+    "cc",
+    "-O2",
+    "shell.c",
+    "sqlite3.c",
+    "-lm",
+    "-ldl",
+    "-pthread"
+  ],
+  "primary_run_unchanged": true,
+  "human_look": "NOT PERFORMED",
+  "replication": "self-tested",
+  "witness_specific_search_terms": [
+    "SQLite zeroblob(50000)",
+    "SQLite 100001 json_extract",
+    "SQLite large exponent incorrect",
+    "SQLite mantissa cancellation"
+  ],
+  "novelty": "UNRESOLVED; no confirmed exact prior report located in scoped searches; absence is not proof"
+}

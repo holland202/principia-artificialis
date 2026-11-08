@@ -1,0 +1,74 @@
+{
+  "cases": 512,
+  "distinct_tokens": 512,
+  "distinct_exact_values": 16,
+  "outcome_classes": {
+    "preserved": 346,
+    "positive_infinity": 40,
+    "positive_zero": 43,
+    "negative_infinity": 40,
+    "negative_zero": 43
+  },
+  "disagreements_by_family_and_padding": [
+    {
+      "family": "fraction_padding",
+      "padding": 99998,
+      "cases": 10
+    },
+    {
+      "family": "fraction_padding",
+      "padding": 99999,
+      "cases": 14
+    },
+    {
+      "family": "fraction_padding",
+      "padding": 100000,
+      "cases": 14
+    },
+    {
+      "family": "fraction_padding",
+      "padding": 100001,
+      "cases": 16
+    },
+    {
+      "family": "fraction_padding",
+      "padding": 100002,
+      "cases": 16
+    },
+    {
+      "family": "fraction_padding",
+      "padding": 131072,
+      "cases": 16
+    },
+    {
+      "family": "integer_padding",
+      "padding": 99998,
+      "cases": 8
+    },
+    {
+      "family": "integer_padding",
+      "padding": 99999,
+      "cases": 8
+    },
+    {
+      "family": "integer_padding",
+      "padding": 100000,
+      "cases": 16
+    },
+    {
+      "family": "integer_padding",
+      "padding": 100001,
+      "cases": 16
+    },
+    {
+      "family": "integer_padding",
+      "padding": 100002,
+      "cases": 16
+    },
+    {
+      "family": "integer_padding",
+      "padding": 131072,
+      "cases": 16
+    }
+  ]
+}

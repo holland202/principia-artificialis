@@ -1,0 +1,52 @@
+name: PA-JSON-002 pinned SQLite conformance
+on:
+  pull_request:
+    paths:
+      - 'experiments/pa_json_002/**'
+      - 'docs/PA-JSON-002_*'
+      - 'scripts/note078_reference.py'
+      - '.github/workflows/pa-json-002.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pinned-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      matrix:
+        python: ['3.11','3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify complete saved observations
+        run: python scripts/note078_reference.py
+      - name: Stored-observation sabotage must exit 1
+        shell: bash
+        run: |
+          set +e
+          python scripts/note078_reference.py --sabotage > "$RUNNER_TEMP/pa-json-002-sabotage.txt"
+          rc=$?
+          set -e
+          cat "$RUNNER_TEMP/pa-json-002-sabotage.txt"
+          test "$rc" -eq 1
+          grep -q 'planted unit-control mismatch' "$RUNNER_TEMP/pa-json-002-sabotage.txt"
+      - name: Build exact published SQLite release
+        run: python experiments/pa_json_002/build_sqlite.py --out "$RUNNER_TEMP/pa-json-002-sqlite"
+      - name: Re-run fixed corpus and require pinned semantic digest
+        run: python experiments/pa_json_002/run.py --sqlite-lib "$RUNNER_TEMP/pa-json-002-sqlite/libsqlite3-pa-json-002.so" --out "$RUNNER_TEMP/pa-json-002-results"
+      - name: Native unit-control sabotage must exit 1
+        shell: bash
+        run: |
+          set +e
+          python experiments/pa_json_002/run.py --sqlite-lib "$RUNNER_TEMP/pa-json-002-sqlite/libsqlite3-pa-json-002.so" --out "$RUNNER_TEMP/pa-json-002-unused" --sabotage > "$RUNNER_TEMP/pa-json-002-native-sabotage.txt"
+          rc=$?
+          set -e
+          cat "$RUNNER_TEMP/pa-json-002-native-sabotage.txt"
+          test "$rc" -eq 1
+          grep -q 'unit-control mismatch' "$RUNNER_TEMP/pa-json-002-native-sabotage.txt"
