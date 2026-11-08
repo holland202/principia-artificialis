@@ -1,6 +1,6 @@
 # Note 052 — Verification That Cannot Fail
 
-**Status:** Draft, verified reference code
+**Status:** Draft, verified reference code ⚠ P6 underpowered and P10a refuted, kept
 **Authors:** holland202 (Chad Holland), Claude (Anthropic)
 **Date:** 2026-08-02
 **Instruments:** vacuity_lint.py (github.com/holland202/vacuity_lint.py, selftest 18/18 on aarch64/Termux/Py3.14), vacuity_scan.py (clean-room reimplementation, sandbox only — numbers from the two instruments are NOT comparable)
@@ -462,3 +462,90 @@ estate.
 
 Provenance (M13): registration and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed →
 human direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 3 results — 2026-11-07. P10a REFUTED. P10b CONFIRMED. Missing CI goes with missing checks, not with broken ones.
+
+Raw files: `experiments/note052_p6/results_p10/`. They include the drawn list (committed before any clone), the
+fetch log with pinned SHAs, the scan, the strata, the hand-check sheet and key, the clarification committed before
+strata were unsealed, and the score. Container, Python 3.13.18. NOT VALIDATED on the S25.
+
+### What went wrong, first
+
+1. **P10a, the main prediction, is REFUTED.** Repositories without CI were not more likely to contain a check that
+   cannot fail: 3 of 61 (4.9%), against 1 of 19 with CI (5.3%). One-sided Fisher exact p = 0.762. The gap is
+   reversed by 0.3 points, not 10 points in the predicted direction.
+2. **Two driver failures during the draw.** The first draw died on a connection reset with nothing saved
+   (deviation 2: transient errors are now retried). A rate-limit retry had been added earlier, before any draw ran
+   (deviation 1). Neither changes which repository a draw selects.
+3. **The hand-check needed a clarification.** Rule 2 ("no input makes it fail") is too broad as written, because
+   almost any script can raise *something*. The rule as applied, in
+   `results_p10/HANDCHECK_CLARIFICATION.md`, was committed with all 137 verdicts **before** the strata were read.
+   The verdicts were byte-checked unchanged after scoring.
+4. **The instrument's precision on this population is low.** 8 of 137 findings were true positives (5.8%). The
+   biggest false-positive class, 64 findings, is machine-learning evaluation scripts named `test_*.py` ("tests an
+   agent"), which are not code checks. The next 26 are files that do not parse under Python 3.
+
+### Results (primary CI definition; it decides)
+
+| | No CI (B) | CI (A) |
+|---|---|---|
+| repositories | 61 | 19 |
+| with at least one true positive | 3 (4.9%) | 1 (5.3%) |
+| with **no** verification-shaped file at all | 35 (57.4%) | 2 (10.5%) |
+| median verification-shaped files | 0 | 5 |
+| total verification-shaped files | 161 | 199 |
+
+- **P10a REFUTED** (Fisher one-sided p = 0.762).
+- **P10b CONFIRMED.** Repositories without CI have fewer verification-shaped files (median 0 against 5;
+  permutation test on U, 0 of 20,000 permutations as extreme, so p < 0.00005).
+- The GitHub-Actions-only definition (secondary) gives the same verdicts: 65 against 15 repositories, 3 (4.6%)
+  against 1 (6.7%) with a true positive, Fisher p = 0.842; median 0 against 6.
+- Anti-vacuity control with the same instrument, rerun after scoring: PASS.
+
+**The 8 true positives:**
+- Five empty or import-only test modules in `nasa/giant`.
+- `tests.py` in `ARBML/tnkeeh`, which compares results and only prints "failed".
+- `data_checker.py` in `jtoy/sketchnet`.
+- `scripts/constraints/validate.py` in `ofirpress/shortformer`. That repository has CI; the file is a copy of a
+  fairseq script, and it prints missing constraints instead of failing.
+
+**Exploratory, not registered (cannot change a verdict).** Per verification-shaped file, true positives are 7 of
+161 (4.35%) without CI and 1 of 199 (0.50%) with CI. One repository supplies 5 of the 7, so this rate is
+dominated by a single project. That is why the registration used the repository as the unit.
+
+### What this says about software in general
+
+In this sample of small public Python repositories (20–300 stars), each pinned to its last commit before December
+2022:
+- **Missing CI goes with missing checks, not with checks that cannot fail.** More than half the repositories
+  without CI contain no verification-shaped file at all. Where checks exist, the share of repositories with a
+  vacuous one is about the same with or without CI (about 5%).
+- This matches the note's 2026-07-27 headline in a population that has nothing to do with this estate: the
+  difference is the denominator. P10b replicates that pattern in outside code. P10a removes the reading that
+  unreviewed code fails its checks more often; in this sample it mostly has none.
+- For note052's estate gap (P5), this weakens the review-process explanation of the *rate* and strengthens the
+  *density* explanation.
+
+**What it does not say.**
+- Nothing about AI-authored code. The sample was pinned before December 2022, and the estate was not compared.
+- Nothing causal: CI could be a marker of projects that write tests, not a cause.
+- The 80 repositories come from GitHub's "best match" search ranking within random month windows. That is a
+  population of discoverable repositories, not a random sample of all Python code.
+- One AI hand-checked every finding, blind to stratum only. 4 TP repositories is a small count. With these
+  numbers, a true gap of 10 points could have been missed, so "no 10-point gap was seen" is the claim, not "there
+  is no gap".
+
+### Doors left open
+
+- **P11 (unrun).** Repeat at the 2026 heads of the same 80 repositories. Did adding CI later go with adding checks?
+  This is a within-repository comparison, which removes the selection-between-projects confound.
+- **P12 (unrun).** Re-hand-check a random 30 of the 137 findings by a second, independent reviewer and report
+  agreement (Cohen's κ). That tests the one-AI hand-check, the weakest joint here.
+- **Instrument (unrun).** A rule that separates model-evaluation scripts from code checks would remove 64 of the 129
+  false positives in this sample. It would need its own registration and controls.
+
+Provenance (M13): design, draw, run, hand-check and write-up by Claude (Anthropic, Opus 5.5). The hand-check was
+blinded to stratum, not to project → human validation: not performed → human direction: Chad Holland, 2026-11-07 →
+human responsibility: Chad Holland. Review level: direction only.

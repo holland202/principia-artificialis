@@ -1,0 +1,562 @@
+[
+ {
+  "repo": "sdushantha/pine",
+  "order": 1,
+  "eligible": true,
+  "pin": "33a98e975877bc456a37fec4779fea6835a97ed2",
+  "pin_date": "2020-07-16T20:28:13+02:00"
+ },
+ {
+  "repo": "alan-turing-institute/TCPD",
+  "order": 2,
+  "eligible": true,
+  "pin": "216b26a5cff380b35b76de6b5498c1ee902c5c70",
+  "pin_date": "2022-10-19T09:08:56+01:00"
+ },
+ {
+  "repo": "shchers/ecu-simulator",
+  "order": 3,
+  "eligible": true,
+  "pin": "9c48c64b38ec55ee4f858ac14b7333025d4711de",
+  "pin_date": "2020-09-30T00:25:43+03:00"
+ },
+ {
+  "repo": "bhaveshgawri/PageRank",
+  "order": 4,
+  "eligible": true,
+  "pin": "9fc4972846fff1cf5b0b3edbe210ae617c5411f9",
+  "pin_date": "2017-11-24T16:06:35+05:30"
+ },
+ {
+  "repo": "nasa/giant",
+  "order": 5,
+  "eligible": true,
+  "pin": "2b1ceeaf5847f2829f440b21ad3ca1977589eda4",
+  "pin_date": "2022-08-01T10:56:30-04:00"
+ },
+ {
+  "repo": "disrupted/things-cloud-api",
+  "order": 6,
+  "eligible": true,
+  "pin": "b83c1b2bda1b7e484d0483eb354508c5ef5e02c4",
+  "pin_date": "2022-11-30T08:09:14+01:00"
+ },
+ {
+  "repo": "atomistic-machine-learning/SchNOrb",
+  "order": 7,
+  "eligible": true,
+  "pin": "38cb268ea431b46e3b2088dda48bcd1983462ff5",
+  "pin_date": "2019-09-17T16:31:19+02:00"
+ },
+ {
+  "repo": "free5gmano/free5gmano",
+  "order": 8,
+  "eligible": true,
+  "pin": "615024370ea7e0de0903a8aa93528ce3d122a4a1",
+  "pin_date": "2022-09-28T21:47:48+08:00"
+ },
+ {
+  "repo": "nathanhi/pyfatfs",
+  "order": 9,
+  "eligible": true,
+  "pin": "6b271a5395eec7ee34a62437e180366d4d89913d",
+  "pin_date": "2022-04-17T13:02:51+02:00"
+ },
+ {
+  "repo": "Bohao-Lee/CME",
+  "order": 10,
+  "eligible": true,
+  "pin": "6b1549aaa6a30c83b760f19e7e02c89af40b9017",
+  "pin_date": "2021-11-23T19:57:11+08:00"
+ },
+ {
+  "repo": "InteractiveAdvertisingBureau/adstxtcrawler",
+  "order": 11,
+  "eligible": true,
+  "pin": "804d648b3bd255d02900475e483b289e3f53be5d",
+  "pin_date": "2020-10-08T13:30:53-04:00"
+ },
+ {
+  "repo": "pratikpv/malware_classification",
+  "order": 12,
+  "eligible": true,
+  "pin": "7e82986ba1d68c2167505fa7d18a2084a42433b0",
+  "pin_date": "2022-02-11T18:20:34-08:00"
+ },
+ {
+  "repo": "NVIDIA/Dataset_Utilities",
+  "order": 13,
+  "eligible": true,
+  "pin": "532b8c76e3d7946748a10af3398438b35383f157",
+  "pin_date": "2019-08-12T10:47:39-07:00"
+ },
+ {
+  "repo": "jhwang1992/network-visualization",
+  "order": 14,
+  "eligible": true,
+  "pin": "3f842c617eea568a2cdb478140fffab156b97b0d",
+  "pin_date": "2020-02-17T20:52:21+08:00"
+ },
+ {
+  "repo": "mikeckennedy/cookiecutter-course",
+  "order": 15,
+  "eligible": true,
+  "pin": "895e81bcdcd1ca23320034d5c5fca0af43087709",
+  "pin_date": "2018-10-05T09:51:14-07:00"
+ },
+ {
+  "repo": "gyim/vim-boxdraw",
+  "order": 16,
+  "eligible": true,
+  "pin": "b7f789f305b1c5b0b4623585e0f10adb417f2966",
+  "pin_date": "2021-01-28T18:24:43+01:00"
+ },
+ {
+  "repo": "Draven996/PwdBUD",
+  "order": 17,
+  "eligible": true,
+  "pin": "a670979da8e0cd7d11f439f18b8d8e02cfd838ea",
+  "pin_date": "2021-12-07T15:12:58+08:00"
+ },
+ {
+  "repo": "KalleHallden/BlackFridayScrape",
+  "order": 18,
+  "eligible": true,
+  "pin": "61a9a8f937b9c60f225c9eb0b6af12e2864a9028",
+  "pin_date": "2020-03-07T09:22:47+01:00"
+ },
+ {
+  "repo": "cloneofsimo/clipping-CLIP-to-GAN",
+  "order": 19,
+  "eligible": true,
+  "pin": "bf29856550892cbe8a39d94635b954423798bebb",
+  "pin_date": "2021-01-22T12:09:26+09:00"
+ },
+ {
+  "repo": "crazydonkey200/minimal-nn",
+  "order": 20,
+  "eligible": true,
+  "pin": "93818c0549ba1171442b9b2a7e3c81bb741d4c46",
+  "pin_date": "2017-05-03T12:11:12-05:00"
+ },
+ {
+  "repo": "Ben-Louis/Deep-Image-Analogy-PyTorch",
+  "order": 21,
+  "eligible": true,
+  "pin": "51dc48172cf915c8f29d7034f94fe80cd619efac",
+  "pin_date": "2021-12-11T16:31:22+08:00"
+ },
+ {
+  "repo": "ARBML/tnkeeh",
+  "order": 22,
+  "eligible": true,
+  "pin": "ba25ab3aad6bc8f4b34cc6e2215a1de1da9851c0",
+  "pin_date": "2021-07-14T22:17:45+03:00"
+ },
+ {
+  "repo": "wangleiai/dVectorSpeakerRecognition",
+  "order": 23,
+  "eligible": true,
+  "pin": "dd65ecc7cefad83d25a6d85c56fbd4f34178894b",
+  "pin_date": "2020-11-30T11:39:30+08:00"
+ },
+ {
+  "repo": "DoubleYouC/Bethini-Pie-Performance-INI-Editor",
+  "order": 24,
+  "eligible": true,
+  "pin": "1945b193869b8e74f2cc2929ac9da7358d83f46f",
+  "pin_date": "2022-02-19T14:33:26-05:00"
+ },
+ {
+  "repo": "graphql-python/graphene-tornado",
+  "order": 25,
+  "eligible": true,
+  "pin": "e4fa7d7b4c2256fa37f5ad89cbfd4d4bf6fdb606",
+  "pin_date": "2022-11-27T23:23:57+01:00"
+ },
+ {
+  "repo": "jtoy/sketchnet",
+  "order": 26,
+  "eligible": true,
+  "pin": "8c814f464a30249863cbdd31d2e0695a21b8e14d",
+  "pin_date": "2017-09-08T19:11:18-07:00"
+ },
+ {
+  "repo": "pyro-ppl/funsor",
+  "order": 27,
+  "eligible": true,
+  "pin": "1b9b68d7f47277ce023346e124c944abffa601e7",
+  "pin_date": "2022-10-28T10:27:49-04:00"
+ },
+ {
+  "repo": "algorithmiaio/danku",
+  "order": 28,
+  "eligible": true,
+  "pin": "7c6a5cf548af183f1c894973c491b8760adf4914",
+  "pin_date": "2018-07-19T11:08:14-07:00"
+ },
+ {
+  "repo": "baldassarreFe/pytorch-densenet-tiramisu",
+  "order": 29,
+  "eligible": true,
+  "pin": "7d29cec4765514c872927dbcbffcdfa642ea65ed",
+  "pin_date": "2019-05-16T16:35:45+02:00"
+ },
+ {
+  "repo": "Mellcap/MellPlayer",
+  "order": 30,
+  "eligible": true,
+  "pin": "90b3210eaaed675552fd69717b6b953fd0e0b07d",
+  "pin_date": "2017-10-16T22:11:12-05:00"
+ },
+ {
+  "repo": "JasprW/ColorCorrection",
+  "order": 31,
+  "eligible": true,
+  "pin": "a526b9463f575bea58b09e205a58fad0c03937df",
+  "pin_date": "2019-03-15T16:38:52+08:00"
+ },
+ {
+  "repo": "PackeTsar/checkmyip",
+  "order": 32,
+  "eligible": true,
+  "pin": "24f9d0e5dee4d5559b53456b07e418c3c623b0af",
+  "pin_date": "2022-11-13T10:09:53-08:00"
+ },
+ {
+  "repo": "kakaoenterprise/Learning-Debiased-Disentangled",
+  "order": 33,
+  "eligible": true,
+  "pin": "af1aa82fddbcda94759f87968e69f4e75d719f84",
+  "pin_date": "2022-05-20T16:41:14+09:00"
+ },
+ {
+  "repo": "npschafer/openawsem",
+  "order": 34,
+  "eligible": true,
+  "pin": "a460ec3a91902ac8ef155666e1357b5c6a3ca333",
+  "pin_date": "2022-08-16T21:56:11-05:00"
+ },
+ {
+  "repo": "pieterblok/maskal",
+  "order": 35,
+  "eligible": true,
+  "pin": "f33846860d52d8fbb4f6e81a7363f0799c3f429f",
+  "pin_date": "2022-09-19T11:07:25+02:00"
+ },
+ {
+  "repo": "mit-aera/Blackbird-Dataset",
+  "order": 36,
+  "eligible": true,
+  "pin": "c0aaf533c187ad0166970e1c4a6d880448fa5b8f",
+  "pin_date": "2021-07-08T18:53:05-04:00"
+ },
+ {
+  "repo": "techjacker/systemdlogger",
+  "order": 37,
+  "eligible": true,
+  "pin": "738a02ebeb581038d2b874a19904a50c28b5a4b1",
+  "pin_date": "2019-10-20T16:51:44+01:00"
+ },
+ {
+  "repo": "HelloMaoTai/jd-seckill-maotai",
+  "order": 38,
+  "eligible": true,
+  "pin": "c146afead5d62e741d5ff9f3aeb527b89b79109f",
+  "pin_date": "2021-01-20T22:46:21+08:00"
+ },
+ {
+  "repo": "harshsbais/Amazon-Price-Drop-Alert",
+  "order": 39,
+  "eligible": true,
+  "pin": "26256d4115eec6db51428eb7032056717519aa51",
+  "pin_date": "2021-04-07T11:14:05+05:30"
+ },
+ {
+  "repo": "liuyukid/transformers-ner",
+  "order": 40,
+  "eligible": true,
+  "pin": "f3bfcad46526c9cc454e3fdc49c6d19da5c419b7",
+  "pin_date": "2020-06-01T15:33:18+08:00"
+ },
+ {
+  "repo": "CCExtractor/Rekognition",
+  "order": 41,
+  "eligible": true,
+  "pin": "c0f7d80f00d438d7f7b3fd019f5030af781b2a12",
+  "pin_date": "2022-05-25T22:18:01+05:30"
+ },
+ {
+  "repo": "joh/xmldiffs",
+  "order": 42,
+  "eligible": true,
+  "pin": "55e997e38dc027f6bfcfcadad84eee0a925138da",
+  "pin_date": "2022-08-17T12:19:35+02:00"
+ },
+ {
+  "repo": "portugueslab/arrayqueues",
+  "order": 43,
+  "eligible": true,
+  "pin": "84b096419463eae3feb0b7d36dd860b542d10325",
+  "pin_date": "2021-03-23T10:32:15+01:00"
+ },
+ {
+  "repo": "ChemLez/xmcTiaoJiInformation_Pachong",
+  "order": 44,
+  "eligible": true,
+  "pin": "24c8659120198f3eb7700fe5eca6c4d6e13be855",
+  "pin_date": "2020-04-13T19:29:55+08:00"
+ },
+ {
+  "repo": "pyscaffold/configupdater",
+  "order": 45,
+  "eligible": true,
+  "pin": "0622abc726c0d7ff3eb69a660ef8f276188fde94",
+  "pin_date": "2022-10-19T09:59:53+01:00"
+ },
+ {
+  "repo": "hezhangsprinter/DID-MDN",
+  "order": 46,
+  "eligible": true,
+  "pin": "44bb9e84ab48cba764316bebeee0b47f5fad28a1",
+  "pin_date": "2020-09-29T18:29:25-07:00"
+ },
+ {
+  "repo": "val-iisc/lsc-cnn",
+  "order": 47,
+  "eligible": true,
+  "pin": "e6c65caabea8638e0845d768b51d8d77738527bb",
+  "pin_date": "2020-04-09T12:55:33-04:00"
+ },
+ {
+  "repo": "shailshouryya/yt-videos-list",
+  "order": 48,
+  "eligible": true,
+  "pin": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+  "pin_date": "2022-11-27T22:47:33-08:00"
+ },
+ {
+  "repo": "ofirpress/shortformer",
+  "order": 49,
+  "eligible": true,
+  "pin": "edc411ff896ae042c01d939a32c1e4a33e238083",
+  "pin_date": "2021-07-26T13:42:16-07:00"
+ },
+ {
+  "repo": "xyj77/MCF-3D-CNN",
+  "order": 50,
+  "eligible": true,
+  "pin": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+  "pin_date": "2019-05-19T21:23:54+08:00"
+ },
+ {
+  "repo": "oxwhirl/facmac",
+  "order": 51,
+  "eligible": true,
+  "pin": "d7e62b8c51a5a77330de85f83c10553d0bd18fe5",
+  "pin_date": "2021-10-25T14:29:29+01:00"
+ },
+ {
+  "repo": "csyhhu/L-OBS",
+  "order": 52,
+  "eligible": true,
+  "pin": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+  "pin_date": "2018-05-31T15:33:01+08:00"
+ },
+ {
+  "repo": "GIScience/ohsome-quality-api",
+  "order": 53,
+  "eligible": true,
+  "pin": "e7987f4d6ba0beab956604201fe0ea05a8c5cdd8",
+  "pin_date": "2022-12-01T18:51:55+01:00"
+ },
+ {
+  "repo": "petersn/six-char-max",
+  "order": 54,
+  "eligible": true,
+  "pin": "1ba625b90331ded11b7b7b2fa014e16c15641986",
+  "pin_date": "2017-06-01T18:24:12-04:00"
+ },
+ {
+  "repo": "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA",
+  "order": 55,
+  "eligible": true,
+  "pin": "22e99e01836fa2136879e79c2330ec8581e2c575",
+  "pin_date": "2022-02-26T14:33:05+02:00"
+ },
+ {
+  "repo": "LaoYang1994/PanopticSegmentation",
+  "order": 56,
+  "eligible": true,
+  "pin": "ca9b693a8adc93e6f7d8504f69c6820637a2b2b3",
+  "pin_date": "2019-10-14T20:59:39+08:00"
+ },
+ {
+  "repo": "dxywill/deepknowledgetracing",
+  "order": 57,
+  "eligible": true,
+  "pin": "f43493fd19760e30e6178360c6b9cf4f0e7bd6b4",
+  "pin_date": "2018-08-28T10:14:07-05:00"
+ },
+ {
+  "repo": "sarartur/chess.com",
+  "order": 58,
+  "eligible": true,
+  "pin": "aa24d387c765c28a4e92b65c107e575d9d39bcc4",
+  "pin_date": "2022-06-23T22:44:27-04:00"
+ },
+ {
+  "repo": "cutelittletiantian/python-for-office",
+  "order": 59,
+  "eligible": true,
+  "pin": "1f8710ddcb391c7c293e4a6a981b595fecdecaa5",
+  "pin_date": "2021-08-14T12:40:29+08:00"
+ },
+ {
+  "repo": "redcaps-dataset/redcaps-downloader",
+  "order": 60,
+  "eligible": true,
+  "pin": "c04c39afeeb56ed76ef0fc21096ef6e13ec2af03",
+  "pin_date": "2022-01-30T00:19:19-05:00"
+ },
+ {
+  "repo": "JaminFong/dali-pytorch",
+  "order": 61,
+  "eligible": true,
+  "pin": "7bd5d2380d210a32d24c7309da69c8d2c5db8759",
+  "pin_date": "2020-12-04T21:24:42+08:00"
+ },
+ {
+  "repo": "tonybaloney/requests-staticmock",
+  "order": 62,
+  "eligible": true,
+  "pin": "011cd3fd240582df042193439738fb1e0b0b03b2",
+  "pin_date": "2022-01-26T20:29:40+00:00"
+ },
+ {
+  "repo": "DurhamDecLab/ARBInterp",
+  "order": 63,
+  "eligible": true,
+  "pin": "56d88b1fdb28f2356c738dfe9bd34d65709ed0f8",
+  "pin_date": "2022-09-27T11:26:50+01:00"
+ },
+ {
+  "repo": "MortenHannemose/pytorch-vfi-cft",
+  "order": 64,
+  "eligible": true,
+  "pin": "ab42b475b408755d7d430c3cd5dbc00403fcf2f4",
+  "pin_date": "2019-11-13T14:16:39+01:00"
+ },
+ {
+  "repo": "heyeshuang/beancount-homemade-importers",
+  "order": 65,
+  "eligible": true,
+  "pin": "f050d7e6e581575d770a6d3d401883a76a4ec50e",
+  "pin_date": "2022-11-16T19:40:01+08:00"
+ },
+ {
+  "repo": "hugovk/pypistats",
+  "order": 66,
+  "eligible": true,
+  "pin": "6a09f747688ed599c542143bab922031ae882b54",
+  "pin_date": "2022-12-01T10:34:55+02:00"
+ },
+ {
+  "repo": "YRdddream/attattr",
+  "order": 67,
+  "eligible": true,
+  "pin": "f5a7396bee476504e22424b8f11a5ad4e7e55a00",
+  "pin_date": "2021-03-23T15:42:50+08:00"
+ },
+ {
+  "repo": "PaulChongPeng/YOLO2TensorFlow",
+  "order": 68,
+  "eligible": true,
+  "pin": "0f6ad1f153b8846fce20144b27ec9ffe5e17229f",
+  "pin_date": "2017-08-09T10:23:22+08:00"
+ },
+ {
+  "repo": "watermarkhu/qsurface",
+  "order": 69,
+  "eligible": true,
+  "pin": "9817d9b188d397c1478410aef6f92e5508e45b57",
+  "pin_date": "2020-12-01T11:49:52+01:00"
+ },
+ {
+  "repo": "ICD-API/Python-samples",
+  "order": 70,
+  "eligible": true,
+  "pin": "e817dcdc76f5a5cc5baab22853d2ace574f3f3d6",
+  "pin_date": "2019-07-31T13:42:05+02:00"
+ },
+ {
+  "repo": "tomdbar/eco-dqn",
+  "order": 71,
+  "eligible": true,
+  "pin": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+  "pin_date": "2020-10-23T19:46:39+01:00"
+ },
+ {
+  "repo": "fabiangeisler/pyshotgrid",
+  "order": 72,
+  "eligible": true,
+  "pin": "919a4695eef362573078b9ce393eedd7741d79bd",
+  "pin_date": "2022-11-28T14:45:03+01:00"
+ },
+ {
+  "repo": "JDAI-CV/FADA",
+  "order": 73,
+  "eligible": true,
+  "pin": "a1c6403963184a3427eda68cc94b03ff6143368a",
+  "pin_date": "2020-09-30T15:10:49+02:00"
+ },
+ {
+  "repo": "KnowZero/Krita-PythonPluginDeveloperTools",
+  "order": 74,
+  "eligible": true,
+  "pin": "230d34a71055831c25a7c7efcc51446ff8b9def0",
+  "pin_date": "2022-07-29T16:00:53-04:00"
+ },
+ {
+  "repo": "CFMTech/Jupytab",
+  "order": 75,
+  "eligible": true,
+  "pin": "bdc2abf6eae2bafe73b75de18aa7f784d1161096",
+  "pin_date": "2021-11-12T16:31:51+01:00"
+ },
+ {
+  "repo": "BornToBeRoot/check_nextcloud",
+  "order": 76,
+  "eligible": true,
+  "pin": "cdf34d6a2d0ca3db919bc98959f41f4f6c70e3f9",
+  "pin_date": "2022-04-20T15:48:50+02:00"
+ },
+ {
+  "repo": "Morizeyao/Decoders-Chinese-TF2.0",
+  "order": 77,
+  "eligible": true,
+  "pin": "0068aa8ab8be5f536557d44d226a051b9188e4ec",
+  "pin_date": "2020-09-28T18:52:43+08:00"
+ },
+ {
+  "repo": "geaxgx/UniversalHandControl",
+  "order": 78,
+  "eligible": true,
+  "pin": "f4e10258c945015101d9b0b260b63237b85e412e",
+  "pin_date": "2020-10-31T19:54:31+01:00"
+ },
+ {
+  "repo": "odwdinc/SSBU_Amiibo",
+  "order": 79,
+  "eligible": true,
+  "pin": "32d73a2a29ae9854a92a543845e605a3ad199906",
+  "pin_date": "2021-01-10T10:16:20-08:00"
+ },
+ {
+  "repo": "Actasidiot/EFIFSTR",
+  "order": 80,
+  "eligible": true,
+  "pin": "87022fe267ac73599719318a53557288eebef3fb",
+  "pin_date": "2020-11-30T20:29:20+08:00"
+ }
+]
