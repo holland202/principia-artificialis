@@ -549,3 +549,64 @@ In this sample of small public Python repositories (20–300 stars), each pinned
 Provenance (M13): design, draw, run, hand-check and write-up by Claude (Anthropic, Opus 5.5). The hand-check was
 blinded to stratum, not to project → human validation: not performed → human direction: Chad Holland, 2026-11-07 →
 human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 4 — 2026-11-07. P13 registered: does a decoding defect in the instrument change P10? Nothing rescanned yet.
+
+**Why.** In [vacuity_lint.py PR #32](https://github.com/holland202/vacuity_lint.py/pull/32), ChatGPT (OpenAI)
+reports a defect in the instrument P10 used. At `b8bb09e`, `analyse()` reads every file as UTF-8 with
+`errors="replace"`. Undecodable bytes become U+FFFD, the file is scanned as if Python could read it, and
+encoding declarations are ignored. The PR head reads with `tokenize.open` and reports undecodable source as
+UNPARSEABLE. If any of P10's files were affected, P10's numbers could be wrong. The PR is open and unmerged. I have
+read its six-line change to `vacuity_lint.py`. I have not reviewed its tests.
+
+**Known before registering (C-EXPLORE).** That diff, and P10's own records. I have not run either linter on a
+planted or P10 file for this question, and I have not looked at how P10's files are encoded.
+
+**Instruments.** A = `vacuity_lint.py` at `b8bb09e0fc30cac3305dc2db99bbce1b8dd3ac9d` (sha256 beginning
+`a92963c69fa129db`, P10's instrument, selftest 20/20 required). B = the PR #32 head,
+`db98e60971452ba2ac1c8a6da3c6118cfc69f80a` (sha256 beginning `a6c8a65d6a9150f6`; its selftest must report all
+checks passed). B stands in for the fix (M4). P13 does not certify it.
+
+**Procedure** (driver `experiments/note052_p6/run_p13.py`, committed with this amendment):
+1. Rebuild the 80 filtered trees from P10's pinned checkouts. The driver refuses any checkout whose HEAD is not
+   the pin in `fetch_log.json`, or which has local changes. The exclusions are P10's.
+2. **Census.** Read every `.py` file both ways, A's and B's, and class it:
+   - SAME: identical text;
+   - BOM: differs only by a leading U+FEFF;
+   - DECLARED: an encoding declaration changes the text;
+   - UNDECODABLE: B's read raises;
+   - UNREADABLE: the file cannot be opened.
+3. **Rescan** every tree with A and with B.
+4. **Score.** The driver first checks that it reproduces `results_p10/score.json` from P10's own inputs, and
+   refuses to score if not. Then it recomputes P10a and P10b from B's scan:
+   - A finding that B shares with P10, by (repository, path, category), keeps its P10 verdict.
+   - A new UNPARSEABLE finding is FP, by the existing clarification.
+   - Any other new finding is left unchecked, and P10a is computed twice: once with all unchecked findings TP,
+     once with all FP.
+
+**Predictions.**
+- **P13a.** A's rescan reproduces P10's `scan.json` exactly: findings, verification-shaped counts and exit codes.
+- **P13b.** Fewer than 1% of the scanned `.py` files are classed other than SAME.
+- **P13c.** B's findings differ from P10's by at most 3 (repository, path, category) entries, and no hand-checked
+  TP disappears.
+- **P13d.** Under both CI definitions and both bounds, P10a stays REFUTED and P10b stays CONFIRMED.
+
+If P13d is refuted, P10's result depends on the defect. This note would then put that first, ahead of P10.
+
+**Anti-vacuity control** (expected results registered here; run after this commit). Each case is P10's planted
+file, `verify_output.py`, which prints FAIL but cannot fail:
+- **K1:** the file plus a comment holding byte 0xFF on line 3. A reports a finding other than UNPARSEABLE; B reports
+  UNPARSEABLE. This shows the comparison can see a difference.
+- **K2:** the file as it is. A and B report the same finding, so B does not differ on clean input.
+- **K3** (a prediction, not a control): the file with a UTF-8 BOM. A and B report the same thing. I am not sure how
+  `ast.parse` treats a leading U+FEFF in a string. If they differ, K3 is recorded as refuted.
+
+**What either result would mean.** If all four hold, the defect is real but did not touch P10, and P10 stands as
+reported. If P13c or P13d fails, the P10 numbers are restated from B with the bounds. P10's files stay as they are
+(M12).
+
+Provenance (M13): defect found by ChatGPT (OpenAI), vacuity_lint.py PR #32, not rerun by me before this
+registration → registration and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed → human
+direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
