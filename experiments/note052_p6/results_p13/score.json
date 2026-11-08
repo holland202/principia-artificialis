@@ -1,0 +1,90 @@
+{
+ "bounds": {
+  "unchecked_FP": {
+   "gha_only": {
+    "P10a": "REFUTED",
+    "P10b": "CONFIRMED",
+    "U_B_lower": 796.5,
+    "fisher_p_one_sided": 0.8423475258918297,
+    "median_density_A": 6,
+    "median_density_B": 0,
+    "nA": 15,
+    "nB": 65,
+    "perm_p_density": 0.0,
+    "repos_with_TP_A": 1,
+    "repos_with_TP_B": 3,
+    "share_A": 0.06666666666666667,
+    "share_B": 0.046153846153846156,
+    "underpowered": false
+   },
+   "primary": {
+    "P10a": "REFUTED",
+    "P10b": "CONFIRMED",
+    "U_B_lower": 961.5,
+    "fisher_p_one_sided": 0.7623167971269237,
+    "median_density_A": 5,
+    "median_density_B": 0,
+    "nA": 19,
+    "nB": 61,
+    "perm_p_density": 0.0,
+    "repos_with_TP_A": 1,
+    "repos_with_TP_B": 3,
+    "share_A": 0.05263157894736842,
+    "share_B": 0.04918032786885246,
+    "underpowered": false
+   }
+  },
+  "unchecked_TP": {
+   "gha_only": {
+    "P10a": "REFUTED",
+    "P10b": "CONFIRMED",
+    "U_B_lower": 796.5,
+    "fisher_p_one_sided": 0.8423475258918297,
+    "median_density_A": 6,
+    "median_density_B": 0,
+    "nA": 15,
+    "nB": 65,
+    "perm_p_density": 0.0,
+    "repos_with_TP_A": 1,
+    "repos_with_TP_B": 3,
+    "share_A": 0.06666666666666667,
+    "share_B": 0.046153846153846156,
+    "underpowered": false
+   },
+   "primary": {
+    "P10a": "REFUTED",
+    "P10b": "CONFIRMED",
+    "U_B_lower": 961.5,
+    "fisher_p_one_sided": 0.7623167971269237,
+    "median_density_A": 5,
+    "median_density_B": 0,
+    "nA": 19,
+    "nB": 61,
+    "perm_p_density": 0.0,
+    "repos_with_TP_A": 1,
+    "repos_with_TP_B": 3,
+    "share_A": 0.05263157894736842,
+    "share_B": 0.04918032786885246,
+    "underpowered": false
+   }
+  }
+ },
+ "census_not_same_share": 0.00042319085907744394,
+ "findings_gone": [],
+ "findings_new": [
+  [
+   "wangleiai/dVectorSpeakerRecognition",
+   "kersaSoftmax/gruTrain.py",
+   "UNPARSEABLE"
+  ]
+ ],
+ "new_unchecked_non_unparseable": [],
+ "shaped_changed": {},
+ "tp_gone": [],
+ "verdicts": {
+  "P13a": "HELD",
+  "P13b": "HELD",
+  "P13c": "HELD",
+  "P13d": "HELD"
+ }
+}

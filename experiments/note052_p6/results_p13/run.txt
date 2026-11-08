@@ -1,0 +1,43 @@
+$ python3 experiments/note052_p6/run_p13.py control P10RUN OUT
+linter A: b8bb09e sha256 a92963c69fa129db, selftest 20/20 checks passed
+linter B: db98e60 sha256 a6c8a65d6a9150f6, selftest 20/20 checks passed
+K1: A ['NO_FAIL_PATH']  B ['UNPARSEABLE']
+K2: A ['NO_FAIL_PATH']  B ['NO_FAIL_PATH']
+K3: A ['UNPARSEABLE']  B ['NO_FAIL_PATH']
+K1 (comparison can see a difference): PASS
+K2 (B does not differ on clean input): PASS
+K3 (prediction, not a control: BOM makes no difference): REFUTED
+exit 0
+$ python3 experiments/note052_p6/run_p13.py census P10RUN OUT
+census: 2363 .py files; {"SAME": 2362, "UNDECODABLE": 1}; not SAME 1 (0.042%)
+exit 0
+$ python3 experiments/note052_p6/run_p13.py rescan P10RUN OUT
+linter A: b8bb09e sha256 a92963c69fa129db, selftest 20/20 checks passed
+linter B: db98e60 sha256 a6c8a65d6a9150f6, selftest 20/20 checks passed
+rescanned 80: A findings 137, B findings 138
+exit 0
+$ python3 experiments/note052_p6/run_p13.py score P10RUN OUT
+{
+ "census_not_same_share": 0.00042319085907744394,
+ "findings_gone": [],
+ "findings_new": [
+  [
+   "wangleiai/dVectorSpeakerRecognition",
+   "kersaSoftmax/gruTrain.py",
+   "UNPARSEABLE"
+  ]
+ ],
+ "shaped_changed": {},
+ "tp_gone": [],
+ "verdicts": {
+  "P13a": "HELD",
+  "P13b": "HELD",
+  "P13c": "HELD",
+  "P13d": "HELD"
+ }
+}
+unchecked_FP primary: TP repos B 3/61, A 1/19, Fisher p 0.762, medians 0 vs 5, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_FP gha_only: TP repos B 3/65, A 1/15, Fisher p 0.842, medians 0 vs 6, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_TP primary: TP repos B 3/61, A 1/19, Fisher p 0.762, medians 0 vs 5, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_TP gha_only: TP repos B 3/65, A 1/15, Fisher p 0.842, medians 0 vs 6, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+exit 0

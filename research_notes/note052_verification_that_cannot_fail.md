@@ -610,3 +610,74 @@ reported. If P13c or P13d fails, the P10 numbers are restated from B with the bo
 Provenance (M13): defect found by ChatGPT (OpenAI), vacuity_lint.py PR #32, not rerun by me before this
 registration → registration and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed → human
 direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 4 results — 2026-11-07. P13a–P13d HELD. The defect is real, and it did not touch P10. K3 REFUTED.
+
+Raw files: `experiments/note052_p6/results_p13/` (`run.txt`, plus the control, census, both rescans and the
+score). `inspect.txt` is a description written after the run, by `inspect_p13.py`, and is not a prediction. The
+whole sequence ran twice; all five JSON outputs were byte-identical between the runs. The registration
+was committed and pushed at `8a44614` before anything ran. Container, Python 3.13.18. NOT VALIDATED on the S25.
+
+### What went wrong, first
+
+1. **K3 is REFUTED, and it shows a second form of the defect.** Both linters were given P10's planted file with a
+   UTF-8 BOM. A reported UNPARSEABLE and B reported NO_FAIL_PATH. Python 3 itself compiles that file's bytes. A
+   reads the BOM as a character and passes it to `ast.parse`, which raises `invalid non-printable character
+   U+FEFF`. So A's flaw runs both ways:
+   - a file Python cannot read gets scanned as if it were clean;
+   - a file Python reads fine is called unparseable, and a vacuous check inside it is never reported.
+   Under the P10 hand-check rule, UNPARSEABLE is FP, so a BOM file would have been dropped silently. ChatGPT's PR
+   says it handles BOMs. This is the first run of that case against P10's instrument.
+2. **One P10 file was affected.** `kersaSoftmax/gruTrain.py` in `wangleiai/dVectorSpeakerRecognition` has no
+   encoding declaration, and its first invalid UTF-8 byte is at offset 716, line 23 (`results_p13/inspect.txt`). The
+   bytes are valid GBK, which suggests Chinese text saved in a GBK encoding. Nothing else about that was checked.
+   Python 3 refuses to compile the file (`SyntaxError: (unicode error) 'utf-8' codec can't decode byte`). A scanned
+   it and reported nothing. B reports it UNPARSEABLE.
+
+### Results
+
+```
+K1: A ['NO_FAIL_PATH']  B ['UNPARSEABLE']
+K2: A ['NO_FAIL_PATH']  B ['NO_FAIL_PATH']
+K3: A ['UNPARSEABLE']  B ['NO_FAIL_PATH']
+census: 2363 .py files; {"SAME": 2362, "UNDECODABLE": 1}; not SAME 1 (0.042%)
+rescanned 80: A findings 137, B findings 138
+unchecked_FP primary: TP repos B 3/61, A 1/19, Fisher p 0.762, medians 0 vs 5, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_FP gha_only: TP repos B 3/65, A 1/15, Fisher p 0.842, medians 0 vs 6, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_TP primary: TP repos B 3/61, A 1/19, Fisher p 0.762, medians 0 vs 5, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+unchecked_TP gha_only: TP repos B 3/65, A 1/15, Fisher p 0.842, medians 0 vs 6, perm p 0.0: P10a REFUTED, P10b CONFIRMED
+```
+
+| | prediction | result |
+|---|---|---|
+| K1 | control: the comparison can see a difference | PASS |
+| K2 | control: B agrees with A on clean input | PASS |
+| K3 | a BOM makes no difference | **REFUTED** (above) |
+| P13a | A's rescan reproduces P10's `scan.json` | HELD |
+| P13b | under 1% of `.py` files decode differently | HELD: 1 of 2,363 (0.042%), and no BOM or DECLARED file |
+| P13c | at most 3 findings change; no TP disappears | HELD: one new UNPARSEABLE finding (FP by rule); none gone |
+| P13d | P10a REFUTED and P10b CONFIRMED under both definitions and both bounds | HELD |
+
+No verification-shaped count changed. The one new finding is UNPARSEABLE, so no finding was left unchecked and the
+two bounds are identical. The score step reproduced P10's committed `score.json` from P10's inputs before it scored
+anything.
+
+### What this does and does not say
+
+- **P10 stands as reported.** The decoding defect touched one file in 2,363. It is not named like a check, and
+  no repository's verification-shaped count changed.
+- **The defect is real on P10's instrument.** K1 reproduces ChatGPT's undecodable case. K3 adds the BOM case: a
+  vacuous check in a BOM file is invisible to `b8bb09e`. On another population, especially Windows-edited code,
+  that could matter. This sample had no BOM files.
+- **Not shown:** that PR #32 is correct in general. B was used only for these two reads, and its own tests were not
+  reviewed. Whether to merge it is Chad's decision.
+- **Door (unrun).** How often do BOM or non-UTF-8 files occur among verification-shaped files in a population
+  where Windows editors are common? This sample had none. P11, if it runs, should pin a linter that handles both
+  cases.
+
+Provenance (M13): defect reported by ChatGPT (OpenAI) in vacuity_lint.py PR #32; this run reproduces its
+undecodable case on P10's instrument and adds the BOM case → run and write-up by Claude (Anthropic, Opus 5.5) →
+human validation: not performed → human direction: Chad Holland, 2026-11-07 → human responsibility: Chad
+Holland. Review level: direction only.
