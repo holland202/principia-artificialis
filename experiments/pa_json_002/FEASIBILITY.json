@@ -1,0 +1,37 @@
+{
+  "by_family": {
+    "fraction_padding": 256,
+    "integer_padding": 256
+  },
+  "by_padding": {
+    "0": 32,
+    "1": 32,
+    "18": 32,
+    "19": 32,
+    "20": 32,
+    "9998": 32,
+    "9999": 32,
+    "10000": 32,
+    "10001": 32,
+    "10002": 32,
+    "99998": 32,
+    "99999": 32,
+    "100000": 32,
+    "100001": 32,
+    "100002": 32,
+    "131072": 32
+  },
+  "by_sign": {
+    "-1": 256,
+    "1": 256
+  },
+  "cases": 512,
+  "corpus_sha256": "9aa6c77939135ac22fcf74d9818f6d12691205f9325c2f3c56877dedc99a3076",
+  "distinct_baseline_values": 16,
+  "distinct_transformed_tokens": 512,
+  "exact_equivalent_cases": 512,
+  "maximum_token_bytes": 131099,
+  "nonidentity_spellings": 496,
+  "subject_parsers_invoked": 0,
+  "total_transformed_token_bytes": 21804598
+}

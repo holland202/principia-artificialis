@@ -1,0 +1,1 @@
+sqlite3_atof() only looks at the first 19 significant digits of its argument.

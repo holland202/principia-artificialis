@@ -1,0 +1,38 @@
+{
+  "owner_facing_date": "2026-11-07",
+  "sources": [
+    {
+      "author": "SQLite maintainers",
+      "url": "https://sqlite.org/changes.html",
+      "checked": "3.54.1 source identity and published amalgamation SHA3-256 match the generated dependency",
+      "status": "SUPPORTED"
+    },
+    {
+      "author": "SQLite maintainers",
+      "url": "https://github.com/sqlite/sqlite/blob/57520227c95396ce39ba6ecaac8d475b78dd3964/src/util.c#L959",
+      "git_commit": "57520227c95396ce39ba6ecaac8d475b78dd3964",
+      "file_git_blob": "c37ab9741e10cf41ad9c32dbbd46d0aa01bb53b3",
+      "file_sha256": "c797e900272ba6cb0e75ba84f3ebc7e5ca1c473520d44f23cc50808851efdd8f",
+      "excerpt_path": "docs/external/PA_JSON_002_exponent_cap.txt",
+      "checked": "Exponent accumulation includes a cap before it is combined with the significand offset",
+      "status": "SUPPORTED; numeric consequence is a prediction, not yet measured",
+      "excerpt_sha256": "27470e65f516dd8e84c39c528be36a821990bbc41ca829b2d03e64e89868aff8"
+    },
+    {
+      "author": "Richard Hipp (drh)",
+      "url": "https://sqlite.org/forum/info/0b25ff2d9dbf6b8ae4c10993d6e804b031ea2a45dc6618b7e16d4fbd18ffb3ad?t=h",
+      "excerpt_path": "docs/external/PA_JSON_002_precision_excerpt.txt",
+      "checked": "Maintainer discloses significant-digit limitations; this does not establish a prior report of the cancellation pair",
+      "status": "SUPPORTED for the stated precision limitation only",
+      "excerpt_sha256": "7196922594a9f0f532da2050dc09994f4cb256f14b4007ebee0d8b93cc2ac65d"
+    }
+  ],
+  "novelty": "UNRESOLVED; no world-first claim",
+  "source_search_terms": [
+    "SQLite compensating exponent",
+    "SQLite exponent saturation",
+    "SQLite exponent clamping",
+    "SQLite long significand",
+    "SQLite exponent 10000 JSON"
+  ]
+}
