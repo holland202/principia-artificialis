@@ -1,0 +1,174 @@
+{
+ "benoitc/gunicorn": {
+  "exit": 1,
+  "verification_shaped": 112,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "tests/docker/asgi_framework_compat/scripts/generate_grid.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/config/test_cfg.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/config/test_cfg_alt.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/config/test_cfg_with_wsgi_app.py"
+   }
+  ]
+ },
+ "pallets/jinja": {
+  "exit": 0,
+  "verification_shaped": 24,
+  "findings": []
+ },
+ "psf/requests": {
+  "exit": 1,
+  "verification_shaped": 10,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "src/requests/status_codes.py"
+   }
+  ]
+ },
+ "celery/celery": {
+  "exit": 1,
+  "verification_shaped": 181,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "celery/events/state.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "t/unit/bin/test_multi.py"
+   }
+  ]
+ },
+ "pallets/click": {
+  "exit": 0,
+  "verification_shaped": 45,
+  "findings": []
+ },
+ "kennethreitz/records": {
+  "exit": 0,
+  "verification_shaped": 4,
+  "findings": []
+ },
+ "mitsuhiko/rye": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "pyca/cryptography": {
+  "exit": 1,
+  "verification_shaped": 95,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "docs/development/custom-vectors/secp256k1/verify_secp256k1.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/test_camellia.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/test_hkdf_vectors.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/test_kbkdf_vectors.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/decrepit/test_3des.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/decrepit/test_arc4.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/hazmat/primitives/decrepit/test_rc2.py"
+   }
+  ]
+ },
+ "tqdm/tqdm": {
+  "exit": 0,
+  "verification_shaped": 19,
+  "findings": []
+ },
+ "python-attrs/attrs": {
+  "exit": 0,
+  "verification_shaped": 26,
+  "findings": []
+ },
+ "kennethreitz/maya": {
+  "exit": 0,
+  "verification_shaped": 2,
+  "findings": []
+ },
+ "jsvine/pdfplumber": {
+  "exit": 0,
+  "verification_shaped": 17,
+  "findings": []
+ },
+ "mkorpela/pabot": {
+  "exit": 0,
+  "verification_shaped": 30,
+  "findings": []
+ },
+ "dbader/schedule": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "jd/tenacity": {
+  "exit": 0,
+  "verification_shaped": 6,
+  "findings": []
+ },
+ "lepture/mistune": {
+  "exit": 1,
+  "verification_shaped": 20,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "tests/test_cli.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "tests/test_syntax.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/test_cli.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/test_syntax.py"
+   }
+  ]
+ },
+ "bslatkin/effectivepython": {
+  "exit": 0,
+  "verification_shaped": 15,
+  "findings": []
+ },
+ "amoffat/sh": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "gruns/furl": {
+  "exit": 0,
+  "verification_shaped": 2,
+  "findings": []
+ }
+}

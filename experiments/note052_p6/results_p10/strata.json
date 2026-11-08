@@ -1,0 +1,322 @@
+{
+ "sdushantha/pine": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "alan-turing-institute/TCPD": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "shchers/ecu-simulator": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "bhaveshgawri/PageRank": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "nasa/giant": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "disrupted/things-cloud-api": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "atomistic-machine-learning/SchNOrb": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "free5gmano/free5gmano": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "nathanhi/pyfatfs": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "Bohao-Lee/CME": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "InteractiveAdvertisingBureau/adstxtcrawler": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "pratikpv/malware_classification": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "NVIDIA/Dataset_Utilities": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "jhwang1992/network-visualization": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "mikeckennedy/cookiecutter-course": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "gyim/vim-boxdraw": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "Draven996/PwdBUD": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "KalleHallden/BlackFridayScrape": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "cloneofsimo/clipping-CLIP-to-GAN": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "crazydonkey200/minimal-nn": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "Ben-Louis/Deep-Image-Analogy-PyTorch": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "ARBML/tnkeeh": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "wangleiai/dVectorSpeakerRecognition": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "DoubleYouC/Bethini-Pie-Performance-INI-Editor": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "graphql-python/graphene-tornado": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "jtoy/sketchnet": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "pyro-ppl/funsor": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "algorithmiaio/danku": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "baldassarreFe/pytorch-densenet-tiramisu": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "Mellcap/MellPlayer": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "JasprW/ColorCorrection": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "PackeTsar/checkmyip": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "kakaoenterprise/Learning-Debiased-Disentangled": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "npschafer/openawsem": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "pieterblok/maskal": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "mit-aera/Blackbird-Dataset": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "techjacker/systemdlogger": {
+  "primary": "A",
+  "gha_only": "B"
+ },
+ "HelloMaoTai/jd-seckill-maotai": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "harshsbais/Amazon-Price-Drop-Alert": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "liuyukid/transformers-ner": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "CCExtractor/Rekognition": {
+  "primary": "A",
+  "gha_only": "B"
+ },
+ "joh/xmldiffs": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "portugueslab/arrayqueues": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "ChemLez/xmcTiaoJiInformation_Pachong": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "pyscaffold/configupdater": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "hezhangsprinter/DID-MDN": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "val-iisc/lsc-cnn": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "shailshouryya/yt-videos-list": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "ofirpress/shortformer": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "xyj77/MCF-3D-CNN": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "oxwhirl/facmac": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "csyhhu/L-OBS": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "GIScience/ohsome-quality-api": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "petersn/six-char-max": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "LaoYang1994/PanopticSegmentation": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "dxywill/deepknowledgetracing": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "sarartur/chess.com": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "cutelittletiantian/python-for-office": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "redcaps-dataset/redcaps-downloader": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "JaminFong/dali-pytorch": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "tonybaloney/requests-staticmock": {
+  "primary": "A",
+  "gha_only": "B"
+ },
+ "DurhamDecLab/ARBInterp": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "MortenHannemose/pytorch-vfi-cft": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "heyeshuang/beancount-homemade-importers": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "hugovk/pypistats": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "YRdddream/attattr": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "PaulChongPeng/YOLO2TensorFlow": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "watermarkhu/qsurface": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "ICD-API/Python-samples": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "tomdbar/eco-dqn": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "fabiangeisler/pyshotgrid": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "JDAI-CV/FADA": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "KnowZero/Krita-PythonPluginDeveloperTools": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "CFMTech/Jupytab": {
+  "primary": "A",
+  "gha_only": "B"
+ },
+ "BornToBeRoot/check_nextcloud": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "Morizeyao/Decoders-Chinese-TF2.0": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "geaxgx/UniversalHandControl": {
+  "primary": "B",
+  "gha_only": "B"
+ },
+ "odwdinc/SSBU_Amiibo": {
+  "primary": "A",
+  "gha_only": "A"
+ },
+ "Actasidiot/EFIFSTR": {
+  "primary": "B",
+  "gha_only": "B"
+ }
+}

@@ -1,0 +1,92 @@
+{
+ "F001": {
+  "repo": "lepture/mistune",
+  "category": "NO_FAIL_PATH",
+  "path": "tests/test_cli.py"
+ },
+ "F002": {
+  "repo": "lepture/mistune",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/test_cli.py"
+ },
+ "F003": {
+  "repo": "lepture/mistune",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/test_syntax.py"
+ },
+ "F004": {
+  "repo": "psf/requests",
+  "category": "PRINTS_FAIL_ONLY",
+  "path": "src/requests/status_codes.py"
+ },
+ "F005": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/decrepit/test_3des.py"
+ },
+ "F006": {
+  "repo": "benoitc/gunicorn",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/config/test_cfg_with_wsgi_app.py"
+ },
+ "F007": {
+  "repo": "pyca/cryptography",
+  "category": "NO_FAIL_PATH",
+  "path": "docs/development/custom-vectors/secp256k1/verify_secp256k1.py"
+ },
+ "F008": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/test_hkdf_vectors.py"
+ },
+ "F009": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/decrepit/test_arc4.py"
+ },
+ "F010": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/test_kbkdf_vectors.py"
+ },
+ "F011": {
+  "repo": "benoitc/gunicorn",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/config/test_cfg_alt.py"
+ },
+ "F012": {
+  "repo": "benoitc/gunicorn",
+  "category": "PRINTS_FAIL_ONLY",
+  "path": "tests/docker/asgi_framework_compat/scripts/generate_grid.py"
+ },
+ "F013": {
+  "repo": "celery/celery",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "t/unit/bin/test_multi.py"
+ },
+ "F014": {
+  "repo": "celery/celery",
+  "category": "PRINTS_FAIL_ONLY",
+  "path": "celery/events/state.py"
+ },
+ "F015": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/decrepit/test_rc2.py"
+ },
+ "F016": {
+  "repo": "lepture/mistune",
+  "category": "NO_FAIL_PATH",
+  "path": "tests/test_syntax.py"
+ },
+ "F017": {
+  "repo": "benoitc/gunicorn",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/config/test_cfg.py"
+ },
+ "F018": {
+  "repo": "pyca/cryptography",
+  "category": "UNCOLLECTABLE_TEST",
+  "path": "tests/hazmat/primitives/test_camellia.py"
+ }
+}

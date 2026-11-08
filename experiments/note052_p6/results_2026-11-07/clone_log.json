@@ -1,0 +1,101 @@
+{
+ "benoitc/gunicorn": {
+  "available": true,
+  "head": "b78d798874edf1d1c5935e3af91c440ecde399ae",
+  "head_date": "2026-11-08T00:03:19+01:00"
+ },
+ "pallets/jinja": {
+  "available": true,
+  "head": "5ef70112a1ff19c05324ff889dd30405b1002044",
+  "head_date": "2025-06-14T13:34:58-07:00"
+ },
+ "psf/requests": {
+  "available": true,
+  "head": "3c7baaa05ab4aa49cc819ce3a819d260de19c157",
+  "head_date": "2026-10-26T11:14:41-06:00"
+ },
+ "celery/celery": {
+  "available": true,
+  "head": "768e476b5397fb4efe6439fdd818e47cd5c3a90a",
+  "head_date": "2026-11-07T19:44:09+06:00"
+ },
+ "pallets/click": {
+  "available": true,
+  "head": "8abb77a8432e03ed14a95f972b44f905279415a7",
+  "head_date": "2026-11-06T09:58:14-08:00"
+ },
+ "kennethreitz/records": {
+  "available": true,
+  "head": "ea4273695cee6da42edf1cb294d1f2a4505470fc",
+  "head_date": "2026-02-08T19:57:09-08:00"
+ },
+ "mitsuhiko/rye": {
+  "available": true,
+  "head": "62ec9edbe471958a05a70418b19f3acd54f0484d",
+  "head_date": "2025-08-18T12:52:35-04:00"
+ },
+ "pyca/cryptography": {
+  "available": true,
+  "head": "d08ee5debf7aad468bf0af9b03721117b54fc157",
+  "head_date": "2026-11-07T18:01:40+01:00"
+ },
+ "tqdm/tqdm": {
+  "available": true,
+  "head": "9cf5a12b1f955468a17f0ba3c59092b23e4258ac",
+  "head_date": "2026-09-11T08:09:56+01:00"
+ },
+ "python-attrs/attrs": {
+  "available": true,
+  "head": "9d9f94a043de7fc4012459853a4ed597a5577855",
+  "head_date": "2026-11-02T13:01:53+00:00"
+ },
+ "kennethreitz/maya": {
+  "available": true,
+  "head": "9766619d007caf553357db6dba5485fb36ed4edd",
+  "head_date": "2024-07-19T09:04:30-04:00"
+ },
+ "kennethreitz/pipenv-old": {
+  "available": false,
+  "reason": "fatal: could not read Username for 'https://github.com': terminal prompts disabled"
+ },
+ "jsvine/pdfplumber": {
+  "available": true,
+  "head": "4c64b92d5caccd71c645e98e0fabb0c4dba7ff45",
+  "head_date": "2026-06-14T23:34:34-04:00"
+ },
+ "mkorpela/pabot": {
+  "available": true,
+  "head": "a602a67d92ff39a969f27c8084f29b5e1e2dea90",
+  "head_date": "2026-06-11T06:33:11+03:00"
+ },
+ "dbader/schedule": {
+  "available": true,
+  "head": "82a43db1b938d8fdf60103bd41f329e06c8d3651",
+  "head_date": "2024-05-25T20:40:33+02:00"
+ },
+ "jd/tenacity": {
+  "available": true,
+  "head": "aac059c906170ee7b6ce1aa086a226f3aded5c99",
+  "head_date": "2026-11-01T19:44:08+00:00"
+ },
+ "lepture/mistune": {
+  "available": true,
+  "head": "f7ec702edfc1ad5579a76f881238841af266d93c",
+  "head_date": "2026-10-24T01:14:01+09:00"
+ },
+ "bslatkin/effectivepython": {
+  "available": true,
+  "head": "fa87298a0ba042fc07fabadb599e5c3f6becf2d7",
+  "head_date": "2024-12-10T15:45:02-08:00"
+ },
+ "amoffat/sh": {
+  "available": true,
+  "head": "5e1c810236225ab9a41280cc1a7d9d38ef575086",
+  "head_date": "2026-07-25T14:39:10-07:00"
+ },
+ "gruns/furl": {
+  "available": true,
+  "head": "bb77c48c6735929b469954ab6e54b33e17ac5121",
+  "head_date": "2026-10-18T12:36:53-07:00"
+ }
+}
