@@ -1,0 +1,57 @@
+{
+  "rows": 16384,
+  "observerDisagreements": 0,
+  "counts": {
+    "python_json": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "node_json": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_numeric": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 15384,
+      "stable": 16384,
+      "stable_and_lossy": 15384
+    },
+    "sqlite_token": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_cast": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_printf17": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "constant_zero_control": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 16384,
+      "stable": 16384,
+      "stable_and_lossy": 16384
+    }
+  },
+  "node": "v24.22.1",
+  "subjectRerun": false
+}

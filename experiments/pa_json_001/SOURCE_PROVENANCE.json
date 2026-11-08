@@ -1,0 +1,56 @@
+{
+  "retrieved_at_utc": "2026-11-08T00:16:35.862307+00:00",
+  "owner_facing_date": "2026-11-07",
+  "author": "drh",
+  "repository": "sqlite/sqlite",
+  "commit": "5b98467d28aa1ceff5602b54a0cd7c0d3f1c8fb0",
+  "committed_at": "2026-05-29T23:14:22Z",
+  "url": "https://github.com/sqlite/sqlite/commit/5b98467d28aa1ceff5602b54a0cd7c0d3f1c8fb0",
+  "excerpt_path": "docs/external/PA_JSON_001_upstream_fix_excerpt.txt",
+  "source_path": "src/json.c",
+  "claims_checked": [
+    {
+      "claim": "The upstream JSON SQL-value formatter changed from %!0.15g to %!0.17g",
+      "result": "SUPPORTED by inspected source diff"
+    },
+    {
+      "claim": "This was a previously unknown SQLite bug discovered by this study",
+      "result": "REFUTED as a novelty claim: upstream correction predates this work"
+    },
+    {
+      "claim": "Current SQLite releases reproduce the recorded count",
+      "result": "NOT RUN; no such claim made"
+    }
+  ],
+  "sources": [
+    {
+      "author": "Richard Hipp / SQLite maintainers",
+      "url": "https://github.com/sqlite/sqlite/commit/5b98467d28aa1ceff5602b54a0cd7c0d3f1c8fb0",
+      "excerpt_path": "docs/external/PA_JSON_001_upstream_fix_excerpt.txt",
+      "purpose": "exact formatter correction and rejection of new-defect claim",
+      "excerpt_sha256": "777d1fec9418eec59af8af9b047fab4cecf94eee48ff59637af38ebd3ce26ded"
+    },
+    {
+      "authors": [
+        "Jonas Möller",
+        "Felix Weißberg",
+        "Lukas Pirch",
+        "Thorsten Eisenhofer",
+        "Konrad Rieck"
+      ],
+      "title": "Cross-Language Differential Testing of JSON Parsers",
+      "url": "https://www.mlsec.tu-berlin.de/docs/2024b-asiaccs.pdf",
+      "doi": "10.1145/3634737.3657003",
+      "excerpt_path": "docs/external/PA_JSON_001_crossy_excerpt.txt",
+      "purpose": "prior work already studies cross-runtime JSON semantic discrepancies",
+      "excerpt_sha256": "27f2440b4404ea06fd0f2b61ac28ab6524c82bd982e1dec2fef826735a8ece7d"
+    },
+    {
+      "author": "SQLite maintainers",
+      "url": "https://sqlite.org/floatingpoint.html",
+      "excerpt_path": "docs/external/PA_JSON_001_sqlite_roundtrip_excerpt.txt",
+      "purpose": "15 significant digits do not always preserve binary64 round trips",
+      "excerpt_sha256": "0af12525fb36a608509c6d9c1a68b65d5ce6555333ada4a5a8ce7e9343a4487e"
+    }
+  ]
+}

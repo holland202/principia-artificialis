@@ -1,0 +1,360 @@
+{
+  "human_look": "NOT PERFORMED",
+  "selection": "post-hoc deterministic representatives; named roles may share a case",
+  "roles_to_case_ids": {
+    "first_loss": 0,
+    "first_preserved": 14,
+    "first_subnormal": 2664,
+    "first_integer_valued": 1,
+    "first_noninteger_valued": 0,
+    "first_negative": 5,
+    "smallest_absolute": 7193,
+    "largest_absolute": 12234
+  },
+  "distinct_cases": 7,
+  "cases": [
+    {
+      "id": 0,
+      "bits": "1dd0489ce846ab8c",
+      "input": "[4.418287677518092e-165]",
+      "outcomes": {
+        "node_json": {
+          "first": "[4.418287677518092e-165]",
+          "second": "[4.418287677518092e-165]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[4.418287677518092e-165]",
+          "second": "[4.418287677518092e-165]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[4.41828767751809e-165]",
+          "second": "[4.41828767751809e-165]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[4.418287677518092e-165]",
+          "second": "[4.418287677518092e-165]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[4.4182876775180923e-165]",
+          "second": "[4.4182876775180923e-165]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[4.4182876775180923e-165]",
+          "second": "[4.4182876775180923e-165]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 1,
+      "bits": "4da9268b94627617",
+      "input": "[1.3243319404109769e+66]",
+      "outcomes": {
+        "node_json": {
+          "first": "[1.3243319404109769e+66]",
+          "second": "[1.3243319404109769e+66]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[1.3243319404109769e+66]",
+          "second": "[1.3243319404109769e+66]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[1.32433194041098e+66]",
+          "second": "[1.32433194041098e+66]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[1.3243319404109769e+66]",
+          "second": "[1.3243319404109769e+66]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[1.3243319404109769e+66]",
+          "second": "[1.3243319404109769e+66]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[1.3243319404109769e+66]",
+          "second": "[1.3243319404109769e+66]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 5,
+      "bits": "bbe0444639ca4866",
+      "input": "[-2.755685585827208e-20]",
+      "outcomes": {
+        "node_json": {
+          "first": "[-2.755685585827208e-20]",
+          "second": "[-2.755685585827208e-20]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[-2.755685585827208e-20]",
+          "second": "[-2.755685585827208e-20]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[-2.75568558582721e-20]",
+          "second": "[-2.75568558582721e-20]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[-2.755685585827208e-20]",
+          "second": "[-2.755685585827208e-20]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[-2.7556855858272081e-20]",
+          "second": "[-2.7556855858272081e-20]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[-2.7556855858272081e-20]",
+          "second": "[-2.7556855858272081e-20]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 14,
+      "bits": "c9d4b94e656e662b",
+      "input": "[-4.73249130207089e+47]",
+      "outcomes": {
+        "node_json": {
+          "first": "[-4.73249130207089e+47]",
+          "second": "[-4.73249130207089e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[-4.73249130207089e+47]",
+          "second": "[-4.73249130207089e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[-4.73249130207089e+47]",
+          "second": "[-4.73249130207089e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_token": {
+          "first": "[-4.73249130207089e+47]",
+          "second": "[-4.73249130207089e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[-4.7324913020708903e+47]",
+          "second": "[-4.7324913020708903e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[-4.7324913020708903e+47]",
+          "second": "[-4.7324913020708903e+47]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 2664,
+      "bits": "000ee725d6bf9aed",
+      "input": "[2.0725062631924464e-308]",
+      "outcomes": {
+        "node_json": {
+          "first": "[2.0725062631924464e-308]",
+          "second": "[2.0725062631924464e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[2.0725062631924464e-308]",
+          "second": "[2.0725062631924464e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[2.07250626319245e-308]",
+          "second": "[2.07250626319245e-308]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[2.0725062631924464e-308]",
+          "second": "[2.0725062631924464e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[2.0725062631924464e-308]",
+          "second": "[2.0725062631924464e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[2.0725062631924464e-308]",
+          "second": "[2.0725062631924464e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 7193,
+      "bits": "800a68e32a0fc5a3",
+      "input": "[-1.4476492192008274e-308]",
+      "outcomes": {
+        "node_json": {
+          "first": "[-1.4476492192008274e-308]",
+          "second": "[-1.4476492192008274e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[-1.4476492192008274e-308]",
+          "second": "[-1.4476492192008274e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[-1.44764921920083e-308]",
+          "second": "[-1.44764921920083e-308]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[-1.4476492192008274e-308]",
+          "second": "[-1.4476492192008274e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[-1.4476492192008274e-308]",
+          "second": "[-1.4476492192008274e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[-1.4476492192008274e-308]",
+          "second": "[-1.4476492192008274e-308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    },
+    {
+      "id": 12234,
+      "bits": "ffede91c357bd2d5",
+      "input": "[-1.6803142606711497e+308]",
+      "outcomes": {
+        "node_json": {
+          "first": "[-1.6803142606711497e+308]",
+          "second": "[-1.6803142606711497e+308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "python_json": {
+          "first": "[-1.6803142606711497e+308]",
+          "second": "[-1.6803142606711497e+308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_numeric": {
+          "first": "[-1.68031426067115e+308]",
+          "second": "[-1.68031426067115e+308]",
+          "stable": true,
+          "fidelity_loss": true
+        },
+        "sqlite_token": {
+          "first": "[-1.6803142606711497e+308]",
+          "second": "[-1.6803142606711497e+308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_cast": {
+          "first": "[-1.6803142606711497e+308]",
+          "second": "[-1.6803142606711497e+308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "sqlite_printf17": {
+          "first": "[-1.6803142606711497e+308]",
+          "second": "[-1.6803142606711497e+308]",
+          "stable": true,
+          "fidelity_loss": false
+        },
+        "constant_zero_control": {
+          "first": "[0]",
+          "second": "[0]",
+          "stable": true,
+          "fidelity_loss": true
+        }
+      }
+    }
+  ]
+}

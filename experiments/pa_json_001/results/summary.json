@@ -1,0 +1,158 @@
+{
+  "sample_size": 16384,
+  "corpus_prefix": "numeric-stability-v1|",
+  "generation": {
+    "draws": 16391,
+    "rejected": {
+      "nonfinite": 7
+    }
+  },
+  "oracle_checks": {
+    "originals_accepted": 16384,
+    "finite_adjacent_values_rejected": 16384,
+    "midpoint_cases": 16,
+    "malformed_or_nonnumeric_cases": 8
+  },
+  "counts": {
+    "python_json": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "node_json": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_numeric": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 15384,
+      "stable": 16384,
+      "stable_and_lossy": 15384
+    },
+    "sqlite_token": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_cast": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "sqlite_printf17": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 0,
+      "stable": 16384,
+      "stable_and_lossy": 0
+    },
+    "constant_zero_control": {
+      "n": 16384,
+      "errors": 0,
+      "fidelity_loss": 16384,
+      "stable": 16384,
+      "stable_and_lossy": 16384
+    }
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "sqlite_version": "3.53.1",
+    "sqlite_source_id": "2026-05-05 10:34:17 c88b22011a54b4f6fbd149e9f8e4de77658ce58143a1af0e3785e4e6475127e9",
+    "sqlite_compile_options": [
+      "ATOMIC_INTRINSICS=1",
+      "COMPILER=clang-22.1.3",
+      "DEFAULT_AUTOVACUUM",
+      "DEFAULT_CACHE_SIZE=-2000",
+      "DEFAULT_FILE_FORMAT=4",
+      "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+      "DEFAULT_MMAP_SIZE=0",
+      "DEFAULT_PAGE_SIZE=4096",
+      "DEFAULT_PCACHE_INITSZ=20",
+      "DEFAULT_RECURSIVE_TRIGGERS",
+      "DEFAULT_SECTOR_SIZE=4096",
+      "DEFAULT_SYNCHRONOUS=2",
+      "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+      "DEFAULT_WAL_SYNCHRONOUS=2",
+      "DEFAULT_WORKER_THREADS=0",
+      "DIRECT_OVERFLOW_READ",
+      "ENABLE_DBSTAT_VTAB",
+      "ENABLE_FTS3",
+      "ENABLE_FTS3_PARENTHESIS",
+      "ENABLE_FTS4",
+      "ENABLE_FTS5",
+      "ENABLE_GEOPOLY",
+      "ENABLE_MATH_FUNCTIONS",
+      "ENABLE_PERCENTILE",
+      "ENABLE_RTREE",
+      "MALLOC_SOFT_LIMIT=1024",
+      "MAX_ATTACHED=10",
+      "MAX_COLUMN=2000",
+      "MAX_COMPOUND_SELECT=500",
+      "MAX_DEFAULT_PAGE_SIZE=8192",
+      "MAX_EXPR_DEPTH=1000",
+      "MAX_FUNCTION_ARG=1000",
+      "MAX_LENGTH=1000000000",
+      "MAX_LIKE_PATTERN_LENGTH=50000",
+      "MAX_MMAP_SIZE=0x7fff0000",
+      "MAX_PAGE_COUNT=0xfffffffe",
+      "MAX_PAGE_SIZE=65536",
+      "MAX_SQL_LENGTH=1000000000",
+      "MAX_TRIGGER_DEPTH=1000",
+      "MAX_VARIABLE_NUMBER=32766",
+      "MAX_VDBE_OP=250000000",
+      "MAX_WORKER_THREADS=8",
+      "MUTEX_PTHREADS",
+      "SYSTEM_MALLOC",
+      "TEMP_STORE=1",
+      "THREADSAFE=1"
+    ],
+    "node": {
+      "node": "24.22.1",
+      "acorn": "8.18.0",
+      "ada": "4.0.0",
+      "amaro": "1.1.11",
+      "ares": "1.34.9",
+      "brotli": "1.2.0",
+      "cldr": "48.0",
+      "icu": "78.3",
+      "llhttp": "9.4.3",
+      "merve": "1.2.2",
+      "modules": "137",
+      "napi": "10",
+      "nbytes": "0.1.4",
+      "ncrypto": "0.0.1",
+      "nghttp2": "1.70.0",
+      "nghttp3": "",
+      "ngtcp2": "",
+      "openssl": "3.5.9",
+      "simdjson": "4.6.11",
+      "simdutf": "6.4.0",
+      "sqlite": "3.53.4",
+      "tz": "2026e",
+      "undici": "7.30.1",
+      "unicode": "17.0",
+      "uv": "1.52.1",
+      "uvwasi": "0.0.23",
+      "v8": "13.6.233.17-node.58",
+      "zlib": "1.3.2.1-motley-285e94b",
+      "zstd": "1.5.7"
+    }
+  },
+  "source_sha256": {
+    "PROTOCOL.md": "ebf62605c55e83e2a14862e03888dccdbd3fa2e6135332c2b5d9d1ab70e88fe6",
+    "run.py": "d7af8a7e41d5bc0ada51f3dc789c9861fb21e55e7e4e6ae4a60dd9bf1a86213b",
+    "node_transform.mjs": "d84d646e56b4db37cd08de97b788298ab282a707cf6640653a532dc47875bdce"
+  },
+  "cases_sha256": "772f60a8dd12d893a308b0e55e988726eaf62ff35b24ac5d45502ebb86ff5dda"
+}
