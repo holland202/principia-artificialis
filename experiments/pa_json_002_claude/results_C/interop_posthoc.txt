@@ -1,0 +1,9 @@
+$ python3 -I experiments/pa_json_002_claude/interop_posthoc.py WORK
+system SQLite (Python's sqlite3 module): 3.53.1; observer: 3.54.1
+42 hidden in a zero (X3 42:0): 10010 characters
+  Python json.loads 0.0   Node JSON.parse 0   system SQLite CAST 42.0 json_extract 42.0   SQLite 3.54.1 json_extract 42.0
+10 hidden in a zero (X1 k=1): 10010 characters
+  Python json.loads 0.0   Node JSON.parse 0   system SQLite CAST 10.0 json_extract 10.0   SQLite 3.54.1 json_extract 10.0
+0.1 hidden in an overflow (X2 j=1): 10010 characters
+  Python json.loads inf   Node JSON.parse Infinity   system SQLite CAST 0.1 json_extract 0.1   SQLite 3.54.1 json_extract 0.1
+exit 0

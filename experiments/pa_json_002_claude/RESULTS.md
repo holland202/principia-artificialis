@@ -78,3 +78,103 @@ digit (`d--`) moves the decimal exponent `d` with no limit. The cap is harmless 
 
 The source also predicts a case my corpus did not contain: tokens whose true value overflows or underflows, read as
 ordinary finite numbers. Part C registers and tests that before running it.
+
+## Part C — 6 of 6 HELD (source-derived, registered at `7d406e1` before running)
+
+These predictions came from reading the source after Part A, so they are not fresh confirmation. They are exact,
+and any of them could have failed.
+
+```
+"controls": K1 true, K2 true, K3 true, K4 true
+"verdicts": {"D1": "HELD", "D2_X1": "HELD", "D2_X2": "HELD", "D3": "HELD", "D4": "HELD", "D5": "HELD"}
+"D3_checked": {"part_A_long_tokens": 24304, "part_C_long_tokens": 1072, "failures_A": [], "failures_C": []}
+"X1_examples": {"0": "3ff0000000000000", "1": "4024000000000000", "308": "7fe1ccf385ebc8a0", "309": "7ff0000000000000"}
+"X2_examples": {"1": "3fb999999999999a", "323": "0000000000000002", "324": "0000000000000000"}
+"X3_bits": {"42:0": "4045000000000000", "-7:0": "c01c000000000000", "123456789:0": "419d6f3454000000"}
+"max_len_X": 10339
+```
+
+| | prediction | result |
+|---|---|---|
+| D1 | exact threshold: integer padding exact up to n = 99,999 and +inf from 100,000; fraction padding exact up to 99,998 and +0 from 99,999 | **HELD** at every n from 99,900 to 100,100, and at 131,072 |
+| D2 X1 | `"1"+"0"*(10000+k)+"e-100000"` should underflow to 0, but is read as 10^k (k ≤ 308), then +inf | **HELD**. For example k = 1 gives `4024000000000000`, which is 10.0 |
+| D2 X2 | `"0."+"0"*(9999+j)+"1e100000"` should overflow to +inf, but is read as 10^−j (j ≤ 323), then +0 | **HELD**. For example j = 1 gives `3fb999999999999a`, which is 0.1 |
+| D3 | a one-line model explains everything: replace any explicit exponent above 99,999 with 10,000, then round correctly | **HELD**: within 1 ULP on all 25,376 long tokens from Parts A and C |
+| D4 | an arbitrary value hidden in a number whose exact value is ±0 | **HELD**: SQLite reads 42.0, −7.0, 123456789.0, and those values × 1000 |
+| D5 | still valid JSON, type real, both routes identical | **HELD** |
+
+The finite wrong values I wrongly expected in Part A do exist. They need a long token whose exact value is outside
+the double range, not one whose value is 1.
+
+## Part B — HELD: ChatGPT's harness reproduces its pinned digest on my build
+
+ChatGPT's unmodified `run.py` (from PR #123, read only after Part A was committed) was run against a shared library
+I compiled from the verified `sqlite3.c` (`gcc -O2 -shared -fPIC`; library SHA-256 in `results_B/library_sha256.txt`):
+
+```
+P1: HELD   P2: HELD   P3: HELD   P4: HELD   P5: HELD
+VERDICT 5 of 5 as registered
+DIGEST c20ab3a00385be45ce58611401af3cbe816690db4051e3f805169d1aa9fd7ba2
+```
+
+That is ChatGPT's pinned semantic digest, exactly, from a different build route and different compiler flags. It is
+a re-run of their code, not an independent check; the independent parts are A and C.
+
+## How other readers see the same tokens (post hoc; `results_C/interop_posthoc.txt`; decides nothing)
+
+```
+system SQLite (Python's sqlite3 module): 3.53.1; observer: 3.54.1
+42 hidden in a zero (X3 42:0): 10010 characters
+  Python json.loads 0.0   Node JSON.parse 0   system SQLite CAST 42.0 json_extract 42.0   SQLite 3.54.1 json_extract 42.0
+10 hidden in a zero (X1 k=1): 10010 characters
+  Python json.loads 0.0   Node JSON.parse 0   system SQLite CAST 10.0 json_extract 10.0   SQLite 3.54.1 json_extract 10.0
+0.1 hidden in an overflow (X2 j=1): 10010 characters
+  Python json.loads inf   Node JSON.parse Infinity   system SQLite CAST 0.1 json_extract 0.1   SQLite 3.54.1 json_extract 0.1
+```
+
+SQLite 3.53.1, the version installed in this container, behaves the same way. So this is not new in 3.54.1.
+
+## Prior art (searched 2026-11-08; five web searches and nine pages opened)
+
+- **The cap's origin.** SQLite check-in [4becc47eb4d48686](https://www.sqlite.org/src/info/4becc47eb4d48686)
+  (2011-10-17, drh): "Avoid 32-bit integer overflow when evaluating the exponent of a floating point value during
+  ascii to binary conversion". It changed `e = e*10 + (*z - '0')` to `e = e<10000 ? (e*10 + (*z - '0')) : 10000`. Its
+  tests cover exponents like `2.5e+10000` and `2.5e2147483650`, whose values really do overflow or underflow.
+- **Digits feeding the exponent** date from the 2009 rewrite,
+  [f084f5a8ba850de6](https://www.sqlite.org/src/info/f084f5a8ba850de6). Its `nan.test` change uses 10,000 nines with
+  `.0e-9000`, whose value really does overflow.
+- **Known accuracy limits:** SQLite's own comment on `sqlite3AtoF()` (only about 19 significant digits count);
+  [ExploringBinary, 2010](https://www.exploringbinary.com/incorrect-decimal-to-floating-point-conversion-in-sqlite/)
+  (errors of up to 4 ULPs, from a since-improved algorithm); and [floatingpoint.html](https://sqlite.org/floatingpoint.html),
+  which states no limit on literal length or exponent.
+- **Not found:** a report of a compensating exponent, where padding digits offset a capped exponent, giving a wrong
+  but accepted value. That does not establish novelty. I did not check other parsers or float-parsing test suites,
+  where this general class may well be known.
+
+## What this shows and does not show
+
+- **Shown:**
+  - From SQLite 3.54.1, built separately, read through my own observer: valid JSON numbers of at least 100,000
+    padding digits, whose exact value is 1, are read as +inf or +0. This reproduces ChatGPT's observation.
+  - About 10,000 characters is enough to make SQLite read a value whose exact value is 0 (or overflows) as a finite
+    number of the writer's choosing, such as 42.0.
+  - One rule explains every observation: explicit exponents above 99,999 become 10,000, while padding digits move
+    the exponent with no limit.
+- **A plausible consequence, not demonstrated:** a system that checks a JSON number with one parser and stores or
+  computes with SQLite could act on a different value from the one it checked. That is the JSON-interoperability
+  class of problem. Any input-length limit below about 10 KB per number prevents it.
+- **Not shown:** that anyone uses inputs like this, any security impact, whether this counts as a defect or a
+  numeric limit, or behaviour on other platforms or builds. As I recall it, RFC 8259 lets implementations limit the
+  range and precision of numbers. I did not re-read it for this note, and returning a different finite value is not
+  the usual reading of a limit.
+- No upstream report has been made. Whether to make one is Chad's decision.
+
+## Door (unrun)
+
+- **P-up.** If this is reported upstream and SQLite changes the cap (for example, saturating the combined exponent
+  `d` rather than the explicit one), D1–D4 become a regression test. At the fixed version, every D3 token should then
+  match its exact oracle, not the model.
+
+Provenance (M13): check designed, written, run and written up by Claude (Anthropic, Opus 5.5). The original study
+and its harness are by ChatGPT (OpenAI, GPT-6; Codex agent). Human validation: not performed → human direction:
+Chad Holland, 2026-11-08 → human responsibility: Chad Holland. Review level: direction only.
