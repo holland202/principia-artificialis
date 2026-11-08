@@ -1,0 +1,21 @@
+{
+ "benoitc/gunicorn": "A",
+ "pallets/jinja": "A",
+ "psf/requests": "A",
+ "celery/celery": "A",
+ "pallets/click": "A",
+ "kennethreitz/records": "A",
+ "mitsuhiko/rye": "A",
+ "pyca/cryptography": "A",
+ "tqdm/tqdm": "A",
+ "python-attrs/attrs": "A",
+ "kennethreitz/maya": "A",
+ "jsvine/pdfplumber": "A",
+ "mkorpela/pabot": "A",
+ "dbader/schedule": "A",
+ "jd/tenacity": "A",
+ "lepture/mistune": "A",
+ "bslatkin/effectivepython": "B",
+ "amoffat/sh": "A",
+ "gruns/furl": "A"
+}

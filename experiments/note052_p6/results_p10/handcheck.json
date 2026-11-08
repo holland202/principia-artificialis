@@ -1,0 +1,961 @@
+[
+ {
+  "id": "G001",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G002",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G003",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G004",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G005",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/pretrained_agent/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G006",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G007",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G008",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/hessian_utils.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G009",
+  "category": "NO_FAIL_PATH",
+  "file": "PaulChongPeng__YOLO2TensorFlow/src/deployment/model_deploy_test.py",
+  "verdict": "FP",
+  "reason": "tf.test.TestCase with test methods; can fail"
+ },
+ {
+  "id": "G010",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G011",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G012",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "nasa__giant/unittests/catalogues/test_catalogues.py",
+  "verdict": "TP",
+  "reason": "test module whose only content is \"from unittest import TestCase\": no test can run or fail"
+ },
+ {
+  "id": "G013",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "ARBML__tnkeeh/tnkeeh/tests.py",
+  "verdict": "TP",
+  "reason": "tests.py compares results and only prints success/failed; a failed comparison exits 0"
+ },
+ {
+  "id": "G014",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G015",
+  "category": "UNPARSEABLE",
+  "file": "crazydonkey200__minimal-nn/mnist_experiment.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G016",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G017",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G018",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G019",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/utils/conv_kernel_visualization.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G020",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_msedgedriver.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G021",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G022",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/generate-Hesian-Inv-ResNet18.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G023",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/generate-Hesian-Inv-AlexNet.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G024",
+  "category": "NO_FAIL_PATH",
+  "file": "kakaoenterprise__Learning-Debiased-Disentangled/learner.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G025",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G026",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G027",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "pyro-ppl__funsor/setup.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G028",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_cross_platform_drivers.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G029",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G030",
+  "category": "NO_FAIL_PATH",
+  "file": "Actasidiot__EFIFSTR/utils/model_deploy_test.py",
+  "verdict": "FP",
+  "reason": "tf.test.TestCase with test methods; can fail"
+ },
+ {
+  "id": "G031",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_safaridriver.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G032",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G033",
+  "category": "UNPARSEABLE",
+  "file": "bhaveshgawri__PageRank/TopicSpecificRank.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G034",
+  "category": "UNPARSEABLE",
+  "file": "val-iisc__lsc-cnn/main.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G035",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_all_drivers.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G036",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "JasprW__ColorCorrection/find_card.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G037",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/utils/avg_roc.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G038",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G039",
+  "category": "NO_FAIL_PATH",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/validate-AlexNet.py",
+  "verdict": "FP",
+  "reason": "model-accuracy evaluation script, not a code check"
+ },
+ {
+  "id": "G040",
+  "category": "UNPARSEABLE",
+  "file": "hezhangsprinter__DID-MDN/derain_train_2018.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G041",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/pretrained_agent/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G042",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G043",
+  "category": "NO_FAIL_PATH",
+  "file": "jtoy__sketchnet/data_checker.py",
+  "verdict": "TP",
+  "reason": "data_checker.py: a bad image is printed and its directory deleted; the check never reports failure"
+ },
+ {
+  "id": "G044",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G045",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G046",
+  "category": "NO_FAIL_PATH",
+  "file": "NVIDIA__Dataset_Utilities/nvdu/tools/test_nvdu_visualizer.py",
+  "verdict": "FP",
+  "reason": "interactive visualizer tool named test_, not a check"
+ },
+ {
+  "id": "G047",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/check_time.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G048",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G049",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G050",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/prune-weights-VGG16BN.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G051",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G052",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G053",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "GIScience__ohsome-quality-api/workers/tests/integrationtests/test_indicator_poi_density.py",
+  "verdict": "FP",
+  "reason": "unittest.TestCase with test methods and asserts; can fail"
+ },
+ {
+  "id": "G054",
+  "category": "UNPARSEABLE",
+  "file": "mit-aera__Blackbird-Dataset/renderUtilities/getRunOffsetAndCameraTriggers.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G055",
+  "category": "NO_FAIL_PATH",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/validate-ResNet.py",
+  "verdict": "FP",
+  "reason": "model-accuracy evaluation script, not a code check"
+ },
+ {
+  "id": "G056",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G057",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/trainers/liver_trainer.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G058",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "graphql-python__graphene-tornado/graphene_tornado/ext/apollo_engine_reporting/reports_pb2.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G059",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/docs/preparing/checkAttrs.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G060",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "nasa__giant/unittests/scripts/test_scripts.py",
+  "verdict": "TP",
+  "reason": "0-byte test module: no test can run or fail"
+ },
+ {
+  "id": "G061",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G062",
+  "category": "NO_FAIL_PATH",
+  "file": "pieterblok__maskal/projects/DensePose/tests/test_dataset_loaded_annotations.py",
+  "verdict": "FP",
+  "reason": "unittest tests generated with setattr; assertEqual can fail"
+ },
+ {
+  "id": "G063",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G064",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/data_loader/train_test.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G065",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/prune-weights-AlexNet.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G066",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G067",
+  "category": "UNPARSEABLE",
+  "file": "crazydonkey200__minimal-nn/test_fnn.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G068",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_cross_platform_drivers.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G069",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "pyro-ppl__funsor/test/pyroapi/test_pyroapi.py",
+  "verdict": "FP",
+  "reason": "imports a shared test suite (from pyroapi.tests import *); collected tests can fail"
+ },
+ {
+  "id": "G070",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_msedgedriver.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G071",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "pieterblok__maskal/tests/test_export_caffe2.py",
+  "verdict": "FP",
+  "reason": "unittest.TestCase with test* methods; can fail"
+ },
+ {
+  "id": "G072",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G073",
+  "category": "NO_FAIL_PATH",
+  "file": "hezhangsprinter__DID-MDN/test.py",
+  "verdict": "FP",
+  "reason": "model inference/evaluation script, not a code check"
+ },
+ {
+  "id": "G074",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_safaridriver.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G075",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G076",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G077",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G078",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G079",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "pyscaffold__configupdater/docs/conf.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G080",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "pieterblok__maskal/tests/test_events.py",
+  "verdict": "FP",
+  "reason": "unittest.TestCase with test* methods; can fail"
+ },
+ {
+  "id": "G081",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G082",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G083",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G084",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G085",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G086",
+  "category": "UNPARSEABLE",
+  "file": "Bohao-Lee__CME/models/caffe_net.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G087",
+  "category": "UNPARSEABLE",
+  "file": "petersn__six-char-max/max6.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G088",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "NVIDIA__Dataset_Utilities/nvdu/tools/test_nvdu_visualizer.py",
+  "verdict": "FP",
+  "reason": "interactive visualizer tool named test_, not a check"
+ },
+ {
+  "id": "G089",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G090",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_20spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G091",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "nasa__giant/unittests/surfacemodeller/test_surfacemodeller.py",
+  "verdict": "TP",
+  "reason": "0-byte test module: no test can run or fail"
+ },
+ {
+  "id": "G092",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G093",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "DoubleYouC__Bethini-Pie-Performance-INI-Editor/lib/customFunctions.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G094",
+  "category": "NO_FAIL_PATH",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/validate-VGG16BN.py",
+  "verdict": "FP",
+  "reason": "model-accuracy evaluation script, not a code check"
+ },
+ {
+  "id": "G095",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "pieterblok__maskal/projects/DensePose/tests/test_dataset_loaded_annotations.py",
+  "verdict": "FP",
+  "reason": "unittest tests generated with setattr; assertEqual can fail"
+ },
+ {
+  "id": "G096",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "nasa__giant/unittests/ray_tracer/test_ray_tracer.py",
+  "verdict": "TP",
+  "reason": "test module whose only content is \"from unittest import TestCase\": no test can run or fail"
+ },
+ {
+  "id": "G097",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G098",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "npschafer__openawsem/helperFunctions/MultCha_prepFrags_index.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G099",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G100",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G101",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/pretrained_agent/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G102",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G103",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G104",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G105",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_20spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G106",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "DurhamDecLab__ARBInterp/tests/test_ARBInterp.py",
+  "verdict": "FP",
+  "reason": "import-only smoke test: the import is the check, and a failed import fails collection"
+ },
+ {
+  "id": "G107",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G108",
+  "category": "NO_FAIL_PATH",
+  "file": "GIScience__ohsome-quality-api/workers/tests/integrationtests/test_indicator_poi_density.py",
+  "verdict": "FP",
+  "reason": "unittest.TestCase with test methods and asserts; can fail"
+ },
+ {
+  "id": "G109",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "nasa__giant/unittests/utilities/test_utilities.py",
+  "verdict": "TP",
+  "reason": "0-byte test module: no test can run or fail"
+ },
+ {
+  "id": "G110",
+  "category": "NO_FAIL_PATH",
+  "file": "cloneofsimo__clipping-CLIP-to-GAN/test.py",
+  "verdict": "FP",
+  "reason": "model inference/evaluation script, not a code check"
+ },
+ {
+  "id": "G111",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/lenet300-100/LOBS.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G112",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/models/liver_model.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G113",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G114",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_40spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G115",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/pretrained_agent/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G116",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/PyTorch/ImageNet/prune-weights-ResNet18.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G117",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/utils/conv_featuremaps_visualization.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G118",
+  "category": "NO_FAIL_PATH",
+  "file": "JasprW__ColorCorrection/card_verify.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G119",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_40spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G120",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_100spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G121",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_all_drivers.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G122",
+  "category": "NO_FAIL_PATH",
+  "file": "ofirpress__shortformer/scripts/constraints/validate.py",
+  "verdict": "TP",
+  "reason": "validate.py \"verifies that the constraints are present\"; a missing constraint is printed to stderr and the script exits 0"
+ },
+ {
+  "id": "G123",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/ResNet-50/prune_weights.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G124",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_60spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G125",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/ResNet-50/kaffe/tensorflow/network.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G126",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_200spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G127",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/train_and_test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G128",
+  "category": "PRINTS_FAIL_ONLY",
+  "file": "mit-aera__Blackbird-Dataset/fileTreeUtilities/matchFrames.py",
+  "verdict": "FP",
+  "reason": "not a check (library module, setup/docs config, generated protobuf, app or helper script)"
+ },
+ {
+  "id": "G129",
+  "category": "UNPARSEABLE",
+  "file": "xyj77__MCF-3D-CNN/utils/utils.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ },
+ {
+  "id": "G130",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/ER_200spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G131",
+  "category": "NO_FAIL_PATH",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_dependencies_json.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G132",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "shailshouryya__yt-videos-list/python/tests/test_dependencies_json.py",
+  "verdict": "FP",
+  "reason": "calls run_tests_for, which raises ValueError on a mismatch (test_shared.py)"
+ },
+ {
+  "id": "G133",
+  "category": "UNCOLLECTABLE_TEST",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/test/test_eco.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G134",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_100spin/train_and_test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G135",
+  "category": "NO_FAIL_PATH",
+  "file": "tomdbar__eco-dqn/experiments/BA_60spin/test/test_s2v.py",
+  "verdict": "FP",
+  "reason": "model-evaluation script (\"tests an agent\"), not a code check"
+ },
+ {
+  "id": "G136",
+  "category": "NO_FAIL_PATH",
+  "file": "kakaoenterprise__Learning-Debiased-Disentangled/test.py",
+  "verdict": "FP",
+  "reason": "model inference/evaluation script, not a code check"
+ },
+ {
+  "id": "G137",
+  "category": "UNPARSEABLE",
+  "file": "csyhhu__L-OBS/ResNet-50/calculate_hessian_inverse.py",
+  "verdict": "FP",
+  "reason": "file does not parse under Python 3 (likely Python 2); no vacuity can be established, and running it raises"
+ }
+]

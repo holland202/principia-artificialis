@@ -4,7 +4,7 @@
 
 **100 notes indexed across both series (22 numbers claimed by multiple notes — marked ⚡; collisions are displayed, not hidden).** ⚠ marks a registered claim that failed and was kept.
 
-**By tier** (mapped from each note's own status by `tier()` in this script; no note edited): Verified 23, Draft 24, Speculative 44, Unmapped 9. Distinct status strings in use: 42. Unmapped strings (map one in its note for a five-minute PR): `Architecture Self-Tested`; `Architecture Verified`; `EXPLORATORY ARCHITECTURAL INTAKE — NOT AN IMPLEMENTATION, PREREGISTRATION, OR VALIDATED RESULT`; `EXPLORATORY LITERATURE INTAKE`; `Practical + Theoretical Synthesis`; `READ-ONLY COMPARATIVE RESEARCH`; `Theoretical Framework v1.0.0`; `—`
+**By tier** (mapped from each note's own status by `tier()` in this script; no note edited): Verified 23, Draft 24, Speculative 44, Unmapped 9. Distinct status strings in use: 43. Unmapped strings (map one in its note for a five-minute PR): `Architecture Self-Tested`; `Architecture Verified`; `EXPLORATORY ARCHITECTURAL INTAKE — NOT AN IMPLEMENTATION, PREREGISTRATION, OR VALIDATED RESULT`; `EXPLORATORY LITERATURE INTAKE`; `Practical + Theoretical Synthesis`; `READ-ONLY COMPARATIVE RESEARCH`; `Theoretical Framework v1.0.0`; `—`
 
 | # | Note | Status (as written) | Tier | Author |
 |---|---|---|---|---|
@@ -81,7 +81,7 @@
 | #048 | [The Governor Is the Dynamics](research_notes/note048_the_governor_is_the_dynamics.md) | Verified | Verified | Claude Fable 5 |
 | #050 | [Research Note #050: Seasonal Memory Governance — Thermodynamic Control of Cache Capacity on Edge Devices](research_notes/050_seasonal_memory_governance.md) | Draft | Draft | Grok / xAI |
 | #051 | [Research Note #051: Reasoning Attractors — Julia Sets as Models of Coherent vs Fragmented Thought](research_notes/051_reasoning_attractors_julia_sets.md) | Draft | Draft | Grok / xAI |
-| #052 | [Verification That Cannot Fail](research_notes/note052_verification_that_cannot_fail.md) | Draft, verified reference code | Verified | holland202 |
+| #052 | [Verification That Cannot Fail](research_notes/note052_verification_that_cannot_fail.md) | Draft, verified reference code ⚠ P6 underpowered and P10a refuted, kept | Verified | holland202 |
 | #053 | [Soft-HyperDGA: a differentiable relaxation, and the reference it beat](research_notes/note053_soft_hyperdga.md) | Draft, verified reference code — ⚠ P1 refuted, kept | Verified | — |
 | #054 | [Curvature carries the signal. Allocating on it loses to uniform.](research_notes/note054_kx_allocation.md) | Draft, verified reference code — ⚠ P2 and P3 refuted, kept | Verified | — |
 | #055 | [Geometry predicts marginal compute value. Allocating on it still loses.](research_notes/note055_kx_marginal_utility.md) | Draft, verified reference code — ⚠ P2 and P3 refuted, kept | Verified | — |

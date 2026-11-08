@@ -1,0 +1,14 @@
+{
+ "counts": {
+  "SAME": 2362,
+  "UNDECODABLE": 1
+ },
+ "not_same": [
+  {
+   "class": "UNDECODABLE",
+   "path": "kersaSoftmax/gruTrain.py",
+   "repo": "wangleiai/dVectorSpeakerRecognition"
+  }
+ ],
+ "total_py": 2363
+}

@@ -1,0 +1,10 @@
+$ python3 -I experiments/note052_p6/inspect_p13.py OUT
+wangleiai/dVectorSpeakerRecognition kersaSoftmax/gruTrain.py: class UNDECODABLE
+  first invalid UTF-8 byte: offset 716, line 23
+  encoding declaration in lines 1-2: False
+  decodes as gbk: yes
+  decodes as latin-1: yes
+  python compile(bytes): SyntaxError: (unicode error) 'utf-8' codec can't decode byte 0xb8 in posi
+K3 file: python compile(bytes): OK
+K3 file: ast.parse of A's text: invalid non-printable character U+FEFF
+exit 0
