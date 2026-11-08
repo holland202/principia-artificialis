@@ -43,12 +43,26 @@ def months():
     return out
 
 
+_CACHE = {}
+
+
 def search(q, page):
-    p = subprocess.run(["gh", "api", "-X", "GET", "search/repositories", "-f", f"q={q}", "-f", "per_page=100",
-                        "-f", f"page={page}"], capture_output=True, text=True)
-    if p.returncode != 0:
+    """Search with a cache and rate-limit retry (deviation 1: added after registration, before any draw ran;
+    neither changes which repository a draw selects)."""
+    if (q, page) in _CACHE:
+        return _CACHE[(q, page)]
+    import time
+    for attempt in range(12):
+        p = subprocess.run(["gh", "api", "-X", "GET", "search/repositories", "-f", f"q={q}", "-f", "per_page=100",
+                            "-f", f"page={page}"], capture_output=True, text=True)
+        if p.returncode == 0:
+            _CACHE[(q, page)] = json.loads(p.stdout)
+            return _CACHE[(q, page)]
+        if "rate limit" in (p.stderr + p.stdout).lower() or "403" in p.stderr or "429" in p.stderr:
+            time.sleep(65)
+            continue
         raise RuntimeError(p.stderr.strip()[-200:])
-    return json.loads(p.stdout)
+    raise RuntimeError("search failed after retries")
 
 
 def draw(out):
