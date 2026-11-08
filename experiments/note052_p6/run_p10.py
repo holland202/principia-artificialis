@@ -58,8 +58,12 @@ def search(q, page):
         if p.returncode == 0:
             _CACHE[(q, page)] = json.loads(p.stdout)
             return _CACHE[(q, page)]
-        if "rate limit" in (p.stderr + p.stdout).lower() or "403" in p.stderr or "429" in p.stderr:
+        err = (p.stderr + p.stdout).lower()
+        if "rate limit" in err or "403" in err or "429" in err:
             time.sleep(65)
+            continue
+        if any(k in err for k in ("connection reset", "timeout", "eof", "502", "503", "504", "temporarily")):
+            time.sleep(10 * (attempt + 1))  # deviation 2: transient network errors are retried too
             continue
         raise RuntimeError(p.stderr.strip()[-200:])
     raise RuntimeError("search failed after retries")
