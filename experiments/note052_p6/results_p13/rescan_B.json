@@ -1,0 +1,984 @@
+{
+ "sdushantha/pine": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "alan-turing-institute/TCPD": {
+  "exit": 0,
+  "verification_shaped": 14,
+  "findings": []
+ },
+ "shchers/ecu-simulator": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "bhaveshgawri/PageRank": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "TopicSpecificRank.py"
+   }
+  ]
+ },
+ "nasa/giant": {
+  "exit": 1,
+  "verification_shaped": 17,
+  "findings": [
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "unittests/utilities/test_utilities.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "unittests/surfacemodeller/test_surfacemodeller.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "unittests/ray_tracer/test_ray_tracer.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "unittests/scripts/test_scripts.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "unittests/catalogues/test_catalogues.py"
+   }
+  ]
+ },
+ "disrupted/things-cloud-api": {
+  "exit": 0,
+  "verification_shaped": 3,
+  "findings": []
+ },
+ "atomistic-machine-learning/SchNOrb": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "free5gmano/free5gmano": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "nathanhi/pyfatfs": {
+  "exit": 0,
+  "verification_shaped": 8,
+  "findings": []
+ },
+ "Bohao-Lee/CME": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "models/caffe_net.py"
+   }
+  ]
+ },
+ "InteractiveAdvertisingBureau/adstxtcrawler": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "pratikpv/malware_classification": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "NVIDIA/Dataset_Utilities": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "nvdu/tools/test_nvdu_visualizer.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "nvdu/tools/test_nvdu_visualizer.py"
+   }
+  ]
+ },
+ "jhwang1992/network-visualization": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "mikeckennedy/cookiecutter-course": {
+  "exit": 0,
+  "verification_shaped": 2,
+  "findings": []
+ },
+ "gyim/vim-boxdraw": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "Draven996/PwdBUD": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "KalleHallden/BlackFridayScrape": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "cloneofsimo/clipping-CLIP-to-GAN": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "test.py"
+   }
+  ]
+ },
+ "crazydonkey200/minimal-nn": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "mnist_experiment.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "test_fnn.py"
+   }
+  ]
+ },
+ "Ben-Louis/Deep-Image-Analogy-PyTorch": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "ARBML/tnkeeh": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "tnkeeh/tests.py"
+   }
+  ]
+ },
+ "wangleiai/dVectorSpeakerRecognition": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "kersaSoftmax/gruTrain.py"
+   }
+  ]
+ },
+ "DoubleYouC/Bethini-Pie-Performance-INI-Editor": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "lib/customFunctions.py"
+   }
+  ]
+ },
+ "graphql-python/graphene-tornado": {
+  "exit": 1,
+  "verification_shaped": 10,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "graphene_tornado/ext/apollo_engine_reporting/reports_pb2.py"
+   }
+  ]
+ },
+ "jtoy/sketchnet": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "data_checker.py"
+   }
+  ]
+ },
+ "pyro-ppl/funsor": {
+  "exit": 1,
+  "verification_shaped": 42,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "setup.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "test/pyroapi/test_pyroapi.py"
+   }
+  ]
+ },
+ "algorithmiaio/danku": {
+  "exit": 0,
+  "verification_shaped": 3,
+  "findings": []
+ },
+ "baldassarreFe/pytorch-densenet-tiramisu": {
+  "exit": 0,
+  "verification_shaped": 8,
+  "findings": []
+ },
+ "Mellcap/MellPlayer": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "JasprW/ColorCorrection": {
+  "exit": 1,
+  "verification_shaped": 2,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "card_verify.py"
+   },
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "find_card.py"
+   }
+  ]
+ },
+ "PackeTsar/checkmyip": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "kakaoenterprise/Learning-Debiased-Disentangled": {
+  "exit": 1,
+  "verification_shaped": 2,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "learner.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "test.py"
+   }
+  ]
+ },
+ "npschafer/openawsem": {
+  "exit": 1,
+  "verification_shaped": 2,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "helperFunctions/MultCha_prepFrags_index.py"
+   }
+  ]
+ },
+ "pieterblok/maskal": {
+  "exit": 1,
+  "verification_shaped": 54,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "projects/DensePose/tests/test_dataset_loaded_annotations.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "projects/DensePose/tests/test_dataset_loaded_annotations.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/test_events.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/test_export_caffe2.py"
+   }
+  ]
+ },
+ "mit-aera/Blackbird-Dataset": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "fileTreeUtilities/matchFrames.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "renderUtilities/getRunOffsetAndCameraTriggers.py"
+   }
+  ]
+ },
+ "techjacker/systemdlogger": {
+  "exit": 0,
+  "verification_shaped": 5,
+  "findings": []
+ },
+ "HelloMaoTai/jd-seckill-maotai": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "harshsbais/Amazon-Price-Drop-Alert": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "liuyukid/transformers-ner": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "CCExtractor/Rekognition": {
+  "exit": 0,
+  "verification_shaped": 2,
+  "findings": []
+ },
+ "joh/xmldiffs": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "portugueslab/arrayqueues": {
+  "exit": 0,
+  "verification_shaped": 2,
+  "findings": []
+ },
+ "ChemLez/xmcTiaoJiInformation_Pachong": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "pyscaffold/configupdater": {
+  "exit": 1,
+  "verification_shaped": 6,
+  "findings": [
+   {
+    "category": "PRINTS_FAIL_ONLY",
+    "path": "docs/conf.py"
+   }
+  ]
+ },
+ "hezhangsprinter/DID-MDN": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "test.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "derain_train_2018.py"
+   }
+  ]
+ },
+ "val-iisc/lsc-cnn": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "main.py"
+   }
+  ]
+ },
+ "shailshouryya/yt-videos-list": {
+  "exit": 1,
+  "verification_shaped": 7,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/check_time.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/tests/test_all_drivers.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/tests/test_cross_platform_drivers.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/tests/test_dependencies_json.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/tests/test_msedgedriver.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "python/tests/test_safaridriver.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "docs/preparing/checkAttrs.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "python/tests/test_all_drivers.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "python/tests/test_cross_platform_drivers.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "python/tests/test_dependencies_json.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "python/tests/test_msedgedriver.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "python/tests/test_safaridriver.py"
+   }
+  ]
+ },
+ "ofirpress/shortformer": {
+  "exit": 1,
+  "verification_shaped": 38,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "scripts/constraints/validate.py"
+   }
+  ]
+ },
+ "xyj77/MCF-3D-CNN": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "trainers/liver_trainer.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "models/liver_model.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "data_loader/train_test.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "utils/avg_roc.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "utils/conv_featuremaps_visualization.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "utils/conv_kernel_visualization.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "utils/utils.py"
+   }
+  ]
+ },
+ "oxwhirl/facmac": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "csyhhu/L-OBS": {
+  "exit": 1,
+  "verification_shaped": 4,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "PyTorch/ImageNet/validate-AlexNet.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "PyTorch/ImageNet/validate-ResNet.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "PyTorch/ImageNet/validate-VGG16BN.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/generate-Hesian-Inv-AlexNet.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/generate-Hesian-Inv-ResNet18.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/hessian_utils.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/prune-weights-AlexNet.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/prune-weights-ResNet18.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "PyTorch/ImageNet/prune-weights-VGG16BN.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "ResNet-50/calculate_hessian_inverse.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "ResNet-50/prune_weights.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "ResNet-50/kaffe/tensorflow/network.py"
+   },
+   {
+    "category": "UNPARSEABLE",
+    "path": "lenet300-100/LOBS.py"
+   }
+  ]
+ },
+ "GIScience/ohsome-quality-api": {
+  "exit": 1,
+  "verification_shaped": 47,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "workers/tests/integrationtests/test_indicator_poi_density.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "workers/tests/integrationtests/test_indicator_poi_density.py"
+   }
+  ]
+ },
+ "petersn/six-char-max": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNPARSEABLE",
+    "path": "max6.py"
+   }
+  ]
+ },
+ "Mostafa-wael/Self-Driving-Vehicle-Control-on-CARLA": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "LaoYang1994/PanopticSegmentation": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "dxywill/deepknowledgetracing": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "sarartur/chess.com": {
+  "exit": 0,
+  "verification_shaped": 3,
+  "findings": []
+ },
+ "cutelittletiantian/python-for-office": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "redcaps-dataset/redcaps-downloader": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "JaminFong/dali-pytorch": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "tonybaloney/requests-staticmock": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "DurhamDecLab/ARBInterp": {
+  "exit": 1,
+  "verification_shaped": 0,
+  "findings": [
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "tests/test_ARBInterp.py"
+   }
+  ]
+ },
+ "MortenHannemose/pytorch-vfi-cft": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "heyeshuang/beancount-homemade-importers": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "hugovk/pypistats": {
+  "exit": 0,
+  "verification_shaped": 4,
+  "findings": []
+ },
+ "YRdddream/attattr": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "PaulChongPeng/YOLO2TensorFlow": {
+  "exit": 1,
+  "verification_shaped": 1,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "src/deployment/model_deploy_test.py"
+   }
+  ]
+ },
+ "watermarkhu/qsurface": {
+  "exit": 0,
+  "verification_shaped": 8,
+  "findings": []
+ },
+ "ICD-API/Python-samples": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "tomdbar/eco-dqn": {
+  "exit": 1,
+  "verification_shaped": 43,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_100spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_100spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_100spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_100spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/pretrained_agent/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/pretrained_agent/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_20spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_20spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_20spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_20spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_60spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_60spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_60spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_60spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_40spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_40spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_40spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_40spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_200spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_200spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_200spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_200spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_20spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_20spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_20spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_20spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_40spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_40spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_40spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_40spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_60spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_60spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_60spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_60spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_200spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_200spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_200spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/ER_200spin/test/test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_100spin/train_and_test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_100spin/train_and_test_s2v.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_100spin/test/test_eco.py"
+   },
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "experiments/BA_100spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_100spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_100spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/pretrained_agent/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/pretrained_agent/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_20spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_20spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_60spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_60spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_40spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_40spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_200spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_200spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_20spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_20spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_40spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_40spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_60spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_60spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_200spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/ER_200spin/test/test_s2v.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_100spin/test/test_eco.py"
+   },
+   {
+    "category": "UNCOLLECTABLE_TEST",
+    "path": "experiments/BA_100spin/test/test_s2v.py"
+   }
+  ]
+ },
+ "fabiangeisler/pyshotgrid": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "JDAI-CV/FADA": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "KnowZero/Krita-PythonPluginDeveloperTools": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "CFMTech/Jupytab": {
+  "exit": 0,
+  "verification_shaped": 5,
+  "findings": []
+ },
+ "BornToBeRoot/check_nextcloud": {
+  "exit": 0,
+  "verification_shaped": 1,
+  "findings": []
+ },
+ "Morizeyao/Decoders-Chinese-TF2.0": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "geaxgx/UniversalHandControl": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "odwdinc/SSBU_Amiibo": {
+  "exit": 0,
+  "verification_shaped": 0,
+  "findings": []
+ },
+ "Actasidiot/EFIFSTR": {
+  "exit": 1,
+  "verification_shaped": 3,
+  "findings": [
+   {
+    "category": "NO_FAIL_PATH",
+    "path": "utils/model_deploy_test.py"
+   }
+  ]
+ }
+}

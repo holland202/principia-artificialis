@@ -1,0 +1,26 @@
+{
+ "K1": {
+  "A": [
+   "NO_FAIL_PATH"
+  ],
+  "B": [
+   "UNPARSEABLE"
+  ]
+ },
+ "K2": {
+  "A": [
+   "NO_FAIL_PATH"
+  ],
+  "B": [
+   "NO_FAIL_PATH"
+  ]
+ },
+ "K3": {
+  "A": [
+   "UNPARSEABLE"
+  ],
+  "B": [
+   "NO_FAIL_PATH"
+  ]
+ }
+}
