@@ -681,3 +681,104 @@ Provenance (M13): defect reported by ChatGPT (OpenAI) in vacuity_lint.py PR #32;
 undecodable case on P10's instrument and adds the BOM case → run and write-up by Claude (Anthropic, Opus 5.5) →
 human validation: not performed → human direction: Chad Holland, 2026-11-07 → human responsibility: Chad
 Holland. Review level: direction only.
+
+---
+
+## Amendment 5 — 2026-11-07. P11 registered: the same 80 repositories at their 2026 heads. Nothing measured yet.
+
+**Question.** Within the same repositories, did adding CI after 2022 go with adding checks? Comparing a repository
+with itself removes the between-project confound that P10 could not.
+
+**Known before registering (C-EXPLORE).**
+- P10's and P13's records at the pins.
+- That P10's clones hold each default branch as cloned on 2026-11-07, with `origin/HEAD` set. I looked at one
+  clone, `ARBML/tnkeeh`, for the ref layout only.
+- Nothing about any head: not its CI, its files, or how many commits it has after the pin.
+
+**Head.** `origin/HEAD` in P10's partial clone: the default branch as cloned on 2026-11-07.
+
+**Instrument.** `vacuity_lint.py` with sha256 beginning `a6c8a65d6a9150f6`. That is the vacuity_lint.py PR #32
+head (`db98e60`), and also the file a merge of #32 into main produces (checked locally: identical bytes). Its
+selftest must pass. It measures pins and heads alike. P13 showed that its counts at the pins equal P10's. The driver
+(`experiments/note052_p6/run_p11.py`, committed with this amendment) re-measures each pin, and stops if the CI
+result or the count disagrees with P10's records (fail-closed).
+
+**Measures.** At the pin and at the head:
+- CI, by P10's primary definition. The GitHub-Actions-only definition is not used here.
+- The verification-shaped count, with P10's exclusions.
+
+Δ = count at head − count at pin. Transition = CI at pin, then CI at head: AA, AB (CI removed), BA (CI added) or BB.
+
+**Exclusions, fixed now.** A repository is left out, and listed with its reason, if:
+- its head cannot be checked out;
+- the linter reports no count at the head (for example, no Python file left);
+- the pin is not an ancestor of the head; or
+- there is no `origin/HEAD`.
+
+**Predictions.**
+- **P11a.** Among repositories without CI at the pin, those that added CI (BA) gained more verification-shaped
+  files than those that did not (BB). Test: a higher median Δ, and a one-sided permutation test on the Mann–Whitney U
+  with p < 0.05 (20,000 permutations, seed 1010). If BA or BB has fewer than 8 repositories, P11a is UNDERPOWERED.
+- **P11b.** At least half the measured repositories have no commit after the pin.
+- **P11c.** At most 2 repositories removed CI (AB).
+- **Secondary (reported, does not decide).** BA against only the BB repositories with at least one commit after the
+  pin, by the same test. Adding CI takes a commit, so every BA repository is active. This comparison asks whether
+  activity alone explains a difference.
+
+**Anti-vacuity control** (to run after this commit). Two planted git repositories go through the same per-repository
+code:
+- one adds a workflow file and a test file after its pin: expected BA, Δ = +1;
+- one adds only a README: expected BB, Δ = 0.
+
+**Pre-mortem.**
+- Many of these small repositories may have been dormant since 2022. BA would then be small and P11a UNDERPOWERED.
+  That would be a finding about the population, not a failure of the method.
+- BA repositories are active by definition. Activity can drive both CI and tests, and the secondary comparison only
+  partly separates them.
+- Verification-shaped files can arrive by vendoring or copying, not only by someone writing checks.
+- Heads contain code from 2023–2026, when AI coding assistants were common. Nothing here measures who or what wrote
+  it.
+- Findings at the heads are not hand-checked. Their counts are reported as unchecked and decide nothing.
+
+**What either result would mean.**
+- If P11a holds, repositories that took up CI also took up checks, within the same project. That supports reading
+  P10b's density gap as something that moves together with CI, though still not as a cause.
+- If it is refuted, adding CI did not come with more checks in this sample.
+- If it is underpowered, too few of these repositories changed for the question to be asked of them.
+
+Provenance (M13): registration and driver by Claude (Anthropic, Opus 5.5) → human validation: not performed →
+human direction: Chad Holland, 2026-11-07 → human responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Amendment 6 — 2026-11-07. P12 registered: a second reviewer for P10's hand-check. Nothing drawn yet.
+
+**Why.** P10's verdicts came from one AI (me), blinded to stratum only, and that is P10's weakest joint. P12
+measures how far a second reviewer agrees when it applies the same written rules.
+
+**Reviewer.** ChatGPT (OpenAI), in the auditor role of the Claude–ChatGPT coordination protocol, at Chad Holland's
+direction (2026-11-07). The driver (`experiments/note052_p6/run_p12.py`, committed with this amendment) accepts
+ratings from any reviewer, so a human reviewer can be added later as a separate run.
+
+**Sample.** `run_p12.py draw`, seed 1212, picks 30 of P10's 137 findings. They are given ids R01–R30 in shuffled
+order and written to `results_p12/PACKET.md`, with a link to each file at its pinned commit and P10's rules. The
+packet contains no verdicts. The 30 are random, as the P10 door said. With 8 TPs in 137, the sample should hold
+about 2 TPs, and it could hold none.
+
+**Custody, stated plainly.** My verdicts are already public, in `results_p10/handcheck.json`, and Amendment 3's
+results name the 8 TPs. The reviewer is asked to rate before opening either, and to declare whether it had read them
+before rating. Blindness therefore rests on the reviewer's own report. If the reviewer had already read the list of
+TPs, P12 is reported as not blind.
+
+**Predictions** (scored by `run_p12.py score`, committed now):
+- **P12a.** The reviewers agree on at least 27 of the 30 findings.
+- **P12b.** Cohen's κ ≥ 0.6. If either reviewer uses only one label across the 30, κ is undefined and P12b is
+  UNDETERMINED.
+- Every disagreement is listed with both reasons. I resolve none of them; they go to Chad.
+
+**What this cannot show.** Agreement between two AI systems is not human validation. Agreement does not make a
+verdict correct. If ChatGPT and I share a blind spot, P12 cannot see it.
+
+Provenance (M13): registration and driver by Claude (Anthropic, Opus 5.5); reviewer ChatGPT (OpenAI), not yet run
+→ human validation: not performed → human direction: Chad Holland, 2026-11-07 → human responsibility: Chad
+Holland. Review level: direction only.
