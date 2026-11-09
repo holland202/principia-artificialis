@@ -151,3 +151,10 @@ Its published setup needs an NVIDIA data-centre GPU. No experiment is proposed o
 note; the sources came from ChatGPT's (OpenAI) scan → human validation: not performed → human editing/curation:
 direction by Chad Edward Holland, 2026-11-08 → human responsibility: Chad Edward Holland. Review level: direction
 only.*
+
+## Figure (added 2026-11-09)
+
+![note079: Wilson intervals for 111/200 in simulation and 15/30 on the real robot, and power against real episodes](../figures/note079_sim_real_intervals.png)
+
+`scripts/generate_note079_figure.py` draws it with this note's own reference functions and prints every number it
+plots, all of which appear above.
