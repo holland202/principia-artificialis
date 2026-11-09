@@ -1,0 +1,119 @@
+{
+  "counts": {
+    "sqlite_json": {
+      "pairs": 512,
+      "errors": 0,
+      "pair_disagreements": 166,
+      "baseline_oracle_mismatches": 0,
+      "transformed_oracle_mismatches": 166
+    },
+    "sqlite_cast": {
+      "pairs": 512,
+      "errors": 0,
+      "pair_disagreements": 166,
+      "baseline_oracle_mismatches": 0,
+      "transformed_oracle_mismatches": 166
+    },
+    "python": {
+      "pairs": 512,
+      "errors": 0,
+      "pair_disagreements": 0,
+      "baseline_oracle_mismatches": 0,
+      "transformed_oracle_mismatches": 0
+    },
+    "javascript": {
+      "pairs": 512,
+      "errors": 0,
+      "pair_disagreements": 0,
+      "baseline_oracle_mismatches": 0,
+      "transformed_oracle_mismatches": 0
+    }
+  },
+  "outcomes": {
+    "P1": "HELD",
+    "P2": "HELD",
+    "P3": "HELD",
+    "P4": "HELD",
+    "P5": "HELD"
+  },
+  "held": 5,
+  "predictions": 5,
+  "controls": {
+    "oracle": {
+      "rounding_cases": 10,
+      "invalid_oracle_cases": 3
+    },
+    "one": {
+      "bits": "3ff0000000000000",
+      "sql_type": "real",
+      "type_code": 2,
+      "rc": 100,
+      "valid": 1
+    },
+    "two": {
+      "bits": "4000000000000000",
+      "sql_type": "real",
+      "type_code": 2,
+      "rc": 100,
+      "valid": 1
+    },
+    "repeated_one": [
+      {
+        "bits": "3ff0000000000000",
+        "sql_type": "real",
+        "type_code": 2,
+        "rc": 100,
+        "valid": 1
+      },
+      {
+        "bits": "3ff0000000000000",
+        "sql_type": "real",
+        "type_code": 2,
+        "rc": 100,
+        "valid": 1
+      },
+      {
+        "bits": "3ff0000000000000",
+        "sql_type": "real",
+        "type_code": 2,
+        "rc": 100,
+        "valid": 1
+      }
+    ],
+    "malformed": [
+      {
+        "token": "1e",
+        "validation": {
+          "valid": 0
+        },
+        "extraction": {
+          "error": "malformed JSON",
+          "rc": 1
+        }
+      },
+      {
+        "token": "-",
+        "validation": {
+          "valid": 0
+        },
+        "extraction": {
+          "error": "malformed JSON",
+          "rc": 1
+        }
+      },
+      {
+        "token": "01",
+        "validation": {
+          "valid": 0
+        },
+        "extraction": {
+          "error": "malformed JSON",
+          "rc": 1
+        }
+      }
+    ]
+  },
+  "corpus_sha256": "9aa6c77939135ac22fcf74d9818f6d12691205f9325c2f3c56877dedc99a3076",
+  "observations_sha256": "e97d54b289095f09f539148b31400d6dfc096bce478cdc4e198f0dce139f62b4",
+  "digest": "c20ab3a00385be45ce58611401af3cbe816690db4051e3f805169d1aa9fd7ba2"
+}

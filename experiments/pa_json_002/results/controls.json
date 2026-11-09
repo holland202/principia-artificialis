@@ -1,0 +1,75 @@
+{
+  "oracle": {
+    "rounding_cases": 10,
+    "invalid_oracle_cases": 3
+  },
+  "one": {
+    "bits": "3ff0000000000000",
+    "sql_type": "real",
+    "type_code": 2,
+    "rc": 100,
+    "valid": 1
+  },
+  "two": {
+    "bits": "4000000000000000",
+    "sql_type": "real",
+    "type_code": 2,
+    "rc": 100,
+    "valid": 1
+  },
+  "repeated_one": [
+    {
+      "bits": "3ff0000000000000",
+      "sql_type": "real",
+      "type_code": 2,
+      "rc": 100,
+      "valid": 1
+    },
+    {
+      "bits": "3ff0000000000000",
+      "sql_type": "real",
+      "type_code": 2,
+      "rc": 100,
+      "valid": 1
+    },
+    {
+      "bits": "3ff0000000000000",
+      "sql_type": "real",
+      "type_code": 2,
+      "rc": 100,
+      "valid": 1
+    }
+  ],
+  "malformed": [
+    {
+      "token": "1e",
+      "validation": {
+        "valid": 0
+      },
+      "extraction": {
+        "error": "malformed JSON",
+        "rc": 1
+      }
+    },
+    {
+      "token": "-",
+      "validation": {
+        "valid": 0
+      },
+      "extraction": {
+        "error": "malformed JSON",
+        "rc": 1
+      }
+    },
+    {
+      "token": "01",
+      "validation": {
+        "valid": 0
+      },
+      "extraction": {
+        "error": "malformed JSON",
+        "rc": 1
+      }
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+sqlite_version|source_id
+3.54.1|2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76
+label|bytes|valid_json|sql_type|parsed_value
+baseline|3|1|real|1.0
+integer_padding|100009|1|real|Inf
+fraction_padding|100010|1|real|0.0

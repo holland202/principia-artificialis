@@ -1,0 +1,478 @@
+{
+  "human_look": "NOT PERFORMED",
+  "selection": "post-hoc named registered witnesses and benign cases",
+  "roles_to_case_ids": {
+    "benign_identity": 0,
+    "unit_positive_infinity": 12,
+    "unit_positive_zero": 28,
+    "unit_negative_infinity": 44,
+    "unit_negative_zero": 60,
+    "benign_noninteger_small_padding": 193,
+    "integer_midpoint_rounding_control": 256
+  },
+  "distinct_cases": 7,
+  "cases": [
+    {
+      "case": {
+        "baseline": "1e0",
+        "coefficient": 1,
+        "expected_denominator": 1,
+        "expected_numerator": 1,
+        "family": "integer_padding",
+        "id": 0,
+        "padding": 0,
+        "power": 0,
+        "sign": 1
+      },
+      "token_bytes": 3,
+      "token_sha256": "bcac40fbed4ed4e1042a0c9dafbe9cdd58447415f19a11e59add45fdc083e2f5",
+      "token_prefix": "1e0",
+      "token_suffix": "1e0",
+      "expected_bits": "3ff0000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "1e0",
+        "coefficient": 1,
+        "expected_denominator": 1,
+        "expected_numerator": 1,
+        "family": "integer_padding",
+        "id": 12,
+        "padding": 100000,
+        "power": 0,
+        "sign": 1
+      },
+      "token_bytes": 100009,
+      "token_sha256": "bb0a9988ec51a0f1dbcde8d4365834f6da8778fb1977c0cf9b2fac1a3d7bcf42",
+      "token_prefix": "100000000000000000000000",
+      "token_suffix": "0000000000000000e-100000",
+      "expected_bits": "3ff0000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "7ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "7ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "1e0",
+        "coefficient": 1,
+        "expected_denominator": 1,
+        "expected_numerator": 1,
+        "family": "fraction_padding",
+        "id": 28,
+        "padding": 100000,
+        "power": 0,
+        "sign": 1
+      },
+      "token_bytes": 100010,
+      "token_sha256": "a264865c483ce58490478522181b9a6b391c0afe090143fb737ee506663071f8",
+      "token_prefix": "0.0000000000000000000000",
+      "token_suffix": "00000000000000001e100001",
+      "expected_bits": "3ff0000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "3ff0000000000000"
+          },
+          "transformed": {
+            "bits": "3ff0000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "0000000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "3ff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "0000000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "-1e0",
+        "coefficient": 1,
+        "expected_denominator": 1,
+        "expected_numerator": -1,
+        "family": "integer_padding",
+        "id": 44,
+        "padding": 100000,
+        "power": 0,
+        "sign": -1
+      },
+      "token_bytes": 100010,
+      "token_sha256": "4b5ae7f6ea988747beeb785f8101e488fbe0bb7c6a54b63c6b60411d79500536",
+      "token_prefix": "-10000000000000000000000",
+      "token_suffix": "0000000000000000e-100000",
+      "expected_bits": "bff0000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "bff0000000000000"
+          },
+          "transformed": {
+            "bits": "bff0000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "bff0000000000000"
+          },
+          "transformed": {
+            "bits": "bff0000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "bff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "fff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "bff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "fff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "-1e0",
+        "coefficient": 1,
+        "expected_denominator": 1,
+        "expected_numerator": -1,
+        "family": "fraction_padding",
+        "id": 60,
+        "padding": 100000,
+        "power": 0,
+        "sign": -1
+      },
+      "token_bytes": 100011,
+      "token_sha256": "93ae4b26e2806aeb76e47aa3c83943d302892394995311fde468b6935c87cdb7",
+      "token_prefix": "-0.000000000000000000000",
+      "token_suffix": "00000000000000001e100001",
+      "expected_bits": "bff0000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "bff0000000000000"
+          },
+          "transformed": {
+            "bits": "bff0000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "bff0000000000000"
+          },
+          "transformed": {
+            "bits": "bff0000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "bff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "8000000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "bff0000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "8000000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "125e-2",
+        "coefficient": 125,
+        "expected_denominator": 4,
+        "expected_numerator": 5,
+        "family": "integer_padding",
+        "id": 193,
+        "padding": 1,
+        "power": -2,
+        "sign": 1
+      },
+      "token_bytes": 7,
+      "token_sha256": "e150f35e1741e669ca0fd6c51c1af180b677a4609983dd803af462d1709d7171",
+      "token_prefix": "1250e-3",
+      "token_suffix": "1250e-3",
+      "expected_bits": "3ff4000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "3ff4000000000000"
+          },
+          "transformed": {
+            "bits": "3ff4000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "3ff4000000000000"
+          },
+          "transformed": {
+            "bits": "3ff4000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "3ff4000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "3ff4000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "3ff4000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "3ff4000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    },
+    {
+      "case": {
+        "baseline": "9007199254740993e0",
+        "coefficient": 9007199254740993,
+        "expected_denominator": 1,
+        "expected_numerator": 9007199254740993,
+        "family": "integer_padding",
+        "id": 256,
+        "padding": 0,
+        "power": 0,
+        "sign": 1
+      },
+      "token_bytes": 18,
+      "token_sha256": "4279acb5fac2ed79dc46bc43fbd0bd24f432224a19aff570313e1abaff2a5b13",
+      "token_prefix": "9007199254740993e0",
+      "token_suffix": "9007199254740993e0",
+      "expected_bits": "4340000000000000",
+      "observed": {
+        "javascript": {
+          "baseline": {
+            "bits": "4340000000000000"
+          },
+          "transformed": {
+            "bits": "4340000000000000"
+          }
+        },
+        "python": {
+          "baseline": {
+            "bits": "4340000000000000"
+          },
+          "transformed": {
+            "bits": "4340000000000000"
+          }
+        },
+        "sqlite_cast": {
+          "baseline": {
+            "bits": "4340000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          },
+          "transformed": {
+            "bits": "4340000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2
+          }
+        },
+        "sqlite_json": {
+          "baseline": {
+            "bits": "4340000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          },
+          "transformed": {
+            "bits": "4340000000000000",
+            "rc": 100,
+            "sql_type": "real",
+            "type_code": 2,
+            "valid": 1
+          }
+        }
+      }
+    }
+  ]
+}
