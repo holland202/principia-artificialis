@@ -1,0 +1,172 @@
+{
+  "reviewer": "ChatGPT (OpenAI, GPT-6; Codex agent)",
+  "declaration": {
+    "opened_handcheck_json_before_rating": false,
+    "read_amendment3_tp_list_before_rating": false,
+    "opened_score_json_before_rating": false,
+    "opened_p12_key_before_rating": false,
+    "blindness_status": "Verdict-masked during this review; historical blindness not certified.",
+    "notes": "The visible prior-conversation summary contained the aggregate P10 count (8 TP, 129 FP), but no item-level verdicts or TP names. I did not open any prohibited file or the Amendment 3 results section in this review. Earlier conversation history is compacted, so I cannot certify absence of all historical exposure. Do not label this fully blind. These are static source-review ratings, not executions of the external projects. Claude will independently rerun the agreement scorer after receiving the committed ratings."
+  },
+  "reviewed_base_commit": "7452707568cac76fa589673dca54b5f8bf5c2348",
+  "instructions": "experiments/note052_p6/results_p12/INSTRUCTIONS.md",
+  "packet": "experiments/note052_p6/results_p12/packet.json",
+  "provenance": {
+    "ai_participation": "ChatGPT (OpenAI, GPT-6; Codex agent): retrieved pinned files and imported helper, applied the frozen rubric and wrote all ratings.",
+    "human_validation": "Not performed.",
+    "human_editing_curation": "Direction only, Chad Holland.",
+    "human_responsibility": "Chad Holland."
+  },
+  "ratings": [
+    {
+      "id": "R01",
+      "verdict": "FP",
+      "reason": "Python-2 print statement at line 127 fails Python-3 parsing; the frozen rule classifies UNPARSEABLE findings as FP."
+    },
+    {
+      "id": "R02",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R03",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R04",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R05",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R06",
+      "verdict": "TP",
+      "reason": "The file is an empty zero-byte module under unittests/utilities/test_utilities.py, with no import, assertion, exception or failure exit."
+    },
+    {
+      "id": "R07",
+      "verdict": "FP",
+      "reason": "The file only imports ARBInterp; the frozen clarification explicitly treats import-only tests as able to fail."
+    },
+    {
+      "id": "R08",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R09",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R10",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R11",
+      "verdict": "FP",
+      "reason": "The docstring and main() describe generating dependency JSON/text documentation, rather than checking an expected result."
+    },
+    {
+      "id": "R12",
+      "verdict": "FP",
+      "reason": "This Selenium exploration script prints a webpage element's attributes; it is not an automated check of an expectation."
+    },
+    {
+      "id": "R13",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R14",
+      "verdict": "FP",
+      "reason": "This model-inference script loads rain-removal networks, processes validation images and saves JPEG outputs; it is not a correctness check."
+    },
+    {
+      "id": "R15",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R16",
+      "verdict": "FP",
+      "reason": "This is the same dependency-document generator as R11; it writes JSON/text files and defines no expected-versus-actual check."
+    },
+    {
+      "id": "R17",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R18",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R19",
+      "verdict": "FP",
+      "reason": "run_tests_for() in test_shared.py raises ValueError in the main thread when a worker reports mismatched output files."
+    },
+    {
+      "id": "R20",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R21",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R22",
+      "verdict": "FP",
+      "reason": "Python-2 print syntax at line 67 fails Python-3 parsing; UNPARSEABLE findings are FP under the frozen rule."
+    },
+    {
+      "id": "R23",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R24",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R25",
+      "verdict": "FP",
+      "reason": "The script trains an RL agent and runs graph-performance evaluations; the README documents result tables, not a correctness pass/fail check."
+    },
+    {
+      "id": "R26",
+      "verdict": "FP",
+      "reason": "validate() in the same-repository utils.py computes and prints AlexNet top-1/top-5 accuracy; this is performance evaluation, not a correctness check."
+    },
+    {
+      "id": "R27",
+      "verdict": "FP",
+      "reason": "Its argument description and main() launch the NVDU dataset visualizer; it is an interactive visualization tool, not a test."
+    },
+    {
+      "id": "R28",
+      "verdict": "FP",
+      "reason": "This is the same Safari check as R19; its imported run_tests_for() propagates output mismatches as ValueError."
+    },
+    {
+      "id": "R29",
+      "verdict": "FP",
+      "reason": "run() evaluates graph-optimization performance and saves result/raw/history DataFrames; the README identifies this as an experiment, not a correctness test."
+    },
+    {
+      "id": "R30",
+      "verdict": "FP",
+      "reason": "Python-2 print syntax at line 190 fails Python-3 parsing; the frozen rule assigns UNPARSEABLE findings FP."
+    }
+  ]
+}
