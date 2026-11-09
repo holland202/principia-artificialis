@@ -12,3 +12,4 @@ Open the repository in Claude Code and enter, for example, `/assumptions Can thi
 - Read-only validation: inspect the `.claude/skills/*/SKILL.md` files for valid frontmatter and verify all 18 names are present.
 - These are research-oriented adaptations of informal prompt ideas; the commands in a social graphic are **not** Anthropic built-ins.
 - Do not replace a security gate or human review with prompt instructions. Document failures and uncertain verification state.
+- **One source.** These files are generated from `tools/skills/contract.md` (the shared operating contract, written once) and `tools/skills/skills.json` (each skill's frontmatter and procedure). Edit the source, then run `python tools/skills/build.py`; `python tools/skills/build.py --check` fails if any copy differs, and the test suite runs it.

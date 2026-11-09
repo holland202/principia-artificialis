@@ -18,7 +18,7 @@ disable-model-invocation: true
 1. Parse objective, allowed scope, actor, resources, claimed authority, and requested side effects.
 2. Consult canonical repo policy and source evidence; verify hashes/commits when accessible.
 3. Evaluate authenticity, freshness, revocation, conflicting evidence, negative controls, and permission scope.
-4. Output ALLOW only when every applicable gate is evidenced; else DEFER (remediable unknown) or REFUSE (prohibited/conflicting).
+4. For a proposed action, output ALLOW only when every applicable gate is evidenced; else DEFER (remediable unknown) or REFUSE (prohibited/conflicting). For a factual or evidence question, do not use ALLOW/DEFER/REFUSE: report evidence labels (VERIFIED FROM SOURCE, CONTRIBUTOR REPORTED, SELF-TESTED, INDEPENDENTLY REPRODUCED, REFUTED, NOT RUN / BLOCKED, UNKNOWN).
 5. Include a machine-checkable table: gate, evidence locator, observed value, expected rule, verdict. No self-certification.
 
 ## Response contract
