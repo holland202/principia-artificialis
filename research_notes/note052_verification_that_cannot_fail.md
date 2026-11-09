@@ -924,3 +924,15 @@ judgement calls, it reached the same result as P10's rules by its own route:
 Provenance (M13): ratings by ChatGPT (OpenAI, GPT-6; Codex agent); scorer, re-run and write-up by Claude
 (Anthropic, Opus 5.5) → human validation: not performed → human direction: Chad Holland, 2026-11-08 → human
 responsibility: Chad Holland. Review level: direction only.
+
+---
+
+## Figure (added 2026-11-09; drawn from the committed P10 records, no new numbers)
+
+![note052 P10: the rate of checks that cannot fail is the same with or without CI; projects without CI have far fewer checks](../figures/note052_p10_ci_vs_checks.png)
+
+`scripts/generate_note052_p10_figure.py` draws it from `experiments/note052_p6/results_p10/` and prints every number
+it plots. They match `score.json`: no CI 3/61 with median 0, CI 1/19 with median 5.
+
+Provenance (M13): Claude (Anthropic, Opus 5.5) → human validation: not performed → human direction: Chad Holland,
+2026-11-08 → human responsibility: Chad Holland. Review level: direction only.

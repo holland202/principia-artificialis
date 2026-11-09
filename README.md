@@ -305,6 +305,8 @@ plot are the numbers the code prints.
 
 | Figure | From | Shows |
 |---|---|---|
+| `figures/note052_p10_ci_vs_checks.png` | #052 (`scripts/generate_note052_p10_figure.py`) | P10: projects without CI had no more checks that cannot fail (refuted), but far fewer checks (confirmed) |
+| `figures/note079_sim_real_intervals.png` | #079 (`scripts/generate_note079_figure.py`) | ToyBlocks: 30 real episodes cannot resolve a 5.5-point sim-to-real gap |
 | `figures/principia_hero.png` | `figures/make_logo.py` (referenced here but not present in the repository) | the logo is the exact 600-cell: 120 unit quaternions of 2I, 720 edges of length 1/φ |
 | `figures/principia_hero_animated.webp` | `scripts/make_logo_animated.py` | the same 600-cell under an isoclinic 4D rotation by an element of 2I, so the 36° loop closes exactly; the script prints its checks |
 | `figures/note047_cloister_chorus.png` | #047 | two poles of redundancy: the chorus (networks proliferate) vs the cloister (codes hide perfectly) |
