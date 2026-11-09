@@ -165,7 +165,11 @@ class OutputSafety(unittest.TestCase):
         self.assertIn("&lt;script&gt;", out)
 
     def test_drift_check_says_the_other_thing(self):
-        hand_edited = PAGE.replace("<b>23</b><span>Verified</span>", "<b>99</b><span>Verified</span>", 1)
+        # Read the live Verified count rather than hard-coding it: adding a note must not break this test.
+        m = re.search(r"<b>(\d+)</b><span>Verified</span>", PAGE)
+        self.assertIsNotNone(m, "fixture: Verified tile not found")
+        wrong = f"<b>{int(m.group(1)) + 76}</b><span>Verified</span>"
+        hand_edited = PAGE.replace(m.group(0), wrong, 1)
         self.assertNotEqual(hand_edited, PAGE, "fixture: tile text not found")
         self.assertNotEqual(md.build(hand_edited, INDEX, copy.deepcopy(CARD)), hand_edited)
 
