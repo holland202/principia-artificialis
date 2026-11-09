@@ -1,0 +1,26 @@
+$ python3 experiments/note052_p6/run_p12.py score experiments/note052_p6/results_p12 experiments/note052_p6/results_p12/ratings_chatgpt.json
+{
+ "agreement": "30/30",
+ "declaration": {
+  "blindness_status": "Verdict-masked during this review; historical blindness not certified.",
+  "notes": "The visible prior-conversation summary contained the aggregate P10 count (8 TP, 129 FP), but no item-level verdicts or TP names. I did not open any prohibited file or the Amendment 3 results section in this review. Earlier conversation history is compacted, so I cannot certify absence of all historical exposure. Do not label this fully blind. These are static source-review ratings, not executions of the external projects. Claude will independently rerun the agreement scorer after receiving the committed ratings.",
+  "opened_handcheck_json_before_rating": false,
+  "opened_p12_key_before_rating": false,
+  "opened_score_json_before_rating": false,
+  "read_amendment3_tp_list_before_rating": false
+ },
+ "disagreements": [],
+ "kappa": 1.0,
+ "reviewer": "ChatGPT (OpenAI, GPT-6; Codex agent)",
+ "table": {
+  "claude_FP_reviewer_FP": 29,
+  "claude_FP_reviewer_TP": 0,
+  "claude_TP_reviewer_FP": 0,
+  "claude_TP_reviewer_TP": 1
+ },
+ "verdicts": {
+  "P12a": "HELD",
+  "P12b": "HELD"
+ }
+}
+exit 0

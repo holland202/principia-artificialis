@@ -866,3 +866,61 @@ UNCOLLECTABLE_TEST and 3 UNPARSEABLE. All 30 paths exist at their pinned commits
 The packet is `experiments/note052_p6/results_p12/PACKET.md`, and the reviewer's instructions are in
 `INSTRUCTIONS.md` next to it. I have not checked how many of the 30 are TPs by my verdicts; the score will show it.
 P12a and P12b stay unrun until a reviewer submits ratings.
+
+---
+
+## Amendment 6 results — 2026-11-08. P12a and P12b HELD: 30 of 30, κ = 1.0. The sample held a single TP, and the review was not fully blind.
+
+**Reviewer:** ChatGPT (OpenAI, GPT-6; Codex agent). Its ratings and declaration were frozen at `db3876e` (PR #127)
+before any score was run. I re-ran the registered scorer on that commit. The ratings file's sha256 is
+`2d2bbe68b12e65c4eff1c7878246b7131fb168509b85c4b554f56fdb718301c8`, and `packet.json`'s is `8b944d02f9191e9c…`. Both
+match ChatGPT's record. The scorer, key and P10 verdicts are unchanged since registration. Raw output:
+`experiments/note052_p6/results_p12/score_claude.txt`.
+
+### What limits this, first
+
+1. **One TP.** By my P10 verdicts, the random 30 contained one TP: R06, an empty module in a unit-test directory.
+   κ = 1.0 rests on that single positive. Whether a second reviewer agrees on the other seven TPs, the ones P10a
+   depends on, is untested.
+2. **Not fully blind.** ChatGPT declares that it opened none of the masked files during the review. Its context did
+   hold P10's aggregate count (8 TP, 129 FP), and it cannot certify earlier exposure. It says not to call the
+   review fully blind, and this note does not.
+3. **Two AI systems.** Agreement between ChatGPT and me is not human validation. A blind spot we share would not
+   show.
+
+### Results
+
+```
+"agreement": "30/30",
+"kappa": 1.0,
+"table": {"claude_FP_reviewer_FP": 29, "claude_FP_reviewer_TP": 0, "claude_TP_reviewer_FP": 0, "claude_TP_reviewer_TP": 1},
+"disagreements": [],
+"verdicts": {"P12a": "HELD", "P12b": "HELD"}
+```
+
+| | prediction | result |
+|---|---|---|
+| P12a | agreement on at least 27 of 30 | **HELD**: 30 of 30 |
+| P12b | Cohen's κ ≥ 0.6, if both reviewers use both labels | **HELD**: κ = 1.0; each used both labels once (one TP) |
+
+There are no disagreements to preserve. ChatGPT's reasons for each verdict are in its `CHATGPT_REVIEW.md`. On the
+judgement calls, it reached the same result as P10's rules by its own route:
+- an import-only test counts as able to fail;
+- a test entry point whose imported helper raises on a mismatch counts as able to fail;
+- training and benchmark scripts named `test_*` are FP.
+
+### What this shows and does not show
+
+- **Shown:** on 30 findings drawn at random, a second reviewer applying P10's written rules reached every one of my
+  verdicts. The FP side, which is 129 of P10's 137 findings, held up under a second reading.
+- **Not shown:** agreement on TPs beyond one item, so P10a's TP counts are not confirmed by this. Nor whether
+  either reviewer is right.
+
+### Door
+
+- **P12c (unrun).** A second review of all 8 P10 TPs, plus 8 FPs drawn at random, with the composition hidden from
+  the reviewer. Ideally the reviewer is a person, because P10a rests on those 8 TPs.
+
+Provenance (M13): ratings by ChatGPT (OpenAI, GPT-6; Codex agent); scorer, re-run and write-up by Claude
+(Anthropic, Opus 5.5) → human validation: not performed → human direction: Chad Holland, 2026-11-08 → human
+responsibility: Chad Holland. Review level: direction only.
