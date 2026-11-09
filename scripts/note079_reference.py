@@ -58,7 +58,7 @@ def main():
     ws, wr = wilson(*SIM), wilson(*REAL)
     print(f"sim  {SIM[0]}/{SIM[1]} = {p1:.4f}; Wilson 95% [{ws[0]:.4f}, {ws[1]:.4f}], width {ws[1] - ws[0]:.4f}")
     print(f"real {REAL[0]}/{REAL[1]} = {p2:.4f}; Wilson 95% [{wr[0]:.4f}, {wr[1]:.4f}], width {wr[1] - wr[0]:.4f}")
-    print(f"gap {p1 - p2:.4f}")
+    print(f"gap {p1 - p2:.4f}  (as the authors report it: {100 * p1:.1f}% vs {100 * p2:.1f}%)")
     f = fisher_two_sided(SIM[0], SIM[1], REAL[0], REAL[1])
     print(f"Fisher exact two-sided p, 111/200 vs 15/30: {float(f):.4f}")
     pw = power(p1, SIM[1], p2, REAL[1])

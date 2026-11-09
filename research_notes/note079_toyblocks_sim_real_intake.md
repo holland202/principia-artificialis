@@ -1,6 +1,7 @@
 # Note #079 — Thirty real episodes: what ToyBlocks' sim-to-real numbers can and cannot show
 
-**Status:** Draft — research intake. Predictions P1–P6 registered; the reference script has not been run yet.
+**Status:** Draft, verified reference code — research intake. P1–P6 HELD (low-risk; see below); P7 open. The arithmetic
+uses the authors' published counts only. Nothing was re-run.
 **Theme:** Measurement / Robot evaluation / Statistics
 **Author:** Claude (Anthropic, Opus 5.5), at Chad Edward Holland's direction (2026-11-08). Review level: direction
 only. The sources came from ChatGPT's (OpenAI) research scan of 2026-11-07; its summaries were checked, not
@@ -11,7 +12,12 @@ adopted.
 
 ## What went wrong, first
 
-Nothing has been run yet. This section is filled in with the results.
+- **Nothing failed, and that is a weakness.** I estimated P1–P6 by hand before writing them down (C-EXPLORE). So
+  their holding mostly checks the script and my arithmetic. It is not a risky test. The useful output is the numbers
+  themselves.
+- **The scan left out two things that matter.** It omitted the human-expert baseline (36%) and the missing sample
+  sizes behind the 24% → 63% result, and it did not mention that the agents were Claude models.
+- Nothing here was reproduced. Every count is the authors'.
 
 ## The source, checked (C-EXT)
 
@@ -64,6 +70,48 @@ these counts actually go?
 "different" and P2 is void.
 
 **What these test.** They test what the authors' own counts can support, not whether ToyBlocks is right.
+
+## Results (registered at `c42f6b5`, then run)
+
+```
+$ python3 scripts/note079_reference.py
+sim  111/200 = 0.5550; Wilson 95% [0.4857, 0.6222], width 0.1365
+real 15/30 = 0.5000; Wilson 95% [0.3315, 0.6685], width 0.3369
+gap 0.0550  (as the authors report it: 55.5% vs 50.0%)
+Fisher exact two-sided p, 111/200 vs 15/30: 0.6946
+power to detect the observed gap at the published design (200 vs 30): 0.0811
+power with the simulation arm fixed at 200 and unlimited real episodes: 0.3465
+real episodes for that cap to be within 0.01: 5664
+minimum detectable gap at 80% power, 200 vs 30 (p = 0.5): 0.2743
+minimum detectable gap at 80% power, 200 vs 200 (p = 0.5): 0.1401
+episodes per arm (equal arms) to detect 0.555 vs 0.500 at 80% power: 1293
+control K1, 111/200 vs 5/30: Fisher p 0.000062 (below 0.05)
+control K2, 15/30 vs 15/30: Fisher p 1 (exact)
+controls: PASS
+```
+
+| | prediction | result |
+|---|---|---|
+| control | Fisher can say "different", and gives exactly 1 for identical counts | PASS |
+| P1 | real-robot interval at least 30 points wide | HELD: [0.3315, 0.6685], width 0.3369 |
+| P2 | Fisher p above 0.5 | HELD: 0.6946 |
+| P3 | power below 15% at 200 against 30 | HELD: 0.0811 |
+| P4 | no real-episode count reaches 50% power | HELD: the cap is 0.3465 |
+| P5 | minimum detectable gap at least 20 points | HELD: 0.2743 |
+| P6 | more than 1,000 episodes per arm | HELD: 1293 |
+
+**What this says.**
+- The published counts are consistent with simulation and the real robot agreeing. They are also consistent with
+  a real-robot rate anywhere in [0.3315, 0.6685]. The 30 real episodes cannot tell a 5.5-point gap from one of
+  0.2743, the smallest gap this design detects at 80% power.
+- Adding real episodes alone cannot fix this, because the simulation arm is also only 200 episodes. With it fixed,
+  power never passes 0.3465.
+- Detecting a gap of this size takes 1293 episodes in each arm. That matches the authors' own caveat, now with
+  numbers.
+
+**What it does not say.** Nothing about whether ToyBlocks' simulator is faithful, whether the policy is good, or the
+other results, whose counts the page does not give: the authors report 80.0% (simulation) against 81.1% (real robot)
+for atomic skills, and 19% to 78% with world-model data. Those figures are quoted, not computed here.
 
 ## Triggered controls (M16)
 
