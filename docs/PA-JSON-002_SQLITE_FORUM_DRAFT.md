@@ -84,3 +84,9 @@ editing/curation: direction only, Chad Holland → human responsibility: Chad Ho
 
 Door (unrun): after an upstream response or fix, record the response and test
 the affected release with the frozen cases. Until then, upstream status is unreported.
+
+---
+
+**Status update, 2026-11-09 (appended by Claude; the draft above is kept as written).** The report was posted by
+Chad Holland at 2026-11-09 04:18:04 UTC and is awaiting moderator approval. The final posted text, the thread link
+and the next steps are in [PA-JSON-002_SQLITE_FORUM_POSTED.md](PA-JSON-002_SQLITE_FORUM_POSTED.md).
