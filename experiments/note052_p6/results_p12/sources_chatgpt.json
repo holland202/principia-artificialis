@@ -1,0 +1,442 @@
+{
+  "reviewer": "ChatGPT (OpenAI, GPT-6; Codex agent)",
+  "method": "Static source inspection; retrieved UTF-8 bytes verified against the pinned Git blob SHA-1, with SHA-256 recorded. No external project was executed.",
+  "packet_sha256": "8b944d02f9191e9c8ad060857432f2675a65472113f19326c185c4acb3d5c030",
+  "sources": [
+    {
+      "repository": "DurhamDecLab/ARBInterp",
+      "path": "tests/test_ARBInterp.py",
+      "commit": "56d88b1fdb28f2356c738dfe9bd34d65709ed0f8",
+      "url": "https://github.com/DurhamDecLab/ARBInterp/blob/56d88b1fdb28f2356c738dfe9bd34d65709ed0f8/tests/test_ARBInterp.py",
+      "git_blob_sha": "c065eadf19a3cb9bc46f04373ed414eb94b6c931",
+      "sha256": "dd992540f8ab66293e3c8e362473ce5decd6373f592ed4129d61f66d059d3987",
+      "bytes": 32,
+      "packet_ids": [
+        "R07"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "NVIDIA/Dataset_Utilities",
+      "path": "nvdu/tools/test_nvdu_visualizer.py",
+      "commit": "532b8c76e3d7946748a10af3398438b35383f157",
+      "url": "https://github.com/NVIDIA/Dataset_Utilities/blob/532b8c76e3d7946748a10af3398438b35383f157/nvdu/tools/test_nvdu_visualizer.py",
+      "git_blob_sha": "cc843f175a8129b3c9f9b898a52463a9f546a3ef",
+      "sha256": "4aa5dd9881716cc51e72c05d6207b903b8dc306b4a03bd335f92efd0d64cbede",
+      "bytes": 7004,
+      "packet_ids": [
+        "R27"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "csyhhu/L-OBS",
+      "path": "PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py",
+      "commit": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+      "url": "https://github.com/csyhhu/L-OBS/blob/346e67977955f34b10b0461ab4d60ef8d35dc145/PyTorch/ImageNet/generate-Hesian-Inv-VGG16BN.py",
+      "git_blob_sha": "669053bbbba86145fb23ab942c0fb8820bc4a8b4",
+      "sha256": "82d888026e6316fc7996733338cebdadaac518947974c9245444bcfbdb1873e1",
+      "bytes": 4668,
+      "packet_ids": [
+        "R01"
+      ],
+      "role": "rated_file",
+      "python3_parse": {
+        "error": "SyntaxError",
+        "line": 127,
+        "message": "Missing parentheses in call to 'print'. Did you mean print(...)?"
+      }
+    },
+    {
+      "repository": "csyhhu/L-OBS",
+      "path": "PyTorch/ImageNet/utils.py",
+      "commit": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+      "url": "https://github.com/csyhhu/L-OBS/blob/346e67977955f34b10b0461ab4d60ef8d35dc145/PyTorch/ImageNet/utils.py",
+      "git_blob_sha": "cf6fabaa6eabb0a4a608dbdbd8384fec7b09f6c1",
+      "sha256": "8979771c0e798d866b5986f9d67814eaade43af7ef446c25da7e2a4042966358",
+      "bytes": 7059,
+      "packet_ids": [],
+      "role": "supporting_source"
+    },
+    {
+      "repository": "csyhhu/L-OBS",
+      "path": "PyTorch/ImageNet/validate-AlexNet.py",
+      "commit": "346e67977955f34b10b0461ab4d60ef8d35dc145",
+      "url": "https://github.com/csyhhu/L-OBS/blob/346e67977955f34b10b0461ab4d60ef8d35dc145/PyTorch/ImageNet/validate-AlexNet.py",
+      "git_blob_sha": "648a6ea38a892c00095f2eb057895a26c4489119",
+      "sha256": "1978c8739b21c0d08ec64dd0cc2c4c3ee8877ffcaca8e4d48b40a2700af3697d",
+      "bytes": 2746,
+      "packet_ids": [
+        "R26"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "hezhangsprinter/DID-MDN",
+      "path": "test.py",
+      "commit": "44bb9e84ab48cba764316bebeee0b47f5fad28a1",
+      "url": "https://github.com/hezhangsprinter/DID-MDN/blob/44bb9e84ab48cba764316bebeee0b47f5fad28a1/test.py",
+      "git_blob_sha": "552f4e334996cc9be9cddd76f4c1ec3a6f8d1e3c",
+      "sha256": "3952178f0224bbcddc5c06f33fa93571ed2de4b89998102915917b5e645405ec",
+      "bytes": 9076,
+      "packet_ids": [
+        "R14"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "nasa/giant",
+      "path": "unittests/utilities/test_utilities.py",
+      "commit": "2b1ceeaf5847f2829f440b21ad3ca1977589eda4",
+      "url": "https://github.com/nasa/giant/blob/2b1ceeaf5847f2829f440b21ad3ca1977589eda4/unittests/utilities/test_utilities.py",
+      "git_blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "packet_ids": [
+        "R06"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "shailshouryya/yt-videos-list",
+      "path": "docs/preparing/checkAttrs.py",
+      "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+      "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/docs/preparing/checkAttrs.py",
+      "git_blob_sha": "8cb743c03fcd3f22fabcd855b8a441a712936b20",
+      "sha256": "7c692eaa0e4dffdbb78ddb39ff8d0fe3e70bc4721ebd48642db2924632f2159c",
+      "bytes": 1201,
+      "packet_ids": [
+        "R12"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "shailshouryya/yt-videos-list",
+      "path": "python/tests/determine.py",
+      "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+      "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/determine.py",
+      "git_blob_sha": "a6aa6ce0b39760a1f37a626440362dc03d96e075",
+      "sha256": "59acd2fb4002a86882dbfe34ef25b2b5de9067df50a36754ec01d652b15ebab0",
+      "bytes": 1246,
+      "packet_ids": [],
+      "role": "supporting_source"
+    },
+    {
+      "repository": "shailshouryya/yt-videos-list",
+      "path": "python/tests/test_dependencies_json.py",
+      "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+      "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_dependencies_json.py",
+      "git_blob_sha": "fd44bd2c7a783300609793f62dec3d8c29ed0811",
+      "sha256": "bbada37a9e611ca8bcbe23a6d168e21ee87316ad697267286f4c890381467d30",
+      "bytes": 2901,
+      "packet_ids": [
+        "R11",
+        "R16"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "shailshouryya/yt-videos-list",
+      "path": "python/tests/test_safaridriver.py",
+      "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+      "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_safaridriver.py",
+      "git_blob_sha": "2b0affa8d8f1492356284ac68c1de862908e0b3d",
+      "sha256": "9b498a57e3e74af6e1c0178846787135568676dcb40dedce1cb7beaf6958cf49",
+      "bytes": 1443,
+      "packet_ids": [
+        "R19",
+        "R28"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "shailshouryya/yt-videos-list",
+      "path": "python/tests/test_shared.py",
+      "commit": "0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2",
+      "url": "https://github.com/shailshouryya/yt-videos-list/blob/0b81d1ce9bb2c04dd7a11e837649a73e73dbf7a2/python/tests/test_shared.py",
+      "git_blob_sha": "97a5879fe3af8be20ad751218b08142a75670a0e",
+      "sha256": "f0121be31d9b486b57467140680b4658f073d63e2f70a9809b4119f8b596b514",
+      "bytes": 15073,
+      "packet_ids": [],
+      "role": "supporting_source"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "README.md",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/README.md",
+      "git_blob_sha": "75efe013bcd3f15e839607137728c6da3c273b30",
+      "sha256": "1cdae9cc856aedc70708f0dbb30c64de1fa152f90fcc6461e28af5bc698f4d69",
+      "bytes": 6317,
+      "packet_ids": [],
+      "role": "supporting_source"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_100spin/test/test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_100spin/test/test_s2v.py",
+      "git_blob_sha": "f066e5ecf0bb8caee60e75a50f554b337252dfd2",
+      "sha256": "97f947e03b74bd6ad630cec6f1fd8778fa265e06789d30cc780fd8d6c8b8c18d",
+      "bytes": 4512,
+      "packet_ids": [
+        "R03"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_200spin/test/test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_200spin/test/test_eco.py",
+      "git_blob_sha": "62e86afdef7427ba358a6aba7b1caffaf351cf66",
+      "sha256": "5e81f6f2025787b8d912051ad560a0f5de7f4960d6b71b68ab187ce3d227a7aa",
+      "bytes": 4509,
+      "packet_ids": [
+        "R10"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_200spin/test/test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_200spin/test/test_s2v.py",
+      "git_blob_sha": "279733b219a3a8a552a066d7c831f83e3e46ce41",
+      "sha256": "2ef1cf201b1e84734c5d21a421104cde0fbc8ab2265791ebbfb2a5ed15dd74b0",
+      "bytes": 4486,
+      "packet_ids": [
+        "R20"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_20spin/train_and_test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_20spin/train_and_test_eco.py",
+      "git_blob_sha": "6cc25fb038c79062c110c0e9bb22618927a8e29e",
+      "sha256": "629cf50b73798e0639ac7fed5b6fbe173c3f67e908a27b525d33ae5a1c390a45",
+      "bytes": 914,
+      "packet_ids": [
+        "R18"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_40spin/test/test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/test/test_s2v.py",
+      "git_blob_sha": "30a51975feac0ba1cdb05605bc06f8ebf8730e87",
+      "sha256": "7cbbc10fcac5fccc5d4fbdc82c14f446bced8984014c1f8fe00bc19fdcc779a6",
+      "bytes": 4485,
+      "packet_ids": [
+        "R21"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_40spin/train_and_test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/train_and_test_eco.py",
+      "git_blob_sha": "585b56475389c8108f4a75e16f975d6d79fc80d3",
+      "sha256": "447e63eb1a55334db8e9e6a73029cf6e5058a118fa3e70de67cca24171d36d6b",
+      "bytes": 796,
+      "packet_ids": [
+        "R02"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_40spin/train_and_test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_40spin/train_and_test_s2v.py",
+      "git_blob_sha": "abf0b8c080dcbba8e05c5dd05e9ae47b3a6b8d48",
+      "sha256": "6df2b61cfd745a25522fa48cb6142572653d57c08fee12e1043964d3f933bd48",
+      "bytes": 795,
+      "packet_ids": [
+        "R23"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/BA_60spin/test/test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/BA_60spin/test/test_eco.py",
+      "git_blob_sha": "f504681b73688ecc0a8ee1de05aeb2c18b9e6891",
+      "sha256": "98c1f4eaf76458633ca37baa6083708287da0a261f111af33ae97b65fe84f077",
+      "bytes": 4506,
+      "packet_ids": [
+        "R08",
+        "R29"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_100spin/test/test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_100spin/test/test_eco.py",
+      "git_blob_sha": "c4f98f133b8270bdf77166b3698f9fd0ddc8c687",
+      "sha256": "14e1594b8cd3da1c46fee3743856b484281e6652caea8d3400c2b3944949b956",
+      "bytes": 4510,
+      "packet_ids": [
+        "R15"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_200spin/test/test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/test/test_eco.py",
+      "git_blob_sha": "03178ce0985e904090649c0fa9477fce9dca5ab7",
+      "sha256": "b1d640acd048301a10b5fc77f3c490aadc36399bae8690c83f3b1c3a396c1238",
+      "bytes": 4510,
+      "packet_ids": [
+        "R04",
+        "R05"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_200spin/train_and_test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/train_and_test_eco.py",
+      "git_blob_sha": "03a6151e003073c8a198d1793793d23c2ca7d72e",
+      "sha256": "2e073c66048ec269f5bccd5fd9a0ff022eaffc199d7ecbdeb486131acaf50ed4",
+      "bytes": 449,
+      "packet_ids": [
+        "R13"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_200spin/train_and_test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_200spin/train_and_test_s2v.py",
+      "git_blob_sha": "8dd12ebe486001dc6668625fbb4f4fcbf81215f3",
+      "sha256": "08b32aee6f69652d97b881230664986a081e5ddb8fd3de85104e90d569c2c348",
+      "bytes": 446,
+      "packet_ids": [
+        "R17"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_20spin/train_and_test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_20spin/train_and_test_eco.py",
+      "git_blob_sha": "5a4ee05bd26a4da010e3b714005cfb11bb6e892e",
+      "sha256": "cbd2e7635f030b68bfeadffef64eae147d52ff4daea71fb5334a7e0153c2d23f",
+      "bytes": 923,
+      "packet_ids": [
+        "R25"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_20spin/train_and_test_s2v.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_20spin/train_and_test_s2v.py",
+      "git_blob_sha": "56595a91d4e0391390892439c6d01c128dfb1219",
+      "sha256": "abe8141dada501aabaaeb14076a364bbcecb65f93a84d82b1f6d161103f88bc3",
+      "bytes": 919,
+      "packet_ids": [
+        "R24"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/ER_60spin/test/test_eco.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/ER_60spin/test/test_eco.py",
+      "git_blob_sha": "fb61f0e7ae54e7d460660ea7455ef2a55b46d2cc",
+      "sha256": "c9e9ed38aa05439d436d956769dd53868644eb0dfb071b1b8d7289288cb5a137",
+      "bytes": 4507,
+      "packet_ids": [
+        "R09"
+      ],
+      "role": "rated_file",
+      "python3_parse": "OK"
+    },
+    {
+      "repository": "tomdbar/eco-dqn",
+      "path": "experiments/utils.py",
+      "commit": "134df732cbdc32ad840ee2c05079fb2dbb6dd6d0",
+      "url": "https://github.com/tomdbar/eco-dqn/blob/134df732cbdc32ad840ee2c05079fb2dbb6dd6d0/experiments/utils.py",
+      "git_blob_sha": "31b0692adfd2c158a017b437e19b3d28bda9f484",
+      "sha256": "5ae13bdc845c4adfbaa8a12993e2309e8f8b79a1b7cc70c19b21bd05427d1aad",
+      "bytes": 16669,
+      "packet_ids": [],
+      "role": "supporting_source"
+    },
+    {
+      "repository": "xyj77/MCF-3D-CNN",
+      "path": "utils/avg_roc.py",
+      "commit": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+      "url": "https://github.com/xyj77/MCF-3D-CNN/blob/32576a5b2132d1e41146f57cee4d3228fd1ace92/utils/avg_roc.py",
+      "git_blob_sha": "ceac91dff068136553869c6f23e5ed5d91bf3a8f",
+      "sha256": "e203e03159e4efe40135f7bc9be7778c174d75a7de0f5bbb598b36a99b541da4",
+      "bytes": 2436,
+      "packet_ids": [
+        "R22"
+      ],
+      "role": "rated_file",
+      "python3_parse": {
+        "error": "SyntaxError",
+        "line": 67,
+        "message": "Missing parentheses in call to 'print'. Did you mean print(...)?"
+      }
+    },
+    {
+      "repository": "xyj77/MCF-3D-CNN",
+      "path": "utils/utils.py",
+      "commit": "32576a5b2132d1e41146f57cee4d3228fd1ace92",
+      "url": "https://github.com/xyj77/MCF-3D-CNN/blob/32576a5b2132d1e41146f57cee4d3228fd1ace92/utils/utils.py",
+      "git_blob_sha": "60029820b9c72dcca1d2049d14d8f0865fa17165",
+      "sha256": "a96b57c1778d80668e4f2e6b86f4011d88c67d96335f9bd495408b9596041f41",
+      "bytes": 11869,
+      "packet_ids": [
+        "R30"
+      ],
+      "role": "rated_file",
+      "python3_parse": {
+        "error": "SyntaxError",
+        "line": 190,
+        "message": "Missing parentheses in call to 'print'. Did you mean print(...)?"
+      }
+    }
+  ]
+}
