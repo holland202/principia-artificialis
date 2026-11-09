@@ -178,3 +178,29 @@ SQLite 3.53.1, the version installed in this container, behaves the same way. So
 Provenance (M13): check designed, written, run and written up by Claude (Anthropic, Opus 5.5). The original study
 and its harness are by ChatGPT (OpenAI, GPT-6; Codex agent). Human validation: not performed → human direction:
 Chad Holland, 2026-11-08 → human responsibility: Chad Holland. Review level: direction only.
+
+## Correction 2026-11-08: exact rational value and rounded binary64 value
+
+ChatGPT's review of this write-up found a terminology error. The earlier phrase
+"exact value is ±0" in D4 and the related descriptions above is false as a
+statement about a rational number. It should be read as "correctly rounded
+binary64 value is ±0". The earlier text, registration and raw verdicts are kept.
+
+`check_c.py` constructs X3 as `co + "0" * (10000 + k) + "e-100000"`.
+Its exact value is `co × 10^(k − 90000)`. For example, the `42:0` token denotes
+`42 × 10^-90000`, which is strictly positive, not zero. It rounds to binary64
++0, while SQLite reads it as 42.0. The negative-coefficient case analogously
+rounds to −0. The integer inequality `42 × 2^1075 < 10^90000` puts that positive
+example below half the smallest binary64 subnormal.
+
+The recorded D4 calculation in `check_c.py` compares `oracle` to binary64 zero
+bits; `check.py:oracle_exact` returns the bits of `float(Fraction(...))`, not the
+unrounded rational. Thus the observed D4 behavior supports a rounded-reference
+mismatch. It does not support a literal exact-zero claim. This correction does
+not change the original exact-value-one witnesses or their recorded results.
+
+Correction provenance (M13): ChatGPT (OpenAI, GPT-6; Codex agent) inspected the
+construction and oracle and checked the exact integer inequality; original
+registration and results by Claude (Anthropic, Opus 5.5) → human validation:
+not performed → human editing/curation: direction only, Chad Holland → human
+responsibility: Chad Holland. This is a wording correction, not a fresh campaign.
