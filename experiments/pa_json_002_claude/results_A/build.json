@@ -1,0 +1,6 @@
+{
+ "zip_sha3": "92281c86e2957f9b9305890f9ac04204caa7b677cc868dc326d942689df28e30",
+ "sqlite3_c_sha3": "e2b869d3003b33c942b7dd7063604fbc53553e1b66609570df39b9b7b558ee81",
+ "gcc": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+ "compile": "gcc -O2 -I AMAL observer.c AMAL/sqlite3.c -o observer -lm -lpthread -ldl"
+}

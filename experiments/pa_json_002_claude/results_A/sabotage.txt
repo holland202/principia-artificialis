@@ -1,0 +1,69 @@
+$ python3 experiments/pa_json_002_claude/check.py run WORK OUT --sabotage
+{
+ "controls": {
+  "K1_1e0_vs_2e0_distinguished": false,
+  "K2_two_oracles_agree": true,
+  "K3_malformed_rejected": true,
+  "K4_ordinary_controls_exact": false,
+  "K5_oracle_matches_known_bits": true
+ },
+ "families": {
+  "F1": {
+   "c3a": false,
+   "c3b": false,
+   "threshold": null
+  },
+  "F2": {
+   "c3a": false,
+   "c3b": false,
+   "threshold": null
+  }
+ },
+ "observations_sha256": "6a8e82ac9ccfa6909fb5ef547e23d6d8bc0e80607ba8fb422a7a47159b18d993",
+ "observer_header": "#3.54.1\t2026-10-16 14:45:20 555e07ef33f69a0957d24d8e555b702464a131d6f1607f4c3c1e4551e8e6ca76",
+ "oracle_cal_sqlite_unscored": {
+  "0.1": {
+   "expected": "3fb999999999999a",
+   "json": "3fb999999999999a"
+  },
+  "2.4703282292062327e-324": {
+   "expected": "0000000000000000",
+   "json": "0000000000000000"
+  },
+  "2.4703282292062328e-324": {
+   "expected": "0000000000000001",
+   "json": "0000000000000001"
+  },
+  "4.9e-324": {
+   "expected": "0000000000000001",
+   "json": "0000000000000001"
+  },
+  "9007199254740993": {
+   "expected": "4340000000000000",
+   "json": null
+  },
+  "9007199254740995": {
+   "expected": "4340000000000002",
+   "json": null
+  }
+ },
+ "sabotage": true,
+ "sparse_total": 123,
+ "sparse_wrong_count": {
+  "F1": 33,
+  "F2": 33
+ },
+ "tokens": 24320,
+ "total_token_bytes": 162872047,
+ "verdicts": {
+  "C2": "REFUTED",
+  "C3a": "REFUTED",
+  "C3b": "REFUTED",
+  "C3c": "HELD",
+  "C3d": "HELD",
+  "C3e": "HELD",
+  "C3f": "HELD"
+ }
+}
+INSTRUMENT CONTROL FAILED: verdicts are not scorable
+exit 1

@@ -1,0 +1,41 @@
+$ python3 experiments/pa_json_002/run.py --sqlite-lib LIBSQLITE3_CLAUDE --out OUT
+P1: HELD
+P2: HELD
+P3: HELD
+P4: HELD
+P5: HELD
+VERDICT 5 of 5 as registered
+DIGEST c20ab3a00385be45ce58611401af3cbe816690db4051e3f805169d1aa9fd7ba2
+{
+  "sqlite_json": {
+    "pairs": 512,
+    "errors": 0,
+    "pair_disagreements": 166,
+    "baseline_oracle_mismatches": 0,
+    "transformed_oracle_mismatches": 166
+  },
+  "sqlite_cast": {
+    "pairs": 512,
+    "errors": 0,
+    "pair_disagreements": 166,
+    "baseline_oracle_mismatches": 0,
+    "transformed_oracle_mismatches": 166
+  },
+  "python": {
+    "pairs": 512,
+    "errors": 0,
+    "pair_disagreements": 0,
+    "baseline_oracle_mismatches": 0,
+    "transformed_oracle_mismatches": 0
+  },
+  "javascript": {
+    "pairs": 512,
+    "errors": 0,
+    "pair_disagreements": 0,
+    "baseline_oracle_mismatches": 0,
+    "transformed_oracle_mismatches": 0
+  }
+}
+SELF-TESTED; human look NOT PERFORMED; empirical validity NOT RUN; novelty UNRESOLVED
+GATE: PASS instrument consistency only
+exit 0
