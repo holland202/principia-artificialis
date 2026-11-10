@@ -1,6 +1,6 @@
 {
   "title": "Principia Artificialis: An open research program on the mathematical foundations of artificial intelligence",
-  "description": "An open research notes program on the mathematics of artificial thought. Each note registers its predictions before running, includes an anti-vacuity control, and keeps refuted results. AI-assisted: contributing AI systems are credited by model name in each note.",
+  "description": "An open, AI-assisted research notes program on the mathematics of artificial reasoning and verification. The corpus includes speculative proposals, literature intakes, registered experiments, and preserved negative results. Preregistration, anti-vacuity controls, and test evidence are documented per note where applicable; neither experimental verification nor independent reproduction is implied for every note. AI contributions are attributed in the repository.",
   "upload_type": "software",
   "license": "MIT",
   "creators": [

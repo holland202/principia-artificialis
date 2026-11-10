@@ -47,7 +47,16 @@ def tier(status):
         return "Speculative"      # includes the AI-conception labels: argued, no code
     if s.startswith("draft"):
         return "Draft"
-    return "Unmapped"
+    # 2026-11-10: the eight strings below were the Unmapped set at 101 notes. Mapped here, not in the
+    # notes, so the "Status (as written)" column keeps each note's own words. None maps to Verified:
+    # that tier is reserved for reference code that prints the claimed numbers.
+    if "architecture" in s and ("verified" in s or "self-tested" in s):
+        return "Draft"            # structure checked, no run evidence - less than Verified, more than argued
+    if "exploratory" in s or "intake" in s or "read-only" in s:
+        return "Speculative"      # intake/survey work: no registered run of its own
+    if "synthesis" in s or "theoretical framework" in s:
+        return "Speculative"      # argued, no code
+    return "Unmapped"             # includes "-" (no status line): a missing label stays visible
 
 
 rows.sort()
