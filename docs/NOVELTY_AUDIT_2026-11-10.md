@@ -1,6 +1,6 @@
 # Novelty audit of the note series — 2026-11-10
 
-**What this is.** A repository-wide prior-art pass over all 102 indexed notes, grouped into ten
+**What this is.** A repository-wide prior-art pass over 102 discovered note files, grouped into ten
 clusters, with a verdict per cluster on where the program's defensible novelty does and does not
 live. Per the house rule, candidate ideas arrive here as **questions to kill**, not findings:
 this document certifies nothing as novel. A verdict of "possibly distinctive" means a targeted
@@ -36,6 +36,14 @@ cluster J. Program, intake and meta: 10 notes
 assigned to clusters: 102; discovered but unassigned: 0
 PROBLEMS: 0
 ```
+
+**Index-scope discrepancy (not concealed).** The census finds 102 note files, but the generated
+`NOTES_INDEX.md` currently lists 101. The difference is
+`notes/note048_grok_contribution_manifesto.md`: the census accepts `notes/noteNNN_*.md`,
+whereas `scripts/make_index.py` currently does not. This audit's 102-file count is **not**
+a claim that all 102 are indexed or independently verified. Reconciling the index filename
+pattern and the note's classification remains a separate tracked correction; no Verified
+count is increased here.
 
 ![Evidence profile per cluster](../figures/novelty_map.png)
 
