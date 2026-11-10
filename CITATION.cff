@@ -6,8 +6,8 @@ authors:
     given-names: "Chad"
     alias: "holland202"
     orcid: "https://orcid.org/0009-0004-1943-0585"
-version: "0.1.0"
-date-released: "2026-07-15"
+version: "0.2.0"
+date-released: "2026-11-10"
 url: "https://github.com/holland202/principia-artificialis"
 repository-code: "https://github.com/holland202/principia-artificialis"
 license: MIT
