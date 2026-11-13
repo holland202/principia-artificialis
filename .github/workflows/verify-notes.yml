@@ -35,6 +35,16 @@ jobs:
       - name: rule inventory covers the pre-amendment sources (needs full history; exit 2 = could not run)
         run: python scripts/method_lint.py --coverage
       - run: pip install numpy scipy matplotlib
+      - name: MEM-DECAY-001 property tests and a rerun of the registered test split (digest must match RESULTS.md)
+        run: |
+          python -m unittest discover -s experiments/mem_decay_001 -p 'test_memdecay.py' -v
+          set +e
+          python experiments/mem_decay_001/memdecay.py run --split test \
+            --expect-seal 7753da049bef7f4514d0737b203f91ca16850634f5e22ba83a6f579be9b1d338 \
+            --expect-digest b94971e4dcfb25b14306d7f85d55c5730af345f7b6e2e335d3b5d2e8644ed53d | tee memdecay.out
+          set -e
+          grep -q '^DIGEST b94971e4dcfb25b14306d7f85d55c5730af345f7b6e2e335d3b5d2e8644ed53d$' memdecay.out
+          ! grep -q 'DIGEST MISMATCH' memdecay.out
       - name: run every note's reference code
         run: |
           set -e
