@@ -1,0 +1,93 @@
+{
+  "reviewedAt": "2026-11-13",
+  "provenance": "Claude (Anthropic, Opus 5.5) chose the entries, wrote verify_identity_hashes.py and its tests, and ran every command listed here in a Linux container on 2026-11-13 (Python 3.13, numpy 2.5.3). Those runs are SELF-TESTED, not reproductions: Claude did the original hash audit and helped write note067. Human validation: not performed. Human editing and curation: direction by Chad Holland. Human responsibility: Chad Holland.",
+  "report": {
+    "label": "Report your run (research evidence issue)",
+    "url": "https://github.com/holland202/principia-artificialis/issues/new?template=research_evidence.yml"
+  },
+  "entries": [
+    {
+      "id": "qm-obs-001-hashes",
+      "title": "Source-identity hash audit (PA-QM-OBS-001)",
+      "kind": "documentary",
+      "claim": "Each of the ten recorded SHA-256 digests in the PA-QM-OBS-001 source ledger is the hash of exactly its identity line (UTF-8, no trailing newline).",
+      "status": "Recomputed 10/10 by Claude, the original auditor. Nobody else has reported a run yet.",
+      "sources": [
+        {
+          "label": "Source ledger at the audited commit",
+          "url": "https://github.com/holland202/principia-artificialis/blob/a3accc26e1ac34134c0fd028f94afcab7b31201b/docs/external/PA_QM_OBS_001_SOURCES_2026-10-21.md"
+        },
+        {
+          "label": "Audit record (section 2)",
+          "url": "https://github.com/holland202/principia-artificialis/blob/c5140e01e4d15dab9980a3c75812b6afb4f60c6d/docs/PA_QM_OBS_001_AUDIT_2026-10-22.md#2-reference-audit-1010-identity-hashes-reproduced"
+        }
+      ],
+      "files": [
+        "experiments/qm_obs_001_audit/verify_identity_hashes.py",
+        "docs/external/PA_QM_OBS_001_SOURCES_2026-10-21.md"
+      ],
+      "needs": "Python 3 and git. No network after cloning. Runs in under a second.",
+      "steps": [
+        "git clone https://github.com/holland202/principia-artificialis && cd principia-artificialis",
+        "git diff --exit-code a3accc26e1ac34134c0fd028f94afcab7b31201b -- docs/external/PA_QM_OBS_001_SOURCES_2026-10-21.md",
+        "python3 experiments/qm_obs_001_audit/verify_identity_hashes.py"
+      ],
+      "expected": [
+        "RESULT 10/10 MATCH"
+      ],
+      "expectedNote": "The git diff prints nothing and exits 0, so the ledger is unchanged since the audit. The script prints one MATCH line per source, then RESULT 10/10 MATCH, and exits 0.",
+      "control": {
+        "command": "python3 experiments/qm_obs_001_audit/verify_identity_hashes.py --negative-control",
+        "what": "Changes one character of S02's identity line in a temporary copy (Muller to Müller) and checks the copy. The original file is not touched.",
+        "expected": [
+          "RESULT 9/10 MATCH; MISMATCH: S02",
+          "NEGATIVE CONTROL HELD: the one-character change was detected"
+        ]
+      },
+      "crossCheck": "Without the script: printf %s 'LINE' | sha256sum, with LINE copied from a ```text block in the ledger, must print that entry's recorded digest.",
+      "doesNotShow": "That the cited papers say what the intake says. The digests only fix the bibliographic lines against accidental edits."
+    },
+    {
+      "id": "note067-p2",
+      "title": "A kept refutation: note067 P2",
+      "kind": "failure",
+      "claim": "Registered prediction P2 said that with a perfect evaluator (s = 1) the S3P-alone miss rate would be at most 0.05. It was refuted: 0.0545 at p = 0.005.",
+      "status": "Re-run by Claude with the same digest as recorded; CI re-runs it on every change. Nobody else has reported a run yet.",
+      "sources": [
+        {
+          "label": "note067 (result and refutation)",
+          "url": "https://github.com/holland202/principia-artificialis/blob/c5140e01e4d15dab9980a3c75812b6afb4f60c6d/research_notes/note067_evaluator_sensitivity_bound.md"
+        },
+        {
+          "label": "Reference code",
+          "url": "https://github.com/holland202/principia-artificialis/blob/c5140e01e4d15dab9980a3c75812b6afb4f60c6d/scripts/note067_reference.py"
+        }
+      ],
+      "files": [
+        "scripts/note067_reference.py",
+        "research_notes/note067_evaluator_sensitivity_bound.md"
+      ],
+      "needs": "Python 3 and numpy. No network after installing. About 10 seconds on a laptop CPU.",
+      "steps": [
+        "git clone https://github.com/holland202/principia-artificialis && cd principia-artificialis",
+        "pip install numpy",
+        "python3 scripts/note067_reference.py"
+      ],
+      "expected": [
+        "P2  REFUTED",
+        "VERDICT 5 of 6 as registered (P7 is --sabotage)",
+        "DIGEST 44e15cac2d627520307e0901e38f75c5b5669f598ff822a0daf523ae09a0725d"
+      ],
+      "expectedNote": "The script exits 0 only if every outcome and the digest equal what was recorded, including the refutation. A different digest is a discrepancy worth reporting.",
+      "control": {
+        "command": "python3 scripts/note067_reference.py --sabotage",
+        "what": "Replaces the composed bound with the S3P bound alone, so P4 must fail and the script must exit 1.",
+        "expected": [
+          "VERDICT 4 of 6 as registered (P7 is --sabotage)"
+        ]
+      },
+      "crossCheck": "The note's own table gives the exact miss probability 0.049414 at p = 0.005, which the script prints as an unregistered diagnostic.",
+      "doesNotShow": "Anything outside the simulated setting (n = 600, k = 20, seed 0). Reproducing a refutation confirms the record, not a general result."
+    }
+  ]
+}
