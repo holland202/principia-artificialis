@@ -45,6 +45,11 @@ jobs:
           set -e
           grep -q '^DIGEST b94971e4dcfb25b14306d7f85d55c5730af345f7b6e2e335d3b5d2e8644ed53d$' memdecay.out
           ! grep -q 'DIGEST MISMATCH' memdecay.out
+      - name: MEM-DECAY-001 P6 rerun (seal and digest must match RESULTS_P6.md)
+        run: |
+          python experiments/mem_decay_001/memdecay_p6.py run \
+            --expect-seal c2a17dc734a1b3b42be80468682d79c23efe32f7ce7564348798d4524c81e583 \
+            --expect-digest ac1923037a22ea20fd844b9e4fc6fb0644fe5eb88cd8f93564db7f47dda87ddc
       - name: run every note's reference code
         run: |
           set -e
