@@ -11,6 +11,8 @@ Sources (the only ones):
                                     file-name order (the portal half of the same proposal, added 2026-10-22)
   data/dashboard/research_constellation.json
                                     dated public evidence map and commit-pinned sources
+  data/dashboard/reproduce.json     "Reproduce a result" entries: pinned sources, commands, expected output and a
+                                    negative control for each (added 2026-11-13)
 
 Fail-closed (C-BUILD): a card that does not validate, or an index that cannot be parsed, stops the build with
 exit 2 and writes nothing. Nothing is ever rendered from a missing or partial source.
@@ -31,6 +33,7 @@ INDEX = ROOT / "NOTES_INDEX.md"
 CARD = ROOT / "data" / "dashboard" / "egrr_card.json"
 CARDS_DIR = ROOT / "data" / "dashboard" / "cards"
 CONSTELLATION = ROOT / "data" / "dashboard" / "research_constellation.json"
+REPRODUCE = ROOT / "data" / "dashboard" / "reproduce.json"
 PAGE = ROOT / "dashboard.html"
 
 # Each dimension keeps its own vocabulary; a value from one dimension is never shown in another (METHOD.md §4).
@@ -336,6 +339,21 @@ PINNED_PARTS = re.compile(
 )
 
 
+def missing_pinned(pairs, root=ROOT, git=("git",)):
+    """Return 'owner -> sha:path' for every (owner, url) whose file is not at its commit in this clone."""
+    missing = []
+    for owner, url in pairs:
+        sha, path = PINNED_PARTS.match(url).groups()
+        try:
+            result = subprocess.run([*git, "-C", str(root), "cat-file", "-e", f"{sha}:{path}"],
+                                    capture_output=True, timeout=30)
+        except (OSError, subprocess.TimeoutExpired) as exc:
+            raise BuildError(f"could not check pinned sources with git: {exc}")
+        if result.returncode != 0:
+            missing.append(f"{owner} -> {sha[:7]}:{path}")
+    return missing
+
+
 def check_sources_exist(data, root=ROOT, git=("git",)):
     """Fail closed (C-BUILD) unless every pinned source names a file that exists at its commit in this clone.
 
@@ -343,17 +361,12 @@ def check_sources_exist(data, root=ROOT, git=("git",)):
     working-looking source. A clone that lacks the commit (shallow, or a branch never fetched) stops the build
     too: the check cannot tell "not fetched" from "gone", so it does not guess. CI checks out full history.
     """
-    missing = []
-    for node in validate_constellation(data):
-        for entry in node["evidence"]:
-            sha, path = PINNED_PARTS.match(entry["source"]["url"]).groups()
-            try:
-                result = subprocess.run([*git, "-C", str(root), "cat-file", "-e", f"{sha}:{path}"],
-                                        capture_output=True, timeout=30)
-            except (OSError, subprocess.TimeoutExpired) as exc:
-                raise BuildError(f"constellation: could not check pinned sources with git: {exc}")
-            if result.returncode != 0:
-                missing.append(f"{node['id']} -> {sha[:7]}:{path}")
+    pairs = [(node["id"], entry["source"]["url"])
+             for node in validate_constellation(data) for entry in node["evidence"]]
+    try:
+        missing = missing_pinned(pairs, root, git)
+    except BuildError as exc:
+        raise BuildError(f"constellation: {exc}")
     if missing:
         raise BuildError("constellation: pinned source not found in this clone (fetch all branches, "
                          "or fix the link): " + "; ".join(missing))
@@ -407,17 +420,111 @@ def render_constellation(data):
             ' · <a href="data/dashboard/research_constellation.json">Source data and provenance</a></p>')
 
 
-def build(page_text, index_text, card_obj, extra_cards=None, constellation=None):
+REPRODUCE_KINDS = {"documentary": "Documentary check", "failure": "Kept refutation", "result": "Result"}
+
+
+def validate_reproduce(data, root=ROOT):
+    """Each entry needs pinned sources, repo files that exist, steps, expected output and a negative control."""
+    if (not text_field(data, "reviewedAt") or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", data["reviewedAt"])
+            or not text_field(data, "provenance")):
+        raise BuildError("reproduce: missing review date or provenance")
+    report = data.get("report")
+    if (not text_field(report, "label") or not text_field(report, "url")
+            or not report["url"].startswith("https://github.com/holland202/principia-artificialis/")):
+        raise BuildError("reproduce: report link must point into this repository")
+    entries = data.get("entries")
+    if not isinstance(entries, list) or not entries:
+        raise BuildError("reproduce: no entries")
+    ids = set()
+    for entry in entries:
+        eid = entry.get("id") if isinstance(entry, dict) else None
+        if not isinstance(eid, str) or not re.fullmatch(r"[a-z][a-z0-9-]*", eid) or eid in ids:
+            raise BuildError(f"reproduce: invalid or duplicate entry id: {eid}")
+        ids.add(eid)
+        for key in ("title", "claim", "status", "needs", "expectedNote", "crossCheck", "doesNotShow"):
+            if not text_field(entry, key):
+                raise BuildError(f"reproduce: {eid} needs {key}")
+        if entry.get("kind") not in REPRODUCE_KINDS:
+            raise BuildError(f"reproduce: {eid} has an unknown kind")
+        for key in ("steps", "expected"):
+            items = entry.get(key)
+            if not isinstance(items, list) or not items or not all(isinstance(x, str) and x.strip() for x in items):
+                raise BuildError(f"reproduce: {eid} needs non-empty {key}")
+        control = entry.get("control")
+        if (not all(text_field(control, k) for k in ("command", "what"))
+                or not isinstance(control.get("expected"), list) or not control["expected"]
+                or not all(isinstance(x, str) and x.strip() for x in control["expected"])):
+            raise BuildError(f"reproduce: {eid} needs a negative control with a command and expected output")
+        sources = entry.get("sources")
+        if not isinstance(sources, list) or not sources:
+            raise BuildError(f"reproduce: {eid} needs sources")
+        for source in sources:
+            if (not text_field(source, "label") or not text_field(source, "url")
+                    or not PINNED_SOURCE.fullmatch(source["url"])):
+                raise BuildError(f"reproduce: {eid} needs a commit-pinned public PA source for each entry")
+        files = entry.get("files")
+        if not isinstance(files, list) or not files:
+            raise BuildError(f"reproduce: {eid} needs files")
+        for name in files:
+            if (not isinstance(name, str) or name.startswith("/") or ".." in Path(name).parts
+                    or not (root / name).is_file()):
+                raise BuildError(f"reproduce: {eid} names a file that is not in the repository: {name}")
+    return entries
+
+
+def check_reproduce_sources(data, root=ROOT, git=("git",)):
+    pairs = [(e["id"], s["url"]) for e in validate_reproduce(data, root) for s in e["sources"]]
+    try:
+        missing = missing_pinned(pairs, root, git)
+    except BuildError as exc:
+        raise BuildError(f"reproduce: {exc}")
+    if missing:
+        raise BuildError("reproduce: pinned source not found in this clone: " + "; ".join(missing))
+
+
+def render_reproduce(data, root=ROOT):
+    entries = validate_reproduce(data, root)
+    out = []
+    for e in entries:
+        pre = lambda lines: '<pre class="rp-code"><code>' + E("\n".join(lines)) + "</code></pre>"
+        sources = "".join(f'<a href="{E(s["url"])}">{E(s["label"])} ↗</a>' for s in e["sources"])
+        files = "".join(f'<a href="{E(REPO + f)}"><code>{E(f)}</code></a>' for f in e["files"])
+        c = e["control"]
+        out.append(
+            f'<article class="card rp-entry rp-{e["kind"]}" id="rp-{e["id"]}">'
+            f'<div class="tag">{E(REPRODUCE_KINDS[e["kind"]])}</div><h3>{E(e["title"])}</h3>'
+            f'<p><strong>Claim.</strong> {E(e["claim"])}</p>'
+            f'<p><strong>Status.</strong> {E(e["status"])}</p>'
+            f'<p><strong>Needs.</strong> {E(e["needs"])}</p>'
+            f'<h4>Run it</h4>{pre(e["steps"])}'
+            f'<h4>Expected</h4>{pre(e["expected"])}<p>{E(e["expectedNote"])}</p>'
+            f'<h4>Negative control: the check must catch this</h4><p>{E(c["what"])}</p>'
+            f'{pre([c["command"]])}<p>Expected:</p>{pre(c["expected"])}'
+            f'<p><strong>Cross-check.</strong> {E(e["crossCheck"])}</p>'
+            f'<p><strong>What it does not show.</strong> {E(e["doesNotShow"])}</p>'
+            f'<div class="inline-links">{sources}{files}</div></article>')
+    report = data["report"]
+    return ('<div class="grid grid-top rp-grid">\n' + "\n".join(out) + '\n</div>\n'
+            '<p class="rp-report">Ran one? Post your environment (OS, Python, numpy), the full output and any '
+            f'difference, even a matching run. <a href="{E(report["url"])}">{E(report["label"])} ↗</a></p>\n'
+            f'<p class="rc-snapshot">Entries reviewed <time datetime="{data["reviewedAt"]}">{data["reviewedAt"]}</time>'
+            ' · <a href="data/dashboard/reproduce.json">Source data and provenance</a></p>')
+
+
+def build(page_text, index_text, card_obj, extra_cards=None, constellation=None, reproduce=None):
     featured = validate_card(card_obj)
     extra = load_cards() if extra_cards is None else extra_cards
     if constellation is None:
         constellation = json.loads(CONSTELLATION.read_text(encoding="utf-8"))
+    if reproduce is None:
+        reproduce = json.loads(REPRODUCE.read_text(encoding="utf-8"))
     ix = parse_index(index_text)
     blocks = {"overview": None,
               "status-board": render_status(ix),
               "egrr-card": render_card(featured),
               "research-cards": render_cards(featured, extra),
-              "research-constellation": render_constellation(constellation)}
+              "research-constellation": render_constellation(constellation),
+              "reproduce": render_reproduce(reproduce)}
     blocks["overview"] = render_overview(ix, [featured] + [c for _, c in extra])
     out = page_text
     for name, body in blocks.items():
@@ -434,8 +541,10 @@ def main(argv):
         page = PAGE.read_text(encoding="utf-8")
         constellation = json.loads(CONSTELLATION.read_text(encoding="utf-8"))
         check_sources_exist(constellation)
+        reproduce = json.loads(REPRODUCE.read_text(encoding="utf-8"))
+        check_reproduce_sources(reproduce)
         new = build(page, INDEX.read_text(encoding="utf-8"), json.loads(CARD.read_text(encoding="utf-8")),
-                    constellation=constellation)
+                    constellation=constellation, reproduce=reproduce)
     except (OSError, ValueError, BuildError) as exc:
         print(f"COULD NOT BUILD: {exc}")
         return 2

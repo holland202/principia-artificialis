@@ -258,5 +258,67 @@ class ResearchConstellation(unittest.TestCase):
         self.assertEqual(md.build(stale, INDEX, CARD), PAGE)
 
 
+
+REPRODUCE = json.loads(md.REPRODUCE.read_text(encoding="utf-8"))
+
+
+class ReproduceAResult(unittest.TestCase):
+    """Added 2026-11-13 (SELF-TESTED by its author, Claude Opus 5.5)."""
+
+    def test_every_entry_renders_with_steps_expected_and_control(self):
+        rendered = md.render_reproduce(copy.deepcopy(REPRODUCE))
+        for entry in REPRODUCE["entries"]:
+            self.assertIn(f'id="rp-{entry["id"]}"', rendered)
+        self.assertEqual(rendered.count("Negative control: the check must catch this"), len(REPRODUCE["entries"]))
+        self.assertIn(REPRODUCE["report"]["url"].replace("&", "&amp;"), rendered)
+
+    def test_planted_defects_stop_the_build(self):
+        cases = {
+            "no control": lambda d: d["entries"][0].pop("control"),
+            "empty control output": lambda d: d["entries"][0]["control"].update(expected=[]),
+            "empty expected": lambda d: d["entries"][0].update(expected=[]),
+            "unpinned source": lambda d: d["entries"][0]["sources"][0].update(url=md.REPO + "METHOD.md"),
+            "file not in repo": lambda d: d["entries"][0]["files"].append("scripts/no_such_file.py"),
+            "path escape": lambda d: d["entries"][0]["files"].append("../etc/passwd"),
+            "outside report link": lambda d: d["report"].update(url="https://example.com/report"),
+            "duplicate id": lambda d: d["entries"].append(copy.deepcopy(d["entries"][0])),
+            "unknown kind": lambda d: d["entries"][0].update(kind="verified"),
+            "no limits stated": lambda d: d["entries"][0].pop("doesNotShow"),
+        }
+        for name, edit in cases.items():
+            with self.subTest(case=name):
+                data = copy.deepcopy(REPRODUCE)
+                edit(data)
+                with self.assertRaises(md.BuildError):
+                    md.build(PAGE, INDEX, CARD, reproduce=data)
+
+    def test_real_pinned_sources_exist_and_a_missing_one_stops_build(self):
+        md.check_reproduce_sources(copy.deepcopy(REPRODUCE))
+        data = copy.deepcopy(REPRODUCE)
+        url = data["entries"][0]["sources"][0]["url"]
+        data["entries"][0]["sources"][0]["url"] = url.replace(md.PINNED_PARTS.match(url).group(1), "0" * 40)
+        with self.assertRaisesRegex(md.BuildError, data["entries"][0]["id"]):
+            md.check_reproduce_sources(data)
+
+    def test_expected_output_matches_what_the_commands_print(self):
+        """The page may not promise output the record does not show (drift guard)."""
+        import subprocess
+        entry = next(e for e in REPRODUCE["entries"] if e["id"] == "qm-obs-001-hashes")
+        script = ROOT / "experiments/qm_obs_001_audit/verify_identity_hashes.py"
+        run = subprocess.run([sys.executable, str(script)], capture_output=True, text=True, timeout=60)
+        self.assertEqual(run.returncode, 0, run.stdout)
+        for line in entry["expected"]:
+            self.assertIn(line, run.stdout.splitlines())
+        ctrl = subprocess.run([sys.executable, str(script), "--negative-control"],
+                              capture_output=True, text=True, timeout=60)
+        self.assertEqual(ctrl.returncode, 0, ctrl.stdout)
+        for line in entry["control"]["expected"]:
+            self.assertIn(line, ctrl.stdout.splitlines())
+        refutation = next(e for e in REPRODUCE["entries"] if e["id"] == "note067-p2")
+        recorded = (ROOT / "research_notes/note067_evaluator_sensitivity_bound.md").read_text(encoding="utf-8")
+        for line in refutation["expected"]:
+            self.assertIn(line, recorded)
+        self.assertIn("VERDICT 4 of 6", recorded)
+
 if __name__ == "__main__":
     unittest.main()
