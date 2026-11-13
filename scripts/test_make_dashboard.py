@@ -2,6 +2,7 @@
 
 Each planted defect must stop the build (C-BUILD fail-closed); the real sources must build; the drift check must
 return 1 on a hand-edited page and 0 on the generated one. Run: python -m unittest scripts/test_make_dashboard.py
+Constellation tests added 2026-11-13; provenance in data/dashboard/research_constellation.json.
 """
 import copy
 import re
@@ -17,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CARD = json.loads((ROOT / "data/dashboard/egrr_card.json").read_text(encoding="utf-8"))
 INDEX = (ROOT / "NOTES_INDEX.md").read_text(encoding="utf-8")
 PAGE = (ROOT / "dashboard.html").read_text(encoding="utf-8")
+CONSTELLATION = json.loads(md.CONSTELLATION.read_text(encoding="utf-8"))
 
 
 def planted(edit):
@@ -172,6 +174,49 @@ class OutputSafety(unittest.TestCase):
         hand_edited = PAGE.replace(m.group(0), wrong, 1)
         self.assertNotEqual(hand_edited, PAGE, "fixture: tile text not found")
         self.assertNotEqual(md.build(hand_edited, INDEX, copy.deepcopy(CARD)), hand_edited)
+
+
+class ResearchConstellation(unittest.TestCase):
+    def test_nodes_have_details_and_counts_come_from_evidence(self):
+        data = copy.deepcopy(CONSTELLATION)
+        nodes = data["nodes"]
+        rendered = md.render_constellation(data)
+        self.assertEqual(rendered.count('class="rc-node"'), len(nodes))
+        self.assertEqual(rendered.count('class="rc-spoke"'), len(nodes))
+        for node in nodes:
+            fragment = "rc-detail-" + node["id"]
+            self.assertIn(f'href="#{fragment}"', rendered)
+            self.assertIn(f'id="{fragment}"', rendered)
+        for label, kind in (("Independent study reproductions", "reproduced"),
+                            ("Documentary reproductions", "documentary"), ("Failures kept", "failure")):
+            count = sum(entry["kind"] == kind for node in nodes for entry in node["evidence"])
+            self.assertIn(f"<dt>{label}</dt><dd>{count}</dd>", rendered)
+
+    def test_missing_evidence_or_unpinned_source_stops_build(self):
+        cases = (
+            lambda data: data["nodes"][0].update(evidence=[]),
+            lambda data: data["nodes"].append(data["nodes"][0]),
+            lambda data: data["nodes"][0].update(position=[50, 50]),
+            lambda data: data["nodes"][0]["evidence"][0].update(kind="verified"),
+            lambda data: data["nodes"][0]["evidence"][0]["source"].update(url=md.REPO + "METHOD.md"),
+            lambda data: data["nodes"][0]["evidence"][0]["source"].update(url="javascript:alert(1)"),
+        )
+        for number, edit in enumerate(cases):
+            with self.subTest(case=number):
+                data = copy.deepcopy(CONSTELLATION)
+                edit(data)
+                with self.assertRaises(md.BuildError):
+                    md.build(PAGE, INDEX, CARD, constellation=data)
+
+    def test_generated_fragment_detects_drift_and_escapes_text(self):
+        data = copy.deepcopy(CONSTELLATION)
+        data["nodes"][0]["label"] = "<unsafe>"
+        changed = md.build(PAGE, INDEX, CARD, constellation=data)
+        self.assertIn("&lt;unsafe&gt;", changed)
+        self.assertNotIn("<unsafe>", changed)
+        stale = PAGE.replace("Independent study reproductions", "Study reproductions")
+        self.assertNotEqual(stale, PAGE)
+        self.assertEqual(md.build(stale, INDEX, CARD), PAGE)
 
 
 if __name__ == "__main__":
