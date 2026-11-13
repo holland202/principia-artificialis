@@ -1,0 +1,6 @@
+PROBE Q1 {"outcome": ["ALLOW", []]}
+PROBE Q2 {"outcome": ["ALLOW", []]}
+PROBE Q3 {"outcome": ["ALLOW", []]}
+PROBE Q4 {"outcome": ["ALLOW", []]}
+PROBE Q5 {"outcome": ["ALLOW", []]}
+PROBE Q6 {"outcome": ["ALLOW", []]}

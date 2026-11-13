@@ -11,6 +11,10 @@ only.
 
 ## What went wrong, first
 
+- **Update 2026-11-13, read first ([below](#update-2026-11-13)).** This note missed two facts that were already on
+  record when it was written. A fifth implementation, by another family (OpenAI Codex), already existed. And it had
+  already exposed a defect two of the Claude-written implementations shared (OVF-1). Also, a registered run
+  (NOTE076-X1) found that two Claude-written ports differ off the vectors. The text below is kept as written.
 - **The case's evidence is weaker than its result looks.** On 2026-11-06 a Rust port of the Sovereign Veritas
   Gate contract (`sv.gate/0`) matched all 4690 contract vectors on its first run (C7 in
   [`docs/GATE_CONTRACT.md`](https://github.com/holland202/sovereign-veritas/blob/main/docs/GATE_CONTRACT.md)). It is the
@@ -102,3 +106,59 @@ None for this note. The case's code is in Sovereign Veritas (`ports/go`, `ports/
 *Provenance (M13): Claude (Anthropic, Opus 5.5) checked the sources and drafted this note → human validation: not
 performed → human editing/curation: direction by Chad Edward Holland, 2026-11-06 → human responsibility: Chad Edward
 Holland. Review level: direction only.*
+
+## Update 2026-11-13
+
+Appended (M12). Status stays **Speculative**: nothing below tests the claim prospectively.
+
+### What this note got wrong
+
+1. **"All four were written by the same model family" left out a fifth implementation.** A port from another
+   family was on Sovereign Veritas `main` when this note was written:
+   `ports/python_independent/independent_gate.py`. It was written by OpenAI Codex at Putluru Sandeep's direction
+   (SV PR #86, opened 2026-10-20, merged 2026-10-24). It was written from `CONTRACT.md` at `d3a9a88`, and it
+   CONTRIBUTOR REPORTED 4,690/4,690 conformance. Its first run was not recorded, so it cannot score the prediction
+   below.
+2. **The note missed the case that bears most on its claim.** DIFF-001 (SV, registered 2026-10-22) compared the
+   kernel Gate (K), the verifier (V) and that port (I) beyond the vectors. K and V raised `OverflowError` when the
+   quality floor was an integer too large for a double, and I decided. K and V are both Claude-written, and they
+   never disagreed with each other (DIFF-001 P2, 0 in 3,360,000 cases). They shared the defect, the vectors did not
+   contain it, and the cross-family port exposed it. It was fixed as OVF-1 (SV PR #89, 2026-10-22). This is one
+   instance of the claim's mechanism, found after the fact. Recording it does not confirm the claim.
+
+### A same-family common-mode case outside this contract
+
+Sovereign Memory Layer PDX-001 (SML PR #19, 2026-11-13). Three implementations, the Python reference and the Rust
+and TypeScript ports, all Claude-written, shared two defects. Protected records decayed. And "current evidence not
+retrieved" was reported as "insufficient evidence". The cross-implementation differential CI passed at `6262dbe`,
+before the fix, while all three were wrong in the same way. A behavioural test written against the stated intent
+caught it (MEM-DECAY-001 S1, in this repository). That test is also Claude-written, so this case shows agreement is
+not correctness. It does not show that another family would have caught it.
+
+### NOTE076-X1: registered and run on 2026-11-13
+
+[Registration](../experiments/note076_x1/REGISTRATION.md) · [Results](../experiments/note076_x1/RESULTS.md).
+Five implementations, six probes with out-of-range numbers, scored against the fixed kernel.
+
+- **A2 REFUTED.** The Go port prints `0.2000<+Inf` where K, V, the Rust port and the Codex port print
+  `0.2000<inf`. It does so on two probes, a floor of `10**400` and of `2**1024`. All five conform on the 4,690
+  vectors. `CONTRACT.md` does not say how an infinite floor prints to four places, so the text does not decide
+  between them.
+- A1, A3 and A4 held. Controls held: the kernel before the fix crashes on the probe (C1), an always-ALLOW
+  program differs (C2), and all five arms conform (C3).
+
+**What this changes here.** Two Claude-written ports read one gap in the contract differently, each taking its
+language's default. So "one family reads the contract one way" is too strong as stated. A better version, still
+untested: same-family implementations share failures where they share *code or reasoning* (K and V; the three SML
+implementations). Where the contract is silent they can still diverge on language defaults. And a check on fixed
+vectors sees neither.
+
+### Door (M15), replacing the candidate prediction above
+
+The candidate prediction is now frozen as Part B of
+[NOTE076-X1](../experiments/note076_x1/REGISTRATION.md) (B1–B3), with a fixed prompt
+([PROMPT.md](../experiments/note076_x1/PROMPT.md)) so that a cross-family port's first run is recorded. **Unrun.**
+
+*Provenance of this update (M13): Claude (Anthropic, Opus 5.5) found the omissions, registered, ran and wrote
+NOTE076-X1, and drafted this update → human validation: not performed → human editing/curation: direction by Chad
+Holland, 2026-11-13 → human responsibility: Chad Holland. Review level: direction only.*
