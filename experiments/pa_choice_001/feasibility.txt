@@ -1,0 +1,4 @@
+cases 256 unique expressions 256 separate AST answer matches 256
+development cases 128 templates 8 correct positions [(0, 32), (1, 32), (2, 32), (3, 32)] correct numeric ranks [(0, 32), (1, 32), (2, 32), (3, 32)] negative/zero/positive 17 0 111 sha256 e015deebcfffcdb116701771b5bb39d8eb361c759c8074cd592a71ba6a17a47b
+holdout cases 128 templates 8 correct positions [(0, 32), (1, 32), (2, 32), (3, 32)] correct numeric ranks [(0, 32), (1, 32), (2, 32), (3, 32)] negative/zero/positive 29 3 96 sha256 b931fe0b9f59197dcd8c37e37cf2431c930007a2686838439a501136172dd7e5
+full corpus sha256 41d5e468e470aeff8c01c91c9bf9d3d59759a1b4c03069cd2873d31a405cb58c

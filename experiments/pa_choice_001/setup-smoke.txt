@@ -1,0 +1,7 @@
+Nonstudy smoke prompt: Sky color? A. Blue B. Red C. Pink D. Yellow
+choice token IDs [362, 425, 356, 422]
+unbiased log probabilities [-0.9664617776870728, -1.6942068338394165, -1.3270536661148071, -1.8232733011245728]
+biased probe repeats [[-0.9664617776870728, -1.6942068338394165, -1.3270536661148071, -1.8232733011245728], [-0.9664617776870728, -1.6942068338394165, -1.3270536661148071, -1.8232733011245728], [-0.9664617776870728, -1.6942068338394165, -1.3270536661148071, -1.8232733011245728]]
+maximum unbiased/bias log-probability difference 0.0
+maximum same-input log-probability spread 0.0
+separate nonstudy throughput smoke: 48 generated tokens 1.250 seconds
