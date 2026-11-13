@@ -21,6 +21,7 @@ Research Constellation addition (2026-11-13): see provenance in research_constel
 import html
 import json
 import re
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -330,6 +331,34 @@ def validate_constellation(data):
     return nodes
 
 
+PINNED_PARTS = re.compile(
+    r"https://github\.com/holland202/principia-artificialis/blob/([0-9a-f]{40})/([^#]+)"
+)
+
+
+def check_sources_exist(data, root=ROOT, git=("git",)):
+    """Fail closed (C-BUILD) unless every pinned source names a file that exists at its commit in this clone.
+
+    A link pinned to a commit only on a deleted branch, or to a mistyped path, would otherwise render as a
+    working-looking source. A clone that lacks the commit (shallow, or a branch never fetched) stops the build
+    too: the check cannot tell "not fetched" from "gone", so it does not guess. CI checks out full history.
+    """
+    missing = []
+    for node in validate_constellation(data):
+        for entry in node["evidence"]:
+            sha, path = PINNED_PARTS.match(entry["source"]["url"]).groups()
+            try:
+                result = subprocess.run([*git, "-C", str(root), "cat-file", "-e", f"{sha}:{path}"],
+                                        capture_output=True, timeout=30)
+            except (OSError, subprocess.TimeoutExpired) as exc:
+                raise BuildError(f"constellation: could not check pinned sources with git: {exc}")
+            if result.returncode != 0:
+                missing.append(f"{node['id']} -> {sha[:7]}:{path}")
+    if missing:
+        raise BuildError("constellation: pinned source not found in this clone (fetch all branches, "
+                         "or fix the link): " + "; ".join(missing))
+
+
 def constellation_satellite(node):
     x, y = node["position"]
     distance = ((x - 50) ** 2 + (y - 50) ** 2) ** 0.5
@@ -403,7 +432,10 @@ def main(argv):
     check = "--check" in argv
     try:
         page = PAGE.read_text(encoding="utf-8")
-        new = build(page, INDEX.read_text(encoding="utf-8"), json.loads(CARD.read_text(encoding="utf-8")))
+        constellation = json.loads(CONSTELLATION.read_text(encoding="utf-8"))
+        check_sources_exist(constellation)
+        new = build(page, INDEX.read_text(encoding="utf-8"), json.loads(CARD.read_text(encoding="utf-8")),
+                    constellation=constellation)
     except (OSError, ValueError, BuildError) as exc:
         print(f"COULD NOT BUILD: {exc}")
         return 2
