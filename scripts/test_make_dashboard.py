@@ -208,6 +208,45 @@ class ResearchConstellation(unittest.TestCase):
                 with self.assertRaises(md.BuildError):
                     md.build(PAGE, INDEX, CARD, constellation=data)
 
+    def test_real_pinned_sources_exist_in_this_clone(self):
+        md.check_sources_exist(copy.deepcopy(CONSTELLATION))
+
+    def test_pinned_source_that_is_not_in_the_clone_stops_build(self):
+        url = CONSTELLATION["nodes"][0]["evidence"][0]["source"]["url"]
+        sha = md.PINNED_PARTS.match(url).group(1)
+        cases = (
+            ("unknown commit", lambda u: u.replace(sha, "0" * 40)),
+            ("missing path at a real commit", lambda u: u.replace(".md", "_NOT_THERE.md", 1)),
+        )
+        for name, edit in cases:
+            with self.subTest(case=name):
+                data = copy.deepcopy(CONSTELLATION)
+                source = data["nodes"][0]["evidence"][0]["source"]
+                source["url"] = edit(source["url"])
+                self.assertNotEqual(source["url"], url, "fixture: mutation did not apply")
+                with self.assertRaisesRegex(md.BuildError, data["nodes"][0]["id"]):
+                    md.check_sources_exist(data)
+
+    def test_source_check_without_git_fails_closed(self):
+        with self.assertRaisesRegex(md.BuildError, "could not check"):
+            md.check_sources_exist(copy.deepcopy(CONSTELLATION), git=("no-such-git-binary-for-test",))
+
+    def test_cli_exits_2_when_a_pinned_source_is_missing(self):
+        import tempfile
+        data = copy.deepcopy(CONSTELLATION)
+        url = data["nodes"][-1]["evidence"][0]["source"]["url"]
+        data["nodes"][-1]["evidence"][0]["source"]["url"] = url.replace(
+            md.PINNED_PARTS.match(url).group(1), "f" * 40)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "constellation.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            saved, md.CONSTELLATION = md.CONSTELLATION, path
+            try:
+                self.assertEqual(md.main(["--check"]), 2)
+            finally:
+                md.CONSTELLATION = saved
+        self.assertEqual(md.main(["--check"]), 0)
+
     def test_generated_fragment_detects_drift_and_escapes_text(self):
         data = copy.deepcopy(CONSTELLATION)
         data["nodes"][0]["label"] = "<unsafe>"
