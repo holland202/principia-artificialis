@@ -9,22 +9,27 @@ Sources (the only ones):
                                     2026-10-20 design proposal)
   data/dashboard/cards/*.json       further research cards in the same schema, one file per study, rendered in
                                     file-name order (the portal half of the same proposal, added 2026-10-22)
+  data/dashboard/research_constellation.json
+                                    dated public evidence map and commit-pinned sources
 
 Fail-closed (C-BUILD): a card that does not validate, or an index that cannot be parsed, stops the build with
 exit 2 and writes nothing. Nothing is ever rendered from a missing or partial source.
 Exit codes: 0 ok / up to date, 1 --check found drift, 2 could not build.
 Stdlib only. Written by Claude (Anthropic, Opus 5.5), 2026-10-22, at Chad Holland's direction.
+Research Constellation addition (2026-11-13): see provenance in research_constellation.json.
 """
 import html
 import json
 import re
 import sys
+from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 INDEX = ROOT / "NOTES_INDEX.md"
 CARD = ROOT / "data" / "dashboard" / "egrr_card.json"
 CARDS_DIR = ROOT / "data" / "dashboard" / "cards"
+CONSTELLATION = ROOT / "data" / "dashboard" / "research_constellation.json"
 PAGE = ROOT / "dashboard.html"
 
 # Each dimension keeps its own vocabulary; a value from one dimension is never shown in another (METHOD.md §4).
@@ -270,14 +275,120 @@ def render_cards(featured, extra):
             'Order is by file name, not by importance.</p>\n' + "\n".join(out))
 
 
-def build(page_text, index_text, card_obj, extra_cards=None):
+EVIDENCE_LABELS = {
+    "reproduced": "Independent study reproduction",
+    "documentary": "Independent documentary reproduction",
+    "reported": "Author-reported",
+    "failure": "Failure kept",
+    "untested": "Untested",
+    "unresolved": "Unresolved",
+    "reference": "Reference",
+}
+PINNED_SOURCE = re.compile(
+    r"https://github\.com/holland202/principia-artificialis/blob/[0-9a-f]{40}/"
+    r"[A-Za-z0-9_./-]+(?:#[A-Za-z0-9_-]+)?"
+)
+
+
+def text_field(obj, key):
+    value = obj.get(key) if isinstance(obj, dict) else None
+    return isinstance(value, str) and bool(value.strip())
+
+
+def validate_constellation(data):
+    if (not text_field(data, "reviewedAt") or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", data["reviewedAt"])
+            or not text_field(data, "provenance")):
+        raise BuildError("constellation: missing review date or provenance")
+    nodes = data.get("nodes")
+    if not isinstance(nodes, list) or not nodes:
+        raise BuildError("constellation: no nodes")
+    ids, positions = set(), {(50, 50)}
+    for node in nodes:
+        if not all(text_field(node, key) for key in ("id", "label", "title")):
+            raise BuildError("constellation: node needs id, label and title")
+        nid = node["id"]
+        if nid in ids or not re.fullmatch(r"[a-z][a-z0-9-]*", nid):
+            raise BuildError(f"constellation: invalid or duplicate node id: {nid}")
+        ids.add(nid)
+        pos = node.get("position")
+        if (not isinstance(pos, list) or len(pos) != 2
+                or any(type(value) is not int or not 0 < value < 100 for value in pos)
+                or tuple(pos) in positions):
+            raise BuildError(f"constellation: invalid or duplicate node position: {nid}")
+        positions.add(tuple(pos))
+        entries = node.get("evidence")
+        if not isinstance(entries, list) or not entries:
+            raise BuildError(f"constellation: no evidence for {nid}")
+        for entry in entries:
+            if (not text_field(entry, "text") or not text_field(entry, "kind")
+                    or entry["kind"] not in EVIDENCE_LABELS):
+                raise BuildError(f"constellation: invalid evidence for {nid}")
+            source = entry.get("source")
+            if (not text_field(source, "label") or not text_field(source, "url")
+                    or not PINNED_SOURCE.fullmatch(source["url"])):
+                raise BuildError(f"constellation: {nid} needs a commit-pinned public PA source for each entry")
+    return nodes
+
+
+def constellation_satellite(node):
+    x, y = node["position"]
+    distance = ((x - 50) ** 2 + (y - 50) ** 2) ** 0.5
+    dx, dy = (50 - y) / distance * 0.2, (x - 50) / distance * 0.2
+    style = f"--x:{x}%;--y:{y}%;--dx:{dx:.3f}%;--dy:{dy:.3f}%"
+    kind = node["evidence"][0]["kind"]
+    return (f'<div class="rc-satellite rc-{kind}" style="{style}">'
+            '<span class="rc-spoke" aria-hidden="true"></span>'
+            f'<a class="rc-node" href="#rc-detail-{node["id"]}">'
+            f'<span class="rc-dot" aria-hidden="true"></span>{E(node["label"])}</a></div>')
+
+
+def constellation_detail(node):
+    entries = []
+    for item in node["evidence"]:
+        kind, source = item["kind"], item["source"]
+        entries.append(
+            f'<li class="rc-entry rc-{kind}"><span class="rc-kind">{E(EVIDENCE_LABELS[kind])}</span>'
+            f'<p>{E(item["text"])}</p><a href="{E(source["url"])}">{E(source["label"])}</a></li>'
+        )
+    return (f'<article class="rc-detail" id="rc-detail-{node["id"]}">'
+            f'<h3 tabindex="-1">{E(node["title"])}</h3><ul>{"".join(entries)}</ul>'
+            '<a class="rc-back" href="#rc-map">Back to map</a></article>')
+
+
+def render_constellation(data):
+    nodes = validate_constellation(data)
+    counts = Counter(item["kind"] for node in nodes for item in node["evidence"])
+    telemetry = (("Research nodes", len(nodes)), ("Independent study reproductions", counts["reproduced"]),
+                 ("Documentary reproductions", counts["documentary"]), ("Failures kept", counts["failure"]))
+    metrics = "".join(f'<div><dt>{label}</dt><dd>{count}</dd></div>' for label, count in telemetry)
+    legend = "".join(
+        f'<li class="rc-{kind}"><span class="rc-dot" aria-hidden="true"></span>{E(label)}</li>'
+        for kind, label in EVIDENCE_LABELS.items()
+    )
+    return ('<div class="rc-layout">\n'
+            '<div class="rc-chart"><div class="rc-map" id="rc-map" role="group" '
+            'aria-label="Research records" tabindex="-1">\n'
+            '<div class="rc-hub" aria-hidden="true"><b>PA</b></div>\n'
+            + "\n".join(map(constellation_satellite, nodes))
+            + f'\n</div><ul class="rc-legend" aria-label="Evidence labels">{legend}</ul></div>\n'
+            f'<div class="rc-inspector"><dl class="rc-telemetry" aria-label="Counts for this map">{metrics}</dl>'
+            + "\n".join(map(constellation_detail, nodes))
+            + '</div></div>\n'
+            f'<p class="rc-snapshot">Sources reviewed <time datetime="{data["reviewedAt"]}">{data["reviewedAt"]}</time>'
+            ' · <a href="data/dashboard/research_constellation.json">Source data and provenance</a></p>')
+
+
+def build(page_text, index_text, card_obj, extra_cards=None, constellation=None):
     featured = validate_card(card_obj)
     extra = load_cards() if extra_cards is None else extra_cards
+    if constellation is None:
+        constellation = json.loads(CONSTELLATION.read_text(encoding="utf-8"))
     ix = parse_index(index_text)
     blocks = {"overview": None,
               "status-board": render_status(ix),
               "egrr-card": render_card(featured),
-              "research-cards": render_cards(featured, extra)}
+              "research-cards": render_cards(featured, extra),
+              "research-constellation": render_constellation(constellation)}
     blocks["overview"] = render_overview(ix, [featured] + [c for _, c in extra])
     out = page_text
     for name, body in blocks.items():
@@ -300,7 +411,7 @@ def main(argv):
         if new != page:
             print("DRIFT: dashboard.html does not match its sources; run python scripts/make_dashboard.py")
             return 1
-        print("dashboard.html matches NOTES_INDEX.md, egrr_card.json and data/dashboard/cards/")
+        print("dashboard.html matches NOTES_INDEX.md and the sources in data/dashboard/")
         return 0
     if new != page:
         PAGE.write_text(new, encoding="utf-8")

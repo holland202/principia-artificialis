@@ -1,0 +1,179 @@
+{
+  "reviewedAt": "2026-11-13",
+  "provenance": "ChatGPT (OpenAI, GPT-6 family, exact variant unavailable) checked public records and drafted this map. Human validation: not performed. Human editing and curation: direction only by Chad Holland. Human responsibility: Chad Holland.",
+  "nodes": [
+    {
+      "id": "egrr",
+      "label": "EGRR",
+      "title": "Evidence-Gated Residual Representation",
+      "position": [
+        79,
+        30
+      ],
+      "evidence": [
+        {
+          "kind": "reported",
+          "text": "Putluru Sandeep reported lower calibration error than magnitude selection in one synthetic case. The same inputs were used for selection and scoring.",
+          "source": {
+            "label": "Submitted evidence archive",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/contributions/sunny-kavixo/egrr/2026-10-14_snapshot/README.md"
+          }
+        },
+        {
+          "kind": "untested",
+          "text": "The reviewed card records a draft protocol and no registered execution. The proposed held-out gain remains untested.",
+          "source": {
+            "label": "Reviewed EGRR card",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/data/dashboard/egrr_card.json"
+          }
+        },
+        {
+          "kind": "unresolved",
+          "text": "The P1 estimand and fixed-sample decision rule still need a defensible basis in the reviewed record.",
+          "source": {
+            "label": "Statistical feasibility review",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/contributions/sunny-kavixo/egrr/2026-10-14_snapshot/records/egrr_issue28_statistical_feasibility.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "fit",
+      "label": "FIT-001",
+      "title": "Function-Invariant Tomography",
+      "position": [
+        50,
+        13
+      ],
+      "evidence": [
+        {
+          "kind": "untested",
+          "text": "The public v3.1 dossier is a draft. It records no frozen protocol or Stage 0, 1 or 2 training runs.",
+          "source": {
+            "label": "Public FIT-001 dossier",
+            "url": "https://github.com/holland202/principia-artificialis/blob/02ef6d1eadc245041ff371e256e411e0c79a02cc/research/FIT-001/FIT-001_DRAFT.md"
+          }
+        },
+        {
+          "kind": "reported",
+          "text": "Kimi reported local float64 calculations. The draft lists code, raw logs and machine details as missing.",
+          "source": {
+            "label": "Dossier evidence ledger",
+            "url": "https://github.com/holland202/principia-artificialis/blob/02ef6d1eadc245041ff371e256e411e0c79a02cc/research/FIT-001/FIT-001_DRAFT.md#9-proposed-provenance-and-evidence-ledger"
+          }
+        }
+      ]
+    },
+    {
+      "id": "growth",
+      "label": "GROWTH",
+      "title": "GROWTH",
+      "position": [
+        20,
+        30
+      ],
+      "evidence": [
+        {
+          "kind": "unresolved",
+          "text": "The public research profile names GROWTH and separates registration from permission to run. The reviewed public records did not establish a protocol, run or outcome.",
+          "source": {
+            "label": "Public research profile",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/.claude/RESEARCH_PROFILE.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "hash-audit",
+      "label": "Hash audit",
+      "title": "Source-identity hash audit",
+      "position": [
+        20,
+        60
+      ],
+      "evidence": [
+        {
+          "kind": "documentary",
+          "text": "A separate AI reviewer recomputed ten source-identity hashes for PA-QM-OBS-001 and reported ten matches. The reproduction concerns the hash check. Human review was direction only.",
+          "source": {
+            "label": "PA-QM-OBS-001 reference audit",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/docs/PA_QM_OBS_001_AUDIT_2026-10-22.md#2-reference-audit-1010-identity-hashes-reproduced"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sway",
+      "label": "SWAY",
+      "title": "SWAY research method",
+      "position": [
+        80,
+        60
+      ],
+      "evidence": [
+        {
+          "kind": "reference",
+          "text": "The canonical method describes how PA registers claims, records failures and checks provenance.",
+          "source": {
+            "label": "Canonical method",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/METHOD.md"
+          }
+        },
+        {
+          "kind": "unresolved",
+          "text": "The Amendment 3 results record self-tests and leave the P6 and P7 follow-up predictions unrun in that record.",
+          "source": {
+            "label": "Amendment 3 results",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/METHOD_SWAY_AMENDMENT_3_RESULTS.md#predictions"
+          }
+        }
+      ]
+    },
+    {
+      "id": "refutations",
+      "label": "Refutations",
+      "title": "Retained refutations",
+      "position": [
+        26,
+        85
+      ],
+      "evidence": [
+        {
+          "kind": "failure",
+          "text": "Note 052 preserves a refuted prediction about verification instruments across the surveyed repositories. P1 missed its registered threshold.",
+          "source": {
+            "label": "Note 052 and its result",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/research_notes/note052_verification_that_cannot_fail.md"
+          }
+        }
+      ]
+    },
+    {
+      "id": "intake",
+      "label": "Research intake",
+      "title": "Public research intake",
+      "position": [
+        74,
+        85
+      ],
+      "evidence": [
+        {
+          "kind": "reference",
+          "text": "The November 13 scan draft records that no new candidate met the intake threshold. It preserves the duplicate exclusions and coverage limits.",
+          "source": {
+            "label": "November 13 scan draft",
+            "url": "https://github.com/holland202/principia-artificialis/blob/cfedd2a4a4ae7fc65507b733e7125d3ac7192653/references/intake_2026-11-13_karpathy_research_tools.md"
+          }
+        },
+        {
+          "kind": "reference",
+          "text": "The published November 11 note preserves its pre-merge AIPOCH correction and attributes the benchmark result to the project.",
+          "source": {
+            "label": "November 11 intake record",
+            "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/references/intake_2026-11-11_prompt_injection_curation_aipoch.md"
+          }
+        }
+      ]
+    }
+  ]
+}
