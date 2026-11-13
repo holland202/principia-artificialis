@@ -94,7 +94,7 @@
       "evidence": [
         {
           "kind": "documentary",
-          "text": "A separate AI reviewer recomputed ten source-identity hashes for PA-QM-OBS-001 and reported ten matches. The reproduction concerns the hash check. Human review was direction only.",
+          "text": "A separate AI reviewer, Claude (Anthropic, Opus 5.5), recomputed ten source-identity hashes for PA-QM-OBS-001 and reported ten matches. The reproduction concerns the hash check. Human review was direction only.",
           "source": {
             "label": "PA-QM-OBS-001 reference audit",
             "url": "https://github.com/holland202/principia-artificialis/blob/aa4e3447354e3bf8201ef95377498be79abdec7e/docs/PA_QM_OBS_001_AUDIT_2026-10-22.md#2-reference-audit-1010-identity-hashes-reproduced"
@@ -159,9 +159,9 @@
       "evidence": [
         {
           "kind": "reference",
-          "text": "The November 13 scan draft records that no new candidate met the intake threshold. It preserves the duplicate exclusions and coverage limits.",
+          "text": "The November 13 scan record states that no new candidate met the intake threshold. It preserves the duplicate exclusions and coverage limits.",
           "source": {
-            "label": "November 13 scan draft",
+            "label": "November 13 scan record",
             "url": "https://github.com/holland202/principia-artificialis/blob/cfedd2a4a4ae7fc65507b733e7125d3ac7192653/references/intake_2026-11-13_karpathy_research_tools.md"
           }
         },

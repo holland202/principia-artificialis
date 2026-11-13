@@ -26,6 +26,7 @@
 .rc-map {
   position: relative;
   isolation: isolate;
+  width: 100%;
   aspect-ratio: 1.35;
   min-height: 340px;
   border-radius: 11px 11px 0 0;
