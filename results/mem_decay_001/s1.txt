@@ -1,0 +1,41 @@
+MEM-DECAY-001 S1 | SML 6262dbe | python 3.13.18 numpy 2.5.3 | dim 384
+50 cases; each: 1 protected critical (220-365 d), 6 newer competitors (0-30 d), 20 filler; SML defaults half_life 30 d, threshold 0.15; top_k 5
+
+main (old protected critical)
+  retrieve/similarity           50/50 1.000
+  retrieve/recency               0/50 0.000
+  retrieve/importance            0/50 0.000
+  retrieve/protected             0/50 0.000
+  recall/similarity KNOWN       50/50 1.000
+  recall/recency KNOWN           0/50 0.000
+  recall/importance KNOWN        0/50 0.000
+  recall/protected KNOWN         0/50 0.000
+
+control A: critical 0-1 days old
+  retrieve/similarity           50/50 1.000
+  retrieve/recency              50/50 1.000
+  retrieve/importance           50/50 1.000
+  retrieve/protected            50/50 1.000
+  recall/similarity KNOWN       50/50 1.000
+  recall/recency KNOWN          50/50 1.000
+  recall/importance KNOWN       50/50 1.000
+  recall/protected KNOWN        50/50 1.000
+
+control B: half_life 1e15 s
+  retrieve/similarity           50/50 1.000
+  retrieve/recency              50/50 1.000
+  retrieve/importance           50/50 1.000
+  retrieve/protected            50/50 1.000
+  recall/similarity KNOWN       50/50 1.000
+  recall/recency KNOWN          50/50 1.000
+  recall/importance KNOWN       50/50 1.000
+  recall/protected KNOWN        50/50 1.000
+
+HELD    S1a retrieve/similarity finds the old protected critical record in >= 0.95 of cases
+HELD    S1b retrieve/protected finds it in <= 0.05 of cases (decay buries a protected record)
+HELD    S1c recall(key, method=protected) answers KNOWN in <= 0.05 of cases (stored but reported UNKNOWN)
+HELD    S1d recall(key) with the default method (similarity) answers KNOWN in >= 0.95 of cases
+HELD   control A: a recent protected critical is found by retrieve/protected in >= 0.95
+HELD   control B: with no effective decay, retrieve/protected finds it in >= 0.95
+DIGEST e267ab3429d2927ac232ada3dcbebb5ed3e5d7043227a08ffe958f16de4f0067
+s1 exit=0
