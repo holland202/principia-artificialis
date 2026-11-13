@@ -1,0 +1,9 @@
+sv-pin 7be4909ea6bd960e41cdb0b5ce87cd20758b5aa2
+sv-prefix 7a8578a140492a31774f42e226c7300caf5bf303
+go version go1.24.7 linux/amd64
+rustc 1.97.0 (2d8144b78 2026-07-07)
+Python 3.13.18
+Linux x86_64
+d44fdd71b53b8cae0ace484448acc0d0aac722e59fc7a38d5336ba242d466268  /home/claude/x1bin/svgate-go
+2e80b9486b611fda26e29841f1c833d296dcd379d4d317c06be2219985ea36f9  /home/claude/x1bin/svgate-rust
+built: (cd ports/go && go build -o svgate-go .) ; (cd ports/rust && cargo build --release) in sv-pin

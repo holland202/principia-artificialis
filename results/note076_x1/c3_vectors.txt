@@ -1,0 +1,26 @@
+# C3: vectors
+## K: python3 experiments/note076_x1/serve_kernel.py /home/claude/sv-pin
+vectors 4690 | mismatches L=0 S=0 X=0 other=0
+conformance digest 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628  (expected 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628)
+VERDICT  CONFORMS
+exit 0
+## V: python3 /home/claude/sv-pin/tools/gate_contract.py --serve verifier
+vectors 4690 | mismatches L=0 S=0 X=0 other=0
+conformance digest 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628  (expected 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628)
+VERDICT  CONFORMS
+exit 0
+## G: /home/claude/x1bin/svgate-go
+vectors 4690 | mismatches L=0 S=0 X=0 other=0
+conformance digest 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628  (expected 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628)
+VERDICT  CONFORMS
+exit 0
+## R: /home/claude/x1bin/svgate-rust
+vectors 4690 | mismatches L=0 S=0 X=0 other=0
+conformance digest 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628  (expected 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628)
+VERDICT  CONFORMS
+exit 0
+## I: python3 /home/claude/sv-pin/ports/python_independent/independent_gate.py
+vectors 4690 | mismatches L=0 S=0 X=0 other=0
+conformance digest 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628  (expected 44823d0ff707213ae8bc310ed8b21e135f8e742fd8834e8f9474743d3a250628)
+VERDICT  CONFORMS
+exit 0
