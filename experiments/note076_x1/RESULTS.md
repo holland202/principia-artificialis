@@ -75,15 +75,16 @@ Following the registered interpretation:
   now with an instance.
 - **Limits.** This is one input class, chosen after OVF-1 (C-EXPLORE), with six probes. It is descriptive and cannot
   confirm note076's claim. Only the cross-family port I is from another family, and it agrees with K. Its file is
-  unchanged since PR #86 (2026-10-20), so it printed `inf` before the fix existed. The fix's choice of `inf` may
-  have followed it; the OVF-1 records do not say.
+  unchanged since PR #86 (2026-10-20), so it printed `inf` before the fix existed. The fix took `inf` from it: OVF-1's
+  registration (SV `docs/OVF1_PREREG.md`, R2) names the target string as "the string the independent port returns".
+  So K agreeing with I here is partly by construction.
 
 ## Doors
 
 - **Part B (NOT RUN):** fresh cross-family ports with first runs recorded, per the frozen [PROMPT.md](PROMPT.md).
-- **SV (not done here, needs a decision there):** either `CONTRACT.md` states how an infinite floor prints (and a
-  vector pins it, which changes the vectors file and the digest), or the Go port's `fixed4` maps ±Inf to `inf` and
-  `-inf`. Both are changes to Sovereign Veritas under its own change control.
+- **SV:** fixed in Sovereign Veritas PR #118 (registered first as `docs/OVF1_GO_PREREG.md`). The Go port's
+  `fixed4` now prints ±Inf as `inf` and `-inf`, and `CONTRACT.md` states the rule. A vector pinning it is still open,
+  because it would change the vectors file and the digest.
 - Input classes other than out-of-range numbers are unrun.
 
 ---
