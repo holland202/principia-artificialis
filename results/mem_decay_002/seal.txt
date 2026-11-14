@@ -1,0 +1,9 @@
+MEM-DECAY-002 | split=test seed=20261116 | python 3.13.18 numpy 2.5.3
+store 12200 records, 1200 queries; T = h = 185.6290 days (filler median); k = 5; pin threshold 0.5
+SEAL 5636518b7638d0e0c246978aaeeb1505d92430e75ded16314cf9e401e476c22b
+generated inputs (C-SYNTH):
+  use count mean: critical 0.000, other 1.980
+  eps 0.0: critical labelled >= 0.5: 1.0000 (200/200); other labelled >= 0.5: 0.00000 (0/12000)
+  eps 0.1: critical labelled >= 0.5: 0.8300 (166/200); other labelled >= 0.5: 0.01058 (127/12000)
+  eps 0.3: critical labelled >= 0.5: 0.6450 (129/200); other labelled >= 0.5: 0.03142 (377/12000)
+sealed; nothing scored
