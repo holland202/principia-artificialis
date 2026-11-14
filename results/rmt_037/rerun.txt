@@ -1,0 +1,88 @@
+RMT-037 | python 3.13.18 numpy 2.5.3 scipy 1.18.1
+small weights sha256 248dfc3911869ec493c76e65bf2fcf7f615828b0254c12b473182f0f81d3a707
+medium weights sha256 fc5a354a19255ad494f3d71549390baca1ccf61d1d822b9408971705c687c9cd
+references: POIS(64) bulk 0.3855 +- 0.0013; GOE(64) bulk 0.5309 +- 0.0012; GOE(128) bulk 0.5319; GOE(64) edge 0.5208; C3 max rel diff 1.026e-15
+note037 pipeline on true GOE(64): rejects 0.007 of 1000 at p < 0.05
+
+== small: 12 layers x 12 heads; weights read twice identical: True
+  TRAINED QK levels min 0.1674 median 12.64 max 268.7 (n=9216) | SYM levels min -107.6 median 0.01841 max 158.3 (n=18432)
+  INIT    QK levels min 0.1835 median 0.2964 max 0.4448 (n=9216) | SYM levels min -0.2537 median 0.00117 max 0.2569 (n=18432)
+  SHUF    QK levels min 1.94 median 13.08 max 114.4 (n=9216) | SYM levels min -64.98 median -0.01726 max 64.76 (n=18432)
+  QK  bulk TRAINED <r> = 0.5322 +- 0.0030  (ratios 7056, zero gaps 0)
+  QK  bulk INIT    <r> = 0.5317 +- 0.0031  (ratios 7056, zero gaps 0)
+  QK  bulk SHUF    <r> = 0.5279 +- 0.0030  (ratios 7056, zero gaps 0)
+  QK  edge TRAINED <r> = 0.4895 +- 0.0097  (ratios 720, zero gaps 0)
+  QK  edge INIT    <r> = 0.5016 +- 0.0099  (ratios 720, zero gaps 0)
+  QK  edge SHUF    <r> = 0.5197 +- 0.0100  (ratios 720, zero gaps 0)
+  SYM bulk TRAINED <r> = 0.5106 +- 0.0022  (ratios 14544, zero gaps 0)
+  SYM bulk INIT    <r> = 0.5195 +- 0.0022  (ratios 14544, zero gaps 0)
+  SYM bulk SHUF    <r> = 0.5247 +- 0.0022  (ratios 14544, zero gaps 0)
+  SYM edge TRAINED <r> = 0.5217 +- 0.0064  (ratios 1584, zero gaps 0)
+  SYM edge INIT    <r> = 0.5240 +- 0.0064  (ratios 1584, zero gaps 0)
+  SYM edge SHUF    <r> = 0.5328 +- 0.0065  (ratios 1584, zero gaps 0)
+  layer  0 QK bulk TRAINED 0.5283 +- 0.0106 (n 588) | INIT 0.5160
+  layer  1 QK bulk TRAINED 0.5281 +- 0.0107 (n 588) | INIT 0.5331
+  layer  2 QK bulk TRAINED 0.5149 +- 0.0104 (n 588) | INIT 0.5229
+  layer  3 QK bulk TRAINED 0.5494 +- 0.0104 (n 588) | INIT 0.5427
+  layer  4 QK bulk TRAINED 0.5301 +- 0.0107 (n 588) | INIT 0.5289
+  layer  5 QK bulk TRAINED 0.5436 +- 0.0106 (n 588) | INIT 0.5599
+  layer  6 QK bulk TRAINED 0.5100 +- 0.0107 (n 588) | INIT 0.5235
+  layer  7 QK bulk TRAINED 0.5314 +- 0.0105 (n 588) | INIT 0.5265
+  layer  8 QK bulk TRAINED 0.5407 +- 0.0106 (n 588) | INIT 0.5379
+  layer  9 QK bulk TRAINED 0.5234 +- 0.0101 (n 588) | INIT 0.5318
+  layer 10 QK bulk TRAINED 0.5433 +- 0.0108 (n 588) | INIT 0.5225
+  layer 11 QK bulk TRAINED 0.5435 +- 0.0101 (n 588) | INIT 0.5340
+
+== medium: 24 layers x 16 heads; weights read twice identical: True
+  TRAINED QK levels min 0.1663 median 11.22 max 633.5 (n=24576) | SYM levels min -442.9 median -0.00397 max 259.2 (n=49152)
+  INIT    QK levels min 0.2642 median 0.3987 max 0.5738 (n=24576) | SYM levels min -0.3274 median 0.0003556 max 0.3298 (n=49152)
+  SHUF    QK levels min 1.641 median 11.97 max 151.4 (n=24576) | SYM levels min -84.54 median -0.01199 max 85.41 (n=49152)
+  QK  bulk TRAINED <r> = 0.5328 +- 0.0019  (ratios 18816, zero gaps 0)
+  QK  bulk INIT    <r> = 0.5304 +- 0.0019  (ratios 18816, zero gaps 0)
+  QK  bulk SHUF    <r> = 0.5282 +- 0.0019  (ratios 18816, zero gaps 0)
+  QK  edge TRAINED <r> = 0.4882 +- 0.0061  (ratios 1920, zero gaps 0)
+  QK  edge INIT    <r> = 0.5271 +- 0.0058  (ratios 1920, zero gaps 0)
+  QK  edge SHUF    <r> = 0.5253 +- 0.0058  (ratios 1920, zero gaps 0)
+  SYM bulk TRAINED <r> = 0.5170 +- 0.0013  (ratios 38784, zero gaps 0)
+  SYM bulk INIT    <r> = 0.5201 +- 0.0013  (ratios 38784, zero gaps 0)
+  SYM bulk SHUF    <r> = 0.5217 +- 0.0013  (ratios 38784, zero gaps 0)
+  SYM edge TRAINED <r> = 0.5180 +- 0.0039  (ratios 4224, zero gaps 0)
+  SYM edge INIT    <r> = 0.5300 +- 0.0040  (ratios 4224, zero gaps 0)
+  SYM edge SHUF    <r> = 0.5213 +- 0.0039  (ratios 4224, zero gaps 0)
+  layer  0 QK bulk TRAINED 0.4977 +- 0.0091 (n 784) | INIT 0.5396
+  layer  1 QK bulk TRAINED 0.5376 +- 0.0090 (n 784) | INIT 0.5475
+  layer  2 QK bulk TRAINED 0.5330 +- 0.0091 (n 784) | INIT 0.5280
+  layer  3 QK bulk TRAINED 0.5288 +- 0.0090 (n 784) | INIT 0.5054
+  layer  4 QK bulk TRAINED 0.5373 +- 0.0090 (n 784) | INIT 0.5386
+  layer  5 QK bulk TRAINED 0.5431 +- 0.0092 (n 784) | INIT 0.5296
+  layer  6 QK bulk TRAINED 0.5261 +- 0.0093 (n 784) | INIT 0.5444
+  layer  7 QK bulk TRAINED 0.5261 +- 0.0089 (n 784) | INIT 0.5128
+  layer  8 QK bulk TRAINED 0.5576 +- 0.0088 (n 784) | INIT 0.5378
+  layer  9 QK bulk TRAINED 0.5156 +- 0.0087 (n 784) | INIT 0.5366
+  layer 10 QK bulk TRAINED 0.5415 +- 0.0087 (n 784) | INIT 0.5232
+  layer 11 QK bulk TRAINED 0.5407 +- 0.0090 (n 784) | INIT 0.5161
+  layer 12 QK bulk TRAINED 0.5443 +- 0.0092 (n 784) | INIT 0.5238
+  layer 13 QK bulk TRAINED 0.5248 +- 0.0096 (n 784) | INIT 0.5302
+  layer 14 QK bulk TRAINED 0.5455 +- 0.0093 (n 784) | INIT 0.5296
+  layer 15 QK bulk TRAINED 0.5291 +- 0.0090 (n 784) | INIT 0.5412
+  layer 16 QK bulk TRAINED 0.5268 +- 0.0091 (n 784) | INIT 0.5176
+  layer 17 QK bulk TRAINED 0.5254 +- 0.0091 (n 784) | INIT 0.5511
+  layer 18 QK bulk TRAINED 0.5493 +- 0.0091 (n 784) | INIT 0.5401
+  layer 19 QK bulk TRAINED 0.5170 +- 0.0093 (n 784) | INIT 0.5372
+  layer 20 QK bulk TRAINED 0.5337 +- 0.0093 (n 784) | INIT 0.5331
+  layer 21 QK bulk TRAINED 0.5317 +- 0.0091 (n 784) | INIT 0.5282
+  layer 22 QK bulk TRAINED 0.5267 +- 0.0092 (n 784) | INIT 0.5240
+  layer 23 QK bulk TRAINED 0.5482 +- 0.0090 (n 784) | INIT 0.5131
+
+HELD    R1 small QK bulk |TRAINED - INIT| <= 0.02
+HELD    R2 small QK bulk TRAINED >= 0.50
+HELD    R3 small: no layer's QK bulk < 0.45
+REFUTED R4 small QK edge |TRAINED - INIT| > 0.05
+REFUTED R5 note037 pipeline rejects > 10% of true GOE(64)
+HELD    R6 medium: R1 and R2 hold
+
+HELD   C1 POIS(64) bulk <r> within 0.02 of 0.3863
+HELD   C2 GOE(64) bulk <r> within 0.02 of 0.5307
+HELD   C3 QK via QR equals full SVD to 1e-8 relative
+HELD   C4 weights read twice are identical
+DIGEST 9dcb02306944ed98c035781fe09c9f090403aa794acc350654bc45896b97a97a

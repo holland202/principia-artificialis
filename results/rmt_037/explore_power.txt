@@ -1,0 +1,2 @@
+note037 pipeline rejects Wigner on Poisson(64): 0.580
+ratio < 0.458 on one Poisson(64) spectrum: 0.923; on one GOE(64) spectrum: 0.049
