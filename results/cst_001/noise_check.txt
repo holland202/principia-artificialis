@@ -1,0 +1,1 @@
+C-NOISE: 10/10 reruns byte-identical to the recorded dev outputs (arm A, first 10 jobs)

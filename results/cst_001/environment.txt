@@ -1,0 +1,4 @@
+Python 3.13.18
+torch 2.15.0+cpu transformers 5.23.0
+model Qwen/Qwen2.5-1.5B-Instruct revision 989aa7980e4cf806f80c7fef2b1adb7bc71aa306 model.safetensors sha256 dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee
+bf16, greedy, CPU 2 threads; chat template's default system prompt kept
