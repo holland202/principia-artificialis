@@ -134,3 +134,26 @@ if __name__ == "__main__":
 
 ---
 *Number collision: #037 is also claimed by [[037_consciousness_phase_transition]]. Displayed, not resolved.*
+
+## Update 2026-11-14: registered and run (RMT-037)
+
+Appended (M12); the text above is unchanged. Registration, code and results:
+[experiments/rmt_037](../experiments/rmt_037/RESULTS.md). Self-tested.
+
+- **Answer, for weights:** in the bulk, GPT-2 small's and medium's QK circuits have GOE-like spacing ratios
+  (⟨r̃⟩ 0.5322 and 0.5328), indistinguishable from their own random initialisation (0.5317, 0.5304) and from shuffled
+  weights. The bulk spacing statistic carries no trace of training, which matches published prior work (Thamm,
+  Staats and Rosenow 2022; Aarts et al. 2024). The question in "Open Questions", whether a fancier vocabulary only
+  restates known facts, gets this answer for the bulk: it restates nothing, because there is no difference to
+  restate.
+- **Refuted, kept:** the registered edge effect (top 10% of singular values) was 0.012 in GPT-2 small, below the
+  0.05 registered. Both models show less repulsion at the edge after training (medium: 0.039), so that is the lead
+  to register next on a third model.
+- **The reference pipeline above** (degree-5 unfolding with a KS test against a sampled Wigner reference) proved
+  conservative at 64 levels: 0.7% false rejections of true GOE spectra, but only 58% detection of Poisson spectra
+  (exploratory check). The unfolding-free spacing ratio caught 92.3% of Poisson spectra with 4.9% false flags. Use the
+  ratio.
+
+*Provenance of this update (M13): Claude (Anthropic, Opus 5.5) → human validation: not performed → human
+editing/curation: direction by Chad Holland, 2026-11-14 → human responsibility: Chad Holland. Review level: direction
+only.*
