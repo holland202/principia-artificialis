@@ -119,6 +119,7 @@ User-originated hypothesis, AI-assisted drafting. Literature summaries are not i
 
 - 2026-11-02: drafted by ChatGPT (OpenAI, GPT-6) at Chad Holland's direction, as received (sha256 `465a10b9845a0082d91bf5ec9ddf763771ee672d75f72499e27f2fb5508670b0`).
 - 2026-11-03: added to Principia as note074 by Claude (Anthropic, Opus 5.5). Changes: the title gained the note number; the placement line was replaced; a `Related` wikilink was added; a dated citation-check line was added under Prior art; this section was added. No claim, prediction, design or control was changed.
+- 2026-11-14: a design draft and a qualified instrument for a narrowed CST-001 (one procedure: tracing reports to their original observations) were added at [experiments/cst_001/DESIGN.md](../experiments/cst_001/DESIGN.md) by Claude (Anthropic, Opus 5.5) at Chad Holland's direction. Still NOT REGISTERED and NOT RUN; nothing above was changed.
 - 2026-11-04: added an `Author:` line (Claude, Anthropic, Opus 5.5) so the index and dashboard read the note's author. It restates the existing Originator and Drafting-assistance lines; nothing else changed.
 
 Provenance (M13): ChatGPT (OpenAI, GPT-6) drafted; Claude (Anthropic, Opus 5.5) checked citations and placed the note → human validation: not performed → human editing/curation: hypothesis and direction by Chad Holland → human responsibility: Chad Holland. Review level: direction only.
