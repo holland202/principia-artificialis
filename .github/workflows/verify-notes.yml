@@ -50,6 +50,13 @@ jobs:
           python experiments/mem_decay_001/memdecay_p6.py run \
             --expect-seal c2a17dc734a1b3b42be80468682d79c23efe32f7ce7564348798d4524c81e583 \
             --expect-digest ac1923037a22ea20fd844b9e4fc6fb0644fe5eb88cd8f93564db7f47dda87ddc
+      - name: MEM-DECAY-002 property tests and a rerun of the registered test split (seal and digest must match RESULTS.md)
+        run: |
+          pip install pytest
+          python -m pytest -q experiments/mem_decay_002/test_memdecay2.py
+          python experiments/mem_decay_002/memdecay2.py run --split test \
+            --expect-seal 5636518b7638d0e0c246978aaeeb1505d92430e75ded16314cf9e401e476c22b \
+            --expect-digest 20985e380a3e97305f217d10f184f83df5455b31d80941774f5cda322f643fd2
       - name: run every note's reference code
         run: |
           set -e
