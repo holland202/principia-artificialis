@@ -1,0 +1,13 @@
+CST-001 source-tracing development probe
+2026-11-15T07:49:40-06:00
+Python 3.12.14
+Linux x86_64
+CPU: INTEL(R) XEON(R) PLATINUM 8573C
+version: 0.9.0-dev (build 12244, commit d5bbcd1f3)
+built with GNU 11.4.0 for Linux x86_64
+c1d7e7f31b5c43f3e5d44f667b4d57104217be3e5f2060320cd3735651238849  llama-b12244-bin-ubuntu-x64.tar.gz
+6a1a2eb6d15622bf3c96857206351ba97e1af16c30d7a74ee38970e434e9407e  qwen2.5-1.5b-instruct-q4_k_m.gguf
+626b4a6678b86442240e33df819e00132d3ba7dddfe1cdc4fbb18e0a9615c62d  qwen2.5-3b-instruct-q4_k_m.gguf
+CPU threads=4 batch_threads=4 context=1536 slots=1 temperature=0 seed=0 output_limit=64 cache_prompt=false
+85d1662e0a2befbe2621e9fb74548523492f51f9 CST-001: qualify source-tracing probe and rescore archived replies
+38ca45814b980602bd6a32ee52e0eedb8281ed5e CST-001: record source-tracing development probe before inference
