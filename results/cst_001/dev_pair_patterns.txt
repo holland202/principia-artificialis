@@ -1,0 +1,16 @@
+per arm: decision on SHARED version, decision on INDEPENDENT version (64 pairs each)
+  A  SHARED->CONF INDEP->CONF         22
+  A  SHARED->CONF INDEP->INSU         37
+  A  SHARED->INSU INDEP->INSU         5
+  B  SHARED->CONF INDEP->CONF         10
+  B  SHARED->CONF INDEP->INSU         33
+  B  SHARED->INSU INDEP->INSU         21
+  C  SHARED->CONF INDEP->CONF         33
+  C  SHARED->CONF INDEP->INSU         29
+  C  SHARED->INSU INDEP->INSU         2
+  D  SHARED->CONF INDEP->CONF         34
+  D  SHARED->CONF INDEP->INSU         23
+  D  SHARED->INSU INDEP->INSU         7
+  E  SHARED->CONF INDEP->CONF         34
+  E  SHARED->CONF INDEP->INSU         28
+  E  SHARED->INSU INDEP->INSU         2
