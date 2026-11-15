@@ -27,3 +27,36 @@ Because the old dev split chose this change, it cannot also confirm it. So:
 - 64 test pairs per arm detect only a large difference between A and B. That limit gets a number in the
   registration.
 - Restricting to hop 2 narrows the claim. A result would be about two-step source tracing only.
+
+## Result on dev2 (appended after the run; everything above is unchanged)
+
+Raw outputs: [`dev2_hop2_7b.jsonl`](../../results/cst_001/dev2_hop2_7b.jsonl), 320 lines (5 arms × 32 pairs × 2 versions). Scores:
+[`dev2_hop2_analysis.txt`](../../results/cst_001/dev2_hop2_analysis.txt). Split by reply length:
+[`dev2_hop2_length.txt`](../../results/cst_001/dev2_hop2_length.txt). Malformed answers: 0.
+
+**Gate PASSED.** E got 10 of 32 hop-2 pairs (needed at least 8). D got 0 of 32, so E beat D by 10 (needed at least 6).
+
+**But exposure to the procedure did nothing, and was no better than the other conversations.**
+
+| Arm | Hop-2 pairs right | SHARED right | INDEPENDENT right | Replies with reasoning |
+|---|---|---|---|---|
+| A procedure | **0/32** | 32/32 | 0/32 | 0 |
+| B other procedure | 0/32 | 31/32 | 1/32 | 0 |
+| C neutral | 3/32 | 29/32 | 5/32 | 0 |
+| D none | 0/32 | 25/32 | 1/32 | 0 |
+| E explicit | 10/32 | 16/32 | 23/32 | 38 |
+
+- **After the demonstration, the model answers INSUFFICIENT to all 64 hop-2 cases.** That is the same blanket
+  caution as the no-exposure baseline, and slightly stronger.
+- **Every pair E got right came with visible reasoning:** 10 of 23 pairs with a reply over 20 tokens, against 0 of
+  9 pairs where both replies were short. No exposure arm ever produced a reasoned reply. **The instruction works by
+  making the model reason, and seeing a partner reason did not make it reason.**
+- This matches ChatGPT's (Codex) replay of the dev run, posted on issue #150: all 12 successful hop-2 pairs there
+  also had a long reply.
+
+**What this means for the confirmatory run.** dev2 sets the minimum meaningful gain of A over B, and dev2 shows A
+and B both at 0 of 32. A registered run on the sealed test split would test a predicted null. That is legitimate,
+but it would probably add little. It waits on Chad's decision, along with stopping here.
+
+This is exploration on dev2. It is not a test of note074's hypothesis on the sealed split, and it covers one model
+(4-bit 7B), one exposure topic and one procedure.
