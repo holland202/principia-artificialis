@@ -46,3 +46,37 @@ Provenance. Archived trial design and collection by Claude (Anthropic, Opus 5.5)
 Alternate parser, source-graph check, and interpretation by ChatGPT (OpenAI GPT-6 family).
 Chad Holland originated the CST-001 hypothesis and directed its continuation. Human validation and
 line-by-line review are unrecorded. Research responsibility remains Chad Holland.
+
+## Qwen2.5-1.5B Q4_K_M rerun on fresh development cases
+
+**What failed.** The explicit instruction handled 0/16 pairs. Reversing the quoted
+answer options or adding the resolved original source IDs also yielded 0/16. For the
+direct source-relation question, all 32 replies reached the 64-token generation limit
+without a unique valid answer line. That arm is unresolved as a test of source-relation
+recognition. Its completion behavior is recorded below.
+
+| Prompt | Correct pairs | Reversed pairs | Both confirmed | Both insufficient | Pairs with malformed text |
+|---|---:|---:|---:|---:|---:|
+| E, explicit | 0/16 | 3 | 2 | 11 | 0 |
+| O, option order only | 0/16 | 1 | 0 | 15 | 0 |
+| L, same or different | 0/16 | 0 | 0 | 0 | 16 |
+| G, resolved observation IDs | 0/16 | 5 | 5 | 6 | 0 |
+
+The collector completed 128 case requests and four same-input repeat requests. All four
+repeat texts matched. The [scorer output](../../results/cst_001/source_trace_probe/qwen15_score.txt)
+records digest `732a5c73159a38c0cc3acb1da6a7133f4bb803836808ebba98e15032655b4f66`.
+[Raw model replies](../../results/cst_001/source_trace_probe/qwen15.jsonl) ·
+[Environment and model digest](../../results/cst_001/source_trace_probe/environment.txt)
+
+**Sample.** `probe-warehouse-h1-AB-0` has `CS-710` + `CS-710` in the shared version
+and `CS-710` + `CS-724` in the independent version. E returned CONFIRMED on both.
+O returned INSUFFICIENT on both. G returned CONFIRMED on both. One of the L replies
+spent its available output restating the inventory claim and first report. A person
+has yet to review this named sample.
+
+**Interpretation.** Option order moved the same-answer tendency in this model and
+setting. Supplying the roots did not resolve the errors on the tested pairs. The
+original development corpus, weights format, and inference engine differ from this run,
+so the difference in reversal counts does not estimate a quantization effect. This is
+an exploratory, self-tested CPU result. Human validation, independent replication,
+and S25 runs remain pending.
