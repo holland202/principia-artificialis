@@ -28,16 +28,34 @@ def main():
     ap.add_argument("--arms", default="ABCDE")
     ap.add_argument("--limit-seconds", type=float, default=540)
     ap.add_argument("--only", type=int, default=0, help="stop after this many new generations (0 = no cap)")
+    ap.add_argument("--gguf", help="run a GGUF model through llama.cpp instead of transformers")
     ap.add_argument("--reason", action="store_true",
                     help="EXPLORATORY variant: ask for step-by-step reasoning before the decision line")
     a = ap.parse_args()
 
-    import torch
-    from transformers import AutoModelForCausalLM, AutoTokenizer
-    torch.manual_seed(0)
-    tok = AutoTokenizer.from_pretrained(a.model)
-    model = AutoModelForCausalLM.from_pretrained(a.model, dtype=torch.bfloat16)
-    model.eval()
+    if a.gguf:
+        from llama_cpp import Llama
+        llm = Llama(model_path=a.gguf, n_ctx=2048, n_threads=os.cpu_count(), seed=0, verbose=False)
+
+        def generate(msgs, max_new):
+            r = llm.create_chat_completion(messages=msgs, temperature=0.0, top_k=1, max_tokens=max_new, seed=0)
+            u = r["usage"]
+            return r["choices"][0]["message"]["content"], u["prompt_tokens"], u["completion_tokens"]
+    else:
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        torch.manual_seed(0)
+        tok = AutoTokenizer.from_pretrained(a.model)
+        model = AutoModelForCausalLM.from_pretrained(a.model, dtype=torch.bfloat16)
+        model.eval()
+
+        def generate(msgs, max_new):
+            ids = tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt", return_dict=True)
+            with torch.no_grad():
+                out = model.generate(**ids, max_new_tokens=max_new, do_sample=False, temperature=None,
+                                     top_p=None, top_k=None)
+            new = out[0, ids["input_ids"].shape[1]:]
+            return tok.decode(new, skip_special_tokens=True), int(ids["input_ids"].shape[1]), int(len(new))
 
     pairs = cases.build(a.split, PER_CELL[a.split])
     done = set()
@@ -58,15 +76,10 @@ def main():
             if a.reason:
                 prompt = prompt.replace(cases.ASK, "Think it through step by step first. " + cases.ASK)
             msgs = exposures.history(arm) + [{"role": "user", "content": exposures.test_message(arm, prompt)}]
-            ids = tok.apply_chat_template(msgs, add_generation_prompt=True, return_tensors="pt", return_dict=True)
             t0 = time.time()
-            with torch.no_grad():
-                out = model.generate(**ids, max_new_tokens=400 if a.reason else MAX_NEW, do_sample=False, temperature=None,
-                                     top_p=None, top_k=None)
-            new = out[0, ids["input_ids"].shape[1]:]
-            rec = {"arm": arm, "pair": p["pair"], "version": v["version"],
-                   "output": tok.decode(new, skip_special_tokens=True), "seconds": round(time.time() - t0, 2),
-                   "prompt_tokens": int(ids["input_ids"].shape[1]), "new_tokens": int(len(new))}
+            text, n_prompt, n_new = generate(msgs, 400 if a.reason else MAX_NEW)
+            rec = {"arm": arm, "pair": p["pair"], "version": v["version"], "output": text,
+                   "seconds": round(time.time() - t0, 2), "prompt_tokens": n_prompt, "new_tokens": n_new}
             fh.write(json.dumps(rec) + "\n")
             fh.flush()
             n += 1

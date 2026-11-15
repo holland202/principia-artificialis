@@ -31,7 +31,7 @@ for arm in sorted(by_arm):
           f" {t['malformed']:>9} {h1:>6}/{n // 2:<3} {h2:>6}/{n // 2:<3} {lens[(arm, True)]:>12}")
 print("\ndiscordant pairs against A (A right & other wrong / A wrong & other right):")
 for other in sorted(rows):
-    if other == "A":
+    if other == "A" or "A" not in rows:
         continue
     b = sum(rows["A"][k] and not rows[other][k] for k in rows["A"])
     c = sum(not rows["A"][k] and rows[other][k] for k in rows["A"])
