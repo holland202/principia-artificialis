@@ -10,7 +10,8 @@ import cases  # noqa: E402
 import scorer  # noqa: E402
 
 split, path = sys.argv[1], sys.argv[2]
-pairs = cases.build(split, {"dev": 2, "test": 4}[split])
+hop = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+pairs = [p for p in cases.build(split, {"dev": 2, "test": 4, "dev2": 2}[split]) if not hop or p["hop"] == hop]
 by_arm = {}
 lens = Counter()
 for line in open(path):
