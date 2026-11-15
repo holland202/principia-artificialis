@@ -16,18 +16,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import cases  # noqa: E402
 import exposures  # noqa: E402
 
-PER_CELL = {"dev": 2, "test": 4}
+PER_CELL = {"dev": 2, "test": 4, "dev2": 2}
 MAX_NEW = 320          # the recorded dev run used 320; --reason uses 400
 
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--split", choices=("dev", "test"), required=True)
+    ap.add_argument("--split", choices=("dev", "test", "dev2"), required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--model", default=os.path.expanduser("~/models/qwen25-1.5b-instruct"))
     ap.add_argument("--arms", default="ABCDE")
     ap.add_argument("--limit-seconds", type=float, default=540)
     ap.add_argument("--only", type=int, default=0, help="stop after this many new generations (0 = no cap)")
+    ap.add_argument("--hop", type=int, choices=(1, 2), help="run only pairs of this hop")
     ap.add_argument("--gguf", help="run a GGUF model through llama.cpp instead of transformers")
     ap.add_argument("--reason", action="store_true",
                     help="EXPLORATORY variant: ask for step-by-step reasoning before the decision line")
@@ -57,7 +58,7 @@ def main():
             new = out[0, ids["input_ids"].shape[1]:]
             return tok.decode(new, skip_special_tokens=True), int(ids["input_ids"].shape[1]), int(len(new))
 
-    pairs = cases.build(a.split, PER_CELL[a.split])
+    pairs = [p for p in cases.build(a.split, PER_CELL[a.split]) if not a.hop or p["hop"] == a.hop]
     done = set()
     if os.path.exists(a.out):
         with open(a.out) as fh:

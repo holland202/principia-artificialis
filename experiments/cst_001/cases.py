@@ -93,7 +93,7 @@ def make_pair(rng, domain, hop, order, idx):
 
 def build(split, per_cell):
     """Every domain x hop x order cell gets `per_cell` pairs. Splits use disjoint seeds."""
-    seed = {"qual": 7401, "dev": 7402, "test": 7403}[split]
+    seed = {"qual": 7401, "dev": 7402, "test": 7403, "dev2": 7404}[split]
     rng = random.Random(seed)
     pairs = []
     for domain in DOMAINS:

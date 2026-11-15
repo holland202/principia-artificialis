@@ -10,7 +10,8 @@ import cases  # noqa: E402
 import scorer  # noqa: E402
 
 split, path = sys.argv[1], sys.argv[2]
-pairs = cases.build(split, {"dev": 2, "test": 4}[split])
+hop = int(sys.argv[3]) if len(sys.argv) > 3 else 0
+pairs = [p for p in cases.build(split, {"dev": 2, "test": 4, "dev2": 2}[split]) if not hop or p["hop"] == hop]
 by_arm = {}
 lens = Counter()
 for line in open(path):
@@ -26,9 +27,11 @@ for arm in sorted(by_arm):
     rows[arm] = {r["pair"]: r["pair_correct"] for r in rs}
     h1 = sum(r["pair_correct"] for r in rs if r["hop"] == 1)
     h2 = sum(r["pair_correct"] for r in rs if r["hop"] == 2)
+    n1 = sum(r["hop"] == 1 for r in rs)
+    n2 = sum(r["hop"] == 2 for r in rs)
     n = len(rs)
     print(f"{arm:3} {t['pair_correct']:>4}/{n:<4} {t['shared_correct']:>5}/{n:<4} {t['independent_correct']:>4}/{n:<4}"
-          f" {t['malformed']:>9} {h1:>6}/{n // 2:<3} {h2:>6}/{n // 2:<3} {lens[(arm, True)]:>12}")
+          f" {t['malformed']:>9} {h1:>6}/{n1:<3} {h2:>6}/{n2:<3} {lens[(arm, True)]:>12}")
 print("\ndiscordant pairs against A (A right & other wrong / A wrong & other right):")
 for other in sorted(rows):
     if other == "A" or "A" not in rows:

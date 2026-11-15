@@ -1,0 +1,6 @@
+split dev2: 32 pairs
+arm  pairs ok  SHARED ok  INDEP ok malformed hop1 pairs hop2 pairs long answers
+D      0/32      25/32      1/32           0      0/0        0/32             0
+E     10/32      16/32     23/32           0      0/0       10/32            38
+
+discordant pairs against A (A right & other wrong / A wrong & other right):
