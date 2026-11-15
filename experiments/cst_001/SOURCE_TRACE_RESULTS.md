@@ -80,3 +80,57 @@ original development corpus, weights format, and inference engine differ from th
 so the difference in reversal counts does not estimate a quantization effect. This is
 an exploratory, self-tested CPU result. Human validation, independent replication,
 and S25 runs remain pending.
+
+## Qwen2.5-3B Q4_K_M on the same development cases
+
+**What failed.** The explicit prompt reached the 64-token generation limit on 31/32
+replies without a unique decision line. Swapping the two options yielded 30/32 such
+replies. Thus every pair under both prompts had at least one missing decision. The
+direct relation question hit the limit without a unique answer in 23/32 replies.
+The 3B explicit results primarily measure completion within this output budget.
+
+| Prompt | Correct pairs | Reversed pairs | Both confirmed | Both insufficient | Pairs with malformed text |
+|---|---:|---:|---:|---:|---:|
+| E, explicit | 0/16 | 0 | 0 | 0 | 16 |
+| O, option order only | 0/16 | 0 | 0 | 0 | 16 |
+| L, same or different | 1/16 | 0 | 0 | 1 | 14 |
+| G, resolved observation IDs | 3/16 | 7 | 1 | 5 | 0 |
+
+All 32 G replies contained a unique valid decision line. Two of its correct pairs
+were one-hop cases and one was a two-hop case. The [scorer output](../../results/cst_001/source_trace_probe/qwen3_score.txt)
+records all 128 case requests, exact text matches for all four repeat requests, and
+digest `95aafd44d5566b5aec58d6fd114cef1213cafdd9aeebc067311e836f26cbb2b7`.
+[Raw model replies](../../results/cst_001/source_trace_probe/qwen3.jsonl)
+
+**Sample.** In `probe-bird_survey-h1-AB-0`, the shared version gives `FT-670` twice.
+The independent version gives `FT-670` and `FT-993`. E returned only a partial analysis
+on the first and ended with CONFIRMED on the second. G returned INSUFFICIENT and
+CONFIRMED, respectively. This pair also got both source relationships right in L.
+
+**Interpretation.** Giving the IDs changed completion as well as paired decisions.
+For 3B it produced 32 scorable replies and three correct pairs, with seven pairs
+still reversed. The comparison cannot isolate source extraction from response format.
+The larger model did not qualify the explicit control for a transfer experiment.
+Both completed runs were exploratory CPU measurements on synthetic cases. The
+128-pair CST-001 holdout remains sealed and unused. Human sample inspection,
+independent replication, and S25 validation remain pending.
+
+## Replay and next test
+
+Run the scorer over the retained raw files, without downloading models.
+
+```bash
+python experiments/cst_001/source_trace_probe.py archive results/cst_001/dev_outputs.jsonl
+python experiments/cst_001/source_trace_probe.py score --model qwen15 results/cst_001/source_trace_probe/qwen15.jsonl
+python experiments/cst_001/source_trace_probe.py score --model qwen3 results/cst_001/source_trace_probe/qwen3.jsonl
+```
+
+For a fresh qualification, collect a bounded forced-choice answer with counterbalanced
+labels so lengthy restatements cannot consume the available response budget. Include
+paired bare-ID and one- or two-hop prose cases. Successful controls on fresh cases
+would make the conversation comparison interpretable. Any changes to the corpus,
+response constraint, registration, or scoring belong to a new study record.
+
+Provenance. ChatGPT (OpenAI GPT-6 family) authored, ran, and scored this probe on
+November 15, 2026. Human direction was provided by Chad Holland, who originated the
+hypothesis and holds research responsibility. Human validation is pending.
