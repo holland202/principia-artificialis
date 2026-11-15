@@ -1,0 +1,3 @@
+CONTROL PASS: correct, constant, contradictory, incomplete and duplicate fixtures
+FAILED: G fixture decisions do not match the source graph
+Sabotage exit: 1
