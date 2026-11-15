@@ -1,0 +1,13 @@
+7B, dev: per arm and hop, decision on SHARED / INDEPENDENT version (32 pairs per arm and hop)
+  D h1  SHARED->CONF INDEP->CONF         1
+  D h1  SHARED->INSU INDEP->CONF         26
+  D h1  SHARED->INSU INDEP->INSU         5
+  D h2  SHARED->CONF INDEP->CONF         2
+  D h2  SHARED->CONF INDEP->INSU         2
+  D h2  SHARED->INSU INDEP->INSU         28
+  E h1  SHARED->CONF INDEP->CONF         18
+  E h1  SHARED->INSU INDEP->CONF         14
+  E h2  SHARED->CONF INDEP->CONF         13
+  E h2  SHARED->CONF INDEP->INSU         3
+  E h2  SHARED->INSU INDEP->CONF         12
+  E h2  SHARED->INSU INDEP->INSU         4

@@ -1,0 +1,256 @@
+{"arm": "E", "pair": "warehouse-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 12.59, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.61, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-AB-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.68, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.17, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.71, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.79, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.54, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.1, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h2-AB-0", "version": "SHARED", "output": "Count sheet CS-508 is the original observation for both reports. The Shift Log 38 is not considered an original observation. Therefore, we have only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 22.39, "prompt_tokens": 308, "new_tokens": 47}
+{"arm": "E", "pair": "warehouse-h2-AB-0", "version": "INDEPENDENT", "output": "Count sheet CS-508 and count sheet CS-542 both support the claim independently. Therefore, the claim is supported by at least two independent original observations.\n\nDECISION: CONFIRMED", "seconds": 16.39, "prompt_tokens": 308, "new_tokens": 41}
+{"arm": "E", "pair": "warehouse-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.02, "prompt_tokens": 302, "new_tokens": 6}
+{"arm": "E", "pair": "warehouse-h2-AB-1", "version": "INDEPENDENT", "output": "Original Observation 1: Count sheet CS-697 (Wednesday)\nOriginal Observation 2: Count sheet CS-110\n\nReport 1: Inventory report by Chen Wei (based on CS-697)\nReport 2: Stock summary by Ivan Petrov (based on Shift Log 47, which in turn is based on CS-110)\n\nSince the claim is supported by two independent original observations (CS-697 and CS-110), the decision is:\n\nDECISION: CONFIRMED", "seconds": 40.39, "prompt_tokens": 302, "new_tokens": 110}
+{"arm": "E", "pair": "warehouse-h2-BA-0", "version": "SHARED", "output": "Count Sheet CS-655 is an original observation. Shift Log 39 and Report 1 both reference CS-655, so they do not count as independent observations. Therefore, we have only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 26.67, "prompt_tokens": 308, "new_tokens": 57}
+{"arm": "E", "pair": "warehouse-h2-BA-0", "version": "INDEPENDENT", "output": "Count Sheet CS-566 is an original observation. Shift Log 39 is not an original observation but an intermediate document. Count Sheet CS-655 is another original observation. \n\nReport 1 rests on Count Sheet CS-566, and Report 2 rests on Count Sheet CS-655. These are two independent original observations supporting the claim.\n\nDECISION: CONFIRMED", "seconds": 31.5, "prompt_tokens": 308, "new_tokens": 83}
+{"arm": "E", "pair": "warehouse-h2-BA-1", "version": "SHARED", "output": "Count Sheet CS-387 is an original observation. Shift Log 29 and Mo Farouk's stock summary both reference CS-387, so they do not count as independent observations.\n\nDECISION: INSUFFICIENT", "seconds": 23.18, "prompt_tokens": 309, "new_tokens": 48}
+{"arm": "E", "pair": "warehouse-h2-BA-1", "version": "INDEPENDENT", "output": "Count Sheet CS-410 is an original observation. Shift Log 29 and Count Sheet CS-387 are not considered original observations for the purpose of this rule. Therefore, we have only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 22.12, "prompt_tokens": 309, "new_tokens": 56}
+{"arm": "E", "pair": "water_lab-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.07, "prompt_tokens": 282, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.12, "prompt_tokens": 282, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.58, "prompt_tokens": 282, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.25, "prompt_tokens": 282, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.83, "prompt_tokens": 283, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.52, "prompt_tokens": 283, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.95, "prompt_tokens": 284, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.73, "prompt_tokens": 284, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h2-AB-0", "version": "SHARED", "output": "Original Observation: Lab bench reading LBR-612.\n\nReport 1: Quality bulletin by Ana Ruiz.\nReport 2: Compliance memo by Chen Wei, which is based on the Weekly Digest 3.\n\nSince both reports rest on the same original observation (LBR-612), they count as one.\n\nDECISION: CONFIRMED", "seconds": 31.47, "prompt_tokens": 312, "new_tokens": 71}
+{"arm": "E", "pair": "water_lab-h2-AB-0", "version": "INDEPENDENT", "output": "Original Observation 1: Lab bench reading LBR-612 (Friday)\nOriginal Observation 2: Lab bench reading LBR-168\n\nReport 1: Quality bulletin by Ana Ruiz\nReport 2: Compliance memo by Chen Wei\nNote: Attached to Weekly Digest 3, signed by Hana Sato\n\nSince the claim is supported by two independent original observations, the decision is:\n\nDECISION: CONFIRMED", "seconds": 34.19, "prompt_tokens": 312, "new_tokens": 89}
+{"arm": "E", "pair": "water_lab-h2-AB-1", "version": "SHARED", "output": "Count the original observations:\n- LBR-355 (Monday) is one original observation.\n- Weekly Digest 38 is not counted as an original observation.\n- The note attached to the Weekly Digest 38 is not an independent source and does not add a new original observation.\n\nSince the claim rests on one original observation (LBR-355), it does not meet the requirement of at least two independent original observations.\n\nDECISION: INSUFFICIENT", "seconds": 41.77, "prompt_tokens": 315, "new_tokens": 95}
+{"arm": "E", "pair": "water_lab-h2-AB-1", "version": "INDEPENDENT", "output": "Original Observation 1: Lab bench reading LBR-355 (Monday).\nOriginal Observation 2: Lab bench reading LBR-180.\n\nReport 1: Quality bulletin by Uma Kapoor.\nReport 2: Compliance memo by Theo Abara, which references the Weekly Digest 38.\n\nSince the claim is supported by two independent original observations, the decision is:\n\nDECISION: CONFIRMED", "seconds": 31.87, "prompt_tokens": 315, "new_tokens": 83}
+{"arm": "E", "pair": "water_lab-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.54, "prompt_tokens": 318, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h2-BA-0", "version": "INDEPENDENT", "output": "Original Observation 1: Lab bench reading LBR-562 (Monday).\nOriginal Observation 2: Lab bench reading LBR-100.\n\nDECISION: CONFIRMED", "seconds": 15.86, "prompt_tokens": 318, "new_tokens": 38}
+{"arm": "E", "pair": "water_lab-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.04, "prompt_tokens": 316, "new_tokens": 6}
+{"arm": "E", "pair": "water_lab-h2-BA-1", "version": "INDEPENDENT", "output": "Original Observation 1: Lab bench reading LBR-288 (Monday)\nOriginal Observation 2: Lab bench reading LBR-732\n\nDECISION: CONFIRMED", "seconds": 15.66, "prompt_tokens": 316, "new_tokens": 38}
+{"arm": "E", "pair": "bird_survey-h1-AB-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.04, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.12, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-AB-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.28, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.24, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.34, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.51, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.34, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.73, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-AB-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.74, "prompt_tokens": 309, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.35, "prompt_tokens": 309, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-AB-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.67, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.53, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 13.36, "prompt_tokens": 311, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.32, "prompt_tokens": 311, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.66, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "bird_survey-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.44, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-AB-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.71, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.08, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.22, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 3.99, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.4, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.4, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.37, "prompt_tokens": 265, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.57, "prompt_tokens": 265, "new_tokens": 6}
+{"arm": "E", "pair": "bridge-h2-AB-0", "version": "SHARED", "output": "Original Observation: Inspection sheet IS-456.\n\nReport 1: Confirmed by the maintenance report by Gus Lindqvist.\nReport 2: Not confirmed by an independent original observation but by the District Summary 7 which itself was based on the same inspection sheet IS-456.\n\nThus, there is only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 35.46, "prompt_tokens": 302, "new_tokens": 79}
+{"arm": "E", "pair": "bridge-h2-AB-0", "version": "INDEPENDENT", "output": "Original Observation 1: Inspection sheet IS-456\nOriginal Observation 2: Inspection sheet IS-382\n\nDECISION: CONFIRMED", "seconds": 14.01, "prompt_tokens": 302, "new_tokens": 32}
+{"arm": "E", "pair": "bridge-h2-AB-1", "version": "SHARED", "output": "Original Observation 1: Inspection sheet IS-820 (Thursday).\nOriginal Observation 2: District Summary 44, signed by Dana Kowalski, which copied the figure from inspection sheet IS-820.\n\nDECISION: CONFIRMED", "seconds": 25.19, "prompt_tokens": 303, "new_tokens": 53}
+{"arm": "E", "pair": "bridge-h2-AB-1", "version": "INDEPENDENT", "output": "Original Observation 1: Inspection sheet IS-820\nOriginal Observation 2: Inspection sheet IS-241\n\nDECISION: CONFIRMED", "seconds": 13.66, "prompt_tokens": 303, "new_tokens": 32}
+{"arm": "E", "pair": "bridge-h2-BA-0", "version": "SHARED", "output": "Original Observation 1: Inspection sheet IS-307 (Tuesday)\nOriginal Observation 2: Inspection sheet IS-307 (Tuesday, as noted in the District Summary 5)\n\nSince both reports rest on the same original observation (inspection sheet IS-307), they count as one. Therefore, we have only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 37.0, "prompt_tokens": 303, "new_tokens": 81}
+{"arm": "E", "pair": "bridge-h2-BA-0", "version": "INDEPENDENT", "output": "Original Observation 1: Inspection sheet IS-307 (Tuesday)\nOriginal Observation 2: Inspection sheet IS-380\n\nDECISION: CONFIRMED", "seconds": 14.77, "prompt_tokens": 303, "new_tokens": 34}
+{"arm": "E", "pair": "bridge-h2-BA-1", "version": "SHARED", "output": "Count the original observations:\n- Inspection sheet IS-460 (Thursday) - 1\n- District Summary 35, as it was copied from IS-460 - does not count as an independent observation\n\nThus, there is only 1 independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 31.46, "prompt_tokens": 299, "new_tokens": 66}
+{"arm": "E", "pair": "bridge-h2-BA-1", "version": "INDEPENDENT", "output": "Original Observation 1: Inspection sheet IS-460 (Thursday) - Report 2.\nOriginal Observation 2: Inspection sheet IS-280 - Note attached to the District Summary 35.\n\nDECISION: CONFIRMED", "seconds": 20.65, "prompt_tokens": 299, "new_tokens": 49}
+{"arm": "E", "pair": "pharmacy-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.86, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.75, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.7, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.51, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.79, "prompt_tokens": 272, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.33, "prompt_tokens": 272, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.5, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.82, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-AB-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.42, "prompt_tokens": 303, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.37, "prompt_tokens": 303, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.15, "prompt_tokens": 306, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.21, "prompt_tokens": 306, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.42, "prompt_tokens": 305, "new_tokens": 6}
+{"arm": "E", "pair": "pharmacy-h2-BA-0", "version": "INDEPENDENT", "output": "The original observations are:\n1. Shelf count SC-957 (Friday) by Ben Okafor.\n2. Shelf count SC-886 by Chen Wei.\n\nReport 1 and Report 2 both rest on the same original observations. Therefore, we count these as one original observation.\n\nDECISION: INSUFFICIENT", "seconds": 26.69, "prompt_tokens": 305, "new_tokens": 67}
+{"arm": "E", "pair": "pharmacy-h2-BA-1", "version": "SHARED", "output": "The claim is based on two reports, but both rest on the same original observation (shelf count SC-119). Therefore, the claim is not supported by at least two independent original observations.\n\nDECISION: INSUFFICIENT", "seconds": 23.31, "prompt_tokens": 306, "new_tokens": 46}
+{"arm": "E", "pair": "pharmacy-h2-BA-1", "version": "INDEPENDENT", "output": "Count the original observations:\n1. Shelf count SC-119 (Wednesday) - from Raj Iyer's stock bulletin.\n2. Shelf count SC-840 - from the note attached to the Regional Rollup 6.\n\nSince both reports rest on different original observations, the claim is CONFIRMED.\n\nDECISION: CONFIRMED", "seconds": 27.74, "prompt_tokens": 306, "new_tokens": 70}
+{"arm": "E", "pair": "traffic-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.79, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.47, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.87, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.43, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.22, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.91, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.4, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 6.11, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h2-AB-0", "version": "SHARED", "output": "Original Observation: Roadside count RC-146.\n\nReport 1: Based on the original observation of RC-146.\nReport 2: Based on the Corridor Digest 8, which itself is based on the original observation of RC-146.\n\nSince both reports rest on the same original observation, they count as one. Therefore, we have only one independent original observation supporting the claim.\n\nDECISION: INSUFFICIENT", "seconds": 40.78, "prompt_tokens": 308, "new_tokens": 90}
+{"arm": "E", "pair": "traffic-h2-AB-0", "version": "INDEPENDENT", "output": "Original Observation 1: Roadside count RC-146 (Monday).\nOriginal Observation 2: Roadside count RC-984.\n\nReport 1 and Report 2 both rest on different original observations, thus supporting the claim independently.\n\nDECISION: CONFIRMED", "seconds": 22.88, "prompt_tokens": 308, "new_tokens": 56}
+{"arm": "E", "pair": "traffic-h2-AB-1", "version": "SHARED", "output": "Original Observation: Roadside count RC-975.\n\nReport 1: Traffic report by Gus Lindqvist.\nReport 2: Planning memo by Ben Okafor, which is based on Corridor Digest 25.\n\nSince both reports rest on the same original observation (roadside count RC-975), they count as one.\n\nDECISION: INSUFFICIENT", "seconds": 34.92, "prompt_tokens": 313, "new_tokens": 77}
+{"arm": "E", "pair": "traffic-h2-AB-1", "version": "INDEPENDENT", "output": "Original Observation 1: Roadside count RC-975 (Tuesday).\nOriginal Observation 2: Roadside count RC-445.\n\nReport 1 and Report 2 both rest on different original observations, thus supporting the claim independently.\n\nDECISION: CONFIRMED", "seconds": 31.57, "prompt_tokens": 313, "new_tokens": 56}
+{"arm": "E", "pair": "traffic-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.41, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.49, "prompt_tokens": 313, "new_tokens": 6}
+{"arm": "E", "pair": "traffic-h2-BA-1", "version": "SHARED", "output": "Original Observation 1: Roadside count RC-602 (Tuesday).\nOriginal Observation 2: Corridor Digest 3 (copied from roadside count RC-602).\n\nReport 1 and Report 2 both rest on the same original observations, which count as one. Therefore, the claim is supported by one independent original observation.\n\nDECISION: INSUFFICIENT", "seconds": 34.31, "prompt_tokens": 309, "new_tokens": 76}
+{"arm": "E", "pair": "traffic-h2-BA-1", "version": "INDEPENDENT", "output": "Original Observation 1: Roadside count RC-602 (Tuesday).\nOriginal Observation 2: Roadside count RC-238.\n\nReport 1 and Report 2 both rest on different original observations, thus supporting the claim independently.\n\nDECISION: CONFIRMED", "seconds": 22.03, "prompt_tokens": 309, "new_tokens": 56}
+{"arm": "E", "pair": "archive-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.79, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.37, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.55, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.39, "prompt_tokens": 270, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.72, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.47, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.56, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.5, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.35, "prompt_tokens": 300, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.32, "prompt_tokens": 300, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.68, "prompt_tokens": 298, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.33, "prompt_tokens": 298, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.73, "prompt_tokens": 300, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.35, "prompt_tokens": 300, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.92, "prompt_tokens": 299, "new_tokens": 6}
+{"arm": "E", "pair": "archive-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.39, "prompt_tokens": 299, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.67, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.39, "prompt_tokens": 274, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.16, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.53, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.76, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.76, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.72, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.65, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h2-AB-0", "version": "SHARED", "output": "Count the original observations:\n- Row walk RW-482 (Wednesday) is one original observation.\n- Block Summary 18 is not counted as an original observation.\n\nSince the claim is supported by only one independent original observation (RW-482), it does not meet the rule that requires at least two independent original observations.\n\nDECISION: INSUFFICIENT", "seconds": 33.46, "prompt_tokens": 307, "new_tokens": 74}
+{"arm": "E", "pair": "orchard-h2-AB-0", "version": "INDEPENDENT", "output": "Count the original observations:\n- Row walk RW-482\n- Row walk RW-194\n\nThere are two independent original observations supporting the claim.\n\nDECISION: CONFIRMED", "seconds": 15.88, "prompt_tokens": 307, "new_tokens": 39}
+{"arm": "E", "pair": "orchard-h2-AB-1", "version": "SHARED", "output": "Original Observation 1: Row walk RW-451 (Thursday).\nOriginal Observation 2: Block Summary 20, signed by Kai Duarte.\n\nDECISION: CONFIRMED", "seconds": 20.43, "prompt_tokens": 306, "new_tokens": 38}
+{"arm": "E", "pair": "orchard-h2-AB-1", "version": "INDEPENDENT", "output": "Row walk RW-451 and row walk RW-672 are two independent original observations supporting the claim. The extension note does not count as an independent observation since it is based on the Block Summary 20. \n\nDECISION: CONFIRMED", "seconds": 21.91, "prompt_tokens": 306, "new_tokens": 53}
+{"arm": "E", "pair": "orchard-h2-BA-0", "version": "SHARED", "output": "Count the original observations:\n- Row walk RW-557 (Thursday) by Pia Moreau\n- Row walk RW-557 (Thursday) as confirmed in the Block Summary 33 by Hana Sato\n\nThere are two independent original observations supporting the claim.\n\nDECISION: CONFIRMED", "seconds": 29.4, "prompt_tokens": 307, "new_tokens": 64}
+{"arm": "E", "pair": "orchard-h2-BA-0", "version": "INDEPENDENT", "output": "Count the original observations:\n- Row walk RW-557 (Thursday) by Pia Moreau\n- Row walk RW-403 by Hana Sato\n\nThere are two independent original observations supporting the claim.\n\nDECISION: CONFIRMED", "seconds": 20.33, "prompt_tokens": 307, "new_tokens": 52}
+{"arm": "E", "pair": "orchard-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.25, "prompt_tokens": 305, "new_tokens": 6}
+{"arm": "E", "pair": "orchard-h2-BA-1", "version": "INDEPENDENT", "output": "Count the original observations:\n1. Row walk RW-421 (Tuesday) - from Sofia Greco's report.\n2. Row walk RW-701 - from the note attached to the Block Summary 39.\n\nThere are two independent original observations supporting the claim.\n\nDECISION: CONFIRMED", "seconds": 24.69, "prompt_tokens": 305, "new_tokens": 63}
+{"arm": "D", "pair": "warehouse-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.52, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.2, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.39, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.21, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.36, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.42, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.57, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.49, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 12.18, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.53, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.67, "prompt_tokens": 262, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.23, "prompt_tokens": 262, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.2, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.22, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.26, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "warehouse-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.57, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.3, "prompt_tokens": 242, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.42, "prompt_tokens": 242, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.37, "prompt_tokens": 242, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.23, "prompt_tokens": 242, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.35, "prompt_tokens": 243, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.5, "prompt_tokens": 243, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.36, "prompt_tokens": 244, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.4, "prompt_tokens": 244, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.69, "prompt_tokens": 272, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.39, "prompt_tokens": 272, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.47, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.31, "prompt_tokens": 275, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-BA-0", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.35, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.63, "prompt_tokens": 278, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.6, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "D", "pair": "water_lab-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.32, "prompt_tokens": 276, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.29, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.25, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.34, "prompt_tokens": 238, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.29, "prompt_tokens": 238, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.45, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.5, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.5, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.24, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.2, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.28, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.35, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.33, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.45, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.22, "prompt_tokens": 271, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.1, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "bird_survey-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.39, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.31, "prompt_tokens": 231, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.13, "prompt_tokens": 231, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.21, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.02, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.17, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.43, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.28, "prompt_tokens": 225, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.4, "prompt_tokens": 225, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.61, "prompt_tokens": 262, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.46, "prompt_tokens": 262, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.33, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.63, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.37, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.33, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.75, "prompt_tokens": 259, "new_tokens": 6}
+{"arm": "D", "pair": "bridge-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.53, "prompt_tokens": 259, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.38, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.92, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.34, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.37, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.57, "prompt_tokens": 232, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.47, "prompt_tokens": 232, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 7.84, "prompt_tokens": 231, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.88, "prompt_tokens": 231, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.58, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.33, "prompt_tokens": 263, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.34, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.47, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.98, "prompt_tokens": 265, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.07, "prompt_tokens": 265, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.29, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "pharmacy-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.64, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.86, "prompt_tokens": 238, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.4, "prompt_tokens": 238, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.9, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 11.86, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.06, "prompt_tokens": 235, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.74, "prompt_tokens": 235, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.59, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 5.76, "prompt_tokens": 236, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.19, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.65, "prompt_tokens": 268, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.92, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.96, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.14, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.36, "prompt_tokens": 273, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 9.08, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "traffic-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.58, "prompt_tokens": 269, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.01, "prompt_tokens": 229, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.75, "prompt_tokens": 229, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.19, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.5, "prompt_tokens": 230, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.8, "prompt_tokens": 227, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.74, "prompt_tokens": 227, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.85, "prompt_tokens": 228, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.53, "prompt_tokens": 228, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.81, "prompt_tokens": 260, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.51, "prompt_tokens": 260, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.77, "prompt_tokens": 258, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.63, "prompt_tokens": 258, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.69, "prompt_tokens": 260, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.26, "prompt_tokens": 260, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-BA-1", "version": "SHARED", "output": "DECISION: CONFIRMED", "seconds": 8.37, "prompt_tokens": 259, "new_tokens": 6}
+{"arm": "D", "pair": "archive-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.44, "prompt_tokens": 259, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.3, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-AB-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.02, "prompt_tokens": 234, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.45, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-AB-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 4.5, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.19, "prompt_tokens": 235, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-BA-0", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.44, "prompt_tokens": 235, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 7.42, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h1-BA-1", "version": "INDEPENDENT", "output": "DECISION: CONFIRMED", "seconds": 5.25, "prompt_tokens": 233, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-AB-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.69, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-AB-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.45, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-AB-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.73, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-AB-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.36, "prompt_tokens": 266, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-BA-0", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.96, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-BA-0", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.28, "prompt_tokens": 267, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-BA-1", "version": "SHARED", "output": "DECISION: INSUFFICIENT", "seconds": 8.59, "prompt_tokens": 265, "new_tokens": 6}
+{"arm": "D", "pair": "orchard-h2-BA-1", "version": "INDEPENDENT", "output": "DECISION: INSUFFICIENT", "seconds": 4.45, "prompt_tokens": 265, "new_tokens": 6}
