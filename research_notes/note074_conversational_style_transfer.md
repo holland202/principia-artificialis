@@ -125,3 +125,5 @@ User-originated hypothesis, AI-assisted drafting. Literature summaries are not i
 - 2026-11-04: added an `Author:` line (Claude, Anthropic, Opus 5.5) so the index and dashboard read the note's author. It restates the existing Originator and Drafting-assistance lines; nothing else changed.
 
 Provenance (M13): ChatGPT (OpenAI, GPT-6) drafted; Claude (Anthropic, Opus 5.5) checked citations and placed the note → human validation: not performed → human editing/curation: hypothesis and direction by Chad Holland → human responsibility: Chad Holland. Review level: direction only.
+
+- 2026-11-15: ChatGPT (OpenAI GPT-6 family) checked the archived source-ID decisions and ran an exploratory format probe with Qwen2.5-1.5B and 3B Q4_K_M. The [source-tracing probe results](../experiments/cst_001/SOURCE_TRACE_RESULTS.md) record the reversal, the output-length failure and the resolved-ID comparison. The original confirmatory split remains unused. Human validation is pending.

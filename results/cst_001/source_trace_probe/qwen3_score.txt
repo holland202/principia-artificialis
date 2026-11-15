@@ -1,0 +1,6 @@
+SAME-INPUT REPEATS: 4/4 matched
+E {"hops": {"1": {"correct": 0, "reversed": 0}, "2": {"correct": 0, "reversed": 0}}, "total": {"both_confirmed": 0, "both_insufficient": 0, "correct": 0, "malformed": 16, "reversed": 0}}
+O {"hops": {"1": {"correct": 0, "reversed": 0}, "2": {"correct": 0, "reversed": 0}}, "total": {"both_confirmed": 0, "both_insufficient": 0, "correct": 0, "malformed": 16, "reversed": 0}}
+L {"hops": {"1": {"correct": 1, "reversed": 0}, "2": {"correct": 0, "reversed": 0}}, "total": {"both_confirmed": 0, "both_insufficient": 1, "correct": 1, "malformed": 14, "reversed": 0}}
+G {"hops": {"1": {"correct": 2, "reversed": 3}, "2": {"correct": 1, "reversed": 4}}, "total": {"both_confirmed": 1, "both_insufficient": 5, "correct": 3, "malformed": 0, "reversed": 7}}
+DIGEST 95aafd44d5566b5aec58d6fd114cef1213cafdd9aeebc067311e836f26cbb2b7

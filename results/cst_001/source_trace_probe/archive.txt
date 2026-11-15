@@ -1,0 +1,8 @@
+ARCHIVE SHA256 845c2a3f441bbcdaef3d181a58100ad9becfcefdb1f6a862b711d57b15b62028
+ARCHIVE DEV SEAL 6287b2ce58b75ab5ea43b468c33eaa35fa2d7cee9e987b16169bf1f041ae60a2
+A {"hops": {"1": {"correct": 0, "reversed": 10}, "2": {"correct": 0, "reversed": 27}}, "total": {"both_confirmed": 22, "both_insufficient": 5, "correct": 0, "malformed": 0, "reversed": 37}}
+B {"hops": {"1": {"correct": 0, "reversed": 21}, "2": {"correct": 0, "reversed": 12}}, "total": {"both_confirmed": 10, "both_insufficient": 21, "correct": 0, "malformed": 0, "reversed": 33}}
+C {"hops": {"1": {"correct": 0, "reversed": 0}, "2": {"correct": 0, "reversed": 29}}, "total": {"both_confirmed": 33, "both_insufficient": 2, "correct": 0, "malformed": 0, "reversed": 29}}
+D {"hops": {"1": {"correct": 0, "reversed": 4}, "2": {"correct": 0, "reversed": 19}}, "total": {"both_confirmed": 34, "both_insufficient": 7, "correct": 0, "malformed": 0, "reversed": 23}}
+E {"hops": {"1": {"correct": 0, "reversed": 4}, "2": {"correct": 0, "reversed": 24}}, "total": {"both_confirmed": 34, "both_insufficient": 2, "correct": 0, "malformed": 0, "reversed": 28}}
+DIGEST ec91009fe4e18c6f5869839705a00985ff11776a235a2a5a0643a946166722d6
