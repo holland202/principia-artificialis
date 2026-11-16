@@ -82,6 +82,11 @@ if __name__ == "__main__":
     for s, r in nor.items():
         print(f"{s:>4}  t_ih {r['t_ih']}  d_edge {r['d_edge_r']:+.4f}  d_top {r['d_top_norm']:+.4f}  "
               f"d_srank {r['d_stable_rank']:+.3f}  final_icl {r['final_icl']:.3f}")
+    # Post-run fix (2026-11-16): REGISTRATION.md says P2 and P3 are NOT TESTABLE when P1 fails; the frozen script
+    # did not enforce that gate and printed P2 HELD. The gate is applied here; the raw counts are still printed.
     for k, (ok, why) in v.items():
-        print(f"{k}: {'HELD' if ok else 'FAILED'}  ({why})")
+        label = "HELD" if ok else "FAILED"
+        if k in ("P2", "P3") and not v["P1"][0]:
+            label = "NOT TESTABLE (P1 failed; raw count shown)"
+        print(f"{k}: {label}  ({why})")
     print("DIGEST", data.get("digest"))

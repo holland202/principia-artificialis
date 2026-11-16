@@ -118,3 +118,19 @@ class Instruments(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class Dip(unittest.TestCase):
+    def test_dip_found_where_planted(self):
+        import dip as D
+        t = np.linspace(2.3, 6.0, len(STEPS))
+        t[50:55] -= 1.5                     # dip at step 1000
+        rows = [{"step": s, "top_norm": t[j]} for j, s in enumerate(STEPS)]
+        size, at = D.dip(rows)
+        self.assertEqual(at, 1000)          # the series rises inside the dip, so its first step is deepest
+        self.assertGreater(size, 1.4)
+
+    def test_monotone_series_has_no_dip(self):
+        import dip as D
+        rows = [{"step": s, "top_norm": 2 + j * 0.05} for j, s in enumerate(STEPS)]
+        self.assertEqual(D.dip(rows)[0], 0.0)
