@@ -1,0 +1,23 @@
+  seed 5 repeat step 200: icl -0.005
+  seed 5 repeat step 400: icl -0.004
+  seed 5 repeat step 600: icl 0.002
+  seed 5 repeat step 800: icl 0.027
+  seed 5 repeat step 1000: icl 1.184
+  seed 5 repeat step 1200: icl 3.688
+  seed 5 repeat step 1400: icl 4.004
+  seed 5 repeat step 1600: icl 4.071
+  seed 5 repeat step 1800: icl 4.098
+  seed 5 repeat step 2000: icl 4.112
+seed 5 repeat: 163s, final icl 4.112
+  seed 5 norepeat step 200: icl -0.017
+  seed 5 norepeat step 400: icl -0.005
+  seed 5 norepeat step 600: icl -0.002
+  seed 5 norepeat step 800: icl -0.001
+  seed 5 norepeat step 1000: icl -0.001
+  seed 5 norepeat step 1200: icl -0.001
+  seed 5 norepeat step 1400: icl -0.000
+  seed 5 norepeat step 1600: icl -0.001
+  seed 5 norepeat step 1800: icl -0.001
+  seed 5 norepeat step 2000: icl -0.001
+seed 5 norepeat: 164s, final icl -0.001
+DIGEST 3c49bb243f17356b33d106685b39a7fdf45d67c64d6e2901aea39d1a1280dc48

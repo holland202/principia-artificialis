@@ -1,0 +1,11 @@
+seed  dip_size  dip_step  t_icl50  t_icl10   (repeat)
+   7  1.124  780  900  760
+   8  1.380  920  1040  920
+   9  1.355  940  1080  960
+  10  1.206  860  1000  860
+  11  1.526  920  1040  920
+  12  1.270  860  980  860
+norepeat dip sizes: 7:0.000, 8:0.000, 9:0.000, 10:0.000, 11:0.000, 12:0.000
+P6a: HELD  (repeat dips >= 0.5 in 6/6; norepeat dips < 0.2 in 6/6)
+P6b: HELD  (dip before the 50% ICL point in 6/6)
+P6c: FAILED  (dip before the 10% ICL point in 1/6)

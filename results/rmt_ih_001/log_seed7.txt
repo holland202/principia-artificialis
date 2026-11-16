@@ -1,0 +1,23 @@
+  seed 7 repeat step 200: icl -0.005
+  seed 7 repeat step 400: icl -0.005
+  seed 7 repeat step 600: icl 0.025
+  seed 7 repeat step 800: icl 1.006
+  seed 7 repeat step 1000: icl 3.446
+  seed 7 repeat step 1200: icl 3.987
+  seed 7 repeat step 1400: icl 4.072
+  seed 7 repeat step 1600: icl 4.099
+  seed 7 repeat step 1800: icl 4.113
+  seed 7 repeat step 2000: icl 4.120
+seed 7 repeat: 160s, final icl 4.120
+  seed 7 norepeat step 200: icl -0.005
+  seed 7 norepeat step 400: icl -0.001
+  seed 7 norepeat step 600: icl 0.000
+  seed 7 norepeat step 800: icl -0.000
+  seed 7 norepeat step 1000: icl 0.001
+  seed 7 norepeat step 1200: icl 0.001
+  seed 7 norepeat step 1400: icl 0.000
+  seed 7 norepeat step 1600: icl 0.001
+  seed 7 norepeat step 1800: icl 0.000
+  seed 7 norepeat step 2000: icl 0.001
+seed 7 norepeat: 168s, final icl 0.001
+DIGEST a214e5b826614773b4bd453fb2b7bc02903e54483676edc6478461c0378e1e9b
