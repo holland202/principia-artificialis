@@ -1,0 +1,1 @@
+Q4 anti-vacuity, untrained model: {'periodic_heldout_L128': 0.01, 'recall_L128': 0.007, 'copy_L128': 0.008, 'periodic_heldout_L256': 0.008, 'recall_L256': 0.009, 'copy_L256': 0.007, 'periodic_heldout_L512': 0.009, 'recall_L512': 0.009, 'copy_L512': 0.008, 'periodic_seen_L128': 0.01} params 165120
