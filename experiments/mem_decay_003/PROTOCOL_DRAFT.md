@@ -1,3 +1,5 @@
+> **2026-11-16, later:** superseded in part by [PROTOCOL_REV1.md](PROTOCOL_REV1.md) after Codex's review (PR #159). H1b is withdrawn as a claim about model behaviour, and four scoring defects were found and fixed. Nothing below is edited.
+
 # MEM-DECAY-003 protocol draft: when memory is tight, does losing a correction make an AI confidently wrong?
 
 **State:** DRAFT protocol and qualified instrument. **NOT REGISTERED, NOT RUN.** No model has been called. Owner

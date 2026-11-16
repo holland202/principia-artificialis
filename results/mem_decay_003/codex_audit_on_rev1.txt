@@ -1,0 +1,7 @@
+# Codex's audit (PR #159 @ 96c00d1, unchanged) run against REV1 code, Claude-run 2026-11-16; exit 1 = defects no longer reproduce
+  "status": "EXPLORATORY PUBLIC AUDIT / NO MODEL INFERENCE / NO EVAL DATASET"
+}
+AUDIT OBSERVATIONS MISMATCH
+DIGEST 85219dc82bb34566d10d94dfed68e18a3663fd25e07b288ad54fa01e9c6f9aee
+{"A1_punctuated_gold_rejected": false, "A2_absent_redundant_evidence_accepted": false, "A3_last_answer_contract": false, "A4_public_id_shortcut": false, "A5_hidden_world_collision": true}
+{"correction_selected": 0, "correction_selected_after_id_rotation": 0, "hidden_scramble_invariant": 40, "scenarios": 40}
