@@ -1,0 +1,37 @@
+name: CST-MECH instrument qualification
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/cst_mech_qual/**'
+      - 'results/cst_mech_qual/**'
+      - 'docs/CST_MECH_QUAL_001*'
+      - '.github/workflows/cst-mech-qualification.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Reproduce pinned constructed outcome
+        run: python experiments/cst_mech_qual/instrument.py qualify
+      - name: Reject live oracle sabotage
+        shell: bash
+        run: |
+          set +e
+          python experiments/cst_mech_qual/instrument.py qualify --sabotage
+          qual_sabotage_exit=$?
+          set -e
+          test "$qual_sabotage_exit" -eq 1
+      - name: Check constructed fixtures only
+        run: python -m unittest discover -s experiments/cst_mech_qual -p test_instrument.py -v

@@ -1,0 +1,277 @@
+{
+  "details": {
+    "archive_check_count": 11,
+    "benign_pairs": 48,
+    "benign_pairs_correct": 0,
+    "budget_counts_not_runtime_estimates": {
+      "context_screen_generated_programs": 128,
+      "cst_fresh_long_format_responses": 768,
+      "cst_noise_responses": 18,
+      "cst_optional_short_format_responses": 512,
+      "cst_screen_responses": 192,
+      "redundancy_screen_trained_models": 24
+    },
+    "constant_label_pairs_correct": {
+      "A": 0,
+      "B": 0
+    },
+    "fixture_responses_sha256": "88aa0d80c583a50bea4f9ba710040d5eeeefb9d72b595e331efa5d3b9ca2f3f3",
+    "gate_fixtures": {
+      "both_benefit": {
+        "blocks": 64,
+        "deep": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "directional_gate": false,
+        "directional_iut_p": "1",
+        "generic_contrast": {
+          "mean": "3/4",
+          "negative": 0,
+          "p": "1/281474976710656",
+          "positive": 48,
+          "ties": 16
+        },
+        "interaction": {
+          "mean": "3/4",
+          "negative": 0,
+          "p": "1/281474976710656",
+          "positive": 48,
+          "ties": 16
+        },
+        "pr152_gate": true,
+        "shallow": {
+          "mean": "1/4",
+          "negative": 0,
+          "p": "1/65536",
+          "positive": 16,
+          "ties": 48
+        },
+        "specificity_gate": false
+      },
+      "crossover": {
+        "blocks": 64,
+        "deep": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "directional_gate": true,
+        "directional_iut_p": "1/18446744073709551616",
+        "generic_contrast": {
+          "mean": "2",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "interaction": {
+          "mean": "2",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "pr152_gate": true,
+        "shallow": {
+          "mean": "-1",
+          "negative": 64,
+          "p": "1",
+          "positive": 0,
+          "ties": 0
+        },
+        "specificity_gate": true
+      },
+      "deep_only": {
+        "blocks": 64,
+        "deep": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "directional_gate": false,
+        "directional_iut_p": "1",
+        "generic_contrast": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "interaction": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "pr152_gate": true,
+        "shallow": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "specificity_gate": false
+      },
+      "generic_matches": {
+        "blocks": 64,
+        "deep": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "directional_gate": true,
+        "directional_iut_p": "1/18446744073709551616",
+        "generic_contrast": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "interaction": {
+          "mean": "2",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "pr152_gate": true,
+        "shallow": {
+          "mean": "-1",
+          "negative": 64,
+          "p": "1",
+          "positive": 0,
+          "ties": 0
+        },
+        "specificity_gate": false
+      },
+      "no_effect": {
+        "blocks": 64,
+        "deep": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "directional_gate": false,
+        "directional_iut_p": "1",
+        "generic_contrast": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "interaction": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "pr152_gate": false,
+        "shallow": {
+          "mean": "0",
+          "negative": 0,
+          "p": "1",
+          "positive": 0,
+          "ties": 64
+        },
+        "specificity_gate": false
+      },
+      "reverse": {
+        "blocks": 64,
+        "deep": {
+          "mean": "-1",
+          "negative": 64,
+          "p": "1",
+          "positive": 0,
+          "ties": 0
+        },
+        "directional_gate": false,
+        "directional_iut_p": "1",
+        "generic_contrast": {
+          "mean": "-2",
+          "negative": 64,
+          "p": "1",
+          "positive": 0,
+          "ties": 0
+        },
+        "interaction": {
+          "mean": "-2",
+          "negative": 64,
+          "p": "1",
+          "positive": 0,
+          "ties": 0
+        },
+        "pr152_gate": false,
+        "shallow": {
+          "mean": "1",
+          "negative": 0,
+          "p": "1/18446744073709551616",
+          "positive": 64,
+          "ties": 0
+        },
+        "specificity_gate": false
+      }
+    },
+    "graph_check_count": 192,
+    "manifest_sha256": "11828ddddeece44d9c95deb9715cf2b4b00df7e616671fc239e5df0e081b0035",
+    "matched_graph_character_lengths": {
+      "Q00": [
+        117
+      ],
+      "Q01": [
+        117
+      ],
+      "Q02": [
+        117
+      ],
+      "Q03": [
+        117
+      ],
+      "Q04": [
+        117
+      ],
+      "Q05": [
+        117
+      ],
+      "Q06": [
+        117
+      ],
+      "Q07": [
+        117
+      ]
+    },
+    "oracle_sabotage_pairs_correct": 0,
+    "parser_check_count": 10,
+    "qualification_blocks": 8,
+    "qualification_cases": 32,
+    "qualification_trials": 96
+  },
+  "predictions": {
+    "Q1": true,
+    "Q2": true,
+    "Q3": false,
+    "Q4": false,
+    "Q5": false
+  },
+  "scope": "CONSTRUCTED QUALIFICATION ONLY"
+}
+VERDICT 2 of 5 as registered
+DIGEST 264e202a9319b05a32c326e24e4d8dd55ac368127e8d073c4195d026c18dd416
+
+EXIT_CODE 1

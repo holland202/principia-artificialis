@@ -1,0 +1,117 @@
+{
+  "status": "LITERATURE SCREEN, NOT NOVELTY CERTIFICATION",
+  "provenance": "Codex / OpenAI GPT-6 Astra; Chad Holland direction only; human curation pending",
+  "retention": "Selected short verbatim excerpts only, each exact retained UTF-8 string including newline hashed. Full copyrighted works are not redistributed. Claim checks are separate fields.",
+  "sources": [
+    {
+      "id": "S1",
+      "author": "Ryan Liu, Jiayi Geng, Addison J. Wu, Ilia Sucholutsky, Tania Lombrozo, Thomas L. Griffiths",
+      "title": "Mind Your Step (by Step)",
+      "url": "https://proceedings.mlr.press/v267/liu25t.html",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "CoT effects are mixed, with positive, neutral, and negative changes.\n",
+      "excerpt_utf8_sha256": "633dacfa4a5accbac527e1b9741cf9233e6cf9bb73f73338d1da5bbe44dd457d",
+      "inspection_scope": "Publisher abstract and linked author repository inspected.",
+      "checked_claim": "General reasoning-harm novelty rejected.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "S2",
+      "author": "Jianxin Gao, Runze Li, Tianyi Yu, Liangwei Ren, Bohan Chen, Zining Wang",
+      "title": "Copies or Sources?",
+      "url": "https://arxiv.org/pdf/2610.06192",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "Documentation alone does not merge copies.\n",
+      "excerpt_utf8_sha256": "e4db31338dffc546e72007b0524815fe02ce15892de34620c3039c3eee322972",
+      "inspection_scope": "Primary PDF: aggregator interventions, controlled-log conditions, reasoning settings, tables and limits inspected.",
+      "checked_claim": "Source declarations and copied-evidence intervention already studied. Exact controlled crossover not found in inspected sections. Novelty remains unresolved.",
+      "external_result_reproduced": false,
+      "retrieved_pdf_sha256": "5840f389a81f523f29c81d4b85c045bca65f3bee0cdbc404fef779d0273e95fe"
+    },
+    {
+      "id": "S3",
+      "author": "Daniil Huryn",
+      "title": "Source Marking in Language Models",
+      "url": "https://aclanthology.org/2026.blackboxnlp-1.15.pdf",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "We do not claim a general improvement in reasoning.\n",
+      "excerpt_utf8_sha256": "95d81fd5f1dd97e27583233fb57c00b00e6a7890ea083e6b5b5f7857a74194e4",
+      "inspection_scope": "Primary PDF methods, related work and conclusions inspected.",
+      "checked_claim": "Relevant-context responsiveness is distinct from source-sensitive reasoning. Not evidence of CST novelty.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "S4",
+      "author": "Rana Ali Amjad, Kairen Liu, Bernhard C Geiger",
+      "title": "Understanding Neural Networks and Individual Neuron Importance via Information-Ordered Cumulative Ablation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34191732/",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "it is ill-advised to compare the proposed information-theoretic quantities across layers.\n",
+      "excerpt_utf8_sha256": "90335e0648a112ea9713d5b803977984c68aa2eb9e68ae36d54a26bb32d4a69d",
+      "inspection_scope": "Author abstract hosted by PubMed inspected; full-text coverage incomplete.",
+      "checked_claim": "Information-based ablation and redundancy analysis predate PA; no novelty for that broad combination.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "S5",
+      "author": "Yuki Tomoda, Yutaka Yamaguti",
+      "title": "Mutual information minimization enhances noise robustness and induces fault containment in functionally differentiated recurrent neural networks",
+      "url": "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2026.1892212/full",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "Functional differentiation, the emergence of specialized neural populations, is a hallmark of biological brains\n",
+      "excerpt_utf8_sha256": "4c42dd52fe41d8835dc4ab4c2fdb4b4b980e84c9eef86e4285d04ecf08eca4f6",
+      "inspection_scope": "Publisher abstract and results inspected.",
+      "checked_claim": "Prior work connects information-theoretic training to noise robustness and fault localization; exact PA residual not verified.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "S6",
+      "author": "Rodrigo Pato Nogueira, Karthik Pattabiraman, Marco Vieira, João R. Campos",
+      "title": "A Systematic Methodology for Evaluating Failure Independence in LLM-Generated Code",
+      "url": "https://arxiv.org/pdf/2607.02808",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "failures remain highly correlated within the same model.\n",
+      "excerpt_utf8_sha256": "4941967b4a3bbbb6b1e08fb92d636b6d1dedb2e23365e1e3ce2137ca87f12099",
+      "inspection_scope": "Primary PDF methods, results and limits inspected. Public artifact tinyurl.com/CodeDiversity returned HTTP 403; artifact NOT inspected or executed.",
+      "checked_claim": "Generic same/different-model failure-correlation claim is directly preempted. Shared illustrative-code intervention not established by inspected sections.",
+      "external_result_reproduced": false,
+      "retrieved_pdf_sha256": "c08b916cb9d5c6c65e7cf3cd674eabd1a3dae72f24c27294023e17d4c4028075"
+    },
+    {
+      "id": "S7",
+      "author": "Elliot Myunghoon Kim, Avi Garg, Kenny Peng, Nikhil Garg",
+      "title": "Correlated Errors in Large Language Models",
+      "url": "https://proceedings.mlr.press/v267/kim25e.html",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "We find substantial correlation in model errors\n",
+      "excerpt_utf8_sha256": "e212c3c9c194036cbd838636bc5ab0ed8dcf07141acd1ee0a10af5ef51931c6a",
+      "inspection_scope": "Publisher abstract inspected.",
+      "checked_claim": "Generic independent-error assumption is already empirically challenged.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "S8",
+      "author": "Mehul Damani, Idan Shenfeld, Andi Peng, Andreea Bobu, Jacob Andreas",
+      "title": "Learning How Hard to Think: Input-Adaptive Allocation of LM Computation",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/ff414825df833edb8b1839e3d5d495e9-Paper-Conference.pdf",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "the distribution of rewards given an input and computation budget\n",
+      "excerpt_utf8_sha256": "1703a4878c2ccd17a1c997c3a40d1dcd7d3b4ab3fefdb6f32a047d507a269f45",
+      "inspection_scope": "Primary PDF abstract and method introduction inspected.",
+      "checked_claim": "Marginal-value prediction and budgeted adaptive LM computation are existing work.",
+      "external_result_reproduced": false
+    },
+    {
+      "id": "I1",
+      "author": "Jiayi Geng and the CoT_overthinking authors",
+      "title": "CoT_overthinking implementation",
+      "url": "https://github.com/JiayiGeng/CoT_overthinking",
+      "retrieved_utc_date": "2026-11-15",
+      "selected_verbatim_excerpt": "Run the following command for the passive observation experiments:\n",
+      "excerpt_utf8_sha256": "c564e5fd4e00a125f3ebaceae1a852fed27dbf6abfb7915e910b0d7b5d3fef4f",
+      "inspection_scope": "Author-linked public repository README and file listing inspected. No execution.",
+      "checked_claim": "Implementation exists; data download and model credentials are separate requirements.",
+      "external_result_reproduced": false
+    }
+  ]
+}
