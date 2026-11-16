@@ -76,3 +76,7 @@ offsets. Then retest P6a/b/c and P7 on fresh seeds.
 - Novelty is not established. Activation-based spectral signals around induction-head formation are reported (Xu,
   arXiv 2605.24059). I have not found this weight-based dip in prior work, but my part A search missed Xu, so treat
   that absence with caution.
+
+## Published
+
+The models, metrics, code and model card are on Hugging Face at [holland202/rmt-ih-001](https://huggingface.co/holland202/rmt-ih-001), commit `6f72ebb`. Chad Holland uploaded them from Termux on 2026-11-16, after `sha256sum -c SHA256SUMS` passed for all 32 files on his device. The uploaded `SHA256SUMS` matches the package built here.
