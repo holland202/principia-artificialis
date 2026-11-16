@@ -288,12 +288,9 @@ def qualification(sabotage=False):
     print(json.dumps(payload, indent=2, sort_keys=True))
     print(f"VERDICT {sum(outcomes.values())} of {len(outcomes)} as registered")
     print("DIGEST " + sha)
-    # A separate W4 commit pins the observed normal outcome after the first run.
-    try:
-        from recorded import RECORDED
-    except ModuleNotFoundError:
-        RECORDED = None
-    if RECORDED is not None and (outcomes, sha) != RECORDED:
+    # W4 pin is mandatory. A missing pin fails closed with a nonzero import error.
+    from recorded import RECORDED
+    if (outcomes, sha) != RECORDED:
         return 1
     return 0 if all(outcomes.values()) else 1
 
