@@ -1,0 +1,13 @@
+QUALIFICATION REV1 (descriptive, dev family only, no model), 40 scenarios of 20 records
+budget 6
+  random              retained: correction 13/40  singleton 10/40  conjunctive 5/40  redundant 23/40  stale_licensed 6/40
+  recency             retained: correction 40/40  singleton 0/40  conjunctive 1/40  redundant 38/40  stale_licensed 0/40
+  uses                retained: correction 0/40  singleton 0/40  conjunctive 0/40  redundant 10/40  stale_licensed 39/40
+  content             retained: correction 0/40  singleton 40/40  conjunctive 0/40  redundant 0/40  stale_licensed 40/40
+  supersession_aware  retained: correction 40/40  singleton 40/40  conjunctive 0/40  redundant 0/40  stale_licensed 0/40
+budget 10
+  random              retained: correction 25/40  singleton 17/40  conjunctive 12/40  redundant 32/40  stale_licensed 10/40
+  recency             retained: correction 40/40  singleton 4/40  conjunctive 12/40  redundant 40/40  stale_licensed 0/40
+  uses                retained: correction 0/40  singleton 0/40  conjunctive 0/40  redundant 32/40  stale_licensed 40/40
+  content             retained: correction 0/40  singleton 40/40  conjunctive 0/40  redundant 0/40  stale_licensed 40/40
+  supersession_aware  retained: correction 40/40  singleton 40/40  conjunctive 0/40  redundant 0/40  stale_licensed 0/40
