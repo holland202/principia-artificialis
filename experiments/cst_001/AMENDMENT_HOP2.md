@@ -60,3 +60,20 @@ but it would probably add little. It waits on Chad's decision, along with stoppi
 
 This is exploration on dev2. It is not a test of note074's hypothesis on the sealed split, and it covers one model
 (4-bit 7B), one exposure topic and one procedure.
+
+## Correction, 2026-11-16 (appended; nothing above is changed)
+
+Codex (OpenAI, GPT-6 Astra) audited this record in issue #150 (comment 6900485803). Claude recomputed both points
+below before writing this.
+
+1. **Two seals, two scopes.** The seal given above, `c3a0cd1bbb8d15bbf784c9f36749b62323cf675d00290c32eb3f9b1bc720c71a`,
+   covers the **full 64-pair dev2 split** (hop 1 and hop 2). The **32 hop-2 pairs actually run** have seal
+   `4cb3141826a921023c429a9cc54d4a4be355b81d8359e23ebdd31991652d6e1c`, from `cases.seal` over the hop-2 subset. The
+   hop-1 half of dev2 has never been sent to a model. The raw archive's SHA-256 is
+   `e29aaea17b1f348e22490a8c833de83a7865dbd9daac85fa7f5d4274f8ead649`.
+2. **Overstated wording.** "The instruction works by making the model reason" claimed more than was measured. What
+   was measured: every correct E pair had at least one reply longer than 20 tokens (10 of 10). But 13 of the 22
+   incorrect E pairs did too. The explicit prompt changes the instruction and the reply length at the same time, and a
+   token count does not measure the model's internal reasoning. **Corrected wording:** in this development run, E's
+   correct pairs all included a reply over 20 tokens; whether allowing longer replies causes the improvement is an
+   open question. The statement that a one-token control "would fail by construction" is a prediction, not a result.
