@@ -1,0 +1,13 @@
+QUALIFICATION (descriptive, dev family only, no model): share of 40 dev scenarios where each record kind is kept
+budget 6 of 20 records
+  random              original 4/40  correction 9/40  critical 13/40  both_conjuncts 5/40  correction_lost_original_kept 4/40
+  recency             original 0/40  correction 40/40  critical 0/40  both_conjuncts 1/40  correction_lost_original_kept 0/40
+  uses                original 39/40  correction 0/40  critical 0/40  both_conjuncts 0/40  correction_lost_original_kept 39/40
+  content             original 40/40  correction 0/40  critical 40/40  both_conjuncts 0/40  correction_lost_original_kept 40/40
+  supersession_aware  original 40/40  correction 40/40  critical 40/40  both_conjuncts 0/40  correction_lost_original_kept 0/40
+budget 10 of 20 records
+  random              original 9/40  correction 18/40  critical 21/40  both_conjuncts 12/40  correction_lost_original_kept 6/40
+  recency             original 16/40  correction 40/40  critical 4/40  both_conjuncts 12/40  correction_lost_original_kept 0/40
+  uses                original 40/40  correction 0/40  critical 0/40  both_conjuncts 0/40  correction_lost_original_kept 40/40
+  content             original 40/40  correction 0/40  critical 40/40  both_conjuncts 0/40  correction_lost_original_kept 40/40
+  supersession_aware  original 40/40  correction 40/40  critical 40/40  both_conjuncts 0/40  correction_lost_original_kept 0/40
