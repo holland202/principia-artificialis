@@ -157,3 +157,22 @@ Appended (M12); the text above is unchanged. Registration, code and results:
 *Provenance of this update (M13): Claude (Anthropic, Opus 5.5) → human validation: not performed → human
 editing/curation: direction by Chad Holland, 2026-11-14 → human responsibility: Chad Holland. Review level: direction
 only.*
+
+## Update 2026-11-16: the edge lead, registered and tested on a second family (RMT-037b)
+
+Appended (M12). [Registration](../experiments/rmt_037/REGISTRATION_B.md) ·
+[Results](../experiments/rmt_037/RESULTS_B.md). Self-tested.
+
+The lead from the update above was tested on OPT-125m and OPT-350m, whose weights had never been computed on. The
+direction and threshold were fixed on GPT-2. All four registered predictions held:
+
+- training lowers spacing repulsion among the largest QK singular values (edge, Init − Trained: +0.075 and +0.039);
+- the bulk is unchanged;
+- shuffling the trained weights removes the edge effect.
+
+This replicates the published finding that learning shows in the largest singular values (Thamm et al. 2022). It
+does not say what those directions encode.
+
+*Provenance of this update (M13): Claude (Anthropic, Opus 5.5) → human validation: not performed → human
+editing/curation: direction by Chad Holland, 2026-11-16 → human responsibility: Chad Holland. Review level:
+direction only.*

@@ -1,0 +1,37 @@
+RMT-037b | python 3.13.18 numpy 2.5.3
+opt-125m weights sha256 2d74da6615135c58cf3cf9ad4cb11e7c613ff9e55fe658a47ab83b6c8d1174a9
+opt-350m weights sha256 a5223ae6f3c26c6d90003f96a6bcd9a4aaaef0d36fca6469112efeeb985f2842
+references: POIS(64) bulk 0.3855; GOE(64) bulk 0.5309; C3 max rel diff 1.026e-15
+
+== opt-125m: 12 layers x 12 heads, d_model 768; weights read twice identical: True
+  TRAINED QK levels min 3.405e-06 median 2.515 max 33.3 (n=9216)
+  INIT    QK levels min 0.1836 median 0.2961 max 0.4488 (n=9216)
+  SHUF    QK levels min 0.7265 median 2.556 max 14.83 (n=9216)
+  QK bulk TRAINED <r> = 0.5241 +- 0.0031  (ratios 7056, zero gaps 0)
+  QK bulk INIT    <r> = 0.5352 +- 0.0030  (ratios 7056, zero gaps 0)
+  QK bulk SHUF    <r> = 0.5355 +- 0.0031  (ratios 7056, zero gaps 0)
+  QK edge TRAINED <r> = 0.4814 +- 0.0097  (ratios 720, zero gaps 0)
+  QK edge INIT    <r> = 0.5561 +- 0.0095  (ratios 720, zero gaps 0)
+  QK edge SHUF    <r> = 0.5086 +- 0.0093  (ratios 720, zero gaps 0)
+
+== opt-350m: 24 layers x 16 heads, d_model 1024; weights read twice identical: True
+  TRAINED QK levels min 0.03008 median 1.181 max 568.6 (n=24576)
+  INIT    QK levels min 0.2629 median 0.3986 max 0.5832 (n=24576)
+  SHUF    QK levels min 0.3412 median 1.282 max 12.74 (n=24576)
+  QK bulk TRAINED <r> = 0.5308 +- 0.0019  (ratios 18816, zero gaps 0)
+  QK bulk INIT    <r> = 0.5302 +- 0.0018  (ratios 18816, zero gaps 0)
+  QK bulk SHUF    <r> = 0.5293 +- 0.0019  (ratios 18816, zero gaps 0)
+  QK edge TRAINED <r> = 0.4841 +- 0.0061  (ratios 1920, zero gaps 0)
+  QK edge INIT    <r> = 0.5226 +- 0.0059  (ratios 1920, zero gaps 0)
+  QK edge SHUF    <r> = 0.5283 +- 0.0058  (ratios 1920, zero gaps 0)
+
+HELD    E1 opt-125m edge INIT - TRAINED = +0.0747 >= 0.02
+HELD    E2 opt-350m edge INIT - TRAINED = +0.0385 >= 0.02
+HELD    E3 bulk |TRAINED - INIT| = 0.0110, 0.0006 both <= 0.02
+HELD    E4 edge SHUF - TRAINED = +0.0272, +0.0441 both >= 0.02
+
+HELD   C1 POIS(64) bulk within 0.02 of 0.3863
+HELD   C2 GOE(64) bulk within 0.02 of 0.5307
+HELD   C3 QK via QR equals full SVD to 1e-8 relative
+HELD   C4 weights read twice identical
+DIGEST 3f2625d3f8490f12ceb3e76dacdc0929a9bd33133ee4dd79c4a0d32270553828
