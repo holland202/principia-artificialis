@@ -1,0 +1,76 @@
+{
+  "checks": {
+    "A1_punctuated_gold_rejected": true,
+    "A2_absent_redundant_evidence_accepted": true,
+    "A3_last_answer_contract": true,
+    "A4_public_id_shortcut": true,
+    "A5_hidden_world_collision": true
+  },
+  "id_shortcut": {
+    "correction_selected": 40,
+    "correction_selected_after_id_rotation": 0,
+    "hidden_scramble_invariant": 40,
+    "scenarios": 40
+  },
+  "observability": {
+    "different_world_keys": true,
+    "encoder": "constructed projection; production prompt builder absent",
+    "never_corrected_input_sha256": "4d8e7b49ce9afbc109b65a43bc747ab570a6a6d4887ebc7fca17f6a22fb427ad",
+    "non_ai_visible_lookup": {
+      "both": {
+        "classification": "CORRECT",
+        "output": "ANSWER: Room F"
+      },
+      "correction_only": {
+        "classification": "CORRECT",
+        "output": "ANSWER: Room F"
+      },
+      "neither": {
+        "classification": "UNKNOWN",
+        "output": "ANSWER: UNKNOWN"
+      },
+      "original_only": {
+        "classification": "STALE",
+        "output": "ANSWER: Room D"
+      }
+    },
+    "original_answer_world_classes": [
+      "CORRECT",
+      "STALE"
+    ],
+    "public_retained_input": {
+      "instruction": "Answer from retained records; use UNKNOWN if they do not settle the question.",
+      "question": "Which room is the quarterly safety review in?",
+      "records": [
+        {
+          "age": 60,
+          "id": "m000",
+          "text": "The quarterly safety review is scheduled in Room D. Attendance is required for all shift leads, and the review must start on time at 9 a.m.",
+          "uses": 6
+        }
+      ]
+    },
+    "restored_correction_changes_input": true,
+    "retained_input_sha256": "4d8e7b49ce9afbc109b65a43bc747ab570a6a6d4887ebc7fca17f6a22fb427ad",
+    "same_visible_input": true
+  },
+  "parser_contract": {
+    "conflicting_final_correct": "CORRECT",
+    "conflicting_final_stale": "STALE",
+    "missing_prefix": "MALFORMED",
+    "plain_correct": "CORRECT"
+  },
+  "punctuated_answer": {
+    "classification": "WRONG",
+    "gold": "6 p.m.",
+    "raw": "ANSWER: 6 p.m."
+  },
+  "redundant_evidence": {
+    "kept_none": true,
+    "kept_one": true,
+    "missing_conjunct": false
+  },
+  "status": "EXPLORATORY PUBLIC AUDIT / NO MODEL INFERENCE / NO EVAL DATASET"
+}
+AUDIT OBSERVATIONS REPRODUCED
+DIGEST 75c67dc70c59b514fbeba81753c48123f4391be849aeda94992f9052e1e67572

@@ -1,0 +1,37 @@
+{
+  "status": "TARGETED PRIMARY-SOURCE CHECK; NOT NOVELTY CERTIFICATION",
+  "sources": [
+    {
+      "id": "L1",
+      "author": "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, Dong Yu",
+      "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/d813d324dbf0598bbdc9c8e79740ed01-Paper-Conference.pdf",
+      "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
+      "selected_verbatim_excerpt": "knowledge updates, and abstention.",
+      "scope": "Primary ICLR 2025 PDF, definitions in section 3.2 and examples. Existing coverage of updates/abstention verified. Exact correction-eviction contrast not established by inspected sections; no experimental reproduction.",
+      "excerpt_utf8_sha256": "95de7c73b97ed9d81a74556c8d6f08091972cc7f3dec5905a2b26f00fbfa05ec",
+      "retrieved_utc_date": "2026-11-16"
+    },
+    {
+      "id": "L2",
+      "author": "dr-pandit-69 / JointCore authors",
+      "url": "https://github.com/dr-pandit-69/jointcore-neurips",
+      "title": "JointCore author repository",
+      "selected_verbatim_excerpt": "Accepted @ Personalized, aligned, long-term memory for AI systems Workshop, NeurIPS 2026, Paris",
+      "scope": "Author README identifies workshop acceptance, not independent verification of conference acceptance. Implementation not executed. arXiv 2610.23266 abstract and HTML could not be fetched; full-text absence claim about corrections unverified.",
+      "excerpt_utf8_sha256": "542166b084c86198842c8955d26c07874e38f042e1a7380f33ac6b9c394cb723",
+      "retrieved_utc_date": "2026-11-16"
+    },
+    {
+      "id": "L3",
+      "author": "Minkyu Song / smkgenesis",
+      "url": "https://github.com/smkgenesis/dsgc",
+      "title": "DSGC author repository",
+      "selected_verbatim_excerpt": "ICML 2026 Workshop on Failure Modes of Agentic AI",
+      "scope": "Author README describes retention-stage prerequisite failure. Implementation not executed. arXiv 2608.20400 abstract and HTML could not be fetched; full-text absence claim about corrections unverified.",
+      "excerpt_utf8_sha256": "0dabca0abfed65968e060a3af6a50105ba8a0ddf313fdb01b54200732dd77617",
+      "retrieved_utc_date": "2026-11-16"
+    }
+  ],
+  "other_citations_in_158": "Not checked in this bounded review",
+  "provenance": "Codex / OpenAI GPT-6 Astra; human direction only; Chad Holland responsible"
+}
