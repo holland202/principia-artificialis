@@ -1,0 +1,82 @@
+........................................................................ [ 14%]
+........................................................................ [ 29%]
+........................................................................ [ 44%]
+.............................................................sssssss...................................................................... [ 72%]
+.......................................................................................F....F.................. [ 95%]
+....................                                                     [100%]
+=================================== FAILURES ===================================
+____ ResearchConstellation.test_cli_exits_2_when_a_pinned_source_is_missing ____
+
+self = <test_make_dashboard.ResearchConstellation testMethod=test_cli_exits_2_when_a_pinned_source_is_missing>
+
+    def test_cli_exits_2_when_a_pinned_source_is_missing(self):
+        import tempfile
+        data = copy.deepcopy(CONSTELLATION)
+        url = data["nodes"][-1]["evidence"][0]["source"]["url"]
+        data["nodes"][-1]["evidence"][0]["source"]["url"] = url.replace(
+            md.PINNED_PARTS.match(url).group(1), "f" * 40)
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "constellation.json"
+            path.write_text(json.dumps(data), encoding="utf-8")
+            saved, md.CONSTELLATION = md.CONSTELLATION, path
+            try:
+                self.assertEqual(md.main(["--check"]), 2)
+            finally:
+                md.CONSTELLATION = saved
+>       self.assertEqual(md.main(["--check"]), 0)
+E       AssertionError: 2 != 0
+
+scripts/test_make_dashboard.py:248: AssertionError
+----------------------------- Captured stdout call -----------------------------
+COULD NOT BUILD: constellation: pinned source not found in this clone (fetch all branches, or fix the link): fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md; fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md; intake -> fffffff:references/intake_2026-11-13_karpathy_research_tools.md
+COULD NOT BUILD: constellation: pinned source not found in this clone (fetch all branches, or fix the link): fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md; fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md
+______ ResearchConstellation.test_real_pinned_sources_exist_in_this_clone ______
+
+self = <test_make_dashboard.ResearchConstellation testMethod=test_real_pinned_sources_exist_in_this_clone>
+
+    def test_real_pinned_sources_exist_in_this_clone(self):
+>       md.check_sources_exist(copy.deepcopy(CONSTELLATION))
+
+scripts/test_make_dashboard.py:212: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+data = {'reviewedAt': '2026-11-13', 'provenance': 'ChatGPT (OpenAI, GPT-6 family, exact variant unavailable) checked public r... ...}, {'id': 'refutations', 'label': 'Refutations', 'title': 'Retained refutations', 'position': [26, 85], ...}, ...]}
+root = PosixPath('/workspace/scratch/d4169d6377cf/pa-discovery-cold')
+git = ('git',)
+
+    def check_sources_exist(data, root=ROOT, git=("git",)):
+        """Fail closed (C-BUILD) unless every pinned source names a file that exists at its commit in this clone.
+    
+        A link pinned to a commit only on a deleted branch, or to a mistyped path, would otherwise render as a
+        working-looking source. A clone that lacks the commit (shallow, or a branch never fetched) stops the build
+        too: the check cannot tell "not fetched" from "gone", so it does not guess. CI checks out full history.
+        """
+        pairs = [(node["id"], entry["source"]["url"])
+                 for node in validate_constellation(data) for entry in node["evidence"]]
+        try:
+            missing = missing_pinned(pairs, root, git)
+        except BuildError as exc:
+            raise BuildError(f"constellation: {exc}")
+        if missing:
+>           raise BuildError("constellation: pinned source not found in this clone (fetch all branches, "
+                             "or fix the link): " + "; ".join(missing))
+E           make_dashboard.BuildError: constellation: pinned source not found in this clone (fetch all branches, or fix the link): fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md; fit -> 02ef6d1:research/FIT-001/FIT-001_DRAFT.md
+
+scripts/make_dashboard.py:371: BuildError
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+experiments/rmt_037/test_rmt037.py::test_mutants_are_killed[no_sort]
+  /workspace/scratch/d4169d6377cf/pa-discovery-cold/experiments/rmt_037/test_rmt037.py:76: RuntimeWarning: invalid value encountered in divide
+    return np.minimum(np.abs(a), np.abs(b)) / mx, 0
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED scripts/test_make_dashboard.py::ResearchConstellation::test_cli_exits_2_when_a_pinned_source_is_missing
+FAILED scripts/test_make_dashboard.py::ResearchConstellation::test_real_pinned_sources_exist_in_this_clone
+2 failed, 476 passed, 7 skipped, 2 warnings, 111 subtests passed in 5.58s

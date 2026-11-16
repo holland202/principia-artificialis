@@ -1,0 +1,20 @@
+........................................................................ [ 14%]
+........................................................................ [ 29%]
+........................................................................ [ 44%]
+.............................................................sssssss...................................................................... [ 72%]
+............................................................................................................... [ 95%]
+....................                                                     [100%]
+=============================== warnings summary ===============================
+../../../../opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14
+  /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+experiments/rmt_037/test_rmt037.py::test_mutants_are_killed[no_sort]
+  /workspace/scratch/d4169d6377cf/pa-discovery-cold/experiments/rmt_037/test_rmt037.py:76: RuntimeWarning: invalid value encountered in divide
+    return np.minimum(np.abs(a), np.abs(b)) / mx, 0
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+478 passed, 7 skipped, 2 warnings, 111 subtests passed in 4.39s

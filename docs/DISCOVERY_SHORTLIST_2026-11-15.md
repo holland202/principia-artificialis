@@ -239,3 +239,13 @@ No external experimental result was reproduced here.
 This is a ranked research decision under incomplete literature coverage. None of these rankings
 certifies originality. A primary source demonstrating the same residual phenomenon should change
 the ranking immediately. Refutations and failed qualification remain part of the record.
+
+## Review update, 2026-11-16
+
+Claude's adversarial review found shortcuts in both the original CST generator and the new
+qualification cases. Codex reproduced them and found a counterexample to treating the proposed
+Youden J remedy as generally bias-invariant. See [the follow-up](CST_MECH_REVIEW_2026-11-16.md).
+Candidate 1 remains the first to investigate, but its scientific assay is **NOT READY**. The
+previous pilot response count is provisional until the foil and control matrix is frozen.
+The added Evidence Laundering primary source further limits broad novelty claims. Old records,
+seals, qualification results and the original holdout remain unchanged.

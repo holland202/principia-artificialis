@@ -100,3 +100,12 @@ short-format decoder, tokenizer match, sealed new dataset or approved campaign.
 implementations and checks the causal intervention. A statistical reviewer checks the crossover
 and specificity estimands, uncertainty intervals and sampling unit. Only then prepare and freeze
 real-model qualification and a fresh owner-approved confirmatory protocol.
+
+## Review update, 2026-11-16
+
+Claude found that the node-name suffixes reveal the answer without source tracing. Codex
+reproduced the shortcut on every qualification case. The original Q1–Q5 outcomes are preserved,
+but do not establish shortcut resistance. The cases are inadmissible as a scientific
+source-tracing assay until separately revised and qualified. The [follow-up record](CST_MECH_REVIEW_2026-11-16.md)
+also shows why replacing pair accuracy with Youden J alone does not remove the decision-bias
+rival. No new model inference occurred.

@@ -1,0 +1,145 @@
+{
+  "archive_marginals": [
+    {
+      "archive": "dev_outputs_7b.jsonl",
+      "archive_sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109",
+      "arm": "D",
+      "equals_product": false,
+      "hop": 1,
+      "independent_correct": 27,
+      "pair_correct": 26,
+      "pairs": 32,
+      "product_expected_count": "837/32",
+      "shared_correct": 31,
+      "youden_j": "13/16"
+    },
+    {
+      "archive": "dev_outputs_7b.jsonl",
+      "archive_sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109",
+      "arm": "D",
+      "equals_product": false,
+      "hop": 2,
+      "independent_correct": 2,
+      "pair_correct": 0,
+      "pairs": 32,
+      "product_expected_count": "7/4",
+      "shared_correct": 28,
+      "youden_j": "-1/16"
+    },
+    {
+      "archive": "dev_outputs_7b.jsonl",
+      "archive_sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109",
+      "arm": "E",
+      "equals_product": true,
+      "hop": 1,
+      "independent_correct": 32,
+      "pair_correct": 14,
+      "pairs": 32,
+      "product_expected_count": "14",
+      "shared_correct": 14,
+      "youden_j": "7/16"
+    },
+    {
+      "archive": "dev_outputs_7b.jsonl",
+      "archive_sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109",
+      "arm": "E",
+      "equals_product": false,
+      "hop": 2,
+      "independent_correct": 25,
+      "pair_correct": 12,
+      "pairs": 32,
+      "product_expected_count": "25/2",
+      "shared_correct": 16,
+      "youden_j": "9/32"
+    },
+    {
+      "archive": "dev2_hop2_7b.jsonl",
+      "archive_sha256": "e29aaea17b1f348e22490a8c833de83a7865dbd9daac85fa7f5d4274f8ead649",
+      "arm": "D",
+      "equals_product": false,
+      "hop": 2,
+      "independent_correct": 1,
+      "pair_correct": 0,
+      "pairs": 32,
+      "product_expected_count": "25/32",
+      "shared_correct": 25,
+      "youden_j": "-3/16"
+    },
+    {
+      "archive": "dev2_hop2_7b.jsonl",
+      "archive_sha256": "e29aaea17b1f348e22490a8c833de83a7865dbd9daac85fa7f5d4274f8ead649",
+      "arm": "E",
+      "equals_product": false,
+      "hop": 2,
+      "independent_correct": 23,
+      "pair_correct": 10,
+      "pairs": 32,
+      "product_expected_count": "23/2",
+      "shared_correct": 16,
+      "youden_j": "7/32"
+    }
+  ],
+  "checks": {
+    "j_crossover_with_fixed_discrimination": true,
+    "reviewed_naming_failure_reproduced": false,
+    "reviewed_repetition_failure_reproduced": true
+  },
+  "constructed_threshold_example": {
+    "deep": {
+      "offset_0": {
+        "auc": "1",
+        "false_alarm_rate": "0",
+        "hit_rate": "1/4",
+        "youden_j": "1/4"
+      },
+      "offset_3": {
+        "auc": "1",
+        "false_alarm_rate": "0",
+        "hit_rate": "1",
+        "youden_j": "1"
+      }
+    },
+    "shallow": {
+      "offset_0": {
+        "auc": "1",
+        "false_alarm_rate": "0",
+        "hit_rate": "1",
+        "youden_j": "1"
+      },
+      "offset_3": {
+        "auc": "1",
+        "false_alarm_rate": "3/4",
+        "hit_rate": "1",
+        "youden_j": "1/4"
+      }
+    }
+  },
+  "old_repetition_shortcut": {
+    "dev": {
+      "correct": 128,
+      "total": 128
+    },
+    "dev2": {
+      "correct": 128,
+      "total": 128
+    },
+    "qual": {
+      "correct": 64,
+      "total": 64
+    },
+    "total": {
+      "correct": 320,
+      "total": 320
+    }
+  },
+  "qualification_shortcut": {
+    "correct": 0,
+    "follows_links": false,
+    "total": 32
+  },
+  "status": "POST-REVIEW AUDIT / RETRODICTIONS / NO MODEL INFERENCE"
+}
+AUDIT CHECKS MISMATCH
+DIGEST 9c57bd08cf440ea8a8c2c156b48c6a98c59b3475188aa5b8611d2c7e192e97b3
+
+EXIT_CODE 1
