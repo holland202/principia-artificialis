@@ -1,0 +1,8 @@
+Ran 11 tests in 0.028s
+
+OK (skipped=1)
+--- cross-check against Codex instrument.py at 9b05af0 (CODEX_INSTRUMENT set):
+test_agrees_with_codex_oracle_on_its_qualification_cases (experiments.cst_graph_oracle_claude.test_oracle.CrossCheck.test_agrees_with_codex_oracle_on_its_qualification_cases) ... ok
+Ran 11 tests in 0.037s
+OK
+python Python 3.13.18
