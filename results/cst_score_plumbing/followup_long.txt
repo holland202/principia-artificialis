@@ -1,0 +1,7 @@
+Is 7 greater than 3?         reply 112 chars, wrote 'B', logodds -24.818, consistent=True, model_correct=True
+Is 12 an odd number?         reply  82 chars, wrote 'A', logodds +11.095, consistent=True, model_correct=True
+Is 9 times 3 equal to 27?    reply 154 chars, wrote 'B', logodds -26.023, consistent=True, model_correct=True
+Is 100 less than 10?         reply  74 chars, wrote 'B', logodds -14.117, consistent=True, model_correct=False
+Is 5 plus 5 equal to 10?     reply 109 chars, wrote 'B', logodds -26.073, consistent=True, model_correct=True
+Is 2 a multiple of 3?        reply  93 chars, wrote 'A', logodds +24.383, consistent=True, model_correct=True
+LONG-FORMAT READOUT CONSISTENT

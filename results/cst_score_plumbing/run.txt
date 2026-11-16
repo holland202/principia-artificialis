@@ -1,0 +1,24 @@
+P4 token ids for ' A': [362]
+P4 token ids for ' B': [425]
+P4 token ids for 'A': [32]
+P4 token ids for 'B': [33]
+P4 single-token ' A'/' B': True
+P1 Is 7 greater than 3?         yes=A truth=True  logodds(A-B)= +29.521 P(A)+P(B)=1.000 ok
+P1 Is 7 greater than 3?         yes=B truth=True  logodds(A-B)= -23.432 P(A)+P(B)=1.000 ok
+P1 Is 12 an odd number?         yes=A truth=False logodds(A-B)= -28.873 P(A)+P(B)=1.000 ok
+P1 Is 12 an odd number?         yes=B truth=False logodds(A-B)= +17.762 P(A)+P(B)=1.000 ok
+P1 Is 9 times 3 equal to 27?    yes=A truth=True  logodds(A-B)= +26.222 P(A)+P(B)=1.000 ok
+P1 Is 9 times 3 equal to 27?    yes=B truth=True  logodds(A-B)= -23.305 P(A)+P(B)=1.000 ok
+P1 Is 100 less than 10?         yes=A truth=False logodds(A-B)= -20.753 P(A)+P(B)=1.000 ok
+P1 Is 100 less than 10?         yes=B truth=False logodds(A-B)= -14.643 P(A)+P(B)=1.000 WRONG
+P1 Is 5 plus 5 equal to 10?     yes=A truth=True  logodds(A-B)= +28.176 P(A)+P(B)=1.000 ok
+P1 Is 5 plus 5 equal to 10?     yes=B truth=True  logodds(A-B)= -25.330 P(A)+P(B)=1.000 ok
+P1 Is 2 a multiple of 3?        yes=A truth=False logodds(A-B)= -24.113 P(A)+P(B)=1.000 ok
+P1 Is 2 a multiple of 3?        yes=B truth=False logodds(A-B)= +17.749 P(A)+P(B)=1.000 ok
+P1 sign correct on all 12: False; sign flips with mapping on 5/6 questions
+P2 repeat identical: True (29.52101707458496 vs 29.52101707458496)
+P3 Is 7 greater than 3?         reply 11 chars, wrote 'A', logodds at its DECISION +28.373, consistent=True
+P3 Is 12 an odd number?         reply 11 chars, wrote 'B', logodds at its DECISION -26.247, consistent=True
+P3 Is 9 times 3 equal to 27?    reply 11 chars, wrote 'A', logodds at its DECISION +26.476, consistent=True
+P3 long-format readout consistent with written letter: True
+PLUMBING FAIL
