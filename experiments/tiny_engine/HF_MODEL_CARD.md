@@ -60,9 +60,17 @@ Every test in the demo uses inputs longer than any training input:
 
 ## Honest limits
 
-- **Free generation:** when the model writes a whole long answer by itself, one wrong token can derail the rest.
-  Writing a full 127-token copy exactly right happens in 66–84% of tries, depending on the model. For patterns and
-  63-token copies it is 94–100% (`results/002/freegen_descriptive.txt`).
+- **Free generation:** the scores above check each token with the correct earlier tokens in place. When the model
+  writes a whole long answer by itself, one wrong token can derail the rest. Measured over 100 tries per test
+  (`results/002/freerun_v1_v2.txt`):
+
+  | Whole answer exactly right | Version 1 | Version 2 |
+  |---|---|---|
+  | Continue a pattern of a never-trained length (period 19) | 74–85% | **98–100%** |
+  | Copy 63 tokens | 99–100% | 95–100% |
+  | Copy 127 tokens | **0%** | **58–85%** |
+
+  Version 2 is slightly worse than version 1 at 63-token copies, a small cost of the fix.
 - **Not a language model:** it works on abstract tokens, not words.
 - **Not a new mechanism:** induction heads and mixed position encodings are known. This is a small, open, fully
   tested working instance.
