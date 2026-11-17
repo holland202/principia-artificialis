@@ -1,0 +1,9 @@
+/home/claude/principia-artificialis/experiments/rmt_ih_001/train_v2.py:42: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  rows.append({"step": step, "loss": float(loss), **T.spectral_stats(T.head_qk_levels(m))})
+seed 1: 266s {"acc_seen": 0.998, "acc_heldout_period": 0.968, "acc_noise_unseen_dist": 0.83, "acc_noise_seen_dist": 0.854}
+seed 2: 252s {"acc_seen": 0.999, "acc_heldout_period": 0.966, "acc_noise_unseen_dist": 0.816, "acc_noise_seen_dist": 0.851}
+seed 3: 248s {"acc_seen": 0.977, "acc_heldout_period": 0.8, "acc_noise_unseen_dist": 0.658, "acc_noise_seen_dist": 0.721}
+seed 4: 254s {"acc_seen": 0.999, "acc_heldout_period": 0.955, "acc_noise_unseen_dist": 0.813, "acc_noise_seen_dist": 0.847}
+seed 5: 253s {"acc_seen": 0.999, "acc_heldout_period": 0.962, "acc_noise_unseen_dist": 0.846, "acc_noise_seen_dist": 0.873}
+seed 6: 257s {"acc_seen": 0.982, "acc_heldout_period": 0.804, "acc_noise_unseen_dist": 0.679, "acc_noise_seen_dist": 0.747}

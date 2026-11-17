@@ -1,0 +1,9 @@
+TinyEngine, 165,120 parameters
+
+1) continue a pattern of period 11 (never trained), after 300 tokens of context
+   model : [82, 47, 60, 11, 48, 82, 46, 106, 109, 23, 4, 82, 47, 60, 11, 48, 82, 46, 106, 109, 23, 4]
+   truth : [82, 47, 60, 11, 48, 82, 46, 106, 109, 23, 4, 82, 47, 60, 11, 48, 82, 46, 106, 109, 23, 4] -> OK
+
+2) look up 40 values from 40 key-value pairs given earlier: 40/40 correct
+
+3) copy a 50-token string exactly: 50/50 tokens correct

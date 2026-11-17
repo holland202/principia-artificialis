@@ -1,0 +1,20 @@
+seed  t_ih  t_edge  t_top  t_srank  d_edge   d_top   d_srank  final_icl   (repeat arm)
+   1  1120  300  320  300  -0.0656  +3.8793  -23.834  4.099
+   2  1260  360  320  280  -0.0382  +3.9440  -23.892  3.954
+   3  1260  None  320  280  +0.0103  +3.6099  -23.255  4.090
+   4  1040  280  340  300  -0.0575  +3.6120  -22.641  4.107
+   5  1060  100  340  300  +0.0599  +3.3540  -21.011  4.109
+   6  1180  200  320  280  +0.0637  +3.9134  -23.417  4.096
+no-repeat arm:
+   1  t_ih None  d_edge -0.0938  d_top +5.7708  d_srank -26.930  final_icl -0.001
+   2  t_ih None  d_edge -0.0409  d_top +5.3678  d_srank -26.392  final_icl 0.000
+   3  t_ih None  d_edge +0.0151  d_top +5.5441  d_srank -26.797  final_icl -0.001
+   4  t_ih None  d_edge -0.0812  d_top +5.3476  d_srank -26.471  final_icl 0.001
+   5  t_ih None  d_edge -0.0301  d_top +5.5957  d_srank -26.679  final_icl -0.000
+   6  t_ih None  d_edge -0.0079  d_top +5.6304  d_srank -26.803  final_icl -0.000
+P1: FAILED  (mean edge drop +0.0046; 3/6 seeds dropped)
+P2: NOT TESTABLE (P1 failed; raw count shown)  (edge before induction jump in 5/6 seeds)
+P3: NOT TESTABLE (P1 failed; raw count shown)  (edge before both rivals in 3/6 seeds)
+P4: FAILED  (no-repeat mean edge drop +0.0398 vs half the repeat drop +0.0023)
+C3: HELD  (no-repeat final icl -0.001, 0.000, -0.001, 0.001, -0.000, -0.000; repeat final icl 4.10, 3.95, 4.09, 4.11, 4.11, 4.10)
+DIGEST 81287f73d3362fdde582ed8f90f95246f7369548833c733576b696979be95e44

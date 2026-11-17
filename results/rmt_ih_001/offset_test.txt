@@ -1,0 +1,5 @@
+Copy accuracy on the second copy (chance = 1/63). Offset = segment length. Claude-run 2026-11-16, exploratory.
+repeat_seed7    L32/pad0:1.00 L32/pad0:1.00 L20/pad0:0.03 L10/pad0:0.07 L10/pad20:0.01 L16/pad30:0.01
+repeat_seed8    L32/pad0:1.00 L32/pad0:1.00 L20/pad0:0.03 L10/pad0:0.02 L10/pad20:0.02 L16/pad30:0.01
+repeat_seed1    L32/pad0:1.00 L32/pad0:1.00 L20/pad0:0.02 L10/pad0:0.02 L10/pad20:0.02 L16/pad30:0.02
+norepeat_seed7  L32/pad0:0.01 L32/pad0:0.02 L20/pad0:0.02 L10/pad0:0.02 L10/pad20:0.02 L16/pad30:0.02
