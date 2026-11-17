@@ -1,0 +1,4 @@
+Demo-design check, seed 1 of TINY-ENGINE-002, Claude-run 2026-11-17
+filler from key range (ambiguous): 4/63 correct; keys that reappear in filler: 63/63
+filler from value range only (no repeated keys): 63/63 correct; keys that reappear in filler: 0/63
+no filler: 63/63 correct; keys that reappear in filler: 0/63

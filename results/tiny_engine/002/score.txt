@@ -1,0 +1,11 @@
+seed periodic_heldout_L128 recall_L128 copy_L128 periodic_heldout_L256 recall_L256 copy_L256 periodic_heldout_L512 recall_L512 copy_L512 periodic_heldout_L1024 recall_L1024
+   1 0.998 1.000 1.000 0.999 1.000 0.996 0.999 1.000 0.997 0.996 1.000
+   2 0.998 1.000 1.000 0.999 0.999 0.999 0.998 0.999 0.998 0.997 0.999
+   3 0.999 1.000 1.000 0.999 1.000 0.998 0.999 1.000 0.997 0.995 1.000
+   4 0.998 1.000 1.000 0.999 1.000 0.999 0.999 1.000 0.999 0.996 1.000
+   5 0.999 1.000 1.000 0.999 1.000 0.998 0.998 1.000 0.998 0.997 1.000
+   6 0.998 1.000 1.000 0.999 1.000 0.998 0.998 1.000 0.998 0.996 1.000
+Q1: HELD (6/6 seeds meet every threshold; need 5)
+Q2: HELD (6/6 seeds meet every threshold; need 5)
+Q3: HELD (6/6 seeds meet every threshold; need 5)
+Q4: HELD (6/6 seeds meet every threshold; need 5)

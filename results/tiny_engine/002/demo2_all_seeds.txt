@@ -1,0 +1,24 @@
+== seed 1
+1) continue a pattern of period 19 (never trained) after 900 tokens: 38/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 63/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 127/127 correct
+== seed 2
+1) continue a pattern of period 19 (never trained) after 900 tokens: 38/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 62/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 127/127 correct
+== seed 3
+1) continue a pattern of period 19 (never trained) after 900 tokens: 10/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 62/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 127/127 correct
+== seed 4
+1) continue a pattern of period 19 (never trained) after 900 tokens: 38/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 62/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 95/127 correct
+== seed 5
+1) continue a pattern of period 19 (never trained) after 900 tokens: 38/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 63/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 127/127 correct
+== seed 6
+1) continue a pattern of period 19 (never trained) after 900 tokens: 38/38 tokens correct
+2) learn 63 key->value facts, read 700 unrelated tokens, then answer all 63: 63/63 correct (context ~830 tokens)
+3) copy a 127-token string exactly (2x the longest trained): 127/127 correct
