@@ -1,0 +1,8 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "numpy": "2.3.5",
+  "model_inference": "NOT RUN",
+  "registration_commit": "13e399b11e0fcef45c3bf970a266971ebd61037b",
+  "subject_commit": "c64be1cb0e2b7680f79705a26e266f399aa02e24"
+}

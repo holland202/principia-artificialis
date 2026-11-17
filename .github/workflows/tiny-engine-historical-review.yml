@@ -1,0 +1,37 @@
+name: Tiny engine historical review
+on:
+  pull_request:
+    paths:
+      - 'experiments/tiny_engine_review/**'
+      - 'results/tiny_engine_review/**'
+      - '.github/workflows/tiny-engine-historical-review.yml'
+  push:
+    branches: ['review/tiny-engine-audit-20261117']
+    paths:
+      - 'experiments/tiny_engine_review/**'
+      - 'results/tiny_engine_review/**'
+      - '.github/workflows/tiny-engine-historical-review.yml'
+jobs:
+  historical-audit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install numpy==2.3.5
+      - name: Restore historical subject; never require future code to keep defects
+        run: git checkout c64be1cb0e2b7680f79705a26e266f399aa02e24 -- experiments/tiny_engine/engine.py experiments/tiny_engine/score.py results/tiny_engine
+      - name: Reproduce record and reject incorrect expectation
+        run: |
+          python experiments/tiny_engine_review/audit.py > normal.txt
+          diff -u results/tiny_engine_review/audit.txt normal.txt
+          if python experiments/tiny_engine_review/audit.py --sabotage > sabotage.txt; then
+            echo 'Sabotage unexpectedly exited zero'
+            exit 1
+          fi
+          diff -u results/tiny_engine_review/sabotage.txt sabotage.txt

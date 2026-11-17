@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://aclanthology.org/2023.acl-short.161/",
+    "authors": "Ruoss et al.",
+    "text": "randomly selects an ordered subset to fit the sequence’s length",
+    "scope": "primary abstract",
+    "sha256_exact_excerpt": "f4131b057f48e20c92b062bbb01af6c5b19ff045b28221791c8dd45e8657bcd1"
+  },
+  {
+    "url": "https://arxiv.org/abs/2607.16072",
+    "authors": "Wen et al.",
+    "text": "copying becomes simply retrieving input tokens at a fixed column offset",
+    "scope": "primary abstract via search; direct open failed",
+    "sha256_exact_excerpt": "895292b12b9b9a220a69ee29a05de490724e9bc9c1c18784f3c0dd79f71232cb"
+  },
+  {
+    "url": "https://arxiv.org/abs/2610.26722",
+    "authors": "Guo et al.",
+    "text": "copy every string up to a chosen design horizon",
+    "scope": "primary abstract via search; direct open failed",
+    "sha256_exact_excerpt": "3625d1ce4a8c2453659ed8fa1b95a81b4eb42f701000c6ea3f1d4380654e72ba"
+  },
+  {
+    "path": "docs/external/tiny_engine_review_20261117/model_card.md",
+    "url": "https://huggingface.co/holland202/tiny-engine-165k/blob/main/README.md",
+    "authors": "Claude/Anthropic Opus 5.5; published by holland202",
+    "sha256": "404f35ef3263ba31edc854045874af89c93422f7b155a04b2f4d97c71e794476"
+  },
+  {
+    "path": "docs/external/tiny_engine_review_20261117/model_sha256sums.txt",
+    "url": "https://huggingface.co/holland202/tiny-engine-165k/blob/main/SHA256SUMS",
+    "authors": "Claude/Anthropic Opus 5.5; published by holland202",
+    "sha256": "7358a41a61e3cbe16e964bed8e6d7924119423bded919520f86bfd3ecb494831"
+  }
+]

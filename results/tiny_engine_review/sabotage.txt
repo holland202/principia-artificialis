@@ -1,0 +1,58 @@
+{
+  "L256_prefix_equals_L512_prefix": true,
+  "duplicate_seed_1": {
+    "exit": 0,
+    "stderr": "",
+    "stdout": "seed periodic_heldout_L128 recall_L128 copy_L128 periodic_heldout_L256 recall_L256 copy_L256 periodic_heldout_L512\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\nQ1: HELD (5/5 seeds meet every threshold; need 5)\nQ2: HELD (5/5 seeds meet every threshold; need 5)\nQ3: HELD (5/5 seeds meet every threshold; need 5)\n"
+  },
+  "empty": {
+    "exit": 0,
+    "stderr": "",
+    "stdout": "seed periodic_heldout_L128 recall_L128 copy_L128 periodic_heldout_L256 recall_L256 copy_L256 periodic_heldout_L512\nQ1: FAILED (0/0 seeds meet every threshold; need 5)\nQ2: FAILED (0/0 seeds meet every threshold; need 5)\nQ3: FAILED (0/0 seeds meet every threshold; need 5)\n"
+  },
+  "generator_counts": [
+    {
+      "T": 128,
+      "copy_tokens": 63,
+      "padding_tokens": 0,
+      "unique_source_tokens": 63
+    },
+    {
+      "T": 256,
+      "copy_tokens": 127,
+      "padding_tokens": 0,
+      "unique_source_tokens": 127
+    },
+    {
+      "T": 512,
+      "copy_tokens": 127,
+      "padding_tokens": 256,
+      "unique_source_tokens": 127
+    }
+  ],
+  "original": {
+    "exit": 0,
+    "stderr": "",
+    "stdout": "seed periodic_heldout_L128 recall_L128 copy_L128 periodic_heldout_L256 recall_L256 copy_L256 periodic_heldout_L512\n   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985\n   2 0.998 1.000 1.000 0.999 0.948 0.576 0.975\n   3 0.998 1.000 1.000 0.999 0.954 0.563 0.995\n   4 0.998 1.000 1.000 0.998 0.953 0.529 0.967\n   5 0.998 1.000 1.000 0.997 0.961 0.625 0.988\n   6 0.999 1.000 1.000 0.998 0.959 0.538 0.985\nQ1: HELD (6/6 seeds meet every threshold; need 5)\nQ2: FAILED (1/6 seeds meet every threshold; need 5)\nQ3: HELD (6/6 seeds meet every threshold; need 5)\n"
+  },
+  "outcomes": {
+    "P1_archived_report": false,
+    "P2_duplicate_seed_accepted": true,
+    "P3_absent_report_exit_zero": true,
+    "P4_copy_length_cap": true
+  },
+  "scope": "PUBLIC SOFTWARE QUALIFICATION; NO MODEL INFERENCE; AST-ISOLATED ORIGINAL GENERATOR",
+  "source_sha256": {
+    "experiments/tiny_engine/engine.py": "d701a90d63782126330c0d31d51687682bf2f89492765c6b67b5ee40f01d5576",
+    "experiments/tiny_engine/score.py": "a2ba58e0bcb3e068749110b0d7474794a5e316173a0cdf61ebcd01d69899489d",
+    "results/tiny_engine/score.txt": "d730bb1797d44fc918c85a80ed1b8a15174afb3020ed8d5925dde10be506c508",
+    "results/tiny_engine/seed1.json": "928b9adedf63e99ac1a694ccff803a1271e7da78ec87fba9570351b4924ac086"
+  }
+}
+P1_archived_report REFUTED
+P2_duplicate_seed_accepted HELD
+P3_absent_report_exit_zero HELD
+P4_copy_length_cap HELD
+VERDICT 3 of 4 as registered
+DIGEST 48d3352be4df01bbfe55d959e9d7af7a4a838627e83cf7a17dbf81d03ee40ecf
+These expectations include failures of the historical scorer; they are not AI performance findings.

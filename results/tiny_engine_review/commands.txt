@@ -1,0 +1,5 @@
+python experiments/tiny_engine_review/audit.py
+python experiments/tiny_engine_review/audit.py --sabotage  # expected exit 1
+python experiments/tiny_engine_review/package_inventory.py
+python scripts/method_lint.py
+git diff --check
