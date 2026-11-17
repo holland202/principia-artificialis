@@ -78,8 +78,11 @@ def make_batch(rng, n, T, task=None, periods=PERIODS_SEEN):
 
 
 # ---------------------------------------------------------------- model
-def rope(x, base=10000.0):
-    """Rotary position embedding on the last dim of (b, h, t, d)."""
+def rope(x, base=10000.0, frac=1.0):
+    """Rotary position embedding on the first `frac` of the last dim of (b, h, t, d); the rest is left position-free."""
+    if frac < 1.0:
+        r = int(x.shape[-1] * frac) // 2 * 2
+        return torch.cat([rope(x[..., :r], base), x[..., r:]], -1)
     t, d = x.shape[-2], x.shape[-1]
     inv = 1.0 / base ** (torch.arange(0, d, 2, dtype=torch.float32) / d)
     ang = torch.arange(t, dtype=torch.float32)[:, None] * inv[None]
@@ -89,9 +92,9 @@ def rope(x, base=10000.0):
 
 
 class Attn(nn.Module):
-    def __init__(self, d, h, use_rope=True):
+    def __init__(self, d, h, use_rope=True, rope_frac=1.0):
         super().__init__()
-        self.h, self.dh, self.use_rope = h, d // h, use_rope
+        self.h, self.dh, self.use_rope, self.rope_frac = h, d // h, use_rope, rope_frac
         self.q, self.k, self.v, self.o = (nn.Linear(d, d, bias=False) for _ in range(4))
 
     def forward(self, x):
@@ -99,7 +102,7 @@ class Attn(nn.Module):
         sh = lambda z: z.view(b, t, self.h, self.dh).transpose(1, 2)
         q, k = sh(self.q(x)), sh(self.k(x))
         if self.use_rope:
-            q, k = rope(q), rope(k)
+            q, k = rope(q, frac=self.rope_frac), rope(k, frac=self.rope_frac)
         y = F.scaled_dot_product_attention(q, k, sh(self.v(x)), is_causal=True)
         return self.o(y.transpose(1, 2).reshape(b, t, d))
 
@@ -116,7 +119,9 @@ class TinyEngine(nn.Module):
         self.emb = nn.Embedding(VOCAB, d)
         self.pos = nn.Embedding(1024, d) if self.pos_kind == "learned" else None
         self.lns = nn.ModuleList(nn.LayerNorm(d) for _ in range(cfg["n_layers"]))
-        self.attn = nn.ModuleList(Attn(d, cfg["n_heads"], self.pos_kind == "rope") for _ in range(cfg["n_layers"]))
+        nope = set(cfg.get("nope_layers", ()))       # layers with no positional encoding at all (content-only)
+        self.attn = nn.ModuleList(Attn(d, cfg["n_heads"], self.pos_kind == "rope" and i not in nope,
+                                       cfg.get("rope_frac", 1.0)) for i in range(cfg["n_layers"]))
         self.lnf = nn.LayerNorm(d)
         self.head = None if cfg.get("tied", False) else nn.Linear(d, VOCAB, bias=False)
 
@@ -143,7 +148,11 @@ def accuracy(m, task, T, seed, n=256, periods=PERIODS_SEEN):
     return float(ok.float().mean())
 
 
-EVAL_LENS = (128, 256, 512)     # 128 = longest trained; 256 and 512 = 2x and 4x beyond it
+EVAL_LENS = (128, 256, 512, 1024)   # 128 = longest trained; 256, 512, 1024 = 2x, 4x and 8x beyond it
+# TINY-ENGINE-002: the fix. Layer 1 (the layer that matches content) gets no positional encoding, so matching an
+# earlier token cannot depend on how far back it is. Layer 0 keeps rotary positions (it needs order to look one
+# token back). Same parameter count as CFG.
+CFG2 = dict(CFG, nope_layers=(1,))
 
 
 def evaluate(m):

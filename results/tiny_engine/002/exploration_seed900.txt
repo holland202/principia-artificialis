@@ -1,0 +1,2 @@
+/root/ex_partial.txt:partial_rope 747s {"periodic_heldout_L128": 0.998, "recall_L128": 1.0, "copy_L128": 1.0, "periodic_heldout_L256": 0.998, "recall_L256": 0.997, "copy_L256": 0.933, "periodic_heldout_L512": 0.992, "recall_L512": 0.995, "copy_L512": 0.925, "periodic_seen_L128": 0.998}
+/root/ex_nope.txt:nope_l1 652s {"periodic_heldout_L128": 0.998, "recall_L128": 1.0, "copy_L128": 1.0, "periodic_heldout_L256": 0.999, "recall_L256": 1.0, "copy_L256": 0.999, "periodic_heldout_L512": 0.999, "recall_L512": 1.0, "copy_L512": 0.998, "periodic_seen_L128": 0.998}
