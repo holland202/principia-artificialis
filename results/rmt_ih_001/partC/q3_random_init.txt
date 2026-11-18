@@ -1,0 +1,1 @@
+Q3 random-init noise-task acc: 0.015
