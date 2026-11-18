@@ -74,3 +74,27 @@ See [2026-11-18_FEDERICO_CLAUDE_HANDOFF.md](../docs/2026-11-18_FEDERICO_CLAUDE_H
 **Next unrun test:** With permission for any source material needed, qualify a blind evaluator using synthetic, non-identifying histories containing a clearly asked-for demo and a clearly unrequested demo; its verdict must flip correctly on the planted counterexample *before* a real-model study is registered.
 
 **Provenance:** Federico Talens-Alesson supplied the underlying observations privately to Chad Holland; Chad requested this research-intake record; ChatGPT (OpenAI, GPT-6) paraphrased and constructed a falsifiable candidate. Human validation: not performed. Human editing/curation: direction only. Human responsibility: Chad Holland. This record is not an endorsement by Federico of the proposed test or of PA.
+
+
+## Addendum — 2026-11-18, Merlin archive link and author-specified reuse conditions (W9; append-only)
+
+**Source:** a subsequent owner-supplied screenshot of Federico's LinkedIn message, dated November 18, 2026. The following is a **paraphrase**, not an authenticated license document or quotation from an independently inspected website.
+
+**New locator:** Federico identified an older, downloadable copy of the Merlin conversation at:
+https://elarrecifedigital.netlify.app/conversacion-detalle_055_merlin
+
+**Author's reported reuse terms:** Federico stated that conversations uploaded to his site are available under a license rendered in his message as **"GLP v3"**. That string must not be silently corrected to **GNU GPLv3**: the intended license name, exact license text, scope (conversation text, exported media, associated code), version and rights of any third parties **remain unverified**. Federico also requested: (a) attribution to his website and LinkedIn profile; and (b) when analyzing a singled-out conversation, disclosure of how many other conversations were examined, including for longitudinal/token analysis. This attribution and denominator request is recorded as a separate author preference, not attributed to a legally verified license term.
+
+**Access check on 2026-11-18:** Attempts to open both the exact Merlin URL and the corpus-selector URL through the available web reader failed; a general search did not surface an accessible copy of the specific archive. **No transcript, downloadable package, transcript metadata or license file was obtained or read.** Consequently, no claims about what Merlin actually said, the sequence in which its naming/invocation emerged, or the actual legal license are confirmed. The link and terms are **OWNER-SUPPLIED SOURCE LEADS**.
+
+**Research implications for PA:**
+
+1. A highlighted Merlin instance is a **selected anecdote**. The denominator must include all conversations searched for that behavior and the exact selection rule; merely disclosing the number downloaded does not fix post-hoc selection.
+2. Before saying self-naming or "unseen inducer" occurred without prompting, reconstruct the complete chronological input history, system/memory context, model/version and any requested naming or roleplaying instruction. Partial or older exports cannot establish omitted earlier conditions.
+3. When any authorized source files can be accessed, keep an accession manifest (URL, fetch date, file name, source-provided model/version and license declaration, byte length, SHA-256, language, total turns/tokens, redactions and inclusion/exclusion decisions). Separate *metadata inspection* from *content coding*, keep exact creator attribution and count every considered conversation.
+4. **No bulk download, derivative redistribution, training, public transcript mirror or license-based publication is authorized by this addendum alone.** Confirm the license and its application to the material, screen for private/third-party content, and obtain any additional permissions before republishing.
+5. Keep this intake separate from CST-001 and CST-MECH-001. Claude should inspect any newly accessible public evidence only after verifying scope and provenance, without using old sealed confirmatory material.
+
+**New evidence status:** Merlin download = **LINK SUPPLIED, CONTENT NOT INSPECTED**. License = **AUTHOR-REPORTED, EXACT TERMS UNCONFIRMED**. Author attribution and denominator request = **REPORTED BY OWNER FROM FEDERICO'S MESSAGE**. Scientific inference = **NOT RUN / NOT VALIDATED**.
+
+**Provenance for addendum:** Federico Talens-Alesson provided the locator and terms to Chad Holland; Chad supplied the message image; ChatGPT (OpenAI, GPT-6) recorded a bounded paraphrase and attempted but could not access the linked page. No independent source content verification or human scientific review occurred.
