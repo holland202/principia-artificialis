@@ -1,0 +1,6 @@
+engine2_seed1.safetensors pattern_p7:1.00 pattern_p19:0.96 copy_k63:0.98 copy_k127:0.66
+engine2_seed2.safetensors pattern_p7:1.00 pattern_p19:0.98 copy_k63:0.98 copy_k127:0.82
+engine2_seed3.safetensors pattern_p7:1.00 pattern_p19:0.98 copy_k63:0.94 copy_k127:0.78
+engine2_seed4.safetensors pattern_p7:1.00 pattern_p19:0.98 copy_k63:1.00 copy_k127:0.84
+engine2_seed5.safetensors pattern_p7:1.00 pattern_p19:0.98 copy_k63:1.00 copy_k127:0.80
+engine2_seed6.safetensors pattern_p7:0.98 pattern_p19:0.98 copy_k63:0.96 copy_k127:0.78

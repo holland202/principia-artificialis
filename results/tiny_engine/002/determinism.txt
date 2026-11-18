@@ -1,0 +1,1 @@
+Rerun of seed 1 (Claude-run 2026-11-17): scores identical: True; weights identical (SHA-256): True

@@ -1,0 +1,13 @@
+Free-running evaluation (freegen2.py; descriptive, not registered; Claude-run 2026-11-17; N=100 per test; existing weights, no retraining)
+v1 engine_seed4.safetensors pattern p7: whole 0.94 tok 0.964 first 5 | pattern p19: whole 0.74 tok 0.833 first 12 | copy k63: whole 0.99 tok 0.992 first 15 | copy k127: whole 0.00 tok 0.022 first 3
+v1 engine_seed5.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 0.85 tok 0.911 first 13 | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.00 tok 0.024 first 3
+v1 engine_seed6.safetensors pattern p7: whole 0.97 tok 0.981 first 5 | pattern p19: whole 0.78 tok 0.840 first 9 | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.00 tok 0.005 first 1
+v2 engine2_seed4.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 0.98 tok 0.982 first 5 | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.85 tok 0.972 first 112
+v2 engine2_seed5.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 1.00 tok 1.000 first - | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.76 tok 0.945 first 99
+v2 engine2_seed6.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 1.00 tok 1.000 first - | copy k63: whole 0.95 tok 0.976 first 49 | copy k127: whole 0.84 tok 0.971 first 112
+v1 engine_seed1.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 0.84 tok 0.877 first 9 | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.00 tok 0.036 first 3
+v1 engine_seed2.safetensors pattern p7: whole 0.97 tok 0.977 first 3 | pattern p19: whole 0.84 tok 0.907 first 12 | copy k63: whole 0.99 tok 0.990 first 1 | copy k127: whole 0.00 tok 0.008 first 1
+v1 engine_seed3.safetensors pattern p7: whole 0.96 tok 0.969 first 4 | pattern p19: whole 0.82 tok 0.898 first 17 | copy k63: whole 1.00 tok 1.000 first - | copy k127: whole 0.00 tok 0.004 first 1
+v2 engine2_seed1.safetensors pattern p7: whole 0.96 tok 0.971 first 5 | pattern p19: whole 0.98 tok 0.984 first 8 | copy k63: whole 0.96 tok 0.990 first 56 | copy k127: whole 0.58 tok 0.911 first 103
+v2 engine2_seed2.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 0.99 tok 0.998 first 31 | copy k63: whole 0.96 tok 0.981 first 28 | copy k127: whole 0.77 tok 0.939 first 101
+v2 engine2_seed3.safetensors pattern p7: whole 1.00 tok 1.000 first - | pattern p19: whole 0.99 tok 0.999 first 36 | copy k63: whole 0.97 tok 0.982 first 32 | copy k127: whole 0.77 tok 0.948 first 96

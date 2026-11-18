@@ -1,0 +1,10 @@
+seed periodic_heldout_L128 recall_L128 copy_L128 periodic_heldout_L256 recall_L256 copy_L256 periodic_heldout_L512
+   1 0.998 1.000 1.000 0.999 0.972 0.767 0.985
+   2 0.998 1.000 1.000 0.999 0.948 0.576 0.975
+   3 0.998 1.000 1.000 0.999 0.954 0.563 0.995
+   4 0.998 1.000 1.000 0.998 0.953 0.529 0.967
+   5 0.998 1.000 1.000 0.997 0.961 0.625 0.988
+   6 0.999 1.000 1.000 0.998 0.959 0.538 0.985
+Q1: HELD (6/6 seeds meet every threshold; need 5)
+Q2: FAILED (1/6 seeds meet every threshold; need 5)
+Q3: HELD (6/6 seeds meet every threshold; need 5)
