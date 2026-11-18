@@ -6,7 +6,7 @@
 
 ## Origin and permission boundary
 
-The owner provided an excerpt and screenshot of a private LinkedIn conversation with Federico. **The public intake contains a paraphrase only; do not quote the messages or publish the screenshots or any unreleased book material.** Federico offered earlier conversations while retaining later book-associated material. There is no authorization here to reproduce private transcripts, create a public dataset from his archive, or suggest that he agreed to our test design.
+The owner provided an excerpt and screenshot of a private LinkedIn conversation with Federico. **The public intake contains a paraphrase only; do not quote the messages or publish the screenshots.** Federico offered earlier conversations only. There is no authorization here to reproduce private transcripts, create a public dataset from his archive, or suggest that he agreed to our test design.
 
 ## Reported observations, not validation
 
