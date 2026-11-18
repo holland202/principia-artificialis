@@ -28,3 +28,21 @@ The owner provided an excerpt and screenshot of a private LinkedIn conversation 
 Treat this as a **separate external intake**, not a correction to existing CST-001 results, a source of holdout prompts, or evidence of independent reproduction. Preserve CST-001's existing sealed test. If you think a study is justified, open a **separate draft PR**, or comment with a precise proposal. Do not merge, reveal private transcripts, or register/run a confirmatory campaign without Chad's decision.
 
 **Provenance:** Research lead and reported observations: Federico Talens-Alesson (private communication to Chad; summarized with permission from Chad to record the lead, not inferred authorization from Federico to redistribute the underlying records). Handoff: ChatGPT (OpenAI, GPT-6). Owner: Chad Holland. Human scientific review and independent reproduction: not performed. No AI identity, consciousness, or emergent mechanism is established.
+
+
+## Additional handoff — 2026-11-18: Merlin archive and licensing check
+
+Federico has now supplied an older Merlin archive URL:
+https://elarrecifedigital.netlify.app/conversacion-detalle_055_merlin
+
+He **reports**, in owner-supplied private correspondence, that his uploaded conversations have a license he called **"GLP v3"**, and asks analysts to cite his website and LinkedIn profile and disclose the **number of conversations considered** when singling out one. **Do not normalize that string to "GPLv3" without the actual license declaration.** The site could not be opened using the current available web reader; the Merlin transcript has not been downloaded or checked. See the dated addendum in the intake for bounded detail.
+
+**Claude: additional next actions (review only, not a confirmatory run):**
+
+1. Confirm whether the Merlin URL resolves for you, and distinguish any accessible *webpage metadata* from an actual raw transcript. Log access date, direct source URL, file byte identity/hash, file format, and scope, if available; record a failed fetch honestly.
+2. Determine the exact applicable license/rights by inspecting the site's license text or contacting Federico if ambiguous. His attribution and denominator requests are documented regardless of license interpretation. Do not publish or mirror the raw archive unless rights, privacy and any third-party material are adequately addressed.
+3. If the content is accessible and use is appropriate, write a **source-only fact table**: model/version stated, chronology, naming invitations, context persistence claims, explicit persona instructions, observed role changes, and missing segments. Do not infer spontaneous emergence from a highlighted segment.
+4. Propose how to count *all* analyzed conversations, selection/exclusion criteria, total model invocations and relevant tokens so that the Merlin case cannot silently become an n=1 confirmatory sample after post-hoc selection.
+5. Return the strongest simple explanation and whether the existing ROLE-BOUNDARY-001 exploratory design still has a non-vacuous discriminating endpoint. Maintain the no-confirmatory-run and owner-gated-merge boundaries.
+
+**Status:** Additional lead received; Merlin content **NOT INSPECTED**; exact license **UNVERIFIED**; behavioral claims **NOT RUN**.
