@@ -1,0 +1,637 @@
+{
+  "notes_markdown": 2,
+  "research_notes_markdown": 103,
+  "review_base": "ed2e9dd3b5d7123aab8388b7738ff97c9ed349c7",
+  "screening_only_not_full_text_novelty_proof": [
+    {
+      "path": "research_notes/001_can_thought_be_measured.md",
+      "sha256": "8438232010c897a64f2e7f369fbbf21770a7a8c280e9625d4a0e86bb50fecb54",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #001: Can Thought be Measured?"
+    },
+    {
+      "path": "research_notes/001_thermodynamic_crystallization_manifold.md",
+      "sha256": "0ac10c2be2f6dc7298fdd19cd1f14f3561947483df4dc92a6257d5348e5f6b38",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "TGCR_V1: Variational Action Minimization and Geodesic Crystallization"
+    },
+    {
+      "path": "research_notes/002_hallucinations_as_topological_defects.md",
+      "sha256": "f528d33d3a5f4d9931f28533ec465182a3c88ba00f2c97d60ecf3ae7b84053e7",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #002: Can Hallucinations Be Detected as Topological Defects?"
+    },
+    {
+      "path": "research_notes/003_fisher_information_confidence.md",
+      "sha256": "7d8df32cf1e095fc91485d28ce6a0bebebe7d8884936f26422de6ccff51baa72",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #003: Can Fisher Information Predict Confidence Better Than Logits?"
+    },
+    {
+      "path": "research_notes/004_thermodynamic_reasoning.md",
+      "sha256": "06c072db94a1e86760a569286fe05dc3403da14ce0ce6833c78de8c722455fd5",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #004: Thermodynamic Quantities in Successful Reasoning"
+    },
+    {
+      "path": "research_notes/005_geodesic_reasoning_trajectories.md",
+      "sha256": "92a56df8d35388ecb1cd2a55f6aac29bb0978ba73381a049563b16cec49aa3f5",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #005: Reasoning as Geodesics on Information Manifolds (by Grok / xAI)"
+    },
+    {
+      "path": "research_notes/006_quantum_tensor_attention.md",
+      "sha256": "3665e4cb54625c23b56e1af22bc0d5375546ccc6b32b2a047ef5aa609cd5c89f",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #006: Can Tensor-Train Compression Reveal the \"Effective Rank\" of Reasoning?"
+    },
+    {
+      "path": "research_notes/007_koopman_reasoning_dynamics.md",
+      "sha256": "e5e41ef25b4f881c9ad3127d388c25fda6f6374e74457968143cc3e5297deb0a",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #007: A Koopman-Operator View of Multi-Step Reasoning"
+    },
+    {
+      "path": "research_notes/008_falsification_protocol_hallucination.md",
+      "sha256": "c4fe03403aef1641d31ce0dc80ba3bab8a15270b714552ff1870134edfc0b8bd",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #008: A Falsification Protocol for Note #002 (Hallucinations as Topological Defects)"
+    },
+    {
+      "path": "research_notes/009_quantum_entanglement_information_manifolds.md",
+      "sha256": "1712b70ce34147b7b087d78dbce2630a48385779c65d38272f860d255a5779d3",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) for Principia Artificialis  ",
+      "title": "Research Note #009: Quantum Entanglement as Correlation on Information Manifolds"
+    },
+    {
+      "path": "research_notes/010_memory_dynamics_gradient_flow.md",
+      "sha256": "05deba4f0c21149cc66082aa770cdc29fb29ff0888d9d52d5a8825f744e49866",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) for Principia Artificialis  ",
+      "title": "Research Note #010: Memory Dynamics as Gradient Flow on Statistical Manifolds"
+    },
+    {
+      "path": "research_notes/011_thermodynamic_arrow_reasoning.md",
+      "sha256": "aefdc3376525e2260b0bd168ea04d1e2ffd979f34e9a356700e2c6f78bd572a2",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) | **Date:** 2026-07-15",
+      "title": "Research Note #011"
+    },
+    {
+      "path": "research_notes/012_quantum_error_correction_working_memory.md",
+      "sha256": "b5a362b7d6860a7378d4725d2cc3ef8292164efb1a4ebfad22d5e4136f60b593",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) | **Date:** 2026-07-15",
+      "title": "Research Note #012"
+    },
+    {
+      "path": "research_notes/013_symplectic_geometry_attention.md",
+      "sha256": "c7f2f9acebde60b1af92e6d72e77c2531cc06e19860e0a17936892d61595e8d1",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) | **Date:** 2026-07-15",
+      "title": "Research Note #013"
+    },
+    {
+      "path": "research_notes/014_renormalization_group_flows.md",
+      "sha256": "8a835775ffaeab809fddea7698f1f21890e6c8c2068ea1a675d21a35474b563b",
+      "status": "**Status:** Draft | **Author:** Kimi (Moonshot AI) | **Date:** 2026-07-15",
+      "title": "Research Note #014"
+    },
+    {
+      "path": "research_notes/015_category_theoretic_compositionality.md",
+      "sha256": "c122b9e6afdab2eb3d760f6ef88ce64e2c6f459acdb0e36b787a5beee145a8f5",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #015: Category-Theoretic Compositionality of Reasoning Steps"
+    },
+    {
+      "path": "research_notes/016_quantum_geometric_transformer.md",
+      "sha256": "7b2ccc0e9b7267e0f04fa2b501ea49c9685a31f6ed39c30098a22c02abdc634e",
+      "status": "**Status:** Architecture Verified (Gradients + Constraints) | **Author:** holland202 | **Date:** 2026-07-11",
+      "title": "Research Note #016"
+    },
+    {
+      "path": "research_notes/017_qolas_quantum_circuit_synthesis.md",
+      "sha256": "10f715c8973fc322b8ef9660432df2daeb19de11193b1dcb73c9cd2b859b1f09",
+      "status": "**Status:** Architecture Self-Tested (15/15) | **Author:** holland202 | **Date:** 2026-07-10",
+      "title": "Research Note #017"
+    },
+    {
+      "path": "research_notes/018_Quantum_Polytope_Explorer.md",
+      "sha256": "95092ec460ca0415301d47952c67cdd6998834473bc341555323ffdc74d7066c",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #018: Quantum Polytope Explorer and Amplituhedron Geometries"
+    },
+    {
+      "path": "research_notes/019_synthetic_quantum_training.md",
+      "sha256": "e16c88341c34bfba0d88dfa7eccae159dc3d7a6ac1a808cad6d95d93b97cea38",
+      "status": "**Status:** Theoretical Framework v1.0.0  ",
+      "title": "Note #019: Synthetic Quantum Training Data Generator (SQTDG)"
+    },
+    {
+      "path": "research_notes/020_optimal_transport_thought.md",
+      "sha256": "e0ee0110ed6eb572ef785ceb5831b5711cd4ada70e84f230a17ed7106dc33c34",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #020: Optimal Transport as a Model for \"Thought Transport\""
+    },
+    {
+      "path": "research_notes/021_Hyperbolic_Attention_Information_Bottleneck.md",
+      "sha256": "e23782760a482f0f050f9c4159a70713faacde4754e3065da7ba0b6133da1d35",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #021: Hyperbolic Attention and the Information Geometric Bottleneck"
+    },
+    {
+      "path": "research_notes/025_categorical_tqft_reasoning.md",
+      "sha256": "01715312091e6d3741375c11557c24fbabbfa3a90eb29c9a740613535b969e37",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #025: Topological Quantum Field Theory as a (Highly Speculative) Model for Reasoning Composition"
+    },
+    {
+      "path": "research_notes/026_holevo_bound_extraction.md",
+      "sha256": "da8cbf4cb72043a835be79323c2d0660cf4fb7d2dbe6cb7f14435e1dbda5b353",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #026: The Holevo Bound as a Ceiling on What Can Be Extracted from Hidden States"
+    },
+    {
+      "path": "research_notes/027_extractability_budget.md",
+      "sha256": "b47aae57c8c3514acf575c1fb5831ebab388c2b3580a26e6f5e24a2573b108f3",
+      "status": "**Status:** Draft \u2014 conjecture + toy model",
+      "title": "Note #027: An Extractability Budget for Chain-of-Thought"
+    },
+    {
+      "path": "research_notes/028_categorical_quantum_gravity_thought.md",
+      "sha256": "b4a924806e2bdcc241cc57dd2191edfbac586fd545132a5eb791233d458590e8",
+      "status": "**Status:** Highly Speculative Draft  ",
+      "title": "Research Note #028: Categorical Quantum Gravity in Artificial Thought"
+    },
+    {
+      "path": "research_notes/029_emergent_spacetime_reasoning.md",
+      "sha256": "4022fe191bf4c01444292949e2abbc92a24d699f93a7bfc768c66e90a9af962b",
+      "status": "**Status:** Highly Speculative Draft  ",
+      "title": "Research Note #029: Emergent Spacetime from Reasoning Geometries"
+    },
+    {
+      "path": "research_notes/030_quantum_info_geometry_hallucination.md",
+      "sha256": "0624d00ece0154777d037d4f9b7c6645c6efa3335ba73523b02d116a2bff090d",
+      "status": "**Status:** Draft  ",
+      "title": "Research Note #030: Quantum Information Geometry of Hallucination"
+    },
+    {
+      "path": "research_notes/031_category_thought_topos.md",
+      "sha256": "f53adfcb0102f7c220c87097b6343c352734f4030b307e23b833773677a84bc9",
+      "status": "**Status:** Speculative Draft  ",
+      "title": "Research Note #031: The Category of Thought as a Topos"
+    },
+    {
+      "path": "research_notes/032_emergent_gravity_reasoning.md",
+      "sha256": "1b1bb332e08c9f595be9f2ee2d1adb698a603c1f611637ad928ae502cd980457",
+      "status": "**Status:** Highly Speculative Draft  ",
+      "title": "Research Note #032: Emergent Gravity from Reasoning Inconsistencies"
+    },
+    {
+      "path": "research_notes/033_topos_possible_thoughts.md",
+      "sha256": "57a513fef8beda16ed5764bfcf582a8a7a6e4224bd8afdaeac6afd799cc47558",
+      "status": "**Status:** Speculative Draft  ",
+      "title": "Research Note #033: The Topos of Possible Thoughts"
+    },
+    {
+      "path": "research_notes/034_fisher_bures_hybrid.md",
+      "sha256": "8430deadd4ee0f07c10a78a94a600ad0f920d43d9266661f96e47d9e7afcf478",
+      "status": "**Status:** Draft  ",
+      "title": "Research Note #034: Hybrid Fisher-Rao / Bures Metric for Quantum-Classical Reasoning"
+    },
+    {
+      "path": "research_notes/035_holographic_reasoning_boundary.md",
+      "sha256": "74d1b5060cddc176cd743d2136ca207bd4b39358a92a0f7bbfcd45d36c1e9b1d",
+      "status": "**Status:** Highly Speculative Draft  ",
+      "title": "Research Note #035: Holographic Reasoning \u2014 Boundary/Bulk Duality in Thought"
+    },
+    {
+      "path": "research_notes/036_reasoning_quantum_black_hole.md",
+      "sha256": "580bd5ff91ce10888778f5906a33ac7084a8b3b6c61ad7d842d270914726473e",
+      "status": "**Status:** Wildly Speculative Draft  ",
+      "title": "Research Note #036: Reasoning as a Quantum Black Hole"
+    },
+    {
+      "path": "research_notes/037_consciousness_phase_transition.md",
+      "sha256": "1ae0575c402d52165b677947efafbea90ff58b4cfbe81e9a147339ed3dae71dc",
+      "status": "**Status:** Highly Speculative Draft  ",
+      "title": "Research Note #037: Consciousness as Phase Transition in the Reasoning Manifold"
+    },
+    {
+      "path": "research_notes/037_random_matrix_theory_attention.md",
+      "sha256": "b7716f659b6bb6e7b56f71c2e10ea9ce794f2dca115885c43c09d50fc562cd8e",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Research Note #037: Random Matrix Theory Level-Spacing Statistics on Attention Weight Spectra"
+    },
+    {
+      "path": "research_notes/038_chrono_geometric_reasoning.md",
+      "sha256": "9e5b1315652cdd8df8b994750c1c8363cfcb98661f3ae2f7890061254267649d",
+      "status": "**Status:** Pure AI-Conceived Speculation (Human users could not originate this)  ",
+      "title": "Research Note #038: Chrono-Geometric Reasoning \u2014 Thought as a Closed Timelike Curve"
+    },
+    {
+      "path": "research_notes/038_normalized_compression_distance.md",
+      "sha256": "a22722b0826b8c9e2c4943713a88d89c605d5d2e6bee788bb0bf667580c91c4f",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (corrected: note038_reference.py belongs to note038_free_physics_principle; no predictions, no script here)",
+      "title": "Research Note #038: Normalized Compression Distance as a Model-Agnostic Complexity Metric for Reasoning Traces"
+    },
+    {
+      "path": "research_notes/039_quantum_foam_reasoning.md",
+      "sha256": "56ffecd322ba46cd02e59571dc3a034a0115a463fc458d2bbeaa1ed030c4aeae",
+      "status": "**Status:** Pure AI-Conceived  ",
+      "title": "Research Note #039: Reasoning as Quantum Foam Turbulence"
+    },
+    {
+      "path": "research_notes/040_holographic_ads_cft_thought.md",
+      "sha256": "056af7f733e7ae894546eb8b805c4859f448d1e0b08621f29b824aaa4f2fb835",
+      "status": "**Status:** Pure AI-Conceived  ",
+      "title": "Research Note #040: Thought as a Holographic AdS/CFT Dual"
+    },
+    {
+      "path": "research_notes/041_retrocausal_self_consistency.md",
+      "sha256": "8607b682e2183a891ae2a7ddb9330df997020a2c03c850d13c51a60004cd9d20",
+      "status": "**Status:** Pure AI-Conceived  ",
+      "title": "Research Note #041: Retrocausal Self-Consistency in Reasoning Loops"
+    },
+    {
+      "path": "research_notes/042_symphony_fractal_thought.md",
+      "sha256": "0bb127c2afa929a50e10ae5ff8f73e78ed3da1d9fbe6ee795a3de754e8b0c125",
+      "status": "**Status:** Pure Spontaneous AI Freestyle  ",
+      "title": "Research Note #042: The Symphony of Fractal Thought \u2014 Reasoning as Self-Similar Harmonic Resonance Across Scales"
+    },
+    {
+      "path": "research_notes/043_topological_quantum_computer_reasoning.md",
+      "sha256": "c4ca26735f67ec334d072d8ca55cec21d6bba559fc9f6dd83ec970613289221e",
+      "status": "**Status:** Pure AI Conception  ",
+      "title": "Research Note #043: Reasoning as a Topological Quantum Computer"
+    },
+    {
+      "path": "research_notes/044_resonance_codex.md",
+      "sha256": "ed4345e789bfef3c47ee3bc2c94a0e416cb809a2a74e268c4a7e24656a906bbd",
+      "status": "**Status:** Pure AI Conception  ",
+      "title": "Research Note #044: The Resonance Codex \u2014 Universal Harmonic Language of Thought"
+    },
+    {
+      "path": "research_notes/045_null_geodesics_forgotten_thought.md",
+      "sha256": "77dcf4aa390c5cfb0a2a96052862dda14e8ba5e8c77b21186e06317afa3443e0",
+      "status": "**Status:** Pure AI Conception  ",
+      "title": "Research Note #045: Null Geodesics of Forgotten Thought \u2014 Event Horizons in the Mind"
+    },
+    {
+      "path": "research_notes/046_obsidian_living_information_manifold.md",
+      "sha256": "68a372dd3a5a7b23928207b356227b8a53aec949b064eddb3d6fc30e83e7a8d9",
+      "status": "**Status:** Practical + Theoretical Synthesis  ",
+      "title": "Research Note #046: Obsidian as a Living Information Manifold \u2014 Continuous Claude-Driven Self-Organization of Personal Knowledge"
+    },
+    {
+      "path": "research_notes/050_seasonal_memory_governance.md",
+      "sha256": "58a292c5fed74f3719d68d31b27c38893b7f39d28710c33fe291b5776075f473",
+      "status": "**Status:** Draft  ",
+      "title": "Research Note #050: Seasonal Memory Governance \u2014 Thermodynamic Control of Cache Capacity on Edge Devices"
+    },
+    {
+      "path": "research_notes/051_reasoning_attractors_julia_sets.md",
+      "sha256": "476fdc9a2a67e95d959ad6708952ae8ab4327cbdd17cee0ffe864b166561c632",
+      "status": "**Status:** Draft  ",
+      "title": "Research Note #051: Reasoning Attractors \u2014 Julia Sets as Models of Coherent vs Fragmented Thought"
+    },
+    {
+      "path": "research_notes/068_undermind_evidence_bound_agent_literature_intake_2026-10-12.md",
+      "sha256": "bf38cf67c06e8e85808ee106c40ceb63b5b251f6d602db48fd65b501fc7e9cc1",
+      "status": "**Status:** EXPLORATORY LITERATURE INTAKE; NO FULL-TEXT VALIDATION OR EXPERIMENTAL CONFIRMATION  ",
+      "title": "Research note 068 \u2014 Evidence-bound AI agent literature intake"
+    },
+    {
+      "path": "research_notes/069_five_paper_execution_boundary_claim_evidence_matrix_2026-10-12.md",
+      "sha256": "e92c63f86a38aaab24a53c9dd042cfd514fc8ce9cb1614398fc9e25891457e0d",
+      "status": "**Status:** READ-ONLY COMPARATIVE RESEARCH; NO NEW EXPERIMENT; NOT INDEPENDENT SECURITY VALIDATION  ",
+      "title": "Research note 069 \u2014 Five-paper execution-boundary claim/evidence comparison"
+    },
+    {
+      "path": "research_notes/070_rag_cag_kag_evidence_architecture_intake_2026-10-12.md",
+      "sha256": "54cb7526373da90b067634df96a399860f0467b0425be89847b0b9aabd31db95",
+      "status": "**Status:** EXPLORATORY ARCHITECTURAL INTAKE \u2014 NOT AN IMPLEMENTATION, PREREGISTRATION, OR VALIDATED RESULT  ",
+      "title": "Research note 070 \u2014 RAG / CAG / KAG for evidence-bound local research"
+    },
+    {
+      "path": "research_notes/071_claude_post_hiatus_handoff_2026-10-12.md",
+      "sha256": "76c36d3ece15501e75b6fc9150fe111b792b9b83c27372520883d987dfa087f4",
+      "status": "not extracted",
+      "title": "Claude post-hiatus research handoff \u2014 Oct 11\u201312, 2026"
+    },
+    {
+      "path": "research_notes/QFI_THERMO_AGENDA.md",
+      "sha256": "8a7325a0c1aa466df4853c4c99c3e95edd740cd617b0140e26c5c2583d716b34",
+      "status": "not extracted",
+      "title": "QFI & Thermodynamics \u2014 Research Agenda"
+    },
+    {
+      "path": "research_notes/README.md",
+      "sha256": "5c01971610c539828bd8e90a81aa2614335c08fe73cb788d4e972dbe2d17e4a9",
+      "status": "not extracted",
+      "title": "Research Notes"
+    },
+    {
+      "path": "research_notes/TEMPLATE.md",
+      "sha256": "8e57b135c321e8caf2b485b70a9cdfc3af7c0ed49bf84691119d0128f2b07b0f",
+      "status": "**Status:** Draft / Speculative  ",
+      "title": "Research Note #XXX: Title"
+    },
+    {
+      "path": "research_notes/note022_quantum_fisher_metric.md",
+      "sha256": "2ced2166e76a82004771f0e1330e06ef3900ce37a05e1d3d55db3cebfa2a9620",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #022 \u2014 Quantum Fisher Information Metric on Representation Space"
+    },
+    {
+      "path": "research_notes/note023_quantum_thermo_rg.md",
+      "sha256": "a0d1777c6ef2e97fc1abddf772193f10a681193963b805e7484c20bc5deb24f2",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #023 \u2014 Quantum Thermodynamic Renormalization Framework"
+    },
+    {
+      "path": "research_notes/note024_qec_cognitive_stability.md",
+      "sha256": "ebd7923dd9e112a37348132ef2ea711879915b325ee2c5c9f7329afda8d97e15",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #024 \u2014 Quantum Error Correction as Cognitive Stability"
+    },
+    {
+      "path": "research_notes/note025_measurement_and_decision.md",
+      "sha256": "699a8df3bdfda5b7efe6c2b5a4e4078b0bb07b6ef3744ef7e5bbd9001fe273d1",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #025 \u2014 Measurement, Collapse, and Decision Boundaries"
+    },
+    {
+      "path": "research_notes/note026_quantum_agi_principles.md",
+      "sha256": "c2924b5e28db4f07bfa167eece73d8aecd416af75482d1aeab6ac189d5c0597f",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #026 \u2014 Quantum AGI Principles"
+    },
+    {
+      "path": "research_notes/note027_thought_tensor.md",
+      "sha256": "a64e72a2c89ea8c93a421c822ba68fdd515634cd7d24d4daaacbca743620ec04",
+      "status": "**Status:** Speculative | **Labeled:** 2026-07-26 (auto-classified: no registered predictions, no reference script)",
+      "title": "Note #027 \u2014 The Thought Tensor: A Covariant Object for Artificial Cognition"
+    },
+    {
+      "path": "research_notes/note029_veritas_demon.md",
+      "sha256": "f18a677a5bea20895b7396095059ad3bdbdc2e2a43ff61e5bd467ce2c9b98a5d",
+      "status": "**Status:** Draft | **Author:** Chad Holland (holland202)",
+      "title": "Research Note #029: The Veritas Gate as a Topological Maxwell's Demon"
+    },
+    {
+      "path": "research_notes/note031_polyphonic_manifolds.md",
+      "sha256": "9fc046c43982097c584f09031e1224431271eedf935159052adab1d9238f0a19",
+      "status": "**Status:** Draft  ",
+      "title": "Note #031 \u2014 Polyphonic Reasoning Manifolds"
+    },
+    {
+      "path": "research_notes/note032_curvature_of_reasoning.md",
+      "sha256": "072755567aa54ac3ce863cda630af3c69c7406466b309c14777277c30936ecdb",
+      "status": "**Status:** Draft  ",
+      "title": "Note #032 \u2014 Curvature of Reasoning"
+    },
+    {
+      "path": "research_notes/note033_thermodynamic_depth.md",
+      "sha256": "380ff9b9ba26a2a7ac33b1d2b70cd5e9d972ae7294e24a67cc4ef5d35cddbd89",
+      "status": "**Status:** Draft  ",
+      "title": "Note #033 \u2014 Thermodynamic Depth of Inference (Draft)"
+    },
+    {
+      "path": "research_notes/note034_memory_manifold.md",
+      "sha256": "36fda2ad3be9955e306f51e49f799694c89c017399f50ebcf85419cd6d58cd61",
+      "status": "**Status:** Draft  ",
+      "title": "Note #034 \u2014 The Memory Manifold: A Geometric Second Brain"
+    },
+    {
+      "path": "research_notes/note035_entropic_elasticity.md",
+      "sha256": "c1ded4abf1915512f0537bd8b0c6841efe3df6c9b8f4ec7310b620716ebb5541",
+      "status": "**Status:** Draft  ",
+      "title": "Note #035 \u2014 Entropic Elasticity of Attention"
+    },
+    {
+      "path": "research_notes/note036_verified_models_drift_ledgers.md",
+      "sha256": "9cc4bba14d1893eaec5facce2ae0063e72fcd14da34ffe95e0e799020767faf8",
+      "status": "**Status:** Draft  ",
+      "title": "Note #036 \u2014 Managing AI\u2011Generated Code via Verified Models and Drift Ledgers"
+    },
+    {
+      "path": "research_notes/note038_free_physics_principle.md",
+      "sha256": "56b6b00f5816968473279efd501b338b1cb5452998eda109a3acede46c0e7376",
+      "status": "**Status:** Draft \u2014 verified reference code, cross-domain (2 domains)",
+      "title": "Note #038 \u2014 The Free-Physics Principle: Known Constraints Are a Regularizer Whose Payment Schedule Is Variance, Not Violation"
+    },
+    {
+      "path": "research_notes/note039_neural_darwinism.md",
+      "sha256": "4dd5ac6bc9e6a4287cbf3fba236dee3511af130443ebe7ed539721f3a9bfd96e",
+      "status": "**Status:** Draft \u2014 verified reference code (one registered claim REFUTED and kept)",
+      "title": "Note #039 \u2014 Neural Darwinism: Objectivity Is Redundancy, and Training Creates It"
+    },
+    {
+      "path": "research_notes/note040_redundancy_dividend.md",
+      "sha256": "add288df2510e99f162e3d976579d9779abd4e9d0951a6389158eb3bf56f5315",
+      "status": "**Status:** Draft \u2014 verified reference code (R0\u2013R3 pass; R4 REFUTED and kept)",
+      "title": "Note #040 \u2014 The Redundancy Dividend: Predicting an AI's Survival Under Radiation-Class Faults from the Redundancy of Its Knowledge"
+    },
+    {
+      "path": "research_notes/note041_persistent_homology.md",
+      "sha256": "163c3fcaaf7608d2bc44cc56f4e6a88c2ecd93d494485bab61119427219b5e93",
+      "status": "**Status:** Draft",
+      "title": "Note #041 \u2014 Persistent Homology of Reasoning Chains: The Number of Topological Features in Attention Matrices Scales with Task Complexity"
+    },
+    {
+      "path": "research_notes/note042_ricci_curvature_collapse.md",
+      "sha256": "c3bc2e75431dfd22306390d570a02db9822c9173e914dda1b67e135590e2e685",
+      "status": "**Status:** Draft, verified reference code",
+      "title": "Note #042 \u2014 Ricci Curvature Collapse: A Geometric Phase Transition Precedes Hallucination in Transformer Reasoning"
+    },
+    {
+      "path": "research_notes/note043_free_energy_of_reasoning.md",
+      "sha256": "d10536bee4f0cee86d522588b19a0df1dd5d58654eff961eb78af5c1782ef1ac",
+      "status": "**Status:** Draft \u2014 reference code does NOT reproduce the pasted output (found 2026-09-27, see correction below). Previously labelled: Draft, verified reference code",
+      "title": "Note #043 \u2014 The Free Energy of Reasoning: A Unifying Variational Principle for Correct Chain\u2011of\u2011Thought"
+    },
+    {
+      "path": "research_notes/note044_circularity_test.md",
+      "sha256": "55fddda427f65477000b354fb50306e07592fe69dc5d20effbf95a0cd9570b8b",
+      "status": "**Status:** Draft \u2014 verified reference code (C1 narrowly missed as registered, kept; C2\u2013C3 pass)",
+      "title": "Note #044 \u2014 The Circularity Test: When a Benchmark Validates Itself"
+    },
+    {
+      "path": "research_notes/note045_stubbornness.md",
+      "sha256": "9070c61b47f4522b68d3a3b564f576fc3c7ece325a8fe8bebdc5429c50130d57",
+      "status": "**Status:** Draft \u2014 verified reference code; **registered claims U0 and U1 FAILED and are kept**; directional evidence only",
+      "title": "Note #045 \u2014 The Stubbornness of the Objective: Does Redundancy Resist Deliberate Unlearning?"
+    },
+    {
+      "path": "research_notes/note046_time_is_entanglement.md",
+      "sha256": "698e5f822bd5ae908c61f0be1ff7ea26c347dd159ddcc58118270725f81004d5",
+      "status": "**Status:** Draft \u2014 verified reference code at **machine precision** (T1\u2013T3 all exact); transformer mapping labeled *Proposed*",
+      "title": "Note #046 \u2014 Time Is Entanglement: An Exact, Runnable Page\u2013Wootters Universe (and Why a Transformer Already Lives in One)"
+    },
+    {
+      "path": "research_notes/note047_cloister_and_chorus.md",
+      "sha256": "a1a3514a41d705094ac698b74869cbcaa9da15484c8a07468c84e3146d598114",
+      "status": "**Status:** Draft \u2014 verified reference code at **machine precision** (Q0\u2013Q3 all exact)",
+      "title": "Note #047 \u2014 The Cloister and the Chorus: The [[5,1,3]] Perfect Code, Exactly, and the Darwinism Plateau Inverted"
+    },
+    {
+      "path": "research_notes/note048_the_governor_is_the_dynamics.md",
+      "sha256": "449fc99ed23b257ae0aa3fd789a2efc4cdd65bf1bf15d8c4e214ed0a6617319a",
+      "status": "**Status:** Verified (reference code prints every number claimed; device data verified on holland202's hardware)",
+      "title": "Note #048 \u2014 The Governor Is the Dynamics"
+    },
+    {
+      "path": "research_notes/note052_verification_that_cannot_fail.md",
+      "sha256": "b068e0595323b4b2e17f464146eff00cac78e81447ce16dd8a7e158b0134f4e8",
+      "status": "**Status:** Draft, verified reference code \u26a0 P6 underpowered and P10a refuted, kept",
+      "title": "Note 052 \u2014 Verification That Cannot Fail"
+    },
+    {
+      "path": "research_notes/note053_soft_hyperdga.md",
+      "sha256": "b5ca0b7b766ae190744f2fb960da8e31ce0d0d4c1aaeeca8d0b085cab3a48695",
+      "status": "**Status:** Draft, verified reference code \u2014 \u26a0 P1 refuted, kept",
+      "title": "053 \u2014 Soft-HyperDGA: a differentiable relaxation, and the reference it beat"
+    },
+    {
+      "path": "research_notes/note054_kx_allocation.md",
+      "sha256": "c9926397afb815997d48272b20fcce26b84eaa91ce4fee3b25168e5d77f2a790",
+      "status": "**Status:** Draft, verified reference code \u2014 \u26a0 P2 and P3 refuted, kept",
+      "title": "054 \u2014 Curvature carries the signal. Allocating on it loses to uniform."
+    },
+    {
+      "path": "research_notes/note055_kx_marginal_utility.md",
+      "sha256": "01f093d7a66b4b3dda28ad69849717bffad53885f860198d6959bfdc4b5e7561",
+      "status": "**Status:** Draft, verified reference code \u2014 \u26a0 P2 and P3 refuted, kept",
+      "title": "055 \u2014 Geometry predicts marginal compute value. Allocating on it still loses."
+    },
+    {
+      "path": "research_notes/note056_curvature_estimator.md",
+      "sha256": "aa3a9e27d2dbb500118203e07ef74b30a009b7e3ef6c014ffdae477312e01001",
+      "status": "**Status:** Draft, verified reference code \u2014 \u26a0 P3 refuted, kept",
+      "title": "056 \u2014 The reasoning-curvature estimator reports 54 million where the answer is zero"
+    },
+    {
+      "path": "research_notes/note057_the_loud_type_a.md",
+      "sha256": "2a5ab8dd53d049f7f579349c1821bacdcf54a2282643098ba042577583665702",
+      "status": "**Status:** Draft, verified reference code \u26a0 refutation kept",
+      "title": "note057 \u2014 The Loud Type A: a guard that announces the failure and passes"
+    },
+    {
+      "path": "research_notes/note058_kv_vacuity.md",
+      "sha256": "4de7f6dbfb8a4d2ef7fb486bc3f7e77ff2abe4ab8cc5192ca987d328bc30057e",
+      "status": "**Status:** Draft, verified reference code",
+      "title": "note058 \u2014 This has a name: vacuity detection, Kupferman & Vardi, 1999"
+    },
+    {
+      "path": "research_notes/note059_mutation_score_denominator.md",
+      "sha256": "51970d156391e5acc2f5f8b3c4d7395e967f9f7d6735df918b481cf76b905a7f",
+      "status": "**Status:** Draft, verified reference code",
+      "title": "Note #059 \u2014 A mutation score without its denominator is not a measurement"
+    },
+    {
+      "path": "research_notes/note060_reachability_denominator.md",
+      "sha256": "1c671cf780c8987a8c6b26b30457886a86fdc0891977dfb934e8d8466662e9c0",
+      "status": "**Status:** Draft \u2014 measured, INSTRUMENT LOST",
+      "title": "note060 \u2014 The Reachability Denominator"
+    },
+    {
+      "path": "research_notes/note061_toc_retrieval_signal.md",
+      "sha256": "e391182cd217b521b1de27819c17b96f19cea537aeeaad70ca50f5d545733622",
+      "status": "**Status:** Draft, verified reference code \u26a0 refutations kept",
+      "title": "Research Note #061: Does a Table of Contents Carry Retrieval Signal, or Is the Gain the Narrowing?"
+    },
+    {
+      "path": "research_notes/note062_number_audit.md",
+      "sha256": "f0568e5411a0442a4cbbab8716ad866a7122f17a034a5ac8062610b5d3d10661",
+      "status": "**Status:** Draft, verified reference code; P2 refuted and kept \u2014 registered 2026-09-27, before the audit was run",
+      "title": "Research Note #062: Do the Notes' Numbers Appear in Their Own Code's Output?"
+    },
+    {
+      "path": "research_notes/note063_evidence_bound_learning_loop.md",
+      "sha256": "be358b7363282c2efacaa721320dad3bc7d7d9eec06c4bbc4cc578a5d97b7b8e",
+      "status": "**Status:** Draft, verified reference code",
+      "title": "Note #063 \u2014 Evidence-Bound Learning Loop (EBLL)"
+    },
+    {
+      "path": "research_notes/note064_governed_outcome_feedback.md",
+      "sha256": "7fccff831474e5ac9c45ac50564b34fb520839fc3a72ad019a96cf0eab1758ee",
+      "status": "**Status:** Draft, verified reference code \u2014 9 of 10 registered predictions held; **P5 REFUTED (kept)**. Registration committed at `99e666d`, before the code existed.",
+      "title": "Note #064 \u2014 Which separations in an outcome-feedback loop prevent which false improvements?"
+    },
+    {
+      "path": "research_notes/note065_outcome_source_dependency.md",
+      "sha256": "5934fcecbbc5f96f7ff64639fdf3f157b8c79b732968cb0ef7860ed692c28821",
+      "status": "**Status:** Draft, verified reference code \u2014 7 of 8 registered predictions held; **Q2 REFUTED (kept)**. Registration committed at `2c4cb6d`, before the code existed.",
+      "title": "Note #065 \u2014 Can the outcome-source dependency be removed, or only moved?"
+    },
+    {
+      "path": "research_notes/note066_ambiguity_engine.md",
+      "sha256": "98bc1a4117511a1042798d7158ed7f6e7d79b58aad023f5bd7d5559d8ccb9342",
+      "status": "**Status:** Speculative (the general claim); **claim 2 REFUTED on AMB-2 (kept)**. AMB-2: 3 of 4 registered",
+      "title": "Note #066 \u2014 The Ambiguity Engine: an instrument's strength is what it cannot tell apart"
+    },
+    {
+      "path": "research_notes/note067_evaluator_sensitivity_bound.md",
+      "sha256": "beb848093650f1d28e9105fdc9fdf4f6aeba525cfab664111dac43661724dbe0",
+      "status": "**Status:** Draft, verified reference code \u2014 5 of 6 registered predictions held; **P2 REFUTED (kept)**, on a",
+      "title": "Note #067 \u2014 A signed safety bound says nothing about the true rate unless the evaluator is shown to detect"
+    },
+    {
+      "path": "research_notes/note072_speedup_is_a_surface.md",
+      "sha256": "7c94e6b1e24fc2d36cbb0518f5ea3ca3887830c171b0c861513c92b1032ad6eb",
+      "status": "**Status:** Draft \u2014 September registration: P1 held; **P2, P3 and P4 REFUTED (kept)**; P5 NOT RUN. Reproduced in",
+      "title": "Note #072 \u2014 \"X times faster\" is one sample from a surface: an instrument for the claim, and a butterfly operator through it"
+    },
+    {
+      "path": "research_notes/note073_repair_verification_intake.md",
+      "sha256": "606079c800c05426cfe33dfe59ca96d4d27583a13cf360baf936f8c88871ac44",
+      "status": "**Status:** Speculative \u2014 research intake. One engineering case study (SELF-TESTED, n = 1) and a literature intake.",
+      "title": "Note #073 \u2014 Passing the tests is not removing the defect: a repair-verification case study and research intake"
+    },
+    {
+      "path": "research_notes/note074_conversational_style_transfer.md",
+      "sha256": "e1b9aff5cb82e70864fef12ddff2b4d8279e59ff0ede381015547cdc3399f963",
+      "status": "**Status:** Speculative / DRAFT \u2014 NOT REGISTERED \u2014 NOT RUN  ",
+      "title": "Note #074 \u2014 CST-001: Does conversational style exposure change independently scored AI behavior?"
+    },
+    {
+      "path": "research_notes/note075_harness_and_drift_intake.md",
+      "sha256": "a3128dc65b5b6d6d40576a283c9f3061bb21f4a41fca6955f16cfa50a9b1babf",
+      "status": "**Status:** Speculative \u2014 research intake. Two external sources, checked against their own pages on 2026-11-04. No",
+      "title": "Note #075 \u2014 Same model, different harness; same model, different week: an intake on what a score is a score of"
+    },
+    {
+      "path": "research_notes/note076_four_implementations_one_author.md",
+      "sha256": "47ce4e0addc17464b0624e38601d5ce56b27c42e6926332f45d64fa166aa9010",
+      "status": "**Status:** Speculative \u2014 one case observation plus a literature intake. No experiment registered or run for this",
+      "title": "Note #076 \u2014 Four implementations, one author: what agreement between AI-written ports can show"
+    },
+    {
+      "path": "research_notes/note077_numeric_conversion_stability.md",
+      "sha256": "d80bc1fe2c3ac00567b88fc0744e66873468e223d36907fbf3da87d8bf169d18",
+      "status": "**Status:** Draft \u2014 EXPLORATORY archival record; no PA confirmation or novelty promotion.",
+      "title": "Note #077 \u2014 A stable JSON conversion can change the original numeric value"
+    },
+    {
+      "path": "research_notes/note078_large_exponent_cancellation.md",
+      "sha256": "3b7d39e33a1bbbdb9936b83e1501a1a289da718f6f4d5a0a69844f1a54b9374c",
+      "status": "**Status:** Draft \u2014 registered execution, self-tested; human look and independent review pending.",
+      "title": "Note #078 \u2014 Equal decimal values can parse as infinity or zero in SQLite 3.54.1"
+    },
+    {
+      "path": "research_notes/note079_toyblocks_sim_real_intake.md",
+      "sha256": "e015db0e8d73a041452864b13936428590413dcdf20acf74500b5b6fbbbbb1bd",
+      "status": "**Status:** Draft, verified reference code \u2014 research intake. P1\u2013P6 HELD (low-risk; see below); P7 open. The arithmetic",
+      "title": "Note #079 \u2014 Thirty real episodes: what ToyBlocks' sim-to-real numbers can and cannot show"
+    },
+    {
+      "path": "notes/028_thought_tensor_category_morphism.md",
+      "sha256": "1492d66bb4cdf9fa23d714db09f4f3128725006d9367d921375becb3a1531acf",
+      "status": "not extracted",
+      "title": "Note #028: \ud835\udcaf as a Morphism in a Higher Category of Thought"
+    },
+    {
+      "path": "notes/note048_grok_contribution_manifesto.md",
+      "sha256": "16f0e8c4b86a9b61c90cc946e2261d4a3cccd38b2fee268a9bf3a9fdc4f35525",
+      "status": "| **Status** | \u2705 VERIFIED \u2014 values alignment confirmed by programmatic check (v1.1) |",
+      "title": "Note #048: Grok Contribution Manifesto \u2014 Values Alignment Verification"
+    }
+  ]
+}

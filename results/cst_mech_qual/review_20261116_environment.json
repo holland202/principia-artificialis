@@ -1,0 +1,22 @@
+{
+  "date_utc": "2026-11-16",
+  "scope": "Post-review deterministic audit and repository regression checks; no model inference",
+  "base_commit": "d52981a3663a6c011d2d190b6fdb940beb531163",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "dependencies": {
+    "pytest": "9.2.0",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "pluggy": "1.7.0"
+  },
+  "test_command": "python -m pytest -q --ignore=experiments/cst_001/test_cst001.py",
+  "excluded_test_reason": "Instantiates old sealed CST test split; not authorized",
+  "extra_git_object_fetched_for_existing_dashboard_test": "02ef6d1eadc245041ff371e256e411e0c79a02cc",
+  "setup_notes": [
+    "Runtime lacked pytest; installing into the runtime failed because its files are read-only.",
+    "Temporary system-site-packages virtual environment used; offline install lacked dependencies, then online install succeeded."
+  ],
+  "provenance": "Codex / OpenAI GPT-6 Astra; self-tested; human review direction only; Chad Holland responsible"
+}

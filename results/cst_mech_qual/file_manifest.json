@@ -1,0 +1,52 @@
+{
+  "files": {
+    "docs/CST_MECH_QUAL_001_PREREG.md": {
+      "md5": "9cd498dbc81ac1efccf01c3deeb3aa60",
+      "sha256": "3da390696ac3df123b40dd1bf6d8239032d6bbb4dcff6b88a012e7d607c1c49a"
+    },
+    "docs/external/discovery_audit_20261115/sources.json": {
+      "md5": "047152bf128a05e04239512efa72589a",
+      "sha256": "098ecb8ee1bcfac2827fd12e2546b8d7f54d0e1a0d7c0dfbcd397087e2c8dc64"
+    },
+    "experiments/cst_mech_qual/instrument.py": {
+      "md5": "7c22a5fb6bb8a58fd64aac3efaa4e2ab",
+      "sha256": "39037f53a0c2e1a9a8f834f2e4b31c3969d01b19433bbdf66619a2be07b73fc2"
+    },
+    "experiments/cst_mech_qual/recorded.py": {
+      "md5": "eb0e63763a1747061a945bb4b4a14a74",
+      "sha256": "1fc9a75df32b7901262b7a2de1d677a98b380f65cff4393eadcab9d634c31cf7"
+    },
+    "experiments/cst_mech_qual/review_inventory.py": {
+      "md5": "a436101b5b05a919f6550c3fc5a15cbd",
+      "sha256": "0a5df659263047acf4d8b4795d2980cc3f266d352f63de88f0e5389a2da088fa"
+    },
+    "experiments/cst_mech_qual/test_instrument.py": {
+      "md5": "b3aba1e2321a1e5a6d1fb82ba511cc7a",
+      "sha256": "48af9a165d5013acaabc9f9fff817790b9f92ed2abb32ba8a5ca78a3f2456697"
+    },
+    "results/cst_001/dev2_hop2_7b.jsonl": {
+      "md5": "49aa89e9ff542612d76f1d79d110d416",
+      "sha256": "e29aaea17b1f348e22490a8c833de83a7865dbd9daac85fa7f5d4274f8ead649"
+    },
+    "results/cst_001/dev_outputs_7b.jsonl": {
+      "md5": "70424700aac39f6db6ebf9050c3f85d5",
+      "sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109"
+    },
+    "results/cst_mech_qual/human_review_sample.json": {
+      "md5": "ca06e3cba886804fabb11b92650e0edf",
+      "sha256": "71e3f4695565285d0a76636e0909c3a71b3982c30307b52a755a0aa93de55ee5"
+    },
+    "results/cst_mech_qual/qualification.txt": {
+      "md5": "2547d4f6a3e8cbe9e50a11972e83edfa",
+      "sha256": "51221056babec82cb8244eca5d2130f5a1c4b8c680c4bf0ab3049806b48d9805"
+    },
+    "results/cst_mech_qual/sabotage.txt": {
+      "md5": "03be4a6fe3efbb47acfa3da73058828b",
+      "sha256": "6f58eca6be53944aba60ef2dd5e929c059cfd8a8c31667ceef046671f018b09c"
+    }
+  },
+  "local_execution_commit": "0af2943",
+  "local_registration_commit": "e12100e",
+  "public_registration_commit": "fe724ebab9acf910843ab60862b0b6bf89c5633d",
+  "scope": "INTEGRITY ONLY, NOT INDEPENDENT VALIDATION"
+}

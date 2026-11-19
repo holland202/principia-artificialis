@@ -1,0 +1,22 @@
+ARCHIVE REPLAY ONLY; ORIGINAL AUTHOR SCORER; NO NEW INFERENCE
+{"duplicate_keys": 0, "path": "results/cst_001/dev_outputs_7b.jsonl", "rows": 256, "sha256": "b41a12c1b61591b06f1526e8c086b8462ca97298b25873aa989350f47fb26109"}
+split dev: 64 pairs
+arm  pairs ok  SHARED ok  INDEP ok malformed hop1 pairs hop2 pairs long answers
+D     26/64      59/64     29/64           0     26/32       0/32             0
+E     26/64      30/64     57/64           0     14/32      12/32            37
+
+discordant pairs against A (A right & other wrong / A wrong & other right):
+{"duplicate_keys": 0, "path": "results/cst_001/dev2_hop2_7b.jsonl", "rows": 320, "sha256": "e29aaea17b1f348e22490a8c833de83a7865dbd9daac85fa7f5d4274f8ead649"}
+split dev2: 32 pairs
+arm  pairs ok  SHARED ok  INDEP ok malformed hop1 pairs hop2 pairs long answers
+A      0/32      32/32      0/32           0      0/0        0/32             0
+B      0/32      31/32      1/32           0      0/0        0/32             0
+C      3/32      29/32      5/32           0      0/0        3/32             0
+D      0/32      25/32      1/32           0      0/0        0/32             0
+E     10/32      16/32     23/32           0      0/0       10/32            38
+
+discordant pairs against A (A right & other wrong / A wrong & other right):
+  A vs B: 0 / 0
+  A vs C: 0 / 3
+  A vs D: 0 / 0
+  A vs E: 0 / 10

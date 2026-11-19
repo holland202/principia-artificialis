@@ -1,0 +1,22 @@
+<unknown>:26: SyntaxWarning: invalid escape sequence '\D'
+<unknown>:33: SyntaxWarning: invalid escape sequence '\D'
+<unknown>:35: SyntaxWarning: invalid escape sequence '\D'
+<unknown>:38: SyntaxWarning: invalid escape sequence '\c'
+<unknown>:39: SyntaxWarning: invalid escape sequence '\D'
+python files scanned    : 181
+verification-shaped     : 80
+findings                : 4
+declared intentional    : 0
+
+NO_FAIL_PATH  (1)
+  ./experiments/exp050_seasonal_capacity_harness.py
+      verification-shaped but has no assert, raise, test function, or nonzero exit
+
+PRINTS_FAIL_ONLY  (3)
+  ./experiments/qm_obs_001_audit/check.py
+      prints failure text 2x but has no assert, raise, or nonzero exit
+  ./scripts/make_index.py
+      prints failure text 2x but has no assert, raise, or nonzero exit
+  ./scripts/note053_reference.py
+      prints failure text 1x but has no assert, raise, or nonzero exit
+

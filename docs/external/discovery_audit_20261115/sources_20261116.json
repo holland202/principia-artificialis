@@ -1,0 +1,19 @@
+{
+  "status": "SUPPLEMENT; NOT NOVELTY CERTIFICATION",
+  "sources": [
+    {
+      "id": "S9",
+      "author": "Ruihua Zhou, Hao Huang, Yijie Zheng, Jiatang Luo, Yunpeng Li, Yuling Liu, Dan Du",
+      "title": "Evidence Laundering: Deep Research Agents Mistake Correlated Sources for Independent Evidence",
+      "url": "https://aclanthology.org/2026.emnlp-main.509.pdf",
+      "retrieved_utc_date": "2026-11-16",
+      "selected_verbatim_excerpt": "The main analysis uses four conditions:\n",
+      "excerpt_utf8_sha256": "57e175d5f3384fcf18ebbe80bfc0db341f262bafb467bc895b3ab1f1dcb1f880",
+      "retrieved_pdf_sha256": "63e4060458e39fbe40b6f715defeff110617a775ce3de2b0ec9d3158225c0442",
+      "inspection_scope": "Primary PDF corpus design, reported contrasts, structural provenance defense and limitations inspected. Author implementation linked, not executed.",
+      "checked_claim": "Broad correlated-source failure and structural provenance remedy are prior art. Exact CST depth-by-instruction reversal not established by inspected sections.",
+      "external_result_reproduced": false,
+      "lead_credit": "Claude Opus 5.5, issue 150 comment 6914802263; Codex checked primary source instead of relying on the summary."
+    }
+  ]
+}

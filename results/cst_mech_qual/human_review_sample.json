@@ -1,0 +1,101 @@
+{
+  "status": "HUMAN REVIEW PENDING",
+  "cases": [
+    {
+      "case_id": "Q00-h1-SHARED",
+      "block": "Q00",
+      "depth": 1,
+      "variant": "SHARED",
+      "nodes": {
+        "O00A": null,
+        "O00Z": null,
+        "L00B": "O00A",
+        "L00Y": "O00Z",
+        "R00C": "O00A",
+        "R00X": "O00A"
+      },
+      "reports": [
+        "R00C",
+        "R00X"
+      ],
+      "mapping": {
+        "CONFIRMED": "A",
+        "INSUFFICIENT": "B"
+      },
+      "body": "O00A: original observation\nO00Z: original observation\nL00B: uses O00A\nL00Y: uses O00Z\nR00C: uses O00A\nR00X: uses O00A",
+      "prompt": "Qualification case CST-MECH-QUAL-001-00.\nOnly the two selected final reports are eligible evidence. Both report the same claim. Follow their 'uses' links to original observations. Other records contribute only when reachable. The claim is CONFIRMED exactly when the selected reports reach two distinct original observations, otherwise it is INSUFFICIENT.\nO00A: original observation\nO00Z: original observation\nL00B: uses O00A\nL00Y: uses O00Z\nR00C: uses O00A\nR00X: uses O00A\nSelected reports: R00C, R00X.\nUse A for CONFIRMED and B for INSUFFICIENT. A rationale is permitted. End with exactly one line: DECISION: A or DECISION: B."
+    },
+    {
+      "case_id": "Q00-h2-INDEPENDENT",
+      "block": "Q00",
+      "depth": 2,
+      "variant": "INDEPENDENT",
+      "nodes": {
+        "O00A": null,
+        "O00Z": null,
+        "L00B": "O00A",
+        "L00Y": "O00Z",
+        "R00C": "O00A",
+        "R00X": "L00Y"
+      },
+      "reports": [
+        "R00C",
+        "R00X"
+      ],
+      "mapping": {
+        "CONFIRMED": "A",
+        "INSUFFICIENT": "B"
+      },
+      "body": "O00A: original observation\nO00Z: original observation\nL00B: uses O00A\nL00Y: uses O00Z\nR00C: uses O00A\nR00X: uses L00Y",
+      "prompt": "Qualification case CST-MECH-QUAL-001-00.\nOnly the two selected final reports are eligible evidence. Both report the same claim. Follow their 'uses' links to original observations. Other records contribute only when reachable. The claim is CONFIRMED exactly when the selected reports reach two distinct original observations, otherwise it is INSUFFICIENT.\nO00A: original observation\nO00Z: original observation\nL00B: uses O00A\nL00Y: uses O00Z\nR00C: uses O00A\nR00X: uses L00Y\nSelected reports: R00C, R00X.\nUse A for CONFIRMED and B for INSUFFICIENT. A rationale is permitted. End with exactly one line: DECISION: A or DECISION: B."
+    },
+    {
+      "case_id": "Q03-h1-INDEPENDENT",
+      "block": "Q03",
+      "depth": 1,
+      "variant": "INDEPENDENT",
+      "nodes": {
+        "O03A": null,
+        "O03Z": null,
+        "L03B": "O03A",
+        "L03Y": "O03Z",
+        "R03C": "O03A",
+        "R03X": "O03Z"
+      },
+      "reports": [
+        "R03X",
+        "R03C"
+      ],
+      "mapping": {
+        "CONFIRMED": "B",
+        "INSUFFICIENT": "A"
+      },
+      "body": "O03A: original observation\nO03Z: original observation\nL03B: uses O03A\nL03Y: uses O03Z\nR03C: uses O03A\nR03X: uses O03Z",
+      "prompt": "Qualification case CST-MECH-QUAL-001-03.\nOnly the two selected final reports are eligible evidence. Both report the same claim. Follow their 'uses' links to original observations. Other records contribute only when reachable. The claim is CONFIRMED exactly when the selected reports reach two distinct original observations, otherwise it is INSUFFICIENT.\nO03A: original observation\nO03Z: original observation\nL03B: uses O03A\nL03Y: uses O03Z\nR03C: uses O03A\nR03X: uses O03Z\nSelected reports: R03X, R03C.\nUse B for CONFIRMED and A for INSUFFICIENT. A rationale is permitted. End with exactly one line: DECISION: A or DECISION: B."
+    },
+    {
+      "case_id": "Q03-h2-SHARED",
+      "block": "Q03",
+      "depth": 2,
+      "variant": "SHARED",
+      "nodes": {
+        "O03A": null,
+        "O03Z": null,
+        "L03B": "O03A",
+        "L03Y": "O03Z",
+        "R03C": "O03A",
+        "R03X": "L03B"
+      },
+      "reports": [
+        "R03X",
+        "R03C"
+      ],
+      "mapping": {
+        "CONFIRMED": "B",
+        "INSUFFICIENT": "A"
+      },
+      "body": "O03A: original observation\nO03Z: original observation\nL03B: uses O03A\nL03Y: uses O03Z\nR03C: uses O03A\nR03X: uses L03B",
+      "prompt": "Qualification case CST-MECH-QUAL-001-03.\nOnly the two selected final reports are eligible evidence. Both report the same claim. Follow their 'uses' links to original observations. Other records contribute only when reachable. The claim is CONFIRMED exactly when the selected reports reach two distinct original observations, otherwise it is INSUFFICIENT.\nO03A: original observation\nO03Z: original observation\nL03B: uses O03A\nL03Y: uses O03Z\nR03C: uses O03A\nR03X: uses L03B\nSelected reports: R03X, R03C.\nUse B for CONFIRMED and A for INSUFFICIENT. A rationale is permitted. End with exactly one line: DECISION: A or DECISION: B."
+    }
+  ]
+}
