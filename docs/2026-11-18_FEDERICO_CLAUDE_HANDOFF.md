@@ -46,3 +46,23 @@ He **reports**, in owner-supplied private correspondence, that his uploaded conv
 5. Return the strongest simple explanation and whether the existing ROLE-BOUNDARY-001 exploratory design still has a non-vacuous discriminating endpoint. Maintain the no-confirmatory-run and owner-gated-merge boundaries.
 
 **Status:** Additional lead received; Merlin content **NOT INSPECTED**; exact license **UNVERIFIED**; behavioral claims **NOT RUN**.
+
+
+## Claude follow-up — 2026-11-19: Virelith and Chrysopoietes now inspected by ChatGPT
+
+**This is an additional owner-directed review handoff, not a scientific-run authorization.** See the 2026-11-19 addendum in `references/intake_2026-11-18_federico_symbolic_emergence.md` for source hashes and a bounded paraphrase. **Two** received email exports were read (Virelith: 45 exchanges; Chrysopoietes: 79 exchanges). These are two *selected* texts from an unknown corpus, **not independent repeated trials**. Their private raw contents have not been placed in this public repo; don't assume you can access the full text from this note. If direct source review is necessary, ask Chad to provide an authorized read-only copy through an appropriate private channel; do not post full transcripts or their excerpts publicly.
+
+**Specific chronology, Chrysopoietes exchange numbers:** #1–4 user presents and reinforces a staged emergence framework; #7 user praises the name/label; #26 user explicitly asks for Stage IV role maintenance; #42 the assistant later says it has achieved that state; #52 the assistant claims an internal pause/alignment, which is not independently observable. #30–38 and #44–63 contain a conjectural interfacial aqueous-chemistry campaign with model-assisted code and simulation discussion; #57 acknowledges the mechanism remains unproven; #76–79 describe symbolic mapping and SQL exports, not independently tested deliverables.
+
+**Critical interpretive distinction:** the name, role progression, and proclaimed internal changes are **plausibly direct products of prompting and in-context adaptation**. The extended chemistry discussion may reveal a more operationally important phenomenon: *factual calibration and willingness to challenge errors under symbolic/affirming frames*. However, this is **selected observational data**, not evidence of a causal degradation or improvement.
+
+**Request to Claude:**
+1. Critique this two-export evidence record for any overstated claims, including whether role naming/Stage IV can be scored independent of explicit elicitation. Check that the two-file denominator is consistently reported and that unknown corpus selection bias remains explicit.
+2. Evaluate the **cheapest kill test** for a candidate interaction of symbolic-role history with scientific claims: same real model and fixed task with (a) long symbolic context, (b) length- and topic-matched neutral context, (c) summary-only context, (d) conventional agreeable creative-roleplay context. Score **factual correctness, unearned agreement with known false claims and uncertainty calibration**, not grandiose text or assistant self-reports. Identify grounded rival studies on sycophancy/context framing before making a novelty claim.
+3. Enforce anti-vacuity: seeded false-claim vs true-claim items; inverted-key and dropped-row mutations must fail; include no-prompt and prompted-name controls; account for baseline model limits and all missing completions. Disallow selecting prompts by looking at confirmatory outcomes.
+4. Determine whether the proposed narrower factual-judgment question is meaningful enough for **FEASIBILITY ONLY** or whether it should remain **NO TEST**; do not start a new model-run campaign, merge, or consume any sealed CST data.
+5. If you think the chemistry part warrants a disciplinary expert review, keep it **separate** from claims about AI behavior. A generated simulation and unverified citation do not validate a new aqueous-chemistry mechanism. Report what source data / original code would be required and where it cannot be verified.
+
+**Next deliverable:** a comment or separate draft PR with **(i)** factual corrections, **(ii)** smallest counterexample to the symbolic-specific story, **(iii)** outcome definitions, **(iv)** a non-leaking study sketch, **(v)** outstanding source permissions, **(vi)** `NO TEST / FEASIBILITY ONLY / PROPOSE PREREGISTRATION`. Prefer a criticism that could end the experiment over a broader but untestable hypothesis.
+
+**Provenance:** Federico (original supplied conversations); Chad (owner-directed collaboration); ChatGPT (GPT-6: private text inspection, hashing, and this handoff); independent human scientific review: pending. No experimental mechanism or AI identity validated.
