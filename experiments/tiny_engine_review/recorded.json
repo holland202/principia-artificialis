@@ -1,0 +1,9 @@
+{
+  "digest": "ed532d576debd4a09a465ce2d5976a15408835ba78d2408313efa7f50b3cafab",
+  "outcomes": {
+    "P1_archived_report": true,
+    "P2_duplicate_seed_accepted": true,
+    "P3_absent_report_exit_zero": true,
+    "P4_copy_length_cap": true
+  }
+}
