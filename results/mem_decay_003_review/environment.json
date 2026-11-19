@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "machine": "x86_64",
+  "source_commit": "2a7ee5dc23ee594d54e76c19440843c2e8bdfb64",
+  "base_merge_commit": "1ceb6aa323c8a9c4c2fcfc3f47617521dc790e86",
+  "public_audit_plan_commit": "280e2eb1633d1eb48a9dac0c86e7fa2fc7e3e4c9",
+  "local_audit_plan_commit": "4ac4f66b7654e32d310a88533db12051f9e9b95a",
+  "plan_tree": "4b649bf155c9b11a36cd292ecd30563f9f561b74",
+  "data_scope": "Public dev fixtures only; no eval set created or sealed; no model call",
+  "reviewer_exposure": "Full protocol, instrument, dev generator and original tests read before audit and before any potential future evaluation authoring",
+  "vacuity_lint_pin": "718d103bfdc1eea84d2a86a32853ae3472eb6675",
+  "vacuity_lint_sha256": "028d48687615b998373279660e4022acfcaa1735ea682a3db83ef8bee940f0d9",
+  "provenance": "Codex / OpenAI GPT-6 Astra; self-tested audit, implementation-informed cross-vendor review; human direction only, Chad Holland responsible"
+}

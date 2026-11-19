@@ -1,0 +1,50 @@
+name: MEM-DECAY-003 historical review
+
+on:
+  pull_request:
+    paths:
+      - 'experiments/mem_decay_003_review/**'
+      - 'results/mem_decay_003_review/**'
+      - 'docs/MEM_DECAY_003_HANDOFF_*'
+      - '.github/workflows/mem-decay-003-historical-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Restore reviewed snapshot for this historical audit only
+        run: |
+          git restore --source=2a7ee5dc23ee594d54e76c19440843c2e8bdfb64 -- \
+            experiments/mem_decay_003/memdecay3.py \
+            experiments/mem_decay_003/dev_family.py \
+            experiments/mem_decay_003/test_memdecay3.py \
+            experiments/mem_decay_003/PROTOCOL_DRAFT.md
+      - name: Verify historical file identities
+        run: |
+          sha256sum -c results/mem_decay_003_review/MANIFEST.sha256
+          sha256sum -c results/mem_decay_003_review/PIN.sha256
+      - name: Reproduce pinned observations
+        run: python experiments/mem_decay_003_review/recorded.py
+      - name: Reject live classifier substitution
+        shell: bash
+        run: |
+          set +e
+          python experiments/mem_decay_003_review/recorded.py --sabotage
+          mem_review_sabotage_exit=$?
+          set -e
+          test "$mem_review_sabotage_exit" -eq 1
+      - name: Exercise the original hidden-field guard with the ID shortcut
+        run: python experiments/mem_decay_003_review/probe_existing_guard.py

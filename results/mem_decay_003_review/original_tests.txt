@@ -1,0 +1,15 @@
+test_every_selector_ignores_hidden_fields (test_memdecay3.Blindness.test_every_selector_ignores_hidden_fields) ... ok
+test_invariance_check_catches_a_leaky_selector (test_memdecay3.Blindness.test_invariance_check_catches_a_leaky_selector) ... ok
+test_view_has_only_visible_fields (test_memdecay3.Blindness.test_view_has_only_visible_fields) ... ok
+test_budget_and_ids (test_memdecay3.Budget.test_budget_and_ids) ... ok
+test_check_rejects_bad_output (test_memdecay3.Budget.test_check_rejects_bad_output) ... ok
+test_deterministic (test_memdecay3.Budget.test_deterministic) ... ok
+test_classify (test_memdecay3.Decisions.test_classify) ... ok
+test_no_stale_value_means_never_stale (test_memdecay3.Decisions.test_no_stale_value_means_never_stale) ... ok
+test_retained_requirements (test_memdecay3.Decisions.test_retained_requirements) ... ok
+test_answer_key_is_consistent_with_records (test_memdecay3.Scenarios.test_answer_key_is_consistent_with_records) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.115s
+
+OK

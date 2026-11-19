@@ -1,0 +1,7 @@
+test_every_selector_ignores_hidden_fields (test_memdecay3.Blindness.test_every_selector_ignores_hidden_fields) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.117s
+
+OK
+ID-only shortcut included in original hidden-field guard: True
