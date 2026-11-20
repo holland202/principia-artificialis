@@ -1,0 +1,9 @@
+tf_alpha8_k127 21:A0.524/B0.151/C0.983 22:A0.686/B0.158/C0.999 23:A0.708/B0.168/C1.000 24:A0.679/B0.153/C1.000 25:A0.685/B0.153/C1.000 26:A0.723/B0.147/C0.971
+free_alpha8_k63 21:A0.000/B0.000/C0.880 22:A0.000/B0.030/C1.000 23:A0.000/B0.000/C1.000 24:A0.000/B0.000/C0.990 25:A0.000/B0.000/C1.000 26:A0.000/B0.020/C1.000
+tf_alpha8_k127_uncoupled 21:A0.524/B0.151/C0.151 22:A0.686/B0.158/C0.122 23:A0.708/B0.168/C0.131 24:A0.679/B0.153/C0.134 25:A0.685/B0.153/C0.118 26:A0.723/B0.147/C0.140
+P1 C>B tf_alpha8_k127 (coupling isolated): HELD (6/6 seeds; need 5)
+P2 C tf_alpha8_k127 >= 0.95: HELD (6/6 seeds; need 5)
+P3 C free_alpha8_k63 >= 0.50: HELD (6/6 seeds; need 5)
+P4 C meets the 002 bar: FAILED (2/6 seeds; need 5)
+P5 B<A tf_alpha8_k127 (label alone hurts): HELD (6/6 seeds; need 5)
+P6 C uncoupled tf_alpha8_k127 < 0.50: HELD (6/6 seeds; need 5)
