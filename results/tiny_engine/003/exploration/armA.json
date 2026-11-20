@@ -1,0 +1,33 @@
+{
+ "arm": "A",
+ "seed": 901,
+ "train_s": 569,
+ "untrained": {
+  "tf_distinct_k63": 0.0075,
+  "tf_distinct_k127": 0.0088,
+  "tf_alpha32_k63": 0.0076,
+  "tf_alpha32_k127": 0.0085,
+  "tf_alpha8_k63": 0.0075,
+  "tf_alpha8_k127": 0.0073,
+  "free_alpha8_k63": 0.0,
+  "free_distinct_k127": 0.0,
+  "periodic_heldout_L128": 0.0054,
+  "recall_L128": 0.008,
+  "periodic_heldout_L1024": 0.008,
+  "recall_L1024": 0.0079
+ },
+ "trained": {
+  "tf_distinct_k63": 1.0,
+  "tf_distinct_k127": 0.9974,
+  "tf_alpha32_k63": 0.9632,
+  "tf_alpha32_k127": 0.8959,
+  "tf_alpha8_k63": 0.6886,
+  "tf_alpha8_k127": 0.4937,
+  "free_alpha8_k63": 0.0,
+  "free_distinct_k127": 0.6700000166893005,
+  "periodic_heldout_L128": 0.9989,
+  "recall_L128": 1.0,
+  "periodic_heldout_L1024": 0.9987,
+  "recall_L1024": 1.0
+ }
+}

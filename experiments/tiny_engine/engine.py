@@ -64,15 +64,32 @@ def task_copy(rng, T):
     return x, m
 
 
+def task_copy_rep(rng, T, alpha=None):
+    """TINY-ENGINE-003: BOS s SEP s where s draws, with replacement, from an alphabet of `alpha` distinct symbols
+    (random size 2..127 when alpha is None), so symbols repeat inside s. Same layout and mask as task_copy."""
+    k = min((T - 2) // 2, N_CONTENT)
+    a = int(rng.integers(2, N_CONTENT + 1)) if alpha is None else alpha
+    sym = rng.choice(np.arange(1, N_CONTENT + 1), size=a, replace=False)
+    s = rng.choice(sym, size=k, replace=True)
+    x = np.concatenate([[BOS], s, [SEP], s])
+    m = np.zeros(len(x), bool)
+    m[k + 1:len(x) - 1] = True
+    pad = T - len(x)
+    return (np.concatenate([x, rng.integers(1, N_CONTENT + 1, size=pad)]),
+            np.concatenate([m, np.zeros(pad, bool)]))
+
+
 TASKS = ("periodic", "recall", "copy")
 
 
-def make_batch(rng, n, T, task=None, periods=PERIODS_SEEN):
+def make_batch(rng, n, T, task=None, periods=PERIODS_SEEN, rep_frac=0.0):
+    """rep_frac (TINY-ENGINE-003): share of copy examples drawn by task_copy_rep. At 0.0 no extra random numbers are
+    drawn, so CFG and CFG2 batches are unchanged."""
     xs, ms = [], []
     for _ in range(n):
         t = task or TASKS[int(rng.integers(len(TASKS)))]
         x, m = (task_periodic(rng, T, periods) if t == "periodic" else task_recall(rng, T) if t == "recall"
-                else task_copy(rng, T))
+                else task_copy_rep(rng, T) if rep_frac and rng.random() < rep_frac else task_copy(rng, T))
         xs.append(x); ms.append(m)
     return torch.tensor(np.array(xs)).long(), torch.tensor(np.array(ms))
 
@@ -153,6 +170,8 @@ EVAL_LENS = (128, 256, 512, 1024)   # 128 = longest trained; 256, 512, 1024 = 2x
 # earlier token cannot depend on how far back it is. Layer 0 keeps rotary positions (it needs order to look one
 # token back). Same parameter count as CFG.
 CFG2 = dict(CFG, nope_layers=(1,))
+# TINY-ENGINE-003: CFG2 with half of the copy examples using repeated symbols (task_copy_rep). Same model and size.
+CFG3 = dict(CFG2, copy_rep_frac=0.5)
 
 
 def evaluate(m):
@@ -175,7 +194,7 @@ def train(seed, cfg=CFG, log=None):
     m = TinyEngine(cfg)
     opt = torch.optim.AdamW(m.parameters(), lr=cfg["lr"], weight_decay=0.0)
     for step in range(1, cfg["steps"] + 1):
-        x, mask = make_batch(rng, cfg["batch"], int(rng.choice(cfg["train_lens"])))
+        x, mask = make_batch(rng, cfg["batch"], int(rng.choice(cfg["train_lens"])), rep_frac=cfg.get("copy_rep_frac", 0.0))
         logits = m(x)[:, :-1]
         loss = F.cross_entropy(logits[mask[:, :-1]], x[:, 1:][mask[:, :-1]])
         opt.zero_grad(); loss.backward(); opt.step()
