@@ -41,14 +41,15 @@ def free_whole(m, fam, k, seed, n=N_FREE):
     return float((y[:, -k:] == src).all(1).float().mean())
 
 
-def evaluate3(m):
+def evaluate3(m, offset=0):
+    """offset (added for TINY-ENGINE-004) shifts every case seed, so a later run can use fresh cases. 0 = as 003."""
     m.eval()
     r = {}
     for i, fam in enumerate(FAMS):
         for k in KS:
-            r[f"tf_{fam}_k{k}"] = tf_acc(m, fam, k, 8000 + 10 * i + k)
-    r["free_distinct_k127"] = free_whole(m, "distinct", 127, 8501)
-    r["free_alpha32_k63"] = free_whole(m, "alpha32", 63, 8502)
-    r["free_alpha8_k63"] = free_whole(m, "alpha8", 63, 8503)
+            r[f"tf_{fam}_k{k}"] = tf_acc(m, fam, k, offset + 8000 + 10 * i + k)
+    r["free_distinct_k127"] = free_whole(m, "distinct", 127, offset + 8501)
+    r["free_alpha32_k63"] = free_whole(m, "alpha32", 63, offset + 8502)
+    r["free_alpha8_k63"] = free_whole(m, "alpha8", 63, offset + 8503)
     m.train()
     return r

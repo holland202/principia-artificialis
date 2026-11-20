@@ -95,14 +95,18 @@ def make_batch(rng, n, T, task=None, periods=PERIODS_SEEN, rep_frac=0.0):
 
 
 # ---------------------------------------------------------------- model
-def rope(x, base=10000.0, frac=1.0):
-    """Rotary position embedding on the first `frac` of the last dim of (b, h, t, d); the rest is left position-free."""
+def rope(x, base=10000.0, frac=1.0, pos=None):
+    """Rotary position embedding on the first `frac` of the last dim of (b, h, t, d); the rest is left position-free.
+    pos (TINY-ENGINE-004): optional (b, t) position ids; default 0..t-1."""
     if frac < 1.0:
         r = int(x.shape[-1] * frac) // 2 * 2
-        return torch.cat([rope(x[..., :r], base), x[..., r:]], -1)
+        return torch.cat([rope(x[..., :r], base, pos=pos), x[..., r:]], -1)
     t, d = x.shape[-2], x.shape[-1]
     inv = 1.0 / base ** (torch.arange(0, d, 2, dtype=torch.float32) / d)
-    ang = torch.arange(t, dtype=torch.float32)[:, None] * inv[None]
+    if pos is None:
+        ang = torch.arange(t, dtype=torch.float32)[:, None] * inv[None]
+    else:
+        ang = pos.float()[:, None, :, None] * inv                    # (b, 1, t, d/2), broadcast over heads
     cos, sin = ang.cos(), ang.sin()
     x1, x2 = x[..., 0::2], x[..., 1::2]
     return torch.stack([x1 * cos - x2 * sin, x1 * sin + x2 * cos], -1).flatten(-2)
@@ -114,12 +118,12 @@ class Attn(nn.Module):
         self.h, self.dh, self.use_rope, self.rope_frac = h, d // h, use_rope, rope_frac
         self.q, self.k, self.v, self.o = (nn.Linear(d, d, bias=False) for _ in range(4))
 
-    def forward(self, x):
+    def forward(self, x, pos=None):
         b, t, d = x.shape
         sh = lambda z: z.view(b, t, self.h, self.dh).transpose(1, 2)
         q, k = sh(self.q(x)), sh(self.k(x))
         if self.use_rope:
-            q, k = rope(q, frac=self.rope_frac), rope(k, frac=self.rope_frac)
+            q, k = rope(q, frac=self.rope_frac, pos=pos), rope(k, frac=self.rope_frac, pos=pos)
         y = F.scaled_dot_product_attention(q, k, sh(self.v(x)), is_causal=True)
         return self.o(y.transpose(1, 2).reshape(b, t, d))
 
@@ -141,15 +145,41 @@ class TinyEngine(nn.Module):
                                        cfg.get("rope_frac", 1.0)) for i in range(cfg["n_layers"]))
         self.lnf = nn.LayerNorm(d)
         self.head = None if cfg.get("tied", False) else nn.Linear(d, VOCAB, bias=False)
+        # TINY-ENGINE-004. Created last, so every other parameter starts identical to the same seed without it.
+        self.segment = cfg.get("segment", False)     # learned label: 1 on tokens after SEP (the answer), else 0
+        self.couple = cfg.get("couple", False)       # position coupling: answer token i gets source token i's id
+        self.seg = nn.Embedding(2, d) if self.segment else None
 
     def forward(self, x):
         h = self.emb(x)
         if self.pos is not None:
             h = h + self.pos(torch.arange(x.shape[1]))
+        pos = None
+        if self.segment or self.couple:
+            after, pos = answer_layout(x)
+            if self.seg is not None:
+                h = h + self.seg(after.long())
+            if not self.couple:
+                pos = None
         for ln, at in zip(self.lns, self.attn):
-            h = h + at(ln(h))
+            h = h + at(ln(h), pos)
         h = self.lnf(h)
         return self.head(h) if self.head is not None else h @ self.emb.weight.T
+
+
+def answer_layout(x):
+    """TINY-ENGINE-004. Computed from the tokens alone (never from targets). In a row containing SEP at position s:
+    after[t] = t > s; coupled ids: SEP -> 0 (as BOS), the token at s + j -> j, so answer token i shares source token
+    i's id (source token i sits at position 1 + i). Rows without SEP keep ids 0..t-1 and after = False."""
+    b, t = x.shape
+    is_sep = x == SEP
+    has = is_sep.any(1, keepdim=True)
+    s = is_sep.float().argmax(1, keepdim=True)
+    ar = torch.arange(t)[None].expand(b, t)
+    after = (ar > s) & has
+    pos = torch.where(after, ar - s, ar)
+    pos = torch.where((ar == s) & has, torch.zeros_like(ar), pos)
+    return after, pos
 
 
 def n_params(m):
@@ -172,6 +202,10 @@ EVAL_LENS = (128, 256, 512, 1024)   # 128 = longest trained; 256, 512, 1024 = 2x
 CFG2 = dict(CFG, nope_layers=(1,))
 # TINY-ENGINE-003: CFG2 with half of the copy examples using repeated symbols (task_copy_rep). Same model and size.
 CFG3 = dict(CFG2, copy_rep_frac=0.5)
+# TINY-ENGINE-004 arms: B adds an explicit answer-segment label; C adds the same label plus position coupling in the
+# rotary layer. C vs B isolates coupling; B vs CFG3 isolates the label (and its 256 extra parameters).
+CFG4B = dict(CFG3, segment=True)
+CFG4C = dict(CFG3, segment=True, couple=True)
 
 
 def evaluate(m):
