@@ -1,0 +1,7 @@
+tf_alpha8_k63 11:A0.665/B0.834 12:A0.663/B0.868 13:A0.655/B0.852 14:A0.670/B0.857 15:A0.689/B0.855 16:A0.665/B0.821
+tf_alpha8_k127 11:A0.467/B0.680 12:A0.472/B0.702 13:A0.455/B0.701 14:A0.473/B0.684 15:A0.499/B0.699 16:A0.474/B0.568
+free_distinct_k127 11:A0.840/B0.940 12:A0.860/B0.970 13:A0.750/B1.000 14:A0.710/B0.990 15:A0.710/B0.990 16:A0.900/B0.680
+P1 B>A tf_alpha8_k63: HELD (6/6 seeds; need 5)
+P2 B>A free_distinct_k127: HELD (5/6 seeds; need 5)
+P3 B meets the 002 bar: HELD (6/6 seeds; need 5)
+P4 B tf_alpha8_k127 < 0.90: HELD (6/6 seeds; need 5)
