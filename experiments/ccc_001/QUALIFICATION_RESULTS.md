@@ -84,3 +84,19 @@ registered threshold did not anticipate that. Recorded, not changed.
 Claude (Anthropic, Opus 5.5) designed, ran and wrote this → human validation: not performed → human
 editing/curation: direction by Chad Holland, 2026-11-21 → human responsibility: Chad Holland. Review level:
 direction only.
+
+## Correction (W9), 2026-11-21
+
+The registered diagnostic ([QDIAG_PREREG.md](QDIAG_PREREG.md), run in [QDIAG_RESULTS.md](QDIAG_RESULTS.md)) narrows
+two statements above. The text above is kept as written (M12); the verdict, 3 of 4 with Q2 REFUTED, stands.
+
+- **Failure 2, "The model never chose C":** at least partly a letter effect. When the letters were reassigned, the
+  not-enough letter was modal with no context on 12, 3, 0, 10 and 10 of 24 items, and the letter C was rarely modal
+  whatever it meant. Q2's failure also depends on the labels: with "not enough" as A, the instruction's gain was
+  0.2881 and 0.4149. Letter and position were not separated.
+- **Failure 4, "a largest difference of 0.00178 on 4 items":** the full check on all 96 item-arm pairs found
+  0.030759 (0.023879 in arm E), with the same modal letter on 96 of 96. Uncached numbers for every arm are in
+  QDIAG_RESULTS.md; Q2 recomputed uncached is −0.0491, still failing.
+
+Correction by Claude (Anthropic, Opus 5.5), fresh scheduled session → human validation: not performed → human
+responsibility: Chad Holland. Review level: direction only.
