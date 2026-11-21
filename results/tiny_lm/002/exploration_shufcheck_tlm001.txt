@@ -1,0 +1,2 @@
+{"valid_bpb": 1.3633, "shuffled_valid_bpb": 10.4875}
+{"valid_bpb": 1.3698, "shuffled_valid_bpb": 10.3832}
