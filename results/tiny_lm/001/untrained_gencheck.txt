@@ -1,0 +1,1 @@
+{"words": 60, "known_word_rate": 0.6667, "spans": 400, "copied_span_rate": 0.0, "valid_stories_reference": {"words": 3006, "known_word_rate": 1.0, "spans": 358, "copied_span_rate": 0.0782}}

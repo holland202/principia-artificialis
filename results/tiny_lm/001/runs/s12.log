@@ -1,0 +1,10 @@
+step 250 train_bpb 2.365 valid_bpb 2.3828 295s
+step 500 train_bpb 1.939 valid_bpb 1.8913 589s
+step 750 train_bpb 1.623 valid_bpb 1.7255 883s
+step 1000 train_bpb 1.578 valid_bpb 1.6159 1184s
+step 1250 train_bpb 1.526 valid_bpb 1.5280 1489s
+step 1500 train_bpb 1.524 valid_bpb 1.4661 1773s
+step 1750 train_bpb 1.475 valid_bpb 1.4234 2061s
+step 2000 train_bpb 1.504 valid_bpb 1.3944 2342s
+step 2250 train_bpb 1.384 valid_bpb 1.3761 2625s
+step 2500 train_bpb 1.379 valid_bpb 1.3698 2903s
