@@ -29,7 +29,7 @@ from common import EXPLICIT, digest, option_ids, render  # noqa: E402
 from probes import ITEMS, OPTIONS, QUESTION  # noqa: E402
 from qdiag import EXPLICIT_TEMPLATE, KEY_MEANING, MEANINGS, PHRASE, PI  # noqa: E402
 
-RECORDED = None  # pinned after the run at its commit
+RECORDED = ((True, True, True, True), "c6dbb84ce2ba69769a859472ed49b5db69f1c388f9154ab32a37cf65c592f729")  # pinned after the run at d0761d7
 
 TOL = 0.01
 NE = "notenough"
