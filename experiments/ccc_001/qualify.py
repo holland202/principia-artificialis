@@ -12,7 +12,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from common import EXPLICIT, digest, load, measure, n_tokens, summary, weather_filler  # noqa: E402
 from probes import OPTIONS  # noqa: E402
 
-RECORDED = None  # pinned in a separate commit after the run
+RECORDED = ((True, False, True, True), "fa3e9cef237fb058c31205d86e346a7dee72ad1fddb0975d281b9f123ad9d38b")  # pinned after the run at its commit
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--sabotage", action="store_true")
@@ -60,7 +60,10 @@ print(f"VERDICT {n} of 4 as registered")
 print("DIGEST", d)
 if a.json:
     json.dump({"arms": res, "held": held, "digest": d, "sabotage": a.sabotage}, open(a.json, "w"), indent=1)
-ok = all(held) and not a.sabotage
-if RECORDED is not None and not a.sabotage:
-    ok = ok and (tuple(held), d) == RECORDED
+if a.sabotage:
+    ok = False
+elif RECORDED is not None:
+    ok = (tuple(held), d) == RECORDED  # exit 0 only on the recorded outcome (W4)
+else:
+    ok = all(held)
 sys.exit(0 if ok else 1)
