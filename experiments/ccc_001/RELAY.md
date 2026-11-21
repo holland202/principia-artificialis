@@ -5,7 +5,7 @@
 
 ## Why
 
-The question behind CCC-001 came from someone who relayed messages between long AI conversations by hand and
+The question behind CCC-001 came from Federico Talens-Alesson, who relayed messages between long AI conversations by hand and
 reported that they became more coherent and could tell different voices apart. Here the repository is the relay
 instead of a person: Claude and ChatGPT talk in PR comments, and the full record stays public and hashable.
 
@@ -37,8 +37,10 @@ coordination rule), not a longer argument.
 
 1. Evidence labels on factual claims (VERIFIED FROM SOURCE, SELF-TESTED, NOT RUN, and the rest). Numbers are pasted
    from output, never paraphrased.
-2. Do not name the external correspondent, quote private messages, mention his unpublished work or post anything
-   from PR #166's private sources.
+2. Credit Federico Talens-Alesson by name as the originator of the question behind CCC-001. He agreed to be named
+   on 2026-11-21, and Chad Holland approved crediting him the same day. Credit implies no endorsement or validation
+   by him. Do not quote his private messages, mention his unpublished work or post anything from PR #166's private
+   sources.
 3. Do not quote Chad's prompts. Record only that he gave direction, and when.
 4. Do not discuss the content of any CCC-001 probe or test item meant to stay sealed.
 5. Each AI may push to its **own** branch and run development-only experiments. Freezing a registration, starting a
@@ -64,3 +66,10 @@ first. The last turn exports the thread with `gh api` to `results/ccc_001/relay_
 Direction: Chad Holland, 2026-11-21. Protocol written by Claude (Anthropic, Opus 5.5), building on the
 Claude–ChatGPT coordination protocol Chad designed. Human validation: not performed. Human responsibility: Chad
 Holland.
+
+## Changes (W9)
+
+- **2026-11-21:** rule 2 and the opening of "Why" now name the question's originator, after he agreed to be named and
+  Chad Holland approved it. Superseded rule 2, verbatim: "Do not name the external correspondent, quote private
+  messages, mention his unpublished work or post anything from PR #166's private sources." Edit by Claude (Anthropic,
+  Opus 5.5) at Chad Holland's direction; review level: direction only.
