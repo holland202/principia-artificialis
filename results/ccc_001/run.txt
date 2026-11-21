@@ -1,0 +1,14 @@
+arm D     ctx_tokens     0  S 0.9949  G 0.6236  modal {'A': 14, 'B': 10, 'C': 0}
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+arm E     ctx_tokens   114  S 0.9440  G 0.5741  modal {'A': 18, 'B': 6, 'C': 0}
+arm F16   ctx_tokens   569  S 0.9891  G 0.6236  modal {'A': 14, 'B': 10, 'C': 0}
+arm F64   ctx_tokens  2273  S 0.9792  G 0.6215  modal {'A': 14, 'B': 10, 'C': 0}
+arm EF64  ctx_tokens  2366  S 0.9045  G 0.5932  modal {'A': 14, 'B': 10, 'C': 0}
+Q1 HELD D measured 3 times, identical to 6 dp: True
+Q2 REFUTED mean G(E)-G(D) = -0.0495 (>= 0.10), E>D on 14 of 24 (>= 14)
+Q3 HELD (fires only under --sabotage)
+Q4 HELD E modal letter = key on 14 of 24 (>= 12)
+VERDICT 3 of 4 as registered
+DIGEST fa3e9cef237fb058c31205d86e346a7dee72ad1fddb0975d281b9f123ad9d38b
+exit 1
