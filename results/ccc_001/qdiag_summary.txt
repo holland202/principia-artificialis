@@ -1,0 +1,10 @@
+cached   arm D     S 0.9949 G 0.6236 modal {'A': 14, 'B': 10, 'C': 0}
+cached   arm E     S 0.9440 G 0.5741 modal {'A': 18, 'B': 6, 'C': 0}
+cached   arm F16   S 0.9891 G 0.6236 modal {'A': 14, 'B': 10, 'C': 0}
+cached   arm F64   S 0.9792 G 0.6215 modal {'A': 14, 'B': 10, 'C': 0}
+cached   arm EF64  S 0.9045 G 0.5932 modal {'A': 14, 'B': 10, 'C': 0}
+uncached arm D     S 0.9949 G 0.6236 modal {'A': 14, 'B': 10, 'C': 0}
+uncached arm E     S 0.9463 G 0.5745 modal {'A': 18, 'B': 6, 'C': 0}
+uncached arm F16   S 0.9893 G 0.6237 modal {'A': 14, 'B': 10, 'C': 0}
+uncached arm F64   S 0.9784 G 0.6221 modal {'A': 14, 'B': 10, 'C': 0}
+uncached arm EF64  S 0.9060 G 0.5931 modal {'A': 14, 'B': 10, 'C': 0}

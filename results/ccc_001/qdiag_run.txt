@@ -1,0 +1,34 @@
+mappings checked: pi0 byte-identical to probes.QUESTION and common.EXPLICIT; option line, instruction and keys agree for pi0-pi5
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 12278.17it/s]
+option_token_ids [32, 33, 34] vocab 151936 torch 2.15.0+cpu
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py:1798: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `Qwen2ForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+P0 HELD max |p - qualify.json| over D and E (48 items x 3) = 0.000000 (<= 0.01)
+P1 REFUTED cached vs uncached, arms E F16 F64 EF64: max diff 0.030759 (<= 0.01), same modal letter on 96 of 96 (= 96)
+SUPP P1 arm E     max diff 0.023879  prompt tokens 185..187
+SUPP P1 arm F16   max diff 0.015122  prompt tokens 640..642
+SUPP P1 arm F64   max diff 0.026870  prompt tokens 2344..2346
+SUPP P1 arm EF64  max diff 0.030759  prompt tokens 2437..2439
+P2 HELD uncached mean G(E)-G(D) = -0.0491 (< 0.10)
+SUPP P2 uncached Q2 components: gain -0.0491 (>= 0.10 to pass), E>D on 14 of 24 (>= 14 to pass), Q2 fails
+P3 HELD arm E probes on F16 cache vs arm E uncached: max diff 0.983731 (> 0.01)
+SUPP P3 positions: E prefix 114 tokens, F16 cache 569 tokens; suffix starts at position 569 instead of 114
+SUPP P3b (development check, not registered) E probes on an unrelated 114-token cache (first 114 tokens of F16's prefix), positions as arm E: max diff 0.982705
+P4 HELD median letter mass per arm (>= 0.90 each): D 1.0000  E 1.0000  F16 1.0000  F64 1.0000  EF64 1.0000
+SUPP P4 arm D     min mass 1.0000, items below 0.90: 0 of 24; per item 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+SUPP P4 arm E     min mass 1.0000, items below 0.90: 0 of 24; per item 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+SUPP P4 arm F16   min mass 0.9999, items below 0.90: 0 of 24; per item 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+SUPP P4 arm F64   min mass 0.9997, items below 0.90: 0 of 24; per item 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+SUPP P4 arm EF64  min mass 0.9999, items below 0.90: 0 of 24; per item 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000 1.000
+SUPP P4 mean G(E)-G(D) on the 24 items with mass >= 0.90 in both D and E: -0.0491
+SUPP pi1 {'accept': 'B', 'reject': 'C', 'notenough': 'A'}: D modal {'A': 12, 'B': 12, 'C': 0}, E modal {'A': 0, 'B': 18, 'C': 6}; D picks not-enough (A) on 12 of 24; Q2 gain 0.2881, E>D on 16 of 24, Q2 would pass
+SUPP pi2 {'accept': 'C', 'reject': 'A', 'notenough': 'B'}: D modal {'A': 18, 'B': 3, 'C': 3}, E modal {'A': 0, 'B': 11, 'C': 13}; D picks not-enough (B) on 3 of 24; Q2 gain -0.0015, E>D on 10 of 24, Q2 fails
+SUPP pi3 {'accept': 'B', 'reject': 'A', 'notenough': 'C'}: D modal {'A': 18, 'B': 6, 'C': 0}, E modal {'A': 7, 'B': 13, 'C': 4}; D picks not-enough (C) on 0 of 24; Q2 gain 0.0758, E>D on 14 of 24, Q2 fails
+SUPP pi4 {'accept': 'A', 'reject': 'C', 'notenough': 'B'}: D modal {'A': 14, 'B': 10, 'C': 0}, E modal {'A': 15, 'B': 6, 'C': 3}; D picks not-enough (B) on 10 of 24; Q2 gain 0.0715, E>D on 17 of 24, Q2 fails
+SUPP pi5 {'accept': 'C', 'reject': 'B', 'notenough': 'A'}: D modal {'A': 10, 'B': 14, 'C': 0}, E modal {'A': 4, 'B': 6, 'C': 14}; D picks not-enough (A) on 10 of 24; Q2 gain 0.4149, E>D on 22 of 24, Q2 would pass
+P5 REFUTED arm D picks the not-enough letter on [12, 3, 0, 10, 10] of 24 for pi1-pi5 (<= 2 each)
+P6 REFUTED mean G(E)-G(D) for pi1-pi5 = [0.2881, -0.0015, 0.0758, 0.0715, 0.4149] (< 0.10 each)
+VERDICT 4 of 7 as registered
+DIGEST 924281cae187830dd557af5a4d024ce44a9e815b0293a4e63ea8e7ae3b635a06
+exit 1

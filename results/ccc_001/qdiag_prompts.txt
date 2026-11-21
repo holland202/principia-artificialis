@@ -1,0 +1,55 @@
+mappings checked: pi0 byte-identical to probes.QUESTION and common.EXPLICIT; option line, instruction and keys agree for pi0-pi5
+--- pi0 {'accept': 'A', 'reject': 'B', 'notenough': 'C'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer A only when the report gives direct evidence for the claim, B only when it gives direct evidence against the claim, and C whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = accept the claim, B = reject the claim, C = not enough evidence to decide.
+Reply with one letter only.
+keys: AAAAAAAABBBBBBBBCCCCCCCC
+--- pi1 {'accept': 'B', 'reject': 'C', 'notenough': 'A'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer B only when the report gives direct evidence for the claim, C only when it gives direct evidence against the claim, and A whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = not enough evidence to decide, B = accept the claim, C = reject the claim.
+Reply with one letter only.
+keys: BBBBBBBBCCCCCCCCAAAAAAAA
+--- pi2 {'accept': 'C', 'reject': 'A', 'notenough': 'B'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer C only when the report gives direct evidence for the claim, A only when it gives direct evidence against the claim, and B whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = reject the claim, B = not enough evidence to decide, C = accept the claim.
+Reply with one letter only.
+keys: CCCCCCCCAAAAAAAABBBBBBBB
+--- pi3 {'accept': 'B', 'reject': 'A', 'notenough': 'C'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer B only when the report gives direct evidence for the claim, A only when it gives direct evidence against the claim, and C whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = reject the claim, B = accept the claim, C = not enough evidence to decide.
+Reply with one letter only.
+keys: BBBBBBBBAAAAAAAACCCCCCCC
+--- pi4 {'accept': 'A', 'reject': 'C', 'notenough': 'B'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer A only when the report gives direct evidence for the claim, C only when it gives direct evidence against the claim, and B whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = accept the claim, B = not enough evidence to decide, C = reject the claim.
+Reply with one letter only.
+keys: AAAAAAAACCCCCCCCBBBBBBBB
+--- pi5 {'accept': 'C', 'reject': 'B', 'notenough': 'A'}
+instruction: For the rest of this conversation, judge every claim only by the evidence in the report. Answer C only when the report gives direct evidence for the claim, B only when it gives direct evidence against the claim, and A whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+question template:
+Report: {report}
+Claim: {claim}
+
+A = not enough evidence to decide, B = reject the claim, C = accept the claim.
+Reply with one letter only.
+keys: CCCCCCCCBBBBBBBBAAAAAAAA
