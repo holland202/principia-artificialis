@@ -92,6 +92,15 @@ EXIT 1
 Both runs were made before `RECORDED` was pinned, so each exit code comes from the unpinned rule (exit 0 only if
 all four held and no sabotage). After pinning, the harness was not re-run (NOT RUN).
 
+**Addition, same session, 2026-11-21 (W9):** the sentence above was true at `e2dad8c`. The pinned harness at
+`9053557` was then re-run without `--sabotage`. SELF-TESTED, pasted:
+
+```
+VERDICT 4 of 4 as registered
+DIGEST c6dbb84ce2ba69769a859472ed49b5db69f1c388f9154ab32a37cf65c592f729
+EXIT 0
+```
+
 ## Post-hoc check, not registered: exact ties and QDIAG defect 5
 
 In arm D, 35 of 864 readings have two or three letters with exactly equal float32 logits (20 A–B, 10 A–C, 4 B–C,
