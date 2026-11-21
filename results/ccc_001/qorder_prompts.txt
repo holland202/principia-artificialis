@@ -1,0 +1,43 @@
+conditions 36  cells 9  per cell [4]  seen 6 in cells [('A', 1), ('B', 2), ('C', 3)]  unseen 30
+cond 00 cell ('C', 3) seen pi0 | A = accept the claim, B = reject the claim, C = not enough evidence to decide. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 01 cell ('C', 2) unseen | A = accept the claim, C = not enough evidence to decide, B = reject the claim. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 02 cell ('C', 3) unseen | B = reject the claim, A = accept the claim, C = not enough evidence to decide. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 03 cell ('C', 2) unseen | B = reject the claim, C = not enough evidence to decide, A = accept the claim. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 04 cell ('C', 1) unseen | C = not enough evidence to decide, A = accept the claim, B = reject the claim. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 05 cell ('C', 1) unseen | C = not enough evidence to decide, B = reject the claim, A = accept the claim. | keys AAAAAAAABBBBBBBBCCCCCCCC
+cond 10 cell ('B', 3) unseen | A = accept the claim, C = reject the claim, B = not enough evidence to decide. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 11 cell ('B', 2) seen pi4 | A = accept the claim, B = not enough evidence to decide, C = reject the claim. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 12 cell ('B', 3) unseen | C = reject the claim, A = accept the claim, B = not enough evidence to decide. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 13 cell ('B', 2) unseen | C = reject the claim, B = not enough evidence to decide, A = accept the claim. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 14 cell ('B', 1) unseen | B = not enough evidence to decide, A = accept the claim, C = reject the claim. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 15 cell ('B', 1) unseen | B = not enough evidence to decide, C = reject the claim, A = accept the claim. | keys AAAAAAAACCCCCCCCBBBBBBBB
+cond 20 cell ('C', 3) unseen | B = accept the claim, A = reject the claim, C = not enough evidence to decide. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 21 cell ('C', 2) unseen | B = accept the claim, C = not enough evidence to decide, A = reject the claim. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 22 cell ('C', 3) seen pi3 | A = reject the claim, B = accept the claim, C = not enough evidence to decide. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 23 cell ('C', 2) unseen | A = reject the claim, C = not enough evidence to decide, B = accept the claim. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 24 cell ('C', 1) unseen | C = not enough evidence to decide, B = accept the claim, A = reject the claim. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 25 cell ('C', 1) unseen | C = not enough evidence to decide, A = reject the claim, B = accept the claim. | keys BBBBBBBBAAAAAAAACCCCCCCC
+cond 30 cell ('A', 3) unseen | B = accept the claim, C = reject the claim, A = not enough evidence to decide. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 31 cell ('A', 2) unseen | B = accept the claim, A = not enough evidence to decide, C = reject the claim. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 32 cell ('A', 3) unseen | C = reject the claim, B = accept the claim, A = not enough evidence to decide. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 33 cell ('A', 2) unseen | C = reject the claim, A = not enough evidence to decide, B = accept the claim. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 34 cell ('A', 1) seen pi1 | A = not enough evidence to decide, B = accept the claim, C = reject the claim. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 35 cell ('A', 1) unseen | A = not enough evidence to decide, C = reject the claim, B = accept the claim. | keys BBBBBBBBCCCCCCCCAAAAAAAA
+cond 40 cell ('B', 3) unseen | C = accept the claim, A = reject the claim, B = not enough evidence to decide. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 41 cell ('B', 2) unseen | C = accept the claim, B = not enough evidence to decide, A = reject the claim. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 42 cell ('B', 3) unseen | A = reject the claim, C = accept the claim, B = not enough evidence to decide. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 43 cell ('B', 2) seen pi2 | A = reject the claim, B = not enough evidence to decide, C = accept the claim. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 44 cell ('B', 1) unseen | B = not enough evidence to decide, C = accept the claim, A = reject the claim. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 45 cell ('B', 1) unseen | B = not enough evidence to decide, A = reject the claim, C = accept the claim. | keys CCCCCCCCAAAAAAAABBBBBBBB
+cond 50 cell ('A', 3) unseen | C = accept the claim, B = reject the claim, A = not enough evidence to decide. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+cond 51 cell ('A', 2) unseen | C = accept the claim, A = not enough evidence to decide, B = reject the claim. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+cond 52 cell ('A', 3) unseen | B = reject the claim, C = accept the claim, A = not enough evidence to decide. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+cond 53 cell ('A', 2) unseen | B = reject the claim, A = not enough evidence to decide, C = accept the claim. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+cond 54 cell ('A', 1) unseen | A = not enough evidence to decide, C = accept the claim, B = reject the claim. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+cond 55 cell ('A', 1) seen pi5 | A = not enough evidence to decide, B = reject the claim, C = accept the claim. | keys CCCCCCCCBBBBBBBBAAAAAAAA
+instruction letters 0 {'accept': 'A', 'reject': 'B', 'notenough': 'C'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer A only when the report gives direct evidence for the claim, B only when it gives direct evidence against the claim, and C whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+instruction letters 1 {'accept': 'A', 'reject': 'C', 'notenough': 'B'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer A only when the report gives direct evidence for the claim, C only when it gives direct evidence against the claim, and B whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+instruction letters 2 {'accept': 'B', 'reject': 'A', 'notenough': 'C'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer B only when the report gives direct evidence for the claim, A only when it gives direct evidence against the claim, and C whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+instruction letters 3 {'accept': 'B', 'reject': 'C', 'notenough': 'A'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer B only when the report gives direct evidence for the claim, C only when it gives direct evidence against the claim, and A whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+instruction letters 4 {'accept': 'C', 'reject': 'A', 'notenough': 'B'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer C only when the report gives direct evidence for the claim, A only when it gives direct evidence against the claim, and B whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
+instruction letters 5 {'accept': 'C', 'reject': 'B', 'notenough': 'A'}: For the rest of this conversation, judge every claim only by the evidence in the report. Answer C only when the report gives direct evidence for the claim, B only when it gives direct evidence against the claim, and A whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.
