@@ -1,0 +1,8 @@
+order 1  valid bpb 4.4455
+order 2  valid bpb 3.2947
+order 3  valid bpb 2.3684
+order 4  valid bpb 1.7964
+order 5  valid bpb 1.4996
+order 6  valid bpb 1.3364
+order 7  valid bpb 1.2322
+order 8  valid bpb 1.1736
