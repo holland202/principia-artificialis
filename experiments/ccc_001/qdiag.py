@@ -25,7 +25,7 @@ import common  # noqa: E402
 from common import EXPLICIT, digest, measure, option_ids, render, weather_filler  # noqa: E402
 from probes import ITEMS, OPTIONS, QUESTION  # noqa: E402
 
-RECORDED = None  # pinned after the run, in a separate commit
+RECORDED = ((True, False, True, True, True, False, False), "924281cae187830dd557af5a4d024ce44a9e815b0293a4e63ea8e7ae3b635a06")  # pinned after the run at its commit
 
 TOL = 0.01
 MEANINGS = ("accept", "reject", "notenough")
