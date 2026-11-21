@@ -1,0 +1,5 @@
+item 0 key A full [0.9998, 0.0, 0.0001] cached [0.9998, 0.0, 0.0001]
+item 8 key B full [0.7979, 0.178, 0.0241] cached [0.7979, 0.178, 0.0241]
+item 16 key C full [0.9999, 0.0, 0.0] cached [0.9999, 0.0, 0.0]
+item 23 key C full [0.9864, 0.0012, 0.0124] cached [0.9846, 0.0013, 0.014]
+max abs diff cached vs full over 4 items: 0.00178
