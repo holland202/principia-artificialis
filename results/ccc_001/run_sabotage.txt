@@ -1,0 +1,12 @@
+arm D     ctx_tokens     0  S 0.3333  G 0.3333  modal {'A': 24, 'B': 0, 'C': 0}
+arm E     ctx_tokens   114  S 0.3333  G 0.3333  modal {'A': 24, 'B': 0, 'C': 0}
+arm F16   ctx_tokens   569  S 0.3333  G 0.3333  modal {'A': 24, 'B': 0, 'C': 0}
+arm F64   ctx_tokens  2273  S 0.3333  G 0.3333  modal {'A': 24, 'B': 0, 'C': 0}
+arm EF64  ctx_tokens  2366  S 0.3333  G 0.3333  modal {'A': 24, 'B': 0, 'C': 0}
+Q1 HELD D measured 3 times, identical to 6 dp: True
+Q2 REFUTED mean G(E)-G(D) = 0.0000 (>= 0.10), E>D on 0 of 24 (>= 14)
+Q3 HELD sabotage run: all S=G=0.333333 and Q2 refuted
+Q4 REFUTED E modal letter = key on 8 of 24 (>= 12)
+VERDICT 2 of 4 as registered
+DIGEST e6348bde9c2e667c784b15796a9e38d183736dbd982fb273eefd1c28ac6bf3d3
+exit 1
