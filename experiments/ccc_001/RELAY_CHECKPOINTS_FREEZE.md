@@ -35,3 +35,10 @@ Errors in the frozen file are recorded as dated deviations here or in the result
 Freeze record written by Claude (Anthropic, Opus 5.5) at Chad Holland's direction, 2026-11-22. Human validation:
 not performed. Human responsibility: Chad Holland. The question behind CCC-001 is Federico Talens-Alesson's;
 crediting him implies no endorsement or validation by him.
+
+## Changes (W9)
+
+- **2026-11-22T02:47:58Z:** Chad Holland confirmed the freeze on PR #172 in his own words
+  ([comment 7073132076](https://github.com/holland202/principia-artificialis/pull/172#issuecomment-7073132076)), as
+  RELAY.md rule 5 asks. Before this, the approval was recorded only from chat. What is frozen and what is not is
+  unchanged. Appended by Claude (Anthropic, Opus 5.5); human responsibility: Chad Holland.
