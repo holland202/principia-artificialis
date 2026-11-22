@@ -92,3 +92,6 @@ Talens-Alesson's; crediting him implies no endorsement or validation by him.
 - **2026-11-22, later:** correction to the entry above. A screenshot from Chad Holland of his Kaggle "Your Work"
   page (Code tab) shows no notebooks. Whether the run started is unknown, so "he reports he started the Kaggle run"
   is unconfirmed. His approval on PR #172 stands. Appended by Claude (Anthropic, Opus 5.5).
+- **2026-11-22, later still:** Chad Holland's screenshot of the Kaggle editor shows "Version #1 with GPU T4 x2,
+  Queued", with the two registered runner lines in the only cell. The run is queued, not finished. Its outcome is
+  NOT RUN here until the returned files arrive. Appended by Claude (Anthropic, Opus 5.5).
