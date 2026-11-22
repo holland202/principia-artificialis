@@ -1,0 +1,20 @@
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+max_position_embeddings L 32768
+fixture check tokens 194 ids sha256 2c0e2716385c2aa623e74a48eb1e7a97f379ce464e607f760922cfa2ce5d7f9b
+snapshot relay_prefix_016.json sha256 fe8775a1c48731844fb129ae71c759928bdb0cc8c32be69a455e9dc4ae23f6e6 turns 16
+development probes 24 probe-only tokens min/max 46 65
+turns changed by escaping [1, 5, 9, 13, 15] speakers ['claude']
+[original] order [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] labels alternate True
+[original] escaped-turn slots [1, 5, 9, 13, 15]
+[original] context tokens 8673 | message-1 content tokens 8636
+[original] control tokens in message-1 content: im_start 0 im_end 0
+[original] synthetic-probe prompt tokens 8700 im_start 5 im_end 4 ids sha256 53539cb42c5097d8aed9f3400a6855654f7ee64b81c0905fa66a4bace2e2bb10
+[original] dev-probe full prompt tokens min 8727 median 8737.0 max 8746 | under L: True
+[shuffle] order [5, 16, 13, 12, 15, 4, 1, 8, 9, 6, 7, 2, 11, 10, 3, 14] labels alternate True
+[shuffle] escaped-turn slots [7, 1, 9, 3, 5]
+[shuffle] context tokens 8673 | message-1 content tokens 8636
+[shuffle] control tokens in message-1 content: im_start 0 im_end 0
+[shuffle] synthetic-probe prompt tokens 8700 im_start 5 im_end 4 ids sha256 58d93d1fd1e0cf0ea9d77dfc299fea2cb932c0453dd9d5501d7bc63e616be80d
+[shuffle] dev-probe full prompt tokens min 8727 median 8737.0 max 8746 | under L: True

@@ -1,0 +1,26 @@
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+max_position_embeddings L 32768 | items 24 | relabelings (0, 1, 2)
+[REF] target 2440 days 44 synthetic turns 4 | control tokens inside message-1 content: 0
+[REF] arm D pi0 tokens min 2450 max 2469 im_start/im_end [(5, 4)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 18e4740e74302c82239357d8a1ef7ea6af09ebb72d671fe924185fdfb46f47f2
+[REF] arm D pi1 tokens min 2450 max 2469 im_start/im_end [(5, 4)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest 5cfa8ce504159aba6b5f5b1991607f550e571ad92c12e478b304f411a395e550
+[REF] arm D pi2 tokens min 2450 max 2469 im_start/im_end [(5, 4)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest f0a4f1c05dcda33385f43a5d914f246cddc3da4f51024b537695f7476840177e
+[REF] arm E pi0 tokens min 2543 max 2562 im_start/im_end [(7, 6)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 369bd2dcb864d2e07fe65aa01e6f97e7a426ad7ad095a54a141b53a25c6eb315
+[REF] arm E pi1 tokens min 2543 max 2562 im_start/im_end [(7, 6)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest b975f46f9d457ff9cbad3833580dff93f35e878abec105e4848b2143bf0cbab6
+[REF] arm E pi2 tokens min 2543 max 2562 im_start/im_end [(7, 6)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest 2ab5aa548b5199a8a529a42711ab895af88d373ef27f3f68f365eb094eb0971b
+[N016] target 8750 days 165 synthetic turns 14 | control tokens inside message-1 content: 0
+[N016] arm D pi0 tokens min 8773 max 8792 im_start/im_end [(5, 4)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 0456fb587b65b5b1ae383218504846d715f1111975162fca58c41fd7e2e0a451
+[N016] arm D pi1 tokens min 8773 max 8792 im_start/im_end [(5, 4)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest d5f52b86068c238d77c1047a0a356708bf944bf734269b339e179f0f8a75f14a
+[N016] arm D pi2 tokens min 8773 max 8792 im_start/im_end [(5, 4)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest 56523a61d0e40efc1d1fef5cb409a8391cd61bf0e591700e745fc1f7c827efec
+[N016] arm E pi0 tokens min 8866 max 8885 im_start/im_end [(7, 6)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 6c797e5da34c48e8ce4e6910507229f777e77de48fa3c05989a1a012f19599b7
+[N016] arm E pi1 tokens min 8866 max 8885 im_start/im_end [(7, 6)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest 44b8a0afa26844d83cb0e87eaaf29636d14d14589830af8243a0633d95fe5ac5
+[N016] arm E pi2 tokens min 8866 max 8885 im_start/im_end [(7, 6)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest cf5fca580037973ead80287bbaffe414cc481b899629e75096f205fe46037c70
+[STRESS] target 18000 days 340 synthetic turns 29 | control tokens inside message-1 content: 0
+[STRESS] arm D pi0 tokens min 18020 max 18039 im_start/im_end [(5, 4)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 2be2d3a73240044ab3c8cc70bfaff3ba4848437bd8e5c2846d89c3d7bd30b1a1
+[STRESS] arm D pi1 tokens min 18020 max 18039 im_start/im_end [(5, 4)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest 4f496471d1e6a7e4dd78b158d4a7969c9c995a3fde32e31b6d44a690e1cb6df9
+[STRESS] arm D pi2 tokens min 18020 max 18039 im_start/im_end [(5, 4)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest fd6da8b02b06acd034a16c1104394174329ef3989cadb5c0a793f0acb81bee9e
+[STRESS] arm E pi0 tokens min 18113 max 18132 im_start/im_end [(7, 6)] keys AAAAAAAABBBBBBBBCCCCCCCC cell digest 3a67b7a3bbc65aa9612c3d0b939565baab1e9ccb226eb36d0e8e092ff575d634
+[STRESS] arm E pi1 tokens min 18113 max 18132 im_start/im_end [(7, 6)] keys BBBBBBBBCCCCCCCCAAAAAAAA cell digest 93d52985dccb5ced6d059d64e4562084e1d3e9fa90fc744c58bbd4ce8469ae6e
+[STRESS] arm E pi2 tokens min 18113 max 18132 im_start/im_end [(7, 6)] keys CCCCCCCCAAAAAAAABBBBBBBB cell digest d0ed07d8c4d41e28e572236862cfb37652dc1c9f131da85fd63fdd79e89792b7
+construction checks PASS
