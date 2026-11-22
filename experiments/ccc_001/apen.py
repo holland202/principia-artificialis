@@ -23,7 +23,7 @@ sys.path.insert(0, HERE)
 from accbias import MEANINGS, RES, delta, load  # noqa: E402
 from probes import OPTIONS  # noqa: E402
 
-RECORDED = None  # pinned after the run
+RECORDED = ((True, True, True, True), "287867ed9f92920fc3d513e151f6a1efa3c227610ca0f7526148a4e51a89c01c")  # pinned after the run at 568ecff
 
 SLOTS = (1, 2, 3)
 SEED_SHUF, NSHUF = 20261122, 2000
