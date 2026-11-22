@@ -25,7 +25,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 sys.path.insert(0, HERE)
 from probes import ITEMS, OPTIONS  # noqa: E402
 
-RECORDED = None  # pinned after the run
+RECORDED = ((True, True, True, True), "fe5ebe886d716fdbd27fc34bd23361839e5adad71eccf73c9aca4db09c75ff9c")  # pinned after the run at 1211a39
 
 RES = os.path.join(ROOT, "results", "ccc_001")
 MEANINGS = ("accept", "reject", "notenough")
