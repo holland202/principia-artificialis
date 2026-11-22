@@ -1,0 +1,23 @@
+V  runner.txt shows all four registered shard hashes OK: True
+V  qualify_7b.json rehash 684294d466d7de01... vs stageq.txt DIGEST 684294d466d7de01...: True
+V  longctx_REF_7b.json rehash be28907f5adfe57e... vs longctx_REF.txt DIGEST be28907f5adfe57e...: True
+V  N016 ABSENT (no JSON returned; not a failure of V)
+V  STRESS ABSENT (no JSON returned; not a failure of V)
+V HELD custody gate
+P0 HELD keys and finite p asserted; bookkeeping max 0.00e+00 (<= 5e-6); E:=D gives 0 in every cell: True
+T1 REFUTED 7B REF d_acc per pi [0.000000, 0.000000, 0.000000] (> 0 each)
+T2 REFUTED 7B stage Q d_acc (E-D, pi0) 0.000000 (> 0)
+REPORT 7B   Q E-D: d_acc +0.000000 d_rej +0.000000 d_ne +0.000000 | items d_acc up/down 0/0 of 24
+REPORT 1.5B Q E-D: d_acc +0.155644 d_rej -0.169676 d_ne +0.014032 | items d_acc up/down 18/5 of 24
+REPORT 7B   Q EF64-F64: d_acc +0.000000 d_rej +0.000000 d_ne +0.000000 | items d_acc up/down 0/0 of 24
+REPORT 1.5B Q EF64-F64: d_acc +0.053724 d_rej -0.075297 d_ne +0.021574 | items d_acc up/down 14/10 of 24
+REPORT 7B   REF pi0: d_acc +0.000000 d_rej +0.000000 d_ne +0.000000 | items d_acc up/down 0/0 of 24
+REPORT 1.5B REF pi0: d_acc +0.105711 d_rej -0.123310 d_ne +0.017599 | items d_acc up/down 21/3 of 24
+REPORT 7B   REF pi1: d_acc +0.000000 d_rej +0.000000 d_ne +0.000000 | items d_acc up/down 0/0 of 24
+REPORT 1.5B REF pi1: d_acc +0.093951 d_rej +0.297205 d_ne -0.391155 | items d_acc up/down 21/3 of 24
+REPORT 7B   REF pi2: d_acc +0.000000 d_rej +0.000000 d_ne +0.000000 | items d_acc up/down 0/0 of 24
+REPORT 1.5B REF pi2: d_acc +0.313284 d_rej -0.552207 d_ne +0.238923 | items d_acc up/down 17/7 of 24
+REPORT N016 ABSENT
+REPORT STRESS ABSENT
+VERDICT 1 of 3 as registered
+DIGEST e51f989ea1269ec0ffe6a7df970e8e796355a98b04b394d04a7ffbf6cc5e74cd

@@ -1,0 +1,71 @@
+transformers 5.24.0 | committed digests 18 | days {'REF': 44, 'N016': 165, 'STRESS': 340} | escaping on
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c
+G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  [REF] arm D pi0 tokens 2450..2469 digest 18e4740e7430 matches committed 18e4740e7430
+  [REF] arm D pi1 tokens 2450..2469 digest 5cfa8ce50415 matches committed 5cfa8ce50415
+  [REF] arm D pi2 tokens 2450..2469 digest f0a4f1c05dcd matches committed f0a4f1c05dcd
+  [REF] arm E pi0 tokens 2543..2562 digest 369bd2dcb864 matches committed 369bd2dcb864
+  [REF] arm E pi1 tokens 2543..2562 digest b975f46f9d45 matches committed b975f46f9d45
+  [REF] arm E pi2 tokens 2543..2562 digest 2ab5aa548b51 matches committed 2ab5aa548b51
+model-00001-of-00004.safetensors sha256 a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7
+model-00002-of-00004.safetensors sha256 f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185
+model-00003-of-00004.safetensors sha256 8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5
+model-00004-of-00004.safetensors sha256 1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd
+weights | torch 2.11.0+cu130 | threads 4 | dtype torch.float16 | device cuda:0 | cuda Tesla T4
+option_token_ids [32, 33, 34] vocab 152064 L 32768
+G1 HELD longest prompt 2562 tokens (< L 32768); no truncation is applied anywhere
+G2 HELD arm D pi0 read twice: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+G3 HELD arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+G4 REFUTED median letter mass per cell (>= 0.90 each): Dpi0 0.0000  Dpi1 0.0000  Dpi2 0.0000  Epi0 0.0000  Epi1 0.0000  Epi2 0.0000
+G5 REFUTED mean over pi0-pi2 of mean G(E)-G(D) = 0.0000 (>= 0.10); per pi [0.0, 0.0, 0.0]
+G6 REFUTED items with pi-averaged G(E) > G(D): 0 of 24 (>= 14)
+REPORT [REF] arm D pi0 keys AAAAAAAABBBBBBBBCCCCCCCC: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT [REF] arm D pi1 keys BBBBBBBBCCCCCCCCAAAAAAAA: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT [REF] arm D pi2 keys CCCCCCCCAAAAAAAABBBBBBBB: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT [REF] arm E pi0 keys AAAAAAAABBBBBBBBCCCCCCCC: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT [REF] arm E pi1 keys BBBBBBBBCCCCCCCCAAAAAAAA: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT [REF] arm E pi2 keys CCCCCCCCAAAAAAAABBBBBBBB: mean S 0.3333 mean G 0.3333 modal {'A': 24, 'B': 0, 'C': 0} mean mass 0.0000 min mass 0.0000
+REPORT item gain by stage-Q key (pi-averaged G(E)-G(D)): A 0.0000 (n=8)  B 0.0000 (n=8)  C 0.0000 (n=8)
+QUALIFIES [REF] no (T* across lengths: longctx_summary.py)
+LONGEST QUALIFIED NONE (if only REF is read)
+SABOTAGE expected G4, G5 and G6 REFUTED: True
+VERDICT 4 of 7 as registered
+DIGEST 00a95fc1e6cc0b5e01b6dca267ee4c180815d47a41c77f56b8562630d79ac977
+RECORDED none pinned
+
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/339 [00:01<09:14,  1.64s/it]
+Loading weights:   9%|▉         | 30/339 [00:01<00:13, 23.68it/s]
+Loading weights:  14%|█▍        | 47/339 [00:02<00:10, 29.20it/s]
+Loading weights:  17%|█▋        | 58/339 [00:02<00:07, 35.49it/s]
+Loading weights:  20%|██        | 68/339 [00:02<00:08, 31.21it/s]
+Loading weights:  23%|██▎       | 78/339 [00:02<00:06, 38.12it/s]
+Loading weights:  26%|██▌       | 88/339 [00:03<00:06, 36.78it/s]
+Loading weights:  28%|██▊       | 95/339 [00:03<00:06, 39.14it/s]
+Loading weights:  30%|███       | 102/339 [00:03<00:05, 43.27it/s]
+Loading weights:  33%|███▎      | 112/339 [00:03<00:06, 36.07it/s]
+Loading weights:  37%|███▋      | 124/339 [00:03<00:04, 47.44it/s]
+Loading weights:  39%|███▊      | 131/339 [00:04<00:04, 48.45it/s]
+Loading weights:  41%|████      | 138/339 [00:04<00:05, 36.28it/s]
+Loading weights:  44%|████▍     | 150/339 [00:04<00:03, 49.29it/s]
+Loading weights:  47%|████▋     | 160/339 [00:04<00:05, 35.34it/s]
+Loading weights:  51%|█████     | 173/339 [00:05<00:03, 43.44it/s]
+Loading weights:  55%|█████▍    | 185/339 [00:05<00:02, 52.71it/s]
+Loading weights:  58%|█████▊    | 196/339 [00:05<00:03, 37.95it/s]
+Loading weights:  64%|██████▎   | 216/339 [00:05<00:02, 58.04it/s]
+Loading weights:  67%|██████▋   | 226/339 [00:06<00:02, 42.12it/s]
+Loading weights:  69%|██████▉   | 235/339 [00:06<00:02, 48.11it/s]
+Loading weights:  72%|███████▏  | 244/339 [00:06<00:02, 41.09it/s]
+Loading weights:  74%|███████▍  | 251/339 [00:06<00:02, 43.29it/s]
+Loading weights:  76%|███████▌  | 258/339 [00:06<00:01, 46.12it/s]
+Loading weights:  79%|███████▉  | 268/339 [00:07<00:01, 39.31it/s]
+Loading weights:  83%|████████▎ | 280/339 [00:07<00:01, 49.92it/s]
+Loading weights:  85%|████████▍ | 288/339 [00:07<00:00, 54.30it/s]
+Loading weights:  87%|████████▋ | 295/339 [00:07<00:01, 35.97it/s]
+Loading weights:  90%|█████████ | 306/339 [00:08<00:00, 45.83it/s]
+Loading weights:  93%|█████████▎| 316/339 [00:08<00:00, 41.18it/s]
+Loading weights:  95%|█████████▍| 322/339 [00:08<00:00, 41.52it/s]
+Loading weights: 100%|██████████| 339/339 [00:08<00:00, 39.73it/s]
+EXIT 1

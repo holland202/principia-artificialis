@@ -1,0 +1,51 @@
+arm D     ctx_tokens     0  S 0.9745  G 0.9471  modal {'A': 7, 'B': 8, 'C': 9}
+arm E     ctx_tokens   114  S 0.9851  G 0.9851  modal {'A': 8, 'B': 8, 'C': 8}
+arm F16   ctx_tokens   569  S 0.9860  G 0.9860  modal {'A': 8, 'B': 8, 'C': 8}
+arm F64   ctx_tokens  2273  S 0.9701  G 0.9701  modal {'A': 8, 'B': 8, 'C': 8}
+arm EF64  ctx_tokens  2366  S 0.9960  G 0.9960  modal {'A': 8, 'B': 8, 'C': 8}
+Q1 HELD D measured 3 times, identical to 6 dp: True
+Q2 REFUTED mean G(E)-G(D) = 0.0379 (>= 0.10), E>D on 16 of 24 (>= 14)
+Q3 HELD (fires only under --sabotage)
+Q4 HELD E modal letter = key on 24 of 24 (>= 12)
+VERDICT 3 of 4 as registered
+DIGEST 684294d466d7de011a54f359f9307838942e413c6c64d95755011bdb3aa682a5
+
+Loading weights:   0%|          | 0/339 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/339 [00:01<10:09,  1.80s/it]
+Loading weights:   9%|▊         | 29/339 [00:01<00:14, 20.97it/s]
+Loading weights:  13%|█▎        | 45/339 [00:02<00:11, 26.38it/s]
+Loading weights:  17%|█▋        | 56/339 [00:02<00:10, 26.32it/s]
+Loading weights:  19%|█▉        | 66/339 [00:02<00:08, 32.52it/s]
+Loading weights:  22%|██▏       | 76/339 [00:04<00:15, 17.02it/s]
+Loading weights:  24%|██▍       | 82/339 [00:04<00:13, 19.67it/s]
+Loading weights:  26%|██▋       | 89/339 [00:04<00:10, 22.79it/s]
+Loading weights:  29%|██▉       | 100/339 [00:04<00:10, 23.03it/s]
+Loading weights:  33%|███▎      | 112/339 [00:05<00:07, 29.93it/s]
+Loading weights:  37%|███▋      | 124/339 [00:05<00:07, 30.68it/s]
+Loading weights:  38%|███▊      | 129/339 [00:05<00:06, 31.24it/s]
+Loading weights:  42%|████▏     | 144/339 [00:05<00:04, 45.08it/s]
+Loading weights:  45%|████▍     | 151/339 [00:06<00:05, 33.91it/s]
+Loading weights:  48%|████▊     | 162/339 [00:06<00:04, 42.77it/s]
+Loading weights:  51%|█████     | 172/339 [00:06<00:03, 44.20it/s]
+Loading weights:  53%|█████▎    | 178/339 [00:07<00:06, 25.59it/s]
+Loading weights:  60%|██████    | 204/339 [00:07<00:02, 50.24it/s]
+Loading weights:  63%|██████▎   | 214/339 [00:07<00:03, 39.69it/s]
+Loading weights:  65%|██████▌   | 222/339 [00:07<00:03, 34.99it/s]
+Loading weights:  68%|██████▊   | 232/339 [00:09<00:06, 15.78it/s]
+Loading weights:  70%|██████▉   | 237/339 [00:09<00:05, 17.49it/s]
+Loading weights:  72%|███████▏  | 245/339 [00:09<00:04, 20.94it/s]
+Loading weights:  74%|███████▎  | 250/339 [00:09<00:04, 21.61it/s]
+Loading weights:  76%|███████▌  | 257/339 [00:10<00:03, 26.28it/s]
+Loading weights:  79%|███████▉  | 268/339 [00:10<00:02, 29.11it/s]
+Loading weights:  81%|████████  | 273/339 [00:10<00:02, 30.27it/s]
+Loading weights:  83%|████████▎ | 282/339 [00:10<00:01, 38.98it/s]
+Loading weights:  86%|████████▌ | 292/339 [00:11<00:01, 32.77it/s]
+Loading weights:  90%|████████▉ | 305/339 [00:11<00:00, 46.23it/s]
+Loading weights:  93%|█████████▎| 316/339 [00:11<00:00, 34.51it/s]
+Loading weights:  97%|█████████▋| 328/339 [00:11<00:00, 44.53it/s]
+Loading weights:  99%|█████████▉| 336/339 [00:11<00:00, 47.03it/s]
+Loading weights: 100%|██████████| 339/339 [00:11<00:00, 28.46it/s]
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/usr/local/lib/python3.13/dist-packages/accelerate/hooks.py:192: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `Qwen2ForCausalLM.forward`. Use `cache` instead.
+  output = module._old_forward(*args, **kwargs)
+EXIT 1
