@@ -1,0 +1,29 @@
+transformers 5.24.0 | committed digests 18 | days {'REF': 44, 'N016': 165, 'STRESS': 340} | escaping on
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  [REF] arm D pi0 tokens 2450..2469 digest 18e4740e7430 matches committed 18e4740e7430
+  [REF] arm D pi1 tokens 2450..2469 digest 5cfa8ce50415 matches committed 5cfa8ce50415
+  [REF] arm D pi2 tokens 2450..2469 digest f0a4f1c05dcd matches committed f0a4f1c05dcd
+  [REF] arm E pi0 tokens 2543..2562 digest 369bd2dcb864 matches committed 369bd2dcb864
+  [REF] arm E pi1 tokens 2543..2562 digest b975f46f9d45 matches committed b975f46f9d45
+  [REF] arm E pi2 tokens 2543..2562 digest 2ab5aa548b51 matches committed 2ab5aa548b51
+G0 [N016] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  [N016] arm D pi0 tokens 8773..8792 digest 0456fb587b65 matches committed 0456fb587b65
+  [N016] arm D pi1 tokens 8773..8792 digest d5f52b86068c matches committed d5f52b86068c
+  [N016] arm D pi2 tokens 8773..8792 digest 56523a61d0e4 matches committed 56523a61d0e4
+  [N016] arm E pi0 tokens 8866..8885 digest 6c797e5da34c matches committed 6c797e5da34c
+  [N016] arm E pi1 tokens 8866..8885 digest 44b8a0afa268 matches committed 44b8a0afa268
+  [N016] arm E pi2 tokens 8866..8885 digest cf5fca580037 matches committed cf5fca580037
+G0 [STRESS] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  [STRESS] arm D pi0 tokens 18020..18039 digest 2be2d3a73240 matches committed 2be2d3a73240
+  [STRESS] arm D pi1 tokens 18020..18039 digest 4f496471d1e6 matches committed 4f496471d1e6
+  [STRESS] arm D pi2 tokens 18020..18039 digest fd6da8b02b06 matches committed fd6da8b02b06
+  [STRESS] arm E pi0 tokens 18113..18132 digest 3a67b7a3bbc6 matches committed 3a67b7a3bbc6
+  [STRESS] arm E pi1 tokens 18113..18132 digest 93d52985dccb matches committed 93d52985dccb
+  [STRESS] arm E pi2 tokens 18113..18132 digest d0ed07d8c4d4 matches committed d0ed07d8c4d4
+weights loaded: no
+VERDICT 3 of 3 as registered
+DIGEST fa5c56adae8c2c43aa231b9936de16473a1516a7e2f9876efac22305a1e09a9b
+RECORDED none pinned

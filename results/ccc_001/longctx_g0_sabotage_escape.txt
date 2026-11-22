@@ -1,0 +1,32 @@
+transformers 5.24.0 | committed digests 18 | days {'REF': 44, 'N016': 165, 'STRESS': 340} | escaping OFF (sabotage)
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+G0 [REF] REFUTED 6 cell digests and window; control tokens inside message-1 content: 1 (= 0)
+  [REF] arm D pi0 tokens 2442..2461 digest 0bb75516876c DIFFERS from committed 18e4740e7430
+  [REF] arm D pi1 tokens 2442..2461 digest e77c7245d756 DIFFERS from committed 5cfa8ce50415
+  [REF] arm D pi2 tokens 2442..2461 digest 329387848379 DIFFERS from committed f0a4f1c05dcd
+  [REF] arm E pi0 tokens 2535..2554 digest e085cbd3cf0a DIFFERS from committed 369bd2dcb864
+  [REF] arm E pi1 tokens 2535..2554 digest 13f846dde4fc DIFFERS from committed b975f46f9d45
+  [REF] arm E pi2 tokens 2535..2554 digest caa48b41d629 DIFFERS from committed 2ab5aa548b51
+  [REF] first differing token (arm D pi0 item 0) at position 696: harness [220, 151645, 323] ' <|im_end|> and' vs feasibility [609, 4832, 26] ' &lt;'; lengths 2459 vs 2467
+G0 [N016] REFUTED 6 cell digests and window; control tokens inside message-1 content: 1 (= 0)
+  [N016] arm D pi0 tokens 8765..8784 digest a7588c002dfb DIFFERS from committed 0456fb587b65
+  [N016] arm D pi1 tokens 8765..8784 digest 9a74574a18f2 DIFFERS from committed d5f52b86068c
+  [N016] arm D pi2 tokens 8765..8784 digest 110a4db4cc95 DIFFERS from committed 56523a61d0e4
+  [N016] arm E pi0 tokens 8858..8877 digest 5dfdcf47bf67 DIFFERS from committed 6c797e5da34c
+  [N016] arm E pi1 tokens 8858..8877 digest 4df18fff318f DIFFERS from committed 44b8a0afa268
+  [N016] arm E pi2 tokens 8858..8877 digest a31edc7e3053 DIFFERS from committed cf5fca580037
+  [N016] first differing token (arm D pi0 item 0) at position 696: harness [220, 151645, 323] ' <|im_end|> and' vs feasibility [609, 4832, 26] ' &lt;'; lengths 8782 vs 8790
+G0 [STRESS] REFUTED 6 cell digests and window; control tokens inside message-1 content: 1 (= 0)
+  [STRESS] arm D pi0 tokens 18012..18031 digest 688027239a2f DIFFERS from committed 2be2d3a73240
+  [STRESS] arm D pi1 tokens 18012..18031 digest efd56ab71d1b DIFFERS from committed 4f496471d1e6
+  [STRESS] arm D pi2 tokens 18012..18031 digest 17445cb7e8d5 DIFFERS from committed fd6da8b02b06
+  [STRESS] arm E pi0 tokens 18105..18124 digest 6611ae7446fe DIFFERS from committed 3a67b7a3bbc6
+  [STRESS] arm E pi1 tokens 18105..18124 digest bd5c787cead6 DIFFERS from committed 93d52985dccb
+  [STRESS] arm E pi2 tokens 18105..18124 digest f02161a622ee DIFFERS from committed d0ed07d8c4d4
+  [STRESS] first differing token (arm D pi0 item 0) at position 696: harness [220, 151645, 323] ' <|im_end|> and' vs feasibility [609, 4832, 26] ' &lt;'; lengths 18029 vs 18037
+weights loaded: no
+VERDICT 0 of 3 as registered
+DIGEST 98db6f16e63c0150ed47a8656c791022b8e94c95dfc080a348d83e0289c938a3
+RECORDED none pinned
