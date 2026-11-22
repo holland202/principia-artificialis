@@ -1,0 +1,6 @@
+DRY 1.5B LONGCTX REF d_acc per pi [0.105711, 0.093951, 0.313284] vs ACCBIAS [0.105711, 0.093951, 0.313284]: equal True
+DRY 1.5B Q E-D: d_acc +0.155644 d_rej -0.169676 d_ne +0.014032 | items d_acc up/down 18/5 of 24
+DRY 1.5B Q EF64-F64: d_acc +0.053724 d_rej -0.075297 d_ne +0.021574 | items d_acc up/down 14/10 of 24
+DRY 1.5B REF pi0: d_acc +0.105711 d_rej -0.123310 d_ne +0.017599 | items d_acc up/down 21/3 of 24
+DRY 1.5B REF pi1: d_acc +0.093951 d_rej +0.297205 d_ne -0.391155 | items d_acc up/down 21/3 of 24
+DRY 1.5B REF pi2: d_acc +0.313284 d_rej -0.552207 d_ne +0.238923 | items d_acc up/down 17/7 of 24
