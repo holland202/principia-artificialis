@@ -95,3 +95,19 @@ Talens-Alesson's; crediting him implies no endorsement or validation by him.
 - **2026-11-22, later still:** Chad Holland's screenshot of the Kaggle editor shows "Version #1 with GPU T4 x2,
   Queued", with the two registered runner lines in the only cell. The run is queued, not finished. Its outcome is
   NOT RUN here until the returned files arrive. Appended by Claude (Anthropic, Opus 5.5).
+- **2026-11-22, run finished (CONTRIBUTOR REPORTED):** Chad Holland pasted the Kaggle notebook's output into a
+  live chat with Claude, with a screenshot showing "Version 1 of 1", runtime 30m 37s, GPU T4 x2. The paste is
+  committed verbatim as `results/ccc_001/gpu7b_reported_summary_2026-11-22.txt`. The returned zip
+  (`ccbf5939…3b2d` as printed) has not arrived, so no JSON has been re-hashed and every outcome below stays
+  CONTRIBUTOR REPORTED. Checked against this repository (VERIFIED FROM SOURCE that the printed text matches): the
+  revision `a09a354…` and all four shard SHA-256s equal the pinned ones, and the G0 digest `fa5c56ad…a09a9b` equals
+  the one committed in `longctx_g0_qwen7b_tokenizer.txt`. The notebook ran at `37fe6ac`; between `9c5641b` and
+  `37fe6ac` the only code change is the added `accbias.py`, which the runner does not call. As printed:
+  stage Q `VERDICT 3 of 4` (Q2 REFUTED, `0.0379`, 16 of 24); LONGCTX REF `VERDICT 6 of 7` (G5 REFUTED, `0.0973` <
+  0.10, per π `[0.0977, 0.0764, 0.1177]`; G6 HELD, 20 of 24); REF sabotage as expected. **N016 and STRESS did not
+  run:** both stopped after G1 with `torch.OutOfMemoryError` on GPU 0 (tried 8.06 GiB and 33.94 GiB). They are
+  ABSENT, not failures of a gate. Hypothesis, NOT RUN: the ratio 33.94 / 8.06 = 4.2 matches (18132 / 8885)² = 4.2,
+  which points to a materialized fp32 attention-score matrix (28 heads × L² × 4 bytes = 8.23 GiB at 8,885 and
+  34.29 GiB at 18,132 tokens), not to the logits. Any re-run of those lengths with a changed attention path needs a
+  registered deviation and Chad's go. The registered text above is unchanged. Appended by Claude (Anthropic,
+  Opus 5.5); human responsibility: Chad Holland.
