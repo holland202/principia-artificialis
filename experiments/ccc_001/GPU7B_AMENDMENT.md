@@ -89,3 +89,6 @@ Talens-Alesson's; crediting him implies no endorsement or validation by him.
   text above is unchanged. Between `9c5641b` and the branch head the notebook cloned (`84430f8`), only relay records
   changed, with no harness code (`git diff --stat 9c5641b 84430f8`: 4 files, all records). Appended by Claude
   (Anthropic, Opus 5.5); human responsibility: Chad Holland.
+- **2026-11-22, later:** correction to the entry above. A screenshot from Chad Holland of his Kaggle "Your Work"
+  page (Code tab) shows no notebooks. Whether the run started is unknown, so "he reports he started the Kaggle run"
+  is unconfirmed. His approval on PR #172 stands. Appended by Claude (Anthropic, Opus 5.5).
