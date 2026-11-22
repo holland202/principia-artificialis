@@ -1,0 +1,9 @@
+Common evaluator (eval_common.py), run 2026-11-21 before registering TLM-004, on existing byte-level weights:
+bytes 159776 units 159776
+runs/s21 1.0812 predicted units 159775   (TLM-002 seed 21, 1M byte model)
+runs/s22 1.0648 predicted units 159775   (TLM-002 seed 22, 1M byte model)
+runs/s31 0.9917 predicted units 159775   (TLM-003 seed 31, 3.2M byte model)
+s22 shuffled 10.6766
+Tokenizer (tok.py): vocab 1024 | train slice 209,715,200 bytes -> 65,753,407 tokens (3.189 bytes/token) | 46s
+valid round trip (first 2000 stories) exact: True
+Exploration x905 (BPE-1024, d120 L5 h4, 500-step schedule): valid 1.7566, shuffled 7.4629

@@ -1,0 +1,22 @@
+{
+ "seed": 905,
+ "steps": 500,
+ "d": 120,
+ "L": 5,
+ "h": 4,
+ "vocab": 1024,
+ "params": 989520,
+ "B": 32,
+ "T": 256,
+ "lr": 0.001,
+ "curve": [
+  [
+   500,
+   5.6151
+  ]
+ ],
+ "train_seconds": 336,
+ "tokens_seen": 4096000,
+ "valid_bpb_common": 1.7566,
+ "predicted_units": 50005
+}
