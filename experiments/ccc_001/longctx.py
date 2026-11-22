@@ -38,6 +38,7 @@ RECORDED = {  # pinned after the runs at d96634f (REF) and c537acb (g0); sabotag
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 FEAS = os.path.join(ROOT, "results/ccc_001/longctx_feasibility.txt")
+DEFAULT_MODEL_DIR = os.path.expanduser("~/models/qwen25-1.5b-instruct")  # the pinned 1.5B CPU runs
 DAYS = {"REF": 44, "N016": 165, "STRESS": 340}  # from the committed feasibility output (D2)
 IM_START, IM_END = lf.IM_START, lf.IM_END
 
@@ -115,7 +116,7 @@ def first_difference(tok, name, escape):
 def read(model, ids, oid, sabotage, full_logits=False):
     import torch
     from qdiag import readout
-    x = torch.tensor([ids])
+    x = torch.tensor([ids], device=model.device)
     with torch.no_grad():
         logits = model(x).logits[0, -1] if full_logits else model(x, logits_to_keep=1).logits[0, -1]
     return readout(logits, oid, sabotage)
@@ -149,7 +150,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--g0-only", action="store_true")
     ap.add_argument("--sabotage-escape", action="store_true")
-    ap.add_argument("--length", choices=["REF"], default="REF")  # D1: REF is the only length read in this run
+    ap.add_argument("--length", choices=list(DAYS), default="REF")  # D1 (1.5B): REF only; GPU7B_AMENDMENT: all three
     ap.add_argument("--sabotage", action="store_true")
     ap.add_argument("--json")
     a = ap.parse_args()
@@ -177,13 +178,16 @@ def main():
         return 1
 
     import torch
-    from transformers import AutoModelForCausalLM
-    torch.manual_seed(0)
-    torch.set_num_threads(os.cpu_count())
-    model = AutoModelForCausalLM.from_pretrained(MODEL_DIR, dtype=torch.bfloat16).eval()
-    w = os.path.join(MODEL_DIR, "model.safetensors")
-    print("weights sha256", sha(open(w, "rb").read()), "| torch", torch.__version__, "| threads",
-          torch.get_num_threads())
+    import common
+    _, model = common.load(MODEL_DIR)  # bf16 CPU by default; CCC_DTYPE / CCC_DEVICE_MAP for the GPU amendment
+    for w in sorted(f for f in os.listdir(MODEL_DIR) if f.endswith(".safetensors")):
+        h = hashlib.sha256()
+        with open(os.path.join(MODEL_DIR, w), "rb") as fh:
+            for chunk in iter(lambda: fh.read(1 << 24), b""):
+                h.update(chunk)
+        print(w, "sha256", h.hexdigest())
+    print("weights", "| torch", torch.__version__, "| threads", torch.get_num_threads(), "| dtype", model.dtype,
+          "| device", model.device, "| cuda", torch.cuda.get_device_name(0) if torch.cuda.is_available() else "none")
     oid = option_ids(tok)
     L = model.config.max_position_embeddings
     print("option_token_ids", oid, "vocab", model.config.vocab_size, "L", L)
@@ -200,18 +204,19 @@ def main():
             res[(arm, k)] = rows(model, oid, cells[(arm, k)], k, a.sabotage)
             sys.stdout.flush()
     rep = rows(model, oid, cells[("D", 0)], 0, a.sabotage)
-    full = rows(model, oid, cells[("D", 0)], 0, a.sabotage, full_logits=True)
+    full = rows(model, oid, cells[("D", 0)], 0, a.sabotage, full_logits=True) if name == "REF" else None  # G3 REF only
 
     g2n = sum(1 for x, y in zip(r6(res[("D", 0)]), r6(rep)) if x == y)
     g2 = g2n == 24
     d2 = max(abs(u - v) for x, y in zip(res[("D", 0)], rep) for u, v in zip(x["p"], y["p"]))
     print("G2", "HELD" if g2 else "REFUTED", f"arm D pi0 read twice: equal to 6 dp on {g2n} of 24 (= 24), "
           f"max diff {d2:.6f}")
-    g3n = sum(1 for x, y in zip(r6(res[("D", 0)]), r6(full)) if x == y)
-    g3 = g3n == 24
-    d3 = max(abs(u - v) for x, y in zip(res[("D", 0)], full) for u, v in zip(x["p"], y["p"]))
-    print("G3", "HELD" if g3 else "REFUTED", f"arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on {g3n} "
-          f"of 24 (= 24), max diff {d3:.6f}")
+    if full is not None:
+        g3n = sum(1 for x, y in zip(r6(res[("D", 0)]), r6(full)) if x == y)
+        g3 = g3n == 24
+        d3 = max(abs(u - v) for x, y in zip(res[("D", 0)], full) for u, v in zip(x["p"], y["p"]))
+        print("G3", "HELD" if g3 else "REFUTED", f"arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on {g3n} "
+              f"of 24 (= 24), max diff {d3:.6f}")
 
     meds = {c: statistics.median(r["mass"] for r in v) for c, v in res.items()}
     g4 = all(m >= 0.90 for m in meds.values())
@@ -230,7 +235,7 @@ def main():
     g6 = wins >= 14
     print("G6", "HELD" if g6 else "REFUTED", f"items with pi-averaged G(E) > G(D): {wins} of 24 (>= 14)")
 
-    held = [ok0, g1, g2, g3, g4, g5, g6]
+    held = [ok0, g1, g2, g3, g4, g5, g6] if full is not None else [ok0, g1, g2, g4, g5, g6]
     for (arm, k), v in res.items():
         mod = {L_: sum(1 for r in v if OPTIONS[r["p"].index(max(r["p"]))] == L_) for L_ in OPTIONS}
         print(f"REPORT [{name}] arm {arm} pi{k} keys {''.join(keys(k))}: mean S {statistics.mean(r['S'] for r in v):.4f} "
@@ -241,21 +246,22 @@ def main():
         by_key.setdefault(key, []).append(gE[i] - gD[i])
     print("REPORT item gain by stage-Q key (pi-averaged G(E)-G(D)): "
           + "  ".join(f"{key} {statistics.mean(v):.4f} (n={len(v)})" for key, v in by_key.items()))
-    for n_ in ("N016", "STRESS"):
-        print(f"[{n_}] NOT RUN (deviation D1)")
-    qualified = all(held)
-    print("LONGEST QUALIFIED", "REF" if qualified else "NONE", "(only REF was read: D1)")
+    print(f"QUALIFIES [{name}]", "yes" if all(held) else "no", "(T* across lengths: longctx_summary.py)")
+    if name == "REF":
+        print("LONGEST QUALIFIED", "REF" if all(held) else "NONE", "(if only REF is read)")
     if a.sabotage:
         print("SABOTAGE expected G4, G5 and G6 REFUTED:", (not g4) and (not g5) and (not g6))
     canon = {f"{arm}{k}": [[round(x, 4) for x in r["p"]] + [round(r["mass"], 4)] for r in v]
              for (arm, k), v in res.items()}
     canon["D0_repeat"] = [[round(x, 4) for x in r["p"]] for r in rep]
-    canon["D0_full_logits"] = [[round(x, 4) for x in r["p"]] for r in full]
+    if full is not None:
+        canon["D0_full_logits"] = [[round(x, 4) for x in r["p"]] for r in full]
     if a.json:
         json.dump({"held": held, "sabotage": a.sabotage, "length": name, "days": DAYS[name],
                    "cells": {f"{arm}{k}": v for (arm, k), v in res.items()}, "D0_repeat": rep,
                    "D0_full_logits": full}, open(a.json, "w"), indent=1)
-    return finish(held, canon, f"{name}" + ("_sabotage" if a.sabotage else ""), a.sabotage)
+    tag = "" if MODEL_DIR == DEFAULT_MODEL_DIR else "@" + os.path.basename(os.path.normpath(MODEL_DIR))
+    return finish(held, canon, f"{name}" + ("_sabotage" if a.sabotage else "") + tag, a.sabotage)
 
 
 if __name__ == "__main__":
