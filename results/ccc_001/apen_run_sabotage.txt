@@ -1,0 +1,26 @@
+P0a 27 rebuilt cell means vs accbias.json: max |diff| 4.89e-07 (<= 1e-6)
+P0b identity E:=D: 432 per-item and 18 aggregate contrasts exactly 0: True
+P0c synthetic additive: want I +0.00 J12 +0.00 J13 +0.00; max |err| over 24 items 5.55e-17 (<= 1e-12)
+P0c synthetic A1+k: want I +0.05 J12 +0.05 J13 +0.05; max |err| over 24 items 9.71e-17 (<= 1e-12)
+P0c synthetic A2+k,A3-k: want I +0.00 J12 -0.05 J13 +0.05; max |err| over 24 items 6.94e-17 (<= 1e-12)
+P0d linearity: |I from cells - mean item I| max 5.55e-17 (<= 1e-12)
+P0 HELD rebuild, identity, synthetic and linearity gate (a-d all required)
+P1 REFUTED accept items with I > 0: 0 of 24 (>= 13); negative 0, tied 24
+P2 REFUTED accept items with J12 > 0: 0 of 24, J13 > 0: 0 of 24 (each >= 13)
+P3 REFUTED pen-bar < 0 for all three meanings: accept +0.000000, reject +0.000000, notenough +0.000000
+REPORT accept: pen1 +0.000000 pen2 +0.000000 pen3 +0.000000 pen-bar +0.000000 | J12 +0.000000 J13 +0.000000 I +0.000000
+REPORT   accept item counts +/-/tied: pen1 0/0/24 pen2 0/0/24 pen3 0/0/24 J12 0/0/24 J13 0/0/24 I 0/0/24
+REPORT   accept item I range: min +0.000000 (item 0) max +0.000000 (item 0)
+REPORT   accept within-row first-slot contrast d(L,1) - mean(d(L,2), d(L,3)): A +0.000000 B +0.000000 C +0.000000
+REPORT reject: pen1 +0.000000 pen2 +0.000000 pen3 +0.000000 pen-bar +0.000000 | J12 +0.000000 J13 +0.000000 I +0.000000
+REPORT   reject item counts +/-/tied: pen1 0/0/24 pen2 0/0/24 pen3 0/0/24 J12 0/0/24 J13 0/0/24 I 0/0/24
+REPORT   reject item I range: min +0.000000 (item 0) max +0.000000 (item 0)
+REPORT   reject within-row first-slot contrast d(L,1) - mean(d(L,2), d(L,3)): A +0.000000 B +0.000000 C +0.000000
+REPORT notenough: pen1 +0.000000 pen2 +0.000000 pen3 +0.000000 pen-bar +0.000000 | J12 +0.000000 J13 +0.000000 I +0.000000
+REPORT   notenough item counts +/-/tied: pen1 0/0/24 pen2 0/0/24 pen3 0/0/24 J12 0/0/24 J13 0/0/24 I 0/0/24
+REPORT   notenough item I range: min +0.000000 (item 0) max +0.000000 (item 0)
+REPORT   notenough within-row first-slot contrast d(L,1) - mean(d(L,2), d(L,3)): A +0.000000 B +0.000000 C +0.000000
+REPORT shuffle null (2000 shuffles, seed 20261122, same draw for E and D; 2000 with all 9 cells): observed I_acc +0.000000; shuffled I p5 +0.000000 p50 +0.000000 p95 +0.000000; fraction |I| >= |observed| 2000/2000
+REPORT no equivalence margin is registered, so 'I ~ 0' is not decided
+VERDICT 1 of 4 as registered
+DIGEST b6ec299794de39aba9bddfe0fbdb4106ea7b04801d78b0a7f42c41bfc0e165a0
