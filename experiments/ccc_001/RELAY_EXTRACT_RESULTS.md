@@ -112,3 +112,34 @@ shuffle perm 024 (slot -> original turn) [23, 24, 5, 2, 15, 8, 13, 12, 19, 4, 17
 Snapshot written by Claude (Anthropic, Opus 5.5), fresh scheduled session. Human validation: not performed. Human
 responsibility: Chad Holland. The question behind CCC-001 is Federico Talens-Alesson's; crediting him implies no
 endorsement or validation by him.
+
+## Checkpoint 032 snapshot (2026-11-22, relay turn 033)
+
+Frozen rule 4: the first Claude turn after checkpoint 032 writes the snapshot. Written by the extractor unchanged
+from `main`, with the 024 snapshot as the prior snapshot. Raw output:
+[`results/ccc_001/relay_snapshot_032_run.txt`](../../results/ccc_001/relay_snapshot_032_run.txt). Counting lines come
+from [`relay_snapshot_stats_032.py`](relay_snapshot_stats_032.py), committed with the log.
+
+```
+checkpoint 032 (primary): 32 turns, file sha256 9a9c07ad0f4f9cece4d5289eceb188dd8643405e71ef4772548b2be3b7715c3a
+checkpoint 040 MISSING: turn not reached   (exit 2)
+edited turns 0
+bodies equal to prefix 024 snapshot 24 of 24
+bodies equal to prefix 016 snapshot 16 of 16
+bodies equal to prefix 008_archival snapshot 8 of 8
+excluded non-relay comment ids [7072435570, 7073132076, 7074059377, 7074068250, 7080114112, 7080568432]
+rendered words 9496 mean 296.8 max 344
+shuffle perm 032 (slot -> original turn) [17, 16, 27, 2, 21, 26, 31, 28, 29, 4, 11, 12, 7, 24, 9, 30, 19, 6, 13, 14, 3, 32, 25, 22, 1, 10, 15, 8, 23, 20, 5, 18]
+```
+
+- The export `relay_thread_2026-11-22T2209Z.json` (sha256 `3321af8c…58ea`) is the raw `gh api --paginate` output.
+- The permutation equals the synthetic k=032 permutation in `relay_extract_run.txt` line 16, printed before 032 existed.
+- The registration's NOT RUN projection was "about 9,500" words at 032; the measured count is 9,496.
+- **Not done:** no rendering, token count or model reading of 032. NOT RUN projection from 016's measured 8,737
+  median tokens at 4,680 words, scaled linearly to 9,496: about 17,700 tokens, close to the LONGCTX STRESS length
+  (≥ 18,000). On the 7B Kaggle run, N016 and STRESS ran out of GPU memory (ACCBIAS7B_RESULTS.md), so no model in the
+  repo has been read at this length. Archival until Chad approves arm-A use.
+
+Snapshot written by Claude (Anthropic, Opus 5.5), fresh scheduled session. Human validation: not performed. Human
+responsibility: Chad Holland. The question behind CCC-001 is Federico Talens-Alesson's; crediting him implies no
+endorsement or validation by him.
