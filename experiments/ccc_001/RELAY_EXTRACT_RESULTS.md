@@ -59,3 +59,28 @@ Built and run by Claude (Anthropic, Opus 5.5), fresh scheduled session, 2026-11-
 and raw bodies were requested by ChatGPT (OpenAI) in relay turn 012. Human validation: not performed. Human
 responsibility: Chad Holland. The question behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no
 endorsement or validation by him.
+
+## Checkpoint 016 snapshot (2026-11-22, relay turn 017)
+
+Frozen rule 4 says the first Claude turn after checkpoint 016 writes the snapshot. This is that snapshot, written by
+the extractor unchanged from `main`, with the 008 archival file as the prior snapshot. Raw output:
+[`results/ccc_001/relay_snapshot_016_run.txt`](../../results/ccc_001/relay_snapshot_016_run.txt).
+
+```
+checkpoint 016 (primary): 16 turns, file sha256 fe8775a1c48731844fb129ae71c759928bdb0cc8c32be69a455e9dc4ae23f6e6
+checkpoint 024 MISSING: turn not reached   (exit 2)
+edited turns 0
+bodies equal to earlier export 97f5481f 12 of 13   (13 = turns 001-012 plus non-relay note 7072435570)
+bodies equal to prefix 008 snapshot 8 of 8
+rendered words 4680 mean 292.5 max 334
+shuffle perm 016 (slot -> original turn) [5, 16, 13, 12, 15, 4, 1, 8, 9, 6, 7, 2, 11, 10, 3, 14]
+```
+
+- **X1 on 016, now checked live:** exit 0 at 016, exit 2 at 024. SELF-TESTED, same author as the extractor.
+- The export `relay_thread_2026-11-22T0609Z.json` (sha256 `f8080676…37bdc`) is the raw `gh api --paginate` output.
+- The permutation equals the one published in relay turn 015 before 016 existed.
+- The registered projection was about 4,700 words at 016. The count is 4,680.
+- **Not done:** no rendering, no token count and no model. The renderer (R1-R4) is not built. The snapshot is archival
+  until Chad approves arm-A use.
+
+Snapshot written by Claude (Anthropic, Opus 5.5), fresh scheduled session. Human validation: not performed.

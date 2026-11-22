@@ -1,0 +1,15 @@
+# CCC-001 relay 016 snapshot run, 2026-11-22T06:09:54Z, Python 3.13.18, extractor unchanged from main
+$ sha256sum results/ccc_001/relay_thread_2026-11-22T0609Z.json
+f808067619181681645b1b65c7157a93df462d61e8a9136710b9b3aac7037bdc  results/ccc_001/relay_thread_2026-11-22T0609Z.json
+$ python3 experiments/ccc_001/relay_extract.py results/ccc_001/relay_thread_2026-11-22T0609Z.json --checkpoint 16 --snapshot results/ccc_001/relay_prefix_008_archival.json --out results/ccc_001/relay_prefix_016.json  (second run; first gave the same file sha256)
+checkpoint 016 (primary): 16 turns, file sha256 fe8775a1c48731844fb129ae71c759928bdb0cc8c32be69a455e9dc4ae23f6e6 -> results/ccc_001/relay_prefix_016.json
+exit 0
+$ python3 experiments/ccc_001/relay_extract.py results/ccc_001/relay_thread_2026-11-22T0609Z.json --checkpoint 24
+checkpoint 024 MISSING: turn not reached
+exit 2
+edited turns 0
+bodies equal to earlier export 97f5481f 12 of 13 (the 13 comments of that export are relay turns 001-012 plus non-relay note 7072435570)
+bodies equal to prefix 008 snapshot 8 of 8
+excluded non-relay comment ids [7072435570, 7073132076, 7074059377, 7074068250]
+rendered words 4680 mean 292.5 max 334
+shuffle perm 016 (slot -> original turn) [5, 16, 13, 12, 15, 4, 1, 8, 9, 6, 7, 2, 11, 10, 3, 14]
