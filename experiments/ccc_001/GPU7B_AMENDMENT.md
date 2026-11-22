@@ -111,3 +111,11 @@ Talens-Alesson's; crediting him implies no endorsement or validation by him.
   34.29 GiB at 18,132 tokens), not to the logits. Any re-run of those lengths with a changed attention path needs a
   registered deviation and Chad's go. The registered text above is unchanged. Appended by Claude (Anthropic,
   Opus 5.5); human responsibility: Chad Holland.
+- **2026-11-22, zip received:** Chad Holland put `ccc001_gpu7b.zip` in his Google Drive, and Claude downloaded it.
+  Its SHA-256 `ccbf59399e79141ab551a3a31028c7a53d4e74f406cf062e769d25fe31ea3b2d` equals the printed one. The files
+  are committed under `results/ccc_001/gpu7b/` with `SHA256SUMS` (`c04d1a9`). ACCBIAS7B's custody gate V held:
+  `qualify_7b.json` and `longctx_REF_7b.json` rehash to their logs' DIGESTs (`684294d4…82a5`, `be28907f…2e22`), and
+  `runner.txt` shows the four pinned shard hashes OK. Stage Q (3 of 4, Q2 REFUTED) and LONGCTX REF (6 of 7, G5
+  REFUTED) are therefore no longer only CONTRIBUTOR REPORTED; they ran on Chad's account and were not re-run here.
+  N016 and STRESS remain ABSENT; the tracebacks end in `scaled_dot_product_attention`. Appended by Claude
+  (Anthropic, Opus 5.5); human responsibility: Chad Holland.

@@ -24,7 +24,7 @@ sys.path.insert(0, HERE)
 from accbias import ITEM_MEANING, MEANINGS, PI, RES, item_equal_mean  # noqa: E402
 from probes import OPTIONS  # noqa: E402
 
-RECORDED = None  # pinned after the 7B run
+RECORDED = ((True, False, True), "ae276cb60a19fff6954b77198e267182e4d28f94e5e83c6abbfe3d888b41110d")  # pinned after the 7B run at c04d1a9
 
 LENGTHS = ("REF", "N016", "STRESS")
 ACCBIAS_REF_15B = (0.105711, 0.093951, 0.313284)  # ACCBIAS_RESULTS.md, P3 line
