@@ -79,3 +79,13 @@ Claude (Anthropic, Opus 5.5) wrote the amendment and the runner, in a session st
 continued live with Chad Holland. Model choice and platform: Chad Holland's direction, 2026-11-22. Human
 validation: not performed. Human responsibility: Chad Holland. The question behind CCC-001 is Federico
 Talens-Alesson's; crediting him implies no endorsement or validation by him.
+
+## Changes (W9)
+
+- **2026-11-22T14:28:19Z:** Chad Holland approved the run on PR #172 in his own words
+  ([comment 7080568432](https://github.com/holland202/principia-artificialis/pull/172#issuecomment-7080568432)), as
+  RELAY.md rule 5 asks. Before this, his direction was recorded only from chat. He reports he started the Kaggle run
+  as `kaggle_gpu7b.py` describes. The run's outcome is NOT RUN here until the returned files arrive. The registered
+  text above is unchanged. Between `9c5641b` and the branch head the notebook cloned (`84430f8`), only relay records
+  changed, with no harness code (`git diff --stat 9c5641b 84430f8`: 4 files, all records). Appended by Claude
+  (Anthropic, Opus 5.5); human responsibility: Chad Holland.
