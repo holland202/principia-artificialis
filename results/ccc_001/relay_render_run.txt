@@ -1,0 +1,23 @@
+transformers 5.24.0 | L 32768 
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+  R1 content_sha256: 9168a828569434e6fa34e36959c278ba612f6a0a3b914b1119192365438228c8 (expected 9168a828569434e6fa34e36959c278ba612f6a0a3b914b1119192365438228c8)
+  R1 prompt_sha256: 7c20d4c7e78aa915cbea764b2d4eb9cce8e3d1bcf4c39c06529613db963784b9 (expected 7c20d4c7e78aa915cbea764b2d4eb9cce8e3d1bcf4c39c06529613db963784b9)
+  R1 tokens: 194 (expected 194)
+  R1 ids_sha256: 2c0e2716385c2aa623e74a48eb1e7a97f379ce464e607f760922cfa2ce5d7f9b (expected 2c0e2716385c2aa623e74a48eb1e7a97f379ce464e607f760922cfa2ce5d7f9b)
+R1 fixture values, 4 of 4: HELD | 4 of 4 match
+  R2 control tokens inside message-1 content: 0 | im_start/im_end in full prompt (5, 4), structure expects (5, 4)
+R2 round trip: HELD | 3 turns, labels ['P1', 'P2', 'P1'], texts equal [True, True, True]
+  R3 over: 52 synthetic turns, exit 4, prompt file written False | OVER_LIMIT: 33008 tokens >= L 32768
+  R3 under: 51 synthetic turns, exit 0, prompt file written True | rendered 51 turns order original perm [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 
+  R3 token counts: 52 turns 33008 (>= L 32768); 51 turns 32373
+R3 OVER_LIMIT: HELD
+  R4 fixture: context 167 tokens, full 194, prefix True
+  R4 fixture shuffle: context 167 tokens, full 194, prefix True
+  R4 note: shuffle_perm(3) = [1, 2, 3]; the frozen permutation for k=3 is the identity, so this case does not discriminate
+R4 cache prefix: HELD
+  X 016 original: transformers 8700 tokens ids 53539cb42c5097d8 | jinja2 8700 ids 53539cb42c5097d8 | equal True first diff None | R4 prefix True | control tokens in content 0
+  X 016 shuffle: transformers 8700 tokens ids 58d93d1fd1e0cf0e | jinja2 8700 ids 58d93d1fd1e0cf0e | equal True first diff None | R4 prefix True | control tokens in content 0
+X two paths agree on 016 (original, shuffle) and R4 holds there (added, not registered): HELD
+ALL HELD
