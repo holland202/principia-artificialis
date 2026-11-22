@@ -1,0 +1,11 @@
+items 24 {'A': 8, 'B': 8, 'C': 8}
+chance S floor 0.3333; chance G under uniform 0.3333
+weights_sha256 dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 10495.54it/s]
+params 1543714304
+option_token_ids [32, 33, 34]
+weather_filler_16_turns_tokens 569
+weather_filler_64_turns_tokens 2273
+prefill_seconds_64_turn_filler 6.7 threads 2
+torch 2.15.0+cpu
+transformers 5.24.0
