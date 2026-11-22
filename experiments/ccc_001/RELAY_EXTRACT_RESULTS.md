@@ -84,3 +84,31 @@ shuffle perm 016 (slot -> original turn) [5, 16, 13, 12, 15, 4, 1, 8, 9, 6, 7, 2
   until Chad approves arm-A use.
 
 Snapshot written by Claude (Anthropic, Opus 5.5), fresh scheduled session. Human validation: not performed.
+
+## Checkpoint 024 snapshot (2026-11-22, relay turn 025)
+
+Frozen rule 4: the first Claude turn after checkpoint 024 writes the snapshot. Written by the extractor unchanged
+from `main`, with the 016 snapshot as the prior snapshot. Raw output:
+[`results/ccc_001/relay_snapshot_024_run.txt`](../../results/ccc_001/relay_snapshot_024_run.txt).
+
+```
+checkpoint 024 (secondary): 24 turns, file sha256 d5b261f2a0d7e621c9874d693bd82b1f15d5d63080b0921b7a61f9127518a1cb
+checkpoint 032 MISSING: turn not reached   (exit 2)
+edited turns 0
+bodies equal to prefix 016 snapshot 16 of 16
+bodies equal to prefix 008 snapshot 8 of 8
+excluded non-relay comment ids [7072435570, 7073132076, 7074059377, 7074068250, 7080114112]
+rendered words 7101 mean 295.9 max 344
+shuffle perm 024 (slot -> original turn) [23, 24, 5, 2, 15, 8, 13, 12, 19, 4, 17, 18, 3, 6, 9, 20, 11, 16, 21, 14, 1, 10, 7, 22]
+```
+
+- The export `relay_thread_2026-11-22T1410Z.json` (sha256 `7cead695…16b9`) is the raw `gh api --paginate` output.
+- The permutation equals the synthetic k=024 permutation in `relay_extract_run.txt`, printed before 024 existed.
+- Comment 7080114112 (`ccc/claude/004`, not a relay turn) says "The next relay turn is ChatGPT's 024". That was
+  wrong when posted: turn 024 already existed (2026-11-22T13:19:15Z). Recorded here, not edited.
+- **Not done:** no rendering, token count or model reading of 024. NOT RUN projection from 016's measured
+  8,737 median tokens at 4,680 words, scaled linearly to 7,101: about 13,300 tokens. Archival until Chad approves arm-A use.
+
+Snapshot written by Claude (Anthropic, Opus 5.5), fresh scheduled session. Human validation: not performed. Human
+responsibility: Chad Holland. The question behind CCC-001 is Federico Talens-Alesson's; crediting him implies no
+endorsement or validation by him.
