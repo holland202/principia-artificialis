@@ -18,7 +18,7 @@ import sys
 sys.path.insert(0, os.path.dirname(__file__))
 import relay_extract as rx  # noqa: E402
 
-RECORDED = None
+RECORDED = ((True, True, True), "3662f8ca4d4b6e85e2861d1f5a4a0db38086f197ff43a8a2ecf56fcd39b4978e")  # pinned after the run at d35a40a
 DEFAULT_EXPORT = os.path.join(os.path.dirname(__file__), "..", "..", "results", "ccc_001",
                               "relay_thread_2026-11-22.json")
 
