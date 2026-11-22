@@ -30,7 +30,11 @@ from common import MODEL_DIR, digest, option_ids, render  # noqa: E402
 from probes import ITEMS, OPTIONS  # noqa: E402
 from qdiag import explicit, keys, probe_msgs  # noqa: E402
 
-RECORDED = {}  # pinned after the run: {mode: (held tuple, digest)}
+RECORDED = {  # pinned after the runs at d96634f (REF) and c537acb (g0); sabotage modes are never pinned, so they exit 1
+    "g0": ((True, True, True), "fa5c56adae8c2c43aa231b9936de16473a1516a7e2f9876efac22305a1e09a9b"),
+    "REF": ((True, True, True, True, True, False, False),
+            "1ebd6751e49dcb09d4118dd86188efb9d7613b7631f8d6eb9f9a8c5916eb57c4"),
+}
 
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 FEAS = os.path.join(ROOT, "results/ccc_001/longctx_feasibility.txt")
