@@ -1,0 +1,2 @@
+seed 41: valid 0.8487 shuffled 9.9752
+seed 42: valid 0.8571 shuffled 9.7513
