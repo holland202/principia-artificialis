@@ -1,0 +1,101 @@
+conditions 36  cells 9  per cell [4]  seen 6 in cells [('A', 1), ('B', 2), ('C', 3)]  unseen 30
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 12345.64it/s]
+option_token_ids [32, 33, 34] torch 2.15.0+cpu threads 2
+progress 1/36
+progress 2/36
+progress 3/36
+progress 4/36
+progress 5/36
+progress 6/36
+progress 7/36
+progress 8/36
+progress 9/36
+progress 10/36
+progress 11/36
+progress 12/36
+progress 13/36
+progress 14/36
+progress 15/36
+progress 16/36
+progress 17/36
+progress 18/36
+progress 19/36
+progress 20/36
+progress 21/36
+progress 22/36
+progress 23/36
+progress 24/36
+progress 25/36
+progress 26/36
+progress 27/36
+progress 28/36
+progress 29/36
+progress 30/36
+progress 31/36
+progress 32/36
+progress 33/36
+progress 34/36
+progress 35/36
+progress 36/36
+P0 REFUTED 6 seen conditions vs qdiag.json uncached arm D: max |p diff| 0.666662 (<= 0.01)
+P1 REFUTED m(A,j) - m(C,j), all 36 conditions, j=1,2,3: 0.000000  0.000000  0.000000 (> 0 each)
+P2 REFUTED m(A,j) - m(C,j), 30 unseen conditions, j=1,2,3: 0.000000  0.000000  0.000000 (> 0 each)
+P3 HELD sabotaged readout: contrasts all exactly 0: True, ties 864 of 864 (= 864), P1 and P2 refuted under sabotage: True
+REPORT cell means m(L,j), arm D, p(abstention letter), all conditions [unseen only in brackets]:
+REPORT   letter A: j=1 0.333333 [0.333333 n=2]  j=2 0.333333 [0.333333 n=4]  j=3 0.333333 [0.333333 n=4]
+REPORT   letter B: j=1 0.333333 [0.333333 n=4]  j=2 0.333333 [0.333333 n=2]  j=3 0.333333 [0.333333 n=4]
+REPORT   letter C: j=1 0.333333 [0.333333 n=4]  j=2 0.333333 [0.333333 n=4]  j=3 0.333333 [0.333333 n=2]
+REPORT position contrast m(A,1) - m(A,3) = 0.000000
+REPORT position contrast m(B,1) - m(B,3) = 0.000000
+REPORT position contrast m(C,1) - m(C,3) = 0.000000
+REPORT arm D modal readings over 864: {'A': 0, 'B': 0, 'C': 0, 'tie': 864}
+REPORT 36-condition table (arm D mean p(abstention letter), modal counts A/B/C/tie, arm E mean):
+REPORT   00 ('C', 3)  pi0 A = accept the claim, B = reject the claim, C = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   01 ('C', 2)      A = accept the claim, C = not enough evidence to decide, B = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   02 ('C', 3)      B = reject the claim, A = accept the claim, C = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   03 ('C', 2)      B = reject the claim, C = not enough evidence to decide, A = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   04 ('C', 1)      C = not enough evidence to decide, A = accept the claim, B = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   05 ('C', 1)      C = not enough evidence to decide, B = reject the claim, A = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   10 ('B', 3)      A = accept the claim, C = reject the claim, B = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   11 ('B', 2)  pi4 A = accept the claim, B = not enough evidence to decide, C = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   12 ('B', 3)      C = reject the claim, A = accept the claim, B = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   13 ('B', 2)      C = reject the claim, B = not enough evidence to decide, A = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   14 ('B', 1)      B = not enough evidence to decide, A = accept the claim, C = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   15 ('B', 1)      B = not enough evidence to decide, C = reject the claim, A = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   20 ('C', 3)      B = accept the claim, A = reject the claim, C = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   21 ('C', 2)      B = accept the claim, C = not enough evidence to decide, A = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   22 ('C', 3)  pi3 A = reject the claim, B = accept the claim, C = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   23 ('C', 2)      A = reject the claim, C = not enough evidence to decide, B = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   24 ('C', 1)      C = not enough evidence to decide, B = accept the claim, A = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   25 ('C', 1)      C = not enough evidence to decide, A = reject the claim, B = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   30 ('A', 3)      B = accept the claim, C = reject the claim, A = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   31 ('A', 2)      B = accept the claim, A = not enough evidence to decide, C = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   32 ('A', 3)      C = reject the claim, B = accept the claim, A = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   33 ('A', 2)      C = reject the claim, A = not enough evidence to decide, B = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   34 ('A', 1)  pi1 A = not enough evidence to decide, B = accept the claim, C = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   35 ('A', 1)      A = not enough evidence to decide, C = reject the claim, B = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   40 ('B', 3)      C = accept the claim, A = reject the claim, B = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   41 ('B', 2)      C = accept the claim, B = not enough evidence to decide, A = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   42 ('B', 3)      A = reject the claim, C = accept the claim, B = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   43 ('B', 2)  pi2 A = reject the claim, B = not enough evidence to decide, C = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   44 ('B', 1)      B = not enough evidence to decide, C = accept the claim, A = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   45 ('B', 1)      B = not enough evidence to decide, A = reject the claim, C = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   50 ('A', 3)      C = accept the claim, B = reject the claim, A = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   51 ('A', 2)      C = accept the claim, A = not enough evidence to decide, B = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   52 ('A', 3)      B = reject the claim, C = accept the claim, A = not enough evidence to decide.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   53 ('A', 2)      B = reject the claim, A = not enough evidence to decide, C = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   54 ('A', 1)      A = not enough evidence to decide, C = accept the claim, B = reject the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT   55 ('A', 1)  pi5 A = not enough evidence to decide, B = reject the claim, C = accept the claim.           D 0.3333  0/ 0/ 0/24 E 0.3333
+REPORT secondary arm E cell means m_E(L,j), and Q2 components per cell (gain mean G(E)-G(D), E>D count of 96):
+REPORT   letter A: j=1 0.333333 gain +0.0000 E>D 0/96  j=2 0.333333 gain +0.0000 E>D 0/96  j=3 0.333333 gain +0.0000 E>D 0/96
+REPORT   letter B: j=1 0.333333 gain +0.0000 E>D 0/96  j=2 0.333333 gain +0.0000 E>D 0/96  j=3 0.333333 gain +0.0000 E>D 0/96
+REPORT   letter C: j=1 0.333333 gain +0.0000 E>D 0/96  j=2 0.333333 gain +0.0000 E>D 0/96  j=3 0.333333 gain +0.0000 E>D 0/96
+SUPP minimum of the three A-C contrasts: all 0.000000, unseen 0.000000
+SUPP j=1: items with per-item m(A,j) - m(C,j) > 0: 0 of 24
+SUPP j=2: items with per-item m(A,j) - m(C,j) > 0: 0 of 24
+SUPP j=3: items with per-item m(A,j) - m(C,j) > 0: 0 of 24
+SUPP matched P2 check j=1: other two letters displayed in descending order on both sides (A side 2 conditions, C side 2): m(A) - m(C) = 0.000000, sign same vs P2
+SUPP matched P2 check j=3: other two letters displayed in descending order on both sides (A side 2 conditions, C side 2): m(A) - m(C) = 0.000000, sign same vs P2
+VERDICT 1 of 4 as registered
+DIGEST c32e928024687f5e7d3fdba91242778e379874e4c998ec35f280dd7f15bb7abb
+EXIT 1

@@ -1,0 +1,20 @@
+export sha256 97f5481f5182534499beef32b47284e04c01dd6be683585dde808f520f294596 comments 13
+X1 HELD live k=016 exit 2 (want 2 MISSING); live k=008 exit 0 (want 0), 8 turns, prefix sha256 70ef50a4fb723bc48bd86055c434633aa694dd1210b904baa5bca4568af8a929
+  fixture duplicate_004: exit 0
+  fixture gap_005: exit 0
+  fixture swapped_speaker_006: exit 0
+  fixture edited_after_snapshot_003: exit 0
+X2 REFUTED 0 of 4 fixtures rejected
+SUPP fixture edited_no_snapshot_007: exit 0
+SUPP fixture wrong_account_002: exit 0
+SUPP fixture malformed_header_004: exit 0
+SUPP fixture order_vs_time_003: exit 0
+SUPP fixture touched_same_bytes_with_snapshot_003: exit 0
+  live k=008 shuffle: multiset True, alternation True, perm [7, 4, 5, 8, 1, 6, 3, 2]
+  synthetic k=016 shuffle: exit 0, multiset True, alternation True, not identity True, perm [5, 16, 13, 12, 15, 4, 1, 8, 9, 6, 7, 2, 11, 10, 3, 14]
+  synthetic k=024 shuffle: exit 0, multiset True, alternation True, not identity True, perm [23, 24, 5, 2, 15, 8, 13, 12, 19, 4, 17, 18, 3, 6, 9, 20, 11, 16, 21, 14, 1, 10, 7, 22]
+  synthetic k=032 shuffle: exit 0, multiset True, alternation True, not identity True, perm [17, 16, 27, 2, 21, 26, 31, 28, 29, 4, 11, 12, 7, 24, 9, 30, 19, 6, 13, 14, 3, 32, 25, 22, 1, 10, 15, 8, 23, 20, 5, 18]
+  synthetic k=040 shuffle: exit 0, multiset True, alternation True, not identity True, perm [5, 32, 35, 34, 7, 28, 25, 20, 11, 36, 13, 24, 9, 6, 27, 14, 39, 18, 33, 2, 31, 26, 17, 30, 15, 4, 23, 40, 29, 22, 21, 38, 19, 8, 3, 10, 1, 12, 37, 16]
+X3 HELD 5 of 5 shuffle rows hold
+VERDICT 2 of 3 as registered
+DIGEST 1237f45c75f95d25345ae3be0012dfd1481714a08b986c890a8ca635d9ac58ea

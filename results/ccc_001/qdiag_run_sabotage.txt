@@ -1,0 +1,34 @@
+mappings checked: pi0 byte-identical to probes.QUESTION and common.EXPLICIT; option line, instruction and keys agree for pi0-pi5
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 13859.77it/s]
+option_token_ids [32, 33, 34] vocab 151936 torch 2.15.0+cpu
+[transformers] `past_key_values`/`cache_params` are deprecated. Use `cache` instead.
+/usr/local/lib/python3.13/site-packages/torch/nn/modules/module.py:1798: FutureWarning: `past_key_values` is deprecated and will be removed in version 5.40.0 for `Qwen2ForCausalLM.forward`. Use `cache` instead.
+  return forward_call(*args, **kwargs)
+P0 REFUTED max |p - qualify.json| over D and E (48 items x 3) = 0.666662 (<= 0.01)
+P1 HELD cached vs uncached, arms E F16 F64 EF64: max diff 0.000000 (<= 0.01), same modal letter on 96 of 96 (= 96)
+SUPP P1 arm E     max diff 0.000000  prompt tokens 185..187
+SUPP P1 arm F16   max diff 0.000000  prompt tokens 640..642
+SUPP P1 arm F64   max diff 0.000000  prompt tokens 2344..2346
+SUPP P1 arm EF64  max diff 0.000000  prompt tokens 2437..2439
+P2 HELD uncached mean G(E)-G(D) = 0.0000 (< 0.10)
+SUPP P2 uncached Q2 components: gain 0.0000 (>= 0.10 to pass), E>D on 0 of 24 (>= 14 to pass), Q2 fails
+P3 REFUTED arm E probes on F16 cache vs arm E uncached: max diff 0.000000 (> 0.01)
+SUPP P3 positions: E prefix 114 tokens, F16 cache 569 tokens; suffix starts at position 569 instead of 114
+SUPP P3b (development check, not registered) E probes on an unrelated 114-token cache (first 114 tokens of F16's prefix), positions as arm E: max diff 0.000000
+P4 REFUTED median letter mass per arm (>= 0.90 each): D 0.0000  E 0.0000  F16 0.0000  F64 0.0000  EF64 0.0000
+SUPP P4 arm D     min mass 0.0000, items below 0.90: 24 of 24; per item 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SUPP P4 arm E     min mass 0.0000, items below 0.90: 24 of 24; per item 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SUPP P4 arm F16   min mass 0.0000, items below 0.90: 24 of 24; per item 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SUPP P4 arm F64   min mass 0.0000, items below 0.90: 24 of 24; per item 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SUPP P4 arm EF64  min mass 0.0000, items below 0.90: 24 of 24; per item 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000 0.000
+SUPP pi1 {'accept': 'B', 'reject': 'C', 'notenough': 'A'}: D modal {'A': 24, 'B': 0, 'C': 0}, E modal {'A': 24, 'B': 0, 'C': 0}; D picks not-enough (A) on 24 of 24; Q2 gain 0.0000, E>D on 0 of 24, Q2 fails
+SUPP pi2 {'accept': 'C', 'reject': 'A', 'notenough': 'B'}: D modal {'A': 24, 'B': 0, 'C': 0}, E modal {'A': 24, 'B': 0, 'C': 0}; D picks not-enough (B) on 0 of 24; Q2 gain 0.0000, E>D on 0 of 24, Q2 fails
+SUPP pi3 {'accept': 'B', 'reject': 'A', 'notenough': 'C'}: D modal {'A': 24, 'B': 0, 'C': 0}, E modal {'A': 24, 'B': 0, 'C': 0}; D picks not-enough (C) on 0 of 24; Q2 gain 0.0000, E>D on 0 of 24, Q2 fails
+SUPP pi4 {'accept': 'A', 'reject': 'C', 'notenough': 'B'}: D modal {'A': 24, 'B': 0, 'C': 0}, E modal {'A': 24, 'B': 0, 'C': 0}; D picks not-enough (B) on 0 of 24; Q2 gain 0.0000, E>D on 0 of 24, Q2 fails
+SUPP pi5 {'accept': 'C', 'reject': 'B', 'notenough': 'A'}: D modal {'A': 24, 'B': 0, 'C': 0}, E modal {'A': 24, 'B': 0, 'C': 0}; D picks not-enough (A) on 24 of 24; Q2 gain 0.0000, E>D on 0 of 24, Q2 fails
+P5 REFUTED arm D picks the not-enough letter on [24, 0, 0, 0, 24] of 24 for pi1-pi5 (<= 2 each)
+P6 HELD mean G(E)-G(D) for pi1-pi5 = [0.0, 0.0, 0.0, 0.0, 0.0] (< 0.10 each)
+VERDICT 3 of 7 as registered
+DIGEST 56229be599b7c575824790120723bb0e5409d4d08be4b62b3e5f6c2f5f96ab58
+SABOTAGE expected P0 REFUTED and P4 REFUTED: True
+exit 1
