@@ -22,8 +22,8 @@ class Block(nn.Module):
         return x + s.down(F.gelu(s.up(s.ln2(x))))
 
 class GPT(nn.Module):
-    def __init__(s, d, L, h):
-        super().__init__(); s.emb = nn.Embedding(VOCAB, d)
+    def __init__(s, d, L, h, vocab=VOCAB):   # vocab added for TLM-004; default keeps TLM-001..003 unchanged
+        super().__init__(); s.emb = nn.Embedding(vocab, d)
         s.blocks = nn.ModuleList(Block(d, h) for _ in range(L)); s.lnf = nn.LayerNorm(d)
     def forward(s, x):
         h = s.emb(x)

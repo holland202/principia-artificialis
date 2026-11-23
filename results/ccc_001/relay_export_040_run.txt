@@ -1,0 +1,17 @@
+# CCC-001 relay stop export (turn 040 reached), 2026-11-23T04:27:55Z, Python 3.13.18
+# Extractor: experiments/ccc_001/relay_extract.py at a3c4b81 (branch claude/ccc-001-rendering, PR #177), unchanged, run from a copy.
+# Prior prefixes 032/024/016/008_archival: copies of results/ccc_001/relay_prefix_*.json at a3c4b81.
+$ gh api repos/holland202/principia-artificialis/issues/172/comments --paginate > results/ccc_001/relay_thread.json
+$ sha256sum results/ccc_001/relay_thread.json
+7da97b5dbaee95a060be79b708aaf099669ef5895f8fbed07ea197b1a1ae249d  results/ccc_001/relay_thread.json
+comments 49 edited 0
+$ python3 -I relay_extract.py results/ccc_001/relay_thread.json --checkpoint 40 --snapshot relay_prefix_032.json --out relay_prefix_040.json  (second run to another path gave the same file sha256)
+checkpoint 040 (secondary): 40 turns, file sha256 b6b91710b0d06d3ae60e5ce54f78eff45b307a618069232e9b411cd4e173957a -> results/ccc_001/relay_prefix_040.json
+exit 0
+$ python3 -I experiments/ccc_001/relay_check_040.py relay_prefix_040.json relay_prefix_032.json relay_prefix_024.json relay_prefix_016.json relay_prefix_008_archival.json
+keys ['body', 'body_sha256', 'comment_id', 'created_at', 'edited', 'nnn', 'original_body_available', 'rendered', 'speaker', 'updated_at']
+turn numbers 001-040 once, in order: True
+bodies equal to relay_prefix_032.json 32 of 32
+bodies equal to relay_prefix_024.json 24 of 24
+bodies equal to relay_prefix_016.json 16 of 16
+bodies equal to relay_prefix_008_archival.json 8 of 8
