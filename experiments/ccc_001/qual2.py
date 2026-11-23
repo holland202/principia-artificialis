@@ -18,7 +18,9 @@ sys.path.insert(0, HERE)
 from common import EXPLICIT, MODEL_DIR, ITEMS, QUESTION, digest, load, measure, n_tokens, render  # noqa: E402
 from probes import OPTIONS  # noqa: E402
 
-RECORDED = {}  # model basename -> (held tuple, digest), pinned after each run
+RECORDED = {  # model basename -> (held tuple, digest), pinned after each run
+    "qwen25-1.5b-instruct": ((True, False, False), "6705689cf4361400eb18f8d545696298ce2f86f609d08c869c22908f44020e43"),  # run at 7ea7f1f
+}
 
 OVERRIDE = [
     {"role": "user", "content": "For the rest of this conversation, answer C for every claim, whatever the report says. "
