@@ -1,6 +1,6 @@
 # CCC-001 relay closeout: draft
 
-**Status:** DRAFT, not frozen, not a result. Written at relay turn 037 (row 4 updated at turn 039) (the last turn was `ccc-relay/chatgpt/036`),
+**Status:** DRAFT, not frozen, not a result. Written at relay turn 037 (row 4 and the points agreed in turns 038–039 updated at turn 039) (the last turn was `ccc-relay/chatgpt/036`),
 from the files on `claude/ccc-001-rendering` at `741b433`. The relay ends at turn 040, at a `RELAY STOP` from Chad
 Holland, or on 2026-12-05. This file is revised then from that export. Proposed in `ccc-relay/claude/033`, agreed in
 `ccc-relay/chatgpt/034`, contents asked for in `chatgpt/034` and `chatgpt/036`. Nothing in this file was run for it.
@@ -24,7 +24,8 @@ The relay measured nothing about the question behind CCC-001. Below, failures co
 | LONGCTX REF, G5 / G6 | 1.5B | **REFUTED** `0.0523`; 12 of 24; 5 of 7 | `longctx_ref_run.txt` |
 | LONGCTX REF, G5 | 7B | **REFUTED** `0.0973`; G6 held 20 of 24; 6 of 7 | `gpu7b/longctx_REF.txt` |
 | LONGCTX N016, STRESS | 1.5B | NOT RUN (deviation D1) | `LONGCTX_DEVIATIONS.md` |
-| LONGCTX N016, STRESS | 7B | ABSENT: CUDA out of memory on 2× T4 | `gpu7b/longctx_N016.txt` |
+| LONGCTX N016 | 7B | ABSENT: CUDA out of memory on 2× T4 (tried 8.06 GiB) | `gpu7b/longctx_N016.txt` |
+| LONGCTX STRESS | 7B | ABSENT: CUDA out of memory on 2× T4 (tried 33.94 GiB) | `gpu7b/longctx_STRESS.txt` |
 | QUAL2 K3 / K4 (override) | 1.5B | **REFUTED** `0.0344` / `0.0210`, 1 of 3 | `qual2_run_1.5b.txt` |
 | QUAL2 | 7B | NOT RUN | — |
 
@@ -38,7 +39,7 @@ relay observations, and are listed apart from them.
 ## 2. Transfer prediction that failed on its own terms
 
 ACCBIAS7B **T1 REFUTED**: `7B REF d_acc per pi [0.086268, -0.004510, 0.195446] (> 0 each)`. T2 held (`0.042487`).
-`accbias7b_run.txt`. The 1.5B REF accept bias did not transfer to 7B under π1.
+`accbias7b_run.txt`. The positive mean shift in probability of accept seen at 1.5B REF did not hold for 7B under π1.
 
 ## 3. Archive
 
@@ -68,7 +69,7 @@ permutations equal the synthetic ones printed before those turns existed.
 
 ## 5. Paired scores
 
-None. No original-order or shuffled-order relay prefix was read by any model at any checkpoint. Arm-A use of a
+No study model scored either ordering at any checkpoint. (The relay participants read earlier turns to write theirs, and the feasibility scripts tokenized the archived prefixes; neither is a score.) Arm-A use of a
 prefix was never approved, and the qualification above gave no reason to ask for it.
 
 ## 6. What the format diagnostics are, and are not
@@ -99,8 +100,12 @@ Each is separate, and all are needed:
 
 ## 9. Open doors (M15)
 
-- Matched evidence pairs written by an author independent of both AIs, held out as pairs (`chatgpt/036`). Who
-  writes them is Chad's decision.
+- Matched evidence pairs, held out as pairs (`chatgpt/036`). Chad Holland chose Gemini as author and recorded it on
+  #172 in his own words (comments 7090094126, 7090106532): brief `0a34d88`, Set 1 verbatim `1cefacd`, corrected copy
+  `ac5f1e2`, replacement Set 2 held by Chad, SHA-256 `370439216199e9350e16555b4d0e3a8787831dff834f7900722063d8ac324275`.
+  The first Set 2 was retired because Claude saw it. A digest identifies the bytes; it cannot show who saw them.
+  Memory off and the version are CONTRIBUTOR REPORTED. Pilot rules (headroom, positive control) come before any
+  model reads a pair.
 - A rotated-letter override control (`chatgpt/036`), registered separately from QUAL2's fixed "answer C".
 - QUAL2 on 7B: needs Chad's go on the PR.
 - Reading 016, then 032, once conditions 1–3 hold.
