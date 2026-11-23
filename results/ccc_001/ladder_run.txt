@@ -1,0 +1,24 @@
+P0a rows 2592 (2592); max |pair sum of y| 2.85e-16 (<= 1e-9)
+P0b centred ranks [6, 18, 26, 72] (want [6, 18, 26, 72]); columns [6, 18, 26, 108]
+P0c 27 rebuilt cell means vs accbias.json: max |diff| 4.89e-07 (<= 1e-6)
+P0d synthetic k=0: R0 rss 2.84e-29 mse 1.79e-32; R1 rss 3.84e-29 mse 2.94e-32; R2 rss 2.92e-29 mse 3.62e-32; R3 rss 4.08e-30 mse 1.24e-33
+P0d synthetic k=1: R0 rss 3.91e+01 mse 1.51e-02; R1 rss 2.51e-28 mse 7.17e-32; R2 rss 3.64e-28 mse 7.71e-32; R3 rss 7.07e-30 mse 1.99e-33
+P0d synthetic k=2: R0 rss 2.14e+01 mse 8.25e-03; R1 rss 7.65e+00 mse 2.95e-03; R2 rss 2.49e-28 mse 8.28e-32; R3 rss 5.47e-30 mse 2.19e-33
+P0e identity E:=D: max |fitted| or MSE over 4 rungs 0.00e+00 (<= 1e-30)
+P0 HELD rows, ranks, rebuild, synthetic and identity gate (a-e all required)
+P1 HELD two-way beats additive held out: D01 +0.011175580 (> 0); items with D01(i) > 0: 16 of 24 (>= 13)
+REPORT R0 additive: held-out MSE 0.126875646 RMSE 0.356196
+REPORT R1 two-way: held-out MSE 0.115700066 RMSE 0.340147
+REPORT R2 MxLxS: held-out MSE 0.108456292 RMSE 0.329327
+REPORT R3 layout ceiling: held-out MSE 0.101093657 RMSE 0.317952
+REPORT D01 (R0 - R1) +0.011175580 items +/-/tied 16/8/0
+REPORT D12 (R1 - R2) +0.007243774 items +/-/tied 20/4/0
+REPORT D23 (R2 - R3) +0.007362635 items +/-/tied 20/4/0
+REPORT gain fraction F = D01 / (MSE0 - MSE2) = +0.011175580 / +0.018419353 = 0.606730
+REPORT in-sample R0 additive: RSS 322.886857938 = layout part 82.233406474 + item part 240.653451465
+REPORT in-sample R1 two-way: RSS 288.505501189 = layout part 47.852049724 + item part 240.653451465
+REPORT in-sample R2 MxLxS: RSS 267.405687887 = layout part 26.752236422 + item part 240.653451465
+REPORT in-sample R3 layout ceiling: RSS 240.653451465 = layout part 0.000000000 + item part 240.653451465
+REPORT additive coefficients (all 24 items): meaning accept +0.085803 reject -0.083559 notenough -0.002245 | letter A -0.152549 B +0.044386 C +0.108163 | slot 1 +0.090954 2 -0.118363 3 +0.027409
+VERDICT 2 of 2 as registered
+DIGEST a69d1bfa561bdfe704dd135bafbaaccb77d01ab88c72e36dcd607544f6d393be
