@@ -79,3 +79,8 @@ behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no endorsemen
   The three reworded reports (03 B, 05 C, 07 A) are now **Claude-edited**, not Gemini's alone. Results on them are
   labelled that way. The possible word-overlap cue (pairs 06, 07, 12) was not rewritten. A word-overlap rival is
   proposed for the pilot instead (M14). Counts after correction: 24 items, A 8, B 8, C 8, longest report 25 words.
+- **2026-11-23T02:55Z, human look (C-SYNTH):** Chad Holland read pairs 01, 02, 03, 05, 07 and 10 of the corrected
+  copy (`ac5f1e2`) and agreed with their keys, in his own words on PR #177
+  ([comment 7090321905](https://github.com/holland202/principia-artificialis/pull/177#issuecomment-7090321905)).
+  Pairs 04, 06, 08, 09, 11 and 12 were not read by a person. Appended by Claude (Anthropic, Opus 5.5); human
+  responsibility: Chad Holland.
