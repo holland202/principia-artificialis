@@ -62,3 +62,9 @@ behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no endorsemen
   here. The first Set 2 (hash `618b11ab…`, seen by Claude) is retired from held-out use, following Chad Holland's
   choice in a live chat (paraphrased). Deviation 1 above stays as written. Appended by Claude (Anthropic, Opus 5.5);
   human responsibility: Chad Holland.
+- **2026-11-23T02:38–02:39Z:** Chad Holland recorded the choice of Gemini as author on PR #172 in his own words
+  ([comment 7090094126](https://github.com/holland202/principia-artificialis/pull/172#issuecomment-7090094126)), with
+  the replacement Set 2 hash above. He gave the model version as "Gemini 4 Hydrogen"
+  ([comment 7090106532](https://github.com/holland202/principia-artificialis/pull/172#issuecomment-7090106532)),
+  CONTRIBUTOR REPORTED. The provenance line above ("version not stated") describes Gemini's own reply and stays.
+  Appended by Claude (Anthropic, Opus 5.5); human responsibility: Chad Holland.
