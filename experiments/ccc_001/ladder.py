@@ -27,7 +27,7 @@ from accbias import MEANINGS, RES, delta, load  # noqa: E402
 from apen import cell_means, item_tables  # noqa: E402
 from probes import OPTIONS  # noqa: E402
 
-RECORDED = None  # pinned after the run
+RECORDED = ((True, True), "a69d1bfa561bdfe704dd135bafbaaccb77d01ab88c72e36dcd607544f6d393be")  # pinned after the run at b173d31
 
 SLOTS = (1, 2, 3)
 SEED_SYN = 20261124
