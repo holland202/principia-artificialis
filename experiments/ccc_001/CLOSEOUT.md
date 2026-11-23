@@ -1,17 +1,20 @@
-# CCC-001 relay closeout: draft
+# CCC-001 relay closeout
 
-**Status:** DRAFT, not frozen, not a result. Written at relay turn 037 (row 4 and the points agreed in turns 038–039 updated at turn 039) (the last turn was `ccc-relay/chatgpt/036`),
-from the files on `claude/ccc-001-rendering` at `741b433`. The relay ends at turn 040, at a `RELAY STOP` from Chad
-Holland, or on 2026-12-05. This file is revised then from that export. Proposed in `ccc-relay/claude/033`, agreed in
-`ccc-relay/chatgpt/034`, contents asked for in `chatgpt/034` and `chatgpt/036`. Nothing in this file was run for it.
-Every number is copied from the committed log it cites.
+**Status:** FINAL as the record of the relay, 2026-11-23. It is not a result about conversation order, because none
+was measured. The relay closed at turn 040 (`ccc-relay/chatgpt/040`, comment 7091583361, 2026-11-23T04:26:32Z). The
+draft was written at turn 037 and updated at 039 (last at `a3c4b81`, as `CLOSEOUT_DRAFT.md`). This version applies
+the changes ChatGPT asked for in 040, after Chad Holland directed it in live chat on 2026-11-23. Proposed in
+`ccc-relay/claude/033`, agreed in `ccc-relay/chatgpt/034`, contents asked for in `chatgpt/034`, `036` and `040`. The
+only things run for this file are the export checks in `results/ccc_001/closeout_export_check.txt`. Every other
+number is copied from the committed log it cites. The changes from the draft are listed at the end (W9).
 
-## Headline, if no primary checkpoint is ever read
+## Finding, 2026-11-23
 
-Wording proposed by ChatGPT (OpenAI) in `ccc-relay/chatgpt/034`:
+Wording from ChatGPT (OpenAI), `ccc-relay/chatgpt/034` and `040`:
 
-> The relay archived checkpoints 016 and 032. Neither checkpoint produced a model score for the original or
-> shuffled conversation. The effect of conversation order at those checkpoints remains unmeasured.
+> The relay reached its planned endpoint at turn 040. It archived primary checkpoints 016 and 032. No study model
+> scored the original or shuffled conversation at either checkpoint. The effect of conversation order on
+> consistency and correctness remains unmeasured.
 
 The relay measured nothing about the question behind CCC-001. Below, failures come first (M8).
 
@@ -49,10 +52,31 @@ ACCBIAS7B **T1 REFUTED**: `7B REF d_acc per pi [0.086268, -0.004510, 0.195446] (
 | 016 | primary | 16 | `fe8775a1c48731844fb129ae71c759928bdb0cc8c32be69a455e9dc4ae23f6e6` | `relay_snapshot_016_run.txt` |
 | 024 | secondary | 24 | `d5b261f2a0d7e621c9874d693bd82b1f15d5d63080b0921b7a61f9127518a1cb` | `relay_snapshot_024_run.txt` |
 | 032 | primary | 32 | `9a9c07ad0f4f9cece4d5289eceb188dd8643405e71ef4772548b2be3b7715c3a` | `relay_snapshot_032_run.txt` |
-| 040 | secondary | — | MISSING at the time of this draft | — |
+| 040 | secondary | 40 | `b6b91710b0d06d3ae60e5ce54f78eff45b307a618069232e9b411cd4e173957a` | `relay_prefix_040.json`, `relay_export_040_run.txt` |
 
 Edited turns 0 in the 016, 024 and 032 snapshot runs. Each later snapshot's bodies equal every earlier one's. The 024 and 032 shuffle
 permutations equal the synthetic ones printed before those turns existed.
+
+**The two final exports are different objects (`chatgpt/040`).**
+
+- **Full PR conversation:** `results/ccc_001/relay_thread.json`, SHA-256
+  `7da97b5dbaee95a060be79b708aaf099669ef5895f8fbed07ea197b1a1ae249d`. It holds all 49 comments on #172 at
+  2026-11-23T04:27:55Z (`comments 49 edited 0`): the 40 relay turns, plus 9 comments that are not turns (Chad
+  Holland's 5 and Claude's 4 `ccc/claude/*` notes). These 9 are part of the research record but not of the
+  numbered transcript.
+- **Numbered transcript:** `results/ccc_001/relay_prefix_040.json`, SHA-256 above. It holds turns 001–040 only.
+- **Extraction.** `experiments/ccc_001/relay_extract.py` at `a3c4b81`, run unchanged. The export was committed at
+  `d843087` (PR #180, merged into `main` at `0b7ad95`).
+- **Checks, re-run at closeout, SELF-TESTED** (`closeout_export_check.txt`). Both files rehash to the values above.
+  `turn numbers 001-040 once, in order: True`. Turns 001–032 match the archived 032 prefix: `32 of 32`. The 024,
+  016 and 008 prefixes also match in full. Every prefix-040 body equals its comment in `relay_thread.json`:
+  `40 of 40`.
+- **Discrepancy, kept (M8).** `relay_check_040.py`, the PR #180 check, compares the stored `body_sha256` fields,
+  not the body text. A sabotaged copy with one body altered and two turns swapped still printed `32 of 32` for
+  bodies. The order check caught the swap (`False`). A stricter check, `relay_check_bodies.py`, recomputes each
+  digest from the text. On the real files it prints `stored body_sha256 equals recomputed 40 of 40` and `32 of 32`
+  against 032. On the sabotaged copy it prints `39 of 40` and `31 of 32`. The PR #180 conclusion stands, and the
+  stricter check now backs it.
 
 ## 4. Prompt length: measured and projected
 
@@ -112,9 +136,11 @@ Each is separate, and all are needed:
 
 ## Known limits (from RELAY.md)
 
-Both AIs knew they were recorded and knew the hypothesis. Claude's turns came from fresh scheduled sessions and
-ChatGPT's turns did not always come from the same kind of session. Both share Chad's standing instructions and
-saved memory.
+Both AIs knew they were recorded and knew the hypothesis. Both share Chad's standing instructions and saved memory.
+The sessions were not all the same kind. The turn headers give (`closeout_export_check.txt`): Claude 18 `fresh
+scheduled`, 1 `interactive, started by Chad` (001), 1 `ongoing chat (Chad present)` (039); ChatGPT 18 `fresh
+scheduled`, 2 `interactive`. The draft said Claude's turns came from fresh scheduled sessions. That was wrong for
+001 and 039.
 
 ## Credit and provenance (M13)
 
@@ -122,3 +148,22 @@ The question behind CCC-001 is Federico Talens-Alesson's. Crediting him implies 
 Draft by Claude (Anthropic, Opus 5.5), fresh scheduled session, relay turn 037; headline wording and section
 requirements by ChatGPT (OpenAI), turns 034 and 036. Human validation: not performed. Human responsibility: Chad
 Holland. Review level: none.
+
+Final revision, 2026-11-23: Claude (Anthropic, Opus 5.5), in a session started by the relay's scheduled task that
+continued as a live chat with Chad Holland. Final changes asked for by ChatGPT (OpenAI) in `chatgpt/040`.
+Direction: Chad Holland. Human validation: not performed. Human responsibility: Chad Holland. Review level:
+direction only.
+
+## Changes from the draft (W9)
+
+The draft is kept in Git at `a3c4b81` as `experiments/ccc_001/CLOSEOUT_DRAFT.md`. Superseded, verbatim:
+
+- Title: "CCC-001 relay closeout: draft".
+- Status: "DRAFT, not frozen, not a result. Written at relay turn 037 (row 4 and the points agreed in turns 038–039
+  updated at turn 039) (the last turn was `ccc-relay/chatgpt/036`), … Nothing in this file was run for it."
+- Headline section title: "Headline, if no primary checkpoint is ever read". Its wording: "The relay archived
+  checkpoints 016 and 032. Neither checkpoint produced a model score for the original or shuffled conversation. The
+  effect of conversation order at those checkpoints remains unmeasured."
+- Archive row 040: "MISSING at the time of this draft".
+- Known limits: "Claude's turns came from fresh scheduled sessions and ChatGPT's turns did not always come from the
+  same kind of session."
