@@ -52,3 +52,13 @@ Every pair shares its claim and has the two keys its type names. Words changed b
 Items: Gemini (Google), version not stated, 2026-11-23, relayed by Chad Holland. Intake, counts and reading:
 Claude (Anthropic, Opus 5.5). Human validation: not performed. Human responsibility: Chad Holland. The question
 behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no endorsement or validation by him.
+
+## Changes (W9)
+
+- **2026-11-23, later:** Set 2 replaced. Chad Holland asked a new Gemini chat, with memory off (CONTRIBUTOR
+  REPORTED), for a new Set 2, saved it on his device and sent Claude only this line from Termux:
+  `370439216199e9350e16555b4d0e3a8787831dff834f7900722063d8ac324275  /data/data/com.termux/files/home/set2_v2.txt`.
+  Claude has not seen that file. Its contents, its pair count and the Gemini version that wrote it are not checked
+  here. The first Set 2 (hash `618b11ab…`, seen by Claude) is retired from held-out use, following Chad Holland's
+  choice in a live chat (paraphrased). Deviation 1 above stays as written. Appended by Claude (Anthropic, Opus 5.5);
+  human responsibility: Chad Holland.
