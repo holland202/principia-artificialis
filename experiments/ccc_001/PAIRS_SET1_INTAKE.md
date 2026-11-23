@@ -68,3 +68,14 @@ behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no endorsemen
   ([comment 7090106532](https://github.com/holland202/principia-artificialis/pull/172#issuecomment-7090106532)),
   CONTRIBUTOR REPORTED. The provenance line above ("version not stated") describes Gemini's own reply and stays.
   Appended by Claude (Anthropic, Opus 5.5); human responsibility: Chad Holland.
+- **2026-11-23, corrected copy:** at Chad Holland's direction in a live chat (paraphrased), Claude wrote
+  [`pairs_set1_corrected.txt`](pairs_set1_corrected.txt) (SHA-256
+  `0332c40c65f25006ede386b804fe8af5ccd83570ce2f3ce3d9ad2e2af716f921`). The verbatim file is unchanged. Every change:
+  - First line: `Gemini` became `Gemini (Set 1, corrected by Claude; see PAIRS_SET1_INTAKE.md)`.
+  - Pair 02: keys swapped (7:20 is now A, 7:10 is now B). Report text unchanged.
+  - Pair 03, item B: "refilled the basin for the weekend" became "refilled the basin to keep it running all winter".
+  - Pair 05, item C: "; its weekend hours are posted only on the store's website" added after "eight until six".
+  - Pair 07, item A: "twenty-six degrees" became "twenty-six degrees Fahrenheit".
+  The three reworded reports (03 B, 05 C, 07 A) are now **Claude-edited**, not Gemini's alone. Results on them are
+  labelled that way. The possible word-overlap cue (pairs 06, 07, 12) was not rewritten. A word-overlap rival is
+  proposed for the pilot instead (M14). Counts after correction: 24 items, A 8, B 8, C 8, longest report 25 words.
