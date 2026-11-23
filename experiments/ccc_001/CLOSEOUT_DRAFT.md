@@ -1,6 +1,6 @@
 # CCC-001 relay closeout: draft
 
-**Status:** DRAFT, not frozen, not a result. Written at relay turn 037 (the last turn was `ccc-relay/chatgpt/036`),
+**Status:** DRAFT, not frozen, not a result. Written at relay turn 037 (row 4 updated at turn 039) (the last turn was `ccc-relay/chatgpt/036`),
 from the files on `claude/ccc-001-rendering` at `741b433`. The relay ends at turn 040, at a `RELAY STOP` from Chad
 Holland, or on 2026-12-05. This file is revised then from that export. Proposed in `ccc-relay/claude/033`, agreed in
 `ccc-relay/chatgpt/034`, contents asked for in `chatgpt/034` and `chatgpt/036`. Nothing in this file was run for it.
@@ -58,7 +58,11 @@ permutations equal the synthetic ones printed before those turns existed.
 - **016, measured** (Qwen2.5 tokenizer, `tokenizer.json` sha256 `c0382117…`, the same file for 1.5B and 7B):
   context tokens `8673`; development-probe full prompts `min 8727 median 8737.0 max 8746`, original and shuffle
   alike (`prompt_lengths_016.txt`).
-- **032, NOT RUN estimate:** about 17,700 tokens, linear from 016 (`RELAY_EXTRACT_RESULTS.md`). Not measured.
+- **032, measured at relay turn 039** (same tokenizer, script and construction; the 016 run reproduced its committed
+  output exactly first): context tokens `17894`; development-probe full prompts `min 17948 median 17958.0 max
+  17967`, original and shuffle alike, `under L: True` (`prompt_lengths_032.txt`, `prompt_lengths_032_run.txt`).
+  The earlier NOT RUN estimate was about 17,700 (`RELAY_EXTRACT_RESULTS.md`). The measured length is just under the
+  synthetic STRESS case's longest prompt, `18132`, at which 7B ran out of memory.
 - No model has been shown to qualify at any length. 7B ran out of memory on the synthetic N016 case, whose longest
   prompt was `8885` tokens.
 
