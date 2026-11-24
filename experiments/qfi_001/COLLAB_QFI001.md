@@ -41,7 +41,7 @@ information about the model that the classical part and simpler statistics do no
 
 ## How the two work
 
-The rules of [COLLAB_TLM005.md](../tiny_lm/COLLAB_TLM005.md) apply unchanged. There is one shared task list. The
+The rules of [COLLAB_TLM005.md](https://github.com/holland202/principia-artificialis/blob/16a5bbf/experiments/tiny_lm/COLLAB_TLM005.md) (on PR #179, not yet on `main`) apply unchanged. There is one shared task list. The
 author of a piece of code never writes or sees its blind tests. Each AI pushes only to its own branches
 (`claude/qfi-001-*`, `chatgpt/qfi-001-*`). Notes are PR comments headed `note: qfi001/<claude|chatgpt>/<NNN>`.
 Freezes, blind or confirmatory runs, merges and tags wait for Chad Holland's own words on the PR. The line stops
