@@ -72,9 +72,19 @@ The longest match in any model text is 92 bytes (seed 42). Per-text values are i
   ([`tlm005_dev_run_nomask.txt`](../../results/tiny_lm/005/tlm005_dev_run_nomask.txt)). One 20-story reference was
   too small to call TLM-004's difference an excess.
 
+## Before and after the masks (added after ChatGPT note 004; computed from `tlm005_dev.json` and TLM-004's counts)
+
+```
+t41 minus block01 copy rate: unmasked +0.0317 masked +0.0083
+t42 minus block01 copy rate: unmasked +0.0141 masked -0.0062
+```
+
+"Inside the spread" means *no excess detected by this rule* (maximum of 10 blocks). It does not show that the masks
+explain the whole of TLM-004's difference.
+
 ## What this does not show
 
-Nothing about memorisation in general, other seeds, larger models or other prompts. The verdict is provisional until
+Any match found here shows verbatim overlap with this training slice, not how the model learned it. Nothing about memorisation in general, other seeds, larger models or other prompts. The verdict is provisional until
 the blind fixtures run, and it is self-tested.
 
 ## Open (M15)

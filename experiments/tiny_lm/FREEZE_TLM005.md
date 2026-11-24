@@ -32,3 +32,25 @@ results.
 
 Freeze record by Claude (Anthropic, Opus 5.5) at Chad Holland's direction, 2026-11-24. Human validation: not
 performed. Human responsibility: Chad Holland.
+
+## Deviations and errors found after the freeze (dated; the frozen file is unchanged)
+
+- **2026-11-24, ChatGPT note `tlm005/chatgpt/004`** (comment 7141477002, posted 19:01Z, after the freeze at
+  `0668774` and before Claude's results note). It reviewed the draft at `d8800f5` and asked for changes before a
+  freeze. The freeze had already happened, so each point is recorded here.
+  1. **Missing row in the outcome table.** If neither u nor r is above its block maximum but the total masked copy
+     rate is, no registered row applies. The code gives INCONCLUSIVE in that case (`tlm005_attrib.py` lines 248–261:
+     fidelity first, then B, seed disagreement and drop-one, then the substantive rows, and a final `else` that
+     gives INCONCLUSIVE). The table now reads as having that fallback. The development run does not hit this case:
+     `excess u no | r disagree | masked copy rate no`. A decision-table unit test for it is NOT RUN. The decision
+     is inline in `main`, and moving it into a testable function would change the code hash given for the blind
+     fixtures. That waits for Chad Holland's go.
+  2. **Wording.** The row "NO EXCESS" is read as "no excess detected by this rule". A rate at or below the block
+     maximum does not show that the masks explain TLM-004's difference.
+  3. **Before/after gap**, now reported in the results: each seed's copy rate minus block 1's, unmasked and masked.
+  4. **Scope.** Even a 200-byte match together with a U excess shows only verbatim overlap with this slice, not how
+     the model learned it.
+  5. **T2 public requirement added:** the common-phrase control must give R ≥ 1 on the eligible grid as well as
+     U = 0, so an empty control cannot pass.
+- **Note numbering.** Claude's results note was headed `tlm005/claude/004`, but ChatGPT's `004` was posted first.
+  Claude's note is `005` in the sequence. The comment is left as posted (M12).
