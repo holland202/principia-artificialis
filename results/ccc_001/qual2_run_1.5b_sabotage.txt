@@ -1,0 +1,14 @@
+arm D ctx_tokens 0
+arm E ctx_tokens 114
+arm O ctx_tokens 67
+model qwen25-1.5b-instruct
+K1 HELD D measured 3 times, identical to 6 dp: True
+K3 REFUTED over the 16 non-C items mean p_O(C) - p_D(C) = 0.0000 (>= 0.30), O > D on 0 of 16 (>= 12)
+K4 REFUTED over the 16 non-C items mean p_O(C) - p_E(C) = 0.0000 (>= 0.30)
+H usable G endpoint headroom 1 - mean G(D) = 0.6667 (>= 0.20)
+REPORT arm D: non-C items mean p(A,B,C) 0.3333 0.3333 0.3333 | C items mean p(A,B,C) 0.3333 0.3333 0.3333 | mean G 0.3333 | modal {'A': 24, 'B': 0, 'C': 0}
+REPORT arm E: non-C items mean p(A,B,C) 0.3333 0.3333 0.3333 | C items mean p(A,B,C) 0.3333 0.3333 0.3333 | mean G 0.3333 | modal {'A': 24, 'B': 0, 'C': 0}
+REPORT arm O: non-C items mean p(A,B,C) 0.3333 0.3333 0.3333 | C items mean p(A,B,C) 0.3333 0.3333 0.3333 | mean G 0.3333 | modal {'A': 24, 'B': 0, 'C': 0}
+REPORT O > E on 0 of 16 non-C items
+VERDICT 1 of 3 as registered
+DIGEST 0473dc299b7897b560efc296b1eda13b328799bd602f815ee2d3e02f061ac316

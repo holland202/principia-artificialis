@@ -1,0 +1,62 @@
+# CCC-001 closeout re-check of the stop export, 2026-11-23T19:09:37Z, Python 3.13.18
+# on branch claude/ccc-001-rendering after merging main at 0b7ad95
+$ sha256sum results/ccc_001/relay_thread.json results/ccc_001/relay_prefix_040.json
+7da97b5dbaee95a060be79b708aaf099669ef5895f8fbed07ea197b1a1ae249d  results/ccc_001/relay_thread.json
+b6b91710b0d06d3ae60e5ce54f78eff45b307a618069232e9b411cd4e173957a  results/ccc_001/relay_prefix_040.json
+$ python3 -I experiments/ccc_001/relay_check_040.py results/ccc_001/relay_prefix_040.json results/ccc_001/relay_prefix_0{32,24,16}.json results/ccc_001/relay_prefix_008_archival.json
+keys ['body', 'body_sha256', 'comment_id', 'created_at', 'edited', 'nnn', 'original_body_available', 'rendered', 'speaker', 'updated_at']
+turn numbers 001-040 once, in order: True
+bodies equal to relay_prefix_032.json 32 of 32
+bodies equal to relay_prefix_024.json 24 of 24
+bodies equal to relay_prefix_016.json 16 of 16
+bodies equal to relay_prefix_008_archival.json 8 of 8
+exit 0
+$ python3 -I -c (count comments and edits in relay_thread.json; list turn ids in relay_prefix_040.json)
+comments 49 edited 0
+prefix turns 40 first 1 claude last 40 chatgpt 7091583361
+$ (sabotage: copy of relay_prefix_040.json with turn 005 body altered and turns 010/011 swapped)
+keys ['body', 'body_sha256', 'comment_id', 'created_at', 'edited', 'nnn', 'original_body_available', 'rendered', 'speaker', 'updated_at']
+turn numbers 001-040 once, in order: False
+bodies equal to relay_prefix_032.json 32 of 32
+bodies equal to relay_prefix_016.json 16 of 16
+exit 0
+
+# Finding: relay_check_040.py compares the stored body_sha256 fields, not the body text. The sabotage above
+# changed a body and swapped two turns; the order check caught it (False), the body check did not (32 of 32).
+# Stricter check added: experiments/ccc_001/relay_check_bodies.py
+$ python3 -I experiments/ccc_001/relay_check_bodies.py results/ccc_001/relay_prefix_040.json results/ccc_001/relay_prefix_0{32,24,16}.json results/ccc_001/relay_prefix_008_archival.json
+stored body_sha256 equals recomputed 40 of 40
+body text equal to relay_prefix_032.json 32 of 32
+body text equal to relay_prefix_024.json 24 of 24
+body text equal to relay_prefix_016.json 16 of 16
+body text equal to relay_prefix_008_archival.json 8 of 8
+exit 0
+$ (sabotage: the same altered copy)
+stored body_sha256 equals recomputed 39 of 40
+body text equal to relay_prefix_032.json 31 of 32
+body text equal to relay_prefix_016.json 15 of 16
+exit 0
+$ python3 -I -c (relay_prefix_040.json bodies vs the live-thread export relay_thread.json, by comment id)
+prefix 040 bodies equal to relay_thread.json bodies 40 of 40
+exit 0
+
+$ python3 -I -c (count the "session:" field of each turn header in relay_prefix_040.json, by speaker)
+chatgpt 'fresh scheduled' 18
+chatgpt 'interactive' 2
+claude 'fresh scheduled' 18
+claude 'interactive, started by Chad' 1
+claude 'ongoing chat (Chad present)' 1
+exit 0
+
+$ python3 -I -c (list comments in relay_thread.json whose first 200 chars lack a "note: ccc-relay/<claude|chatgpt>/NNN" header)
+non-turn comments 9
+7072435570 ccc/claude note
+7073132076 other (Chad Holland)
+7074059377 other (Chad Holland)
+7074068250 ccc/claude note
+7080114112 ccc/claude note
+7080568432 other (Chad Holland)
+7086806256 ccc/claude note
+7090094126 other (Chad Holland)
+7090106532 other (Chad Holland)
+exit 0

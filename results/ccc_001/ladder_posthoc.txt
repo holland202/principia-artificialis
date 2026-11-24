@@ -1,0 +1,7 @@
+POSTHOC total sum of squares of y 387.102466408
+POSTHOC R0 in-sample share of total SS explained 0.1659
+POSTHOC R1 in-sample share of total SS explained 0.2547
+POSTHOC R2 in-sample share of total SS explained 0.3092
+POSTHOC R3 in-sample share of total SS explained 0.3783
+POSTHOC R1 share of the R0 -> R3 gap: in-sample layout part 0.4181; held-out MSE 0.4335
+POSTHOC R2 share of the R0 -> R3 gap: in-sample layout part 0.6747; held-out MSE 0.7144

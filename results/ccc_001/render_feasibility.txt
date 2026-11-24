@@ -1,0 +1,10 @@
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+fixture content sha256 9168a828569434e6fa34e36959c278ba612f6a0a3b914b1119192365438228c8
+fixture prompt sha256 7c20d4c7e78aa915cbea764b2d4eb9cce8e3d1bcf4c39c06529613db963784b9 tokens 194 ids sha256 2c0e2716385c2aa623e74a48eb1e7a97f379ce464e607f760922cfa2ce5d7f9b
+unescaped '<|im_end|>' inside text encodes as [87, 220, 151645, 379]
+escaped   '&lt;|im_end|>' contains 151645: False
+export sha256 97f5481f5182534499beef32b47284e04c01dd6be683585dde808f520f294596 relay turns 12
+rendered bodies containing '<' or '&': 3 | '<' count 4 | '&' count 1
+prefix 008 full prompt tokens (synthetic probe) 4391
+prefix 012 full prompt tokens (synthetic probe) 6587

@@ -1,0 +1,25 @@
+Gemini (Set 1, corrected by Claude; see PAIRS_SET1_INTAKE.md)
+1 | 01 | AB | A | The neighborhood bakery still had six loaves of sourdough on the rack when Maya walked in at noon. | The bakery had sourdough bread available at noon.
+1 | 01 | AB | B | The neighborhood bakery had sold its last loaf of sourdough an hour before Maya walked in at noon. | The bakery had sourdough bread available at noon.
+1 | 02 | AB | A | The morning express bus left the terminal at 7:20, ten minutes ahead of its printed schedule. | The morning express bus departed after 7:15.
+1 | 02 | AB | B | The morning express bus left the terminal at 7:10, ten minutes ahead of its printed schedule. | The morning express bus departed after 7:15.
+1 | 03 | AB | A | City crews drained the stone fountain in Oak Park on Monday and covered the basin for winter. | The Oak Park fountain is shut off for the winter.
+1 | 03 | AB | B | City crews cleaned the stone fountain in Oak Park on Monday and refilled the basin to keep it running all winter. | The Oak Park fountain is shut off for the winter.
+1 | 04 | AB | B | At the airport check-in counter, Daniel's red suitcase weighed fifty-four pounds on the digital scale. | Daniel's suitcase weighs less than fifty pounds.
+1 | 04 | AB | A | At the airport check-in counter, Daniel's red suitcase weighed forty-six pounds on the digital scale. | Daniel's suitcase weighs less than fifty pounds.
+1 | 05 | AC | A | A painted sign on the hardware store window lists Sunday hours from nine until two. | The hardware store is open on Sundays.
+1 | 05 | AC | C | A painted sign on the hardware store window lists weekday hours from eight until six; its weekend hours are posted only on the store's website. | The hardware store is open on Sundays.
+1 | 06 | AC | C | The plumber replaced the rusty trap under the kitchen sink and wiped down the cabinet floor. | The kitchen faucet stops dripping when turned off.
+1 | 06 | AC | A | The plumber replaced the worn washer inside the kitchen faucet so the spout stays dry when closed. | The kitchen faucet stops dripping when turned off.
+1 | 07 | AC | A | Overnight temperatures dropped to twenty-six degrees Fahrenheit, leaving the tomato leaves blackened and limp by sunrise. | Freezing weather damaged the tomato plants.
+1 | 07 | AC | C | Overnight winds knocked over two wooden stakes, leaving the tomato cages leaning against the fence by sunrise. | Freezing weather damaged the tomato plants.
+1 | 08 | AC | C | The stamped slip inside the mystery novel shows that Elena borrowed it from the main branch on Tuesday. | The mystery novel is due back next Tuesday.
+1 | 08 | AC | A | The stamped slip inside the mystery novel shows that Elena must return it to the main branch next Tuesday. | The mystery novel is due back next Tuesday.
+1 | 09 | BC | B | The commuter train pulled into Central Station twenty-two minutes behind its posted arrival time. | The commuter train arrived on time.
+1 | 09 | BC | C | The commuter train pulled into Central Station with every seat in the front car occupied. | The commuter train arrived on time.
+1 | 10 | BC | C | The barista checked the refrigerator under the counter and found four fresh cartons of almond milk. | The coffee shop has oat milk in stock.
+1 | 10 | BC | B | The barista checked the refrigerator under the counter and found the oat milk shelf completely empty. | The coffee shop has oat milk in stock.
+1 | 11 | BC | B | The lifeguard posted a chalkboard notice stating that the outdoor pool water is sixty-four degrees today. | The outdoor pool water is warmer than seventy degrees.
+1 | 11 | BC | C | The lifeguard posted a chalkboard notice stating that the outdoor pool deck closes at eight tonight. | The outdoor pool water is warmer than seventy degrees.
+1 | 12 | BC | C | On Saturday morning, the wooden bench beside the dog park gate had a fresh coat of green paint. | The dog park gate latch is broken.
+1 | 12 | BC | B | On Saturday morning, the steel latch on the dog park gate snapped shut cleanly every time it was tested. | The dog park gate latch is broken.

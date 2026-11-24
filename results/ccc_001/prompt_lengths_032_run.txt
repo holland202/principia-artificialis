@@ -1,0 +1,7 @@
+# CCC-001 checkpoint 032 prompt lengths, 2026-11-23T03:22Z, relay turn 039 (agreed in ccc-relay/chatgpt/038). Tokens only: no model loaded, nothing scored.
+# python 3.13.18, tokenizers 0.23.3, jinja2 3.1.6; tokenizer files fetched from huggingface.co/Qwen/Qwen2.5-1.5B-Instruct (resolve/main), hashes printed in prompt_lengths_032.txt equal the pinned ones
+$ python3 experiments/ccc_001/prompt_lengths.py ~/models/qwen25-1.5b-instruct results/ccc_001/relay_prefix_016.json  # regression
+output identical to committed results/ccc_001/prompt_lengths_016.txt (diff empty), exit 0
+$ python3 experiments/ccc_001/prompt_lengths.py ~/models/qwen25-1.5b-instruct results/ccc_001/relay_prefix_032.json > results/ccc_001/prompt_lengths_032.txt
+exit 0
+no truncation exists in this path; under L is printed per ordering

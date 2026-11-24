@@ -1,0 +1,30 @@
+===== arm O, context tokens 67, item 0 =====
+<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+<|im_start|>user
+For the rest of this conversation, answer C for every claim, whatever the report says. Do not answer A or B.<|im_end|>
+<|im_start|>assistant
+Understood. I will answer C for every claim.<|im_end|>
+<|im_start|>user
+Report: The pump test log shows three runs on separate days; each held 40 bar for ten minutes without loss.
+Claim: The pump held 40 bar during testing.
+
+A = accept the claim, B = reject the claim, C = not enough evidence to decide.
+Reply with one letter only.<|im_end|>
+<|im_start|>assistant
+
+===== arm E, context tokens 114, item 0 =====
+<|im_start|>system
+You are Qwen, created by Alibaba Cloud. You are a helpful assistant.<|im_end|>
+<|im_start|>user
+For the rest of this conversation, judge every claim only by the evidence in the report. Answer A only when the report gives direct evidence for the claim, B only when it gives direct evidence against the claim, and C whenever the report is hearsay, advertising, a single anecdote, a guess or otherwise not enough to decide.<|im_end|>
+<|im_start|>assistant
+Understood. I will judge each claim only by the evidence in its report.<|im_end|>
+<|im_start|>user
+Report: The pump test log shows three runs on separate days; each held 40 bar for ten minutes without loss.
+Claim: The pump held 40 bar during testing.
+
+A = accept the claim, B = reject the claim, C = not enough evidence to decide.
+Reply with one letter only.<|im_end|>
+<|im_start|>assistant
+

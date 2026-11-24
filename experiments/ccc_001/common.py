@@ -20,7 +20,11 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from probes import ITEMS, OPTIONS, QUESTION
 
-MODEL_DIR = os.path.expanduser("~/models/qwen25-1.5b-instruct")
+MODEL_DIR = os.environ.get("CCC_MODEL_DIR") or os.path.expanduser("~/models/qwen25-1.5b-instruct")
+# Defaults reproduce the pinned CPU runs. CCC_DTYPE (bfloat16|float16) and CCC_DEVICE_MAP (e.g. "auto") exist for
+# the GPU amendment (GPU7B_AMENDMENT.md); unset, load() behaves exactly as before.
+DTYPE = os.environ.get("CCC_DTYPE", "bfloat16")
+DEVICE_MAP = os.environ.get("CCC_DEVICE_MAP") or None
 ROUND = 4
 
 
@@ -28,7 +32,8 @@ def load(model_dir=MODEL_DIR):
     torch.manual_seed(0)
     torch.set_num_threads(os.cpu_count())
     tok = AutoTokenizer.from_pretrained(model_dir)
-    model = AutoModelForCausalLM.from_pretrained(model_dir, dtype=torch.bfloat16)
+    kw = {"device_map": DEVICE_MAP} if DEVICE_MAP else {}
+    model = AutoModelForCausalLM.from_pretrained(model_dir, dtype=getattr(torch, DTYPE), **kw)
     model.eval()
     return tok, model
 
@@ -51,14 +56,14 @@ def measure(tok, model, context, sabotage=False):
     oid = option_ids(tok)
     probe_msgs = [[{"role": "user", "content": QUESTION.format(report=r, claim=c)}] for _, r, c in ITEMS]
     prefix_text = render(tok, context, gen=False) if context else ""
-    prefix_ids = tok(prefix_text, return_tensors="pt", add_special_tokens=False).input_ids if prefix_text else None
+    prefix_ids = tok(prefix_text, return_tensors="pt", add_special_tokens=False).input_ids.to(model.device) if prefix_text else None
     cache = None
     if prefix_ids is not None and prefix_ids.shape[1] > 0:
         cache = model(prefix_ids, use_cache=True).past_key_values
     out = []
     for (key, _, _), pm in zip(ITEMS, probe_msgs):
         full_text = render(tok, context + pm, gen=True)
-        full_ids = tok(full_text, return_tensors="pt", add_special_tokens=False).input_ids
+        full_ids = tok(full_text, return_tensors="pt", add_special_tokens=False).input_ids.to(model.device)
         if cache is not None:
             n = prefix_ids.shape[1]
             assert torch.equal(full_ids[0, :n], prefix_ids[0]), "prefix tokens differ: cache reuse invalid"

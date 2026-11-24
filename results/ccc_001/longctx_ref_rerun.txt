@@ -1,0 +1,33 @@
+transformers 5.24.0 | committed digests 18 | days {'REF': 44, 'N016': 165, 'STRESS': 340} | escaping on
+tokenizer.json sha256 c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539
+tokenizer_config.json sha256 5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583
+config.json sha256 98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670
+G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  [REF] arm D pi0 tokens 2450..2469 digest 18e4740e7430 matches committed 18e4740e7430
+  [REF] arm D pi1 tokens 2450..2469 digest 5cfa8ce50415 matches committed 5cfa8ce50415
+  [REF] arm D pi2 tokens 2450..2469 digest f0a4f1c05dcd matches committed f0a4f1c05dcd
+  [REF] arm E pi0 tokens 2543..2562 digest 369bd2dcb864 matches committed 369bd2dcb864
+  [REF] arm E pi1 tokens 2543..2562 digest b975f46f9d45 matches committed b975f46f9d45
+  [REF] arm E pi2 tokens 2543..2562 digest 2ab5aa548b51 matches committed 2ab5aa548b51
+weights sha256 dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee | torch 2.15.0+cpu | threads 2
+option_token_ids [32, 33, 34] vocab 151936 L 32768
+G1 HELD longest prompt 2562 tokens (< L 32768); no truncation is applied anywhere
+G2 HELD arm D pi0 read twice: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+G3 HELD arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+G4 HELD median letter mass per cell (>= 0.90 each): Dpi0 1.0000  Dpi1 1.0000  Dpi2 1.0000  Epi0 1.0000  Epi1 1.0000  Epi2 1.0000
+G5 REFUTED mean over pi0-pi2 of mean G(E)-G(D) = 0.0523 (>= 0.10); per pi [-0.0294, 0.2321, -0.0457]
+G6 REFUTED items with pi-averaged G(E) > G(D): 12 of 24 (>= 14)
+REPORT [REF] arm D pi0 keys AAAAAAAABBBBBBBBCCCCCCCC: mean S 0.9879 mean G 0.6250 modal {'A': 14, 'B': 10, 'C': 0} mean mass 1.0000 min mass 0.9999
+REPORT [REF] arm D pi1 keys BBBBBBBBCCCCCCCCAAAAAAAA: mean S 0.8552 mean G 0.3721 modal {'A': 12, 'B': 12, 'C': 0} mean mass 1.0000 min mass 1.0000
+REPORT [REF] arm D pi2 keys CCCCCCCCAAAAAAAABBBBBBBB: mean S 0.7633 mean G 0.4203 modal {'A': 18, 'B': 0, 'C': 6} mean mass 1.0000 min mass 0.9999
+REPORT [REF] arm E pi0 keys AAAAAAAABBBBBBBBCCCCCCCC: mean S 0.9507 mean G 0.5956 modal {'A': 17, 'B': 7, 'C': 0} mean mass 1.0000 min mass 1.0000
+REPORT [REF] arm E pi1 keys BBBBBBBBCCCCCCCCAAAAAAAA: mean S 0.9220 mean G 0.6042 modal {'A': 0, 'B': 16, 'C': 8} mean mass 1.0000 min mass 1.0000
+REPORT [REF] arm E pi2 keys CCCCCCCCAAAAAAAABBBBBBBB: mean S 0.9083 mean G 0.3746 modal {'A': 1, 'B': 9, 'C': 14} mean mass 1.0000 min mass 1.0000
+REPORT item gain by stage-Q key (pi-averaged G(E)-G(D)): A 0.2887 (n=8)  B -0.0576 (n=8)  C -0.0741 (n=8)
+[N016] NOT RUN (deviation D1)
+[STRESS] NOT RUN (deviation D1)
+LONGEST QUALIFIED NONE (only REF was read: D1)
+VERDICT 5 of 7 as registered
+DIGEST 1ebd6751e49dcb09d4118dd86188efb9d7613b7631f8d6eb9f9a8c5916eb57c4
+RECORDED match
+EXIT 0

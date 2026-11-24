@@ -62,7 +62,7 @@ if a.json:
     json.dump({"arms": res, "held": held, "digest": d, "sabotage": a.sabotage}, open(a.json, "w"), indent=1)
 if a.sabotage:
     ok = False
-elif RECORDED is not None:
+elif RECORDED is not None and not os.environ.get("CCC_MODEL_DIR"):  # RECORDED is the 1.5B CPU outcome
     ok = (tuple(held), d) == RECORDED  # exit 0 only on the recorded outcome (W4)
 else:
     ok = all(held)

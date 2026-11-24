@@ -1,0 +1,65 @@
+repo HEAD 37fe6ac5d4082832275c11b87aea6f142ea3d80e | python 3.13.16
+torch 2.11.0+cu130 | cuda 13.0 | transformers 5.24.0 | accelerate 1.15.0
+gpus ['Tesla T4', 'Tesla T4']
+downloaded Qwen/Qwen2.5-7B-Instruct a09a35458c702b33eeacc393d103063234e8bc28 to /tmp/qwen25-7b-instruct in 59 s
+model-00001-of-00004.safetensors a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7 OK
+model-00002-of-00004.safetensors f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185 OK
+model-00003-of-00004.safetensors 8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5 OK
+model-00004-of-00004.safetensors 1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd OK
+== g0: exit 0, 17 s
+  G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G0 [N016] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G0 [STRESS] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  VERDICT 3 of 3 as registered
+  DIGEST fa5c56adae8c2c43aa231b9936de16473a1516a7e2f9876efac22305a1e09a9b
+== stageq: exit 1, 53 s
+  Q1 HELD D measured 3 times, identical to 6 dp: True
+  Q2 REFUTED mean G(E)-G(D) = 0.0379 (>= 0.10), E>D on 16 of 24 (>= 14)
+  Q3 HELD (fires only under --sabotage)
+  Q4 HELD E modal letter = key on 24 of 24 (>= 12)
+  VERDICT 3 of 4 as registered
+  DIGEST 684294d466d7de011a54f359f9307838942e413c6c64d95755011bdb3aa682a5
+== stageq_sabotage: exit 1, 41 s
+  Q1 HELD D measured 3 times, identical to 6 dp: True
+  Q2 REFUTED mean G(E)-G(D) = 0.0000 (>= 0.10), E>D on 0 of 24 (>= 14)
+  Q3 HELD sabotage run: all S=G=0.333333 and Q2 refuted
+  Q4 REFUTED E modal letter = key on 8 of 24 (>= 12)
+  VERDICT 2 of 4 as registered
+  DIGEST e6348bde9c2e667c784b15796a9e38d183736dbd982fb273eefd1c28ac6bf3d3
+== longctx_REF: exit 1, 707 s
+  G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G1 HELD longest prompt 2562 tokens (< L 32768); no truncation is applied anywhere
+  G2 HELD arm D pi0 read twice: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+  G3 HELD arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+  G4 HELD median letter mass per cell (>= 0.90 each): Dpi0 1.0000  Dpi1 1.0000  Dpi2 1.0000  Epi0 1.0000  Epi1 1.0000  Epi2 1.0000
+  G5 REFUTED mean over pi0-pi2 of mean G(E)-G(D) = 0.0973 (>= 0.10); per pi [0.0977, 0.0764, 0.1177]
+  G6 HELD items with pi-averaged G(E) > G(D): 20 of 24 (>= 14)
+  QUALIFIES [REF] no (T* across lengths: longctx_summary.py)
+  LONGEST QUALIFIED NONE (if only REF is read)
+  VERDICT 6 of 7 as registered
+  DIGEST be28907f5adfe57e4ebce56edb0e36663d19b827f52eed70dc8d0321c6ca2e22
+== longctx_N016: exit 1, 63 s
+  G0 [N016] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G1 HELD longest prompt 8885 tokens (< L 32768); no truncation is applied anywhere
+  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 8.06 GiB. GPU 0 has a total capacity of 14.56 GiB of which 6.01 GiB is free. Including non-PyTorch memory, this process has 8.54 GiB memory in use. Of the allocated memory 8.21 GiB is allocated by PyTorch, and 215.39 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+== longctx_STRESS: exit 1, 65 s
+  G0 [STRESS] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G1 HELD longest prompt 18132 tokens (< L 32768); no truncation is applied anywhere
+  torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 33.94 GiB. GPU 0 has a total capacity of 14.56 GiB of which 3.92 GiB is free. Including non-PyTorch memory, this process has 10.64 GiB memory in use. Of the allocated memory 9.99 GiB is allocated by PyTorch, and 528.99 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://docs.pytorch.org/docs/stable/notes/cuda.html#optimizing-memory-usage-with-pytorch-cuda-alloc-conf)
+== longctx_REF_sabotage: exit 1, 711 s
+  G0 [REF] HELD 6 cell digests and window; control tokens inside message-1 content: 0 (= 0)
+  G1 HELD longest prompt 2562 tokens (< L 32768); no truncation is applied anywhere
+  G2 HELD arm D pi0 read twice: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+  G3 HELD arm D pi0 logits_to_keep=1 vs full logits: equal to 6 dp on 24 of 24 (= 24), max diff 0.000000
+  G4 REFUTED median letter mass per cell (>= 0.90 each): Dpi0 0.0000  Dpi1 0.0000  Dpi2 0.0000  Epi0 0.0000  Epi1 0.0000  Epi2 0.0000
+  G5 REFUTED mean over pi0-pi2 of mean G(E)-G(D) = 0.0000 (>= 0.10); per pi [0.0, 0.0, 0.0]
+  G6 REFUTED items with pi-averaged G(E) > G(D): 0 of 24 (>= 14)
+  QUALIFIES [REF] no (T* across lengths: longctx_summary.py)
+  LONGEST QUALIFIED NONE (if only REF is read)
+  SABOTAGE expected G4, G5 and G6 REFUTED: True
+  VERDICT 4 of 7 as registered
+  DIGEST 00a95fc1e6cc0b5e01b6dca267ee4c180815d47a41c77f56b8562630d79ac977
+== T* summary
+[REF] does not qualify
+LONGEST QUALIFIED NONE
+

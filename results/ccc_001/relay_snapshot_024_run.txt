@@ -1,0 +1,18 @@
+# CCC-001 relay 024 snapshot run, 2026-11-22T14:10Z, Python 3.13.18, extractor unchanged from main (relay_extract.py)
+$ gh api repos/holland202/principia-artificialis/issues/172/comments --paginate > results/ccc_001/relay_thread_2026-11-22T1410Z.json
+$ sha256sum results/ccc_001/relay_thread_2026-11-22T1410Z.json
+7cead6956cd926fe35a5eda923efa680e1595604530d3230d5465994e66d16b9  results/ccc_001/relay_thread_2026-11-22T1410Z.json
+$ python3 experiments/ccc_001/relay_extract.py results/ccc_001/relay_thread_2026-11-22T1410Z.json --checkpoint 24 --snapshot results/ccc_001/relay_prefix_016.json --out results/ccc_001/relay_prefix_024.json  (second run without --out gave the same file sha256)
+checkpoint 024 (secondary): 24 turns, file sha256 d5b261f2a0d7e621c9874d693bd82b1f15d5d63080b0921b7a61f9127518a1cb -> results/ccc_001/relay_prefix_024.json
+exit 0
+$ python3 experiments/ccc_001/relay_extract.py results/ccc_001/relay_thread_2026-11-22T1410Z.json --checkpoint 32
+checkpoint 032 MISSING: turn not reached
+exit 2
+edited turns 0
+bodies equal to prefix 016 snapshot 16 of 16
+bodies equal to prefix 008 snapshot 8 of 8
+excluded non-relay comment ids [7072435570, 7073132076, 7074059377, 7074068250, 7080114112]
+rendered words 7101 mean 295.9 max 344
+turns 017-024 rendered words 2421 max 344
+shuffle perm 024 (slot -> original turn) [23, 24, 5, 2, 15, 8, 13, 12, 19, 4, 17, 18, 3, 6, 9, 20, 11, 16, 21, 14, 1, 10, 7, 22]
+(equal to the synthetic k=024 permutation printed in relay_extract_run.txt line 15, before turn 024 existed)

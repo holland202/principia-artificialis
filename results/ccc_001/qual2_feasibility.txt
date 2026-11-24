@@ -1,0 +1,5 @@
+items whose key is not not-enough: 16; not-enough items: 8
+1.5B stage Q: mean G(D) 0.6236; items G(D) >= 0.9: 15 of 24; headroom 1 - mean G(D) 0.3764; on the 16 non-C items mean p(C) D 0.0002 E 0.0136
+1.5B LONGCTX REF: mean G(D) per pi [0.6250, 0.3721, 0.4203]; headroom 1 - mean over pi 0.5275
+7B stage Q: mean G(D) 0.9471; items G(D) >= 0.9: 22 of 24; headroom 1 - mean G(D) 0.0529; on the 16 non-C items mean p(C) D 0.0563 E 0.0223
+7B LONGCTX REF: mean G(D) per pi [0.8834, 0.8109, 0.7515]; headroom 1 - mean over pi 0.1847

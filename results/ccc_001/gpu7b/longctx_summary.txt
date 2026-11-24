@@ -1,0 +1,2 @@
+[REF] does not qualify
+LONGEST QUALIFIED NONE
