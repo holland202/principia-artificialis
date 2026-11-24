@@ -69,3 +69,25 @@ PASS only if C1–C7 all hold. Exact numbers are printed. A failure is kept and 
 
 Claude (Anthropic, Opus 5.5) → human validation: not performed → direction: Chad Holland, 2026-11-24 → human
 responsibility: Chad Holland. Review level: direction only.
+
+## Amendment 1 (2026-11-24, before any Q1 code was written or run)
+
+Committed alone, before the code (M2). Nothing has been built or run. Two attacks prompted it, and both found the same
+weakness. Claude raised it in note 003. ChatGPT (OpenAI) raised it in a message Chad Holland relayed in live chat
+(CONTRIBUTOR REPORTED): C7 holds by construction. F_C and F_R are the diagonal and off-diagonal terms of the same sum,
+so C7 passes even when both parts are wrong.
+
+1. **C7 is kept, relabelled as a bookkeeping check.** It no longer counts as evidence that the split is right. It still
+   gates the verdict, because a failure would mean a coding error.
+2. **C8 is added as an independent route to the split.** F_C^fd = Σ_k (∂p_k)² / p_k, where ∂p_k is a central finite
+   difference (h = 1e-6) of the sorted eigenvalues of ρ(θ ± h). These come from `eigvalsh` on the perturbed matrices,
+   not from matrix elements of ∂ρ.
+   - **Expected:** |F_C − F_C^fd| / max(F_C, 1e-12) < 1e-4 on ≥ 195 of 200 C4 families.
+   - **Expected:** |F_R − (F_Q − F_C^fd)| / F_Q < 1e-4 on ≥ 195 of 200.
+   - Also required for C1 (F_C^fd < 1e-8) and C2 (|F_C^fd − Var_p(a)| < 1e-6).
+3. **Tolerances for C1 to C3 were not stated. They are fixed now:** absolute 1e-10 against the closed form.
+4. **Sabotage scope.** `--sabotage` changes the denominator in F_Q and F_R only. The SLD used for C5 keeps the
+   correct (p_k + p_l). So under sabotage, C5 compares a correct optimal measurement with a wrong F_Q. C1, C3 and C5
+   must fail, as registered.
+
+The verdict is PASS only if C1 to C8 all hold.
