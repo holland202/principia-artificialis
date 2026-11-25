@@ -4,10 +4,11 @@ Bures distance and measurement Fisher information, checked against closed forms.
 
 Registration: experiments/qfi_001/Q1_PREREG.md (bc44b2e) plus Amendment 1 (0f01126) and Amendment 2 (088c544:
 exact numerical ties resolved inside the tied block, near-ties flagged, C9-C10, --no-tie-fix) and Amendment 3
-(33bea52: split_resolved flag, C11).
+(33bea52: split_resolved flag, C11) and Amendment 4 (c4cfc7b: F_C uses the 2p > EPS support mask, C12-C13,
+--old-mask, --force-unresolved).
 Author: Claude (Anthropic, Opus 5.5). NumPy only. Deterministic (seed 4).
 
-Usage:  python experiments/qfi_001/qfi_ref.py [--sabotage] [--no-tie-fix]
+Usage:  python experiments/qfi_001/qfi_ref.py [--sabotage] [--no-tie-fix] [--old-mask] [--force-unresolved]
 """
 import argparse
 import sys
@@ -19,6 +20,8 @@ TAU_TIE = 1e-12   # Amendment 2 item 2: numerical ties only
 TAU_FLAG = 1e-6   # Amendment 2 item 3: near-ties are flagged, never repaired
 SABOTAGE = False
 NO_TIE_FIX = False
+OLD_MASK = False          # Amendment 4 item 4: restores the superseded F_C mask p > EPS
+FORCE_UNRESOLVED = False  # Amendment 4 item 4: split_resolved False everywhere
 
 
 # ---------------------------------------------------------------- instrument
@@ -68,14 +71,14 @@ def split_in_basis(p, V, drho):
             if k != l and p[k] + p[l] > EPS:
                 FR += 2.0 * abs(X[k, l]) ** 2 / _denom(p[k], p[l])
     for k in range(d):
-        if p[k] > EPS:
+        if (p[k] > EPS) if OLD_MASK else (2.0 * p[k] > EPS):  # Amendment 4 item 1: same mask as F_Q's diagonal
             FC += X[k, k].real ** 2 / p[k]
     gaps = [p[blocks[i + 1][0]] - p[blocks[i][-1]] for i in range(len(blocks) - 1)]
     min_gap = min(gaps) if gaps else np.inf
     n_tied = sum(len(b) for b in blocks if len(b) > 1)
     near = bool(min_gap <= TAU_FLAG)
     return {"F_Q": FQ, "F_C": FC, "F_R": FR, "near_tie": near, "min_gap": min_gap, "n_tied": n_tied,
-            "split_resolved": bool(n_tied == 0 and not near)}
+            "split_resolved": bool(n_tied == 0 and not near and not FORCE_UNRESOLVED)}
 
 
 def qfi_split_ex(rho, drho):
@@ -129,7 +132,7 @@ def fc_fd(rho_of, theta, h=1e-6):
     pm = np.linalg.eigvalsh(rho_of(theta - h))
     p0 = np.linalg.eigvalsh(rho_of(theta))
     dp = (pp - pm) / (2 * h)
-    keep = p0 > EPS
+    keep = 2.0 * p0 > EPS  # Amendment 4 item 1
     return float(np.sum(dp[keep] ** 2 / p0[keep]))
 
 
@@ -201,13 +204,17 @@ def random_unitary(rng, d=4):
 # ---------------------------------------------------------------- run
 
 def main():
-    global SABOTAGE, NO_TIE_FIX
+    global SABOTAGE, NO_TIE_FIX, OLD_MASK, FORCE_UNRESOLVED
     ap = argparse.ArgumentParser()
     ap.add_argument("--sabotage", action="store_true")
     ap.add_argument("--no-tie-fix", action="store_true")
+    ap.add_argument("--old-mask", action="store_true")
+    ap.add_argument("--force-unresolved", action="store_true")
     a = ap.parse_args()
     SABOTAGE, NO_TIE_FIX = a.sabotage, a.no_tie_fix
-    print(f"QFI-001 Q1 reference run; sabotage={SABOTAGE}; no_tie_fix={NO_TIE_FIX}; numpy {np.__version__}")
+    OLD_MASK, FORCE_UNRESOLVED = a.old_mask, a.force_unresolved
+    print(f"QFI-001 Q1 reference run; sabotage={SABOTAGE}; no_tie_fix={NO_TIE_FIX}; old_mask={OLD_MASK}; "
+          f"force_unresolved={FORCE_UNRESOLVED}; numpy {np.__version__}")
     ok = {}
 
     def close(x, y, tol=1e-10):
@@ -216,6 +223,7 @@ def main():
     # C1
     t = 0.7
     FQ, FC, FR = qfi_split(c1_rho(t), c1_drho(t))
+    c13_c1 = qfi_split_ex(c1_rho(t), c1_drho(t))["split_resolved"]
     fcfd = fc_fd(c1_rho, t)
     print(f"C1 qubit rotation: F_Q={FQ:.12f} F_C={FC:.3e} F_R={FR:.12f} F_C^fd={fcfd:.3e} (expect 0.36, 0, 0.36)")
     ok["C1"] = close(FQ, 0.36) and close(FC, 0.0) and close(FR, 0.36)
@@ -226,6 +234,7 @@ def main():
     p = c2_p(t)
     var = float(p @ A2 ** 2 - (p @ A2) ** 2)
     FQ, FC, FR = qfi_split(c2_rho(t), c2_drho(t))
+    c13_c2 = qfi_split_ex(c2_rho(t), c2_drho(t))["split_resolved"]
     fcfd = fc_fd(c2_rho, t)
     print(f"C2 commuting: F_Q={FQ:.12f} F_C={FC:.12f} F_R={FR:.3e} Var_p(a)={var:.12f} F_C^fd={fcfd:.12f}")
     ok["C2"] = close(FQ, var) and close(FC, var) and close(FR, 0.0)
@@ -361,13 +370,28 @@ def main():
         c11 = c11 and close(r11["F_Q"], 0.04) and r11["split_resolved"] is False
     ok["C11"] = bool(c11)
 
+    # C12: support-mask case, ChatGPT note qfi001/chatgpt/012 (Amendment 4 item 2)
+    p12 = 7.5e-13
+    s12 = np.sqrt(p12)
+    r12 = qfi_split_ex(np.diag([p12, 1 - p12]).astype(complex), np.diag([s12, -s12]).astype(complex))
+    e12 = 1.0 / (1.0 - p12)
+    b12 = abs(r12["F_Q"] - r12["F_C"] - r12["F_R"])
+    print(f"C12 support mask p={p12:g}: F_Q={r12['F_Q']:.15f} F_C={r12['F_C']:.15f} F_R={r12['F_R']:.3e} "
+          f"|F_Q-F_C-F_R|={b12:.3e} split_resolved={r12['split_resolved']} (expect {e12:.15f} twice, 0, 0, True)")
+    ok["C12"] = bool(close(r12["F_Q"], e12) and close(r12["F_C"], e12) and np.isfinite(r12["F_R"])
+                     and r12["F_R"] < 1e-10 and b12 < 1e-10 and r12["split_resolved"] is True)
+
+    # C13: positive control for split_resolved (Amendment 4 item 3)
+    print(f"C13 split_resolved on well-separated cases: C1 {c13_c1}, C2 {c13_c2} (expect True, True)")
+    ok["C13"] = bool(c13_c1 is True and c13_c2 is True)
+
     ok["finite"] = not nan_seen
     # Fix after the first run (results/qfi_001/q1_run.txt): every check is now a Python bool, so the fail-closed
     # "is True" test no longer rejects numpy.bool_ passes. Thresholds unchanged.
-    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "finite"]:
+    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "finite"]:
         print(f"{k}: {'PASS' if ok.get(k) is True else 'FAIL'}")
     verdict = "PASS" if all(ok.get(k) is True for k in
-                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "finite"]) else "FAIL"
+                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "C12", "C13", "finite"]) else "FAIL"
     print(f"VERDICT {verdict}")
     return 0 if verdict == "PASS" else 1
 
