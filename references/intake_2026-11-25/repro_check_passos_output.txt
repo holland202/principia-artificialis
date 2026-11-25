@@ -1,0 +1,6 @@
+primary_48                         pairs 48  recap 29  none 25  diff +8.3 pts  discordant recap-only 5 none-only 1  exact McNemar p 0.2188
+extension_50                       pairs 50  recap 18  none 23  diff -10.0 pts  discordant recap-only 1 none-only 6  exact McNemar p 0.1250
+combined_98                        pairs 98  recap 47  none 48  diff -1.0 pts  discordant recap-only 6 none-only 7  exact McNemar p 1.0000
+flip_none_run2_vs_run1_modal       pairs 16  flipped 3  (18.8%)
+flip_none_run2_vs_run1_kaggle      pairs 32  flipped 6  (18.8%)
+flip_none_run2_vs_run1_all         pairs 48  flipped 9  (18.8%)
