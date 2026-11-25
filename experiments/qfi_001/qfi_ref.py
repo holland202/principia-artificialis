@@ -306,11 +306,11 @@ def main():
     print(f"C8 F_R vs F_Q - F_C^fd (rel < 1e-4): {c8b_pass} of {c8_elig}; worst {c8b_worst:.3e}")
     print(f"C8 C1 F_C^fd < 1e-8: {c8_c1}; C2 |F_C^fd - Var| < 1e-6: {c8_c2}")
 
-    ok["C4"] = c4_viol == 0
-    ok["C5"] = c5_pass >= 195
-    ok["C6"] = c6_pass >= 195
-    ok["C7"] = c7_pass == n
-    ok["C8"] = c8_elig >= 150 and c8a_pass >= need8 and c8b_pass >= need8 and c8_c1 and c8_c2
+    ok["C4"] = bool(c4_viol == 0)
+    ok["C5"] = bool(c5_pass >= 195)
+    ok["C6"] = bool(c6_pass >= 195)
+    ok["C7"] = bool(c7_pass == n)
+    ok["C8"] = bool(c8_elig >= 150 and c8a_pass >= need8 and c8b_pass >= need8 and c8_c1 and c8_c2)
 
     # C9: exact tie on a commuting path (Amendment 2 item 4)
     rng9 = np.random.default_rng(0)
@@ -334,16 +334,18 @@ def main():
             inv_worst = max(inv_worst, abs(rr["F_C"] - r9["F_C"]), abs(rr["F_R"] - r9["F_R"]),
                             abs(rr["F_Q"] - r9["F_Q"]))
     print(f"C9 basis invariance over 20 in-block unitaries: worst abs difference {inv_worst:.3e} (< 1e-10)")
-    ok["C9"] = c9a and bool(inv_worst < 1e-10)
+    ok["C9"] = bool(c9a and inv_worst < 1e-10)
 
     # C10: near-tie, ChatGPT note qfi001/chatgpt/008 (Amendment 2 item 5)
     r10 = qfi_split_ex(np.diag([0.5 + 1e-9, 0.5 - 1e-9]).astype(complex),
                        np.array([[0, 0.1], [0.1, 0]], dtype=complex))
     print(f"C10 near tie: F_Q={r10['F_Q']:.12f} F_C={r10['F_C']:.3e} F_R={r10['F_R']:.12f} "
           f"near_tie={r10['near_tie']} min_gap={r10['min_gap']:.3e} (expect 0.04, 0, 0.04, True)")
-    ok["C10"] = close(r10["F_Q"], 0.04) and close(r10["F_C"], 0.0) and close(r10["F_R"], 0.04) and r10["near_tie"]
+    ok["C10"] = close(r10["F_Q"], 0.04) and close(r10["F_C"], 0.0) and close(r10["F_R"], 0.04) and r10["near_tie"] is True
 
     ok["finite"] = not nan_seen
+    # Fix after the first run (results/qfi_001/q1_run.txt): every check is now a Python bool, so the fail-closed
+    # "is True" test no longer rejects numpy.bool_ passes. Thresholds unchanged.
     for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "finite"]:
         print(f"{k}: {'PASS' if ok.get(k) is True else 'FAIL'}")
     verdict = "PASS" if all(ok.get(k) is True for k in
