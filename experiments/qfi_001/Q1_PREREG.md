@@ -91,3 +91,46 @@ so C7 passes even when both parts are wrong.
    must fail, as registered.
 
 The verdict is PASS only if C1 to C8 all hold.
+
+## Amendment 2 (2026-11-25, before the tie fix was written and before any Q1 run)
+
+Committed alone, before code (M2). Q1 has never run. **Authority:** Chad Holland on PR #181 in his own words
+(comment 7161037126, "proceed", after note 007), under the delegation in comment 7141782954.
+
+**Why.** ChatGPT (OpenAI GPT-6, Codex) found the defect in note `qfi001/chatgpt/006`. Claude confirmed it in note 007
+(SELF-TESTED): on a commuting path with an exact eigenvalue tie, the split counts 54% of F_Q as rotation. Note 007
+proposed grouping eigenvalues with |p_k − p_l| ≤ 1e-8·max(p). ChatGPT's note `qfi001/chatgpt/008` refuted that rule
+with a near-tie case. Claude reproduced it (SELF-TESTED, scratch script, not committed): ρ = diag(0.5 + 1e-9,
+0.5 − 1e-9) with ∂ρ off-diagonal 0.1. Here the code at `e439899` gives F_C = 0 and F_R = 0.04, which is correct,
+because the eigenvalue derivatives are 0. The note-007 rule gives F_C = 0.04 and F_R = 0, which erases a real
+rotation. **The note-007 rule is withdrawn.**
+
+**Exploration, disclosed (C-EXPLORE).** Before this amendment, Claude measured the floating-point gap of constructed
+exact ties: trace-1 d = 3 states U·diag(0.5, 0.25, 0.25)·U†, 200 random U. `eigvalsh` gives a gap of at most
+5.27e-16, with median 1.39e-16. That figure sets τ_tie below. No Q1 case was run.
+
+1. **Total QFI is unchanged.** F_Q is computed in the eigenbasis `eigh` returns. It is invariant under a basis change
+   inside a tied block.
+2. **Numerical ties only.** A tie block is a maximal run of sorted eigenvalues whose neighbours differ by
+   ≤ τ_tie = 1e-12 (absolute, trace-1 states). That is about 2,000× above the measured tie gaps, and 2,000× below
+   ChatGPT's 2e-9 case. Inside each block the code rotates to the basis that diagonalises that block of ⟨k|∂ρ|l⟩,
+   then splits. Gaps above τ_tie are never regrouped.
+3. **Near-ties are flagged, not repaired.** If the smallest gap between distinct blocks is ≤ τ_flag = 1e-6, the split
+   is computed as registered but returned with a `near_tie` flag. Any later study withholds the split at flagged
+   points and reports how often they occur (Q4 sets its own τ_flag from measured noise). Q1 prints the count.
+4. **C9, exact tie (closed form).** ρ(t) = U·diag(0.5, 0.25 + 0.1t, 0.25 − 0.1t)·U†, with U a random unitary from
+   seed 0, evaluated at t = 0, with ∂ρ analytic. The required result is F_Q = F_C = 2·0.1²/0.25 = 0.08 and
+   F_R < 1e-10, all absolute 1e-10. **Basis invariance:** the split computed in V·R must agree with the split in V
+   within 1e-10, where V is the eigenbasis and R is any of 20 random unitaries acting only inside the tied block
+   (seed 9).
+5. **C10, near-tie (ChatGPT's case).** The required result is F_Q = 0.04, F_C = 0 and F_R = 0.04 (absolute 1e-10),
+   with `near_tie` set. Repairing the near-tie fails this case.
+6. **C8 scope.** C8 applies only to families whose minimum eigengap at θ = 0 is > 1e3·h = 1e-3. The eligible count is
+   printed. C8 holds only if at least 150 of the 200 families are eligible, and each half of C8 passes on at least
+   ⌈0.975 × eligible⌉ of them. So exclusions cannot produce an empty pass. C1 and C2's C8 parts are unchanged.
+7. **Second sabotage, `--no-tie-fix`.** It skips the block rotation. C9 must then fail. If it does not, C9 cannot tell
+   the fix from its absence. `--sabotage` must still break C1, C3 and C5.
+8. **Q2.** ChatGPT's sealed cases (`9f5f2897…7147a`) were written for `e439899`. The tie fix changes the code under
+   them. Which commit they run against is ChatGPT's call. Claude has not seen them.
+
+The verdict is PASS only if C1 to C10 all hold.
