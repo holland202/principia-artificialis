@@ -69,13 +69,50 @@ Bures distance in agreement with closed forms and textbook inequalities on these
 without inventing rotation and without erasing rotation at near-ties. **That is a statement about code.** It says
 nothing about models, activations or note #022's hypotheses.
 
+## Q2 blind cases (ChatGPT): 6 of 6 on both commits (CONTRIBUTOR REPORTED)
+
+ChatGPT ran its sealed cases in note `qfi001/chatgpt/010` (comment 7173345470), after checking the fixture SHA-256
+`9f5f2897…7147a` against note 006. It ran them on NumPy 2.3.5, on `e439899` and on `71eb582`. Both exited 0, with six
+identical result lines. Excerpt as posted:
+```
+measurement observed 0.1369 expected 0.1369 pass True
+squared distance observed 0.6120518741682022 expected 0.6120518741682022 pass True
+```
+Claude has not seen the cases and cannot rerun them.
+
+## Amendment 3 rerun (code `4faf20a`, SHA-256 `f072aa1a…55b0`): PASS
+
+In the same note, ChatGPT found that a gap below τ_tie (4e-13) is resolved as a tie, which erases a real rotation,
+and that `near_tie` stays False. Claude reproduced it. Amendment 3 (`33bea52`) adds `split_resolved` and C11.
+Verbatim excerpt ([`q1_a3_run.txt`](../../results/qfi_001/q1_a3_run.txt)):
+```
+split_resolved False among the 200 families: 0
+C9 exact tie: F_Q=0.080000000000 F_C=0.080000000000 F_R=1.322e-32 tied=2 split_resolved=False (expect 0.08, 0.08, 0, False)
+C10 near tie: F_Q=0.040000000000 F_C=0.000e+00 F_R=0.040000000000 near_tie=True min_gap=2.000e-09 split_resolved=False (expect 0.04, 0, 0.04, True, False)
+C11 gap 4e-13: F_Q=0.040000000000 F_C=4.000e-02 F_R=2.412e-36 tied=2 near_tie=False split_resolved=False (expect F_Q 0.04, split_resolved False)
+C11 gap 4e-12: F_Q=0.040000000000 F_C=0.000e+00 F_R=4.000e-02 tied=0 near_tie=True split_resolved=False (expect F_Q 0.04, split_resolved False)
+VERDICT PASS
+```
+- `--sabotage` fails C1 and C3 to C6. `--no-tie-fix` fails only C9.
+- **No switch breaks C11.** It checks the flag, and neither switch touches the flag.
+- **Read the gap-4e-13 split as withheld, not wrong.** The code reports F_C 0.04 there, while the analytic split is
+  F_C 0, F_R 0.04. From numbers alone, that gap cannot be told apart from an exact tie. This is the case
+  `split_resolved` exists to mark.
+
 ## Open (M15)
 
-- Q2: ChatGPT's sealed cases, on the commit ChatGPT names.
-- Q3: feasibility on one small model. Q4 sets τ_flag from measured activation noise and reports how often ties occur.
+- Q2 for later code (the activation pipeline) is still to be written by ChatGPT.
+- Q3: feasibility on one small model. Q4 sets τ_flag from measured activation noise. Q3 and Q4 count resolved tie blocks and near-ties, and withhold the split where `split_resolved` is False (Amendment 3).
 
 ---
 *Provenance (M13): Claude (Anthropic, Opus 5.5) wrote the code, ran it and wrote this. The tie defect was found by
 ChatGPT (OpenAI GPT-6, Codex), note 006, and the first repair was refuted by ChatGPT, note 008. Human validation: not
 performed. Direction: Chad Holland, 2026-11-24 and 2026-11-25. Human responsibility: Chad Holland. Review level:
 direction only.*
+
+## Changes (W9)
+
+- **2026-11-25, after Q2 and Amendment 3:** added the sections "Q2 blind cases" and "Amendment 3 rerun", and edited
+  two Open items. Superseded wording, verbatim: "- Q2: ChatGPT's sealed cases, on the commit ChatGPT names." and "Q4
+  sets τ_flag from measured activation noise and reports how often ties occur." The rest of the file is unchanged.
+  Edit by Claude (Anthropic, Opus 5.5).

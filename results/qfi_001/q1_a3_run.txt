@@ -1,0 +1,34 @@
+QFI-001 Q1 reference run; sabotage=False; no_tie_fix=False; numpy 2.5.3
+C1 qubit rotation: F_Q=0.360000000000 F_C=5.800e-34 F_R=0.360000000000 F_C^fd=3.852e-21 (expect 0.36, 0, 0.36)
+C2 commuting: F_Q=1.095899531823 F_C=1.095899531823 F_R=0.000e+00 Var_p(a)=1.095899531823 F_C^fd=1.095899531697
+C3 pure qubit: F_Q=4.000000000000 F_C=4.749e-35 F_R=4.000000000000 (expect F_Q = 4)
+generated inputs: 200 families, d=4; eigenvalue min 0.0030 max 0.9177; F_Q range 0.4369..15.4055; F_R/F_Q share min 0.0377 median 0.8601 max 0.9999
+C4 measurement FI <= F_Q + 1e-9: violations 0 of 10000; worst (FI - F_Q) -1.399e-01
+C5 SLD basis attains F_Q (rel < 1e-8): 200 of 200; worst rel 2.372e-15
+C6 Bures d^2/delta^2 vs F_Q/4 (rel < 1e-3): 200 of 200; worst rel 1.630e-04
+C7 F_Q = F_C + F_R (abs < 1e-10, bookkeeping): 200 of 200; worst abs 3.553e-15
+near_tie flags (min gap <= 1e-06) among the 200 families: 0
+split_resolved False among the 200 families: 0
+C8 eligible (min eigengap > 1e-3): 196 of 200 (floor 150); need 192 per half
+C8 F_C vs F_C^fd (rel < 1e-4): 196 of 196; worst 5.169e-09
+C8 F_R vs F_Q - F_C^fd (rel < 1e-4): 196 of 196; worst 3.804e-10
+C8 C1 F_C^fd < 1e-8: True; C2 |F_C^fd - Var| < 1e-6: True
+C9 exact tie: F_Q=0.080000000000 F_C=0.080000000000 F_R=1.322e-32 tied=2 split_resolved=False (expect 0.08, 0.08, 0, False)
+C9 basis invariance over 20 in-block unitaries: worst abs difference 1.249e-16 (< 1e-10)
+C10 near tie: F_Q=0.040000000000 F_C=0.000e+00 F_R=0.040000000000 near_tie=True min_gap=2.000e-09 split_resolved=False (expect 0.04, 0, 0.04, True, False)
+C11 gap 4e-13: F_Q=0.040000000000 F_C=4.000e-02 F_R=2.412e-36 tied=2 near_tie=False split_resolved=False (expect F_Q 0.04, split_resolved False)
+C11 gap 4e-12: F_Q=0.040000000000 F_C=0.000e+00 F_R=4.000e-02 tied=0 near_tie=True split_resolved=False (expect F_Q 0.04, split_resolved False)
+C1: PASS
+C2: PASS
+C3: PASS
+C4: PASS
+C5: PASS
+C6: PASS
+C7: PASS
+C8: PASS
+C9: PASS
+C10: PASS
+C11: PASS
+finite: PASS
+VERDICT PASS
+exit 0
