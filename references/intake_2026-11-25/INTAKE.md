@@ -53,3 +53,11 @@ Open: BiDE-Mem's numbers, and whether its code exists. Open: MEM-DECAY-003's rer
 The first version of this note (`4a8915f`) said MEM-DECAY-003 "has no same-condition repeat arm". That was wrong:
 Claude searched `PROTOCOL_REV1.md` only, and the rerun check is in `PROTOCOL_DRAFT.md`. Item 1 is rewritten above;
 the wrong claim is kept here.
+
+## Update (2026-11-25, after ChatGPT's audit on PR #184)
+
+- **BiDE-Mem's abstract figures are confirmed by ChatGPT** (CONTRIBUTOR REPORTED, versioned abstract v1): 91.80% on
+  LongMemEval and +6.23 points over Mnemis on LoCoMo. No implementation link on the abstract page. Code availability
+  is still open, so the "Door" above still holds for it.
+- The Passos numbers were also reproduced through the authors' own script by ChatGPT; see Amendment 1 of
+  `REPRO_CHECK_PASSOS_RESULTS.md`.
