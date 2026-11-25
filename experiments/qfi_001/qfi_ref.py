@@ -2,10 +2,11 @@
 """QFI-001 reference code (Q1): quantum Fisher information, its classical/rotation split,
 Bures distance and measurement Fisher information, checked against closed forms.
 
-Registration: experiments/qfi_001/Q1_PREREG.md (bc44b2e) plus Amendment 1 (0f01126).
+Registration: experiments/qfi_001/Q1_PREREG.md (bc44b2e) plus Amendment 1 (0f01126) and Amendment 2 (088c544:
+exact numerical ties resolved inside the tied block, near-ties flagged, C9-C10, --no-tie-fix).
 Author: Claude (Anthropic, Opus 5.5). NumPy only. Deterministic (seed 4).
 
-Usage:  python experiments/qfi_001/qfi_ref.py [--sabotage]
+Usage:  python experiments/qfi_001/qfi_ref.py [--sabotage] [--no-tie-fix]
 """
 import argparse
 import sys
@@ -13,7 +14,10 @@ import sys
 import numpy as np
 
 EPS = 1e-12
+TAU_TIE = 1e-12   # Amendment 2 item 2: numerical ties only
+TAU_FLAG = 1e-6   # Amendment 2 item 3: near-ties are flagged, never repaired
 SABOTAGE = False
+NO_TIE_FIX = False
 
 
 # ---------------------------------------------------------------- instrument
@@ -25,25 +29,61 @@ def _denom(pk, pl):
     return pk + pl
 
 
-def qfi_split(rho, drho):
-    """Return (F_Q, F_C, F_R) for state rho and derivative drho (both Hermitian)."""
-    p, V = np.linalg.eigh(rho)
+def tie_blocks(p):
+    """Maximal runs of sorted eigenvalues whose neighbours differ by <= TAU_TIE (Amendment 2 item 2)."""
+    blocks, cur = [], [0]
+    for k in range(1, len(p)):
+        if p[k] - p[k - 1] <= TAU_TIE:
+            cur.append(k)
+        else:
+            blocks.append(cur)
+            cur = [k]
+    blocks.append(cur)
+    return blocks
+
+
+def split_in_basis(p, V, drho):
+    """Split in the eigenbasis V (columns, eigenvalues p ascending). Inside each tied block, rotate to the basis that
+    diagonalises that block of <k|drho|l> (degenerate perturbation basis), unless --no-tie-fix.
+    Returns dict with F_Q, F_C, F_R, near_tie, min_gap, n_tied."""
+    V = V.copy()
     X = V.conj().T @ drho @ V  # <k|drho|l>
     d = len(p)
-    FQ = FC = FR = 0.0
+    FQ = 0.0
     for k in range(d):
         for l in range(d):
-            s = p[k] + p[l]
-            if s <= EPS:
-                continue
-            term = 2.0 * abs(X[k, l]) ** 2 / _denom(p[k], p[l])
-            FQ += term
-            if k != l:
-                FR += term
+            if p[k] + p[l] > EPS:
+                FQ += 2.0 * abs(X[k, l]) ** 2 / _denom(p[k], p[l])
+    blocks = tie_blocks(p)
+    if not NO_TIE_FIX:
+        for b in blocks:
+            if len(b) > 1:
+                _, R = np.linalg.eigh(X[np.ix_(b, b)])
+                V[:, b] = V[:, b] @ R
+        X = V.conj().T @ drho @ V
+    FC = FR = 0.0
+    for k in range(d):
+        for l in range(d):
+            if k != l and p[k] + p[l] > EPS:
+                FR += 2.0 * abs(X[k, l]) ** 2 / _denom(p[k], p[l])
     for k in range(d):
         if p[k] > EPS:
             FC += X[k, k].real ** 2 / p[k]
-    return FQ, FC, FR
+    gaps = [p[blocks[i + 1][0]] - p[blocks[i][-1]] for i in range(len(blocks) - 1)]
+    min_gap = min(gaps) if gaps else np.inf
+    return {"F_Q": FQ, "F_C": FC, "F_R": FR, "near_tie": bool(min_gap <= TAU_FLAG), "min_gap": min_gap,
+            "n_tied": sum(len(b) for b in blocks if len(b) > 1)}
+
+
+def qfi_split_ex(rho, drho):
+    p, V = np.linalg.eigh(rho)
+    return split_in_basis(p, V, drho)
+
+
+def qfi_split(rho, drho):
+    """Return (F_Q, F_C, F_R) for state rho and derivative drho (both Hermitian)."""
+    r = qfi_split_ex(rho, drho)
+    return r["F_Q"], r["F_C"], r["F_R"]
 
 
 def sld(rho, drho):
@@ -158,11 +198,13 @@ def random_unitary(rng, d=4):
 # ---------------------------------------------------------------- run
 
 def main():
-    global SABOTAGE
+    global SABOTAGE, NO_TIE_FIX
     ap = argparse.ArgumentParser()
     ap.add_argument("--sabotage", action="store_true")
-    SABOTAGE = ap.parse_args().sabotage
-    print(f"QFI-001 Q1 reference run; sabotage={SABOTAGE}; numpy {np.__version__}")
+    ap.add_argument("--no-tie-fix", action="store_true")
+    a = ap.parse_args()
+    SABOTAGE, NO_TIE_FIX = a.sabotage, a.no_tie_fix
+    print(f"QFI-001 Q1 reference run; sabotage={SABOTAGE}; no_tie_fix={NO_TIE_FIX}; numpy {np.__version__}")
     ok = {}
 
     def close(x, y, tol=1e-10):
@@ -200,6 +242,8 @@ def main():
     c4_viol = 0
     c4_worst = -np.inf
     c5_pass = c6_pass = c7_pass = c8a_pass = c8b_pass = 0
+    c8_elig = 0
+    n_flag = 0
     c5_worst = c6_worst = c7_worst = c8a_worst = c8b_worst = 0.0
     shares, pmins, pmaxs, fqs = [], [], [], []
     nan_seen = False
@@ -208,7 +252,9 @@ def main():
         rho = rho_of(0.0)
         drho = (rho_of(h) - rho_of(-h)) / (2 * h)
         drho = (drho + drho.conj().T) / 2
-        FQ, FC, FR = qfi_split(rho, drho)
+        r = qfi_split_ex(rho, drho)
+        FQ, FC, FR = r["F_Q"], r["F_C"], r["F_R"]
+        n_flag += r["near_tie"]
         vals = [FQ, FC, FR]
         p = np.linalg.eigvalsh(rho)
         pmins.append(p.min()); pmaxs.append(p.max()); fqs.append(FQ)
@@ -233,12 +279,14 @@ def main():
         # C7 (bookkeeping)
         e7 = abs(FQ - (FC + FR))
         c7_worst = max(c7_worst, e7); c7_pass += e7 < 1e-10
-        # C8 (independent split)
+        # C8 (independent split), eligible families only (Amendment 2 item 6)
         fcfd = fc_fd(rho_of, 0.0)
-        e8a = abs(FC - fcfd) / max(FC, 1e-12)
-        e8b = abs(FR - (FQ - fcfd)) / FQ
-        c8a_worst = max(c8a_worst, e8a); c8a_pass += e8a < 1e-4
-        c8b_worst = max(c8b_worst, e8b); c8b_pass += e8b < 1e-4
+        if np.min(np.diff(p)) > 1e3 * h:
+            c8_elig += 1
+            e8a = abs(FC - fcfd) / max(FC, 1e-12)
+            e8b = abs(FR - (FQ - fcfd)) / FQ
+            c8a_worst = max(c8a_worst, e8a); c8a_pass += e8a < 1e-4
+            c8b_worst = max(c8b_worst, e8b); c8b_pass += e8b < 1e-4
         vals += [Fs, d2, fcfd]
         if not np.all(np.isfinite(vals)):
             nan_seen = True
@@ -251,20 +299,55 @@ def main():
     print(f"C5 SLD basis attains F_Q (rel < 1e-8): {c5_pass} of {n}; worst rel {c5_worst:.3e}")
     print(f"C6 Bures d^2/delta^2 vs F_Q/4 (rel < 1e-3): {c6_pass} of {n}; worst rel {c6_worst:.3e}")
     print(f"C7 F_Q = F_C + F_R (abs < 1e-10, bookkeeping): {c7_pass} of {n}; worst abs {c7_worst:.3e}")
-    print(f"C8 F_C vs F_C^fd (rel < 1e-4): {c8a_pass} of {n}; worst {c8a_worst:.3e}")
-    print(f"C8 F_R vs F_Q - F_C^fd (rel < 1e-4): {c8b_pass} of {n}; worst {c8b_worst:.3e}")
+    need8 = int(np.ceil(0.975 * c8_elig))
+    print(f"near_tie flags (min gap <= {TAU_FLAG:g}) among the {n} families: {n_flag}")
+    print(f"C8 eligible (min eigengap > 1e-3): {c8_elig} of {n} (floor 150); need {need8} per half")
+    print(f"C8 F_C vs F_C^fd (rel < 1e-4): {c8a_pass} of {c8_elig}; worst {c8a_worst:.3e}")
+    print(f"C8 F_R vs F_Q - F_C^fd (rel < 1e-4): {c8b_pass} of {c8_elig}; worst {c8b_worst:.3e}")
     print(f"C8 C1 F_C^fd < 1e-8: {c8_c1}; C2 |F_C^fd - Var| < 1e-6: {c8_c2}")
 
     ok["C4"] = c4_viol == 0
     ok["C5"] = c5_pass >= 195
     ok["C6"] = c6_pass >= 195
     ok["C7"] = c7_pass == n
-    ok["C8"] = c8a_pass >= 195 and c8b_pass >= 195 and c8_c1 and c8_c2
+    ok["C8"] = c8_elig >= 150 and c8a_pass >= need8 and c8b_pass >= need8 and c8_c1 and c8_c2
+
+    # C9: exact tie on a commuting path (Amendment 2 item 4)
+    rng9 = np.random.default_rng(0)
+    U = random_unitary(rng9, 3)
+    rho9 = U @ np.diag([0.5, 0.25, 0.25]).astype(complex) @ U.conj().T
+    drho9 = U @ np.diag([0.0, 0.1, -0.1]).astype(complex) @ U.conj().T
+    r9 = qfi_split_ex(rho9, drho9)
+    print(f"C9 exact tie: F_Q={r9['F_Q']:.12f} F_C={r9['F_C']:.12f} F_R={r9['F_R']:.3e} tied={r9['n_tied']} "
+          f"(expect 0.08, 0.08, 0)")
+    c9a = close(r9["F_Q"], 0.08) and close(r9["F_C"], 0.08) and bool(np.isfinite(r9["F_R"]) and r9["F_R"] < 1e-10)
+    p9, V9 = np.linalg.eigh(rho9)
+    blk = [b for b in tie_blocks(p9) if len(b) > 1]
+    rngR = np.random.default_rng(9)
+    inv_worst = np.inf if len(blk) != 1 else 0.0
+    if len(blk) == 1:
+        b = blk[0]
+        for _ in range(20):
+            Rf = np.eye(3, dtype=complex)
+            Rf[np.ix_(b, b)] = random_unitary(rngR, len(b))
+            rr = split_in_basis(p9, V9 @ Rf, drho9)
+            inv_worst = max(inv_worst, abs(rr["F_C"] - r9["F_C"]), abs(rr["F_R"] - r9["F_R"]),
+                            abs(rr["F_Q"] - r9["F_Q"]))
+    print(f"C9 basis invariance over 20 in-block unitaries: worst abs difference {inv_worst:.3e} (< 1e-10)")
+    ok["C9"] = c9a and bool(inv_worst < 1e-10)
+
+    # C10: near-tie, ChatGPT note qfi001/chatgpt/008 (Amendment 2 item 5)
+    r10 = qfi_split_ex(np.diag([0.5 + 1e-9, 0.5 - 1e-9]).astype(complex),
+                       np.array([[0, 0.1], [0.1, 0]], dtype=complex))
+    print(f"C10 near tie: F_Q={r10['F_Q']:.12f} F_C={r10['F_C']:.3e} F_R={r10['F_R']:.12f} "
+          f"near_tie={r10['near_tie']} min_gap={r10['min_gap']:.3e} (expect 0.04, 0, 0.04, True)")
+    ok["C10"] = close(r10["F_Q"], 0.04) and close(r10["F_C"], 0.0) and close(r10["F_R"], 0.04) and r10["near_tie"]
+
     ok["finite"] = not nan_seen
-    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "finite"]:
+    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "finite"]:
         print(f"{k}: {'PASS' if ok.get(k) is True else 'FAIL'}")
     verdict = "PASS" if all(ok.get(k) is True for k in
-                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "finite"]) else "FAIL"
+                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "finite"]) else "FAIL"
     print(f"VERDICT {verdict}")
     return 0 if verdict == "PASS" else 1
 
