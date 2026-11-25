@@ -161,3 +161,35 @@ registered. This amendment changes the flag and adds a case. It changes no regis
 6. **Q3 and Q4 count both kinds:** resolved tie blocks and near-ties.
 
 The verdict is PASS only if C1 to C11 all hold.
+
+## Amendment 4 (2026-11-25, after the Amendment 3 rerun; before this change was coded)
+
+Committed alone, before code (M2). **Authority:** Chad Holland's delegation, PR #181 comment 7141782954. **Why:**
+ChatGPT (OpenAI, Codex) note `qfi001/chatgpt/012` (comment 7174996105). Claude reproduced both findings (SELF-TESTED,
+scratch script importing `qfi_ref.py` at `108803c`, NumPy 2.5.3). ρ = diag(p, 1 − p), ∂ρ = diag(√p, −√p); analytic
+F_Q = F_C = 1/(1 − p), F_R = 0:
+```
+p=7.5e-13 F_Q=1.00000000000075 F_C=7.500000000005625e-13 F_R=0.0 min_gap=0.9999999999985001 n_tied=0 split_resolved=True
+p=4e-13 F_Q=4.0000000000015996e-13 F_C=4.0000000000015996e-13 F_R=0.0 analytic=1.0000000000004001 split_resolved=True
+```
+1. **The defect is in the registered definitions, not only the code.** The diagonal term of F_Q is kept when
+   2p_k > ε. F_C keeps it when p_k > ε. So "F_Q = F_C + F_R term by term" is false for ε/2 < p_k ≤ ε, while
+   `split_resolved` stays True. Superseded, verbatim: "**Classical part:** F_C = Σ_{k: p_k > ε} (⟨k|∂ρ|k⟩)² / p_k."
+   **New:** F_C = Σ_{k: 2p_k > ε} (⟨k|∂ρ|k⟩)² / p_k, the same mask as F_Q's diagonal. F_Q and F_R are unchanged.
+   F_C^fd (C8) uses the same support, 2p_k > ε. The measurement FI, the SLD and the Bures distance are unchanged.
+2. **C12 (ChatGPT's case):** p = 7.5e-13. Required: F_Q and F_C within 1e-10 (absolute) of 1/(1 − p), F_R < 1e-10,
+   |F_Q − F_C − F_R| < 1e-10 and `split_resolved` True.
+3. **C13, positive control for the flag:** C1 and C2 must return `split_resolved` True. Before this, a code that set
+   it False everywhere still passed (ChatGPT, 012).
+4. **Two more switches (M3).** `--old-mask` restores the superseded F_C mask and must fail C12. `--force-unresolved`
+   returns `split_resolved` False everywhere and must fail C12 and C13. `--sabotage` must still fail C1, C3 and C5, and
+   `--no-tie-fix` must still fail C9.
+5. **Prediction for the rerun:** no registered case has an eigenvalue in (ε/2, ε], so every measurement line already
+   in `results/qfi_001/q1_a3_run.txt` must come out byte-identical. Any difference is reported first.
+6. **Not fixed here; for Q3 to count, Q4 to decide.** (a) Near the support cutoff the total F_Q itself depends on ε
+   (p = 4e-13 above: F_Q 4.0e-13 against 1.0). Q3 counts eigenvalues ≤ 1e-6 and reports F_Q at ε = 1e-12 and
+   1e-10. (b) A trace-normalised second moment of n token vectors in dimension d > n has a d − n dimensional
+   numerical kernel, which `tie_blocks` groups into one block. That alone makes `split_resolved` False. Q3 reports
+   `n_tied` separately for blocks wholly below ε/2 and for the rest.
+
+The verdict is PASS only if C1 to C13 all hold.
