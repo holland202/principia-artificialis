@@ -30,10 +30,11 @@ Opus 5.5). Human review of this note: none.
 
 ## What PA could use, as questions to kill
 
-1. **MEM-DECAY-003 has no same-condition repeat arm.** Its protocol (`experiments/mem_decay_003/PROTOCOL_REV1.md`,
-   not registered) compares memory policies once per condition. Passos measured 18.8% of outcomes flipping between
-   identical runs. Question: what is MEM-DECAY-003's own rerun flip rate on its dev family, and does its planned
-   sample detect anything smaller? Proposed as an amendment for that line, not adopted here.
+1. **How large is MEM-DECAY-003's rerun noise?** Its draft protocol already plans a noise check: greedy decoding at
+   temperature 0, with 10% of calls rerun to check for byte-identical outputs (`PROTOCOL_DRAFT.md` lines 66 and 79).
+   Passos's 18.8% comes from a multi-step coding agent, not a single greedy call, so it does not transfer directly.
+   Question: if that 10% rerun finds any non-identical outputs, what flip rate does it imply for the scored answers,
+   and does the planned sample detect effects smaller than that?
 2. **Access versus sufficiency (BiDE-Mem's framing).** Does a memory policy that retrieves the relevant record still
    fail when the record is insufficient to justify the answer? Overlaps MEM-DECAY-003's supersession cases and CST-001.
    Prior-art search needed before any novelty claim.
@@ -41,8 +42,14 @@ Opus 5.5). Human review of this note: none.
    from the same checkpoint is a causal test of whether history changes behaviour. It could serve as CST-001's control.
 
 The scan's combined four-condition proposal (no memory / ordinary / evidence-qualified / corrupted) is a proposal, not
-a finding; any version of it must include a same-condition repeat arm first, for the reason in item 1.
+a finding; any version of it needs a measured same-condition flip rate before its effects can be read, for the reason in item 1.
 
 ## Door (M15)
 
 Open: BiDE-Mem's numbers, and whether its code exists. Open: MEM-DECAY-003's rerun flip rate.
+
+## Correction (2026-11-25, same day, before review)
+
+The first version of this note (`4a8915f`) said MEM-DECAY-003 "has no same-condition repeat arm". That was wrong:
+Claude searched `PROTOCOL_REV1.md` only, and the rerun check is in `PROTOCOL_DRAFT.md`. Item 1 is rewritten above;
+the wrong claim is kept here.
