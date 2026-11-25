@@ -3,7 +3,8 @@
 Bures distance and measurement Fisher information, checked against closed forms.
 
 Registration: experiments/qfi_001/Q1_PREREG.md (bc44b2e) plus Amendment 1 (0f01126) and Amendment 2 (088c544:
-exact numerical ties resolved inside the tied block, near-ties flagged, C9-C10, --no-tie-fix).
+exact numerical ties resolved inside the tied block, near-ties flagged, C9-C10, --no-tie-fix) and Amendment 3
+(33bea52: split_resolved flag, C11).
 Author: Claude (Anthropic, Opus 5.5). NumPy only. Deterministic (seed 4).
 
 Usage:  python experiments/qfi_001/qfi_ref.py [--sabotage] [--no-tie-fix]
@@ -45,7 +46,7 @@ def tie_blocks(p):
 def split_in_basis(p, V, drho):
     """Split in the eigenbasis V (columns, eigenvalues p ascending). Inside each tied block, rotate to the basis that
     diagonalises that block of <k|drho|l> (degenerate perturbation basis), unless --no-tie-fix.
-    Returns dict with F_Q, F_C, F_R, near_tie, min_gap, n_tied."""
+    Returns dict with F_Q, F_C, F_R, near_tie, min_gap, n_tied, split_resolved (Amendment 3)."""
     V = V.copy()
     X = V.conj().T @ drho @ V  # <k|drho|l>
     d = len(p)
@@ -71,8 +72,10 @@ def split_in_basis(p, V, drho):
             FC += X[k, k].real ** 2 / p[k]
     gaps = [p[blocks[i + 1][0]] - p[blocks[i][-1]] for i in range(len(blocks) - 1)]
     min_gap = min(gaps) if gaps else np.inf
-    return {"F_Q": FQ, "F_C": FC, "F_R": FR, "near_tie": bool(min_gap <= TAU_FLAG), "min_gap": min_gap,
-            "n_tied": sum(len(b) for b in blocks if len(b) > 1)}
+    n_tied = sum(len(b) for b in blocks if len(b) > 1)
+    near = bool(min_gap <= TAU_FLAG)
+    return {"F_Q": FQ, "F_C": FC, "F_R": FR, "near_tie": near, "min_gap": min_gap, "n_tied": n_tied,
+            "split_resolved": bool(n_tied == 0 and not near)}
 
 
 def qfi_split_ex(rho, drho):
@@ -244,6 +247,7 @@ def main():
     c5_pass = c6_pass = c7_pass = c8a_pass = c8b_pass = 0
     c8_elig = 0
     n_flag = 0
+    n_unres = 0
     c5_worst = c6_worst = c7_worst = c8a_worst = c8b_worst = 0.0
     shares, pmins, pmaxs, fqs = [], [], [], []
     nan_seen = False
@@ -255,6 +259,7 @@ def main():
         r = qfi_split_ex(rho, drho)
         FQ, FC, FR = r["F_Q"], r["F_C"], r["F_R"]
         n_flag += r["near_tie"]
+        n_unres += not r["split_resolved"]
         vals = [FQ, FC, FR]
         p = np.linalg.eigvalsh(rho)
         pmins.append(p.min()); pmaxs.append(p.max()); fqs.append(FQ)
@@ -301,6 +306,7 @@ def main():
     print(f"C7 F_Q = F_C + F_R (abs < 1e-10, bookkeeping): {c7_pass} of {n}; worst abs {c7_worst:.3e}")
     need8 = int(np.ceil(0.975 * c8_elig))
     print(f"near_tie flags (min gap <= {TAU_FLAG:g}) among the {n} families: {n_flag}")
+    print(f"split_resolved False among the {n} families: {n_unres}")
     print(f"C8 eligible (min eigengap > 1e-3): {c8_elig} of {n} (floor 150); need {need8} per half")
     print(f"C8 F_C vs F_C^fd (rel < 1e-4): {c8a_pass} of {c8_elig}; worst {c8a_worst:.3e}")
     print(f"C8 F_R vs F_Q - F_C^fd (rel < 1e-4): {c8b_pass} of {c8_elig}; worst {c8b_worst:.3e}")
@@ -319,7 +325,7 @@ def main():
     drho9 = U @ np.diag([0.0, 0.1, -0.1]).astype(complex) @ U.conj().T
     r9 = qfi_split_ex(rho9, drho9)
     print(f"C9 exact tie: F_Q={r9['F_Q']:.12f} F_C={r9['F_C']:.12f} F_R={r9['F_R']:.3e} tied={r9['n_tied']} "
-          f"(expect 0.08, 0.08, 0)")
+          f"split_resolved={r9['split_resolved']} (expect 0.08, 0.08, 0, False)")
     c9a = close(r9["F_Q"], 0.08) and close(r9["F_C"], 0.08) and bool(np.isfinite(r9["F_R"]) and r9["F_R"] < 1e-10)
     p9, V9 = np.linalg.eigh(rho9)
     blk = [b for b in tie_blocks(p9) if len(b) > 1]
@@ -334,22 +340,34 @@ def main():
             inv_worst = max(inv_worst, abs(rr["F_C"] - r9["F_C"]), abs(rr["F_R"] - r9["F_R"]),
                             abs(rr["F_Q"] - r9["F_Q"]))
     print(f"C9 basis invariance over 20 in-block unitaries: worst abs difference {inv_worst:.3e} (< 1e-10)")
-    ok["C9"] = bool(c9a and inv_worst < 1e-10)
+    ok["C9"] = bool(c9a and inv_worst < 1e-10 and r9["split_resolved"] is False)
 
     # C10: near-tie, ChatGPT note qfi001/chatgpt/008 (Amendment 2 item 5)
     r10 = qfi_split_ex(np.diag([0.5 + 1e-9, 0.5 - 1e-9]).astype(complex),
                        np.array([[0, 0.1], [0.1, 0]], dtype=complex))
     print(f"C10 near tie: F_Q={r10['F_Q']:.12f} F_C={r10['F_C']:.3e} F_R={r10['F_R']:.12f} "
-          f"near_tie={r10['near_tie']} min_gap={r10['min_gap']:.3e} (expect 0.04, 0, 0.04, True)")
-    ok["C10"] = close(r10["F_Q"], 0.04) and close(r10["F_C"], 0.0) and close(r10["F_R"], 0.04) and r10["near_tie"] is True
+          f"near_tie={r10['near_tie']} min_gap={r10['min_gap']:.3e} split_resolved={r10['split_resolved']} "
+          f"(expect 0.04, 0, 0.04, True, False)")
+    ok["C10"] = close(r10["F_Q"], 0.04) and close(r10["F_C"], 0.0) and close(r10["F_R"], 0.04) and r10["near_tie"] is True \
+        and r10["split_resolved"] is False
+
+    # C11: sub-threshold gaps, ChatGPT note qfi001/chatgpt/010 (Amendment 3 item 4)
+    c11 = True
+    for g in (4e-13, 4e-12):
+        r11 = qfi_split_ex(np.diag([0.5 + g / 2, 0.5 - g / 2]).astype(complex),
+                           np.array([[0, 0.1], [0.1, 0]], dtype=complex))
+        print(f"C11 gap {g:g}: F_Q={r11['F_Q']:.12f} F_C={r11['F_C']:.3e} F_R={r11['F_R']:.3e} tied={r11['n_tied']} "
+              f"near_tie={r11['near_tie']} split_resolved={r11['split_resolved']} (expect F_Q 0.04, split_resolved False)")
+        c11 = c11 and close(r11["F_Q"], 0.04) and r11["split_resolved"] is False
+    ok["C11"] = bool(c11)
 
     ok["finite"] = not nan_seen
     # Fix after the first run (results/qfi_001/q1_run.txt): every check is now a Python bool, so the fail-closed
     # "is True" test no longer rejects numpy.bool_ passes. Thresholds unchanged.
-    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "finite"]:
+    for k in ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "finite"]:
         print(f"{k}: {'PASS' if ok.get(k) is True else 'FAIL'}")
     verdict = "PASS" if all(ok.get(k) is True for k in
-                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "finite"]) else "FAIL"
+                            ["C1", "C2", "C3", "C4", "C5", "C6", "C7", "C8", "C9", "C10", "C11", "finite"]) else "FAIL"
     print(f"VERDICT {verdict}")
     return 0 if verdict == "PASS" else 1
 
