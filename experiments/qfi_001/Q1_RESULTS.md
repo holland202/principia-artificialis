@@ -99,10 +99,31 @@ VERDICT PASS
   F_C 0, F_R 0.04. From numbers alone, that gap cannot be told apart from an exact tie. This is the case
   `split_resolved` exists to mark.
 
+## Amendment 4 rerun (code `5c6f772`, SHA-256 `45bff36b…8fa9`): PASS
+
+ChatGPT note `qfi001/chatgpt/012` (comment 7174996105) found two gaps, and Claude reproduced both (SELF-TESTED, at
+`108803c`). (1) F_C kept a diagonal term only when p_k > ε, while F_Q kept it when 2p_k > ε. At p = 7.5e-13 the code
+returned F_Q = 1.00000000000075, F_C = 7.5e-13 and `split_resolved` True, against an analytic F_C of 1/(1 − p). The
+mismatch was in the registered definitions themselves. (2) A copy that set `split_resolved` False everywhere still
+passed. Amendment 4 (`c4cfc7b`) aligns the masks and adds C12 and C13. Verbatim excerpt
+([`q1_a4_run.txt`](../../results/qfi_001/q1_a4_run.txt)):
+```
+C12 support mask p=7.5e-13: F_Q=1.000000000000750 F_C=1.000000000000750 F_R=0.000e+00 |F_Q-F_C-F_R|=0.000e+00 split_resolved=True (expect 1.000000000000750 twice, 0, 0, True)
+C13 split_resolved on well-separated cases: C1 True, C2 True (expect True, True)
+VERDICT PASS
+```
+- **Registered prediction held:** every measurement line of `q1_a3_run.txt` is byte-identical in `q1_a4_run.txt`.
+  Only the header and the C12 and C13 lines are new.
+- `--sabotage` fails C1 and C3 to C6. `--no-tie-fix` fails only C9. `--old-mask` fails only C12.
+  `--force-unresolved` fails C12 and C13. All exit 1.
+- **Still open, not fixed:** near the support cutoff the total F_Q depends on ε (p = 4e-13 gives F_Q 4.0e-13
+  against 1.0). A rank-deficient activation second moment has a numerical kernel that `tie_blocks` groups into one
+  block, so `split_resolved` would be False there by construction. Q3 counts both (Amendment 4 item 6).
+
 ## Open (M15)
 
 - Q2 for later code (the activation pipeline) is still to be written by ChatGPT.
-- Q3: feasibility on one small model. Q4 sets τ_flag from measured activation noise. Q3 and Q4 count resolved tie blocks and near-ties, and withhold the split where `split_resolved` is False (Amendment 3).
+- Q3: feasibility on one small model. Q4 sets τ_flag from measured activation noise. Q3 and Q4 count resolved tie blocks and near-ties, and withhold the split where `split_resolved` is False (Amendment 3). Q3 also counts support-edge eigenvalues (≤ 1e-6), F_Q at ε = 1e-12 and 1e-10, and tie blocks below ε/2 separately (Amendment 4).
 
 ---
 *Provenance (M13): Claude (Anthropic, Opus 5.5) wrote the code, ran it and wrote this. The tie defect was found by
@@ -116,3 +137,7 @@ direction only.*
   two Open items. Superseded wording, verbatim: "- Q2: ChatGPT's sealed cases, on the commit ChatGPT names." and "Q4
   sets τ_flag from measured activation noise and reports how often ties occur." The rest of the file is unchanged.
   Edit by Claude (Anthropic, Opus 5.5).
+- **2026-11-25, after ChatGPT note 012 and Amendment 4:** added the section "Amendment 4 rerun" and edited one Open
+  item. Superseded wording, verbatim: "- Q3: feasibility on one small model. Q4 sets τ_flag from measured activation
+  noise. Q3 and Q4 count resolved tie blocks and near-ties, and withhold the split where `split_resolved` is False
+  (Amendment 3)." The rest of the file is unchanged. Edit by Claude (Anthropic, Opus 5.5).
