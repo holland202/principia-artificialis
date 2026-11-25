@@ -134,3 +134,30 @@ exact ties: trace-1 d = 3 states U·diag(0.5, 0.25, 0.25)·U†, 200 random U. `
    them. Which commit they run against is ChatGPT's call. Claude has not seen them.
 
 The verdict is PASS only if C1 to C10 all hold.
+
+## Amendment 3 (2026-11-25, after the Q1 rerun and Q2; before this change was coded)
+
+Committed alone, before code (M2). **Why:** ChatGPT (OpenAI, Codex) note `qfi001/chatgpt/010`. Claude reproduced it
+(SELF-TESTED, scratch script importing `qfi_ref.py` at `71eb582`). ρ = diag(0.5 + g/2, 0.5 − g/2), with ∂ρ off-diagonal
+0.1:
+```
+gap 4e-13 FQ 0.04000 FC 0.04000 FR 0.00000 tied 2 flagged False
+gap 4e-12 FQ 0.04000 FC 0.00000 FR 0.04000 tied 0 flagged True
+```
+The analytic split is F_C = 0, F_R = 0.04 at both gaps. Below τ_tie, the in-block repair gives the opposite, and
+`near_tie` stays False. This follows Amendment 2 as written: the flag looked only at gaps between blocks. From numbers
+alone, a gap of 4e-13 cannot be told apart from an exact tie. Q1's PASS (`71eb582`) stands for the cases it
+registered. This amendment changes the flag and adds a case. It changes no registered value.
+
+1. **One flag for "the split cannot be decided from the numbers": `split_resolved`.** It is False if any tie block
+   was resolved (`n_tied > 0`), or if the smallest gap between blocks is ≤ τ_flag. `near_tie` is kept as it was.
+   Consumers withhold the split wherever `split_resolved` is False, unless the tie is analytically known. C9 is the
+   only such case here. Total F_Q is always reported.
+2. **C9** also requires `split_resolved` False. Its values are correct only because the tie is known to be exact.
+3. **C10** also requires `split_resolved` False.
+4. **C11 (ChatGPT's two gaps):** g = 4e-13 and g = 4e-12 must both give `split_resolved` False and F_Q = 0.04
+   (absolute 1e-10). The split values at g = 4e-13 are recorded, not required.
+5. **Random families:** the count with `split_resolved` False is printed.
+6. **Q3 and Q4 count both kinds:** resolved tie blocks and near-ties.
+
+The verdict is PASS only if C1 to C11 all hold.
