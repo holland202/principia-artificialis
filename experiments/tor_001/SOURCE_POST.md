@@ -30,3 +30,10 @@ either person.
 SOURCE as mathematics: the field shown is 0.6·(sin(x+y)cos θ₁ − cos(x+y)sin θ₁) + 0.4·(…). That is a linear
 combination of four fixed spatial patterns, with coefficients (cos θᵢ, sin θᵢ). So its states lie on a torus embedded
 *linearly* in a 4-dimensional subspace. This is why the registration adds a linear rival.
+
+## Changes (W9)
+
+- **2026-11-26, the post's URL.** Chad Holland supplied it on PR #186 (comment 7196893238):
+  `https://lnkd.in/p/gh3wU6Y5`, Sushil Pershad, "Why a model might store a field on a torus". The link is a LinkedIn
+  short link and was not opened from here. The text above is still the transcription from the screenshot. The earlier
+  line "The post's URL has not been supplied yet" is superseded.

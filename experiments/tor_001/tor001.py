@@ -262,10 +262,20 @@ def decide(E, gates):
     """E: {'F1','F2','F3': errs}; errs[arm or arm/seed][horizon] -> float. gates: {'G1': bool, 'order': bool}.
     Returns (row, outcome, predictions dict)."""
     try:
-        vals = [v for f in E.values() for a in f.values() for v in a.values()]
-        if not (gates["G1"] is True and gates["order"] is True) or not vals or \
-                not all(isinstance(v, float) and math.isfinite(v) for v in vals):
+        if not (gates["G1"] is True and gates["order"] is True):
             return 1, "INCONCLUSIVE", {}
+        # Full table first (ChatGPT note tor001/chatgpt/010): every field x arm/seed x horizon must be present and
+        # finite, including entries no prediction uses. A missing or extra entry gives row 1.
+        arms = ["L4", "L*"] + [f"{k}/{s}" for k in LEARNED for s in SEEDS]
+        if set(E) != {"F1", "F2", "F3"}:
+            return 1, "INCONCLUSIVE", {}
+        for f in ("F1", "F2", "F3"):
+            if set(E[f]) != set(arms):
+                return 1, "INCONCLUSIVE", {}
+            for a in arms:
+                if set(E[f][a]) != set(HORIZONS) or \
+                        not all(isinstance(E[f][a][h], float) and math.isfinite(E[f][a][h]) for h in HORIZONS):
+                    return 1, "INCONCLUSIVE", {}
         F1, F2, F3 = E["F1"], E["F2"], E["F3"]
         t2 = med(F2, "T2", 1000)
         P = {"P1": F1["L4"][1000] < 0.01,
@@ -315,6 +325,12 @@ def selftest():
          {"G1": True, "order": False}, 1),
         ("NaN", {"F1": F1, "F2": errs(float("nan"), 0.2, 0.2, 0.3, 0.01, 0.2, 0.06), "F3": F3bad}, g, 1),
     ]
+    # Regression for ChatGPT note tor001/chatgpt/010: an entry no prediction uses is deleted -> row 1, not row 6
+    E = {k: errs(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) for k in ("F1", "F2", "F3")}
+    cases.append(("complete table (all 0.5)", E, g, 6))
+    E2 = {k: errs(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5) for k in ("F1", "F2", "F3")}
+    del E2["F1"]["L*"][10]
+    cases.append(("unused entry deleted", E2, g, 1))
     bad = 0
     for name, E, gg, want in cases:
         got = decide(E, gg)[0]
