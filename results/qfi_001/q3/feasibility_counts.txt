@@ -1,0 +1,14 @@
+trained (main, step143000)   rev cf967c0a9a04 identities MATCH tensors 76 stored-values 14067712 dtypes ['F16']
+untrained (step0)            rev 56079904bb80 identities MATCH tensors 76 stored-values 14067712 dtypes ['F16']
+config: hidden_size 128 layers 6 heads 4 vocab 50304 rotary_pct 0.25 parallel_residual True
+pair 0: tokens 7 vs 7 differing positions 1 qualifies True
+pair 1: tokens 7 vs 7 differing positions 1 qualifies True
+pair 2: tokens 8 vs 8 differing positions 1 qualifies True
+pair 3: tokens 8 vs 8 differing positions 1 qualifies True
+pair 4: tokens 7 vs 7 differing positions 1 qualifies True
+pair 5: tokens 8 vs 9 differing positions None qualifies False
+chosen pairs (first three that qualify): [0, 1, 2]
+density matrix size d = 128; tokens per input n = [7, 7, 8]; structural kernel d - n = [121, 121, 120]
+layers per point: 7 (all hidden_states entries (embeddings + each block)); points = 2 models x 3 pairs x 11 thetas x 7 layers = 462
+forward passes (central difference, all layers per pass) = 198, plus the noise and step checks
+FEASIBILITY COUNTS COMPLETE

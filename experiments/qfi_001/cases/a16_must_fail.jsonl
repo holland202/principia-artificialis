@@ -1,0 +1,3 @@
+{"id":"FAST-empty-expect","source":"chatgpt/016","rho":{"re":[[1,0],[0,0]]},"drho":{"re":[[0,0],[0,0]]},"expect":{}}
+{"id":"bk-false-only","source":"claude/A16.1 control","rho":{"re":[[1,0],[0,0]]},"drho":{"re":[[0,0],[0,0]]},"expect":{"bookkeeping":false}}
+{"id":"typo-key","source":"claude/A16.1 control","rho":{"re":[[1,0],[0,0]]},"drho":{"re":[[0,0],[0,0]]},"expect":{"F_q":0}}

@@ -1,0 +1,10 @@
+P008-near-tie (qfi001/chatgpt/008): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P010-gap-4e-13 (qfi001/chatgpt/010): F_Q=0.04 F_C=0.04 F_R=2.41210991942e-36 split_resolved=False -> PASS
+P010-gap-4e-12 (qfi001/chatgpt/010): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P012-support-mask (qfi001/chatgpt/012): F_Q=1 F_C=1 F_R=0 split_resolved=True -> PASS
+P014-kernel-0 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi4 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi2 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-unequal-small (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=0.9 split_resolved=False -> PASS
+cases 8, failed 0, impl qfi_ref, numpy 2.5.3
+VERDICT PASS
