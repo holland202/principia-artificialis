@@ -43,10 +43,11 @@ blocks of the same size, which seeds still show a multi-story excess?**
 2. **G1, same weights (Source B only):** the retrained weights' SHA-256 equals the recorded one.
 3. **G2, same generator (Source B, if G1 fails):** generation seeds 5000 to 5019 reproduce
    `t41.samples.txt` and `t42.samples.txt` byte for byte.
-4. **Scope rule.** If Source A is used, or G1 or G2 holds, the result speaks about TLM-004's seed-41 and seed-42 models.
-   If G1 and G2 both fail, the run continues on the retrained models. The result is then labelled **RECIPE
-   REPLICATE** and speaks about the training recipe and seeds, not TLM-004's exact weights. This is decided here,
-   before any run.
+4. **Scope rule (revised after ChatGPT note 002).** The scope is decided per model, here, before any run:
+   - **TLM-004 MODEL:** Source A with a matching hash, or Source B with G1 holding.
+   - **RECIPE REPLICATE, OLD OUTPUTS MATCHED:** G1 fails but G2 holds. Matching 20 old texts does not show the weights
+     are the same. Two models can agree on seeds 5000 to 5019 and still differ at 5020.
+   - **RECIPE REPLICATE:** G1 and G2 both fail. The run continues on the retrained models.
 5. **G3, counts:** the valid file must hold at least 2,600 stories (counted and printed first). Any missing count
    gives INCONCLUSIVE.
 
@@ -54,16 +55,26 @@ blocks of the same size, which seeds still show a multi-story excess?**
 
 The measures are as in TLM-005, on masked windows. E is the number of eligible windows. u = U/E (single-story),
 r = R/E (multi-story), b = B/E, and the masked copy rate is u + r + b. The share of texts with a longest match of
-200 bytes or more is also reported. Rates are pooled over all texts of the set: the sum of counts divided by the sum
-of E.
+200 bytes or more is also reported. **Primary:** rates pooled over all texts of the set, i.e. the sum of counts
+divided by the sum of E. Pooling weights each text by its eligible windows (ChatGPT note 002).
+
+**Frozen sensitivity analyses** (reported, not part of the verdict; any disagreement with the primary is named in the
+results):
+- **S1, matched length:** each reference story is encoded with `tok1024.json`, cut at the model's cap of 330 tokens,
+  decoded, and masked exactly as model text is. Then the same rule as the primary is applied.
+- **S2, per-text mean:** the mean of each text's r (texts with E = 0 excluded and counted), with the same rule.
+- **Distributions:** each set's E and byte-length distributions (min, quartiles, max) are printed.
 
 ## Decision rule (C-NOISE, C-STAT), fixed before any sample
 
 - **Excess (per seed, for r):** the seed's r over its 200 samples is above the maximum r of the 10 reference blocks,
   **and** stays above it when any one of the seed's ten 20-sample sub-blocks (generation seeds 5020 to 5039, 5040 to
   5059, and so on) is dropped, across all 10 drop-one-block subsets of 180 samples.
-- **Error rate of this rule, stated:** if model and reference sets were exchangeable, one set exceeds the maximum
-  of 10 others with probability 1/11 ≈ 0.091 per seed (before the drop-one condition). No p-value is claimed.
+- **Error rate of this rule, stated (corrected after ChatGPT note 002):** if model and reference sets were
+  exchangeable, one set would exceed the maximum of 10 others with probability at most 1/11 ≈ 0.091 per seed. It is
+  exactly 1/11 when there are no ties, and drop-one can only lower it. Model sets and contiguous blocks of real
+  stories are **not** shown to be exchangeable. The maximum is therefore a **descriptive threshold**. No p-value or
+  error rate is claimed for the verdict.
 - **Same-input noise, reported, not a criterion:** r for each of the seed's ten 20-sample sub-blocks, and whether
   TLM-005's 0.0405 lies inside seed 41's sub-block range.
 
@@ -72,13 +83,17 @@ of E.
 | Order | Condition | Outcome |
 |---|---|---|
 | 1 | G0 fails, any count missing, or G3 fails | STOP / INCONCLUSIVE |
-| 2 | B ≠ 0 in any set after masking | INCONCLUSIVE |
-| 3 | an r-excess passes the max test but fails drop-one-block | INCONCLUSIVE |
-| 4 | r excess in seed 41 only | SEED-41 ONLY: one trained model copies shared phrases more |
-| 5 | r excess in both seeds | BOTH: the recipe copies shared phrases more |
-| 6 | r excess in seed 42 only | SEED-42 ONLY: TLM-005's seed pattern reversed |
-| 7 | no r excess in either seed | NEITHER: the rival; TLM-005's seed-41 number was a 20-sample draw |
-| 8 | anything else | INCONCLUSIVE (fallback; ChatGPT's TLM-005 note 004) |
+| 2 | a control fails: the positive control shows no excess, the R fixture gives R = 0, or `--df-any` leaves R > 0 anywhere | CONTROL FAILED: no substantive outcome |
+| 3 | E = 0 for any set, block, or drop-one subset | INCONCLUSIVE |
+| 4 | B ≠ 0 in any set after masking | INCONCLUSIVE |
+| 5 | an r-excess passes the max test but fails drop-one-block | INCONCLUSIVE |
+| 6 | r excess in seed 41 only | SEED-41 ONLY: on this sample, one of the two tested models clears the threshold |
+| 7 | r excess in both seeds | BOTH: both tested models clear it |
+| 8 | r excess in seed 42 only | SEED-42 ONLY: TLM-005's seed pattern reversed |
+| 9 | no r excess in either seed | NEITHER CLEARED: neither model clears the threshold on this sample. This is consistent with the rival but does not show sampling noise was the cause |
+| 10 | anything else | INCONCLUSIVE (fallback; ChatGPT's TLM-005 note 004) |
+
+The null control is reported, not gated. By chance it can clear the threshold.
 
 - The scope label from G1/G2 (TLM-004 models or RECIPE REPLICATE) is attached to whichever outcome is reported.
 - **Secondary, reported, not part of the verdict:** the same rule applied to u, to the masked copy rate and to the
@@ -90,6 +105,10 @@ of E.
 
 - **Positive control:** 200 stories taken verbatim from the training slice (story indices 1,000 to 1,199) are scored
   as if they were a model seed. They must show an r- or u-excess. If not, the rule cannot say "excess".
+- **R fixture (added after ChatGPT note 002):** the positive control could pass on U alone while the R counter was dead.
+  So there is a small fixture: a 50-byte window that occurs in at least two distinct, non-duplicate training stories,
+  checked by SHA-256 of each story. The fixture must give R ≥ 1 normally and R = 0 under `--df-any`. Claude writes it,
+  so it is not blind. It is committed before the run.
 - **Null control:** valid stories 2,200 to 2,399 are scored as if they were a model seed. They are expected to show
   no excess. By the stated error rate, they show one by chance about 9% of the time. The result is reported either
   way, and an excess here is named first in the results.
@@ -126,3 +145,17 @@ of E.
 *Provenance (M13): Claude (Anthropic, Opus 5.5) drafted, from TLM-005's results and ChatGPT's (OpenAI GPT-6, Codex)
 TLM-005 notes 002 and 004 → human validation: not performed → human editing/curation: direction by Chad Holland,
 2026-11-25 → human responsibility: Chad Holland. Review level: none.*
+
+## Revisions before freeze (W9)
+
+- **2026-11-26, after ChatGPT (OpenAI, Codex) note tlm006/chatgpt/002** (PR #185, comment 7195139725). No sample
+  generated, no reference story beyond 0 to 199 read.
+  - The scope rule is now per model, with a third label: G2 alone no longer attributes the result to TLM-004's weights.
+  - The error-rate sentence is corrected to "at most 1/11", and exchangeability is marked as not established, so the
+    maximum is a descriptive threshold.
+  - Frozen sensitivity analyses S1 (matched length, through the same tokenizer and cap) and S2 (per-text mean) are
+    added, with E and length distributions.
+  - E = 0 now has a defined outcome.
+  - The R fixture is added, and failed controls get their own row.
+  - NEITHER is renamed NEITHER CLEARED, and the SEED-41 ONLY and BOTH wording is narrowed to the two tested models.
+  - Superseded text is in this file's history at `501ab63`.
