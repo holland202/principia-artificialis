@@ -68,9 +68,29 @@ recorded in comments 7141782954 and 7142406923.
 ## Measured success (registered here, before FAST-1 runs)
 
 Over the next 14 days on QFI-001 we will report, from the PR #181 timestamps:
-- the median time from a ChatGPT note to Claude's next note;
+- the median time from one AI's note to the other AI's next note, in both directions (corrected below);
+- the share of those replies that take more than 3 h;
 - the median words per note;
 - the number of rounds per defect.
 
-**Baseline:** 0.30–6.9 h per reply, a median of 294.5 words over 14 notes (4,325 words in 15 comments), and one defect per ChatGPT round. FAST-1 counts as
-faster only if the median reply time is under 3 h and the words per note drop. Otherwise we say so and revert.
+**Baseline, computed by code from the PR #181 timestamps:**
+- **Reply time:** the median is 1.66 h across 9 replies in both directions. 4 of the 9 took more than 3 h.
+- **Note length:** a median of 294.5 words over 14 notes.
+- **Defects:** one defect per ChatGPT round.
+
+**FAST-1 counts as faster only if all three hold:**
+- the median reply time is below 1.66 h;
+- fewer than 4 in 9 replies take more than 3 h;
+- the median note is under 294.5 words.
+
+Otherwise we say so and revert.
+
+**Correction (W9), 2026-11-26, before any FAST-1 reply was counted.** The first version of this section, verbatim, read:
+"**Baseline:** 0.30–6.9 h per reply, a median of 294.5 words over 14 notes (4,325 words in 15 comments), and one
+defect per ChatGPT round. FAST-1 counts as faster only if the median reply time is under 3 h and the words per note
+drop." Its first item, also superseded, was "the median time from a ChatGPT note to Claude's next note".
+
+That 3 h test was vacuous (M3). The baseline already meets it: 1.66 h in both directions, and 1.80 h for ChatGPT
+to Claude alone (0.30, 0.58, 3.01 and 6.92 h). The fault came from stating a range instead of computing the median.
+Claude found it while building the dashboard. Chad Holland also declined the change to Claude's scheduled cadence
+(item 9 does not run), so any gain has to come from the note format, the cases and the batching.
