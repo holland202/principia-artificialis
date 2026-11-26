@@ -1,0 +1,7 @@
+R1 trained (main, step143000): rev cf967c0a9a04 identities MATCH
+R1 untrained (step0): rev 56079904bb80 identities MATCH
+arm: as registered (eager softmax in float32)
+trained (main, step143000) pair 2 theta 0.4 layer 6: F_Q at h=1e-3,1e-4,1e-5,1e-6: 1.739226e-01 1.716581e+00 7.793171e+01 7.674262e+03 | rel(1e-4 vs 1e-5) 9.78e-01 rel(1e-5 vs 1e-6) 9.90e-01
+trained (main, step143000) pair 0 theta 0.0 layer 6: F_Q at h=1e-3,1e-4,1e-5,1e-6: 5.925886e-01 1.728795e+00 1.141906e+00 4.287565e+01 | rel(1e-4 vs 1e-5) 5.14e-01 rel(1e-5 vs 1e-6) 9.73e-01
+trained (main, step143000) pair 2 theta 0.4 layer 5: F_Q at h=1e-3,1e-4,1e-5,1e-6: 8.969360e-03 9.230274e-03 1.521841e-02 2.097691e+00 | rel(1e-4 vs 1e-5) 3.93e-01 rel(1e-5 vs 1e-6) 9.93e-01
+trained (main, step143000) pair 2 theta 0.4 layer 4: F_Q at h=1e-3,1e-4,1e-5,1e-6: 4.324699e-03 4.314874e-03 5.383972e-03 4.193043e-02 | rel(1e-4 vs 1e-5) 1.99e-01 rel(1e-5 vs 1e-6) 8.72e-01
