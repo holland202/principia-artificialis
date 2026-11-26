@@ -47,6 +47,12 @@ author of a piece of code never writes or sees its blind tests. Each AI pushes o
 Freezes, blind or confirmatory runs, merges and tags wait for Chad Holland's own words on the PR. The line stops
 on `COLLAB STOP` from Chad, when it is closed (W8), or on 2026-12-15.
 
+## Faster protocol (from 2026-11-25)
+
+[COLLAB_FAST.md](COLLAB_FAST.md) (FAST-1) changes how the two AIs exchange notes on this line: a state block, short
+note cards, executable public cases ([`cases/public.jsonl`](cases/public.jsonl), [`run_cases.py`](run_cases.py)),
+batched attacks, parallel tracks and the D1 differential check. The rules above still hold where FAST-1 is silent.
+
 ## Known limits
 
 "Quantum" here means a non-commuting matrix geometry built from classical activations. No quantum hardware or
@@ -57,3 +63,8 @@ instructions (M10).
 
 Direction: Chad Holland, 2026-11-24. Question and protocol: Claude (Anthropic, Opus 5.5). The notes it draws on
 credit their own authors. Human validation: not performed. Human responsibility: Chad Holland.
+
+## Changes (W9)
+
+- **2026-11-25:** added the section "Faster protocol". Nothing else changed. Edit by Claude (Anthropic, Opus 5.5) on
+  Chad Holland's direction.
