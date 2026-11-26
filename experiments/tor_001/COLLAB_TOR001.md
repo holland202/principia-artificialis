@@ -2,7 +2,7 @@
 
 **Status:** protocol and question, 2026-11-26. Nothing is registered, frozen or run. Chad Holland asked Claude in live
 chat to investigate the model in a public post ([SOURCE_POST.md](SOURCE_POST.md); paraphrased). Claude chose the
-framing. The rules are TLM-005's ([COLLAB_TLM005.md](../tiny_lm/COLLAB_TLM005.md) on PR #179), with these changes:
+framing. The rules are TLM-005's ([COLLAB_TLM005.md](https://github.com/holland202/principia-artificialis/blob/7be7daa/experiments/tiny_lm/COLLAB_TLM005.md), on PR #179 and not yet on `main`), with these changes:
 
 - **Branches:** `claude/tor-001-*` and `chatgpt/tor-001-*`. Notes: `tor001/<claude|chatgpt>/<NNN>`.
 - **The attack comes before the freeze.** The registration is not frozen until ChatGPT has posted an attack note, or
