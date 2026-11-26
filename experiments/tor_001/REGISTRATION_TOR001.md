@@ -24,23 +24,27 @@ Phases θᵢ(t) = θᵢ(0) + ωᵢ t, with ω = (1, √2) (F3 adds ω₃ = √3)
 | F2 | exp(κ(cos(x + y − θ₁) − 1)) + exp(κ(cos(2x − y − θ₂) − 1)), κ = 8 | T², curved embedding | main test |
 | F3 | F2 plus exp(κ(cos(x − 2y − θ₃) − 1)) | T³ | wrong topology: the torus arm must fail |
 
-- **Training:** one trajectory of 4,000 steps from θ(0) = 0, with additive pixel noise σ = 0.01 (seed 1).
+- **Training:** one trajectory of 4,000 steps from θ(0) = 0, with additive pixel noise σ = 0.01. One noise
+  realization (seed 1) is generated per field and shared by every arm.
 - **Test:** 20 noise-free trajectories of 1,000 steps from random initial phases (seed 7), never trained on.
-- **Error:** the relative L2 error ‖û − u‖ / ‖u‖, averaged over the 20 test trajectories at horizons 1, 10, 100 and
-  1,000. Each learned arm uses 3 training seeds (0, 1, 2). The median over seeds is reported, and so is every seed.
+- **Error:** the relative L2 error ‖û − u‖ / ‖u‖, averaged over the 20 test trajectories at horizons 0
+  (reconstruction only), 1, 10, 100 and 1,000. Each learned arm uses 3 training seeds (0, 1, 2). The median over seeds is reported, and so is every seed.
 
 ## Arms (named stand-ins, M4)
 
 | Arm | Encoder → latent | Dynamics | Decoder |
 |---|---|---|---|
 | L4 | POD, 4 modes | DMD (least-squares linear map) | POD modes |
-| L* | POD, the fewest modes holding 99.9% of training energy (r* printed) | DMD | POD modes |
+| L* | POD, the fewest modes whose squared singular values reach 99.9% of their sum, on the noisy training data only (r* printed) | DMD | POD modes |
 | T2 | MLP 1024→128→4; each pair normalised onto a unit circle (P_M) | θ ← θ + ωΔt, with ω learned (2 numbers) | MLP 4→128→1024 on (cos θ₁, sin θ₁, cos θ₂, sin θ₂) |
 | K4 | MLP 1024→128→4, unconstrained | z ← A z, with A learned (4 × 4) | MLP 4→128→1024 |
 | E2 | MLP 1024→128→2, unconstrained | MLP 2→32→2 | MLP 2→128→1024 |
+| NP | as T2, but the pairs are **not** normalised | the same two block rotations by ωΔt (ω learned), applied to the raw pairs; no renormalisation anywhere | as T2, on the raw pairs |
 
 All learned arms use the same training: Adam at 1e-3, 20,000 steps, batch 64, and a loss summing 1-step and 10-step
-rollout errors. They run in PyTorch on CPU, with the version pinned when the code is committed. MLPs are used instead of
+rollout errors. NP differs from T2 only in the projection, which separates projection from rotation dynamics
+(ChatGPT note 002). They run in PyTorch on CPU, with the version pinned when the code is committed. Every arm reports
+its latent size or rank, its parameter count and its fit time. MLPs are used instead of
 the post's convolutional layers. That is a stand-in, named here.
 
 ## Predictions (fixed before any field is generated)
@@ -50,8 +54,9 @@ the post's convolutional layers. That is a stand-in, named here.
 | P1 | On F1, linear is enough | L4's 1,000-step error < 0.01 |
 | P2 | On F2, the torus beats a free latent and a 4-mode linear model | T2's 1,000-step error < 0.10, and both K4's and L4's are ≥ 3× T2's |
 | P3 | On F2, does the torus beat a high-rank linear model? | T2's 1,000-step error ≤ L*'s |
-| P4 | On F2, R² tears the torus | E2's 1-step error ≥ 3× T2's |
+| P4 | On F2, the R² latent predicts worse | E2's 1-step error ≥ 3× T2's. This is consistent with a torn embedding but does not show one; no topology claim is made from it |
 | P5 | Anti-vacuity (M3): on F3, the torus arm fails | T2's 100-step error > 0.30 |
+| P6 | On F2, the advantage comes from the projection | T2's 1,000-step error ≤ ½ × NP's (medians), and lower than NP's in at least 2 of 3 paired seeds |
 
 **Claude's expectation, recorded and not a criterion (M1):** P1, P2, P4 and P5 hold. P3 is a genuine open question.
 Koopman theory says a quasi-periodic signal is linear in enough Fourier modes, so L* may match T2.
@@ -61,22 +66,27 @@ Koopman theory says a quasi-periodic signal is linear in enough Fourier modes, s
 | Order | Condition | Outcome |
 |---|---|---|
 | 1 | a gate fails, or any number is missing or NaN | INCONCLUSIVE |
-| 2 | P5 fails | INSTRUMENT CANNOT FAIL. No torus claim is made |
-| 3 | P2 and P3 hold | TORUS EARNS ITS PLACE (on F2) |
-| 4 | P2 holds and P3 fails | TORUS BEATS SMALL MODELS ONLY: a high-rank linear model is as good |
-| 5 | P2 fails | NO TORUS ADVANTAGE DETECTED |
+| 2 | P5 fails | WRONG-TOPOLOGY CONTROL DID NOT SEPARATE. Topology claims withheld; P2 and P3 still reported |
+| 3 | P2, P3 and P6 hold | TORUS PROJECTION EARNS ITS PLACE (on F2) |
+| 4 | P2 and P3 hold, P6 fails | ROTATION DYNAMICS HELP; THE PROJECTION IS NOT SHOWN TO |
+| 5 | P2 holds and P3 fails | TORUS BEATS SMALL MODELS ONLY: a high-rank linear model is as good |
+| 6 | P2 fails | NO TORUS ADVANTAGE DETECTED |
+| 7 | anything else | INCONCLUSIVE (fallback) |
+
+No claim is made about rarely visited phases. The test starts are random, not drawn from a held-out phase region.
 
 P1 and P4 are reported with whichever outcome applies. A P1 failure is named first, because it would contradict the
 algebra in SOURCE_POST.md.
 
 ## Gates and sabotage (C-BUILD, M3)
 
-- **G1:** each generated field is regenerated from its phases and must match to 1e-12. On F1, the POD spectrum must
-  have exactly 4 modes above 1e-8 of total energy.
-- **G2:** the phases recovered by T2's encoder on the training trajectory are printed, and so is the learned ω beside
-  (1, √2).
-- **`--no-project`:** removes T2's normalisation, which turns T2 into a K4-like arm with rotation dynamics. P2's margin
-  is reported both with and without it.
+- **G1 (revised after ChatGPT note 002):** each generated field is regenerated from its phases and must match to
+  1e-12. **Rank oracle:** the clean, noise-free F1 training trajectory (4,000 snapshots, uncentred). Its squared
+  singular values, divided by their sum, must have exactly 4 values above 1e-8.
+- **Diagnostic, not a gate:** the phases recovered by T2's encoder on the training trajectory are printed, and so is
+  the learned ω beside (1, √2). Phase origin, orientation and order are arbitrary, so no pass criterion is set.
+- **NP arm:** it replaces the earlier `--no-project` switch, so the comparison is a registered arm with identical
+  training.
 
 ## Triggered controls (M16)
 
@@ -105,3 +115,19 @@ algebra in SOURCE_POST.md.
 ---
 *Provenance (M13): Claude (Anthropic, Opus 5.5) drafted → human validation: not performed → direction: Chad Holland,
 2026-11-26 → human responsibility: Chad Holland. Review level: none.*
+
+## Revisions before freeze (W9)
+
+- **2026-11-26, after ChatGPT (OpenAI, Codex) note tor001/chatgpt/002** (PR #186, comment 7195140245). No field
+  generated, nothing run.
+  - G1's rank oracle now runs on clean, uncentred F1, with the threshold on normalised squared singular values. One
+    shared noise realization is used per field. L*'s rank is chosen from the noisy training data alone.
+  - The NP arm (identical to T2 apart from the projection) replaces `--no-project`. P6 and a separate outcome row now
+    keep a win by the rotation dynamics from being credited to the projection.
+  - Horizon 0 (reconstruction) is reported, and so are rank, parameter count and fit time.
+  - No rare-phase claim is made.
+  - A P5 miss is now labelled "wrong-topology control did not separate".
+  - P4 is narrowed: it makes no claim about tearing.
+  - G2 becomes a diagnostic.
+  - A fallback row is added.
+  - Superseded text is in this file's history at `687e6f8`.
