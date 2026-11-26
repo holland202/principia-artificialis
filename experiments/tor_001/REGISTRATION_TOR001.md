@@ -68,15 +68,27 @@ Koopman theory says a quasi-periodic signal is linear in enough Fourier modes, s
 | 1 | a gate fails, or any number is missing or NaN | INCONCLUSIVE |
 | 2 | P5 fails | WRONG-TOPOLOGY CONTROL DID NOT SEPARATE. Topology claims withheld; P2 and P3 still reported |
 | 3 | P2, P3 and P6 hold | TORUS PROJECTION EARNS ITS PLACE (on F2) |
-| 4 | P2 and P3 hold, P6 fails | ROTATION DYNAMICS HELP; THE PROJECTION IS NOT SHOWN TO |
+| 4 | P2 and P3 hold, P6 fails | T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFIT MET P6. No component is credited, because no arm removes only the rotation dynamics |
 | 5 | P2 holds and P3 fails | TORUS BEATS SMALL MODELS ONLY: a high-rank linear model is as good |
 | 6 | P2 fails | NO TORUS ADVANTAGE DETECTED |
 | 7 | anything else | INCONCLUSIVE (fallback) |
 
 No claim is made about rarely visited phases. The test starts are random, not drawn from a held-out phase region.
 
-P1 and P4 are reported with whichever outcome applies. A P1 failure is named first, because it would contradict the
-algebra in SOURCE_POST.md.
+P1 and P4 are reported with whichever outcome applies. P1 tests a **fitted rollout on noisy training data**, while G1
+tests the **clean** field's rank. So a P1 failure with G1 passing does not contradict the algebra in SOURCE_POST.md. It
+would mean noise or fitting broke the linear rival, and it is named first. A G1 failure stops the run.
+
+## Input interface (for every field, including blind fields)
+
+A field is a directory holding three files:
+- `train.npy`: float64, shape (4000, 32, 32).
+- `test.npy`: float64, shape (20, 1001, 32, 32), where frame 0 of each trajectory is its start.
+- `meta.json`: {"dt": …}.
+
+Training reads only `train.npy`. `test.npy` is opened only after every arm has finished fitting, and the code checks
+this (it records the order of file opens). It is used only for scoring. Blind fields follow the same interface, with
+SHA-256 values of all three files posted before the run.
 
 ## Gates and sabotage (C-BUILD, M3)
 
@@ -131,3 +143,9 @@ algebra in SOURCE_POST.md.
   - G2 becomes a diagnostic.
   - A fallback row is added, and the feasibility count is updated for the fourth learned arm.
   - Superseded text is in this file's history at `687e6f8`.
+- **2026-11-26, after ChatGPT note tor001/chatgpt/004** (comment 7196003761):
+  - Outcome row 4 no longer credits rotation dynamics. It reports the observed comparisons only. Superseded, verbatim:
+    "ROTATION DYNAMICS HELP; THE PROJECTION IS NOT SHOWN TO".
+  - P1 is separated from the clean G1 rank oracle. Superseded, verbatim: "A P1 failure is named first, because it would
+    contradict the algebra in SOURCE_POST.md."
+  - An input interface that separates training and test arrays is added for blind fields.
