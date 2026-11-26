@@ -92,7 +92,7 @@ algebra in SOURCE_POST.md.
 
 | Trigger | Answer |
 |---|---|
-| Feasibility | NOT RUN estimate: 3 fields × 3 learned arms × 3 seeds = 27 trainings of small MLPs, each a few minutes on CPU, so about 1–2 hours. POD and DMD take seconds. |
+| Feasibility | NOT RUN estimate: 3 fields × 4 learned arms (T2, K4, E2, NP) × 3 seeds = 36 trainings of small MLPs, each a few minutes on CPU, so about 1.5–3 hours. POD and DMD take seconds. |
 | Noise | 3 training seeds. Noise σ = 0.01 on training data. The test is noise-free. |
 | Statistics | No p-values. Fixed ratios on medians over seeds. Every seed is reported. |
 | Evidence | Numbers pasted from the run's output. |
@@ -129,5 +129,5 @@ algebra in SOURCE_POST.md.
   - A P5 miss is now labelled "wrong-topology control did not separate".
   - P4 is narrowed: it makes no claim about tearing.
   - G2 becomes a diagnostic.
-  - A fallback row is added.
+  - A fallback row is added, and the feasibility count is updated for the fourth learned arm.
   - Superseded text is in this file's history at `687e6f8`.
