@@ -1,0 +1,14 @@
+step 500 train_bits_per_token 4.844 338s
+step 1000 train_bits_per_token 4.012 666s
+step 1500 train_bits_per_token 3.503 992s
+step 2000 train_bits_per_token 3.319 1310s
+step 2500 train_bits_per_token 3.244 1626s
+step 3000 train_bits_per_token 3.090 1946s
+step 3500 train_bits_per_token 3.030 2263s
+step 4000 train_bits_per_token 2.834 2573s
+step 4500 train_bits_per_token 2.927 2880s
+step 5000 train_bits_per_token 2.795 3189s
+step 5500 train_bits_per_token 2.903 3493s
+step 6000 train_bits_per_token 2.786 3807s
+step 6250 train_bits_per_token 2.855 3973s
+valid bpb (common evaluator) 0.8487
