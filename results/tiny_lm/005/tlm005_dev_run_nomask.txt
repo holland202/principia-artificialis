@@ -1,0 +1,31 @@
+data/v2_train_200MB.txt sha256 ee5242d9d94d6df3b5813e01adb0ee278eb77aa3bb7395fbd22cbe6e368869e9 OK
+data/v2_valid.txt sha256 6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d OK
+results/tiny_lm/004/runs/t41.samples.txt sha256 68fd4292a04c550409595166f5f673fc536a99b762402ced39b72e1ce512e1b3
+results/tiny_lm/004/runs/t42.samples.txt sha256 a46260cc4a286070cfc90c5df8543bcb425db830cfb062c495b3856881731fd0
+code tlm005_attrib.py sha256 93948c3c4f96ff7c67e006f24f5096b7a92319ade5a53aacbe132effa7a10590
+flags no_mask True df_any False
+training stories 256019 unique by sha256 256008
+distinct windows searched 3532
+FIDELITY HELD {'t41': '30/273', 't42': '24/260', 'block01': '28/358'} want {'t41': '30/273', 't42': '24/260', 'block01': '28/358'}
+t41: E 273 U 3 R 26 B 1 | u 0.0110 r 0.0952 b 0.0037 copy 0.1099 | longest>=200 share 0.00
+t42: E 260 U 4 R 20 B 0 | u 0.0154 r 0.0769 b 0.0000 copy 0.0923 | longest>=200 share 0.00
+block01: E 358 U 8 R 20 B 0 | u 0.0223 r 0.0559 b 0.0000 copy 0.0782 | longest>=200 share 0.00
+block02: E 326 U 5 R 14 B 0 | u 0.0153 r 0.0429 b 0.0000 copy 0.0583 | longest>=200 share 0.00
+block03: E 314 U 8 R 17 B 0 | u 0.0255 r 0.0541 b 0.0000 copy 0.0796 | longest>=200 share 0.00
+block04: E 288 U 4 R 19 B 0 | u 0.0139 r 0.0660 b 0.0000 copy 0.0799 | longest>=200 share 0.00
+block05: E 300 U 3 R 18 B 0 | u 0.0100 r 0.0600 b 0.0000 copy 0.0700 | longest>=200 share 0.00
+block06: E 327 U 7 R 16 B 0 | u 0.0214 r 0.0489 b 0.0000 copy 0.0703 | longest>=200 share 0.00
+block07: E 274 U 9 R 20 B 0 | u 0.0328 r 0.0730 b 0.0000 copy 0.1058 | longest>=200 share 0.00
+block08: E 289 U 3 R 20 B 0 | u 0.0104 r 0.0692 b 0.0000 copy 0.0796 | longest>=200 share 0.00
+block09: E 258 U 7 R 15 B 0 | u 0.0271 r 0.0581 b 0.0000 copy 0.0853 | longest>=200 share 0.00
+block10: E 310 U 9 R 15 B 0 | u 0.0290 r 0.0484 b 0.0000 copy 0.0774 | longest>=200 share 0.00
+t41 longest per text: [87, '<99', 85, 81, 77, 73, 63, 87, '<99', 60, 70, 67, 69, '<99', '<99', '<99', '<99', '<99', 71, '<99']
+t42 longest per text: [86, '<99', '<99', 70, 56, '<99', '<99', 87, '<99', '<99', 61, '<99', '<99', '<99', '<99', '<99', 92, '<99', 62, '<99']
+block maxima {'u': 0.0328, 'r': 0.073, 'b': 0.0, 'copy': 0.1058, 'share200': 0.0}
+t41 drop-one u min 0.0076 max 0.0119
+t41 drop-one r min 0.0902 max 0.1028
+t41 drop-one copy min 0.1031 max 0.1186
+t42 drop-one u min 0.0082 max 0.0166
+t42 drop-one r min 0.0691 max 0.0830
+t42 drop-one copy min 0.0854 max 0.0996
+VERDICT NONE (sabotage switch set; counts above are for the anti-vacuity check)

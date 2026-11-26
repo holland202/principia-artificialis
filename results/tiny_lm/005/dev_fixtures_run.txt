@@ -1,0 +1,11 @@
+data/v2_train_200MB.txt sha256 ee5242d9d94d6df3b5813e01adb0ee278eb77aa3bb7395fbd22cbe6e368869e9 OK
+data/v2_valid.txt sha256 6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d OK
+results/tiny_lm/004/runs/t41.samples.txt sha256 68fd4292a04c550409595166f5f673fc536a99b762402ced39b72e1ce512e1b3
+results/tiny_lm/004/runs/t42.samples.txt sha256 a46260cc4a286070cfc90c5df8543bcb425db830cfb062c495b3856881731fd0
+code tlm005_attrib.py sha256 93948c3c4f96ff7c67e006f24f5096b7a92319ade5a53aacbe132effa7a10590
+flags no_mask False df_any False
+training stories 256019 unique by sha256 256008
+distinct windows searched 13
+FIXTURE dev_fixtures_claude.txt text 1: E 6 U 3 R 0 B 0 N 3 longest 150 | U windows raw story counts [1, 1, 1]
+FIXTURE dev_fixtures_claude.txt text 2: E 5 U 0 R 2 B 0 N 3 longest 51 | U windows raw story counts []
+VERDICT NONE (fixture mode)
