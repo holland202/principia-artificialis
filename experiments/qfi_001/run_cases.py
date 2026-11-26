@@ -4,6 +4,8 @@
 Each line: {"id", "source", "rho": {"re": [[..]], "im": [[..]]?}, "drho": {...}, "expect": {F_Q?, F_C?, F_R?,
 split_resolved?, bookkeeping?}, "tol"?: 1e-10, "why"?}. Only the keys present in "expect" are checked; "bookkeeping":
 true requires |F_Q - F_C - F_R| < tol. Public cases only: blind material never goes in these files.
+A case with zero active assertions (empty "expect", or only "bookkeeping": false) or with an unknown expect key
+fails (A16.1, qfi001/chatgpt/016): it could never disagree with its result, so it is not evidence.
 Author: Claude (Anthropic, Opus 5.5). NumPy only. Exit 1 if any case fails or no case ran (fail-closed).
 
 Usage:  python experiments/qfi_001/run_cases.py experiments/qfi_001/cases/public.jsonl [--impl module.path]
@@ -15,6 +17,9 @@ import os
 import sys
 
 import numpy as np
+
+
+KNOWN = {"F_Q", "F_C", "F_R", "split_resolved", "bookkeeping"}
 
 
 def mat(m):
@@ -39,7 +44,17 @@ def main():
             r = impl.qfi_split_ex(mat(c["rho"]), mat(c["drho"]))
             tol = c.get("tol", 1e-10)
             fails = []
+            # A16.1 (qfi001/chatgpt/016): a case whose result could never disagree with its expectation is not
+            # evidence. Active = a key that is actually compared; "bookkeeping": false compares nothing.
+            unknown = sorted(set(c["expect"]) - KNOWN)
+            active = [k for k, v in c["expect"].items() if k in KNOWN and not (k == "bookkeeping" and not v)]
+            if unknown:
+                fails.append(f"unknown expect keys {unknown} (would never be checked)")
+            if not active:
+                fails.append("zero active assertions (result could never fail)")
             for k, v in c["expect"].items():
+                if k in unknown:
+                    continue
                 if k == "bookkeeping":
                     res = abs(r["F_Q"] - r["F_C"] - r["F_R"])
                     if v and not res < tol:
