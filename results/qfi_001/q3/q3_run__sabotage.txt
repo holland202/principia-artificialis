@@ -1,0 +1,56 @@
+QFI-001 Q3 run; sabotage=True; python 3.13.18; numpy 2.5.3; torch 2.15.0+cpu; transformers 5.24.1; threads 2; float64
+R0 public: rc=0 ['cases 8, failed 0, impl qfi_ref, numpy 2.5.3']; must-fail: rc=1 ['cases 3, failed 3, impl qfi_ref, numpy 2.5.3']
+R1 trained (main, step143000): rev cf967c0a9a04 identities MATCH
+R1 untrained (step0): rev 56079904bb80 identities MATCH
+S1 commuting: F_Q=0.000000000000 F_C=0.000000000000 F_R=0.000e+00 (Var_p(a)=0.610000000000) -> FAIL
+S2 rotation (0,1): F_Q=0.000000000000 F_C=0.000e+00 F_R=0.000000000000 (expect F_Q 0.200000000000) -> FAIL
+S3 rotation into kernel (1,3): F_Q=0.000000000000 F_C=0.000e+00 F_R=0.000000000000 split_resolved=False split_resolved_support=True (expect F_Q 1.200000000000, False, True) -> FAIL
+R3 finite, |tr rho - 1| <= 1e-12, symmetric to 1e-14: 462 of 462; worst tr_err 4.441e-16 sym_err 0.000e+00
+R4 residual <= 1e-10 max(1, F_Q): 462 of 462; worst residual 0.000e+00
+R7 same-input noise (pair 0, theta 0.5, both models, 3 repeats): max|d rho| 0.000e+00 max|d F_Q| 0.000e+00 (predicted 0)
+SUMMARY by model and layer (counts; medians/maxima of items 5-7). No F_R/F_Q or model comparison printed.
+model                        L  pts SR  SRS near struct_min small_max resid_med resid_max releps_med releps_max relh_med relh_max
+trained (main, step143000)   0   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   1   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   2   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   3   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   4   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   5   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+trained (main, step143000)   6   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            0   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            1   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            2   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            3   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            4   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            5   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+untrained (step0)            6   33  0  33    0        120         0 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00 0.00e+00
+split_resolved_support per pair (F20.3), counts of 11 thetas, pairs 0/1/2:
+  trained (main, step143000)   L0 11/11/11  L1 11/11/11  L2 11/11/11  L3 11/11/11  L4 11/11/11  L5 11/11/11  L6 11/11/11
+  untrained (step0)            L0 11/11/11  L1 11/11/11  L2 11/11/11  L3 11/11/11  L4 11/11/11  L5 11/11/11  L6 11/11/11
+R5 cost: main run wall 18.2 s; forward passes 330, median 9.02 ms, max 22.38 ms, total 3.1 s; peak RSS 853 MiB
+R6 second process: rc=0 digest a6b47a3220ce1ac746f65c45092526143cbf64d5b314d9e8aec77754bfab8b7f (17.0 s); this process a6b47a3220ce1ac746f65c45092526143cbf64d5b314d9e8aec77754bfab8b7f
+R0: PASS
+R1: PASS
+R2: FAIL
+R3: PASS
+R4: PASS
+R5: PASS
+R6: PASS
+R7: PASS
+P2 detail: split_resolved False at 462 of 462
+P3 detail: structural zeros >= d - n at 462 of 462
+P1 REFUTED
+P2 HELD
+P3 HELD
+DOORS (registration, 'What Q3 decides'):
+  FEASIBLE as designed: False
+  trained layer 0: split_resolved_support 33 of 33 -> can carry
+  trained layer 1: split_resolved_support 33 of 33 -> can carry
+  trained layer 2: split_resolved_support 33 of 33 -> can carry
+  trained layer 3: split_resolved_support 33 of 33 -> can carry
+  trained layer 4: split_resolved_support 33 of 33 -> can carry
+  trained layer 5: split_resolved_support 33 of 33 -> can carry
+  trained layer 6: split_resolved_support 33 of 33 -> can carry
+  layers that qualify: 7 of 7
+VERDICT 2 of 3 as registered
+DIGEST a6b47a3220ce1ac746f65c45092526143cbf64d5b314d9e8aec77754bfab8b7f
