@@ -1,0 +1,5 @@
+{"words": 2434, "known_word_rate": 0.9951, "spans": 276, "copied_span_rate": 0.0942, "valid_stories_reference": {"words": 3006, "known_word_rate": 1.0, "spans": 358, "copied_span_rate": 0.0782}}
+
+real	4m4.470s
+user	3m57.186s
+sys	0m2.879s

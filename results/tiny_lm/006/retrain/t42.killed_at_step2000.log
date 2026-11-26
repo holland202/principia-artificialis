@@ -1,0 +1,4 @@
+step 500 train_bits_per_token 4.961 622s
+step 1000 train_bits_per_token 4.181 941s
+step 1500 train_bits_per_token 3.627 1266s
+step 2000 train_bits_per_token 3.387 1584s
