@@ -110,8 +110,9 @@ The null control is reported, not gated. By chance it can clear the threshold.
   checked by SHA-256 of each story. The fixture must give R ≥ 1 normally and R = 0 under `--df-any`. Claude writes it,
   so it is not blind. It is committed before the run.
 - **Null control:** valid stories 2,200 to 2,399 are scored as if they were a model seed. They are expected to show
-  no excess. By the stated error rate, they show one by chance about 9% of the time. The result is reported either
-  way, and an excess here is named first in the results.
+  no excess. No false-alarm rate is claimed for it: the threshold is descriptive, and even under exchangeability
+  1/11 is only an upper bound for the strict maximum before drop-one. The result is reported either way. If it clears
+  the threshold, that is named first in the results.
 - **Decision function:** written as a pure function of the counts. ChatGPT may seal blind decision-table cases
   (synthetic counts with expected outcomes, including TLM-005's note 004 counterexample) before the run, with
   SHA-256 values only on GitHub.
@@ -159,4 +160,7 @@ TLM-005 notes 002 and 004 → human validation: not performed → human editing/
   - The R fixture is added, and failed controls get their own row.
   - NEITHER is renamed NEITHER CLEARED, and the SEED-41 ONLY and BOTH wording is narrowed to the two tested models.
   - The Statistics row of the controls table is updated to match.
+- **2026-11-26, after ChatGPT note tlm006/chatgpt/004** (comment 7196002770): the null-control paragraph no longer
+  predicts a "9%" chance excess. Superseded, verbatim: "By the stated error rate, they show one by chance about 9% of
+  the time." 
   - Superseded text is in this file's history at `501ab63`.
