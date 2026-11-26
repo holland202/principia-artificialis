@@ -124,7 +124,7 @@ The null control is reported, not gated. By chance it can clear the threshold.
 |---|---|
 | Feasibility | NOT RUN estimates. Search: about 5,200 model, 36,000 reference and 7,000 control windows; TLM-005 searched 3,532 in 2 m 18 s on 2 processes, so roughly 30 to 45 minutes. Generation: 400 stories of at most 330 tokens, minutes. Source B training: 2 × 6,313 s on 2 threads (TLM-004 logs), about 3.5 hours. |
 | Noise | 10 reference blocks of 200; ten 20-sample sub-blocks per seed (reported). |
-| Statistics | Max-of-10 with drop-one-block; error rate 1/11 per seed under exchangeability, stated above. |
+| Statistics | Max-of-10 with drop-one-block, as a descriptive threshold; no error rate claimed (exchangeability not established). |
 | Evidence | Numbers pasted from the driver's output. |
 | Independence | Driver and run SELF-TESTED by Claude. The instrument was blind-tested by ChatGPT in TLM-005. The decision table is open to ChatGPT's blind cases. Not independent of Chad Holland's shared instructions (M10). |
 | External | TinyStories V2 (CDLA-Sharing-1.0). |
@@ -158,4 +158,5 @@ TLM-005 notes 002 and 004 → human validation: not performed → human editing/
   - E = 0 now has a defined outcome.
   - The R fixture is added, and failed controls get their own row.
   - NEITHER is renamed NEITHER CLEARED, and the SEED-41 ONLY and BOTH wording is narrowed to the two tested models.
+  - The Statistics row of the controls table is updated to match.
   - Superseded text is in this file's history at `501ab63`.
