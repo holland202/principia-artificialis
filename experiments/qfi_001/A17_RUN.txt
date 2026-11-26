@@ -1,0 +1,21 @@
+env python=3.13.18 numpy=2.5.3 machine=x86_64 OPENBLAS_NUM_THREADS=1 mpmath=1.4.1 dps=60
+
+== support-1-rotated  expect={'F_Q': 5.0000000000025e-13, 'F_C': 5.0000000000025e-13, 'F_R': 0.0, 'split_resolved': True}
+state eigvalsh   : ['4.999889391399392e-13', '0.9999999999994997'] | small -> MASKED (at or below)
+SLD-op weights   : ['5.001044424352762e-13', '0.4999999999999998', '0.5', '0.9999999999994997'] | kept by D1: 4 of 4 | smallest -> KEPT (above)
+exact (60 dig)   : lo = 4.999861803319228932502929e-13  hi = 0.9999999999994998472862144
+stored asymmetry : |b - conj(c)| = 5.5518e-17 | |Im diag| = 3.1146e-20
+margin |lo-5e-13| = 1.38197e-17  vs 4u*||rho||2 = 4.441e-16  -> UNDECIDABLE; exact lo is at/below the cutoff
+numpy lo - exact : 2.75881e-18 | op smallest - exact: 1.18262e-16
+qfi_ref : F_Q=np.float64(5.000000000002497e-13) F_C=np.float64(5.000000000002497e-13) F_R=np.float64(1.6422441357785214e-43) split_resolved=True
+d1_sld  : F_Q=0.9997911587537249 F_C=5.000000000002499e-13 F_R=0.9997911587532249 split_resolved=True
+
+== support-1.01-rotated  expect={'F_Q': 1.000000000000505, 'F_C': 1.000000000000505, 'F_R': 0.0, 'split_resolved': True}
+state eigvalsh   : ['5.050126983263681e-13', '0.9999999999994947'] | small -> KEPT (above)
+SLD-op weights   : ['5.05095965053215e-13', '0.4999999999999997', '0.5', '0.9999999999994948'] | kept by D1: 4 of 4 | smallest -> KEPT (above)
+exact (60 dig)   : lo = 5.050278086477268115730439e-13  hi = 0.9999999999994948056578986
+stored asymmetry : |b - conj(c)| = 0.0 | |Im diag| = 2.7564e-17
+margin |lo-5e-13| = 5.02781e-15  vs 4u*||rho||2 = 4.441e-16  -> DECIDABLE; exact lo is above the cutoff
+numpy lo - exact : -1.51103e-17 | op smallest - exact: 6.81564e-17
+qfi_ref : F_Q=np.float64(0.9999748554320399) F_C=np.float64(0.9999748554320399) F_R=np.float64(1.315159624732738e-43) split_resolved=True
+d1_sld  : F_Q=0.9998100062966239 F_C=0.9999748554320399 F_R=-0.0001648491354160342 split_resolved=True
