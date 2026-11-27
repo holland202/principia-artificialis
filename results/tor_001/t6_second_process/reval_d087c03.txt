@@ -1,0 +1,28 @@
+tor001_results_36d5d4a.json sha256 ccf3c656cded4accfdcae4f956a5f9dcbe24393d25b11eea6780a2871107bc53
+run_36d5d4a.txt sha256 6db9f894fefdcab3e54991da11ee50521b4eee6f25936d431a52693d26b6120e
+tor001.py sha256 e87eeb3230e5d9f11d44a7e5609f21d9763d5e026f4c6df8774c166495948612
+gates read from the run log: G1 True | interface lines 3 all True True
+selftest projection earns: row 3 want 3 ok
+selftest chatgpt note 004 case: row 4 want 4 ok
+selftest high-rank linear as good: row 5 want 5 ok
+selftest no advantage: row 6 want 6 ok
+selftest F3 does not separate: row 2 want 2 ok
+selftest G1 failed: row 1 want 1 ok
+selftest test opened early: row 1 want 1 ok
+selftest NaN: row 1 want 1 ok
+selftest complete table (all 0.5): row 6 want 6 ok
+selftest unused entry deleted: row 1 want 1 ok
+SELFTEST PASS
+P1 inputs: F1 L4 h1000 0.0014
+P2 inputs: F2 T2 h1000 median 0.0259; K4 median 0.2866; L4 0.9104
+P3 inputs: F2 L* h1000 0.0406
+P4 inputs: F2 E2 h1 median 0.3807; T2 h1 median 0.0218
+P5 inputs: F3 T2 h100 median 0.4365
+P6 inputs: F2 NP h1000 median 0.0312; paired T2<NP per seed [False, False, True]
+P1: HELD
+P2: HELD
+P3: HELD
+P4: HELD
+P5: HELD
+P6: REFUTED
+VERDICT (re-evaluated) row 4: T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFIT MET P6

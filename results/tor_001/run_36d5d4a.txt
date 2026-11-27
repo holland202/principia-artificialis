@@ -1,0 +1,113 @@
+selftest projection earns: row 3 want 3 ok
+selftest chatgpt note 004 case: row 4 want 4 ok
+selftest high-rank linear as good: row 5 want 5 ok
+selftest no advantage: row 6 want 6 ok
+selftest F3 does not separate: row 2 want 2 ok
+selftest G1 failed: row 1 want 1 ok
+selftest test opened early: row 1 want 1 ok
+selftest NaN: row 1 want 1 ok
+selftest complete table (all 0.5): row 6 want 6 ok
+selftest unused entry deleted: row 1 want 1 ok
+SELFTEST PASS
+numpy 2.5.3 torch 2.15.0+cpu; code sha256 9e4527de7b055f94dc051bc52ce53b514d154473be4a384250dca41ed8ca7079
+G1 F1 regeneration max abs diff 0.0e+00 OK; train (4000, 32, 32) test (20, 1001, 32, 32); field range -1.000..1.000
+  F1/train.npy sha256 3420e55a6ba8d4a4fa70347c3989610bae2d64868deb8778b6d6474440036e4f
+  F1/test.npy sha256 d2862ec3a70f4542ef337b7f28432c7034bd982c090b464a6ff6113a1ffd40a3
+  F1/meta.json sha256 aa19f0e70baa8718eefe9daab75ce31005db582a5b7a5b6e3c99122d477b6f40
+G1 rank oracle (clean F1, uncentred): normalised squared singular values > 1e-8: 4 (need exactly 4); top 6 [0.3469364642, 0.3454406557, 0.1538756194, 0.1537472607, 0.0, 0.0]
+G1 F2 regeneration max abs diff 0.0e+00 OK; train (4000, 32, 32) test (20, 1001, 32, 32); field range 0.000..2.000
+  F2/train.npy sha256 3ade3e50422cd38b04476a85e48ad9da8381ae0e17f0c8bc074a6063545c2b0a
+  F2/test.npy sha256 90670d07a1c70da1ed255a38ff52d2feaad7b169c2e9a4ea8aba3068b61e0d9c
+  F2/meta.json sha256 aa19f0e70baa8718eefe9daab75ce31005db582a5b7a5b6e3c99122d477b6f40
+  F2 noisy-training POD: modes for 99.9% energy 27
+G1 F3 regeneration max abs diff 0.0e+00 OK; train (4000, 32, 32) test (20, 1001, 32, 32); field range 0.000..3.000
+  F3/train.npy sha256 2a170192b3363d35300ea8815b39ebb8e58859473ca2e222148dfffb23e8dde2
+  F3/test.npy sha256 5d05ef8481ab6e33031a824cabe8b178c210ed28ec79296b43abf05674fbd645
+  F3/meta.json sha256 aa19f0e70baa8718eefe9daab75ce31005db582a5b7a5b6e3c99122d477b6f40
+first frames -> /root/tor001_run/first_frames.png
+G1 HELD
+/home/claude/principia-artificialis/experiments/tor_001/tor001.py:211: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  return {"roll": roll, "params": n_par, "latent": lat, "fit_s": round(fit_s, 1), "final_loss": float(loss), **diag}
+  fitted F1 T2 seed 0: params 264454 fit 102.8 s final loss 2.876e-04 [1.0002, 1.4142]
+  fitted F1 T2 seed 1: params 264454 fit 101.7 s final loss 2.736e-04 [-1.4141, 0.9999]
+  fitted F1 T2 seed 2: params 264454 fit 102.4 s final loss 2.320e-04 [1.4143, 1.0]
+  fitted F1 NP seed 0: params 264454 fit 107.3 s final loss 2.581e-04 [1.0001, 1.4142]
+  fitted F1 NP seed 1: params 264454 fit 100.9 s final loss 2.720e-04 [1.414, 1.0]
+  fitted F1 NP seed 2: params 264454 fit 98.0 s final loss 2.514e-04 [1.0001, 1.4144]
+  fitted F1 K4 seed 0: params 264468 fit 82.3 s final loss 2.753e-04 
+  fitted F1 K4 seed 1: params 264468 fit 76.0 s final loss 2.348e-04 
+  fitted F1 K4 seed 2: params 264468 fit 81.0 s final loss 2.716e-04 
+  fitted F1 E2 seed 0: params 264100 fit 85.1 s final loss 2.631e-02 
+  fitted F1 E2 seed 1: params 264100 fit 92.4 s final loss 1.660e-01 
+  fitted F1 E2 seed 2: params 264100 fit 86.9 s final loss 1.571e-02 
+interface: 14 fits finished before test.npy was opened: True
+  F1 L4: rank 4 params 4112 | h0 0.0006 h1 0.0006 h10 0.0006 h100 0.0006 h1000 0.0014
+  F1 L*: rank 4 params 4112 | h0 0.0006 h1 0.0006 h10 0.0006 h100 0.0006 h1000 0.0014
+  F1 T2/0: h0 0.0107 h1 0.0107 h10 0.0107 h100 0.0103 h1000 0.0164
+  F1 T2/1: h0 0.0114 h1 0.0114 h10 0.0102 h100 0.0112 h1000 0.0127
+  F1 T2/2: h0 0.0076 h1 0.0077 h10 0.0078 h100 0.0076 h1000 0.0113
+  F1 NP/0: h0 0.0109 h1 0.0111 h10 0.0114 h100 0.0118 h1000 0.0126
+  F1 NP/1: h0 0.0102 h1 0.0101 h10 0.0104 h100 0.0106 h1000 0.0168
+  F1 NP/2: h0 0.0083 h1 0.0084 h10 0.0086 h100 0.0090 h1000 0.0191
+  F1 K4/0: h0 0.0120 h1 0.0121 h10 0.0128 h100 0.0163 h1000 0.0874
+  F1 K4/1: h0 0.0080 h1 0.0080 h10 0.0082 h100 0.0079 h1000 0.0217
+  F1 K4/2: h0 0.0118 h1 0.0120 h10 0.0128 h100 0.0190 h1000 0.1076
+  F1 E2/0: h0 1.7966 h1 0.2655 h10 0.2819 h100 1.5168 h1000 1.6344
+  F1 E2/1: h0 1.1897 h1 0.5573 h10 0.5614 h100 0.5523 h1000 0.9693
+  F1 E2/2: h0 1.4549 h1 0.1043 h10 0.1005 h100 1.4408 h1000 1.4805
+  fitted F2 T2 seed 0: params 264454 fit 103.3 s final loss 3.945e-04 [1.4142, 0.9999]
+  fitted F2 T2 seed 1: params 264454 fit 101.9 s final loss 3.860e-04 [1.4143, 1.0001]
+  fitted F2 T2 seed 2: params 264454 fit 107.0 s final loss 3.602e-04 [1.4142, 1.0001]
+  fitted F2 NP seed 0: params 264454 fit 102.3 s final loss 3.677e-04 [1.4143, 1.0001]
+  fitted F2 NP seed 1: params 264454 fit 102.4 s final loss 3.733e-04 [1.0, 1.4141]
+  fitted F2 NP seed 2: params 264454 fit 105.2 s final loss 3.702e-04 [1.4144, -1.0001]
+  fitted F2 K4 seed 0: params 264468 fit 75.4 s final loss 3.561e-04 
+  fitted F2 K4 seed 1: params 264468 fit 78.2 s final loss 3.315e-04 
+  fitted F2 K4 seed 2: params 264468 fit 77.2 s final loss 2.941e-04 
+  fitted F2 E2 seed 0: params 264100 fit 90.5 s final loss 7.946e-02 
+  fitted F2 E2 seed 1: params 264100 fit 91.4 s final loss 3.476e-02 
+  fitted F2 E2 seed 2: params 264100 fit 87.8 s final loss 1.368e-01 
+interface: 14 fits finished before test.npy was opened: True
+  F2 L4: rank 4 params 4112 | h0 0.6614 h1 0.6697 h10 0.7851 h100 1.0141 h1000 0.9104
+  F2 L*: rank 27 params 28377 | h0 0.0225 h1 0.0227 h10 0.0255 h100 0.0325 h1000 0.0406
+  F2 T2/0: h0 0.0231 h1 0.0231 h10 0.0231 h100 0.0246 h1000 0.0259
+  F2 T2/1: h0 0.0217 h1 0.0218 h10 0.0232 h100 0.0242 h1000 0.0314
+  F2 T2/2: h0 0.0169 h1 0.0167 h10 0.0169 h100 0.0162 h1000 0.0192
+  F2 NP/0: h0 0.0176 h1 0.0169 h10 0.0166 h100 0.0177 h1000 0.0224
+  F2 NP/1: h0 0.0214 h1 0.0210 h10 0.0214 h100 0.0228 h1000 0.0312
+  F2 NP/2: h0 0.0191 h1 0.0174 h10 0.0179 h100 0.0179 h1000 0.0381
+  F2 K4/0: h0 0.0162 h1 0.0165 h10 0.0184 h100 0.0355 h1000 0.2866
+  F2 K4/1: h0 0.0166 h1 0.0162 h10 0.0169 h100 0.0405 h1000 0.3418
+  F2 K4/2: h0 0.0137 h1 0.0136 h10 0.0147 h100 0.0283 h1000 0.2391
+  F2 E2/0: h0 1.2335 h1 0.3807 h10 0.4449 h100 0.7313 h1000 1.0911
+  F2 E2/1: h0 2.2234 h1 0.2196 h10 0.2082 h100 1.3124 h1000 1.2233
+  F2 E2/2: h0 1.4821 h1 0.4799 h10 0.5704 h100 0.9624 h1000 0.9735
+  fitted F3 T2 seed 0: params 264454 fit 102.8 s final loss 1.624e-01 [0.9994, 1.415]
+  fitted F3 T2 seed 1: params 264454 fit 102.2 s final loss 1.618e-01 [1.4148, 1.0005]
+  fitted F3 T2 seed 2: params 264454 fit 106.0 s final loss 1.603e-01 [1.4135, 1.0003]
+  fitted F3 NP seed 0: params 264454 fit 106.3 s final loss 8.651e-02 [1.4254, 0.9836]
+  fitted F3 NP seed 1: params 264454 fit 100.7 s final loss 7.686e-02 [1.0177, 1.4521]
+  fitted F3 NP seed 2: params 264454 fit 105.9 s final loss 8.163e-02 [1.4205, 1.0489]
+  fitted F3 K4 seed 0: params 264468 fit 80.2 s final loss 7.517e-02 
+  fitted F3 K4 seed 1: params 264468 fit 82.0 s final loss 5.870e-02 
+  fitted F3 K4 seed 2: params 264468 fit 80.7 s final loss 7.818e-02 
+  fitted F3 E2 seed 0: params 264100 fit 90.7 s final loss 2.922e-01 
+  fitted F3 E2 seed 1: params 264100 fit 92.3 s final loss 2.888e-01 
+  fitted F3 E2 seed 2: params 264100 fit 100.7 s final loss 3.008e-01 
+interface: 14 fits finished before test.npy was opened: True
+  F3 L4: rank 4 params 4112 | h0 0.6650 h1 0.6685 h10 0.7437 h100 0.7948 h1000 0.7739
+  F3 L*: rank 37 params 39257 | h0 0.0277 h1 0.0277 h10 0.0277 h100 0.0279 h1000 0.0375
+  F3 T2/0: h0 0.4316 h1 0.4320 h10 0.4318 h100 0.4346 h1000 0.4437
+  F3 T2/1: h0 0.4392 h1 0.4389 h10 0.4407 h100 0.4365 h1000 0.4445
+  F3 T2/2: h0 0.4374 h1 0.4380 h10 0.4390 h100 0.4400 h1000 0.4437
+  F3 NP/0: h0 0.3954 h1 0.3777 h10 0.3704 h100 0.6278 h1000 1.0401
+  F3 NP/1: h0 0.3429 h1 0.3306 h10 0.3456 h100 0.6547 h1000 1.1402
+  F3 NP/2: h0 0.3870 h1 0.3793 h10 0.3608 h100 0.6825 h1000 0.9461
+  F3 K4/0: h0 0.3460 h1 0.3402 h10 0.3227 h100 0.6991 h1000 1.0070
+  F3 K4/1: h0 0.2888 h1 0.2672 h10 0.2909 h100 0.8895 h1000 1.4756
+  F3 K4/2: h0 0.3901 h1 0.3616 h10 0.3552 h100 0.6445 h1000 0.9748
+  F3 E2/0: h0 1.1083 h1 0.5771 h10 0.6072 h100 0.8698 h1000 0.8725
+  F3 E2/1: h0 1.3458 h1 0.5659 h10 0.5862 h100 0.6618 h1000 0.9686
+  F3 E2/2: h0 1.1119 h1 0.5784 h10 0.6119 h100 0.9373 h1000 0.9203
+VERDICT row 1: INCONCLUSIVE
