@@ -1,0 +1,71 @@
+Python 3.12.14 NumPy 2.3.5
+boundary support-1-original [5e-13, 0.9999999999995] {'F_Q': np.float64(5.000000000002499e-13), 'F_C': np.float64(5.000000000002499e-13), 'F_R': np.float64(0.0), 'split_resolved': True} {'F_Q': 5.0000000000025e-13, 'F_C': 5.000000000002499e-13, 'F_R': 1.0097419586828951e-28, 'split_resolved': True}
+boundary support-1-rotated [4.999889391399392e-13, 0.9999999999994997] {'F_Q': np.float64(5.000000000002497e-13), 'F_C': np.float64(5.000000000002497e-13), 'F_R': np.float64(1.5595590729822067e-43), 'split_resolved': True} {'F_Q': 0.9997911587537249, 'F_C': 5.000000000002499e-13, 'F_R': 0.9997911587532249, 'split_resolved': True}
+boundary gap-1e-12-1-original [0.4999999999995, 0.5000000000005] {'F_Q': np.float64(0.04000000000000001), 'F_C': np.float64(0.0), 'F_R': np.float64(0.04000000000000001), 'split_resolved': False} {'F_Q': 0.04000000000000001, 'F_C': 0.0, 'F_R': 0.04000000000000001, 'split_resolved': False}
+boundary gap-1e-12-1-rotated [0.4999999999994999, 0.5000000000004997] {'F_Q': np.float64(0.039999999999999994), 'F_C': np.float64(0.04000000000000001), 'F_R': np.float64(1.2263485729087644e-34), 'split_resolved': False} {'F_Q': 0.04, 'F_C': 0.04000000000000001, 'F_R': -6.938893903907228e-18, 'split_resolved': False}
+boundary gap-1e-06-1-original [0.4999995, 0.5000005] {'F_Q': np.float64(0.04000000000000001), 'F_C': np.float64(0.0), 'F_R': np.float64(0.04000000000000001), 'split_resolved': False} {'F_Q': 0.04000000000000001, 'F_C': 0.0, 'F_R': 0.04000000000000001, 'split_resolved': False}
+boundary gap-1e-06-1-rotated [0.49999949999999993, 0.5000005000000003] {'F_Q': np.float64(0.04000000000000005), 'F_C': np.float64(4.904876440400085e-22), 'F_R': np.float64(0.04000000000000005), 'split_resolved': True} {'F_Q': 0.040000000000000015, 'F_C': 4.904876664441697e-22, 'F_R': 0.040000000000000015, 'split_resolved': True}
+disagreement gap/rotated/candidate/analytic/split_resolved gap-1e-06-1-rotated 1.0 0.0
+disagreement gap/rotated/reference/analytic/split_resolved gap-1e-06-1-rotated 1.0 0.0
+disagreement kernel/original/candidate/reference/F_R kernel-P014-unequal-small-original 0.9999999999999999 0.8999999999999997
+disagreement kernel/rotated/candidate/analytic/F_Q kernel-P014-unequal-small-rotated 1.00006535021916 1.0
+disagreement kernel/rotated/candidate/reference/F_Q kernel-P014-unequal-small-rotated 1.00006535021916 0.9999856626171771
+disagreement kernel/rotated/candidate/reference/F_R kernel-P014-unequal-small-rotated 1.0000653495114935 0.9439139962485598
+disagreement kernel/rotated/reference/analytic/F_Q kernel-P014-unequal-small-rotated 0.9999856626171771 1.0
+disagreement support/rotated/candidate/analytic/F_C support-1.01-rotated 0.9999748554320399 1.000000000000505
+disagreement support/rotated/candidate/analytic/F_Q support-1-rotated 0.9997911587537249 5.0000000000025e-13
+disagreement support/rotated/candidate/analytic/F_R support-1-rotated 0.9997911587532249 0.0
+disagreement support/rotated/candidate/reference/F_Q support-1-rotated 0.9997911587537249 5.000000000002497e-13
+disagreement support/rotated/candidate/reference/F_R support-1-rotated 0.9997911587532249 1.5595590729822067e-43
+disagreement support/rotated/reference/analytic/F_C support-1.01-rotated 0.9999748554320399 1.000000000000505
+disagreement support/rotated/reference/analytic/F_Q support-1.01-rotated 0.9999748554320399 1.000000000000505
+worst normalized error 9900969.622150913 support-1-rotated candidate/analytic F_R
+point counts {'random': 256, 'support': 12, 'gap': 24, 'kernel': 8} failed points {'random': 0, 'support': 4, 'gap': 1, 'kernel': 2} max reference bookkeeping residual {'random': np.float64(1.0302869668521453e-13), 'support': np.float64(2.0769258295210804e-43), 'gap': np.float64(1.387778780781446e-17), 'kernel': np.float64(0.1000000000000002)}
+resolved originals 128 controls detected {'double': 128, 'flag': 128}
+reader cases/public.jsonl qfi_ref {'F_Q': 8, 'F_C': 5, 'F_R': 5, 'split_resolved': 5, 'bookkeeping': 4} failures []
+reader cases/public.jsonl d1_sld {'F_Q': 8, 'F_C': 5, 'F_R': 5, 'split_resolved': 5, 'bookkeeping': 4} failures []
+reader cases/d1_replay.jsonl qfi_ref {'F_Q': 7, 'F_C': 4, 'F_R': 4, 'split_resolved': 7} failures [['gap-1e-06-1-rotated', 'split_resolved'], ['kernel-P014-unequal-small-rotated', 'F_Q'], ['support-1.01-rotated', 'F_Q'], ['support-1.01-rotated', 'F_C']]
+reader cases/d1_replay.jsonl d1_sld {'F_Q': 7, 'F_C': 4, 'F_R': 4, 'split_resolved': 7} failures [['gap-1e-06-1-rotated', 'split_resolved'], ['kernel-P014-unequal-small-rotated', 'F_Q'], ['support-1.01-rotated', 'F_Q'], ['support-1.01-rotated', 'F_C'], ['support-1.01-rotated', 'F_R'], ['support-1-rotated', 'F_Q'], ['support-1-rotated', 'F_R']]
+d1_check exit 1
+P008-near-tie (qfi001/chatgpt/008): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P010-gap-4e-13 (qfi001/chatgpt/010): F_Q=0.04 F_C=0.04 F_R=2.41210991942e-36 split_resolved=False -> PASS
+P010-gap-4e-12 (qfi001/chatgpt/010): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P012-support-mask (qfi001/chatgpt/012): F_Q=1 F_C=1 F_R=0 split_resolved=True -> PASS
+P014-kernel-0 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi4 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi2 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-unequal-small (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=0.9 split_resolved=False -> PASS
+cases 8, failed 0, impl qfi_ref, numpy 2.3.5
+VERDICT PASS
+cases/public.jsonl qfi_ref exit 0
+P008-near-tie (qfi001/chatgpt/008): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P010-gap-4e-13 (qfi001/chatgpt/010): F_Q=0.04 F_C=0.04 F_R=0 split_resolved=False -> PASS
+P010-gap-4e-12 (qfi001/chatgpt/010): F_Q=0.04 F_C=0 F_R=0.04 split_resolved=False -> PASS
+P012-support-mask (qfi001/chatgpt/012): F_Q=1 F_C=1 F_R=0 split_resolved=True -> PASS
+P014-kernel-0 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi4 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-kernel-pi2 (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+P014-unequal-small (qfi001/chatgpt/014): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+cases 8, failed 0, impl d1_sld, numpy 2.3.5
+VERDICT PASS
+cases/public.jsonl d1_sld exit 0
+random-d2-0-original (D1 public analytic construction): F_Q=7.42363348427 F_C=6.35402751654 F_R=1.06960596772 split_resolved=True -> PASS
+random-d2-0-rotated (D1 public analytic construction): F_Q=7.42363348427 F_C=6.35402751654 F_R=1.06960596772 split_resolved=True -> PASS
+gap-1e-06-1-rotated (D1 public analytic construction): F_Q=0.04 F_C=4.9048764404e-22 F_R=0.04 split_resolved=True -> FAIL split_resolved True != False
+kernel-P014-unequal-small-original (D1 public analytic construction): F_Q=1 F_C=0 F_R=0.9 split_resolved=False -> PASS
+kernel-P014-unequal-small-rotated (D1 public analytic construction): F_Q=0.999985662617 F_C=7.07666675178e-10 F_R=0.943913996249 split_resolved=False -> FAIL F_Q np.float64(0.9999856626171771) != 1.0
+support-1.01-rotated (D1 public analytic construction): F_Q=0.999974855432 F_C=0.999974855432 F_R=1.31515962473e-43 split_resolved=True -> FAIL F_Q np.float64(0.9999748554320399) != 1.000000000000505; F_C np.float64(0.9999748554320399) != 1.000000000000505
+support-1-rotated (D1 public analytic construction): F_Q=5e-13 F_C=5e-13 F_R=1.55955907298e-43 split_resolved=True -> PASS
+cases 7, failed 3, impl qfi_ref, numpy 2.3.5
+VERDICT FAIL
+cases/d1_replay.jsonl qfi_ref exit 1
+random-d2-0-original (D1 public analytic construction): F_Q=7.42363348427 F_C=6.35402751654 F_R=1.06960596772 split_resolved=True -> PASS
+random-d2-0-rotated (D1 public analytic construction): F_Q=7.42363348427 F_C=6.35402751654 F_R=1.06960596772 split_resolved=True -> PASS
+gap-1e-06-1-rotated (D1 public analytic construction): F_Q=0.04 F_C=4.90487666444e-22 F_R=0.04 split_resolved=True -> FAIL split_resolved True != False
+kernel-P014-unequal-small-original (D1 public analytic construction): F_Q=1 F_C=0 F_R=1 split_resolved=False -> PASS
+kernel-P014-unequal-small-rotated (D1 public analytic construction): F_Q=1.00006535022 F_C=7.07666675179e-10 F_R=1.00006534951 split_resolved=False -> FAIL F_Q 1.00006535021916 != 1.0
+support-1.01-rotated (D1 public analytic construction): F_Q=0.999810006297 F_C=0.999974855432 F_R=-0.000164849135416 split_resolved=True -> FAIL F_Q 0.9998100062966239 != 1.000000000000505; F_C 0.9999748554320399 != 1.000000000000505; F_R -0.0001648491354160342 != 0.0
+support-1-rotated (D1 public analytic construction): F_Q=0.999791158754 F_C=5e-13 F_R=0.999791158753 split_resolved=True -> FAIL F_Q 0.9997911587537249 != 5.0000000000025e-13; F_R 0.9997911587532249 != 0.0
+cases 7, failed 4, impl d1_sld, numpy 2.3.5
+VERDICT FAIL
+cases/d1_replay.jsonl d1_sld exit 1
