@@ -1,0 +1,24 @@
+tokenizer rev cf967c0a9a04 identity MATCH
+class N: 16 words, single-token with leading space 16; dropped []
+class A: 10 words, single-token with leading space 10; dropped []
+class E: 10 words, single-token with leading space 10; dropped []
+class V: 6 words, single-token with leading space 6; dropped []
+class T: 7 words, single-token with leading space 7; dropped []
+F1 'The {} sat on the': qualifying pairs 119, not one-position 0, excluded as Q3 1, token lengths [5]
+F2 'My friend bought a {} and put it in the': qualifying pairs 119, not one-position 0, excluded as Q3 1, token lengths [10]
+F3 'She saw a {} house near the': qualifying pairs 45, not one-position 0, excluded as Q3 0, token lengths [7]
+F4 'He was very {} when he heard the': qualifying pairs 45, not one-position 0, excluded as Q3 0, token lengths [8]
+F5 'They {} to the store and bought some': qualifying pairs 15, not one-position 0, excluded as Q3 0, token lengths [8]
+F6 'In the {} we went to the': qualifying pairs 21, not one-position 0, excluded as Q3 0, token lengths [7]
+total qualifying pairs 364: dev 123, test 241
+  F1: dev 40 test 79
+  F2: dev 45 test 74
+  F3: dev 16 test 29
+  F4: dev 10 test 35
+  F5: dev 4 test 11
+  F6: dev 8 test 13
+distinct moved words: dev 46, test 49, in both 46
+dev: points 2 models x 123 pairs x 11 thetas x 7 layers = 18942; forward passes 13530 (theta, and theta +- h for 2 steps)
+test: points 2 models x 241 pairs x 11 thetas x 7 layers = 37114; forward passes 26510 (theta, and theta +- h for 2 steps)
+pair list sha256 ad19d82764d30b7ede6c720f60f51407b790892a0ae3be2760b33b0109c247a4
+FEASIBILITY COUNTS COMPLETE
