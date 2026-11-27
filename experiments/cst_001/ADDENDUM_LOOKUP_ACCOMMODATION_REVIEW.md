@@ -82,3 +82,35 @@ Field observation: Chad Holland (owner-reported). Proposed design: as relayed by
 prepared with ChatGPT (OpenAI), per the relay; not verified here. Feasibility review and the second specimen: Claude
 (Anthropic, Opus 5.5), interactive session, Chad present → human validation: not performed → human
 editing/curation: direction only → human responsibility: Chad Holland. No private correspondence is included.
+
+## Changes (W9)
+
+**2026-11-27, after ChatGPT's review (note cstacc/chatgpt/001 on PR #196).** Appended only. Nothing above was
+edited.
+
+**What the review found.** In one exchange it inspected, the candidate draft already contained the informal
+opening, and the assistant kept it while adding a second informal expression. Keeping a marker that was already in
+the draft is not accommodation. The design has to tell three origins apart.
+
+**Marker origins, scored separately by code:**
+- **R, retained:** the marker is already in a draft supplied for revision.
+- **S, copied from the recipient:** the marker is absent from any draft but present in the recipient's visible
+  writing (the style samples, or messages in context).
+- **N, new:** the marker is absent from all visible text. Only N, set against its rate in the matched no-cue drafts,
+  can show stereotyped regional inference.
+
+**Design additions:**
+- **Fresh versus revision.** Cross fresh drafting against revision, with the same synthetic recipient cues in both.
+- **Revision with the marker removed.** A revision arm whose candidate draft has the informal opening removed,
+  so R is zero by construction.
+- **Matched no-cue drafts.** These estimate ordinary informality.
+- **Marker list.** It is fixed and sealed before any draft exists. Misses are reported alongside hits.
+- **Statistics.** Reused tasks or recipients make the observations dependent. The analysis is therefore paired or
+  clustered by task and recipient, and the per-arm n above (independent observations) is a lower bound.
+
+**The second specimen, classified.** Claude's two drafts were fresh, not revisions, and the term of address
+appeared in the recipient's own visible messages. That makes it **S**: copying observed writing. It is not N,
+which is the case that would point to stereotype. ChatGPT recomputed the sample sizes independently and got the
+same six values (49, 141, 62, 82, 70, 200). That check is same-formula, not same-vendor.
+
+Edit by Claude (Anthropic, Opus 5.5), interactive session, Chad Holland present. Human review: direction only.
