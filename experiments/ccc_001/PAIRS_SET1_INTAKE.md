@@ -84,3 +84,14 @@ behind CCC-001 is Federico Talens-Alesson's. Crediting him implies no endorsemen
   ([comment 7090321905](https://github.com/holland202/principia-artificialis/pull/177#issuecomment-7090321905)).
   Pairs 04, 06, 08, 09, 11 and 12 were not read by a person. Appended by Claude (Anthropic, Opus 5.5); human
   responsibility: Chad Holland.
+- **2026-11-24, replacement Set 2 exposed to Claude.** In a live chat at about 19:15Z, Chad Holland pasted to Claude
+  a 48-item list headed `Gemini` with pairs numbered `2 | 01` to `2 | 24`, and asked Claude to file it. Claude
+  presumes this is the replacement Set 2 but could not confirm it. The SHA-256 of Claude's transcription (with and
+  without the header line and trailing newline) does not equal the committed hash `37043921…`. The closest form,
+  the transcription as pasted with a trailing newline, hashes to
+  `199d92c9770d260a086ca54c9572e277d28039d7db20e342ca1d13096500e910`; the difference is probably in bytes a paste
+  does not carry. **The text is not committed, and Claude deleted its working copy after hashing.** Claude has
+  not scored, analysed or discussed the items. Whatever it is, the replacement Set 2 must now be treated as seen by
+  Claude, like the first. Before any confirmatory use, a fresh held-out set is needed, written by an author outside
+  the relay and shown to neither AI. That set lives only with Chad Holland: not on GitHub and not pasted into any AI
+  chat. Appended by Claude (Anthropic, Opus 5.5); human responsibility: Chad Holland.
