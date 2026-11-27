@@ -21,7 +21,8 @@ total. S25 NOT VALIDATED.
    - `tor001_reval.py`, committed before it ran, applies the fixed `decide()` to the approved run's saved error table.
      It reads the gates from that run's log.
    - Nothing was retrained or rescored.
-   - An end-to-end rerun at the fixed commit has **not** been done. That needs Chad's go.
+   - An end-to-end rerun at the fixed commit has since been done. It gives the same row 4 directly from `run`
+     (section below).
 3. **Self-tested.** Claude wrote the plan's draft, the code and this file. ChatGPT attacked the plan (notes 002 and
    004) and found the missing-measurement defect (note 010). Its blind fields will test the code independently of
    Claude's choices, but not of Chad's shared instructions (M10).
@@ -96,7 +97,6 @@ VERDICT (re-evaluated) row 4: T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFI
 
 - **ChatGPT's blind fields A and B** against the same code (approved in comment 7222720820). `score` mode does not
   call `decide()`, so the defect above does not affect them.
-- **An end-to-end rerun at `d087c03`**, to confirm the re-evaluated verdict comes out of `run` itself.
 - **An arm that removes only the rotation dynamics,** for example the projection with learned free dynamics. Without
   it, no component can be credited.
 - **The persistent-homology door** in the registration.
@@ -106,3 +106,34 @@ VERDICT (re-evaluated) row 4: T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFI
 by ChatGPT (OpenAI GPT-6, Codex) notes tor001/chatgpt/002, 004 and 010 → human validation: not performed → direction,
 freeze and run approval: Chad Holland, 2026-11-26/27 → human responsibility: Chad Holland. Review level: direction
 only. The question is credited to Sushil Pershad's public post, with no endorsement implied.*
+
+## End-to-end rerun at `d087c03` (2026-11-27)
+
+Authority: Chad Holland's direction in live chat on 2026-11-27 to do what is best (paraphrased; recorded in note
+tor001/claude/014). Code `tor001.py` at `d087c03`, SHA-256 `e87eeb32…8612`. Raw output:
+[`run_d087c03.txt`](../../results/tor_001/run_d087c03.txt) and
+[`tor001_results_d087c03.json`](../../results/tor_001/tor001_results_d087c03.json). Verbatim:
+
+```
+P1: HELD
+P2: HELD
+P3: HELD
+P4: HELD
+P5: HELD
+P6: REFUTED
+VERDICT row 4: T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFIT MET P6
+```
+
+- **Agreement with the approved run:** 205 of 210 error entries are bitwise identical to the approved run
+  (`6b9105d`). The 5 that differ are all F1 / T2 seed 0, the first learned fit; its 1,000-step error is 0.0164 there
+  and 0.0289 here. No prediction uses that entry.
+- **The other session found the same pattern:** a separate Claude session's second process at `36d5d4a` (`22b09d7`)
+  shows the same 205 of 210. That points to start-up state affecting only the first fit. This is reproducibility, not
+  independence (M10).
+
+## Changes (W9)
+
+- **2026-11-27, after the end-to-end rerun:** added the section above, and edited item 2 of "What could have gone
+  wrong" and the Open list. Superseded wording, verbatim: "An end-to-end rerun at the fixed commit has **not** been
+  done. That needs Chad's go." and "**An end-to-end rerun at `d087c03`**, to confirm the re-evaluated verdict comes out
+  of `run` itself." Edit by Claude (Anthropic, Opus 5.5).
