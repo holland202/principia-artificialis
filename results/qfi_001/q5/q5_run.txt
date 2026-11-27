@@ -1,0 +1,111 @@
+QFI-001 Q5 (dev) run; sabotage=False; python 3.13.18; numpy 2.5.3; torch 2.15.0+cpu; transformers 5.24.1; threads 2; float64; softmax kept in float64 (in-memory patch)
+G12 fixture (invented errors; e_A^2 = 1, e_B^2 = 0.75 on 12 shared pairs for both models)
+shared only              amend1(own N): step0 MSE 1 d 0.00 k 0/12 p 1.0
+                         scale on P:        d 0.00 k 0/12 p 1.0
+add 12 step0-only A2=9   amend1(own N): step0 MSE 5 d 0.20 k 12/12 p 0.000244140625
+                         scale on P:        d 0.00 k 0/12 p 1.0
+empty P: H2-P UNDECIDABLE (empty P)
+SSE_A(P) = 0 on step0: H2-P UNDECIDABLE (zero denominator)
+extra self-checks (not registered): 13 of 13
+G12: PASS
+G0 public: rc=0 ['cases 8, failed 0, impl qfi_ref, numpy 2.5.3']; must-fail: rc=1 ['cases 3, failed 3, impl qfi_ref, numpy 2.5.3'] -> PASS
+R1 trained (main, step143000): rev cf967c0a9a04 identities MATCH
+R1 untrained (step0): rev 56079904bb80 identities MATCH
+G1 identities (lines above are q3_run.load_models' own, labelled R1) True; pair list sha256 ad19d82764d30b7ede6c720f60f51407b790892a0ae3be2760b33b0109c247a4 dev 123 test 241 -> PASS
+G2 attention dtypes ['torch.float64', 'torch.float64', 'torch.float64', 'torch.float64', 'torch.float64', 'torch.float64']; weight not float32-representable at 6 of 6 layers; patch installed True; explore point F_Q(h)=1.527322798e-01 F_Q(h')=1.527322851e-01 rel 3.469e-08 -> PASS
+G3 C-NOISE (Q3 pair 0, theta 0.5, both models, 3 repeats): nu 0.000e+00 nu_rel 0.000e+00 (predicted 0); last-position logits max|d| 0.000e+00 (descriptive)
+stage 0: dlambda 1.221e-15 over 462 points; terms 1e-6, 1e4*dlambda 1.221e-11, 1e4*nu_rel 0.000e+00; tau_q4 = 1e-06 (set by 1e-6); registered tau (absolute nu) = 1e-06
+S1 commuting: F_Q=0.609999998717 F_C=0.609999998717 F_R=0.000e+00 (Var_p(a)=0.610000000000) -> PASS
+S2 rotation (0,1): F_Q=0.199999999333 F_C=0.000e+00 F_R=0.199999999333 (expect F_Q 0.200000000000) -> PASS
+S3 rotation into kernel (1,3): F_Q=1.199999996000 F_C=0.000e+00 F_R=1.199999996000 split_resolved=False split_resolved_support=True (expect F_Q 1.200000000000, False, True) -> PASS
+S3 (Q4 flag, exact drho): F_Q=1.200000000000 (expect 1.2) split_resolved_q4=True (expect True) -> PASS
+N1 support tie p=(0.4,0.4,0.2), d=5: split_resolved_q4=False (expect False) -> PASS
+N2 p=(1-d, d, 0, 0), d=2.5e-13: split_resolved_support=True (expect True) split_resolved_q4=False (expect False; structural zeros 3, d - n = 2) -> PASS
+G9 S1-S3, S3 (Q4 flag), N1, N2 -> PASS
+G10 scale invariance (x1e3): max|d rho| 1.110e-16 max|d drho| 1.214e-17 max rel dF 3.120e-14 flag unchanged True -> PASS
+G6 residual <= 1e-10 max(1, F_Q), |tr rho - 1| <= 1e-12, raw rho symmetric to 1e-14 (I2), finite: 18942 of 18942; worst residual 2.842e-14 tr_err 4.441e-16 sym_err 0.000e+00 -> PASS
+G11 |F_out - Var_p(dz)| <= 1e-8 F_out at usable points: 18766 of 18766; worst relative 3.518e-12 -> PASS
+G4 (all terms) passes: trained (main, step143000) 9471, untrained (step0) 9471 of 9471 each
+G5 split_resolved_q4: trained (main, step143000) 9383, untrained (step0) 9383 of 9471 each
+points whose split_resolved_q4 differs between tau_q4 and the registered tau: 0
+G4b report (Amendment 1 item 1), per model:
+  trained (main, step143000): G4 passes 9471; F_C fail G4b 0 max|dln| 7.811e-06; F_R fail G4b 0 max|dln| 7.148e-06; S fail G4b 0 max|dln| 7.000e-06; F_out fail G4b 0 max|dln| 1.095e-06
+  untrained (step0): G4 passes 9471; F_C fail G4b 0 max|dln| 5.774e-07; F_R fail G4b 0 max|dln| 1.736e-07; S fail G4b 0 max|dln| 1.728e-07; F_out fail G4b 0 max|dln| 1.258e-07
+EXCLUSIONS (Amendment 1 item 4). Point counts failing each term; pairs usable (>= 9 of 11), usable ignoring the F_out terms, and excluded only by an F_out term
+model  L  pts usable    g4_FQ    g4_FC    g4_FR  g4_Fout   g4b_FC   g4b_FR    g4b_S g4b_Fout       g5    fl_FC    fl_FR     fl_S  fl_Fout  pairs usable noFout onlyFout lt9
+trained 0 1353   1265        0        0        0        0        0        0        0        0       88        0        0        0        0    123    115    115        0   8
+trained 1 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+trained 2 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+trained 3 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+trained 4 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+trained 5 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+trained 6 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   0 1353   1265        0        0        0        0        0        0        0        0       88        0        0        0        0    123    115    115        0   8
+step0   1 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   2 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   3 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   4 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   5 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+step0   6 1353   1353        0        0        0        0        0        0        0        0        0        0        0        0        0    123    123    123        0   0
+usable points by frame (trained / step0), summed over layers:
+  F1: 3080/3080  3080/3080
+  F2: 3465/3465  3465/3465
+  F3: 1232/1232  1232/1232
+  F4: 770/770  770/770
+  F5: 308/308  308/308
+  F6: 528/616  528/616
+LAYER PROFILE (descriptive): median F_R/F_Q over usable points, by model and layer
+  trained (main, step143000): L0 9.514e-01  L1 9.887e-01  L2 9.875e-01  L3 9.847e-01  L4 9.864e-01  L5 9.853e-01  L6 9.863e-01
+  untrained (step0): L0 9.270e-01  L1 9.909e-01  L2 9.903e-01  L3 9.882e-01  L4 9.882e-01  L5 9.876e-01  L6 9.868e-01
+trained usable point share by layer: L0 0.9350 L1 1.0000 L2 1.0000 L3 1.0000 L4 1.0000 L5 1.0000 L6 1.0000
+G8 cost: main run wall 540.0 s (9.00 min); forward passes 13530, median 7.64 ms, total 108.2 s; peak RSS 856 MiB
+LAYER SELECTION (trained, dev, leave-one-pair-out). G_loo = (SSE_A - SSE_B)/SSE_A
+  L0: usable pairs 115; G_loo -0.006222
+  L1: usable pairs 123; G_loo 0.009939
+  L2: usable pairs 123; G_loo 0.069655
+  L3: usable pairs 123; G_loo 0.280663
+  L4: usable pairs 123; G_loo 0.337133
+  L5: usable pairs 123; G_loo 0.281271
+  L6: usable pairs 123; G_loo 0.010876
+l* = 4
+  trained real (dev LOO at l*): G 0.337133 k 77/123 p 0.0032955 frames>0 5 of 6 (tail 0.1094) a=True b=True c=True -> HOLDS
+      frame gains: F1 0.0160 F2 0.4964 F3 0.3742 F4 0.1715 F5 0.6540 F6 -0.6081
+  trained pc   (dev LOO at l*): G 0.934514 k 96/123 p 1.45618e-10 frames>0 6 of 6 (tail 0.0156) a=True b=True c=True -> HOLDS
+      frame gains: F1 0.8372 F2 0.8210 F3 0.8998 F4 0.9035 F5 0.9933 F6 0.9582
+  trained nc   (dev LOO at l*): G -0.004625 k 63/123 p 0.428492 frames>0 3 of 6 (tail 0.6562) a=False b=False c=False -> FAILS
+      frame gains: F1 0.0104 F2 0.0264 F3 -0.0007 F4 0.0508 F5 -0.5103 F6 -0.0686
+  step0 real (dev LOO at l*): G 0.142025 k 70/123 p 0.0744081 frames>0 3 of 6 (tail 0.6562) a=True b=False c=False -> FAILS
+      frame gains: F1 0.0320 F2 0.2868 F3 0.2761 F4 -0.2339 F5 -0.3445 F6 -0.7547
+  step0 pc   (dev LOO at l*): G 0.909058 k 102/123 p 2.91043e-14 frames>0 6 of 6 (tail 0.0156) a=True b=True c=True -> HOLDS
+      frame gains: F1 0.8827 F2 0.9200 F3 0.9061 F4 0.9361 F5 0.6949 F6 0.9743
+  step0 nc   (dev LOO at l*): G -0.014271 k 63/123 p 0.428492 frames>0 1 of 6 (tail 0.9844) a=False b=False c=False -> FAILS
+      frame gains: F1 -0.0054 F2 -0.0113 F3 -0.0401 F4 0.0027 F5 -0.0136 F6 -0.0135
+FEASIBLE: trained usable point share >= 0.95 at every layer False; dev pairs usable at l* 1.0000 (>= 0.90 True) -> False
+share of otherwise-usable dev pairs at l* excluded only by an F_out term (descriptive at Q5): trained (main, step143000) 0.0000, untrained (step0) 0.0000
+G7 second process: rc=0 digest 0a764f19c3a40f456e69bb043466c9cb266023554c835b1e2f790c50a246c53b (530.0 s); this process 0a764f19c3a40f456e69bb043466c9cb266023554c835b1e2f790c50a246c53b
+G12: PASS
+G0: PASS
+G1: PASS
+G2: PASS
+G3: PASS
+G4: PASS
+G5: PASS
+G6: PASS
+G7: PASS
+G8: PASS
+G9: PASS
+G10: PASS
+G11: PASS
+P6 detail: share of trained G4 passes that pass G4b, by layer: L0 1.0000 L1 1.0000 L2 1.0000 L3 1.0000 L4 1.0000 L5 1.0000 L6 1.0000
+P1 REFUTED
+P2 HELD
+P3 HELD
+P6 HELD
+P7 HELD
+P4, P5, P8 NOT RUN (Q6 predictions)
+Q5 STATE INFEASIBLE. Dev gains above are descriptive and in-sample (l* was chosen on them). F_R is not interpreted until ChatGPT's d1_sld agreement on the interchange subset is posted (FAST-1).
+interchange: results/qfi_001/q5/interchange_subset.npz sha256 082a0338a0aaeeae694655cee9d8aa880c108bc122d8ebc12d0545f0523d5661 (481809 bytes)
+results: results/qfi_001/q5/results.json sha256 b706460a22d2106c43bf70b34905a2c80c360ff8493871a22bdb24d833dbfc0e
+VERDICT 4 of 5 as registered (P1, P2, P3, P6, P7)
+DIGEST 0a764f19c3a40f456e69bb043466c9cb266023554c835b1e2f790c50a246c53b
+rc=1
