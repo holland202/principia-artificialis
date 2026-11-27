@@ -1,0 +1,26 @@
+symbol table (sorted strings, built before any query is read):
+  keys:   {'locker B2': 1, 'locker K7': 2, 'locker K9': 3, 'locker M4': 4, 'locker Z1': 5}
+  values: {'compass': 64, 'lantern': 65, 'marble': 66, 'ribbon': 67, 'whistle': 68}
+trained context sizes (pairs per context): T=32: 6, T=64: 12, T=96: 19, T=128: 25
+
+A  base           : query 'locker K7'; records [('locker B2', 'lantern'), ('locker K7', 'compass'), ('locker M4', 'ribbon'), ('locker K9', 'marble')]
+  tokens (11): [0, 1, 65, 2, 64, 4, 67, 3, 66, 129, 2]
+  status: NATIVE
+A' fact swap      : query 'locker K7'; records [('locker B2', 'lantern'), ('locker K7', 'whistle'), ('locker M4', 'ribbon'), ('locker K9', 'marble')]
+  tokens (11): [0, 1, 65, 2, 68, 4, 67, 3, 66, 129, 2]
+  status: NATIVE
+D  distractor-only: query 'locker K7'; records [('locker B2', 'whistle'), ('locker K7', 'compass'), ('locker M4', 'ribbon'), ('locker K9', 'marble')]
+  tokens (11): [0, 1, 68, 2, 64, 4, 67, 3, 66, 129, 2]
+  status: NATIVE
+M  missing key    : query 'locker Z1'; records [('locker B2', 'lantern'), ('locker K7', 'compass'), ('locker M4', 'ribbon'), ('locker K9', 'marble')]
+  tokens (11): [0, 1, 65, 2, 64, 4, 67, 3, 66, 129, 5]
+  status: MISSING_KEY (never in training; no abstain symbol, the model must emit some token)
+C  contradiction  : query 'locker K7'; records [('locker K7', 'compass'), ('locker B2', 'lantern'), ('locker K7', 'whistle')]
+  tokens (9): [0, 2, 64, 1, 65, 2, 68, 129, 2]
+  status: CONTRADICTION_OR_DUPLICATE_KEY (never in training: keys were distinct)
+
+A vs A' differ only at token index [4] (record 2's value slot is index 4)
+A vs D  differ only at token index [2] (record 1's value slot is index 2)
+query token identical in A, A', D: True; every record present: True
+exact key lookup on the records (reference arm, not the model): A 'compass', A' 'whistle', D 'compass', M MISSING, C CONFLICT ['compass', 'whistle']  (M and C need an agreed rule before scoring)
+INTERFACE CHECK PASS
