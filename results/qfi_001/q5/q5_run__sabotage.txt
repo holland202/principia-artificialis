@@ -1,0 +1,27 @@
+QFI-001 Q5 (dev) run; sabotage=True; python 3.13.18; numpy 2.5.3; torch 2.15.0+cpu; transformers 5.24.1; threads 2; float64; softmax kept in float64 (in-memory patch)
+G12 fixture (invented errors; e_A^2 = 1, e_B^2 = 0.75 on 12 shared pairs for both models)
+shared only              amend1(own N): step0 MSE 1 d 0.00 k 0/12 p 1.0
+                         scale on P:        d 0.00 k 0/12 p 1.0
+add 12 step0-only A2=9   amend1(own N): step0 MSE 5 d 0.20 k 12/12 p 0.000244140625
+                         scale on P:        d 0.00 k 0/12 p 1.0
+empty P: H2-P UNDECIDABLE (empty P)
+SSE_A(P) = 0 on step0: H2-P UNDECIDABLE (zero denominator)
+extra self-checks (not registered): 13 of 13
+G12: PASS
+G0 public: rc=0 ['cases 8, failed 0, impl qfi_ref, numpy 2.5.3']; must-fail: rc=1 ['cases 3, failed 3, impl qfi_ref, numpy 2.5.3'] -> PASS
+R1 trained (main, step143000): rev cf967c0a9a04 identities MATCH
+R1 untrained (step0): rev 56079904bb80 identities MATCH
+G1 identities (lines above are q3_run.load_models' own, labelled R1) True; pair list sha256 ad19d82764d30b7ede6c720f60f51407b790892a0ae3be2760b33b0109c247a4 dev 123 test 241 -> PASS
+G2 attention dtypes ['torch.float64', 'torch.float64', 'torch.float64', 'torch.float64', 'torch.float64', 'torch.float64']; weight not float32-representable at 6 of 6 layers; patch installed True; explore point F_Q(h)=0.000000000e+00 F_Q(h')=0.000000000e+00 rel 0.000e+00 -> PASS
+G3 C-NOISE (Q3 pair 0, theta 0.5, both models, 3 repeats): nu 0.000e+00 nu_rel 0.000e+00 (predicted 0); last-position logits max|d| 0.000e+00 (descriptive)
+stage 0: dlambda 1.221e-15 over 462 points; terms 1e-6, 1e4*dlambda 1.221e-11, 1e4*nu_rel 0.000e+00; tau_q4 = 1e-06 (set by 1e-6); registered tau (absolute nu) = 1e-06
+S1 commuting: F_Q=0.000000000000 F_C=0.000000000000 F_R=0.000e+00 (Var_p(a)=0.610000000000) -> FAIL
+S2 rotation (0,1): F_Q=0.000000000000 F_C=0.000e+00 F_R=0.000000000000 (expect F_Q 0.200000000000) -> FAIL
+S3 rotation into kernel (1,3): F_Q=0.000000000000 F_C=0.000e+00 F_R=0.000000000000 split_resolved=False split_resolved_support=True (expect F_Q 1.200000000000, False, True) -> FAIL
+S3 (Q4 flag, exact drho): F_Q=0.000000000000 (expect 1.2) split_resolved_q4=True (expect True) -> FAIL
+N1 support tie p=(0.4,0.4,0.2), d=5: split_resolved_q4=False (expect False) -> PASS
+N2 p=(1-d, d, 0, 0), d=2.5e-13: split_resolved_support=True (expect True) split_resolved_q4=False (expect False; structural zeros 3, d - n = 2) -> PASS
+G9 S1-S3, S3 (Q4 flag), N1, N2 -> FAIL
+INFEASIBLE: first failure G9 (fail-closed; no Q4 pair computed)
+VERDICT INFEASIBLE
+rc=1

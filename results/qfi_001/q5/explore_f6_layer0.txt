@@ -1,0 +1,12 @@
+R1 trained (main, step143000): rev cf967c0a9a04 identities MATCH
+R1 untrained (step0): rev 56079904bb80 identities MATCH
+F1 'The {} sat on the': tokens 5, repeated token ids 0
+F2 'My friend bought a {} and put it in the': tokens 10, repeated token ids 0
+F3 'She saw a {} house near the': tokens 7, repeated token ids 0
+F4 'He was very {} when he heard the': tokens 8, repeated token ids 0
+F5 'They {} to the store and bought some': tokens 8, repeated token ids 0
+F6 'In the {} we went to the': tokens 7, repeated token ids 1
+F6 pair morning/night L0 theta 0.0: n 7, rank(A) 6, structural zeros 122 (d - n = 121), q4 False, srs True
+F6 pair morning/night L0 theta 0.5: n 7, rank(A) 6, structural zeros 122 (d - n = 121), q4 False, srs True
+F6 pair morning/night L1 theta 0.0: n 7, rank(A) 7, structural zeros 121 (d - n = 121), q4 True, srs True
+F6 pair morning/night L1 theta 0.5: n 7, rank(A) 7, structural zeros 121 (d - n = 121), q4 True, srs True
