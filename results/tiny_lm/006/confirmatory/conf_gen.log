@@ -1,0 +1,4 @@
+weights runs/t41.pt sha256 b388fcb2d738106dddbe74e28b3d440330eeebfa2d1d45178bea2ad163fd8a36
+seeds 5020..5219 texts 200 -> runs/t41.conf_samples.txt sha256 17bf9700b7bcd36735a5c9cb3ad4433a242916e6f399d97e968fc76d233067d5
+weights runs/t42.pt sha256 e4f7422887c2ffa4a2c967f73854a0b4021c0c156a35c5426701c8dc143af6af
+seeds 5020..5219 texts 200 -> runs/t42.conf_samples.txt sha256 1318aa8f93b0cb8f3d994538a0bbdd6b596c5a33800514dd04657e3b5f4cb4cf

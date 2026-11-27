@@ -1,0 +1,34 @@
+selftest neither: row 9 want 9 ok
+selftest seed41 only: row 6 want 6 ok
+selftest both: row 7 want 7 ok
+selftest seed42 only: row 8 want 8 ok
+selftest dropone: row 5 want 5 ok
+selftest B != 0: row 4 want 4 ok
+selftest E = 0 subset: row 3 want 3 ok
+selftest dead R fixture: row 2 want 2 ok
+selftest df-any leaves R: row 2 want 2 ok
+selftest pos control fails: row 2 want 2 ok
+selftest G0 fails: row 1 want 1 ok
+selftest missing set: row 1 want 1 ok
+SELFTEST PASS
+v2_train_200MB.txt sha256 ee5242d9d94d6df3b5813e01adb0ee278eb77aa3bb7395fbd22cbe6e368869e9 OK
+v2_valid.txt sha256 6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d OK
+code tlm005_attrib.py sha256 93948c3c4f96ff7c67e006f24f5096b7a92319ade5a53aacbe132effa7a10590
+code tlm006_drive.py sha256 1c16f2813fc39aed12c645c40c3298557d68b7065842adace40d0f751fc2d802
+flags df_any False
+training stories 256019 unique by sha256 256008
+G3 valid stories 27631 (need >= 2600) HELD
+distinct windows searched 869
+G0 t41: E 247 U 3 R 10 B 0 want (247, 3, 10, 0)
+G0 t42: E 236 U 4 R 5 B 0 want (236, 4, 5, 0)
+G0 block01: E 338 U 7 R 8 B 0 want (338, 7, 8, 0)
+G0 HELD
+distinct windows searched 2
+distinct windows searched 2
+R fixture: normal U 0 R 1 | --df-any U 1 R 0 (need R >= 1, then R = 0)
+VERDICT NONE (gates only; no model samples read)
+
+real	1m58.393s
+user	1m56.100s
+sys	0m0.557s
+exit 0
