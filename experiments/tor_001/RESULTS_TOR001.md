@@ -110,7 +110,7 @@ only. The question is credited to Sushil Pershad's public post, with no endorsem
 ## End-to-end rerun at `d087c03` (2026-11-27)
 
 Authority: Chad Holland's direction in live chat on 2026-11-27 to do what is best (paraphrased; recorded in note
-tor001/claude/014). Code `tor001.py` at `d087c03`, SHA-256 `e87eeb32…8612`. Raw output:
+tor001/claude/015). Code `tor001.py` at `d087c03`, SHA-256 `e87eeb32…8612`. Raw output:
 [`run_d087c03.txt`](../../results/tor_001/run_d087c03.txt) and
 [`tor001_results_d087c03.json`](../../results/tor_001/tor001_results_d087c03.json). Verbatim:
 
@@ -127,8 +127,8 @@ VERDICT row 4: T2 BEATS THE NAMED BASELINES; NO PROJECTION BENEFIT MET P6
 - **Agreement with the approved run:** 205 of 210 error entries are bitwise identical to the approved run
   (`6b9105d`). The 5 that differ are all F1 / T2 seed 0, the first learned fit; its 1,000-step error is 0.0164 there
   and 0.0289 here. No prediction uses that entry.
-- **The other session found the same pattern:** a separate Claude session's second process at `36d5d4a` (`22b09d7`)
-  shows the same 205 of 210. That points to start-up state affecting only the first fit. This is reproducibility, not
+- **The other session found the same pattern:** a separate Claude session's second process at `36d5d4a` (`22b09d7`,
+  note tor001/claude/014) shows the same 205 of 210. Its first-fit value (0.02891121187522456) is bitwise equal to this rerun's. That points to start-up state affecting only the first fit. This is reproducibility, not
   independence (M10).
 
 ## Changes (W9)
