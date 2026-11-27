@@ -77,7 +77,7 @@ def gen(outdir):
         test = np.stack([field(name, phases(name, s, TEST_H + 1)) for s in starts])
         test2 = np.stack([field(name, phases(name, s, TEST_H + 1)) for s in starts])
         regen = max(np.abs(clean - again).max(), np.abs(test - test2).max())
-        ok = regen <= 1e-12
+        ok = bool(regen <= 1e-12)  # Python bool: decide() requires 'is True' (run 6b9105d failed closed on numpy.bool)
         g1 &= ok
         np.save(os.path.join(d, "train.npy"), clean + noise)
         np.save(os.path.join(d, "test.npy"), test)
@@ -92,7 +92,7 @@ def gen(outdir):
             n4 = int((e > 1e-8).sum())
             print(f"G1 rank oracle (clean F1, uncentred): normalised squared singular values > 1e-8: {n4} "
                   f"(need exactly 4); top 6 {np.round(e[:6], 10).tolist()}")
-            g1 &= n4 == 4
+            g1 &= bool(n4 == 4)
         if name == "F2":
             s = np.linalg.svd((clean + noise).reshape(TRAIN_T, -1), compute_uv=False) ** 2
             print(f"  F2 noisy-training POD: modes for 99.9% energy {int(np.searchsorted(np.cumsum(s) / s.sum(), 0.999) + 1)}")
@@ -113,7 +113,7 @@ def gen(outdir):
     except Exception as ex:  # rendering is a look, not a gate
         print("first frames not rendered:", ex)
     print("G1", "HELD" if g1 else "FAILED")
-    return g1
+    return bool(g1)
 
 
 # ------------------------------------------------------------------ arms
@@ -361,6 +361,8 @@ def main():
         for name in ("F1", "F2", "F3"):
             E[name], ok = score(os.path.join(out, name))
             order &= ok
+        if type(g1) is not bool or type(order) is not bool:
+            sys.exit(f"gate flags must be Python bool, got {type(g1)} and {type(order)}")
         row, outcome, P = decide(E, {"G1": g1, "order": order})
         for k, v in P.items():
             print(f"{k}: {'HELD' if v else 'REFUTED'}")
