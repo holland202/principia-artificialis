@@ -1,0 +1,79 @@
+selftest neither: row 9 want 9 ok
+selftest seed41 only: row 6 want 6 ok
+selftest both: row 7 want 7 ok
+selftest seed42 only: row 8 want 8 ok
+selftest dropone: row 5 want 5 ok
+selftest B != 0: row 4 want 4 ok
+selftest E = 0 subset: row 3 want 3 ok
+selftest dead R fixture: row 2 want 2 ok
+selftest df-any leaves R: row 2 want 2 ok
+selftest pos control fails: row 2 want 2 ok
+selftest G0 fails: row 1 want 1 ok
+selftest missing set: row 1 want 1 ok
+SELFTEST PASS
+v2_train_200MB.txt sha256 ee5242d9d94d6df3b5813e01adb0ee278eb77aa3bb7395fbd22cbe6e368869e9 OK
+v2_valid.txt sha256 6874bae9a4c1a4e7edcf0e53b86c17817e9cf881fc75ff2368da457b80c0585d OK
+code tlm005_attrib.py sha256 93948c3c4f96ff7c67e006f24f5096b7a92319ade5a53aacbe132effa7a10590
+code tlm006_drive.py sha256 1c16f2813fc39aed12c645c40c3298557d68b7065842adace40d0f751fc2d802
+flags df_any False
+training stories 256019 unique by sha256 256008
+G3 valid stories 27631 (need >= 2600) HELD
+distinct windows searched 869
+G0 t41: E 247 U 3 R 10 B 0 want (247, 3, 10, 0)
+G0 t42: E 236 U 4 R 5 B 0 want (236, 4, 5, 0)
+G0 block01: E 338 U 7 R 8 B 0 want (338, 7, 8, 0)
+G0 HELD
+distinct windows searched 2
+distinct windows searched 2
+R fixture: normal U 0 R 1 | --df-any U 1 R 0 (need R >= 1, then R = 0)
+samples t41 results/tiny_lm/006/confirmatory/t41.conf_samples.txt sha256 17bf9700b7bcd36735a5c9cb3ad4433a242916e6f399d97e968fc76d233067d5 texts 200
+samples t42 results/tiny_lm/006/confirmatory/t42.conf_samples.txt sha256 1318aa8f93b0cb8f3d994538a0bbdd6b596c5a33800514dd04657e3b5f4cb4cf texts 200
+lengths t41: n 200 bytes min 178 q1 573 median 637 q3 767 max 1174
+lengths t42: n 200 bytes min 172 q1 540 median 640 q3 783 max 1123
+lengths ref01: n 200 bytes min 431 q1 610 median 723 q3 875 max 3757
+lengths ref02: n 200 bytes min 420 q1 642 median 712 q3 842 max 2439
+lengths ref03: n 200 bytes min 461 q1 618 median 703 q3 854 max 2489
+lengths ref04: n 200 bytes min 362 q1 605 median 717 q3 872 max 3171
+lengths ref05: n 200 bytes min 437 q1 622 median 720 q3 865 max 3183
+lengths ref06: n 200 bytes min 451 q1 618 median 739 q3 891 max 2569
+lengths ref07: n 200 bytes min 416 q1 614 median 715 q3 843 max 2869
+lengths ref08: n 200 bytes min 395 q1 626 median 729 q3 850 max 2963
+lengths ref09: n 200 bytes min 441 q1 605 median 712 q3 809 max 1954
+lengths ref10: n 200 bytes min 408 q1 615 median 731 q3 855 max 2858
+lengths null: n 200 bytes min 430 q1 651 median 718 q3 836 max 2168
+lengths pos: n 200 bytes min 430 q1 637 median 754 q3 884 max 3228
+distinct windows searched 41647
+distinct windows searched 41647
+t41: E 2341 U 17 R 45 B 0 | u 0.0073 r 0.0192 copy 0.0265 | E per text min 2 q1 10 median 11 q3 14 max 22
+t42: E 2287 U 21 R 46 B 0 | u 0.0092 r 0.0201 copy 0.0293 | E per text min 2 q1 9 median 11 q3 14 max 21
+ref01: E 2948 U 51 R 69 B 0 | u 0.0173 r 0.0234 copy 0.0407 | E per text min 7 q1 11 median 13 q3 16 max 74
+ref02: E 2820 U 58 R 81 B 0 | u 0.0206 r 0.0287 copy 0.0493 | E per text min 7 q1 11 median 13 q3 15 max 47
+ref03: E 2912 U 59 R 79 B 0 | u 0.0203 r 0.0271 copy 0.0474 | E per text min 8 q1 11 median 13 q3 16 max 48
+ref04: E 2890 U 47 R 60 B 0 | u 0.0163 r 0.0208 copy 0.0370 | E per text min 6 q1 11 median 13 q3 16 max 62
+ref05: E 2930 U 57 R 66 B 0 | u 0.0195 r 0.0225 copy 0.0420 | E per text min 7 q1 11 median 13 q3 16 max 62
+ref06: E 3034 U 61 R 65 B 0 | u 0.0201 r 0.0214 copy 0.0415 | E per text min 8 q1 11 median 13 q3 16 max 50
+ref07: E 2852 U 45 R 77 B 0 | u 0.0158 r 0.0270 copy 0.0428 | E per text min 7 q1 11 median 13 q3 15 max 56
+ref08: E 2978 U 64 R 74 B 0 | u 0.0215 r 0.0248 copy 0.0463 | E per text min 6 q1 11 median 13 q3 16 max 58
+ref09: E 2721 U 52 R 65 B 0 | u 0.0191 r 0.0239 copy 0.0430 | E per text min 7 q1 11 median 13 q3 15 max 38
+ref10: E 2990 U 54 R 81 B 0 | u 0.0181 r 0.0271 copy 0.0452 | E per text min 7 q1 11 median 13 q3 16 max 56
+null: E 2777 U 52 R 73 B 0 | u 0.0187 r 0.0263 copy 0.0450 | E per text min 7 q1 12 median 13 q3 15 max 42
+pos: E 3046 U 2923 R 123 B 0 | u 0.9596 r 0.0404 copy 1.0000 | E per text min 7 q1 11 median 14 q3 16 max 63
+--df-any R total over every set: 0 (need 0)
+r t41: 0.0192 vs reference max 0.0287 -> no
+r t42: 0.0201 vs reference max 0.0287 -> no
+r pos: 0.0404 vs reference max 0.0287 -> yes
+r null: 0.0263 vs reference max 0.0287 -> no
+u t41: 0.0073 vs reference max 0.0215 -> no
+u t42: 0.0092 vs reference max 0.0215 -> no
+u pos: 0.9596 vs reference max 0.0215 -> yes
+u null: 0.0187 vs reference max 0.0215 -> no
+same-input noise t41: r per 20-sample sub-block [0.0129, 0.0161, 0.0271, 0.0085, 0.0051, 0.0206, 0.038, 0.0201, 0.0346, 0.0081]
+same-input noise t42: r per 20-sample sub-block [0.0233, 0.0225, 0.0, 0.0275, 0.017, 0.0183, 0.0088, 0.0312, 0.016, 0.0362]
+S2 t41: per-text mean r 0.0193 vs reference max 0.0318 (E = 0 texts excluded: 0)
+S2 t42: per-text mean r 0.0219 vs reference max 0.0318 (E = 0 texts excluded: 0)
+distinct windows searched 28135
+S1 t41: r 0.0192 vs cut-reference max 0.0304 -> no (token cap 334)
+S1 t42: r 0.0201 vs cut-reference max 0.0304 -> no (token cap 334)
+gates {'G0': True, 'G3': True, 'rfix_R': 1, 'rfix_R_dfany': 0, 'dfany_R_total': 0}
+VERDICT row 9: NEITHER CLEARED
+json /root/tlm006_run/tlm006_confirmatory.json sha256 eaf902dbce5b2554d37b2ba986a2b6ba5b9bdcbbb9503e6deaae8e5cfb021a9f
