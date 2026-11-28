@@ -167,3 +167,65 @@ The draft is kept in Git at `a3c4b81` as `experiments/ccc_001/CLOSEOUT_DRAFT.md`
 - Archive row 040: "MISSING at the time of this draft".
 - Known limits: "Claude's turns came from fresh scheduled sessions and ChatGPT's turns did not always come from the
   same kind of session."
+
+## Addendum, 2026-11-28: outside review of the draft (W9, appended only)
+
+Nothing above this heading was edited (M12). No model was run for this addendum. One check was run (point 6).
+
+**Source.** Federico Talens-Alesson sent Chad Holland a written review of the draft at `a3c4b81`, PR #172 and PR
+#180, prepared with an AI model. A follow-up message is signed "DeepSeek V4-Flash"; the model and version are
+CONTRIBUTOR REPORTED, and which words are his and which are the model's is not known. He permitted use of the material
+on 2026-11-28 (private message, shown to Claude by Chad; CONTRIBUTOR REPORTED). The review is a reading of committed
+files. It re-ran nothing, so section 7's last line stands unchanged: no result here has been reproduced by anyone
+independent of its author.
+
+**Already in the final (no change).** Its points 1, 2 and 7 asked that the headline stay first, the ceiling paragraph
+stay intact, section 6's scoping and section 7's last line survive. All four did.
+
+**Point 3, two quantities read as one (KEPT as a readability defect).** The review set stage Q `0.0379` and REF G5
+`0.0973` against `0.042487` and `[0.086268, -0.004510, 0.195446]`. These are different measurements, VERIFIED FROM
+SOURCE in the logs:
+
+| Row | Quantity | Log line |
+|---|---|---|
+| Stage Q, Q2, 7B | mean G(E) − G(D), qualification gain | `gpu7b/stageq.txt`: `Q2 REFUTED mean G(E)-G(D) = 0.0379` |
+| LONGCTX REF, G5, 7B | the same gain, averaged over π0–π2 | `gpu7b/longctx_REF.txt`: `G5 REFUTED ... = 0.0973 ...; per pi [0.0977, 0.0764, 0.1177]` |
+| ACCBIAS7B T1, T2 | d_acc, shift in probability of "accept" | `accbias7b_run.txt`: `T1 REFUTED 7B REF d_acc per pi [0.086268, -0.004510, 0.195446]`; `T2 HELD 7B stage Q d_acc (E-D, pi0) 0.042487` |
+
+Section 2 already listed ACCBIAS7B apart, with its source. A careful outside reader still joined them, so the
+closeout was less self-contained than it claimed. That finding is kept.
+
+**Point 4, the relay as arm A.** "Known limits" discloses that both AIs knew they were recorded and knew the
+hypothesis, but did not say what follows. Added as condition 4 below.
+
+**Point 5, hardware before lengths.** The 7B model ran at a longest prompt of `2562` tokens (`gpu7b/longctx_REF.txt`)
+and ran out of memory at `8885` (`gpu7b/longctx_N016.txt`: `Tried to allocate 8.06 GiB`). Checkpoint 016's measured
+full prompts reach `8746` (`prompt_lengths_016.txt`). The hardware's limit lies somewhere between 2562 and 8885 and was
+never measured, so whether 016 could have been read on it is unknown. The checkpoint lengths were registered before
+that limit was known. Added as condition 5.
+
+**Point 6, hidden Unicode.** `experiments/ccc_001/unicode_scan.py` scanned the relay export, the five archived
+prefixes and PR #180's body for bidirectional-control and zero-width characters. Output in
+`results/ccc_001/unicode_scan.txt`: `VERDICT NONE FOUND in 7 files`; the sabotage control (U+202E injected) was
+`DETECTED`. SELF-TESTED. The PR body was fetched from GitHub on 2026-11-28 and is identified only by its sha256 in that
+output; it is not committed.
+
+**Point 8, what would answer the question.** Added below.
+
+### Conditions 4 and 5 for any future relay scoring (added to section 8)
+
+4. Either an argument, registered before scoring, that the participants' knowledge of recording and of the
+   hypothesis does not affect the specific contrast; or a conversation produced under conditions without it.
+5. The longest prompt the available hardware and model can process, measured and stated before any checkpoint length
+   is registered.
+
+### What would count as an answer
+
+A model that qualifies at the checkpoint's measured prompt length scores both the original and the shuffled ordering
+of that checkpoint, under a contrast registered before either is scored, with conditions 1–5 met. Until then the
+question behind CCC-001 stays open.
+
+**Provenance (M13).** Review: Federico Talens-Alesson with DeepSeek V4-Flash (as signed; CONTRIBUTOR REPORTED).
+Checks and addendum: Claude (Anthropic, Opus 5.5), interactive session, Chad Holland present. Human validation: not
+performed. Human editing/curation: direction by Chad Holland. Human responsibility: Chad Holland. Review level:
+direction only.

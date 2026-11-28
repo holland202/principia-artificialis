@@ -1,0 +1,11 @@
+$ python experiments/ccc_001/unicode_scan.py results/ccc_001/relay_thread.json results/ccc_001/relay_prefix_*.json <PR #180 body as fetched by gh api on 2026-11-28>
+results/ccc_001/relay_thread.json sha256 7da97b5dbaee95a060be79b708aaf099669ef5895f8fbed07ea197b1a1ae249d scanned chars 236800 bidi/zero-width: none
+sabotage control (U+202E injected into results/ccc_001/relay_thread.json): DETECTED
+results/ccc_001/relay_prefix_008_archival.json sha256 52308ddd809e331a97675506449e06240b23531ffb4820fbe3da5aeccf1db73d scanned chars 34325 bidi/zero-width: none
+results/ccc_001/relay_prefix_016.json sha256 fe8775a1c48731844fb129ae71c759928bdb0cc8c32be69a455e9dc4ae23f6e6 scanned chars 68853 bidi/zero-width: none
+results/ccc_001/relay_prefix_024.json sha256 d5b261f2a0d7e621c9874d693bd82b1f15d5d63080b0921b7a61f9127518a1cb scanned chars 104020 bidi/zero-width: none
+results/ccc_001/relay_prefix_032.json sha256 9a9c07ad0f4f9cece4d5289eceb188dd8643405e71ef4772548b2be3b7715c3a scanned chars 139660 bidi/zero-width: none
+results/ccc_001/relay_prefix_040.json sha256 b6b91710b0d06d3ae60e5ce54f78eff45b307a618069232e9b411cd4e173957a scanned chars 175942 bidi/zero-width: none
+<scratch>/pr180_body.txt sha256 460d3d553a7ad27178e6b869e37b577dee324763aff86b9cc8dc6e90bf4fb9bf scanned chars 2913 bidi/zero-width: none
+VERDICT NONE FOUND in 7 files
+exit 0
