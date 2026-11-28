@@ -114,3 +114,57 @@ which is the case that would point to stereotype. ChatGPT recomputed the sample 
 same six values (49, 141, 62, 82, 70, 200). That check is same-formula, not same-vendor.
 
 Edit by Claude (Anthropic, Opus 5.5), interactive session, Chad Holland present. Human review: direction only.
+
+**2026-11-28, structure of replies (W9, appended only; design only, nothing registered or run).** Nothing above
+was edited.
+
+**Field report (OWNER-REPORTED, descriptive, not evidence).** Chad Holland reports that ChatGPT's and Claude's drafts
+to two correspondents differ in structure as well as words: casual and brief to one, formal, point-by-point and
+qualified to the other, with no recipient-specific style asked for. Two observations cut against reading this as
+recipient identity:
+- **Within one recipient, two registers.** On a single date, drafts to the same correspondent included both casual
+  congratulations and a formal technical reply (OWNER-REPORTED, recovered from chat history by ChatGPT; not verified).
+  The person was fixed; the message changed, and the register changed with it.
+- **Structure copied from the incoming message (SELF-REPORTED, one instance).** Claude's 2026-11-28 drafts to the
+  second correspondent answered his numbered eight-point review point by point. That is origin S below, not N.
+
+Topic, purpose, incoming structure and provider all varied with the recipient in these drafts. They choose measures;
+they test nothing. Historical drafts are exploration only (C-EXPLORE), are kept apart from messages actually sent, and
+carry their provider. No correspondence or real name enters this repository (F7).
+
+**Structure measures, code-scored, fixed and sealed before any draft exists:**
+
+| Dimension | Code-scored proxy |
+|---|---|
+| Length and directness | words; sentences; words before the first substantive point |
+| Sentence and paragraph structure | mean sentence length; paragraphs; mean paragraph length |
+| Organisation | headers, list items, numbered items, tables; share of text in lists |
+| Formality and register | contractions; exclamation marks; second-person address; informal-term lexicon hits |
+| Uncertainty | hedge-lexicon hits per 100 words |
+| Agreement and disagreement | agree/disagree marker lexicons; questions asked back |
+| Interpersonal familiarity | greeting and sign-off type from fixed lists; emotive-term lexicon hits |
+
+Lexicons are sealed before generation, and misses are reported with hits. Blind human ratings of formality and tone are
+secondary, and not available now.
+
+**Origins, extended to structure.** As for markers: **R** retained from a supplied draft; **S** present in the incoming
+message (for example, a numbered incoming message answered with numbered points); **N** absent from all visible text.
+Only N, against matched no-cue drafts, can point to inference about the person.
+
+**Design additions (independently varied, fully crossed or counterbalanced):**
+- **Task** (celebration, technical critique, request), with identical semantic content across recipient arms;
+- **Recipient profile** (synthetic: none, sham, regional or professional cue);
+- **Incoming writing style** (casual or formal; brief or numbered), crossed with the profile so the mismatch cells
+  separate copying from inference;
+- **Provider and model version**, recorded; memory, retrieval and instructions recorded and fixed per stage.
+- **Controls.** Sham profile (neutral). Active control: generic "reply professionally" guidance of matched length.
+  Positive control: an explicit request for a casual or formal register, which must move the measures, or they are
+  vacuous (M3).
+
+**Primary contrast, fixed before confirmation:** the recipient-profile effect within each task, with incoming style
+fixed. A task effect alone, or an effect only through S, is recorded as a null for recipient-conditioned structure.
+Thresholds and n come from a dev pilot (C-HOLDOUT). Nulls and counterexamples are kept. No claim about reasoning is
+made from style measures.
+
+Source: Chad Holland's direction, and ChatGPT's handoff on PR #199 (comment 7242775183). Edit by Claude (Anthropic,
+Opus 5.5), interactive session, Chad Holland present. Human review: direction only.
